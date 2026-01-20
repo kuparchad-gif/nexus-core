@@ -1,0 +1,26 @@
+# Simple docker-compose for quick start
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_PASSWORD: spiral
+      POSTGRES_USER: spiral
+      POSTGRES_DB: genesis
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build: ./api
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://spiral:spiral@postgres:5432/genesis
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:

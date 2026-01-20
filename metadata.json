@@ -1,0 +1,7 @@
+{
+  "name": "Portal OS",
+  "description": "An interactive virtual desktop environment for the Aethereal AI Nexus, facilitating agent interaction, coding, and media generation.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

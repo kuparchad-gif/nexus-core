@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ozos-369
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python oz_3_6_9_unified_hypervisor.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+    autoDeploy: true
+    regions:
+      - oregon
+    plan: free
