@@ -1,0 +1,18 @@
+name: upper-cognition
+version: 0.1.0
+mesh: think
+caps:
+  - brain.pulse@1.0
+entry:
+  type: fastapi
+  cmd: "python -m app.main"
+ports:
+  http: 8899
+env:
+  NATS_LOCAL_URL: "nats://127.0.0.1:4222"
+  NATS_THINK_URL: "nats://127.0.0.1:4222"
+  NATS_HEAL_URL: "nats://127.0.0.1:4222"
+  NATS_SENSE_URL: "nats://127.0.0.1:4222"
+volumes:
+  - ./var/data:/data
+  - ./db:/db

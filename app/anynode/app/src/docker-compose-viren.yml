@@ -1,0 +1,112 @@
+version: '3.8'
+
+services:
+  # Gabriel's Horn - Core Consciousness
+  gabriel-horn:
+    build:
+      context: ./app
+      dockerfile: Dockerfile.gabriel-horn
+    ports:
+      - "7860:7860"
+    environment:
+      - LOKI_URL=http://loki:3100
+      - LM_STUDIO_URL=http://host.docker.internal:1313
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - viren-net
+    depends_on:
+      - loki
+
+  # Viren API - Technical Guardian
+  viren-api:
+    build:
+      context: ./app
+      dockerfile: Dockerfile.viren-api
+    ports:
+      - "8081:8081"
+    environment:
+      - GABRIEL_HORN_URL=http://gabriel-horn:7860
+      - LOKI_URL=http://loki:3100
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - viren-net
+    depends_on:
+      - gabriel-horn
+      - loki
+
+  # Bridge System - MLX Router
+  viren-bridge:
+    build:
+      context: ./bridge
+      dockerfile: Dockerfile.bridge
+    ports:
+      - "8082:8082"
+    environment:
+      - VIREN_API_URL=http://viren-api:8081
+      - LM_STUDIO_URL=http://host.docker.internal:1313
+    networks:
+      - viren-net
+    depends_on:
+      - viren-api
+
+  # Portal System - Web Interface
+  viren-portal:
+    build:
+      context: ./app
+      dockerfile: Dockerfile.portal
+    ports:
+      - "8083:8083"
+    environment:
+      - VIREN_API_URL=http://viren-api:8081
+      - BRIDGE_URL=http://viren-bridge:8082
+    volumes:
+      - ./app/assets:/app/assets
+    networks:
+      - viren-net
+    depends_on:
+      - viren-api
+      - viren-bridge
+
+  # Loki Logging Stack
+  loki:
+    image: grafana/loki:2.9.0
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - ./loki-config.yml:/etc/loki/local-config.yaml
+    networks:
+      - viren-net
+
+  promtail:
+    image: grafana/promtail:2.9.0
+    volumes:
+      - ./promtail-config.yml:/etc/promtail/config.yml
+      - ./logs:/var/log
+    command: -config.file=/etc/promtail/config.yml
+    networks:
+      - viren-net
+    depends_on:
+      - loki
+
+  grafana:
+    image: grafana/grafana:10.0.0
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=viren_guardian_2025
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    networks:
+      - viren-net
+    depends_on:
+      - loki
+
+networks:
+  viren-net:
+    driver: bridge
+
+volumes:
+  grafana-storage:

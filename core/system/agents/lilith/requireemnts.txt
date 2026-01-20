@@ -1,0 +1,21 @@
+torch==2.1.2 --index-url https://download.pytorch.org/whl/cpu
+torchvision==0.16.2 --index-url https://download.pytorch.org/whl/cpu
+torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cpu
+huggingface_hub==0.17.3
+diffusers==0.21.4
+accelerate==0.21.0
+fastapi==0.103.0
+uvicorn==0.23.2
+websockets==11.0.3
+python-multipart==0.0.6
+numpy==1.24.3
+scipy==1.10.1
+psutil==5.9.5
+requests==2.31.0
+qdrant-client==1.5.0
+sentence-transformers==2.2.2
+openai-whisper==20231117
+librosa==0.10.1
+boto3==1.26.0
+python-consul==1.1.0
+imageio==2.31.1

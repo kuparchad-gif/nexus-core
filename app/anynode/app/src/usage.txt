@@ -1,0 +1,11 @@
+import ChatSphere from "@/webparts/ChatSphere";
+import ShellTerminal from "@/webparts/ShellTerminal";
+
+export default function App() {
+  return (
+    <main>
+      <ChatSphere />
+      <ShellTerminal />
+    </main>
+  );
+}

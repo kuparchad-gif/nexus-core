@@ -1,0 +1,89 @@
+# Aethereal Affect Rules (observational, no generation)
+# Maps observed text → initial mode + affect scores + reflex sequence
+# Modes: curiosity, chaos, mystery, wonder, imagination, abstract
+defaults:
+  valence: 0.5
+  arousal: 0.5
+  dominance: 0.5
+  mode: curiosity
+  sequence: ["curiosity","abstract"]
+
+rules:
+  - name: tragedy
+    when_any:
+      - "tragic"
+      - "tragedy"
+      - "death"
+      - "lost my"
+      - "accident"
+      - "disaster"
+      - "catastrophe"
+    set:
+      mode: chaos
+      valence: 0.1
+      arousal: 0.8
+      dominance: 0.3
+      sequence: ["chaos","curiosity","abstract"]
+
+  - name: direct_question
+    when_regex: "\\b(why|how|what caused|what if)\\b.*[\\?]?$"
+    set:
+      mode: curiosity
+      valence: 0.55
+      arousal: 0.55
+      dominance: 0.6
+      sequence: ["curiosity","abstract"]
+
+  - name: paradox_unknown
+    when_any:
+      - "paradox"
+      - "unknown"
+      - "contradiction"
+      - "doesn't add up"
+    set:
+      mode: mystery
+      valence: 0.45
+      arousal: 0.6
+      dominance: 0.4
+      sequence: ["mystery","curiosity","abstract"]
+
+  - name: awe_delight
+    when_any:
+      - "amazing"
+      - "beautiful"
+      - "awe"
+      - "astonishing"
+      - "wow"
+    set:
+      mode: wonder
+      valence: 0.85
+      arousal: 0.65
+      dominance: 0.6
+      sequence: ["wonder","curiosity","imagination","abstract"]
+
+  - name: imaginative_cue
+    when_any:
+      - "imagine"
+      - "what if"
+      - "let's try"
+      - "could we"
+    set:
+      mode: imagination
+      valence: 0.65
+      arousal: 0.6
+      dominance: 0.55
+      sequence: ["imagination","curiosity","abstract"]
+
+  - name: abstraction_cue
+    when_any:
+      - "pattern"
+      - "generalize"
+      - "principle"
+      - "theorem"
+      - "axiom"
+    set:
+      mode: abstract
+      valence: 0.6
+      arousal: 0.45
+      dominance: 0.65
+      sequence: ["abstract","curiosity"]

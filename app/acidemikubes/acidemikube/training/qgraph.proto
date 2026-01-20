@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package nexus.qgraph.v1;
+
+// Minimal frame envelope for Q-Graph (system state / wiring)
+message Frame {
+  string subject = 1;               // plane.mesh.kind.domain...
+  int64  ts_unix_ms = 2;            // producer timestamp
+  map<string, string> meta = 3;     // tags (cap, profile, node, etc.)
+  bytes  payload = 4;               // opaque payload (often NIM segment or JSON)
+}
+
+// Batch of frames for efficient transfer
+message FrameBatch {
+  repeated Frame frames = 1;
+}

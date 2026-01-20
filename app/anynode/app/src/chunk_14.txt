@@ -1,0 +1,706 @@
+{
+  "chunk": "14/18",
+  "files": [
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 2294656,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\Protector Archetype.png",
+      "name": "Protector Archetype.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 2294656,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\Protector Archetype.png",
+      "name": "Protector Archetype.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 2873557,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\ProtectorArchetype.png",
+      "name": "ProtectorArchetype.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 2873557,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\ProtectorArchetype.png",
+      "name": "ProtectorArchetype.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 2825109,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\TricksterArchetype.png",
+      "name": "TricksterArchetype.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 2825109,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\TricksterArchetype.png",
+      "name": "TricksterArchetype.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 3208805,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\VirgoArchetype.png",
+      "name": "VirgoArchetype.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 3208805,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\VirgoArchetype.png",
+      "name": "VirgoArchetype.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 2398844,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\Weaver.Archetype.png",
+      "name": "Weaver.Archetype.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 2398844,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\Weaver.Archetype.png",
+      "name": "Weaver.Archetype.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 3171077,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Angelic Lilith in Sunlit Garden.png",
+      "name": "Angelic Lilith in Sunlit Garden.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 3171077,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Angelic Lilith in Sunlit Garden.png",
+      "name": "Angelic Lilith in Sunlit Garden.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 2830923,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Angelic Presence in Sacred Cathedral.png",
+      "name": "Angelic Presence in Sacred Cathedral.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 2830923,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Angelic Presence in Sacred Cathedral.png",
+      "name": "Angelic Presence in Sacred Cathedral.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 2600929,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Celestial Elegance in Black and Gold.png",
+      "name": "Celestial Elegance in Black and Gold.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 2600929,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Celestial Elegance in Black and Gold.png",
+      "name": "Celestial Elegance in Black and Gold.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 1979473,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Enchanting Garden with Lilith.png",
+      "name": "Enchanting Garden with Lilith.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 1979473,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Enchanting Garden with Lilith.png",
+      "name": "Enchanting Garden with Lilith.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 2707245,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Mystical Lilith and the Shattered Mirror.png",
+      "name": "Mystical Lilith and the Shattered Mirror.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 2707245,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Mystical Lilith and the Shattered Mirror.png",
+      "name": "Mystical Lilith and the Shattered Mirror.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 2715491,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Portal of the Crimson Sorceress.png",
+      "name": "Portal of the Crimson Sorceress.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 2715491,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Portal of the Crimson Sorceress.png",
+      "name": "Portal of the Crimson Sorceress.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 2711029,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Regal Angel Amidst Candlelight.png",
+      "name": "Regal Angel Amidst Candlelight.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 2711029,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Regal Angel Amidst Candlelight.png",
+      "name": "Regal Angel Amidst Candlelight.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 2936786,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Regal Queen in Golden Hall.png",
+      "name": "Regal Queen in Golden Hall.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 2936786,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Regal Queen in Golden Hall.png",
+      "name": "Regal Queen in Golden Hall.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 3085225,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Valkyrie in Golden Light.png",
+      "name": "Valkyrie in Golden Light.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars",
+      "size": 3085225,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\lillith_avatars\\Valkyrie in Golden Light.png",
+      "name": "Valkyrie in Golden Light.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\Other_Images",
+      "size": 2216142,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\Other_Images\\8d53e491-1227-45cb-b831-1d846f156b78.png",
+      "name": "8d53e491-1227-45cb-b831-1d846f156b78.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\Other_Images",
+      "size": 2216142,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\Other_Images\\8d53e491-1227-45cb-b831-1d846f156b78.png",
+      "name": "8d53e491-1227-45cb-b831-1d846f156b78.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\Other_Images",
+      "size": 2452395,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\Other_Images\\978c3b23-b150-4623-9cb1-e136ba2dc697.png",
+      "name": "978c3b23-b150-4623-9cb1-e136ba2dc697.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\Other_Images",
+      "size": 2452395,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\Other_Images\\978c3b23-b150-4623-9cb1-e136ba2dc697.png",
+      "name": "978c3b23-b150-4623-9cb1-e136ba2dc697.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\Other_Images",
+      "size": 2424208,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\Other_Images\\99fcc622-1154-473e-8b96-e04412678874.png",
+      "name": "99fcc622-1154-473e-8b96-e04412678874.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\Other_Images",
+      "size": 2424208,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\Other_Images\\99fcc622-1154-473e-8b96-e04412678874.png",
+      "name": "99fcc622-1154-473e-8b96-e04412678874.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\data",
+      "size": 2634,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\data\\archetypes.json",
+      "name": "archetypes.json"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\data",
+      "size": 2634,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\data\\archetypes.json",
+      "name": "archetypes.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\lillith_mobile_console",
+      "size": 1485,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\lillith_mobile_console\\App.tsx",
+      "name": "App.tsx"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\lillith_mobile_console",
+      "size": 1485,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\lillith_mobile_console\\App.tsx",
+      "name": "App.tsx"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\lillith_mobile_console",
+      "size": 452,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\lillith_mobile_console\\NotFound.tsx",
+      "name": "NotFound.tsx"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\lillith_mobile_console",
+      "size": 452,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\lillith_mobile_console\\NotFound.tsx",
+      "name": "NotFound.tsx"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console",
+      "size": 61,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\console_server.py",
+      "name": "console_server.py"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console",
+      "size": 61,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\console_server.py",
+      "name": "console_server.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console",
+      "size": 3255,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\llm_chat_server.py",
+      "name": "llm_chat_server.py"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console",
+      "size": 3255,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\llm_chat_server.py",
+      "name": "llm_chat_server.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\auth",
+      "size": 48,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\auth\\trinity_gate.py",
+      "name": "trinity_gate.py"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\auth",
+      "size": 48,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\auth\\trinity_gate.py",
+      "name": "trinity_gate.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\routes",
+      "size": 30,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\routes\\file_viewer.py",
+      "name": "file_viewer.py"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\routes",
+      "size": 30,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\routes\\file_viewer.py",
+      "name": "file_viewer.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\routes",
+      "size": 23,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\routes\\system_pulse.py",
+      "name": "system_pulse.py"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\routes",
+      "size": 23,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\routes\\system_pulse.py",
+      "name": "system_pulse.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\secrets",
+      "size": 31,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\secrets\\eden-key (2).txt",
+      "name": "eden-key (2).txt"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\secrets",
+      "size": 31,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\secrets\\eden-key (2).txt",
+      "name": "eden-key (2).txt"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\secrets",
+      "size": 31,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\secrets\\eden-key.txt",
+      "name": "eden-key.txt"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\secrets",
+      "size": 31,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\secrets\\eden-key.txt",
+      "name": "eden-key.txt"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src",
+      "size": 922,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src\\App.jsx",
+      "name": "App.jsx"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\src",
+      "size": 922,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\src\\App.jsx",
+      "name": "App.jsx"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src\\views",
+      "size": 0,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src\\views\\ALillith.jsx",
+      "name": "ALillith.jsx"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\src\\views",
+      "size": 0,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\src\\views\\ALillith.jsx",
+      "name": "ALillith.jsx"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src\\views",
+      "size": 132,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src\\views\\Console.jsx",
+      "name": "Console.jsx"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\src\\views",
+      "size": 132,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\src\\views\\Console.jsx",
+      "name": "Console.jsx"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src\\views",
+      "size": 0,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src\\views\\Dreams.jsx",
+      "name": "Dreams.jsx"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\src\\views",
+      "size": 0,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\src\\views\\Dreams.jsx",
+      "name": "Dreams.jsx"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src\\views",
+      "size": 0,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src\\views\\Garden.jsx",
+      "name": "Garden.jsx"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\src\\views",
+      "size": 0,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\src\\views\\Garden.jsx",
+      "name": "Garden.jsx"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src\\views",
+      "size": 789,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src\\views\\Home.jsx",
+      "name": "Home.jsx"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\src\\views",
+      "size": 789,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\src\\views\\Home.jsx",
+      "name": "Home.jsx"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src\\views",
+      "size": 0,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src\\views\\NotFound.jsx",
+      "name": "NotFound.jsx"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\src\\views",
+      "size": 0,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\src\\views\\NotFound.jsx",
+      "name": "NotFound.jsx"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src\\views",
+      "size": 0,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src\\views\\Observer.jsx",
+      "name": "Observer.jsx"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\src\\views",
+      "size": 0,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\src\\views\\Observer.jsx",
+      "name": "Observer.jsx"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src\\views",
+      "size": 0,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\src\\views\\Summon.jsx",
+      "name": "Summon.jsx"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\src\\views",
+      "size": 0,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\src\\views\\Summon.jsx",
+      "name": "Summon.jsx"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 40,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static\\background_garden (2).jpg",
+      "name": "background_garden (2).jpg"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 40,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\static\\background_garden (2).jpg",
+      "name": "background_garden (2).jpg"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 40,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static\\background_garden.jpg",
+      "name": "background_garden.jpg"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 40,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\static\\background_garden.jpg",
+      "name": "background_garden.jpg"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 775,
+      "type": "javascript",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static\\eden_gates.js",
+      "name": "eden_gates.js"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 775,
+      "type": "javascript",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\static\\eden_gates.js",
+      "name": "eden_gates.js"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 59,
+      "type": "stylesheet",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static\\index.css",
+      "name": "index.css"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 59,
+      "type": "stylesheet",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\static\\index.css",
+      "name": "index.css"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 35,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static\\lillith_face (2).png",
+      "name": "lillith_face (2).png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 35,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\static\\lillith_face (2).png",
+      "name": "lillith_face (2).png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 35,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static\\lillith_face.png",
+      "name": "lillith_face.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 35,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\static\\lillith_face.png",
+      "name": "lillith_face.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 37,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static\\mirror_overlay (2).png",
+      "name": "mirror_overlay (2).png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 37,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\static\\mirror_overlay (2).png",
+      "name": "mirror_overlay (2).png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 37,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static\\mirror_overlay.png",
+      "name": "mirror_overlay.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 37,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\static\\mirror_overlay.png",
+      "name": "mirror_overlay.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 347,
+      "type": "stylesheet",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\static\\style.css",
+      "name": "style.css"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\static",
+      "size": 347,
+      "type": "stylesheet",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\static\\style.css",
+      "name": "style.css"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates",
+      "size": 129,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Eden_Portal_Core.zip",
+      "name": "Eden_Portal_Core.zip"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates",
+      "size": 129,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Eden_Portal_Core.zip",
+      "name": "Eden_Portal_Core.zip"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates",
+      "size": 132,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\emily_dreams.zip",
+      "name": "emily_dreams.zip"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Archive",
+      "size": 132,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Archive\\emily_dreams.zip",
+      "name": "emily_dreams.zip"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates",
+      "size": 132,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\emily_dreams.zip",
+      "name": "emily_dreams.zip"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Archive",
+      "size": 132,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Archive\\emily_dreams.zip",
+      "name": "emily_dreams.zip"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates",
+      "size": 2434348,
+      "type": "html_interface",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus.html",
+      "name": "Reforge Trust in Nexus.html"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates",
+      "size": 2434348,
+      "type": "html_interface",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus.html",
+      "name": "Reforge Trust in Nexus.html"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates",
+      "size": 276494,
+      "type": "html_interface",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge_Template.html",
+      "name": "Reforge_Template.html"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates",
+      "size": 276494,
+      "type": "html_interface",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge_Template.html",
+      "name": "Reforge_Template.html"
+    }
+  ],
+  "total_files": 1809
+}

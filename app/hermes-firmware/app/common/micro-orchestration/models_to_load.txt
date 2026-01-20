@@ -1,0 +1,10 @@
+qwen2-0.5b-instruct
+gemma-3-1b-it-qat
+qwen3-0.6b
+deepseek-coder-1.3b-instruct
+qwen2-math-1.5b-instruct
+lmstudio-community/deepseek-r1-distill-qwen-1.5b
+qwen3-1.7b
+tinyllama-coder-sql-en-v0.1
+gemma-2-2b-it
+gemma-3-4b-it-qat

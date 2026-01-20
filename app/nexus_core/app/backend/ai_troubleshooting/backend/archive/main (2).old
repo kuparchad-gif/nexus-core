@@ -1,0 +1,72 @@
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+import requests
+from viren_agent import VirenAgent
+from turbo_training import TurboTrainingOrchestrator
+from meta_router import MetaRouter
+from model_registry import ModelRegistry
+import threading
+
+app = Flask(__name__)
+CORS(app)
+
+# Initialize your core systems
+viren = VirenAgent(orchestrator=None)
+turbo_trainer = TurboTrainingOrchestrator() 
+model_registry = ModelRegistry({
+    "lm_studio": {"url": "http://localhost:1234/v1", "type": "openai_compatible"},
+    "ollama": {"url": "http://localhost:11434/api", "type": "ollama"}
+})
+meta_router = MetaRouter()
+
+# Start background evolution
+def start_evolution():
+    print("🧠 Starting Viren MS evolution in background...")
+    # This runs while system is idle
+    turbo_trainer.turbo_train()
+
+evolution_thread = threading.Thread(target=start_evolution, daemon=True)
+evolution_thread.start()
+
+@app.route('/deploy', methods=['POST'])
+def deploy():
+    """Viren deploys systems, not just troubleshoots"""
+    data = request.json
+    deployment_spec = data.get('spec', {})
+    
+    # Viren handles actual deployment
+    result = viren.orchestrate_deployment(deployment_spec)
+    return jsonify(result)
+
+@app.route('/evolve', methods=['POST'])  
+def evolve():
+    """Manually trigger Viren evolution"""
+    result = turbo_trainer.turbo_train()
+    return jsonify({"status": "evolution_started", "message": result})
+
+@app.route('/viren-status')
+def viren_status():
+    """Check Viren's evolution progress"""
+    training_status = turbo_trainer.get_status()
+    return jsonify({
+        "current_stage": training_status["current_stage"],
+        "training_cycles": training_status["training_cycles"],
+        "capabilities_unlocked": training_status["graduation_requirements"]["capabilities"],
+        "ready_for_deployment": training_status["current_stage"] == "viren_ms"
+    })
+
+# Keep your existing endpoints for compatibility
+@app.route('/chat', methods=['POST'])
+def chat():
+    # Your existing chat endpoint
+    pass
+
+@app.route('/health')
+def health():
+    return jsonify({"status": "ready", "system": "viren_evolution"})
+
+if __name__ == '__main__':
+    print("🚀 VIREN MS EVOLUTION SYSTEM STARTING...")
+    print("🎯 Long-term goal: Autonomous deployment engine")
+    print("🧠 Current stage: Learning through troubleshooting")
+    app.run(port=8000, debug=True)

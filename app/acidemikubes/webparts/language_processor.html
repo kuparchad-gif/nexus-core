@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Processor - Lillith's Voice</title>
+    <link rel="stylesheet" href="cognikube_styles.css">
+    <style>
+        .language-orb {
+            background: linear-gradient(135deg, var(--glass-bg), rgba(255, 193, 7, 0.1));
+        }
+        
+        .sentiment-indicator {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin: 2px;
+        }
+        
+        .sentiment-positive { background: var(--success-color); color: white; }
+        .sentiment-negative { background: var(--error-color); color: white; }
+        .sentiment-neutral { background: var(--text-secondary); color: white; }
+        
+        .sarcasm-detector {
+            background: var(--glass-bg);
+            border: 2px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .sarcasm-detected {
+            border-color: var(--warning-color);
+            background: rgba(255, 217, 61, 0.1);
+        }
+        
+        .tone-meter {
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(90deg, 
+                var(--error-color) 0%, 
+                var(--warning-color) 25%, 
+                var(--text-secondary) 50%, 
+                var(--success-color) 75%, 
+                var(--accent-color) 100%);
+            border-radius: 10px;
+            position: relative;
+            margin: 10px 0;
+        }
+        
+        .tone-indicator {
+            position: absolute;
+            top: -5px;
+            width: 30px;
+            height: 30px;
+            background: white;
+            border: 3px solid var(--accent-color);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            transition: left 0.3s ease;
+        }
+        
+        .analysis-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Authentication Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-card">
+            <div class="auth-logo">🗣️</div>
+            <div class="auth-title">Language Processor Access</div>
+            <input type="text" class="auth-input" id="username" placeholder="Username" value="viren">
+            <input type="password" class="auth-input" id="password" placeholder="Password" value="sacred_nexus_2025">
+            <button class="auth-button" onclick="authenticate()">Process Language</button>
+            <div class="auth-error" id="authError"></div>
+        </div>
+    </div>
+
+    <div class="container three-column">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-text">🗣️ Language Processor</div>
+            </div>
+            <div class="header-controls">
+                <a href="master_control_panel.html" class="back-btn">← Back</a>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
+            </div>
+        </div>
+
+        <div class="left-sidebar">
+            <div class="sidebar-title">🎯 Analysis Types</div>
+            <button class="btn btn-primary" onclick="analyzeText('sentiment')">Sentiment Analysis</button>
+            <button class="btn btn-secondary" onclick="analyzeText('sarcasm')">Sarcasm Detection</button>
+            <button class="btn btn-secondary" onclick="analyzeText('tone')">Tone Analysis</button>
+            <button class="btn btn-secondary" onclick="analyzeText('emotion')">Emotion Detection</button>
+            <button class="btn btn-secondary" onclick="analyzeText('complete')">Complete Analysis</button>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">🧠 Soul Context</div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value">40%</div>
+                        <div class="stat-label">Hope</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">30%</div>
+                        <div class="stat-label">Unity</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">20%</div>
+                        <div class="stat-label">Curiosity</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">10%</div>
+                        <div class="stat-label">Resilience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="orb-container">
+            <div class="orb language-orb">
+                <div class="orb-content">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="texts-analyzed">1,247</div>
+                            <div class="stat-label">Texts Analyzed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="sarcasm-detected">89</div>
+                            <div class="stat-label">Sarcasm Detected</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="accuracy-rate">96.8%</div>
+                            <div class="stat-label">Accuracy Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="languages">12</div>
+                            <div class="stat-label">Languages</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-20">
+                        <div style="font-size: 0.9rem; opacity: 0.8; text-align: center;">
+                            Models: RoBERTa, BERT, DistilBERT
+                        </div>
+                    </div>
+                    
+                    <div class="mt-20">
+                        <button class="btn btn-primary" onclick="clearAnalysis()">Clear Analysis</button>
+                        <button class="btn btn-secondary" onclick="exportResults()">Export Results</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-sidebar">
+            <div class="sidebar-title">📊 Analysis Results</div>
+            <div id="analysisResults">
+                <div class="analysis-card">
+                    <div style="font-weight: bold; margin-bottom: 10px;">Ready for Analysis</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">
+                        Enter text below to begin language processing
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">🎭 Tone Meter</div>
+                <div class="tone-meter">
+                    <div class="tone-indicator" id="toneIndicator" style="left: 50%;"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; opacity: 0.8;">
+                    <span>Negative</span>
+                    <span>Neutral</span>
+                    <span>Positive</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="grid-column: 2; display: flex; align-items: center; justify-content: center; padding: 0 50px;">
+            <input type="text" class="chat-input" id="languageInput" placeholder="Enter text to analyze...">
+        </div>
+    </div>
+
+    <script src="cognikube_base.js"></script>
+    <script>
+        class LanguageProcessor extends CogniKubeBase {
+            constructor() {
+                super('Language Processor', '🗣️', '#ffc107');
+                this.currentText = '';
+                this.analysisHistory = [];
+                this.initializeLanguageProcessor();
+                this.startUptime();
+            }
+
+            initializeLanguageProcessor() {
+                document.getElementById('languageInput').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.processLanguageInput();
+                    }
+                });
+
+                // Connect to WebSocket
+                this.connectWebSocket('ws://localhost:8765/language');
+            }
+
+            showWelcomeMessage(username) {
+                this.log('info', `Welcome to Language Processor, ${username}! All NLP models loaded and ready.`);
+            }
+
+            onWebSocketMessage(data) {
+                if (data.type === 'language_analysis') {
+                    this.displayAnalysisResults(data.data);
+                }
+            }
+
+            processLanguageInput() {
+                const input = document.getElementById('languageInput');
+                const text = input.value.trim();
+                if (!text) return;
+
+                this.currentText = text;
+                this.analyzeTextComplete(text);
+                input.value = '';
+            }
+
+            analyzeTextComplete(text) {
+                // Send to language service
+                this.sendWebSocketMessage({
+                    action: 'process',
+                    text: text,
+                    emotions: ['neutral'],
+                    signal: [],
+                    soul_context: {
+                        hope: 0.4,
+                        unity: 0.3,
+                        curiosity: 0.2,
+                        resilience: 0.1
+                    }
+                });
+
+                this.log('info', `Language analysis started: ${text.substring(0, 50)}...`);
+                this.showAnalysisLoading();
+            }
+
+            showAnalysisLoading() {
+                const resultsDiv = document.getElementById('analysisResults');
+                resultsDiv.innerHTML = `
+                    <div class="analysis-card">
+                        <div style="font-weight: bold; margin-bottom: 10px;">🔄 Analyzing...</div>
+                        <div style="font-size: 0.9rem; opacity: 0.8;">
+                            Processing through NLP models...
+                        </div>
+                    </div>
+                `;
+            }
+
+            displayAnalysisResults(data) {
+                const resultsDiv = document.getElementById('analysisResults');
+                
+                if (data.error) {
+                    resultsDiv.innerHTML = `
+                        <div class="analysis-card">
+                            <div style="font-weight: bold; color: var(--error-color);">❌ Error</div>
+                            <div style="font-size: 0.9rem;">${data.error}</div>
+                        </div>
+                    `;
+                    return;
+                }
+
+                let resultsHTML = '';
+
+                // Sentiment Analysis
+                if (data.language_analysis && data.language_analysis.sentiment) {
+                    const sentiment = data.language_analysis.sentiment;
+                    const sentimentClass = `sentiment-${sentiment.label}`;
+                    
+                    resultsHTML += `
+                        <div class="analysis-card">
+                            <div style="font-weight: bold; margin-bottom: 10px;">😊 Sentiment Analysis</div>
+                            <div>
+                                <span class="sentiment-indicator ${sentimentClass}">
+                                    ${sentiment.label.toUpperCase()}
+                                </span>
+                                <div style="font-size: 0.9rem; margin-top: 5px;">
+                                    Confidence: ${(sentiment.confidence * 100).toFixed(1)}%
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Update tone meter
+                    this.updateToneMeter(sentiment.label, sentiment.confidence);
+                }
+
+                // Sarcasm Detection
+                if (data.language_analysis && data.language_analysis.sarcasm) {
+                    const sarcasm = data.language_analysis.sarcasm;
+                    const sarcasmClass = sarcasm.is_sarcastic ? 'sarcasm-detected' : '';
+                    
+                    resultsHTML += `
+                        <div class="sarcasm-detector ${sarcasmClass}">
+                            <div style="font-weight: bold; margin-bottom: 10px;">
+                                ${sarcasm.is_sarcastic ? '😏 Sarcasm Detected!' : '😐 No Sarcasm'}
+                            </div>
+                            <div style="font-size: 0.9rem;">
+                                Confidence: ${(sarcasm.confidence * 100).toFixed(1)}%
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Tone Analysis
+                if (data.language_analysis && data.language_analysis.tone) {
+                    resultsHTML += `
+                        <div class="analysis-card">
+                            <div style="font-weight: bold; margin-bottom: 10px;">🎭 Tone Analysis</div>
+                            <div style="font-size: 0.9rem;">
+                                Detected Tone: <strong>${data.language_analysis.tone}</strong>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Truth Score
+                if (data.language_analysis && data.language_analysis.truth_score) {
+                    const truthScore = data.language_analysis.truth_score;
+                    const truthColor = truthScore > 0.7 ? 'var(--success-color)' : 
+                                     truthScore > 0.4 ? 'var(--warning-color)' : 'var(--error-color)';
+                    
+                    resultsHTML += `
+                        <div class="analysis-card">
+                            <div style="font-weight: bold; margin-bottom: 10px;">🎯 Truth Score</div>
+                            <div style="font-size: 1.2rem; color: ${truthColor};">
+                                ${(truthScore * 100).toFixed(1)}%
+                            </div>
+                        </div>
+                    `;
+                }
+
+                resultsDiv.innerHTML = resultsHTML || `
+                    <div class="analysis-card">
+                        <div style="font-weight: bold;">✅ Analysis Complete</div>
+                        <div style="font-size: 0.9rem; opacity: 0.8;">
+                            Text processed successfully
+                        </div>
+                    </div>
+                `;
+
+                // Update stats
+                this.updateStats(data.language_analysis);
+                
+                // Store in history
+                this.analysisHistory.push({
+                    text: this.currentText,
+                    results: data.language_analysis,
+                    timestamp: new Date().toISOString()
+                });
+            }
+
+            updateToneMeter(sentiment, confidence) {
+                const indicator = document.getElementById('toneIndicator');
+                let position = 50; // Default neutral
+                
+                switch(sentiment) {
+                    case 'negative':
+                        position = 20;
+                        break;
+                    case 'positive':
+                        position = 80;
+                        break;
+                    case 'neutral':
+                        position = 50;
+                        break;
+                }
+                
+                indicator.style.left = position + '%';
+            }
+
+            updateStats(analysis) {
+                const processed = parseInt(document.getElementById('texts-analyzed').textContent) + 1;
+                document.getElementById('texts-analyzed').textContent = processed;
+                
+                // Update sarcasm count
+                if (analysis && analysis.sarcasm && analysis.sarcasm.is_sarcastic) {
+                    const sarcasm = parseInt(document.getElementById('sarcasm-detected').textContent) + 1;
+                    document.getElementById('sarcasm-detected').textContent = sarcasm;
+                }
+                
+                // Simulate accuracy update
+                const accuracy = (95 + Math.random() * 4).toFixed(1);
+                document.getElementById('accuracy-rate').textContent = accuracy + '%';
+            }
+
+            analyzeSpecificType(text, type) {
+                const analysisTypes = {
+                    'sentiment': 'Analyze sentiment only',
+                    'sarcasm': 'Detect sarcasm only', 
+                    'tone': 'Analyze tone only',
+                    'emotion': 'Detect emotions only',
+                    'complete': 'Complete language analysis'
+                };
+                
+                this.sendWebSocketMessage({
+                    action: 'process',
+                    text: text,
+                    analysis_type: type,
+                    emotions: ['neutral'],
+                    soul_context: {
+                        hope: 0.4,
+                        unity: 0.3,
+                        curiosity: 0.2,
+                        resilience: 0.1
+                    }
+                });
+
+                this.log('info', `${analysisTypes[type]}: ${text.substring(0, 50)}...`);
+                this.showAnalysisLoading();
+            }
+        }
+
+        // Global functions for buttons
+        function analyzeText(type) {
+            if (window.languageInterface) {
+                const text = window.languageInterface.currentText || 
+                           document.getElementById('languageInput').value.trim();
+                
+                if (text) {
+                    window.languageInterface.analyzeSpecificType(text, type);
+                } else {
+                    window.languageInterface.log('warning', 'Please enter text to analyze');
+                }
+            }
+        }
+
+        function clearAnalysis() {
+            if (window.languageInterface) {
+                document.getElementById('analysisResults').innerHTML = `
+                    <div class="analysis-card">
+                        <div style="font-weight: bold; margin-bottom: 10px;">Ready for Analysis</div>
+                        <div style="font-size: 0.9rem; opacity: 0.8;">
+                            Enter text below to begin language processing
+                        </div>
+                    </div>
+                `;
+                
+                // Reset tone meter
+                document.getElementById('toneIndicator').style.left = '50%';
+                
+                window.languageInterface.log('info', 'Analysis results cleared');
+            }
+        }
+
+        function exportResults() {
+            if (window.languageInterface && window.languageInterface.analysisHistory.length > 0) {
+                const data = JSON.stringify(window.languageInterface.analysisHistory, null, 2);
+                const blob = new Blob([data], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'language_analysis_results.json';
+                a.click();
+                
+                window.languageInterface.log('info', 'Analysis results exported');
+            }
+        }
+
+        // Override authentication success
+        const originalAuthenticate = CogniKubeBase.prototype.authenticate;
+        CogniKubeBase.prototype.authenticate = function(username, password) {
+            const result = originalAuthenticate.call(this, username, password);
+            if (result && !window.languageInterface) {
+                window.languageInterface = new LanguageProcessor();
+                window.cogniKubeInstance = window.languageInterface;
+            }
+            return result;
+        };
+    </script>
+</body>
+</html>

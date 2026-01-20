@@ -1,0 +1,201 @@
+.soul-viewer {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  min-height: 100vh;
+  padding: 20px;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+}
+
+.nexus-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.neon-text {
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 15px #00ffff,
+    0 0 20px #00ffff;
+  animation: neon-flicker 2s infinite alternate;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #cccccc;
+  margin-top: 10px;
+}
+
+@keyframes neon-flicker {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px #00ffff,
+      0 0 10px #00ffff,
+      0 0 15px #00ffff,
+      0 0 20px #00ffff;
+  }
+  50% {
+    text-shadow: 
+      0 0 2px #00ffff,
+      0 0 5px #00ffff,
+      0 0 8px #00ffff,
+      0 0 12px #00ffff;
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.soul-creator {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.soul-input, .soul-select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.soul-input::placeholder {
+  color: #cccccc;
+}
+
+.neon-btn {
+  background: linear-gradient(45deg, #ff006e, #8338ec);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
+}
+
+.neon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(255, 0, 110, 0.6);
+}
+
+.souls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.soul-card {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.soul-card:hover {
+  transform: translateY(-5px);
+}
+
+.soul-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.soul-name {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #00ffff;
+}
+
+.soul-type {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.soul-type.lillith {
+  background: linear-gradient(45deg, #ff006e, #ff4081);
+  color: white;
+}
+
+.soul-type.viren {
+  background: linear-gradient(45deg, #00bcd4, #0097a7);
+  color: white;
+}
+
+.soul-type.loki {
+  background: linear-gradient(45deg, #4caf50, #388e3c);
+  color: white;
+}
+
+.soul-status {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.status.created {
+  color: #ffeb3b;
+}
+
+.status.awakened {
+  color: #4caf50;
+  text-shadow: 0 0 10px #4caf50;
+}
+
+.chat-section {
+  margin-top: 20px;
+}
+
+.chat-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.soul-response {
+  margin-top: 15px;
+  padding: 15px;
+  background: rgba(0, 255, 255, 0.1);
+  border-left: 3px solid #00ffff;
+  font-style: italic;
+}
+
+.create-btn, .awaken-btn, .chat-btn {
+  width: 100%;
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .neon-text {
+    font-size: 2rem;
+  }
+  
+  .souls-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .soul-viewer {
+    padding: 10px;
+  }
+}

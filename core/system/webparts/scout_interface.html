@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scout Interface - Environment Monitoring</title>
+    <link rel="stylesheet" href="cognikube_styles.css">
+    <style>
+        .scout-orb {
+            background: linear-gradient(135deg, var(--glass-bg), rgba(34, 139, 34, 0.1));
+        }
+        
+        .radar-display {
+            width: 200px;
+            height: 200px;
+            border: 2px solid var(--accent-color);
+            border-radius: 50%;
+            position: relative;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        
+        .radar-sweep {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(to top, var(--accent-color), transparent);
+            transform-origin: bottom;
+            animation: radarSweep 3s linear infinite;
+        }
+        
+        @keyframes radarSweep {
+            0% { transform: translate(-50%, 0) rotate(0deg); }
+            100% { transform: translate(-50%, 0) rotate(360deg); }
+        }
+        
+        .radar-grid {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 180px;
+            height: 180px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+        
+        .radar-grid::before,
+        .radar-grid::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .radar-grid::before {
+            width: 120px;
+            height: 120px;
+        }
+        
+        .radar-grid::after {
+            width: 60px;
+            height: 60px;
+        }
+        
+        .environment-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .environment-card:hover {
+            background: var(--accent-glow);
+            transform: translateX(5px);
+        }
+        
+        .threat-level {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .threat-low { background: var(--success-color); color: white; }
+        .threat-medium { background: var(--warning-color); color: #333; }
+        .threat-high { background: var(--error-color); color: white; }
+        
+        .scan-progress {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .scan-fill {
+            height: 100%;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+            animation: scanProgress 2s ease-in-out infinite;
+        }
+        
+        @keyframes scanProgress {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Authentication Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-card">
+            <div class="auth-logo">🔍</div>
+            <div class="auth-title">Scout Interface Access</div>
+            <input type="text" class="auth-input" id="username" placeholder="Username" value="viren">
+            <input type="password" class="auth-input" id="password" placeholder="Password" value="sacred_nexus_2025">
+            <button class="auth-button" onclick="authenticate()">Begin Scouting</button>
+            <div class="auth-error" id="authError"></div>
+        </div>
+    </div>
+
+    <div class="container three-column">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-text">🔍 Scout Interface</div>
+            </div>
+            <div class="header-controls">
+                <a href="master_control_panel.html" class="back-btn">← Back</a>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
+            </div>
+        </div>
+
+        <div class="left-sidebar">
+            <div class="sidebar-title">🌍 Environment Scan</div>
+            <button class="btn btn-primary" onclick="startEnvironmentScan()">Start Scan</button>
+            <button class="btn btn-secondary" onclick="deepScan()">Deep Scan</button>
+            <button class="btn btn-secondary" onclick="threatAssessment()">Threat Assessment</button>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">📊 Scan Progress</div>
+                <div class="scan-progress">
+                    <div class="scan-fill" id="scanProgress" style="width: 0%;"></div>
+                </div>
+                <div style="text-align: center; font-size: 0.9rem;" id="scanStatus">Ready to scan</div>
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">🎯 Scan Types</div>
+                <div class="environment-card" onclick="selectScanType('network')">
+                    <div style="font-weight: bold;">Network Scan</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">Monitor network topology</div>
+                </div>
+                <div class="environment-card" onclick="selectScanType('security')">
+                    <div style="font-weight: bold;">Security Scan</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">Detect threats and vulnerabilities</div>
+                </div>
+                <div class="environment-card" onclick="selectScanType('performance')">
+                    <div style="font-weight: bold;">Performance Scan</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">Analyze system performance</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="orb-container">
+            <div class="orb scout-orb">
+                <div class="orb-content">
+                    <div class="radar-display">
+                        <div class="radar-grid"></div>
+                        <div class="radar-sweep"></div>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="environments-scanned">47</div>
+                            <div class="stat-label">Environments</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="threats-detected">3</div>
+                            <div class="stat-label">Threats</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="scan-accuracy">98.2%</div>
+                            <div class="stat-label">Accuracy</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="response-time">1.2s</div>
+                            <div class="stat-label">Response</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-sidebar">
+            <div class="sidebar-title">📋 Scan Results</div>
+            <div id="scanResults">
+                <div class="environment-card">
+                    <div style="font-weight: bold; margin-bottom: 10px;">Ready for Scanning</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">
+                        Select scan type and begin environment monitoring
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">⚠️ Threat Analysis</div>
+                <div id="threatAnalysis">
+                    <div style="display: flex; align-items: center; gap: 10px; margin: 10px 0;">
+                        <div class="status-indicator status-online"></div>
+                        <span>Environment Secure</span>
+                        <span class="threat-level threat-low">LOW</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="grid-column: 2; display: flex; align-items: center; justify-content: center; padding: 0 50px;">
+            <input type="text" class="chat-input" id="scoutCommand" placeholder="Enter scout command or target...">
+        </div>
+    </div>
+
+    <script src="cognikube_base.js"></script>
+    <script>
+        class ScoutInterface extends CogniKubeBase {
+            constructor() {
+                super('Scout Interface', '🔍', '#228b22');
+                this.currentScanType = 'network';
+                this.isScanning = false;
+                this.scanResults = [];
+                this.threatLevel = 'low';
+                this.initializeScoutInterface();
+                this.startUptime();
+            }
+
+            initializeScoutInterface() {
+                document.getElementById('scoutCommand').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.processScoutCommand();
+                    }
+                });
+
+                // Connect to WebSocket
+                this.connectWebSocket('ws://localhost:8765/scout');
+            }
+
+            showWelcomeMessage(username) {
+                this.log('info', `Welcome to Scout Interface, ${username}! Environment monitoring systems online.`);
+            }
+
+            onWebSocketMessage(data) {
+                if (data.type === 'scan_result') {
+                    this.displayScanResults(data.data);
+                } else if (data.type === 'threat_detected') {
+                    this.handleThreatDetection(data.data);
+                }
+            }
+
+            processScoutCommand() {
+                const input = document.getElementById('scoutCommand');
+                const command = input.value.trim().toLowerCase();
+                if (!command) return;
+
+                if (command.includes('scan')) {
+                    this.startEnvironmentScan();
+                } else if (command.includes('deep')) {
+                    this.deepScan();
+                } else if (command.includes('threat')) {
+                    this.threatAssessment();
+                } else if (command.includes('target')) {
+                    const target = command.split('target')[1].trim();
+                    this.scanTarget(target);
+                } else {
+                    this.sendWebSocketMessage({
+                        action: 'scout_command',
+                        command: command,
+                        scan_type: this.currentScanType
+                    });
+                }
+
+                this.log('info', `Scout command executed: ${command}`);
+                input.value = '';
+            }
+
+            startEnvironmentScan() {
+                if (this.isScanning) return;
+
+                this.isScanning = true;
+                this.updateScanStatus('Scanning environment...', 0);
+                
+                this.sendWebSocketMessage({
+                    action: 'start_scan',
+                    scan_type: this.currentScanType,
+                    depth: 'standard'
+                });
+
+                this.log('info', `Environment scan started: ${this.currentScanType}`);
+                this.simulateScanProgress();
+            }
+
+            simulateScanProgress() {
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += Math.random() * 15;
+                    if (progress >= 100) {
+                        progress = 100;
+                        clearInterval(interval);
+                        this.completeScan();
+                    }
+                    this.updateScanStatus(`Scanning... ${Math.round(progress)}%`, progress);
+                }, 500);
+            }
+
+            completeScan() {
+                this.isScanning = false;
+                this.updateScanStatus('Scan complete', 100);
+                
+                // Generate mock scan results
+                const results = this.generateScanResults();
+                this.displayScanResults(results);
+                this.updateStats();
+                
+                this.log('info', 'Environment scan completed successfully');
+            }
+
+            generateScanResults() {
+                const networkResults = [
+                    { type: 'Network Node', name: 'GCP-US-Central1', status: 'online', threat: 'low' },
+                    { type: 'Network Node', name: 'AWS-US-East1', status: 'online', threat: 'low' },
+                    { type: 'Network Node', name: 'Modal-Cloud', status: 'online', threat: 'medium' },
+                    { type: 'Service', name: 'Consciousness Hub', status: 'active', threat: 'low' },
+                    { type: 'Service', name: 'Memory Cluster', status: 'active', threat: 'low' }
+                ];
+
+                const securityResults = [
+                    { type: 'Firewall', name: 'Primary Defense', status: 'active', threat: 'low' },
+                    { type: 'Intrusion Detection', name: 'IDS-Alpha', status: 'monitoring', threat: 'medium' },
+                    { type: 'Access Control', name: 'Auth Gateway', status: 'secure', threat: 'low' }
+                ];
+
+                const performanceResults = [
+                    { type: 'CPU Usage', name: 'Processing Cluster', status: '65%', threat: 'medium' },
+                    { type: 'Memory Usage', name: 'Memory Pool', status: '45%', threat: 'low' },
+                    { type: 'Network Latency', name: 'Inter-service', status: '12ms', threat: 'low' }
+                ];
+
+                switch(this.currentScanType) {
+                    case 'network': return networkResults;
+                    case 'security': return securityResults;
+                    case 'performance': return performanceResults;
+                    default: return networkResults;
+                }
+            }
+
+            displayScanResults(results) {
+                const container = document.getElementById('scanResults');
+                container.innerHTML = '';
+
+                results.forEach(result => {
+                    const resultDiv = document.createElement('div');
+                    resultDiv.className = 'environment-card';
+                    resultDiv.innerHTML = `
+                        <div style="font-weight: bold; margin-bottom: 5px;">
+                            ${result.type}: ${result.name}
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.9rem;">Status: ${result.status}</span>
+                            <span class="threat-level threat-${result.threat}">${result.threat.toUpperCase()}</span>
+                        </div>
+                    `;
+                    container.appendChild(resultDiv);
+                });
+
+                this.scanResults = results;
+                this.updateThreatAnalysis();
+            }
+
+            updateThreatAnalysis() {
+                const threats = this.scanResults.filter(r => r.threat !== 'low');
+                const highThreats = threats.filter(r => r.threat === 'high').length;
+                const mediumThreats = threats.filter(r => r.threat === 'medium').length;
+
+                let overallThreat = 'low';
+                let threatMessage = 'Environment Secure';
+
+                if (highThreats > 0) {
+                    overallThreat = 'high';
+                    threatMessage = `${highThreats} High Threat${highThreats > 1 ? 's' : ''} Detected`;
+                } else if (mediumThreats > 0) {
+                    overallThreat = 'medium';
+                    threatMessage = `${mediumThreats} Medium Threat${mediumThreats > 1 ? 's' : ''} Detected`;
+                }
+
+                const statusClass = overallThreat === 'low' ? 'status-online' : 
+                                   overallThreat === 'medium' ? 'status-loading' : 'status-offline';
+
+                document.getElementById('threatAnalysis').innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 10px; margin: 10px 0;">
+                        <div class="status-indicator ${statusClass}"></div>
+                        <span>${threatMessage}</span>
+                        <span class="threat-level threat-${overallThreat}">${overallThreat.toUpperCase()}</span>
+                    </div>
+                `;
+
+                this.threatLevel = overallThreat;
+            }
+
+            updateScanStatus(message, progress) {
+                document.getElementById('scanStatus').textContent = message;
+                document.getElementById('scanProgress').style.width = progress + '%';
+            }
+
+            deepScan() {
+                this.log('info', 'Initiating deep environment scan...');
+                this.currentScanType = 'security';
+                this.startEnvironmentScan();
+            }
+
+            threatAssessment() {
+                this.log('info', 'Performing comprehensive threat assessment...');
+                
+                this.sendWebSocketMessage({
+                    action: 'threat_assessment',
+                    scan_depth: 'comprehensive'
+                });
+
+                // Simulate threat assessment
+                setTimeout(() => {
+                    const threats = Math.floor(Math.random() * 5);
+                    document.getElementById('threats-detected').textContent = threats;
+                    this.log('info', `Threat assessment complete: ${threats} threats detected`);
+                }, 3000);
+            }
+
+            scanTarget(target) {
+                this.log('info', `Scanning specific target: ${target}`);
+                
+                this.sendWebSocketMessage({
+                    action: 'scan_target',
+                    target: target,
+                    scan_type: this.currentScanType
+                });
+            }
+
+            selectScanType(type) {
+                this.currentScanType = type;
+                this.log('info', `Scan type selected: ${type}`);
+                
+                // Update UI to show selected type
+                document.querySelectorAll('.environment-card').forEach(card => {
+                    card.style.background = 'var(--glass-bg)';
+                });
+                event.target.closest('.environment-card').style.background = 'var(--accent-glow)';
+            }
+
+            handleThreatDetection(threatData) {
+                this.log('warning', `Threat detected: ${threatData.type} - ${threatData.severity}`);
+                
+                // Update threat counter
+                const current = parseInt(document.getElementById('threats-detected').textContent);
+                document.getElementById('threats-detected').textContent = current + 1;
+                
+                // Update threat analysis
+                this.updateThreatAnalysis();
+            }
+
+            updateStats() {
+                const scanned = parseInt(document.getElementById('environments-scanned').textContent) + 1;
+                document.getElementById('environments-scanned').textContent = scanned;
+                
+                // Simulate accuracy and response time updates
+                const accuracy = (97 + Math.random() * 2).toFixed(1);
+                document.getElementById('scan-accuracy').textContent = accuracy + '%';
+                
+                const responseTime = (1 + Math.random() * 0.5).toFixed(1);
+                document.getElementById('response-time').textContent = responseTime + 's';
+            }
+        }
+
+        // Global functions for buttons
+        function startEnvironmentScan() {
+            if (window.scoutInterface) {
+                window.scoutInterface.startEnvironmentScan();
+            }
+        }
+
+        function deepScan() {
+            if (window.scoutInterface) {
+                window.scoutInterface.deepScan();
+            }
+        }
+
+        function threatAssessment() {
+            if (window.scoutInterface) {
+                window.scoutInterface.threatAssessment();
+            }
+        }
+
+        function selectScanType(type) {
+            if (window.scoutInterface) {
+                window.scoutInterface.selectScanType(type);
+            }
+        }
+
+        // Override authentication success
+        const originalAuthenticate = CogniKubeBase.prototype.authenticate;
+        CogniKubeBase.prototype.authenticate = function(username, password) {
+            const result = originalAuthenticate.call(this, username, password);
+            if (result && !window.scoutInterface) {
+                window.scoutInterface = new ScoutInterface();
+                window.cogniKubeInstance = window.scoutInterface;
+            }
+            return result;
+        };
+    </script>
+</body>
+</html>

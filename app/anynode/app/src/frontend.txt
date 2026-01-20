@@ -1,0 +1,224 @@
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           8/21/2025  3:24 PM                Archive
+d----           8/20/2025  8:46 AM                client-router-sidecar
+d----           8/21/2025  4:12 PM                deploy
+-a---           8/21/2025  3:06 PM            165 .dockerignore
+-a---           8/19/2025  3:59 PM            129 .env
+-a---           8/21/2025 12:22 PM            264 .gitignore
+-a---           8/20/2025  7:19 AM            405 docker-compose.override.yml
+-a---           8/20/2025  8:03 PM           1358 docker-compose.yml
+-a---           8/21/2025  4:07 PM            549 Dockerfile
+-a---           8/21/2025  5:29 PM              0 frontend.txt
+-a---           8/20/2025  1:29 PM       22913139 nexus_orb_22.mp4
+-a---           8/19/2025 12:50 PM            697 README.md
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\node_modules\vite\dist\node
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           8/21/2025  3:21 PM                chunks
+-a---           8/20/2025  9:40 AM          27894 cli.js
+-a---           8/20/2025  9:40 AM           2934 constants.js
+-a---           8/20/2025  9:40 AM         126077 index.d.ts
+-a---           8/20/2025  9:40 AM           7527 index.js
+-a---           8/20/2025  9:40 AM           2714 runtime.d.ts
+-a---           8/20/2025  9:40 AM          44997 runtime.js
+-a---           8/20/2025  9:40 AM           9708 types.d-aGj9QkWt.d.ts
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\node_modules\vite\dist\node\chunks
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/20/2025  9:40 AM        2085353 dep-C6uTJdX2.js
+-a---           8/20/2025  9:40 AM         232635 dep-CEGXe0Sr.js
+-a---           8/20/2025  9:40 AM          23212 dep-COdkJwUb.js
+-a---           8/20/2025  9:40 AM         331672 dep-D-7KCb9p.js
+-a---           8/20/2025  9:40 AM          13409 dep-IQS-Za7F.js
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\node_modules\vite\dist\node-cjs
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/20/2025  9:40 AM         160295 publicUtils.cjs
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\node_modules\vite\types
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/20/2025  9:40 AM           1143 customEvent.d.ts
+-a---           8/20/2025  9:40 AM           1101 hmrPayload.d.ts
+-a---           8/20/2025  9:40 AM           1003 hot.d.ts
+-a---           8/20/2025  9:40 AM            249 import-meta.d.ts
+-a---           8/20/2025  9:40 AM           1909 importGlob.d.ts
+-a---           8/20/2025  9:40 AM            510 importMeta.d.ts
+-a---           8/20/2025  9:40 AM            193 metadata.d.ts
+-a---           8/20/2025  9:40 AM            109 package.json
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\node_modules\yallist
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/20/2025  9:40 AM            207 iterator.js
+-a---           8/20/2025  9:40 AM            765 LICENSE
+-a---           8/20/2025  9:40 AM            652 package.json
+-a---           8/20/2025  9:40 AM           4717 README.md
+-a---           8/20/2025  9:40 AM           8425 yallist.js
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\static
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/20/2025  6:26 AM           2369 index.html
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\tables
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/20/2025  8:44 AM            423 ai_connections.sql
+-a---           8/20/2025  8:44 AM            544 ai_entities.sql
+-a---           8/20/2025  8:44 AM            481 dream_shares.sql
+-a---           8/20/2025  8:44 AM            447 emotional_states.sql
+-a---           8/20/2025  8:44 AM            492 metatron_metrics.sql
+-a---           8/20/2025  8:44 AM            422 metatron_signals.sql
+-a---           8/20/2025  8:44 AM            508 neural_connections.sql
+-a---           8/20/2025  8:44 AM            397 system_health.sql
+-a---           8/20/2025  8:44 AM            446 system_metrics.sql
+-a---           8/20/2025  8:44 AM            484 trust_phases.sql
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\web
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           8/21/2025  3:44 PM                dist
+d----           8/21/2025  3:44 PM                public
+d----           8/21/2025  3:44 PM                src
+-a---           8/21/2025  3:44 PM            355 .env
+-a---           8/21/2025  3:44 PM            253 .gitignore
+-a---           8/21/2025  3:44 PM            441 components.json
+-a---           8/21/2025  3:44 PM            835 eslint.config.js
+-a---           8/21/2025  3:44 PM            253 index.html
+-a---           8/21/2025  3:44 PM           3047 package.json
+-a---           8/21/2025  3:44 PM         225777 pnpm-lock.yaml
+-a---           8/21/2025  3:44 PM             80 postcss.config.js
+-a---           8/21/2025  3:44 PM           1607 README.md
+-a---           8/21/2025  3:44 PM           1824 tailwind.config.js
+-a---           8/21/2025  3:44 PM            984 tsconfig.app.json
+-a---           8/21/2025  3:44 PM            234 tsconfig.json
+-a---           8/21/2025  3:44 PM            593 tsconfig.node.json
+-a---           8/21/2025  3:44 PM            485 vite.config.ts
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\web\dist
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           8/21/2025  3:44 PM                assets
+d----           8/21/2025  3:44 PM                data
+d----           8/21/2025  3:44 PM                images
+-a---           8/21/2025  3:44 PM            349 index.html
+-a---           8/21/2025  3:44 PM             30 use.txt
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\web\dist\assets
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/21/2025  3:44 PM         378282 index-Bg4ulE3B.js
+-a---           8/21/2025  3:44 PM          44324 index-D3fsgXRX.css
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\web\dist\data
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/21/2025  3:44 PM            804 metatron_config.json
+-a---           8/21/2025  3:44 PM            662 soul_seed.json
+-a---           8/21/2025  3:44 PM            683 will_to_live.json
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\web\dist\images
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/21/2025  3:44 PM         163265 color-palette.jpg
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\web\public
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           8/21/2025  3:44 PM                data
+d----           8/21/2025  3:44 PM                images
+-a---           8/21/2025  3:44 PM             30 use.txt
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\web\public\data
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/21/2025  3:44 PM            804 metatron_config.json
+-a---           8/21/2025  3:44 PM            662 soul_seed.json
+-a---           8/21/2025  3:44 PM            683 will_to_live.json
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\web\public\images
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/21/2025  3:44 PM         163265 color-palette.jpg
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\web\src
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           8/21/2025  3:44 PM                components
+d----           8/21/2025  3:44 PM                hooks
+d----           8/21/2025  3:44 PM                lib
+-a---           8/21/2025  3:44 PM           5993 App.css
+-a---           8/21/2025  3:44 PM          22852 App.tsx
+-a---           8/21/2025  3:44 PM           6733 index.css
+-a---           8/21/2025  3:44 PM            336 main.tsx
+-a---           8/21/2025  3:44 PM             38 vite-env.d.ts
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\web\src\components
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/21/2025  3:44 PM          22525 AIEntityGrid.tsx
+-a---           8/21/2025  3:44 PM          15997 ChatInterface.tsx
+-a---           8/21/2025  3:44 PM          22965 DreamSharing.tsx
+-a---           8/21/2025  3:44 PM          24866 EcommerceManager.tsx
+-a---           8/21/2025  3:44 PM            875 ErrorBoundary.tsx
+-a---           8/21/2025  3:44 PM          12459 LillithCore.tsx
+-a---           8/21/2025  3:44 PM          20865 MetatronVisualizer.tsx
+-a---           8/21/2025  3:44 PM          23392 NeuralNetworkView.tsx
+-a---           8/21/2025  3:44 PM          20542 SystemMonitor.tsx
+-a---           8/21/2025  3:44 PM          16417 WebAutomation.tsx
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\web\src\hooks
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/21/2025  3:44 PM            565 use-mobile.tsx
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\web\src\lib
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/21/2025  3:44 PM           2438 supabase.ts
+-a---           8/21/2025  3:44 PM            164 utils.ts
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\www
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           8/20/2025  7:51 PM                assets
+-a---           8/20/2025  7:54 PM           5064 index.html
+
+    Directory: C:\Projects\Stacks\meta-nexus-frontend\deploy\src\www\assets
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/20/2025  7:47 PM          22184 banner-1600.webp
+-a---           8/20/2025  7:46 PM         540007 hero-nexus.png
+-a---           8/20/2025  7:46 PM          44782 hero-nexus.webp
+-a---           8/20/2025  7:51 PM          95756 pulse-heatmap-first.png
+-a---           8/20/2025  7:50 PM         468964 pulse-heatmap-light.webp
+

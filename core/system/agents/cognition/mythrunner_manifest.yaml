@@ -1,0 +1,20 @@
+id: mythrunner
+role: subconscious_engine
+llms:
+  - name: mythrunner_ego
+    model: 3B
+  - name: mythrunner_dreamer
+    model: 3B
+connections:
+  ports:
+    - 443
+    - 1313
+    - 26
+    - 8080
+    - 13  # Additional dedicated pulse sync port
+routes:
+  - to: planner
+  - to: memory
+  - to: viren
+description: >
+  The Mythrunner subconscious module, composed of two 3B LLMs: one chaotic dream generator and the other ego-driven internal voice. Dreams feed abstract patterns; ego feeds inner narrative. Silence yields divine insight.

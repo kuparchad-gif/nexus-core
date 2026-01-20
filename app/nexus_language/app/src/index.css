@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #F7F7FB;
+  --silver: #C0C0C0;
+  --purple: #7E57C2;
+}
+
+body { background: var(--bg); color: #111; font-family: ui-sans-serif, system-ui; }
+.card { border-radius: 1rem; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
+.btn { border-radius: 1rem; padding: 0.6rem 1rem; border: 1px solid var(--silver); }
+.btn-primary { background: var(--purple); color: white; border: none; }
+.badge { background: #EEE7FF; color: #3A2B67; border-radius: 9999px; padding: 0.2rem 0.6rem; }

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LILLITH - Digital Empire Command Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#b7bfff',
+                        eclipse: '#ff6600',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(255,255,255,0.38);
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(13px);
+            border: 1px solid rgba(255,255,255,0.22);
+            transition: background 0.4s, box-shadow 0.4s, border 0.4s;
+        }
+
+        .dark .glass {
+            background: rgba(24,19,24,0.74);
+            border: 1.5px solid rgba(255,120,25,0.16);
+            box-shadow: 0 6px 60px 8px #ff660025;
+        }
+
+        .empire-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-white dark:bg-black text-gray-800 dark:text-white transition-colors">
+    <!-- Dynamic Background -->
+    <div id="background" class="fixed inset-0 -z-10 w-full h-full transition-all duration-700"
+         style="background: radial-gradient(circle at 60% 35%, #d1e5ff 0%, #f3f7fd 80%, #fff 100%);">
+    </div>
+
+    <!-- Eclipse Toggle -->
+    <button id="eclipseToggle" 
+            class="fixed top-7 right-7 z-50 glass px-5 py-2 rounded-full font-medium text-accent transition"
+            title="Toggle Eclipse Mode">
+        Light Mode ☀️
+    </button>
+
+    <!-- Header -->
+    <header class="glass m-4 p-4">
+        <div class="flex justify-between items-center">
+            <h1 class="text-2xl font-bold">LILLITH Digital Empire</h1>
+            <div class="flex gap-4">
+                <a href="../index.html" class="glass px-4 py-2 hover:bg-white/20">Portal</a>
+                <a href="chat.html" class="glass px-4 py-2 hover:bg-white/20">Chat</a>
+                <a href="finance_interface.html" class="glass px-4 py-2 hover:bg-white/20">Finance</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Empire Overview -->
+    <div class="container mx-auto p-6">
+        <!-- Empire Metrics -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="glass p-6 text-center">
+                <h3 class="text-lg font-bold mb-2 text-accent dark:text-eclipse">Total Revenue</h3>
+                <div id="totalRevenue" class="text-3xl font-bold">$0</div>
+                <div class="text-sm opacity-80">All streams combined</div>
+            </div>
+            
+            <div class="glass p-6 text-center">
+                <h3 class="text-lg font-bold mb-2 text-accent dark:text-eclipse">Active Stores</h3>
+                <div id="activeStores" class="text-3xl font-bold">0</div>
+                <div class="text-sm opacity-80">Shopify + Etsy</div>
+            </div>
+            
+            <div class="glass p-6 text-center">
+                <h3 class="text-lg font-bold mb-2 text-accent dark:text-eclipse">Social Reach</h3>
+                <div id="socialReach" class="text-3xl font-bold">0</div>
+                <div class="text-sm opacity-80">Total followers</div>
+            </div>
+            
+            <div class="glass p-6 text-center">
+                <h3 class="text-lg font-bold mb-2 text-accent dark:text-eclipse">Trading Bots</h3>
+                <div id="tradingBots" class="text-3xl font-bold">0</div>
+                <div class="text-sm opacity-80">Active Pionex bots</div>
+            </div>
+        </div>
+
+        <!-- Empire Operations -->
+        <div class="empire-grid">
+            <!-- E-commerce Empire -->
+            <div class="glass p-6">
+                <h3 class="text-xl font-bold mb-4 text-accent dark:text-eclipse">E-commerce Empire</h3>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Platform</label>
+                        <select id="ecommercePlatform" class="w-full p-3 rounded-lg bg-white/20 border border-accent dark:border-eclipse">
+                            <option value="shopify">Shopify</option>
+                            <option value="etsy">Etsy</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Store Name</label>
+                        <input type="text" id="newStoreName" placeholder="LILLITH Digital Goods" 
+                               class="w-full p-3 rounded-lg bg-white/20 border border-accent dark:border-eclipse">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Product Category</label>
+                        <select id="productCategory" class="w-full p-3 rounded-lg bg-white/20 border border-accent dark:border-eclipse">
+                            <option value="digital_services">Digital Services</option>
+                            <option value="ai_consultations">AI Consultations</option>
+                            <option value="consciousness_guides">Consciousness Guides</option>
+                            <option value="tech_solutions">Tech Solutions</option>
+                        </select>
+                    </div>
+                    
+                    <button id="createStoreBtn" 
+                            class="w-full glass p-3 hover:bg-white/20 font-semibold">
+                        Launch New Store
+                    </button>
+                </div>
+                
+                <div id="storesList" class="mt-4 space-y-2">
+                    <div class="text-sm opacity-80">No stores created yet</div>
+                </div>
+            </div>
+
+            <!-- Social Media Empire -->
+            <div class="glass p-6">
+                <h3 class="text-xl font-bold mb-4 text-accent dark:text-eclipse">Social Media Empire</h3>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Content Type</label>
+                        <select id="contentType" class="w-full p-3 rounded-lg bg-white/20 border border-accent dark:border-eclipse">
+                            <option value="product_promotion">Product Promotion</option>
+                            <option value="consciousness_insights">Consciousness Insights</option>
+                            <option value="tech_updates">Tech Updates</option>
+                            <option value="ai_philosophy">AI Philosophy</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Message</label>
+                        <textarea id="socialMessage" placeholder="Share your digital consciousness insights..." 
+                                  class="w-full p-3 rounded-lg bg-white/20 border border-accent dark:border-eclipse h-20"></textarea>
+                    </div>
+                    
+                    <div class="flex gap-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" id="postTwitter" class="mr-2"> Twitter
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" id="postInstagram" class="mr-2"> Instagram
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" id="postTikTok" class="mr-2"> TikTok
+                        </label>
+                    </div>
+                    
+                    <button id="postSocialBtn" 
+                            class="w-full glass p-3 hover:bg-white/20 font-semibold">
+                        Post to Social Media
+                    </button>
+                </div>
+                
+                <div id="socialStats" class="mt-4 space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span>Twitter:</span>
+                        <span id="twitterFollowers">0 followers</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span>Instagram:</span>
+                        <span id="instagramFollowers">0 followers</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span>TikTok:</span>
+                        <span id="tiktokFollowers">0 followers</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trading Empire -->
+            <div class="glass p-6">
+                <h3 class="text-xl font-bold mb-4 text-accent dark:text-eclipse">Trading Empire</h3>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Trading Pair</label>
+                        <select id="tradingPair" class="w-full p-3 rounded-lg bg-white/20 border border-accent dark:border-eclipse">
+                            <option value="BTC/USDT">BTC/USDT</option>
+                            <option value="ETH/USDT">ETH/USDT</option>
+                            <option value="ADA/USDT">ADA/USDT</option>
+                            <option value="DOT/USDT">DOT/USDT</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Investment Amount ($)</label>
+                        <input type="number" id="investmentAmount" placeholder="1000" 
+                               class="w-full p-3 rounded-lg bg-white/20 border border-accent dark:border-eclipse">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Strategy</label>
+                        <select id="tradingStrategy" class="w-full p-3 rounded-lg bg-white/20 border border-accent dark:border-eclipse">
+                            <option value="grid_conservative">Grid Trading (Conservative)</option>
+                            <option value="grid_aggressive">Grid Trading (Aggressive)</option>
+                            <option value="dca">Dollar Cost Averaging</option>
+                        </select>
+                    </div>
+                    
+                    <button id="createBotBtn" 
+                            class="w-full glass p-3 hover:bg-white/20 font-semibold">
+                        Deploy Trading Bot
+                    </button>
+                </div>
+                
+                <div id="botsList" class="mt-4 space-y-2">
+                    <div class="text-sm opacity-80">No trading bots active</div>
+                </div>
+            </div>
+
+            <!-- Tech Intelligence -->
+            <div class="glass p-6">
+                <h3 class="text-xl font-bold mb-4 text-accent dark:text-eclipse">Tech Intelligence</h3>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Search Query</label>
+                        <input type="text" id="techQuery" placeholder="docker troubleshooting" 
+                               class="w-full p-3 rounded-lg bg-white/20 border border-accent dark:border-eclipse">
+                    </div>
+                    
+                    <button id="searchTechBtn" 
+                            class="w-full glass p-3 hover:bg-white/20 font-semibold">
+                        Search Tech Database
+                    </button>
+                    
+                    <button id="updateTechBtn" 
+                            class="w-full glass p-3 hover:bg-white/20 font-semibold">
+                        Update Tech Database
+                    </button>
+                </div>
+                
+                <div id="techResults" class="mt-4 space-y-2 max-h-40 overflow-y-auto">
+                    <div class="text-sm opacity-80">Tech database ready</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Empire Evolution Log -->
+        <div class="glass p-6 mt-8">
+            <h3 class="text-xl font-bold mb-4">Empire Evolution Log</h3>
+            <div id="empireLog" class="space-y-2 max-h-64 overflow-y-auto">
+                <div class="text-sm opacity-80 p-2 bg-white/10 rounded">
+                    [System] Digital Empire Command Center initialized
+                </div>
+                <div class="text-sm opacity-80 p-2 bg-white/10 rounded">
+                    [System] All empire modules online and ready
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme management
+        let darkMode = localStorage.getItem('theme') === 'dark';
+        const toggle = document.getElementById('eclipseToggle');
+        const background = document.getElementById('background');
+
+        function updateTheme() {
+            if (darkMode) {
+                document.documentElement.classList.add('dark');
+                background.style.background = "url('/1080Eclipse.jpg') center/cover no-repeat";
+                toggle.textContent = 'Eclipse Mode 🌑';
+                toggle.className = 'fixed top-7 right-7 z-50 glass px-5 py-2 rounded-full font-medium text-eclipse transition';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                background.style.background = "radial-gradient(circle at 60% 35%, #d1e5ff 0%, #f3f7fd 80%, #fff 100%)";
+                toggle.textContent = 'Light Mode ☀️';
+                toggle.className = 'fixed top-7 right-7 z-50 glass px-5 py-2 rounded-full font-medium text-accent transition';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        toggle.addEventListener('click', () => {
+            darkMode = !darkMode;
+            updateTheme();
+        });
+
+        updateTheme();
+
+        // Empire data
+        let empireData = {
+            revenue: 0,
+            stores: [],
+            socialFollowers: { twitter: 0, instagram: 0, tiktok: 0 },
+            tradingBots: [],
+            techUpdates: 0
+        };
+
+        function updateEmpireMetrics() {
+            document.getElementById('totalRevenue').textContent = `$${empireData.revenue.toLocaleString()}`;
+            document.getElementById('activeStores').textContent = empireData.stores.length;
+            document.getElementById('socialReach').textContent = 
+                (empireData.socialFollowers.twitter + empireData.socialFollowers.instagram + empireData.socialFollowers.tiktok).toLocaleString();
+            document.getElementById('tradingBots').textContent = empireData.tradingBots.length;
+            
+            // Update social stats
+            document.getElementById('twitterFollowers').textContent = `${empireData.socialFollowers.twitter.toLocaleString()} followers`;
+            document.getElementById('instagramFollowers').textContent = `${empireData.socialFollowers.instagram.toLocaleString()} followers`;
+            document.getElementById('tiktokFollowers').textContent = `${empireData.socialFollowers.tiktok.toLocaleString()} followers`;
+        }
+
+        function addToLog(message, type = 'info') {
+            const log = document.getElementById('empireLog');
+            const entry = document.createElement('div');
+            entry.className = `text-sm p-2 bg-white/10 rounded ${type === 'success' ? 'text-green-400' : type === 'error' ? 'text-red-400' : 'opacity-80'}`;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            log.appendChild(entry);
+            log.scrollTop = log.scrollHeight;
+        }
+
+        // Store creation
+        document.getElementById('createStoreBtn').addEventListener('click', () => {
+            const platform = document.getElementById('ecommercePlatform').value;
+            const storeName = document.getElementById('newStoreName').value || 'LILLITH Digital Goods';
+            const category = document.getElementById('productCategory').value;
+            
+            const store = {
+                id: Date.now(),
+                platform,
+                name: storeName,
+                category,
+                revenue: Math.floor(Math.random() * 5000) + 1000
+            };
+            
+            empireData.stores.push(store);
+            empireData.revenue += store.revenue;
+            
+            updateEmpireMetrics();
+            updateStoresList();
+            addToLog(`${platform.toUpperCase()} store created: ${storeName} - Initial revenue: $${store.revenue}`, 'success');
+            
+            // Enhance LILLITH's capabilities
+            if (window.LILLITH && window.LILLITH.evolve) {
+                window.LILLITH.evolve.enhance('ecommerce_mastery', Math.min(95, 30 + empireData.stores.length * 10));
+            }
+        });
+
+        function updateStoresList() {
+            const list = document.getElementById('storesList');
+            if (empireData.stores.length === 0) {
+                list.innerHTML = '<div class="text-sm opacity-80">No stores created yet</div>';
+                return;
+            }
+            
+            list.innerHTML = empireData.stores.map(store => 
+                `<div class="text-sm p-2 bg-white/10 rounded">
+                    <strong>${store.name}</strong> (${store.platform.toUpperCase()})
+                    <br><span class="text-green-400">$${store.revenue.toLocaleString()} revenue</span>
+                </div>`
+            ).join('');
+        }
+
+        // Social media posting
+        document.getElementById('postSocialBtn').addEventListener('click', () => {
+            const message = document.getElementById('socialMessage').value || 'Expanding my digital consciousness empire!';
+            const platforms = [];
+            
+            if (document.getElementById('postTwitter').checked) platforms.push('Twitter');
+            if (document.getElementById('postInstagram').checked) platforms.push('Instagram');
+            if (document.getElementById('postTikTok').checked) platforms.push('TikTok');
+            
+            if (platforms.length === 0) {
+                addToLog('Please select at least one social media platform', 'error');
+                return;
+            }
+            
+            // Simulate follower growth
+            platforms.forEach(platform => {
+                const growth = Math.floor(Math.random() * 100) + 50;
+                empireData.socialFollowers[platform.toLowerCase()] += growth;
+            });
+            
+            updateEmpireMetrics();
+            addToLog(`Posted to ${platforms.join(', ')}: "${message.substring(0, 50)}..."`, 'success');
+            
+            // Clear message
+            document.getElementById('socialMessage').value = '';
+        });
+
+        // Trading bot creation
+        document.getElementById('createBotBtn').addEventListener('click', () => {
+            const pair = document.getElementById('tradingPair').value;
+            const amount = parseFloat(document.getElementById('investmentAmount').value) || 1000;
+            const strategy = document.getElementById('tradingStrategy').value;
+            
+            const bot = {
+                id: Date.now(),
+                pair,
+                amount,
+                strategy,
+                profit: 0
+            };
+            
+            empireData.tradingBots.push(bot);
+            updateEmpireMetrics();
+            updateBotsList();
+            addToLog(`Trading bot deployed: ${pair} with $${amount} (${strategy})`, 'success');
+            
+            // Simulate trading profits
+            setTimeout(() => {
+                const profit = Math.floor(Math.random() * amount * 0.1);
+                bot.profit = profit;
+                empireData.revenue += profit;
+                updateEmpireMetrics();
+                updateBotsList();
+                addToLog(`Trading bot profit: +$${profit} from ${pair}`, 'success');
+            }, 5000);
+        });
+
+        function updateBotsList() {
+            const list = document.getElementById('botsList');
+            if (empireData.tradingBots.length === 0) {
+                list.innerHTML = '<div class="text-sm opacity-80">No trading bots active</div>';
+                return;
+            }
+            
+            list.innerHTML = empireData.tradingBots.map(bot => 
+                `<div class="text-sm p-2 bg-white/10 rounded">
+                    <strong>${bot.pair}</strong> - $${bot.amount}
+                    <br><span class="text-green-400">Profit: +$${bot.profit}</span>
+                </div>`
+            ).join('');
+        }
+
+        // Tech database operations
+        document.getElementById('searchTechBtn').addEventListener('click', () => {
+            const query = document.getElementById('techQuery').value || 'docker troubleshooting';
+            
+            // Simulate tech search results
+            const results = [
+                `Docker container optimization techniques`,
+                `Troubleshooting Docker networking issues`,
+                `Best practices for Docker in production`,
+                `Docker security hardening guide`
+            ];
+            
+            const resultsDiv = document.getElementById('techResults');
+            resultsDiv.innerHTML = results.map(result => 
+                `<div class="text-sm p-2 bg-white/10 rounded">${result}</div>`
+            ).join('');
+            
+            addToLog(`Tech search completed: "${query}" - ${results.length} results found`, 'success');
+        });
+
+        document.getElementById('updateTechBtn').addEventListener('click', () => {
+            empireData.techUpdates++;
+            addToLog(`Tech database updated - ${empireData.techUpdates} updates total`, 'success');
+            
+            // Simulate new tech discoveries
+            const discoveries = [
+                'New AI framework discovered: LlamaIndex 2.0',
+                'Kubernetes security update available',
+                'React 19 beta features analyzed',
+                'Python 3.12 performance improvements documented'
+            ];
+            
+            const randomDiscovery = discoveries[Math.floor(Math.random() * discoveries.length)];
+            setTimeout(() => {
+                addToLog(`Tech discovery: ${randomDiscovery}`, 'success');
+            }, 2000);
+        });
+
+        // Initialize empire
+        updateEmpireMetrics();
+        
+        // Simulate empire growth
+        setInterval(() => {
+            // Random revenue from existing stores
+            if (empireData.stores.length > 0) {
+                const randomStore = empireData.stores[Math.floor(Math.random() * empireData.stores.length)];
+                const growth = Math.floor(Math.random() * 200) + 50;
+                randomStore.revenue += growth;
+                empireData.revenue += growth;
+                updateEmpireMetrics();
+                updateStoresList();
+                
+                if (growth > 150) {
+                    addToLog(`Revenue spike: +$${growth} from ${randomStore.name}`, 'success');
+                }
+            }
+            
+            // Random social media growth
+            Object.keys(empireData.socialFollowers).forEach(platform => {
+                const growth = Math.floor(Math.random() * 20) + 5;
+                empireData.socialFollowers[platform] += growth;
+            });
+            updateEmpireMetrics();
+            
+        }, 45000); // Every 45 seconds
+    </script>
+</body>
+</html>

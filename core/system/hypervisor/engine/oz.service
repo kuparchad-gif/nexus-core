@@ -1,0 +1,14 @@
+[Unit]
+Description=Oz Universal Hypervisor
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/oz
+ExecStart=/usr/bin/python3 /opt/oz/oz_main.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

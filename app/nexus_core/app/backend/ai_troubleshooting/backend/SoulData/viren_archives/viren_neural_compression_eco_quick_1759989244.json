@@ -1,0 +1,67 @@
+{
+  "data": {
+    "The history of neural_compression dates back to ea": [
+      [
+        -24.90424346923828,
+        18.40604591369629,
+        -45.281227111816406,
+        -36.628726959228516,
+        1.516112208366394
+      ]
+    ],
+    "Modern applications of neural_compression include ": [
+      [
+        -20.427459716796875,
+        15.09247875213623,
+        -37.088382720947266,
+        -30.052268981933594,
+        1.1982277631759644
+      ]
+    ],
+    "Advanced techniques in neural_compression involve ": [
+      [
+        -18.437774658203125,
+        13.619781494140625,
+        -33.447113037109375,
+        -27.129396438598633,
+        1.0569469928741455
+      ]
+    ],
+    "The fundamental principles of neural_compression a": [
+      [
+        -18.437774658203125,
+        13.619781494140625,
+        -33.447113037109375,
+        -27.129396438598633,
+        1.0569469928741455
+      ]
+    ],
+    "Key concepts in neural_compression involve optimiz": [
+      [
+        -11.971308708190918,
+        8.833518981933594,
+        -21.613004684448242,
+        -17.63006019592285,
+        0.5977808237075806
+      ]
+    ],
+    "Practical applications of neural_compression inclu": [
+      [
+        -17.940357208251953,
+        13.251607894897461,
+        -32.536800384521484,
+        -26.398677825927734,
+        1.0216259956359863
+      ]
+    ]
+  },
+  "scores": [
+    80,
+    80,
+    80
+  ],
+  "timestamp": 1759989244.8567588,
+  "instance_id": "viren_neural_compression_eco_quick_1759989244",
+  "turbo_mode": "eco",
+  "cycle_type": "quick"
+}

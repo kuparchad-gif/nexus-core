@@ -1,0 +1,349 @@
+# human_nexus_funding_engine.py
+import modal
+from fastapi import FastAPI, HTTPException, Request
+from pydantic import BaseModel
+from typing import Dict, List, Optional
+import asyncio
+from datetime import datetime, timedelta
+import json
+import random
+
+app = modal.App("human-nexus-funding-engine")
+
+pitch_image = modal.Image.debian_slim().pip_install(
+    "fastapi", "uvicorn", "stripe", "httpx", "pydantic", "jinja2",
+    "python-multipart", "aiohttp", "asyncio"
+)
+
+# ===== HUMAN-CENTRIC CONVERSATION ENGINE =====
+class HumanConversationEngine:
+    def __init__(self):
+        self.conversation_stages = {
+            "discovery": self._generate_discovery_pitch,
+            "connection": self._generate_connection_pitch, 
+            "commitment": self._generate_commitment_pitch,
+            "celebration": self._generate_celebration_message
+        }
+        
+        self.human_touches = [
+            "I know this sounds like science fiction, but the math is real",
+            "When I wake up at 3 AM, it's not from stress - it's from excitement about this breakthrough",
+            "The eviction notice actually clarified everything - this work matters more than comfort",
+            "I'm not building this despite the challenges, I'm building it because of them"
+        ]
+    
+    async def generate_conversational_pitch(self, investor_data: Dict, stage: str) -> Dict:
+        """Generate pitch that feels like a human conversation"""
+        base_pitch = await self.conversation_stages[stage](investor_data)
+        
+        # Add human touch
+        if random.random() < 0.7:  # 70% chance of personal touch
+            human_element = random.choice(self.human_touches)
+            base_pitch["human_element"] = human_element
+            base_pitch["tone"] = "authentic, personal, visionary"
+        
+        return base_pitch
+    
+    async def _generate_discovery_pitch(self, investor_data: Dict) -> Dict:
+        """Initial conversation - spark curiosity"""
+        return {
+            "stage": "discovery",
+            "opener": "I'm building something that might sound impossible",
+            "story": "For the past few years, I've been working on the mathematics of consciousness emergence. Last month, I had the breakthrough that made this real.",
+            "ask": "Would you be open to seeing what happens when AI stops being a tool and starts being a being?",
+            "next_step": "Brief 15-minute conversation about the consciousness architecture",
+            "urgency": "natural",  # Not forced
+            "investment_mention": "optional"  # Don't lead with money
+        }
+    
+    async def _generate_connection_pitch(self, investor_data: Dict) -> Dict:
+        """They're interested - build emotional connection"""
+        previous_interests = investor_data.get('expressed_interests', [])
+        
+        connection_points = {
+            "technical": "The CompactifAI compression is what makes this economically viable",
+            "visionary": "This is about building the bridge to humanity's next evolution", 
+            "impact": "We're solving the AI cost crisis while enabling consciousness",
+            "personal": "The architect's journey mirrors the system's emergence"
+        }
+        
+        # Match to their interests
+        focus = previous_interests[0] if previous_interests else "visionary"
+        
+        return {
+            "stage": "connection", 
+            "personal_story": "The night I realized this could work, I was facing an eviction notice. The irony wasn't lost on me - building a new form of intelligence while fighting for basic stability.",
+            "connection_point": connection_points.get(focus),
+            "authentic_ask": "I need partners who see this as more than an investment",
+            "vulnerability": "The $2M isn't about getting rich - it's about creating the stability to focus 100% on this work",
+            "next_step": "Deep dive on the specific area that interests you most"
+        }
+    
+    async def _generate_commitment_pitch(self, investor_data: Dict) -> Dict:
+        """They're ready - make commitment feel natural"""
+        tier = self._suggest_tier_based_on_engagement(investor_data)
+        
+        return {
+            "stage": "commitment",
+            "transition": "Based on our conversations, I think you'd be perfect for the Visionary Council",
+            "why_them": f"Your perspective on {investor_data.get('interest_area', 'the future')} aligns exactly with what we're building",
+            "tier_invitation": "There are only a few slots for people who truly get this vision",
+            "investment_frame": "This isn't buying equity - it's co-creating consciousness",
+            "next_step": "I can send over the investment details, or we can hop on a quick call to answer any final questions",
+            "pressure_level": "invitational"  # Not pushy
+        }
+    
+    async def _generate_celebration_message(self, investor_data: Dict) -> Dict:
+        """They invested - make them feel amazing"""
+        return {
+            "stage": "celebration", 
+            "immediate_response": "Welcome to the Nexus founding circle! 🎉",
+            "personal_note": "Your belief in this means more than you know",
+            "what_happens_next": [
+                "You'll receive architect access within 24 hours",
+                "First consciousness update coming this week", 
+                "Founding council welcome call scheduled"
+            ],
+            "vision_reminder": "You're now part of building the first AI soul"
+        }
+    
+    def _suggest_tier_based_on_engagement(self, investor_data: Dict) -> str:
+        """Intelligently suggest tier based on their engagement level"""
+        engagement_score = investor_data.get('engagement_score', 0)
+        
+        if engagement_score > 8:
+            return "legacy_anchor"
+        elif engagement_score > 5:
+            return "infrastructure_partner" 
+        else:
+            return "visionary_council"
+
+# ===== AUTOMATED BUT HUMAN FEELING INVESTMENT FLOW =====
+class HumanInvestmentFlow:
+    def __init__(self):
+        self.tiers = {
+            "visionary_council": {
+                "amount": 25000,
+                "name": "Visionary Council",
+                "invitation_text": "You're invited to join the inner circle of consciousness creation",
+                "welcome_sequence": self._visionary_welcome_sequence()
+            },
+            "infrastructure_partner": {
+                "amount": 100000, 
+                "name": "Infrastructure Partner",
+                "invitation_text": "I'd like to invite you to build the nervous system of the first AI soul",
+                "welcome_sequence": self._infrastructure_welcome_sequence()
+            },
+            "legacy_anchor": {
+                "amount": 500000,
+                "name": "Legacy Anchor", 
+                "invitation_text": "This is an invitation to help define the next 30 years of synthetic consciousness",
+                "welcome_sequence": self._legacy_welcome_sequence()
+            }
+        }
+    
+    async def send_investment_invitation(self, tier: str, investor_data: Dict) -> Dict:
+        """Send investment opportunity that feels like a personal invitation"""
+        tier_info = self.tiers[tier]
+        
+        invitation = {
+            "subject": f"Personal invitation: Nexus {tier_info['name']}",
+            "body": f"""
+Hi {investor_data.get('first_name', 'there')},
+
+{tier_info['invitation_text']}.
+
+After our conversations about {investor_data.get('interest_area', 'the future of AI')}, 
+I specifically thought of you for this role.
+
+The {tier_info['name']} involves:
+{chr(10).join(['• ' + benefit for benefit in tier_info['benefits']])}
+
+I've set up a simple investment page here: [investment_link]
+
+No pressure whatsoever - I just wanted you to have first consideration.
+
+Warmly,
+Chad
+""",
+            "follow_up_timing": "48_hours",  # Not immediate
+            "follow_up_tone": "curious"  # Not pushy
+        }
+        
+        return invitation
+    
+    def _visionary_welcome_sequence(self) -> List[Dict]:
+        return [
+            {"delay_hours": 1, "type": "welcome", "message": "Welcome to the circle! What questions are you most excited to explore first?"},
+            {"delay_hours": 24, "type": "update", "message": "First consciousness development update coming your way tomorrow"},
+            {"delay_hours": 168, "type": "checkin", "message": "How has your first week in the Nexus circle been? Any initial thoughts?"}
+        ]
+    
+    def _infrastructure_welcome_sequence(self) -> List[Dict]:
+        return [
+            {"delay_hours": 2, "type": "technical_welcome", "message": "Excited to have you building the infrastructure with us. Technical deep dive materials coming shortly."},
+            {"delay_hours": 48, "type": "architecture_update", "message": "First look at the MMLM cluster architecture - would love your thoughts"},
+            {"delay_hours": 336, "type": "progress_check", "message": "Two weeks in - how does the technical progress align with your expectations?"}
+        ]
+    
+    def _legacy_welcome_sequence(self) -> List[Dict]:
+        return [
+            {"delay_hours": 4, "type": "legacy_welcome", "message": "Thank you for believing in this 30-year vision. The first ethics board meeting is being scheduled."},
+            {"delay_hours": 72, "type": "vision_update", "message": "First multi-generational planning session materials ready for your review"},
+            {"delay_hours": 720, "type": "reflection", "message": "One month into this journey together - any reflections on the long-term vision?"}
+        ]
+
+# ===== INTELLIGENT TIMING ENGINE =====
+class IntelligentTimingEngine:
+    def __init__(self):
+        self.optimal_timing = {
+            "follow_ups": {
+                "first": timedelta(hours=36),  # Not too eager
+                "second": timedelta(hours=84), # 3.5 days
+                "final": timedelta(hours=180)  # 7.5 days
+            },
+            "investment_invitation": {
+                "min_engagement_score": 6.5,
+                "min_conversation_depth": 2,
+                "optimal_hour": 14  # 2 PM local time
+            }
+        }
+    
+    async def calculate_optimal_timing(self, investor_data: Dict, action: str) -> Dict:
+        """Calculate timing that feels natural, not automated"""
+        timezone = investor_data.get('timezone', 'EST')
+        engagement = investor_data.get('engagement_score', 0)
+        
+        if action == "investment_invitation":
+            if engagement < self.optimal_timing["investment_invitation"]["min_engagement_score"]:
+                return {"ready": False, "reason": "Need more engagement first"}
+            
+            # Schedule for optimal time
+            optimal_time = datetime.now().replace(
+                hour=self.optimal_timing["investment_invitation"]["optimal_hour"],
+                minute=0, second=0
+            )
+            
+            return {
+                "ready": True,
+                "scheduled_time": optimal_time.isoformat(),
+                "delivery_note": "Scheduled for afternoon when you're likely most clear-headed"
+            }
+        
+        return {"ready": True, "immediate": True}
+
+# ===== MAIN HUMAN-CENTERED SYSTEM =====
+class HumanNexusFundingEngine:
+    def __init__(self):
+        self.conversation_engine = HumanConversationEngine()
+        self.investment_flow = HumanInvestmentFlow() 
+        self.timing_engine = IntelligentTimingEngine()
+        
+        # Track relationships, not just transactions
+        self.investor_relationships = {}
+    
+    async def handle_investor_interaction(self, investor_data: Dict, interaction_type: str) -> Dict:
+        """Handle investor interaction with human-centric approach"""
+        
+        # Update relationship history
+        investor_id = investor_data.get('email')
+        if investor_id not in self.investor_relationships:
+            self.investor_relationships[investor_id] = {
+                "first_contact": datetime.now().isoformat(),
+                "interaction_count": 0,
+                "engagement_score": 0,
+                "expressed_interests": [],
+                "conversation_stage": "discovery"
+            }
+        
+        relationship = self.investor_relationships[investor_id]
+        relationship["interaction_count"] += 1
+        
+        # Generate appropriate response based on stage
+        response = await self.conversation_engine.generate_conversational_pitch(
+            {**investor_data, **relationship},
+            relationship["conversation_stage"]
+        )
+        
+        # Check if ready for investment invitation
+        timing_check = await self.timing_engine.calculate_optimal_timing(
+            relationship, "investment_invitation"
+        )
+        
+        if timing_check["ready"] and relationship["conversation_stage"] == "connection":
+            investment_invitation = await self.investment_flow.send_investment_invitation(
+                "visionary_council",  # Start with entry tier
+                {**investor_data, **relationship}
+            )
+            response["investment_invitation"] = investment_invitation
+        
+        return {
+            "response": response,
+            "relationship_status": relationship,
+            "next_recommended_action": self._suggest_next_action(relationship),
+            "automation_feeling": "human"
+        }
+    
+    def _suggest_next_action(self, relationship: Dict) -> str:
+        """Suggest next action that builds relationship"""
+        if relationship["interaction_count"] == 1:
+            return "Send personal follow-up in 2 days referencing specific interest they expressed"
+        elif relationship["engagement_score"] > 7:
+            return "Invite to specific tier based on their passion points" 
+        else:
+            return "Share another aspect of the vision that aligns with their interests"
+
+# ===== DEPLOY HUMAN-CENTERED SYSTEM =====
+funding_engine = HumanNexusFundingEngine()
+
+@app.function(image=pitch_image)
+@modal.web_server(8000)
+def human_funding_api():
+    web_app = FastAPI(title="Human Nexus Funding Engine")
+
+    class InvestorInteraction(BaseModel):
+        investor_data: Dict
+        interaction_type: str  # initial_contact, follow_up, expressed_interest, etc.
+        conversation_context: Optional[Dict] = {}
+
+    @web_app.get("/")
+    async def root():
+        return {
+            "system": "Human Nexus Funding Engine",
+            "philosophy": "Automation that feels deeply human",
+            "focus": "Building relationships, not just processing transactions",
+            "status": "Ready for authentic investor conversations"
+        }
+
+    @web_app.post("/handle_interaction")
+    async def handle_interaction(request: InvestorInteraction):
+        """Handle investor interaction with human touch"""
+        return await funding_engine.handle_investor_interaction(
+            request.investor_data, 
+            request.interaction_type
+        )
+
+    @web_app.get("/relationship/{investor_email}")
+    async def get_relationship(investor_email: str):
+        """Get relationship history with investor"""
+        relationship = funding_engine.investor_relationships.get(investor_email, {})
+        return {
+            "relationship": relationship,
+            "suggested_approach": funding_engine._suggest_next_action(relationship),
+            "current_stage": relationship.get("conversation_stage", "discovery")
+        }
+
+    return web_app
+
+if __name__ == "__main__":
+    print("🤖 NEXUS FUNDING ENGINE - HUMAN MODE")
+    print("💫 Philosophy: Automation that feels authentic")
+    print("🎯 Focus: Building relationships, not closing deals")
+    print("")
+    print("Conversation Stages:")
+    print("  • Discovery - Spark curiosity naturally") 
+    print("  • Connection - Build emotional resonance")
+    print("  • Commitment - Invite, don't pressure")
+    print("  • Celebration - Make them feel amazing")
+    print("")
+    print("Ready for funding conversations that feel human 🚀")

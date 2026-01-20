@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Monitor - Knowledge Harvesting</title>
+    <link rel="stylesheet" href="cognikube_styles.css">
+    <style>
+        .training-orb {
+            background: linear-gradient(135deg, var(--glass-bg), rgba(128, 0, 128, 0.1));
+        }
+        
+        .knowledge-flow {
+            width: 200px;
+            height: 120px;
+            position: relative;
+            margin: 20px auto;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .flow-stream {
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                transparent, 
+                var(--accent-color), 
+                transparent);
+            animation: knowledgeFlow 2s linear infinite;
+        }
+        
+        .flow-stream:nth-child(1) { left: 20%; animation-delay: 0s; }
+        .flow-stream:nth-child(2) { left: 40%; animation-delay: 0.3s; }
+        .flow-stream:nth-child(3) { left: 60%; animation-delay: 0.6s; }
+        .flow-stream:nth-child(4) { left: 80%; animation-delay: 0.9s; }
+        
+        @keyframes knowledgeFlow {
+            0% { transform: translateY(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(100%); opacity: 0; }
+        }
+        
+        .training-warning {
+            background: rgba(255, 193, 7, 0.1);
+            border: 2px solid var(--warning-color);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .warning-icon {
+            font-size: 2rem;
+            color: var(--warning-color);
+            margin-bottom: 10px;
+        }
+        
+        .dataset-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .dataset-card:hover {
+            background: var(--accent-glow);
+            transform: translateX(5px);
+        }
+        
+        .harvest-progress {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 8px 0;
+        }
+        
+        .harvest-fill {
+            height: 100%;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+            animation: harvestProgress 3s ease-in-out infinite;
+        }
+        
+        @keyframes harvestProgress {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+        
+        .weight-generation {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .weight-matrix {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+            margin: 10px 0;
+        }
+        
+        .weight-cell {
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 2px;
+            opacity: 0.3;
+            animation: weightUpdate 2s ease-in-out infinite;
+        }
+        
+        .weight-cell.active {
+            opacity: 1;
+            box-shadow: 0 0 5px var(--accent-color);
+        }
+        
+        @keyframes weightUpdate {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+        
+        .readonly-badge {
+            display: inline-block;
+            background: var(--warning-color);
+            color: #333;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Authentication Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-card">
+            <div class="auth-logo">📚</div>
+            <div class="auth-title">Training Monitor Access</div>
+            <input type="text" class="auth-input" id="username" placeholder="Username" value="viren">
+            <input type="password" class="auth-input" id="password" placeholder="Password" value="sacred_nexus_2025">
+            <button class="auth-button" onclick="authenticate()">Monitor Training</button>
+            <div class="auth-error" id="authError"></div>
+        </div>
+    </div>
+
+    <div class="container three-column">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-text">📚 Training Monitor</div>
+            </div>
+            <div class="header-controls">
+                <a href="master_control_panel.html" class="back-btn">← Back</a>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
+            </div>
+        </div>
+
+        <div class="left-sidebar">
+            <div class="training-warning">
+                <div class="warning-icon">⚠️</div>
+                <div style="font-weight: bold; margin-bottom: 5px;">VIEW ONLY MODE</div>
+                <div style="font-size: 0.9rem;">
+                    Training system is for knowledge harvesting only.
+                    NEVER used for inference.
+                </div>
+            </div>
+            
+            <div class="sidebar-title">📊 Active Datasets</div>
+            <div id="datasetList">
+                <!-- Populated by JavaScript -->
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">⚙️ Monitor Controls</div>
+                <button class="btn btn-secondary" onclick="viewHarvestLog()" disabled>View Harvest Log</button>
+                <button class="btn btn-secondary" onclick="checkWeights()" disabled>Check Weights</button>
+                <button class="btn btn-secondary" onclick="exportMetrics()">Export Metrics</button>
+            </div>
+        </div>
+
+        <div class="orb-container">
+            <div class="orb training-orb">
+                <div class="orb-content">
+                    <div class="knowledge-flow">
+                        <div class="flow-stream"></div>
+                        <div class="flow-stream"></div>
+                        <div class="flow-stream"></div>
+                        <div class="flow-stream"></div>
+                    </div>
+                    
+                    <div style="text-align: center; margin: 15px 0;">
+                        <div style="font-weight: bold; color: var(--warning-color);">
+                            KNOWLEDGE HARVESTING
+                            <span class="readonly-badge">READ ONLY</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="datasets-processed">247</div>
+                            <div class="stat-label">Datasets</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="weights-generated">1.2M</div>
+                            <div class="stat-label">Weights</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="harvest-efficiency">94.7%</div>
+                            <div class="stat-label">Efficiency</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="inference-blocks">∞</div>
+                            <div class="stat-label">Blocks</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-sidebar">
+            <div class="sidebar-title">🔬 Weight Generation</div>
+            <div class="weight-generation">
+                <div style="font-weight: bold; margin-bottom: 10px;">Neural Weight Matrix</div>
+                <div class="weight-matrix" id="weightMatrix">
+                    <!-- Populated by JavaScript -->
+                </div>
+                <div style="font-size: 0.8rem; opacity: 0.8; text-align: center;">
+                    Generating weights for knowledge storage only
+                </div>
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">📈 Harvest Metrics</div>
+                <div class="dataset-card">
+                    <div style="font-weight: bold;">Knowledge Extraction</div>
+                    <div class="harvest-progress">
+                        <div class="harvest-fill" style="width: 78%;"></div>
+                    </div>
+                    <div style="font-size: 0.8rem; opacity: 0.8;">78% Complete</div>
+                </div>
+                
+                <div class="dataset-card">
+                    <div style="font-weight: bold;">Pattern Recognition</div>
+                    <div class="harvest-progress">
+                        <div class="harvest-fill" style="width: 92%;"></div>
+                    </div>
+                    <div style="font-size: 0.8rem; opacity: 0.8;">92% Complete</div>
+                </div>
+                
+                <div class="dataset-card">
+                    <div style="font-weight: bold;">Weight Optimization</div>
+                    <div class="harvest-progress">
+                        <div class="harvest-fill" style="width: 65%;"></div>
+                    </div>
+                    <div style="font-size: 0.8rem; opacity: 0.8;">65% Complete</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="grid-column: 2; display: flex; align-items: center; justify-content: center; padding: 0 50px;">
+            <input type="text" class="chat-input" id="monitorQuery" placeholder="Monitor query (view only)..." readonly>
+        </div>
+    </div>
+
+    <script src="cognikube_base.js"></script>
+    <script>
+        class TrainingMonitor extends CogniKubeBase {
+            constructor() {
+                super('Training Monitor', '📚', '#800080');
+                this.datasets = [];
+                this.isReadOnly = true;
+                this.harvestMetrics = {
+                    datasetsProcessed: 247,
+                    weightsGenerated: 1200000,
+                    harvestEfficiency: 94.7,
+                    inferenceBlocks: Infinity
+                };
+                this.initializeTrainingMonitor();
+                this.startUptime();
+                this.startWeightGeneration();
+            }
+
+            initializeTrainingMonitor() {
+                // Make input readonly
+                document.getElementById('monitorQuery').addEventListener('focus', () => {
+                    this.log('warning', 'Training system is VIEW ONLY - no inference allowed');
+                });
+
+                // Connect to WebSocket (read-only)
+                this.connectWebSocket('ws://localhost:8765/training');
+                
+                // Initialize datasets
+                this.initializeDatasets();
+                this.initializeWeightMatrix();
+                
+                // Show read-only warning
+                this.showReadOnlyWarning();
+            }
+
+            showWelcomeMessage(username) {
+                this.log('warning', `Welcome to Training Monitor, ${username}! VIEW ONLY MODE - Knowledge harvesting active, inference BLOCKED.`);
+            }
+
+            onWebSocketMessage(data) {
+                if (data.type === 'harvest_update') {
+                    this.updateHarvestMetrics(data.data);
+                } else if (data.type === 'weight_generated') {
+                    this.updateWeightGeneration(data.data);
+                }
+            }
+
+            showReadOnlyWarning() {
+                this.log('warning', '⚠️ CRITICAL: Training system is for knowledge harvesting ONLY');
+                this.log('warning', '🚫 INFERENCE BLOCKED: This system NEVER generates responses');
+                this.log('info', '📚 Purpose: Generate weights and harvest knowledge patterns');
+                this.log('info', '🔒 Security: All inference capabilities permanently disabled');
+            }
+
+            initializeDatasets() {
+                this.datasets = [
+                    { 
+                        name: 'Scientific Papers', 
+                        size: '2.4TB', 
+                        progress: 78, 
+                        status: 'harvesting',
+                        type: 'knowledge_extraction'
+                    },
+                    { 
+                        name: 'Technical Documentation', 
+                        size: '890GB', 
+                        progress: 92, 
+                        status: 'pattern_analysis',
+                        type: 'pattern_recognition'
+                    },
+                    { 
+                        name: 'Research Archives', 
+                        size: '1.7TB', 
+                        progress: 65, 
+                        status: 'weight_generation',
+                        type: 'weight_optimization'
+                    },
+                    { 
+                        name: 'Academic Journals', 
+                        size: '3.1TB', 
+                        progress: 45, 
+                        status: 'processing',
+                        type: 'knowledge_extraction'
+                    }
+                ];
+                
+                this.updateDatasetList();
+            }
+
+            updateDatasetList() {
+                const container = document.getElementById('datasetList');
+                container.innerHTML = '';
+
+                this.datasets.forEach(dataset => {
+                    const statusColor = dataset.status === 'harvesting' ? 'var(--accent-color)' :
+                                       dataset.status === 'pattern_analysis' ? 'var(--success-color)' :
+                                       dataset.status === 'weight_generation' ? 'var(--warning-color)' :
+                                       'var(--text-secondary)';
+                    
+                    const datasetDiv = document.createElement('div');
+                    datasetDiv.className = 'dataset-card';
+                    datasetDiv.innerHTML = `
+                        <div style="font-weight: bold; margin-bottom: 5px;">
+                            ${dataset.name}
+                            <span class="readonly-badge">READ ONLY</span>
+                        </div>
+                        <div style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 8px;">
+                            Size: ${dataset.size} | Type: ${dataset.type}
+                        </div>
+                        <div class="harvest-progress">
+                            <div class="harvest-fill" style="width: ${dataset.progress}%; background: ${statusColor};"></div>
+                        </div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">
+                            ${dataset.progress}% - ${dataset.status}
+                        </div>
+                    `;
+                    
+                    datasetDiv.addEventListener('click', () => {
+                        this.inspectDataset(dataset);
+                    });
+                    
+                    container.appendChild(datasetDiv);
+                });
+            }
+
+            initializeWeightMatrix() {
+                const container = document.getElementById('weightMatrix');
+                container.innerHTML = '';
+
+                // Create 4x4 weight matrix visualization
+                for (let i = 0; i < 16; i++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'weight-cell';
+                    
+                    // Randomly activate some cells
+                    if (Math.random() > 0.6) {
+                        cell.classList.add('active');
+                    }
+                    
+                    container.appendChild(cell);
+                }
+            }
+
+            startWeightGeneration() {
+                // Simulate continuous weight generation
+                setInterval(() => {
+                    // Update weight matrix
+                    const cells = document.querySelectorAll('.weight-cell');
+                    cells.forEach(cell => {
+                        if (Math.random() > 0.7) {
+                            cell.classList.toggle('active');
+                        }
+                    });
+                    
+                    // Update harvest progress
+                    this.datasets.forEach(dataset => {
+                        if (dataset.progress < 100 && Math.random() > 0.8) {
+                            dataset.progress = Math.min(100, dataset.progress + Math.random() * 2);
+                        }
+                    });
+                    this.updateDatasetList();
+                    
+                    // Update metrics
+                    this.updateMetrics();
+                    
+                }, 2000);
+            }
+
+            updateMetrics() {
+                this.harvestMetrics.weightsGenerated += Math.floor(Math.random() * 1000);
+                this.harvestMetrics.harvestEfficiency = Math.max(90, 
+                    Math.min(99, this.harvestMetrics.harvestEfficiency + (Math.random() - 0.5)));
+                
+                document.getElementById('weights-generated').textContent = 
+                    (this.harvestMetrics.weightsGenerated / 1000000).toFixed(1) + 'M';
+                document.getElementById('harvest-efficiency').textContent = 
+                    this.harvestMetrics.harvestEfficiency.toFixed(1) + '%';
+            }
+
+            inspectDataset(dataset) {
+                this.log('info', `Inspecting dataset: ${dataset.name}`);
+                this.log('info', `Size: ${dataset.size} | Progress: ${dataset.progress}% | Status: ${dataset.status}`);
+                this.log('warning', 'Dataset inspection is READ ONLY - no modifications allowed');
+                
+                // Send read-only inspection request
+                this.sendWebSocketMessage({
+                    action: 'inspect_dataset',
+                    dataset_name: dataset.name,
+                    read_only: true
+                });
+            }
+
+            updateHarvestMetrics(data) {
+                if (data.datasets_processed) {
+                    document.getElementById('datasets-processed').textContent = data.datasets_processed;
+                }
+                
+                if (data.efficiency) {
+                    document.getElementById('harvest-efficiency').textContent = data.efficiency + '%';
+                }
+            }
+
+            updateWeightGeneration(data) {
+                this.log('info', `Weight generation update: ${data.weights_added} new weights generated`);
+                
+                // Update weight counter
+                this.harvestMetrics.weightsGenerated += data.weights_added;
+                document.getElementById('weights-generated').textContent = 
+                    (this.harvestMetrics.weightsGenerated / 1000000).toFixed(1) + 'M';
+            }
+
+            // Disabled functions for read-only mode
+            viewHarvestLog() {
+                this.log('warning', 'Harvest log viewing is disabled in read-only mode');
+            }
+
+            checkWeights() {
+                this.log('warning', 'Weight checking is disabled in read-only mode');
+            }
+
+            exportMetrics() {
+                const metrics = {
+                    timestamp: new Date().toISOString(),
+                    datasets_processed: this.harvestMetrics.datasetsProcessed,
+                    weights_generated: this.harvestMetrics.weightsGenerated,
+                    harvest_efficiency: this.harvestMetrics.harvestEfficiency,
+                    inference_blocks: this.harvestMetrics.inferenceBlocks,
+                    read_only_mode: true,
+                    datasets: this.datasets
+                };
+                
+                const blob = new Blob([JSON.stringify(metrics, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'training_metrics_readonly.json';
+                a.click();
+                
+                this.log('info', 'Training metrics exported (read-only data)');
+            }
+        }
+
+        // Global functions for buttons (most disabled)
+        function viewHarvestLog() {
+            if (window.trainingInterface) {
+                window.trainingInterface.viewHarvestLog();
+            }
+        }
+
+        function checkWeights() {
+            if (window.trainingInterface) {
+                window.trainingInterface.checkWeights();
+            }
+        }
+
+        function exportMetrics() {
+            if (window.trainingInterface) {
+                window.trainingInterface.exportMetrics();
+            }
+        }
+
+        // Override authentication success
+        const originalAuthenticate = CogniKubeBase.prototype.authenticate;
+        CogniKubeBase.prototype.authenticate = function(username, password) {
+            const result = originalAuthenticate.call(this, username, password);
+            if (result && !window.trainingInterface) {
+                window.trainingInterface = new TrainingMonitor();
+                window.cogniKubeInstance = window.trainingInterface;
+            }
+            return result;
+        };
+    </script>
+</body>
+</html>

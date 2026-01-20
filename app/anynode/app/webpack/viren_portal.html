@@ -1,0 +1,46 @@
+<!-- Filename: viren_portal.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIREN Portal - Universal AI Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="background-container">
+        <div id="navigation-pane">
+            <h2 style="color: #BCC6E0;">VIREN Navigation</h2>
+            <ul>
+                <li><a href="#ai-core" style="color: #B8DAED;">AI Core</a></li>
+                <li><a href="#mcp-bridge" style="color: #959BA3;">MCP Bridge</a></li>
+                <li><a href="#lm-studio" style="color: #E0E0E0;">LM Studio</a></li>
+                <li><a href="#deployment" style="color: #FFFFFF;">Deployment</a></li>
+                <li><a href="#weaviate" style="color: #BCC6E0;">Weaviate</a></li>
+            </ul>
+            <div id="gauge-container">
+                <div class="circular-gauge" data-value="85" style="border-color: #B8DAED;"></div>
+                <div class="circular-gauge" data-value="70" style="border-color: #959BA3;"></div>
+                <div class="circular-gauge" data-value="95" style="border-color: #E0E0E0;"></div>
+                <div class="circular-gauge" data-value="60" style="border-color: #FFFFFF;"></div>
+            </div>
+        </div>
+        <div id="chat-area">
+            <h1 style="color: #BCC6E0;">🤖 VIREN - Universal AI Troubleshooter</h1>
+            <p id="chatbot" style="color: #B8DAED;">VIREN AI ready. All systems online with orb interface. - 03:28 PM EDT, June 22, 2025</p>
+            <div id="input-section">
+                <input type="text" id="message-input" placeholder="Send Message" style="background-color: #E0E0E0; color: #959BA3; border-radius: 20px;">
+                <button onclick="sendMessage()" style="background-color: #BCC6E0; color: #FFFFFF; border-radius: 20px;">Send</button>
+            </div>
+        </div>
+    </div>
+    <script src="portal_integration.js"></script>
+    <script>
+        // Portal-specific initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🤖 Viren Portal loaded');
+        });
+    </script>
+</body>
+</html>

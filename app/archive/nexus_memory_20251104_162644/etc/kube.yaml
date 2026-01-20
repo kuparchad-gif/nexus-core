@@ -1,0 +1,10 @@
+name: UpperCognition
+tenant: AETHEREAL
+project: METANET
+env: {}
+subjects:
+  publish: ["nexus.>.upper.plan"]
+  subscribe: ["nexus.>.upper.digest"]
+identity:
+  nats_url: nats://nats:4222
+  archivist_url: http://archivist:8007

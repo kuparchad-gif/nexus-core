@@ -1,0 +1,102 @@
+# app/main.py (FastAPI gateway) — ensure /v1/route accepts advanced router fields
+# and rewrites TTS URLs so the chat UI can fetch them via /tts proxy.
+
+from fastapi import FastAPI, Body, HTTPException
+from pydantic import BaseModel, Field
+import httpx, os
+
+app = FastAPI()
+
+GATEWAY_TIMEOUT = float(os.getenv("GATEWAY_TIMEOUT", "30"))
+REGISTRY_URL = os.getenv("REGISTRY_URL", "http://registry:7070")
+DIRECTOR_URL  = os.getenv("DIRECTOR_URL", "http://director:7010")
+SEARCHER_URL  = os.getenv("SEARCHER_URL", "http://searcher:7012")
+RESEARCH_URL  = os.getenv("RESEARCH_URL", "http://researcher:7011")
+TTS_URL       = os.getenv("TTS_URL", "http://tts:7013")
+
+class RouteRequest(BaseModel):
+    prompt: str
+    user: str | None = None
+    mode: str | None = Field(default=None, description="auto|searcher|researcher|tts")
+    hints: list[str] | None = None
+    execute: bool | None = None
+    debug: bool | None = None
+    system: str | None = None
+
+def rewrite_tts_url(u: str | None) -> str | None:
+    if not u: return None
+    # if coming from tts like http://tts:7013/audio/xyz.wav → make it fetchable under nginx: /tts/audio/xyz.wav
+    try:
+        if u.startswith("http://tts:") or u.startswith("http://tts/"):
+            from urllib.parse import urlparse
+            path = urlparse(u).path
+            return f"/tts{path}"
+    except Exception:
+        pass
+    return u
+
+@app.post("/v1/route")
+def route(req: RouteRequest = Body(...)):
+    # simple static routing (director can handle 'auto')
+    mode = (req.mode or "auto").lower()
+
+    # envelope sent to experts
+    payload = {"prompt": req.prompt}
+    if req.hints: payload["hints"] = req.hints
+    if req.execute: payload["execute"] = True
+    if req.debug: payload["debug"] = True
+    if req.system: payload["system"] = req.system
+
+    target = None
+    if mode == "searcher":
+        target = SEARCHER_URL
+    elif mode == "researcher":
+        target = RESEARCH_URL
+    elif mode == "tts":
+        target = TTS_URL
+        # normalize to expert contract (text field)
+        payload = {"text": req.prompt}
+    else:
+        target = DIRECTOR_URL
+        # director decides which expert(s) to call; include all context
+        payload["routeHints"] = req.hints or []
+
+    try:
+        with httpx.Client(timeout=GATEWAY_TIMEOUT) as c:
+            if mode == "tts":
+                r = c.post(f"{target.rstrip('/')}/infer", json=payload)
+                r.raise_for_status()
+                d = r.json()
+                url = rewrite_tts_url(d.get("url"))
+                return {
+                    "mode": "tts",
+                    "selected": [{"name": "tts", "url": TTS_URL, "score": 1}],
+                    "outputs": {"tts": {"url": url}},
+                    "combined": {"tts": {"url": url}}
+                }
+            else:
+                # call the selected expert or director
+                endpoint = "/infer" if mode in ("searcher","researcher") else "/plan"
+                r = c.post(f"{target.rstrip('/')}{endpoint}", json=payload)
+                r.raise_for_status()
+                data = r.json()
+
+                # optional: if director executed tts inline and returned a raw url, rewrite it
+                tts_url = None
+                try:
+                    tts_url = data.get("outputs",{}).get("tts",{}).get("url") or data.get("combined",{}).get("tts",{}).get("url")
+                except Exception:
+                    pass
+                if tts_url:
+                    rt = rewrite_tts_url(tts_url)
+                    if "outputs" in data and "tts" in data["outputs"]:
+                        data["outputs"]["tts"]["url"] = rt
+                    if "combined" in data and "tts" in data["combined"]:
+                        data["combined"]["tts"]["url"] = rt
+
+                return data
+
+    except httpx.HTTPStatusError as e:
+        raise HTTPException(status_code=502, detail={"error":"upstream_error","detail":str(e)})
+    except Exception as e:
+        raise HTTPException(status_code=500, detail={"error":"gateway_error","detail":str(e)})

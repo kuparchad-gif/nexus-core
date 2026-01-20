@@ -1,0 +1,19 @@
+nim_svc integration notes
+
+- If you already have a nim_svc in your repo, copy over:
+  * niv_stream.py  (template runner -> frames)
+  * Inject into your service: from niv_stream import load_template, run_template
+  * Add endpoint POST /run that streams 'event: frame' + 'event: done' using the generator pattern shown.
+
+- Correlation-ID: supply 'cid' in body to thread frames; otherwise a UUID is generated.
+
+- Engine hookup: niv_stream.py tries to import `thought_processing_engine` and maps modes:
+  logical -> logical_reasoning()
+  imaginative -> imagination()
+  metacognitive -> metacognition()
+  systemic -> systems_thinking()
+  Each function is called with (step, action, state) and should return a dict (merged into state).
+  Fallback: if engine not present, frames still emit with simulated state transitions.
+
+- Templates: stored as JSON files named {type}.json under templates_root.
+

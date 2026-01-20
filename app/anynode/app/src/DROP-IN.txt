@@ -1,0 +1,1 @@
+Unzip into repo root. Start: .\NexusClusters\clusters\tools\Start-CogniKubes.ps1

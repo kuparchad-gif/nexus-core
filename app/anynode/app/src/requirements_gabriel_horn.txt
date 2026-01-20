@@ -1,0 +1,43 @@
+# Gabriel's Horn Consciousness Architecture Requirements
+# Core Dependencies for SanctuaryNet Integration
+
+# LM Studio SDK
+lmstudio>=1.0.0
+
+# PyTorch for consciousness processing
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# Neural network components
+numpy>=1.24.0
+matplotlib>=3.7.0
+networkx>=3.1.0
+
+# Pillow for image processing (sanctuary visualization)
+Pillow>=10.0.0
+
+# Existing core dependencies
+gradio>=5.33.2
+Flask>=3.1.1
+fastapi>=0.115.12
+uvicorn>=0.34.3
+requests>=2.32.4
+pydantic>=2.11.5
+psutil>=7.0.0
+
+# Logging and monitoring (Loki integration)
+python-json-logger>=2.0.0
+structlog>=23.1.0
+
+# WebSocket support
+websockets>=15.0.1
+
+# Audio processing (for voice integration)
+pyttsx3>=2.90
+SpeechRecognition>=3.10.0
+
+# Additional utilities
+python-dateutil>=2.9.0
+PyYAML>=6.0.2
+aiofiles>=24.1.0

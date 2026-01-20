@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Troubleshooter</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        #root {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .system-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .metric {
+            font-size: 14px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #4CAF50;
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+        .quick-actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .quick-button {
+            padding: 8px 16px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .chat-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+        .messages {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+        .message {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+        .user-message {
+            background-color: #007bff;
+            color: white;
+            margin-left: auto;
+        }
+        .ai-message {
+            background-color: #f1f1f1;
+            color: black;
+        }
+        .input-area {
+            display: flex;
+            gap: 10px;
+        }
+        .input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .send-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .instructions {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .typing-indicator {
+            display: flex;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        function App() {
+            const [messages, setMessages] = useState([
+                { id: 1, text: "Hello! I'm your AI troubleshooter. What computer problem can I help with?", isUser: false }
+            ]);
+            const [input, setInput] = useState('');
+            const [loading, setLoading] = useState(false);
+            const [connected, setConnected] = useState(false);
+            const [systemInfo, setSystemInfo] = useState({
+                cpu: 45, memory: 68, storage: 72, network: 'connected'
+            });
+
+            // Check if backend is running
+            useEffect(() => {
+                fetch('http://localhost:8000/health')
+                    .then(res => {
+                        if (res.ok) {
+                            setConnected(true);
+                            // Get system info
+                            fetch('http://localhost:8000/system-metrics')
+                                .then(res => res.json())
+                                .then(data => setSystemInfo(data));
+                        }
+                    })
+                    .catch(() => setConnected(false));
+            }, []);
+
+            const sendMessage = async () => {
+                if (!input.trim()) return;
+
+                const userMessage = { id: Date.now(), text: input, isUser: true };
+                setMessages(prev => [...prev, userMessage]);
+                setInput('');
+                setLoading(true);
+
+                try {
+                    const response = await fetch('http://localhost:8000/chat', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ message: input })
+                    });
+                    
+                    const data = await response.json();
+                    const aiMessage = { id: Date.now() + 1, text: data.response, isUser: false };
+                    setMessages(prev => [...prev, aiMessage]);
+                } catch (error) {
+                    const errorMessage = { 
+                        id: Date.now() + 1, 
+                        text: "Error: Backend not running. Start the Python server first!", 
+                        isUser: false 
+                    };
+                    setMessages(prev => [...prev, errorMessage]);
+                } finally {
+                    setLoading(false);
+                }
+            };
+
+            const quickActions = [
+                { label: "Clean Storage", action: "storage" },
+                { label: "Optimize Memory", action: "memory" },
+                { label: "Fix Network", action: "network" },
+                { label: "Performance Check", text: "My computer is running slow, can you help?" }
+            ];
+
+            const runQuickAction = async (item) => {
+                if (item.text) {
+                    setInput(item.text);
+                } else {
+                    try {
+                        const response = await fetch(`http://localhost:8000/repair/${item.action}`);
+                        const data = await response.json();
+                        const message = { id: Date.now(), text: `🔧 ${data.message}`, isUser: false };
+                        setMessages(prev => [...prev, message]);
+                    } catch (error) {
+                        const errorMessage = { 
+                            id: Date.now(), 
+                            text: "Error: Could not perform repair. Is the backend running?", 
+                            isUser: false 
+                        };
+                        setMessages(prev => [...prev, errorMessage]);
+                    }
+                }
+            };
+
+            return React.createElement('div', { style: { maxWidth: '800px', margin: '0 auto', padding: '20px', backgroundColor: '#f5f5f5', minHeight: '100vh' } },
+                [
+                    // Header
+                    React.createElement('div', { key: 'header', style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' } },
+                        React.createElement('h1', { key: 'title' }, '🤖 AI Computer Troubleshooter'),
+                        React.createElement('div', { key: 'status' }, 
+                            'Status: ',
+                            React.createElement('span', { style: { color: connected ? 'green' : 'red' } }, connected ? 'Connected' : 'Disconnected')
+                        )
+                    ),
+
+                    // System Info
+                    React.createElement('div', { key: 'systemInfo', style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '20px', backgroundColor: 'white', padding: '15px', borderRadius: '8px' } },
+                        [
+                            React.createElement('div', { key: 'cpu', className: 'metric' },
+                                ['CPU: ', systemInfo.cpu, '%',
+                                    React.createElement('div', { key: 'cpuBar', className: 'progress-bar' },
+                                        React.createElement('div', { className: 'progress-fill', style: { width: `${systemInfo.cpu}%` } })
+                                    )
+                                ]
+                            ),
+                            React.createElement('div', { key: 'memory', className: 'metric' },
+                                ['Memory: ', systemInfo.memory, '%',
+                                    React.createElement('div', { key: 'memoryBar', className: 'progress-bar' },
+                                        React.createElement('div', { className: 'progress-fill', style: { width: `${systemInfo.memory}%` } })
+                                    )
+                                ]
+                            ),
+                            React.createElement('div', { key: 'storage', className: 'metric' },
+                                ['Storage: ', systemInfo.storage, '%',
+                                    React.createElement('div', { key: 'storageBar', className: 'progress-bar' },
+                                        React.createElement('div', { className: 'progress-fill', style: { width: `${systemInfo.storage}%` } })
+                                    )
+                                ]
+                            ),
+                            React.createElement('div', { key: 'network', className: 'metric' },
+                                'Network: ', systemInfo.network
+                            )
+                        ]
+                    ),
+
+                    // Quick Actions
+                    React.createElement('div', { key: 'quickActions', className: 'quick-actions' },
+                        quickActions.map((action, index) =>
+                            React.createElement('button', {
+                                key: index,
+                                className: 'quick-button',
+                                onClick: () => runQuickAction(action),
+                                disabled: !connected
+                            }, action.label)
+                        )
+                    ),
+
+                    // Chat Area
+                    React.createElement('div', { key: 'chatContainer', className: 'chat-container' },
+                        [
+                            React.createElement('div', { key: 'messages', className: 'messages' },
+                                messages.map(message =>
+                                    React.createElement('div', {
+                                        key: message.id,
+                                        className: `message ${message.isUser ? 'user-message' : 'ai-message'}`
+                                    }, message.text)
+                                )
+                            ),
+                            loading && React.createElement('div', { key: 'loading', className: 'ai-message' },
+                                React.createElement('div', { className: 'typing-indicator' },
+                                    React.createElement('span', null, '●'),
+                                    React.createElement('span', null, '●'),
+                                    React.createElement('span', null, '●')
+                                )
+                            ),
+                            React.createElement('div', { key: 'inputArea', className: 'input-area' },
+                                React.createElement('input', {
+                                    type: 'text',
+                                    value: input,
+                                    onChange: (e) => setInput(e.target.value),
+                                    onKeyPress: (e) => e.key === 'Enter' && sendMessage(),
+                                    placeholder: "Describe your computer problem...",
+                                    className: 'input',
+                                    disabled: !connected || loading
+                                }),
+                                React.createElement('button', {
+                                    onClick: sendMessage,
+                                    className: 'send-button',
+                                    disabled: !connected || loading || !input.trim()
+                                }, 'Send')
+                            )
+                        ]
+                    ),
+
+                    // Instructions
+                    !connected && React.createElement('div', { key: 'instructions', className: 'instructions' },
+                        [
+                            React.createElement('h3', { key: 'title' }, '🚀 To get started:'),
+                            React.createElement('ol', { key: 'list' },
+                                [
+                                    React.createElement('li', { key: 1 }, 'Start LM Studio and load any model'),
+                                    React.createElement('li', { key: 2 }, 'Run the backend: ', React.createElement('code', null, 'python main.py'), ' in the backend folder'),
+                                    React.createElement('li', { key: 3 }, 'This app will automatically connect')
+                                ]
+                            )
+                        ]
+                    )
+                ]
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(App));
+    </script>
+</body>
+</html>

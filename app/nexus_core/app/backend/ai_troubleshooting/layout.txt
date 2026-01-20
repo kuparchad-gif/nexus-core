@@ -1,0 +1,15 @@
+AI-Troubleshooter/
+├── backend/
+│   ├── main.py
+│   ├── config.yaml
+│   ├── model_registry.py
+│   ├── experience_evaluator.py
+│   ├── model_router.py
+│   └── requirements.txt
+└── frontend/
+    ├── package.json
+    ├── src/
+    │   ├── App.js
+    │   └── index.js
+    └── public/
+        └── index.html

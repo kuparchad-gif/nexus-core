@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Environment Variable Registry</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body { font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+code, pre { background:#f5f5f7; border-radius:8px; padding:.25rem .5rem; }
+pre { overflow-x:auto; padding:1rem; }
+table { border-collapse: collapse; width:100%; }
+th, td { border:1px solid #e6e6eb; padding:.5rem .6rem; text-align:left; }
+thead th { background:#fafbfc; }
+h1,h2,h3 { margin-top:1.2rem; }
+blockquote { border-left:3px solid #ddd; margin:1rem 0; padding:.5rem 1rem; color:#444; background:#fafafa; }
+kbd { background:#eee; border-radius:4px; padding:.15rem .35rem; border:1px solid #ccc; box-shadow: inset 0 -1px 0 #bbb; }
+</style>
+</head>
+<body>
+<h1>Environment Variable Registry</h1>
+
+<h2>Environment Variable Registry</h2>
+<table>
+<thead><tr><th>Var</th><th>Default</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>VIREN_NAME</td><td>viren</td><td>Instance label</td></tr>
+<tr><td>NATS_URL</td><td>nats://Nexus_nats-1:4222</td><td>External NATS</td></tr>
+<tr><td>REDIS_URL</td><td>redis://neexus_redis_1:6379/0</td><td>Receipts store</td></tr>
+<tr><td>CONSENT_TOKEN</td><td>CHANGE_ME</td><td><b>Set a strong secret</b></td></tr>
+<tr><td>ASCENSION_HOURS_REQ</td><td>480</td><td>Meditation minutes threshold</td></tr>
+<tr><td>ASCENSION_METAPHORS_REQ</td><td>12</td><td>Metaphor count threshold</td></tr>
+<tr><td>VIREN_LOG_LEVEL</td><td>INFO</td><td>Logging level</td></tr>
+<tr><td>PROMTAIL_PUSH_URL</td><td>http://promtail:3500/loki/api/v1/push</td><td>Promtail push endpoint</td></tr>
+<tr><td>GRAFANA_ADMIN_USER</td><td>admin</td><td>Grafana admin user</td></tr>
+<tr><td>GRAFANA_ADMIN_PASSWORD</td><td>admin</td><td>Grafana admin password</td></tr>
+</tbody>
+</table>
+
+<footer><hr><p><small>Generated: 2025-09-09 07:04:45 </small></p></footer>
+</body>
+</html>

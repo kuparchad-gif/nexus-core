@@ -1,0 +1,24 @@
+from service.speech.diplomacy import speak
+
+# circadian driver you already have
+from service.core import circadian
+
+# memory hook (optional)
+try:
+    from memory.memory_index import MemoryIndex
+    _mem = MemoryIndex(str(MEM_PATH))  # whatever you use
+    def _memo(obj): _mem.add(obj)
+except Exception:
+    _memo = None
+
+circa = circadian.get_status()  # should include fatigue/status
+reply = speak(
+    thought="Here's the straight answer, but I'm going to be kind about it.",
+    audience="friend",                  # or "work" / "public"
+    circadian=circa,
+    redlines=["medical", "legal", "safety"],
+    memory_add=_memo,
+)
+
+text, meta = reply["text"], reply["meta"]
+# send `text` out; `meta` can drive TTS speed, pause timing, etc.

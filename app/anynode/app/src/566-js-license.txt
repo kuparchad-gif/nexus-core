@@ -1,0 +1,6 @@
+/*!
+ * hash-wasm ([REDACTED-URL])
+ * (c) Dani Biro
+ * @license MIT
+ */
+

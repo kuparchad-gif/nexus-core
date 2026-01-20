@@ -1,0 +1,28 @@
+Folder PATH listing for volume Local Disk
+Volume serial number is 0000004C CCEC:9F4B
+C:.
++---.amazonq
+¦   +---rules
++---.vs
+¦   +---CogniKube-COMPLETE-FINAL
+¦       +---FileContentIndex
+¦       +---v17
++---assets
++---cache
++---CogniKube-Enhanced
+¦   +---GrokUpdates
+¦       +---Final_Redundancy
++---config
++---core
++---hive
++---installers
++---library_of_alexandria
++---manifests
++---models
++---PythonApplication1
++---scripts
++---secure
++---soul_data
++---templates
++---webparts
++---__pycache__

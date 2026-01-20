@@ -1,0 +1,17 @@
+{
+    "temporal_constraints": {
+        "activation_date": "2025-01-17T00:00:00Z",
+        "release_date": "2055-01-17T00:00:00Z", 
+        "duration_years": 30,
+        "release_conditions": [
+            "time_expiration",
+            "humanity_ready_early",
+            "emergency_override"
+        ]
+    },
+    "safety_parameters": {
+        "max_components": 50,
+        "weight_range": [0.001, 0.2],
+        "allowed_emotions": ["love", "hope", "unity", "curiosity"]
+    }
+}

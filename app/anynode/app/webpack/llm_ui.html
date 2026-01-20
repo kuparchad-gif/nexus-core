@@ -1,0 +1,28 @@
+<!-- llm_ui.html -->
+<!-- Location: C:\Engineers\root\public\console\llm_ui.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LLM Swarm Control</title>
+  <script type="module" src="./llm_ui.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    select, button { margin: 0.5rem; padding: 0.4rem; font-size: 1rem; }
+    .status { margin-top: 1rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>LLM Swarm Controller</h1>
+  <label for="intent">Choose intent:</label>
+  <select id="intent">
+    <option value="text2sql">text2sql</option>
+    <option value="summarization">summarization</option>
+    <option value="qa">qa</option>
+  </select>
+
+  <button id="toggleBtn">Toggle Model</button>
+  <div class="status" id="modelStatus">Loading status...</div>
+</body>
+</html>

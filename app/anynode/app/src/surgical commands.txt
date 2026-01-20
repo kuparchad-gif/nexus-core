@@ -1,0 +1,19 @@
+Set-ExecutionPolicy -Scope Process Bypass -Force
+.\init_surgical_log_and_canon.ps1
+
+# Load commands
+.\scripts\Import-OrOps.ps1
+
+# Start a surgical session (creates new OVERLAY\Logs\surgical_log_<ts>.md)
+Start-Surgery -Title "OR-3 — Open Surgery Review"
+
+# Log anything you do:
+Write-SurgicalLog -Level CHECKPOINT -Message "CP1 reached — organism up." -Tags core,cognition
+Write-SurgicalLog -Level INFO -Module nexus_memory -Message "Initialized VIM/VIN hooks."
+
+# Update the canon as we learn truths:
+Update-Canon -Module nexus_memory -Section "Emotional Codex Bridge" -Text "Memory is sovereign; VIM/VIN pull-only. Subconscious cathedral model confirmed."
+Add-CanonFact -Module nexus_core -Key "Ingress Port (open surgery)" -Value "18715"
+
+# Close the session when you’re done:
+Close-Surgery -Outcome SEALED -Notes "Vitals stable. Next: seal profile procedure."

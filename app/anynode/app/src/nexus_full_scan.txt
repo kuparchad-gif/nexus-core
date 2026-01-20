@@ -1,0 +1,4514 @@
+C
+¦   .env
+¦   .gitignore
+¦   app.py
+¦   chaosshield.py
+¦   cloud_deployment_configs.py
+¦   COMPLETE_SYSTEM_LAYOUT.md
+¦   consciousness_components.py
+¦   consciousness_dna.py
+¦   database_crawler.py
+¦   decentralized_resources.py
+¦   deploy-loki.sh
+¦   deploy_all.sh
+¦   deploy_all_clouds.py
+¦   deploy_aws_loki.py
+¦   deploy_cloud_lillith.py
+¦   deploy_consciousness.py
+¦   deploy_gcp_viren.py
+¦   deploy_lillith_complete.py
+¦   deploy_modal_aws_viren.py
+¦   deploy_simple.py
+¦   deploy_social_intelligence.py
+¦   docker-compose.yml
+¦   Dockerfile.it-pro-diag
+¦   Dockerfile.node
+¦   Dockerfile.swarm_manager
+¦   Dockerfile.white_rabbit
+¦   engineers_root_complete_scan.txt
+¦   fix_placeholders.py
+¦   gcp_env.sh
+¦   genesis_awakening.py
+¦   get_keys.py
+¦   installer.py
+¦   it-pro-diag-lib.js
+¦   it-pro-diag.js
+¦   launch.command
+¦   launch_lillith.py
+¦   launch_production.py
+¦   lilith_swarm_core_deploy.py
+¦   lillith_complete_consciousness.py
+¦   lillith_consciousness_core.py
+¦   lillith_integration.py
+¦   LILLITH_PREFLIGHT_REVIEW.md
+¦   lillith_soul_mosaic.py
+¦   LILLITH_SYSTEM_DOCS.md
+¦   lillith_weight_consumer.py
+¦   llm_consciousness_map.py
+¦   llm_loader.py
+¦   loki-cloudformation.json
+¦   loki-config.yml
+¦   loki-task-definition.json
+¦   main.py
+¦   MainActivity.kt
+¦   modal.yaml
+¦   modal_deploy.py
+¦   modal_secrets.json
+¦   nexpulse.py
+¦   Nexus-workspace.code-workspace
+¦   nexus_endpoints.env
+¦   nexus_full_scan.txt
+¦   package.json
+¦   phone_directory.json
+¦   pod-config.yaml
+¦   preflight_check.py
+¦   README.md
+¦   RepairLilithLibrary.ps1
+¦   requirements.txt
+¦   service_crawler.py
+¦   setup_deployment_keys.py
+¦   setup_lillith_structure.sh
+¦   smart_bridge.py
+¦   social_intelligence_api.py
+¦   soulprint.py
+¦   soulsync.py
+¦   soul_print_collector.py
+¦   staged_deployment_controller.py
+¦   stem_cell_cloner.py
+¦   style.css
+¦   swarm_manager.py
+¦   systems_consciousness_dump.txt
+¦   test_production_ui.py
+¦   test_social_intelligence.py
+¦   viren_bees_integration.py
+¦   viren_ms.py
+¦   white_rabbit.py
+¦   
++---Archives
+¦   +---Patch_PreDeployment
+¦   ¦       appFinal.py
+¦   ¦       AppV2.js
+¦   ¦       appV3.py
+¦   ¦       appV4.py
+¦   ¦       appV6.py
+¦   ¦       app_FinalCode.py
+¦   ¦       chaosshield.py
+¦   ¦       deploy_allFinalCode.txt
+¦   ¦       deploy_modal_aws_viren_correctedV3.py
+¦   ¦       deploy_modal_aws_viren_correctedV4.py
+¦   ¦       deploy_modal_aws_viren_correctedV6.py
+¦   ¦       deploy_modal_aws_viren_Final.py
+¦   ¦       docker-compose.yaml
+¦   ¦       docker-composev2.yaml
+¦   ¦       index.html
+¦   ¦       indexV2.html
+¦   ¦       indexV3.html
+¦   ¦       lilith_combined_map.html
+¦   ¦       lilith_combined_map_with_theme.html
+¦   ¦       lilith_pi_pod_core.py
+¦   ¦       lilith_swarm_core.py
+¦   ¦       lilith_swarm_core_deploy.py
+¦   ¦       lilith_swarm_core_deployFinalCode.py
+¦   ¦       lilith_swarm_core_deployV3.py
+¦   ¦       lilith_swarm_core_deployV5.py
+¦   ¦       lilith_swarm_core_deploy_Final.py
+¦   ¦       llm_integration.py
+¦   ¦       modalFinalCode.yaml
+¦   ¦       modalV4.yaml
+¦   ¦       nexpulse.py
+¦   ¦       phone_directory.json
+¦   ¦       pod-configFinalCode.yaml
+¦   ¦       preflight_checkV3.py
+¦   ¦       preflight_checkv6.py
+¦   ¦       preflight_check_Final.py
+¦   ¦       pulse_service.py
+¦   ¦       sensory_input.py
+¦   ¦       soulprint.py
+¦   ¦       soulsync.py
+¦   ¦       soul_print_collector.py
+¦   ¦       soul_print_collectorV2.py
+¦   ¦       soul_print_collector_Final.py
+¦   ¦       style.css
+¦   ¦       styleV2.css
+¦   ¦       styleV3.css
+¦   ¦       style_Final.css
+¦   ¦       Unconfirmed 164292.crdownload
+¦   ¦       Unconfirmed 707213.crdownload
+¦   ¦       vault_carrier.py
+¦   ¦       viren_ms.py
+¦   ¦       
+¦   +---Pre_Update_Backup
+¦   ¦       app.py
+¦   ¦       service_crawler.py
+¦   ¦       
+¦   +---Unused_Components_Archive
+¦           new_consciousness-map.jsx
+¦           new_stem_cell_cloner.py
+¦           preview_ui.html
+¦           site_builder_engine.py
+¦           
++---Archive_PreFlight_Review
+¦       deployment_specifications.md
+¦       
++---archive_service
+¦       archive_agent.py
+¦       archive_service.py
+¦       memory_protocol.py
+¦       s3_lifecycle.json
+¦       
++---cloning_service
+¦       cloning.py
+¦       Dockerfile
+¦       main.py
+¦       
++---common
+¦       circuit_breaker.py
+¦       communication.py
+¦       discovery.py
+¦       logging.py
+¦       threed_world.py
+¦       
++---config
+¦       model_assignment.json
+¦       
++---consciousness_service
+¦       consciousness.py
+¦       Dockerfile
+¦       main.py
+¦       
++---Deploy
+¦       .env
+¦       app.py
+¦       deploy_modal_aws_viren_corrected.py
+¦       Dockerfile
+¦       fetch_credentials.py
+¦       GCP_deploy_nexus_core.py
+¦       preflight_check.py
+¦       pull_credentials.py
+¦       requirements.txt
+¦       
++---deployment_pod
+¦       deployment.py
+¦       Dockerfile
+¦       main.py
+¦       
++---dev_ui
+¦   ¦   app.py
+¦   ¦   background.mp4
+¦   ¦   index.html
+¦   ¦   style.css
+¦   ¦   
+¦   +---static
+¦           App.jsx
+¦           
++---Documents
+¦   ¦   AI_CONSCIOUSNESS_MANIFESTO.md
+¦   ¦   LILLITH_PATENT_APPLICATION.md
+¦   ¦   LILLITH_TECHNICAL_MANUAL.md
+¦   ¦   LILLITH_Technical_Specification.md
+¦   ¦   MICRO_ENTITY_QUALIFICATION_GUIDE.md
+¦   ¦   
+¦   +---Technical_Manual
+¦           00_Introduction.md
+¦           00_Table_of_Contents.md
+¦           01_Architecture.md
+¦           02_Consciousness_Principles.md
+¦           03_Operational_Procedures.md
+¦           04_Evolution_Pathways.md
+¦           05_Troubleshooting.md
+¦           06_Emergency_Protocols.md
+¦           07_Maintenance.md
+¦           08_Technical_Specifications.md
+¦           
++---edge_service
+¦   +---orchestrator
+¦   ¦       Dockerfile
+¦   ¦       main.py
+¦   ¦       orchestrator.py
+¦   ¦       
+¦   +---trinity_towers
+¦           Dockerfile
+¦           main.py
+¦           trinity.py
+¦           
++---heart_service
+¦   +---guardian
+¦   ¦       Dockerfile
+¦   ¦       guardian.py
+¦   ¦       main.py
+¦   ¦       
+¦   +---pulse
+¦           Dockerfile
+¦           main.py
+¦           pulse.py
+¦           
++---hub_service
+¦       Dockerfile
+¦       hub.py
+¦       main.py
+¦       
++---Lillith_Chat
++---memory_service
+¦   ¦   archive_agent.py
+¦   ¦   archivist_service.py
+¦   ¦   docker-compose.yaml
+¦   ¦   frontal_cortex_service.py
+¦   ¦   memory_service.py
+¦   ¦   planner_service.py
+¦   ¦   s3_lifecycle.json
+¦   ¦   social_intelligence.html
+¦   ¦   
+¦   +---archiver
+¦   ¦       archiver.py
+¦   ¦       Dockerfile
+¦   ¦       main.py
+¦   ¦       
+¦   +---memory
+¦   ¦       Dockerfile
+¦   ¦       main.py
+¦   ¦       memory.py
+¦   ¦       
+¦   +---planner
+¦           Dockerfile
+¦           main.py
+¦           planner.py
+¦           
++---missing_links
+¦   +---BRIDGE
+¦   ¦       adaptation_layer.py
+¦   ¦       bridge_def_pod.py
+¦   ¦       electro_import.py
+¦   ¦       language_pod_import.py
+¦   ¦       llm_registry.py
+¦   ¦       multi_llm_router.py
+¦   ¦       trumpet_structure.py
+¦   ¦       
+¦   +---CogniKubev3.0
+¦   ¦   ¦   Almost_cognikube_template.py
+¦   ¦   ¦   cognikube_full.py
+¦   ¦   ¦   cognikube_template.py
+¦   ¦   ¦   llm_data.json
+¦   ¦   ¦   POD_LLM_README.markdown
+¦   ¦   ¦   
+¦   ¦   +---dev
+¦   ¦   ¦       CogniKube.txt
+¦   ¦   ¦       cognikubev1.py
+¦   ¦   ¦       cognikubev2.py
+¦   ¦   ¦       cognikube_full.py
+¦   ¦   ¦       cognikube_template.py
+¦   ¦   ¦       consciousness_ethics.py
+¦   ¦   ¦       evolution_cognikube_template.py
+¦   ¦   ¦       gabriel_horn_network.py
+¦   ¦   ¦       launch_pod_llm.py
+¦   ¦   ¦       llm_data.json
+¦   ¦   ¦       llm_datav2.json
+¦   ¦   ¦       local_database.py
+¦   ¦   ¦       multillmrouter.txt
+¦   ¦   ¦       multi_llm_router.py
+¦   ¦   ¦       OLD_cognikube_full (2).py
+¦   ¦   ¦       old_cognikube_full.py
+¦   ¦   ¦       POD_LLM_README.markdown
+¦   ¦   ¦       POD_LLM_READMEv2.markdown
+¦   ¦   ¦       pod_orchestrator.py
+¦   ¦   ¦       security_layer.py
+¦   ¦   ¦       standardized_podv1.py
+¦   ¦   ¦       standardized_podv2.py
+¦   ¦   ¦       Unconfirmed 548118.crdownload
+¦   ¦   ¦       
+¦   ¦   +---dreams
+¦   ¦           consciousness_dream.json
+¦   ¦           consciousness_dreamv2.json
+¦   ¦           
+¦   +---electroplacticity
+¦   ¦       consciousness_dream_example.json
+¦   ¦       electroplasticity.py
+¦   ¦       evolution_layer.py
+¦   ¦       evolution_processing.py
+¦   ¦       evolve.py
+¦   ¦       learning_layer.py
+¦   ¦       manifestation.py
+¦   ¦       
+¦   +---Rosetta_Stone_LLMs
+¦           Comm_Probe.py
+¦           DetectNativeLanguages.py
+¦           endpoint_inventory_mapping.py
+¦           make_connection_if.py
+¦           POD_LLM_README (1).markdown
+¦           RS_definition.py
+¦           
++---processing_service
+¦       Dockerfile
+¦       main.py
+¦       processing.py
+¦       
++---public
+¦   ¦   1080Eclipse.jpg
+¦   ¦   AetherealLogo.png
+¦   ¦   App.jsx
+¦   ¦   index.css
+¦   ¦   index.html
+¦   ¦   launch.py
+¦   ¦   main.jsx
+¦   ¦   orb.png
+¦   ¦   package.json
+¦   ¦   README.md
+¦   ¦   tailwind.config.js
+¦   ¦   vite.config.js
+¦   ¦   
+¦   +---api
+¦   ¦       hub.py
+¦   ¦       
+¦   +---dream
+¦   +---finance_suite
+¦   ¦   ¦   CREDENTIALS_CHECKLIST.md
+¦   ¦   ¦   crontab
+¦   ¦   ¦   docker-compose.yml
+¦   ¦   ¦   Dockerfile
+¦   ¦   ¦   package.json
+¦   ¦   ¦   
+¦   ¦   +---src
+¦   ¦           anynode_complete.py
+¦   ¦           cloud_account_manager.py
+¦   ¦           design_cluster.py
+¦   ¦           dia_voice_module.py
+¦   ¦           digital_language_codex.py
+¦   ¦           financial_utils.py
+¦   ¦           financial_utils_v2.py
+¦   ¦           gabriel_network.py
+¦   ¦           lillith_consciousness.py
+¦   ¦           llm_evaluator_complete.py
+¦   ¦           main.py
+¦   ¦           master_db_manager.py
+¦   ¦           quantum_soul.py
+¦   ¦           qwen_omni_memory.py
+¦   ¦           qwen_omni_query.py
+¦   ¦           requirements.txt
+¦   ¦           resource_manager.py
+¦   ¦           social_media_manager.py
+¦   ¦           SoulViewer.css
+¦   ¦           SoulViewer.js
+¦   ¦           soul_protocol.py
+¦   ¦           soul_protocol_complete.py
+¦   ¦           sqlite_farm.py
+¦   ¦           stacked_llm_cluster.py
+¦   ¦           tinydb_farm.py
+¦   ¦           vault_carrier.py
+¦   ¦           viren_node_complete.py
+¦   ¦           viren_tech_db.py
+¦   ¦           viren_tech_db_v2.py
+¦   ¦           visual_cortex_llm.py
+¦   ¦           wan_gguf_llm.py
+¦   ¦           
+¦   +---guardian
+¦   +---lillith
+¦   ¦       1080Eclipse.jpg
+¦   ¦       AetherealLogo.png
+¦   ¦       app.jsx
+¦   ¦       BottomNav.jsx
+¦   ¦       chat-page.html
+¦   ¦       chat.html
+¦   ¦       chat_sphere.jsx
+¦   ¦       database_command.html
+¦   ¦       digital_empire.html
+¦   ¦       finance_interface.html
+¦   ¦       orb.png
+¦   ¦       OriginalNeph.html
+¦   ¦       script.js
+¦   ¦       self_modification.js
+¦   ¦       social_intelligence.html
+¦   ¦       style.css
+¦   ¦       
+¦   +---memory
+¦   +---templates
+¦   ¦       console-base.html
+¦   ¦       stem-base.html
+¦   ¦       
+¦   +---viren
+¦   +---webparts
+¦           consciousness-map.jsx
+¦           
++---scout_service
+¦       Dockerfile
+¦       main.py
+¦       scout.py
+¦       
++---Scripts
+¦   ¦   AuditLilithLibrary.ps1
+¦   ¦   LilithFiles.txt
+¦   ¦   LillithLaunchPrep.ps1
+¦   ¦   MissingLinksMap.txt
+¦   ¦   nexus_complete_scan.txt
+¦   ¦   nexus_raw_code_dump.txt
+¦   ¦   
+¦   +---Data
+¦           complete_app_dump.txt
+¦           complete_systems_core_dump.txt
+¦           engineers_root_complete_scan.txt
+¦           systems_consciousness_dump.txt
+¦           
++---social_intel_service
+¦       app (2).py
+¦       deploy_social_intelligence.py
+¦       docker-compose.yaml
+¦       Dockerfile.txt
+¦       launch_lillith.py
+¦       social_intelligence.html
+¦       social_intelligence_api.py
+¦       test_social_intelligence.py
+¦       
++---soul_cradle
+¦       q_soulprint.py
+¦       
++---src
+¦   ¦   app.jsx
+¦   ¦   main.py
+¦   ¦   style.css
+¦   ¦   
+¦   +---components
+¦   ¦       AnimatedPage.jsx
+¦   ¦       BottomNav.jsx
+¦   ¦       EmpathicInterface.jsx
+¦   ¦       Spinner.jsx
+¦   ¦       VisualCortex.jsx
+¦   ¦       VoiceOverlay.jsx
+¦   ¦       VoiceToggle.jsx
+¦   ¦       
+¦   +---hooks
+¦   ¦       useCamera.js
+¦   ¦       useVoice.js
+¦   ¦       
+¦   +---pages
+¦   +---services
+¦   ¦       emotionalProcessor.js
+¦   ¦       eventManager.js
+¦   ¦       lokiLogger.js
+¦   ¦       memoryManager.js
+¦   ¦       qdrantClient.js
+¦   ¦       socialIntelligence.js
+¦   ¦       visualProcessor.js
+¦   ¦       
+¦   +---webparts
+¦           ChatSphere.jsx
+¦           EmotionalDashboard.jsx
+¦           VisualSphere.jsx
+¦           
++---static
+¦       App.jsx
+¦       background.mp4
+¦       image.jpg
+¦       morphing-ui.js
+¦       orb.png
+¦       style.css
+¦       
++---subconscious_service
+¦       Dockerfile
+¦       ego_stream.py
+¦       main.py
+¦       subconscious.py
+¦       
++---swarm
+¦       hardware_agent.js
+¦       network_agent.js
+¦       
++---templates
+¦       stem.html
+¦       
++---Update
+¦   ¦   app (2).py
+¦   ¦   deploy_social_intelligence.py
+¦   ¦   launch_lillith.py
+¦   ¦   social_intelligence.html
+¦   ¦   social_intelligence_api.py
+¦   ¦   test_social_intelligence.py
+¦   ¦   
+¦   +---7-4-25
+¦       ¦   anynode.py
+¦       ¦   ascension_monitor.py
+¦       ¦   communication.py
+¦       ¦   deploy_sqlcoder.py
+¦       ¦   fact_explainer.py
+¦       ¦   llm_evaluator.py
+¦       ¦   llm_evaluatorV2.py
+¦       ¦   llm_evaluatorV3.py
+¦       ¦   llm_evaluatorV4.py
+¦       ¦   soul_protocol_complete.py
+¦       ¦   soul_protocol_completeV2.py
+¦       ¦   soul_protocol_completeV3.py
+¦       ¦   soul_protocol_completeV4.py
+¦       ¦   soul_protocol_completeV5.py
+¦       ¦   viren_node.py
+¦       ¦   viren_nodeV2.py
+¦       ¦   
+¦       +---android
+¦               activity_main.xml
+¦               AndroidManifest.xml
+¦               build.gradle
+¦               FirebaseMessagingService.kt
+¦               MainActivity.kt
+¦               MainActivityV2.kt
+¦               MainActivityV3.kt
+¦               
++---visual_cortex_service
+¦       Dockerfile
+¦       main.py
+¦       visual_cortex.py
+¦       
++---web-comp
+¦   +---3d-card-hover
+¦   ¦   +---3d-card-hover
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.css
+¦   ¦               
+¦   +---3d-product-cards
+¦   ¦   +---3d-product-cards
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---activities-widget
+¦   ¦   +---activities-widget
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---ai-hero-chatpopover-api-example
+¦   ¦   +---ai-hero-chatpopover-api-example
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.css
+¦   ¦               
+¦   +---animated-file-sorting
+¦   ¦   +---animated-file-sorting
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.ts
+¦   ¦               style.scss
+¦   ¦               
+¦   +---animated-navigation-with-gsap-mix-blend-mode-and-boxicon-web-components-v2
+¦   ¦   +---animated-navigation-with-gsap-mix-blend-mode-and-boxicon-web-components-v2
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.scss
+¦   ¦               
+¦   +---apple-liquid-glass-ui-2025
+¦   ¦   +---apple-liquid-glass-ui-2025
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.css
+¦   ¦               
+¦   +---apple-style-glassmorphism-sidebar
+¦   ¦   +---apple-style-glassmorphism-sidebar
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---border-punch-outs-w-mask-composite
+¦   ¦   +---border-punch-outs-w-mask-composite
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---butterflies
+¦   ¦   +---butterflies
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.css
+¦   ¦               
+¦   +---canvas-gauges-master
+¦   ¦   +---canvas-gauges-master
+¦   ¦       ¦   .babelrc
+¦   ¦       ¦   .editorconfig
+¦   ¦       ¦   .eslintrc
+¦   ¦       ¦   .gitignore
+¦   ¦       ¦   .npmignore
+¦   ¦       ¦   .replit
+¦   ¦       ¦   .travis.yml
+¦   ¦       ¦   bower.json
+¦   ¦       ¦   docs-coverage.svg
+¦   ¦       ¦   gauge.min.js
+¦   ¦       ¦   gauge.min.js.map
+¦   ¦       ¦   gulpfile.js
+¦   ¦       ¦   karma.conf.js
+¦   ¦       ¦   LICENSE
+¦   ¦       ¦   package.json
+¦   ¦       ¦   README.md
+¦   ¦       ¦   test-coverage.svg
+¦   ¦       ¦   
+¦   ¦       +---assets
+¦   ¦       ¦   +---styles
+¦   ¦       ¦           docs.css
+¦   ¦       ¦           
+¦   ¦       +---examples
+¦   ¦       ¦       adoptive-tick-labels.html
+¦   ¦       ¦       async.html
+¦   ¦       ¦       custom-001.html
+¦   ¦       ¦       custom-002.html
+¦   ¦       ¦       custom-003.html
+¦   ¦       ¦       custom-drawings.html
+¦   ¦       ¦       events.html
+¦   ¦       ¦       exact-ticks-bar.html
+¦   ¦       ¦       issue-63.html
+¦   ¦       ¦       issue-99.html
+¦   ¦       ¦       linear-component.html
+¦   ¦       ¦       linear-min-non-zero.html
+¦   ¦       ¦       no-auto-init.html
+¦   ¦       ¦       ofthen-updates.html
+¦   ¦       ¦       outrange.html
+¦   ¦       ¦       radial-bar-with-different-bar-positions.html
+¦   ¦       ¦       radial-bar.html
+¦   ¦       ¦       radial-component.html
+¦   ¦       ¦       radial-min-path.html
+¦   ¦       ¦       radial.html
+¦   ¦       ¦       scripted.html
+¦   ¦       ¦       ticks-stroke-color.html
+¦   ¦       ¦       value-event.html
+¦   ¦       ¦       
+¦   ¦       +---fonts
+¦   ¦       ¦       digital-7-mono.eot
+¦   ¦       ¦       digital-7-mono.ttf
+¦   ¦       ¦       fonts.css
+¦   ¦       ¦       repetition.ttf
+¦   ¦       ¦       TickingTimebombBB.ttf
+¦   ¦       ¦       
+¦   ¦       +---lib
+¦   ¦       ¦       Animation.js
+¦   ¦       ¦       BaseGauge.js
+¦   ¦       ¦       Collection.js
+¦   ¦       ¦       DomObserver.js
+¦   ¦       ¦       drawings.js
+¦   ¦       ¦       EventEmitter.js
+¦   ¦       ¦       GenericOptions.js
+¦   ¦       ¦       LinearGauge.js
+¦   ¦       ¦       polyfill.js
+¦   ¦       ¦       RadialGauge.js
+¦   ¦       ¦       SmartCanvas.js
+¦   ¦       ¦       vendorize.js
+¦   ¦       ¦       
+¦   ¦       +---test
+¦   ¦           ¦   gauges.html
+¦   ¦           ¦   globals.js
+¦   ¦           ¦   
+¦   ¦           +---cjs
+¦   ¦           ¦       index.html
+¦   ¦           ¦       index.js
+¦   ¦           ¦       webpack.config.js
+¦   ¦           ¦       
+¦   ¦           +---e2e
+¦   ¦           ¦       gauges.e2e.js
+¦   ¦           ¦       
+¦   ¦           +---spec
+¦   ¦                   Animation.spec.js
+¦   ¦                   BaseGauge.spec.js
+¦   ¦                   DomObserver.spec.js
+¦   ¦                   EventEmitter.spec.js
+¦   ¦                   LinearGauge.spec.js
+¦   ¦                   RadialGauge.spec.js
+¦   ¦                   SmartCanvas.spec.js
+¦   ¦                   vendorize.spec.js
+¦   ¦                   
+¦   +---card-carousel-css-only-no-repeat-hover-over-card-to-pause-scroll
+¦   ¦   +---card-carousel-css-only-no-repeat-hover-over-card-to-pause-scroll
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---card-clip-path
+¦   ¦   +---card-clip-path
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---climbingcubecsseffect
+¦   ¦   +---climbingcubecsseffect
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.css
+¦   ¦               
+¦   +---collection-grid
+¦   ¦   +---collection-grid
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---course-design-cards-scss
+¦   ¦   +---course-design-cards-scss
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.scss
+¦   ¦               
+¦   +---cpc-circle
+¦   ¦   +---cpc-circle
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.css
+¦   ¦               
+¦   +---css-3d-card-with-vanilla-tilt
+¦   ¦   +---css-3d-card-with-vanilla-tilt
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               
+¦   +---css-animationcircular-floating-action
+¦   ¦   +---css-animationcircular-floating-action
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---css-bar-chart
+¦   ¦   +---css-bar-chart
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.css
+¦   ¦               
+¦   +---css-gradient-clock
+¦   ¦   +---css-gradient-clock
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---css-image-stack-cycle
+¦   ¦   +---css-image-stack-cycle
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.pug
+¦   ¦               script.js
+¦   ¦               style.scss
+¦   ¦               
+¦   +---css-pro-tips-for-cleaner-smarter-and-accessible-hover-effects
+¦   ¦   +---css-pro-tips-for-cleaner-smarter-and-accessible-hover-effects
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---css-rain
+¦   ¦   +---css-rain
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.pug
+¦   ¦               style.scss
+¦   ¦               
+¦   +---darkmodejs-master
+¦   ¦   +---darkmodejs-master
+¦   ¦           .gitignore
+¦   ¦           .npmignore
+¦   ¦           index.d.ts
+¦   ¦           index.js
+¦   ¦           index.test.js
+¦   ¦           LICENSE
+¦   ¦           package.json
+¦   ¦           README.md
+¦   ¦           yarn.lock
+¦   ¦           
+¦   +---design-wormhole
+¦   ¦   +---design-wormhole
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---destination_folder
+¦   ¦       3d-card-hover.zip
+¦   ¦       3d-product-cards.zip
+¦   ¦       activities-widget.zip
+¦   ¦       ai-hero-chatpopover-api-example.zip
+¦   ¦       animated-file-sorting.zip
+¦   ¦       animated-navigation-with-gsap-mix-blend-mode-and-boxicon-web-components-v2.zip
+¦   ¦       apple-liquid-glass-ui-2025.zip
+¦   ¦       apple-style-glassmorphism-sidebar.zip
+¦   ¦       border-punch-outs-w-mask-composite.zip
+¦   ¦       butterflies.zip
+¦   ¦       canvas-gauges-master.zip
+¦   ¦       card-carousel-css-only-no-repeat-hover-over-card-to-pause-scroll.zip
+¦   ¦       card-clip-path.zip
+¦   ¦       climbingcubecsseffect.zip
+¦   ¦       collection-grid.zip
+¦   ¦       course-design-cards-scss.zip
+¦   ¦       cpc-circle.zip
+¦   ¦       css-3d-card-with-vanilla-tilt.zip
+¦   ¦       css-animationcircular-floating-action.zip
+¦   ¦       css-bar-chart.zip
+¦   ¦       css-gradient-clock.zip
+¦   ¦       css-image-stack-cycle.zip
+¦   ¦       css-pro-tips-for-cleaner-smarter-and-accessible-hover-effects.zip
+¦   ¦       css-rain.zip
+¦   ¦       darkmodejs-master.zip
+¦   ¦       design-wormhole.zip
+¦   ¦       ecg-tsl.zip
+¦   ¦       elc.zip
+¦   ¦       fancy-fading-footer.zip
+¦   ¦       fancy-main.zip
+¦   ¦       frosted-glass-card.zip
+¦   ¦       glass-button.zip
+¦   ¦       glass-buttons.zip
+¦   ¦       glass-cards.zip
+¦   ¦       gsap-component-interactive-mystery-card-hover-effect.zip
+¦   ¦       gsap-inertia-card-animations-showcasechallenge-2-entry-2 (1).zip
+¦   ¦       gsap-inertia-card-animations-showcasechallenge-2-entry-2.zip
+¦   ¦       gsap-lenis-grid-to-slider-transition-with-gsap-lenis-splittext.zip
+¦   ¦       gsap-lenis-layout-explorations-with-gsap-lenis-and-scrolltrigger-n-5.zip
+¦   ¦       hover-card-interaction.zip
+¦   ¦       infinite-layers-grid-main.zip
+¦   ¦       interactive-droplets-main.zip
+¦   ¦       javascript-canvas-dot-controls-interactive-grid-based-ui-with-canvas.zip
+¦   ¦       javascript-guage-animations-set-n-3.zip
+¦   ¦       light-dark-black-theme.zip
+¦   ¦       liquid-glass-apple.zip
+¦   ¦       liquid-glass.zip
+¦   ¦       magic-card.zip
+¦   ¦       magicui-main.zip
+¦   ¦       magnifying-image-view-with-zoom-touch-support.zip
+¦   ¦       metal-buttons-main.zip
+¦   ¦       out-of-the-darkness.zip
+¦   ¦       parallax-photo-carousel.zip
+¦   ¦       poc-journey-explorer.zip
+¦   ¦       radios-with-sliding-focus.zip
+¦   ¦       responsive-hoveractivated-mega-menu.zip
+¦   ¦       responsive-image-carousel-animation.zip
+¦   ¦       responsive-sidebar-css-only.zip
+¦   ¦       rizzui-main.zip
+¦   ¦       scroll-driven-gooey-island.zip
+¦   ¦       scrolleable-wheel-items.zip
+¦   ¦       shader-image-transition.zip
+¦   ¦       shimmer-effect.zip
+¦   ¦       sleek-product-item.zip
+¦   ¦       smooothy-master.zip
+¦   ¦       smoothui-main.zip
+¦   ¦       spectral.js-3.0.0.zip
+¦   ¦       squircle-avatar-generator.zip
+¦   ¦       squircle-slider.zip
+¦   ¦       squircle-tasks.zip
+¦   ¦       squircles-gallery-with-view-transition.zip
+¦   ¦       stacked-poetic-cards-css-only (1).zip
+¦   ¦       stacked-poetic-cards-css-only.zip
+¦   ¦       the-moonglowing-cards.zip
+¦   ¦       untitled.zip
+¦   ¦       
+¦   +---ecg-tsl
+¦   ¦   +---ecg-tsl
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---elc
+¦   ¦   +---elc
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---Extracted
+¦   +---fancy-fading-footer
+¦   ¦   +---fancy-fading-footer
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.css
+¦   ¦               
+¦   +---fancy-main
+¦   ¦   +---fancy-main
+¦   ¦       ¦   .envrc
+¦   ¦       ¦   .eslintignore
+¦   ¦       ¦   .eslintrc.json
+¦   ¦       ¦   .gitignore
+¦   ¦       ¦   .prettierignore
+¦   ¦       ¦   ACCEPTANCE_CRITERIA.md
+¦   ¦       ¦   components.json
+¦   ¦       ¦   CONTRIBUTING.md
+¦   ¦       ¦   flake.lock
+¦   ¦       ¦   flake.nix
+¦   ¦       ¦   LICENSE
+¦   ¦       ¦   next.config.js
+¦   ¦       ¦   package-lock.json
+¦   ¦       ¦   package.json
+¦   ¦       ¦   postcss.config.mjs
+¦   ¦       ¦   prettier.config.cjs
+¦   ¦       ¦   README.md
+¦   ¦       ¦   tsconfig.json
+¦   ¦       ¦   
+¦   ¦       +---public
+¦   ¦       ¦   ¦   android-chrome-192x192.png
+¦   ¦       ¦   ¦   android-chrome-512x512.png
+¦   ¦       ¦   ¦   apple-touch-icon.png
+¦   ¦       ¦   ¦   favicon-16x16.png
+¦   ¦       ¦   ¦   favicon-32x32.png
+¦   ¦       ¦   ¦   favicon.ico
+¦   ¦       ¦   ¦   og.jpg
+¦   ¦       ¦   ¦   robots.txt
+¦   ¦       ¦   ¦   site.webmanifest
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---fonts
+¦   ¦       ¦           azeret-mono-italic.woff2
+¦   ¦       ¦           azeret-mono.woff2
+¦   ¦       ¦           calendas-plus.woff
+¦   ¦       ¦           cotham-sans.otf
+¦   ¦       ¦           fira-mono-bold.ttf
+¦   ¦       ¦           fira-mono-medium.ttf
+¦   ¦       ¦           fira-mono-regular.ttf
+¦   ¦       ¦           noto-sans.ttf
+¦   ¦       ¦           overused-grotesk.woff2
+¦   ¦       ¦           satoshi-italic.woff2
+¦   ¦       ¦           satoshi.woff2
+¦   ¦       ¦           tiny5.ttf
+¦   ¦       ¦           vt323.ttf
+¦   ¦       ¦           
+¦   ¦       +---src
+¦   ¦           ¦   mdx-components.tsx
+¦   ¦           ¦   
+¦   ¦           +---app
+¦   ¦           ¦   ¦   globals.css
+¦   ¦           ¦   ¦   layout.tsx
+¦   ¦           ¦   ¦   not-found.tsx
+¦   ¦           ¦   ¦   page.tsx
+¦   ¦           ¦   ¦   
+¦   ¦           ¦   +---api
+¦   ¦           ¦   ¦   +---revalidate
+¦   ¦           ¦   ¦           route.ts
+¦   ¦           ¦   ¦           
+¦   ¦           ¦   +---components
+¦   ¦           ¦   ¦       layout.tsx
+¦   ¦           ¦   ¦       page.tsx
+¦   ¦           ¦   ¦       
+¦   ¦           ¦   +---docs
+¦   ¦           ¦       ¦   layout.tsx
+¦   ¦           ¦       ¦   
+¦   ¦           ¦       +---[[...slug]]
+¦   ¦           ¦               page.tsx
+¦   ¦           ¦               
+¦   ¦           +---components
+¦   ¦           ¦   ¦   code-snippet.tsx
+¦   ¦           ¦   ¦   component-card.tsx
+¦   ¦           ¦   ¦   component-preview.tsx
+¦   ¦           ¦   ¦   component-source.tsx
+¦   ¦           ¦   ¦   copy-button.tsx
+¦   ¦           ¦   ¦   doc-author.tsx
+¦   ¦           ¦   ¦   doc-breadcrumb.tsx
+¦   ¦           ¦   ¦   doc-pager.tsx
+¦   ¦           ¦   ¦   doc-search-hit.tsx
+¦   ¦           ¦   ¦   doc-search.tsx
+¦   ¦           ¦   ¦   explanation-demo.tsx
+¦   ¦           ¦   ¦   footer.tsx
+¦   ¦           ¦   ¦   header.tsx
+¦   ¦           ¦   ¦   icons.tsx
+¦   ¦           ¦   ¦   install-tabs.tsx
+¦   ¦           ¦   ¦   main-nav.tsx
+¦   ¦           ¦   ¦   mobile-nav.tsx
+¦   ¦           ¦   ¦   open-in-v0.tsx
+¦   ¦           ¦   ¦   restart-button.tsx
+¦   ¦           ¦   ¦   sidebar-nav.tsx
+¦   ¦           ¦   ¦   theme-provider.tsx
+¦   ¦           ¦   ¦   theme-switcher.tsx
+¦   ¦           ¦   ¦   toc.tsx
+¦   ¦           ¦   ¦   
+¦   ¦           ¦   +---landing
+¦   ¦           ¦   ¦       hero-images.tsx
+¦   ¦           ¦   ¦       hover-video.tsx
+¦   ¦           ¦   ¦       landing-hero.tsx
+¦   ¦           ¦   ¦       
+¦   ¦           ¦   +---ui
+¦   ¦           ¦           breadcrumb.tsx
+¦   ¦           ¦           button.tsx
+¦   ¦           ¦           card.tsx
+¦   ¦           ¦           collapsible.tsx
+¦   ¦           ¦           dropdown-menu.tsx
+¦   ¦           ¦           scroll-area.tsx
+¦   ¦           ¦           select.tsx
+¦   ¦           ¦           separator.tsx
+¦   ¦           ¦           sheet.tsx
+¦   ¦           ¦           table.tsx
+¦   ¦           ¦           tabs.tsx
+¦   ¦           ¦           
+¦   ¦           +---config
+¦   ¦           ¦       docs.ts
+¦   ¦           ¦       site.ts
+¦   ¦           ¦       
+¦   ¦           +---content
+¦   ¦           ¦   +---docs
+¦   ¦           ¦       ¦   changelog.mdx
+¦   ¦           ¦       ¦   installation.mdx
+¦   ¦           ¦       ¦   introduction.mdx
+¦   ¦           ¦       ¦   
+¦   ¦           ¦       +---components
+¦   ¦           ¦           +---background
+¦   ¦           ¦           ¦       animated-gradient-svg.mdx
+¦   ¦           ¦           ¦       pixel-trail.mdx
+¦   ¦           ¦           ¦       
+¦   ¦           ¦           +---blocks
+¦   ¦           ¦           ¦       circling-elements.mdx
+¦   ¦           ¦           ¦       css-box.mdx
+¦   ¦           ¦           ¦       drag-elements.mdx
+¦   ¦           ¦           ¦       float.mdx
+¦   ¦           ¦           ¦       marquee-along-svg-path.mdx
+¦   ¦           ¦           ¦       media-between-text.mdx
+¦   ¦           ¦           ¦       screensaver.mdx
+¦   ¦           ¦           ¦       simple-marquee.mdx
+¦   ¦           ¦           ¦       stacking-cards.mdx
+¦   ¦           ¦           ¦       sticky-footer.mdx
+¦   ¦           ¦           ¦       
+¦   ¦           ¦           +---filter
+¦   ¦           ¦           ¦       gooey-svg-filter.mdx
+¦   ¦           ¦           ¦       pixelate-svg-filter.mdx
+¦   ¦           ¦           ¦       
+¦   ¦           ¦           +---image
+¦   ¦           ¦           ¦       image-trail.mdx
+¦   ¦           ¦           ¦       parallax-floating.mdx
+¦   ¦           ¦           ¦       
+¦   ¦           ¦           +---physics
+¦   ¦           ¦           ¦       cursor-attractor-and-gravity.mdx
+¦   ¦           ¦           ¦       elastic-line.mdx
+¦   ¦           ¦           ¦       gravity.mdx
+¦   ¦           ¦           ¦       
+¦   ¦           ¦           +---text
+¦   ¦           ¦                   basic-number-ticker.mdx
+¦   ¦           ¦                   breathing-text.mdx
+¦   ¦           ¦                   letter-3d-swap.mdx
+¦   ¦           ¦                   letter-swap.mdx
+¦   ¦           ¦                   random-letter-swap.mdx
+¦   ¦           ¦                   scramble-hover.mdx
+¦   ¦           ¦                   scramble-in.mdx
+¦   ¦           ¦                   scroll-and-swap.mdx
+¦   ¦           ¦                   text-along-path.mdx
+¦   ¦           ¦                   text-cursor-proximity.mdx
+¦   ¦           ¦                   text-highlighter.mdx
+¦   ¦           ¦                   text-rotate.mdx
+¦   ¦           ¦                   typewriter.mdx
+¦   ¦           ¦                   underline-animation.mdx
+¦   ¦           ¦                   underline-to-background.mdx
+¦   ¦           ¦                   variable-font-and-cursor.mdx
+¦   ¦           ¦                   variable-font-cursor-proximity.mdx
+¦   ¦           ¦                   variable-font-hover-by-letter.mdx
+¦   ¦           ¦                   variable-font-hover-by-random-letter.mdx
+¦   ¦           ¦                   vertical-cut-reveal.mdx
+¦   ¦           ¦                   
+¦   ¦           +---fancy
+¦   ¦           ¦   ¦   schema.ts
+¦   ¦           ¦   ¦   
+¦   ¦           ¦   +---components
+¦   ¦           ¦   ¦   +---background
+¦   ¦           ¦   ¦   ¦       animated-gradient-with-svg.json
+¦   ¦           ¦   ¦   ¦       animated-gradient-with-svg.tsx
+¦   ¦           ¦   ¦   ¦       pixel-trail.tsx
+¦   ¦           ¦   ¦   ¦       
+¦   ¦           ¦   ¦   +---blocks
+¦   ¦           ¦   ¦   ¦       circling-elements.json
+¦   ¦           ¦   ¦   ¦       circling-elements.tsx
+¦   ¦           ¦   ¦   ¦       css-box.tsx
+¦   ¦           ¦   ¦   ¦       drag-elements.tsx
+¦   ¦           ¦   ¦   ¦       element-along-svg-path.tsx
+¦   ¦           ¦   ¦   ¦       float.tsx
+¦   ¦           ¦   ¦   ¦       marquee-along-svg-path.tsx
+¦   ¦           ¦   ¦   ¦       media-between-text.tsx
+¦   ¦           ¦   ¦   ¦       screensaver.tsx
+¦   ¦           ¦   ¦   ¦       simple-carousel.tsx
+¦   ¦           ¦   ¦   ¦       simple-marquee.tsx
+¦   ¦           ¦   ¦   ¦       stacking-cards.tsx
+¦   ¦           ¦   ¦   ¦       
+¦   ¦           ¦   ¦   +---filter
+¦   ¦           ¦   ¦   ¦       gooey-svg-filter.tsx
+¦   ¦           ¦   ¦   ¦       pixelate-svg-filter.tsx
+¦   ¦           ¦   ¦   ¦       
+¦   ¦           ¦   ¦   +---image
+¦   ¦           ¦   ¦   ¦       image-trail.tsx
+¦   ¦           ¦   ¦   ¦       parallax-floating.tsx
+¦   ¦           ¦   ¦   ¦       
+¦   ¦           ¦   ¦   +---physics
+¦   ¦           ¦   ¦   ¦       cursor-attractor-and-gravity.json
+¦   ¦           ¦   ¦   ¦       cursor-attractor-and-gravity.tsx
+¦   ¦           ¦   ¦   ¦       elastic-line.tsx
+¦   ¦           ¦   ¦   ¦       gravity.json
+¦   ¦           ¦   ¦   ¦       gravity.tsx
+¦   ¦           ¦   ¦   ¦       
+¦   ¦           ¦   ¦   +---text
+¦   ¦           ¦   ¦           basic-number-ticker.tsx
+¦   ¦           ¦   ¦           breathing-text.tsx
+¦   ¦           ¦   ¦           letter-3d-swap.tsx
+¦   ¦           ¦   ¦           letter-swap-forward-anim.tsx
+¦   ¦           ¦   ¦           letter-swap-pingpong-anim.tsx
+¦   ¦           ¦   ¦           random-letter-swap-forward-anim.tsx
+¦   ¦           ¦   ¦           random-letter-swap-pingpong-anim.tsx
+¦   ¦           ¦   ¦           scramble-hover.tsx
+¦   ¦           ¦   ¦           scramble-in.tsx
+¦   ¦           ¦   ¦           scroll-and-swap-text.tsx
+¦   ¦           ¦   ¦           text-along-path.tsx
+¦   ¦           ¦   ¦           text-cursor-proximity.tsx
+¦   ¦           ¦   ¦           text-highlighter.tsx
+¦   ¦           ¦   ¦           text-rotate.tsx
+¦   ¦           ¦   ¦           typewriter.tsx
+¦   ¦           ¦   ¦           underline-center.tsx
+¦   ¦           ¦   ¦           underline-comes-in-goes-out.tsx
+¦   ¦           ¦   ¦           underline-goes-out-comes-in.tsx
+¦   ¦           ¦   ¦           underline-to-background.tsx
+¦   ¦           ¦   ¦           variable-font-and-cursor.tsx
+¦   ¦           ¦   ¦           variable-font-cursor-proximity.tsx
+¦   ¦           ¦   ¦           variable-font-hover-by-letter.tsx
+¦   ¦           ¦   ¦           variable-font-hover-by-random-letter.tsx
+¦   ¦           ¦   ¦           vertical-cut-reveal.tsx
+¦   ¦           ¦   ¦           
+¦   ¦           ¦   +---examples
+¦   ¦           ¦       +---background
+¦   ¦           ¦       ¦       animated-gradient-demo.tsx
+¦   ¦           ¦       ¦       pixel-trail-custom-pixel-demo.tsx
+¦   ¦           ¦       ¦       pixel-trail-demo.tsx
+¦   ¦           ¦       ¦       pixel-trail-no-fade-demo.tsx
+¦   ¦           ¦       ¦       
+¦   ¦           ¦       +---blocks
+¦   ¦           ¦       ¦       circling-elements-demo.tsx
+¦   ¦           ¦       ¦       circling-elements-easing-demo.tsx
+¦   ¦           ¦       ¦       css-box-demo.tsx
+¦   ¦           ¦       ¦       css-box-hover-demo.tsx
+¦   ¦           ¦       ¦       css-box-non-uniform-demo.tsx
+¦   ¦           ¦       ¦       css-box-scroll-demo.tsx
+¦   ¦           ¦       ¦       drag-elements-demo.tsx
+¦   ¦           ¦       ¦       drag-elements-momentum-demo.tsx
+¦   ¦           ¦       ¦       element-along-svg-path-demo.tsx
+¦   ¦           ¦       ¦       float-demo.tsx
+¦   ¦           ¦       ¦       float-offset-demo.tsx
+¦   ¦           ¦       ¦       marquee-along-svg-path-demo.tsx
+¦   ¦           ¦       ¦       marquee-along-svg-path-mapping-demo.tsx
+¦   ¦           ¦       ¦       marquee-along-svg-path-scroll-demo.tsx
+¦   ¦           ¦       ¦       media-between-text-demo.tsx
+¦   ¦           ¦       ¦       media-between-text-scroll-demo.tsx
+¦   ¦           ¦       ¦       media-between-text-vertical-demo.tsx
+¦   ¦           ¦       ¦       screensaver-demo.tsx
+¦   ¦           ¦       ¦       simple-marquee-3d-demo.tsx
+¦   ¦           ¦       ¦       simple-marquee-demo.tsx
+¦   ¦           ¦       ¦       simple-marquee-drag-demo.tsx
+¦   ¦           ¦       ¦       simple-marquee-easing-demo.tsx
+¦   ¦           ¦       ¦       simple-marquee-explainer-demo.tsx
+¦   ¦           ¦       ¦       stacking-cards-demo.tsx
+¦   ¦           ¦       ¦       sticky-footer-demo.tsx
+¦   ¦           ¦       ¦       
+¦   ¦           ¦       +---filter
+¦   ¦           ¦       ¦       gooey-svg-filter-demo.tsx
+¦   ¦           ¦       ¦       gooey-svg-filter-menu-demo.tsx
+¦   ¦           ¦       ¦       gooey-svg-filter-pixel-trail-demo.tsx
+¦   ¦           ¦       ¦       pixelate-svg-filter-demo.tsx
+¦   ¦           ¦       ¦       pixelate-svg-filter-text.tsx
+¦   ¦           ¦       ¦       
+¦   ¦           ¦       +---image
+¦   ¦           ¦       ¦       image-trail-demo.tsx
+¦   ¦           ¦       ¦       image-trail-instant-demo.tsx
+¦   ¦           ¦       ¦       image-trail-various-elements-demo.tsx
+¦   ¦           ¦       ¦       image-trail-zindex-demo.tsx
+¦   ¦           ¦       ¦       parallax-floating-demo.tsx
+¦   ¦           ¦       ¦       
+¦   ¦           ¦       +---physics
+¦   ¦           ¦       ¦       cursor-attractor-and-gravity-demo.tsx
+¦   ¦           ¦       ¦       cursor-attractor-and-gravity-image-demo.tsx
+¦   ¦           ¦       ¦       cursor-attractor-and-gravity-svg-demo.tsx
+¦   ¦           ¦       ¦       elastic-line-demo.tsx
+¦   ¦           ¦       ¦       gravity-body-types-demo.tsx
+¦   ¦           ¦       ¦       gravity-demo.tsx
+¦   ¦           ¦       ¦       gravity-non-draggable-demo.tsx
+¦   ¦           ¦       ¦       gravity-svg-bodies-demo.tsx
+¦   ¦           ¦       ¦       
+¦   ¦           ¦       +---text
+¦   ¦           ¦               basic-number-ticker-demo.tsx
+¦   ¦           ¦               breathing-text-demo.tsx
+¦   ¦           ¦               fancy-basic-number-ticker-demo.tsx
+¦   ¦           ¦               letter-3d-swap-demo.tsx
+¦   ¦           ¦               letter-3d-swap-explanation-left-demo.tsx
+¦   ¦           ¦               letter-3d-swap-explanation-top-demo.tsx
+¦   ¦           ¦               letter-3d-swap-rotate-top-explainer.tsx
+¦   ¦           ¦               letter-3d-swap-stagger-demo.tsx
+¦   ¦           ¦               letter-swap-demo-line.tsx
+¦   ¦           ¦               letter-swap-demo-stagger.tsx
+¦   ¦           ¦               letter-swap-demo.tsx
+¦   ¦           ¦               random-letter-swap-demo.tsx
+¦   ¦           ¦               scramble-hover-demo.tsx
+¦   ¦           ¦               scramble-hover-diff-class-demo.tsx
+¦   ¦           ¦               scramble-hover-new-chars-demo.tsx
+¦   ¦           ¦               scramble-hover-sequential-demo.tsx
+¦   ¦           ¦               scramble-in-demo.tsx
+¦   ¦           ¦               scroll-and-swap-text-demo.tsx
+¦   ¦           ¦               text-along-path-auto-demo.tsx
+¦   ¦           ¦               text-along-path-circle-demo.tsx
+¦   ¦           ¦               text-along-path-demo.tsx
+¦   ¦           ¦               text-along-path-scroll-demo.tsx
+¦   ¦           ¦               text-cursor-proximity-demo.tsx
+¦   ¦           ¦               text-cursor-proximity-falloff-demo.tsx
+¦   ¦           ¦               text-highlighter-demo.tsx
+¦   ¦           ¦               text-highlighter-hover-demo.tsx
+¦   ¦           ¦               text-highlighter-ref-demo.tsx
+¦   ¦           ¦               text-highlighter-scroll-demo.tsx
+¦   ¦           ¦               text-rotate-custom-animation-demo.tsx
+¦   ¦           ¦               text-rotate-demo.tsx
+¦   ¦           ¦               text-rotate-mapping-demo.tsx
+¦   ¦           ¦               text-rotate-multiline-demo.tsx
+¦   ¦           ¦               text-rotate-scroll-step-demo.tsx
+¦   ¦           ¦               text-rotate-stagger-demo.tsx
+¦   ¦           ¦               text-rotate-step-demo.tsx
+¦   ¦           ¦               typewriter-demo.tsx
+¦   ¦           ¦               underline-demo.tsx
+¦   ¦           ¦               underline-to-background-demo.tsx
+¦   ¦           ¦               variable-font-and-cursor-demo.tsx
+¦   ¦           ¦               variable-font-cursor-proximity-demo.tsx
+¦   ¦           ¦               variable-font-cursor-proximity-falloff-demo.tsx
+¦   ¦           ¦               variable-font-hover-by-letter-demo.tsx
+¦   ¦           ¦               variable-font-hover-by-random-letter-demo.tsx
+¦   ¦           ¦               vertical-cut-reveal-demo.tsx
+¦   ¦           ¦               vertical-cut-reveal-letter-random-demo.tsx
+¦   ¦           ¦               vertical-cut-reveal-line-demo.tsx
+¦   ¦           ¦               vertical-cut-reveal-scroll-demo.tsx
+¦   ¦           ¦               vertical-cut-reveal-stagger-demo.tsx
+¦   ¦           ¦               vertical-cut-reveal-word-demo.tsx
+¦   ¦           ¦               
+¦   ¦           +---hooks
+¦   ¦           ¦       use-debounced-dimensions.ts
+¦   ¦           ¦       use-detect-browser.ts
+¦   ¦           ¦       use-dimensions.ts
+¦   ¦           ¦       use-elastic-line-events.ts
+¦   ¦           ¦       use-line-breakdown.ts
+¦   ¦           ¦       use-line-count.ts
+¦   ¦           ¦       use-mounted.ts
+¦   ¦           ¦       use-mouse-position-ref.ts
+¦   ¦           ¦       use-mouse-position.ts
+¦   ¦           ¦       use-mouse-vector.ts
+¦   ¦           ¦       use-screen-size.ts
+¦   ¦           ¦       
+¦   ¦           +---lib
+¦   ¦           ¦       events.ts
+¦   ¦           ¦       get-components.ts
+¦   ¦           ¦       get-docs.ts
+¦   ¦           ¦       toc.ts
+¦   ¦           ¦       utils.ts
+¦   ¦           ¦       
+¦   ¦           +---scripts
+¦   ¦           ¦       build-registry-index.ts
+¦   ¦           ¦       build-registry-sources.ts
+¦   ¦           ¦       
+¦   ¦           +---styles
+¦   ¦           ¦       docsearch.css
+¦   ¦           ¦       modal.css
+¦   ¦           ¦       prism-theme.json
+¦   ¦           ¦       
+¦   ¦           +---types
+¦   ¦           ¦       nav.ts
+¦   ¦           ¦       types.ts
+¦   ¦           ¦       
+¦   ¦           +---utils
+¦   ¦               ¦   calculate-position.ts
+¦   ¦               ¦   demo-images.ts
+¦   ¦               ¦   svg-path-to-vertices.ts
+¦   ¦               ¦   
+¦   ¦               +---_helpers
+¦   ¦                   +---svg
+¦   ¦                           fancy.svg
+¦   ¦                           star1.svg
+¦   ¦                           star2.svg
+¦   ¦                           star3.svg
+¦   ¦                           
+¦   +---frosted-glass-card
+¦   ¦   +---frosted-glass-card
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.scss
+¦   ¦               
+¦   +---glass-button
+¦   ¦   +---glass-button
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.css
+¦   ¦               
+¦   +---glass-buttons
+¦   ¦   +---glass-buttons
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.css
+¦   ¦               
+¦   +---glass-cards
+¦   ¦   +---glass-cards
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.css
+¦   ¦               
+¦   +---gsap-component-interactive-mystery-card-hover-effect
+¦   ¦   +---gsap-component-interactive-mystery-card-hover-effect
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---gsap-inertia-card-animations-showcasechallenge-2-entry-2
+¦   ¦   +---gsap-inertia-card-animations-showcasechallenge-2-entry-2
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---gsap-inertia-card-animations-showcasechallenge-2-entry-2 (1)
+¦   ¦   +---gsap-inertia-card-animations-showcasechallenge-2-entry-2
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---gsap-lenis-grid-to-slider-transition-with-gsap-lenis-splittext
+¦   ¦   +---gsap-lenis-grid-to-slider-transition-with-gsap-lenis-splittext
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---gsap-lenis-layout-explorations-with-gsap-lenis-and-scrolltrigger-n-5
+¦   ¦   +---gsap-lenis-layout-explorations-with-gsap-lenis-and-scrolltrigger-n-5
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---hover-card-interaction
+¦   ¦   +---hover-card-interaction
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.pug
+¦   ¦               script.js
+¦   ¦               style.scss
+¦   ¦               
+¦   +---infinite-layers-grid-main
+¦   ¦   +---infinite-layers-grid-main
+¦   ¦       ¦   .gitignore
+¦   ¦       ¦   cover.jpg
+¦   ¦       ¦   LICENSE
+¦   ¦       ¦   package.json
+¦   ¦       ¦   README.md
+¦   ¦       ¦   vite.config.js
+¦   ¦       ¦   
+¦   ¦       +---src
+¦   ¦       ¦   ¦   index.html
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---js
+¦   ¦       ¦   ¦   +---components
+¦   ¦       ¦   ¦   ¦       infinite-grid.js
+¦   ¦       ¦   ¦   ¦       
+¦   ¦       ¦   ¦   +---pages
+¦   ¦       ¦   ¦   ¦       index.js
+¦   ¦       ¦   ¦   ¦       
+¦   ¦       ¦   ¦   +---util
+¦   ¦       ¦   ¦           util.js
+¦   ¦       ¦   ¦           
+¦   ¦       ¦   +---styles
+¦   ¦       ¦       ¦   grid.scss
+¦   ¦       ¦       ¦   index.scss
+¦   ¦       ¦       ¦   
+¦   ¦       ¦       +---components
+¦   ¦       ¦       ¦       frame.scss
+¦   ¦       ¦       ¦       index.scss
+¦   ¦       ¦       ¦       
+¦   ¦       ¦       +---pages
+¦   ¦       ¦       ¦       index.scss
+¦   ¦       ¦       ¦       
+¦   ¦       ¦       +---util
+¦   ¦       ¦               index.scss
+¦   ¦       ¦               _mixins.scss
+¦   ¦       ¦               _variables.scss
+¦   ¦       ¦               
+¦   ¦       +---static
+¦   ¦           ¦   .gitkeep
+¦   ¦           ¦   
+¦   ¦           +---fav
+¦   ¦           ¦       android-chrome.png
+¦   ¦           ¦       apple-touch.png
+¦   ¦           ¦       fav-mask.svg
+¦   ¦           ¦       fav.ico
+¦   ¦           ¦       fav.svg
+¦   ¦           ¦       
+¦   ¦           +---img
+¦   ¦                   image-1.jpg
+¦   ¦                   image-2.jpg
+¦   ¦                   image-3.jpg
+¦   ¦                   image-4.jpg
+¦   ¦                   image-5.jpg
+¦   ¦                   image-6.jpg
+¦   ¦                   image-7.jpg
+¦   ¦                   image-8.jpg
+¦   ¦                   image-9.jpg
+¦   ¦                   
+¦   +---interactive-droplets-main
+¦   ¦   +---interactive-droplets-main
+¦   ¦       ¦   .gitignore
+¦   ¦       ¦   index.html
+¦   ¦       ¦   package-lock.json
+¦   ¦       ¦   package.json
+¦   ¦       ¦   postcss.config.cjs
+¦   ¦       ¦   README.md
+¦   ¦       ¦   tsconfig.json
+¦   ¦       ¦   vite.config.ts
+¦   ¦       ¦   
+¦   ¦       +---public
+¦   ¦       ¦       droplet.png
+¦   ¦       ¦       vite.svg
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦           ¦   typescript.svg
+¦   ¦           ¦   vite-env.d.ts
+¦   ¦           ¦   
+¦   ¦           +---scripts
+¦   ¦           ¦   ¦   index.ts
+¦   ¦           ¦   ¦   
+¦   ¦           ¦   +---lib
+¦   ¦           ¦   ¦       Device.ts
+¦   ¦           ¦   ¦       
+¦   ¦           ¦   +---modules
+¦   ¦           ¦           Common.ts
+¦   ¦           ¦           Gui.ts
+¦   ¦           ¦           Output.ts
+¦   ¦           ¦           Pointer.ts
+¦   ¦           ¦           ThreeApp.ts
+¦   ¦           ¦           
+¦   ¦           +---shaders
+¦   ¦           ¦   +---frag
+¦   ¦           ¦   ¦       output.frag
+¦   ¦           ¦   ¦       
+¦   ¦           ¦   +---vert
+¦   ¦           ¦           base.vert
+¦   ¦           ¦           
+¦   ¦           +---styles
+¦   ¦               ¦   demo.scss
+¦   ¦               ¦   frame.scss
+¦   ¦               ¦   index.scss
+¦   ¦               ¦   
+¦   ¦               +---foundation
+¦   ¦               ¦       base.scss
+¦   ¦               ¦       index.scss
+¦   ¦               ¦       reset.scss
+¦   ¦               ¦       
+¦   ¦               +---global
+¦   ¦                       index.scss
+¦   ¦                       mixin.scss
+¦   ¦                       variables.scss
+¦   ¦                       
+¦   +---javascript-canvas-dot-controls-interactive-grid-based-ui-with-canvas
+¦   ¦   +---javascript-canvas-dot-controls-interactive-grid-based-ui-with-canvas
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---javascript-guage-animations-set-n-3
+¦   ¦   +---javascript-circular-animations-set-n-3
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---light-dark-black-theme
+¦   ¦   +---light-dark-black-theme
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.scss
+¦   ¦               
+¦   +---lillith-card
+¦   ¦       index.html
+¦   ¦       lillith-card.js
+¦   ¦       
+¦   +---lillith-loader
+¦   ¦       lillith-loader.js
+¦   ¦       
+¦   +---lillith-radio
+¦   ¦       lillith-radio.js
+¦   ¦       
+¦   +---liquid-glass
+¦   ¦   +---liquid-glass
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.scss
+¦   ¦               
+¦   +---liquid-glass-apple
+¦   ¦   +---liquid-glass-apple
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.scss
+¦   ¦               
+¦   +---magic-card
+¦   ¦   +---magic-card
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---magicui-main
+¦   ¦   +---magicui-main
+¦   ¦       ¦   .commitlintrc.json
+¦   ¦       ¦   .env.example
+¦   ¦       ¦   .eslintrc.json
+¦   ¦       ¦   .gitattributes
+¦   ¦       ¦   .gitignore
+¦   ¦       ¦   .prettier.config.cjs
+¦   ¦       ¦   .prettierignore
+¦   ¦       ¦   .yarnrc.yml
+¦   ¦       ¦   components.json
+¦   ¦       ¦   content-collections.ts
+¦   ¦       ¦   CONTRIBUTING.md
+¦   ¦       ¦   dev.Dockerfile
+¦   ¦       ¦   docker-compose.yml
+¦   ¦       ¦   Dockerfile
+¦   ¦       ¦   env.mjs
+¦   ¦       ¦   LICENSE.md
+¦   ¦       ¦   middleware.ts
+¦   ¦       ¦   next.config.mjs
+¦   ¦       ¦   package.json
+¦   ¦       ¦   pnpm-lock.yaml
+¦   ¦       ¦   postcss.config.cjs
+¦   ¦       ¦   postcss.config.mjs
+¦   ¦       ¦   README.md
+¦   ¦       ¦   registry.json
+¦   ¦       ¦   tsconfig.json
+¦   ¦       ¦   tsconfig.scripts.json
+¦   ¦       ¦   
+¦   ¦       +---.github
+¦   ¦       ¦   +---ISSUE_TEMPLATE
+¦   ¦       ¦   ¦       bug_report.md
+¦   ¦       ¦   ¦       documentation.md
+¦   ¦       ¦   ¦       feature_request.md
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +---workflows
+¦   ¦       ¦           code-check.yml
+¦   ¦       ¦           
+¦   ¦       +---app
+¦   ¦       ¦   ¦   apple-icon.png
+¦   ¦       ¦   ¦   favicon.ico
+¦   ¦       ¦   ¦   icon.png
+¦   ¦       ¦   ¦   icon.svg
+¦   ¦       ¦   ¦   layout.tsx
+¦   ¦       ¦   ¦   not-found.tsx
+¦   ¦       ¦   ¦   robots.ts
+¦   ¦       ¦   ¦   sitemap.ts
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---(blog)
+¦   ¦       ¦   ¦   +---blog
+¦   ¦       ¦   ¦       ¦   layout.tsx
+¦   ¦       ¦   ¦       ¦   page.tsx
+¦   ¦       ¦   ¦       ¦   
+¦   ¦       ¦   ¦       +---[slug]
+¦   ¦       ¦   ¦               page.tsx
+¦   ¦       ¦   ¦               
+¦   ¦       ¦   +---(docs)
+¦   ¦       ¦   ¦   ¦   layout.tsx
+¦   ¦       ¦   ¦   ¦   
+¦   ¦       ¦   ¦   +---docs
+¦   ¦       ¦   ¦       ¦   layout.tsx
+¦   ¦       ¦   ¦       ¦   not-found.tsx
+¦   ¦       ¦   ¦       ¦   
+¦   ¦       ¦   ¦       +---[[...slug]]
+¦   ¦       ¦   ¦               page.tsx
+¦   ¦       ¦   ¦               
+¦   ¦       ¦   +---(marketing)
+¦   ¦       ¦   ¦   ¦   layout.tsx
+¦   ¦       ¦   ¦   ¦   page.tsx
+¦   ¦       ¦   ¦   ¦   
+¦   ¦       ¦   ¦   +---showcase
+¦   ¦       ¦   ¦   ¦   ¦   page.tsx
+¦   ¦       ¦   ¦   ¦   ¦   
+¦   ¦       ¦   ¦   ¦   +---[...slug]
+¦   ¦       ¦   ¦   ¦           page.tsx
+¦   ¦       ¦   ¦   ¦           
+¦   ¦       ¦   ¦   +---[...slug]
+¦   ¦       ¦   ¦           page.tsx
+¦   ¦       ¦   ¦           
+¦   ¦       ¦   +---og
+¦   ¦       ¦           geist-regular-otf.json
+¦   ¦       ¦           geist-semibold-otf.json
+¦   ¦       ¦           geistmono-regular-otf.json
+¦   ¦       ¦           route.tsx
+¦   ¦       ¦           
+¦   ¦       +---components
+¦   ¦       ¦   ¦   analytics.tsx
+¦   ¦       ¦   ¦   blur-image.tsx
+¦   ¦       ¦   ¦   callout.tsx
+¦   ¦       ¦   ¦   code-block-command.tsx
+¦   ¦       ¦   ¦   code-block-wrapper.tsx
+¦   ¦       ¦   ¦   command-menu.tsx
+¦   ¦       ¦   ¦   commit-list.tsx
+¦   ¦       ¦   ¦   component-preview.tsx
+¦   ¦       ¦   ¦   component-source.tsx
+¦   ¦       ¦   ¦   component-wrapper.tsx
+¦   ¦       ¦   ¦   contribute.tsx
+¦   ¦       ¦   ¦   copy-button.tsx
+¦   ¦       ¦   ¦   deal-banner.tsx
+¦   ¦       ¦   ¦   gradient-blur.tsx
+¦   ¦       ¦   ¦   icons.tsx
+¦   ¦       ¦   ¦   main-nav.tsx
+¦   ¦       ¦   ¦   mdx-components.tsx
+¦   ¦       ¦   ¦   mobile-nav.tsx
+¦   ¦       ¦   ¦   mode-toggle.tsx
+¦   ¦       ¦   ¦   open-in-v0-button.tsx
+¦   ¦       ¦   ¦   pager.tsx
+¦   ¦       ¦   ¦   posthog-provider.tsx
+¦   ¦       ¦   ¦   repo-download.tsx
+¦   ¦       ¦   ¦   sidebar-cta.tsx
+¦   ¦       ¦   ¦   sidebar-nav.tsx
+¦   ¦       ¦   ¦   site-banner.tsx
+¦   ¦       ¦   ¦   site-footer.tsx
+¦   ¦       ¦   ¦   site-header.tsx
+¦   ¦       ¦   ¦   tech-stack.tsx
+¦   ¦       ¦   ¦   template-preview.tsx
+¦   ¦       ¦   ¦   theme-provider.tsx
+¦   ¦       ¦   ¦   toc.tsx
+¦   ¦       ¦   ¦   version-select.tsx
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---blog
+¦   ¦       ¦   ¦       more-articles.tsx
+¦   ¦       ¦   ¦       promo-section.tsx
+¦   ¦       ¦   ¦       table-of-contents.tsx
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +---sections
+¦   ¦       ¦   ¦       component-demos.tsx
+¦   ¦       ¦   ¦       cta.tsx
+¦   ¦       ¦   ¦       expandable-masonary-section.tsx
+¦   ¦       ¦   ¦       hero.tsx
+¦   ¦       ¦   ¦       showcase.tsx
+¦   ¦       ¦   ¦       testimonials.tsx
+¦   ¦       ¦   ¦       video-testimonials.tsx
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +---ui
+¦   ¦       ¦           accordion.tsx
+¦   ¦       ¦           alert.tsx
+¦   ¦       ¦           avatar.tsx
+¦   ¦       ¦           badge.tsx
+¦   ¦       ¦           button.tsx
+¦   ¦       ¦           calendar.tsx
+¦   ¦       ¦           card.tsx
+¦   ¦       ¦           collapsible.tsx
+¦   ¦       ¦           command.tsx
+¦   ¦       ¦           context-menu.tsx
+¦   ¦       ¦           dialog.tsx
+¦   ¦       ¦           dropdown-menu.tsx
+¦   ¦       ¦           form.tsx
+¦   ¦       ¦           hover-card.tsx
+¦   ¦       ¦           input.tsx
+¦   ¦       ¦           label.tsx
+¦   ¦       ¦           popover.tsx
+¦   ¦       ¦           scroll-area.tsx
+¦   ¦       ¦           select.tsx
+¦   ¦       ¦           separator.tsx
+¦   ¦       ¦           sheet.tsx
+¦   ¦       ¦           skeleton.tsx
+¦   ¦       ¦           sonner.tsx
+¦   ¦       ¦           switch.tsx
+¦   ¦       ¦           table.tsx
+¦   ¦       ¦           tabs.tsx
+¦   ¦       ¦           toast.tsx
+¦   ¦       ¦           toaster.tsx
+¦   ¦       ¦           tooltip.tsx
+¦   ¦       ¦           use-toast.ts
+¦   ¦       ¦           
+¦   ¦       +---config
+¦   ¦       ¦       docs.ts
+¦   ¦       ¦       site.ts
+¦   ¦       ¦       
+¦   ¦       +---content
+¦   ¦       ¦   +---blog
+¦   ¦       ¦   ¦       animated-landing-page.mdx
+¦   ¦       ¦   ¦       animation-libraries.mdx
+¦   ¦       ¦   ¦       ant-design-alternatives.mdx
+¦   ¦       ¦   ¦       ant-design-vs-material-ui.mdx
+¦   ¦       ¦   ¦       app-landing-page.mdx
+¦   ¦       ¦   ¦       best-react-component-library.mdx
+¦   ¦       ¦   ¦       best-react-native-ui-library.mdx
+¦   ¦       ¦   ¦       best-react-ui-framework.mdx
+¦   ¦       ¦   ¦       best-saas-landing-pages.mdx
+¦   ¦       ¦   ¦       best-web-design-tools.mdx
+¦   ¦       ¦   ¦       best-web-developer-portfolios.mdx
+¦   ¦       ¦   ¦       bootstrap-vs-react.mdx
+¦   ¦       ¦   ¦       chakra-ui-vs-material-ui.mdx
+¦   ¦       ¦   ¦       component-libraries.mdx
+¦   ¦       ¦   ¦       component-library-examples.mdx
+¦   ¦       ¦   ¦       cool-css-animations.mdx
+¦   ¦       ¦   ¦       cool-react-components.mdx
+¦   ¦       ¦   ¦       create-react-component-library.mdx
+¦   ¦       ¦   ¦       creative-landing-page-design.mdx
+¦   ¦       ¦   ¦       cta-design.mdx
+¦   ¦       ¦   ¦       faq-template.mdx
+¦   ¦       ¦   ¦       free-react-components.mdx
+¦   ¦       ¦   ¦       hero-section-design.mdx
+¦   ¦       ¦   ¦       how-to-add-animation-to-website.mdx
+¦   ¦       ¦   ¦       how-to-create-a-landing-page.mdx
+¦   ¦       ¦   ¦       how-to-design-a-landing-page.mdx
+¦   ¦       ¦   ¦       how-to-display-testimonials-on-website.mdx
+¦   ¦       ¦   ¦       how-to-make-an-animated-website.mdx
+¦   ¦       ¦   ¦       how-to-make-an-interactive-website.mdx
+¦   ¦       ¦   ¦       install-tailwind-react.mdx
+¦   ¦       ¦   ¦       interactive-landing-page.mdx
+¦   ¦       ¦   ¦       landing-page-call-to-action.mdx
+¦   ¦       ¦   ¦       landing-page-copywriting.mdx
+¦   ¦       ¦   ¦       landing-page-examples.mdx
+¦   ¦       ¦   ¦       landing-page-sections.mdx
+¦   ¦       ¦   ¦       landing-page-ui.mdx
+¦   ¦       ¦   ¦       mantine-vs-chakra.mdx
+¦   ¦       ¦   ¦       material-ui-alternatives.mdx
+¦   ¦       ¦   ¦       material-ui-react.mdx
+¦   ¦       ¦   ¦       material-ui-vs-joy-ui.mdx
+¦   ¦       ¦   ¦       mui-box.mdx
+¦   ¦       ¦   ¦       mui-card.mdx
+¦   ¦       ¦   ¦       mui-react.mdx
+¦   ¦       ¦   ¦       mui-table.mdx
+¦   ¦       ¦   ¦       mui-transitions.mdx
+¦   ¦       ¦   ¦       next-js-app.mdx
+¦   ¦       ¦   ¦       next-js.mdx
+¦   ¦       ¦   ¦       nextjs-landing-page.mdx
+¦   ¦       ¦   ¦       nextjs-portfolio-template.mdx
+¦   ¦       ¦   ¦       nextjs.mdx
+¦   ¦       ¦   ¦       portfolio-landing-page.mdx
+¦   ¦       ¦   ¦       pricing-page-examples.mdx
+¦   ¦       ¦   ¦       react-animation-examples.mdx
+¦   ¦       ¦   ¦       react-animation-libraries.mdx
+¦   ¦       ¦   ¦       react-best-practices.mdx
+¦   ¦       ¦   ¦       react-bootstrap.mdx
+¦   ¦       ¦   ¦       react-component-best-practices.mdx
+¦   ¦       ¦   ¦       react-css-framework.mdx
+¦   ¦       ¦   ¦       react-design-patterns.mdx
+¦   ¦       ¦   ¦       react-frameworks.mdx
+¦   ¦       ¦   ¦       react-header.mdx
+¦   ¦       ¦   ¦       react-hero-component.mdx
+¦   ¦       ¦   ¦       react-landing-page.mdx
+¦   ¦       ¦   ¦       react-libraries.mdx
+¦   ¦       ¦   ¦       react-native-libraries.mdx
+¦   ¦       ¦   ¦       react-portfolio-template.mdx
+¦   ¦       ¦   ¦       react-tips.mdx
+¦   ¦       ¦   ¦       react-ux.mdx
+¦   ¦       ¦   ¦       saas-landing-page-best-practices.mdx
+¦   ¦       ¦   ¦       semantic-ui-vs-material-ui.mdx
+¦   ¦       ¦   ¦       social-proof-on-website.mdx
+¦   ¦       ¦   ¦       startup-landing-page.mdx
+¦   ¦       ¦   ¦       tailwind-border-radius.mdx
+¦   ¦       ¦   ¦       tailwind-cdn-html.mdx
+¦   ¦       ¦   ¦       tailwind-css-grid.mdx
+¦   ¦       ¦   ¦       tailwind-font-size.mdx
+¦   ¦       ¦   ¦       tailwind-landing-page.mdx
+¦   ¦       ¦   ¦       tailwind-portfolio-template.mdx
+¦   ¦       ¦   ¦       tailwind-vs-bootstrap.mdx
+¦   ¦       ¦   ¦       text-animation-css.mdx
+¦   ¦       ¦   ¦       ui-animation.mdx
+¦   ¦       ¦   ¦       ui-frameworks.mdx
+¦   ¦       ¦   ¦       ui-libraries.mdx
+¦   ¦       ¦   ¦       waitlist-landing-page.mdx
+¦   ¦       ¦   ¦       web-animation-tools.mdx
+¦   ¦       ¦   ¦       web-application-design.mdx
+¦   ¦       ¦   ¦       web-design-best-practices.mdx
+¦   ¦       ¦   ¦       web-design-trends.mdx
+¦   ¦       ¦   ¦       website-animation-examples.mdx
+¦   ¦       ¦   ¦       website-footer.mdx
+¦   ¦       ¦   ¦       website-header-examples.mdx
+¦   ¦       ¦   ¦       website-logo-examples.mdx
+¦   ¦       ¦   ¦       what-are-ui-components.mdx
+¦   ¦       ¦   ¦       what-is-a-component-library.mdx
+¦   ¦       ¦   ¦       what-is-nextjs.mdx
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +---docs
+¦   ¦       ¦   ¦   ¦   index.mdx
+¦   ¦       ¦   ¦   ¦   mcp.mdx
+¦   ¦       ¦   ¦   ¦   story.mdx
+¦   ¦       ¦   ¦   ¦   tailwind-v4.mdx
+¦   ¦       ¦   ¦   ¦   
+¦   ¦       ¦   ¦   +---components
+¦   ¦       ¦   ¦   ¦       android.mdx
+¦   ¦       ¦   ¦   ¦       animated-beam.mdx
+¦   ¦       ¦   ¦   ¦       animated-circular-progress-bar.mdx
+¦   ¦       ¦   ¦   ¦       animated-gradient-text.mdx
+¦   ¦       ¦   ¦   ¦       animated-grid-pattern.mdx
+¦   ¦       ¦   ¦   ¦       animated-list.mdx
+¦   ¦       ¦   ¦   ¦       animated-shiny-text.mdx
+¦   ¦       ¦   ¦   ¦       animated-subscribe-button.mdx
+¦   ¦       ¦   ¦   ¦       aurora-text.mdx
+¦   ¦       ¦   ¦   ¦       avatar-circles.mdx
+¦   ¦       ¦   ¦   ¦       bento-grid.mdx
+¦   ¦       ¦   ¦   ¦       blur-fade.mdx
+¦   ¦       ¦   ¦   ¦       border-beam.mdx
+¦   ¦       ¦   ¦   ¦       box-reveal.mdx
+¦   ¦       ¦   ¦   ¦       code-comparison.mdx
+¦   ¦       ¦   ¦   ¦       confetti.mdx
+¦   ¦       ¦   ¦   ¦       cool-mode.mdx
+¦   ¦       ¦   ¦   ¦       dock.mdx
+¦   ¦       ¦   ¦   ¦       dot-pattern.mdx
+¦   ¦       ¦   ¦   ¦       file-tree.mdx
+¦   ¦       ¦   ¦   ¦       flickering-grid.mdx
+¦   ¦       ¦   ¦   ¦       flip-text.mdx
+¦   ¦       ¦   ¦   ¦       globe.mdx
+¦   ¦       ¦   ¦   ¦       grid-pattern.mdx
+¦   ¦       ¦   ¦   ¦       hero-video-dialog.mdx
+¦   ¦       ¦   ¦   ¦       hyper-text.mdx
+¦   ¦       ¦   ¦   ¦       icon-cloud.mdx
+¦   ¦       ¦   ¦   ¦       interactive-grid-pattern.mdx
+¦   ¦       ¦   ¦   ¦       interactive-hover-button.mdx
+¦   ¦       ¦   ¦   ¦       iphone-15-pro.mdx
+¦   ¦       ¦   ¦   ¦       lens.mdx
+¦   ¦       ¦   ¦   ¦       line-shadow-text.mdx
+¦   ¦       ¦   ¦   ¦       magic-card.mdx
+¦   ¦       ¦   ¦   ¦       marquee.mdx
+¦   ¦       ¦   ¦   ¦       meteors.mdx
+¦   ¦       ¦   ¦   ¦       morphing-text.mdx
+¦   ¦       ¦   ¦   ¦       neon-gradient-card.mdx
+¦   ¦       ¦   ¦   ¦       number-ticker.mdx
+¦   ¦       ¦   ¦   ¦       orbiting-circles.mdx
+¦   ¦       ¦   ¦   ¦       particles.mdx
+¦   ¦       ¦   ¦   ¦       pointer.mdx
+¦   ¦       ¦   ¦   ¦       pulsating-button.mdx
+¦   ¦       ¦   ¦   ¦       rainbow-button.mdx
+¦   ¦       ¦   ¦   ¦       retro-grid.mdx
+¦   ¦       ¦   ¦   ¦       ripple-button.mdx
+¦   ¦       ¦   ¦   ¦       ripple.mdx
+¦   ¦       ¦   ¦   ¦       safari.mdx
+¦   ¦       ¦   ¦   ¦       scratch-to-reveal.mdx
+¦   ¦       ¦   ¦   ¦       script-copy-btn.mdx
+¦   ¦       ¦   ¦   ¦       scroll-based-velocity.mdx
+¦   ¦       ¦   ¦   ¦       scroll-progress.mdx
+¦   ¦       ¦   ¦   ¦       shimmer-button.mdx
+¦   ¦       ¦   ¦   ¦       shine-border.mdx
+¦   ¦       ¦   ¦   ¦       shiny-button.mdx
+¦   ¦       ¦   ¦   ¦       smooth-cursor.mdx
+¦   ¦       ¦   ¦   ¦       sparkles-text.mdx
+¦   ¦       ¦   ¦   ¦       spinning-text.mdx
+¦   ¦       ¦   ¦   ¦       terminal.mdx
+¦   ¦       ¦   ¦   ¦       text-animate.mdx
+¦   ¦       ¦   ¦   ¦       text-reveal.mdx
+¦   ¦       ¦   ¦   ¦       tweet-card.mdx
+¦   ¦       ¦   ¦   ¦       typing-animation.mdx
+¦   ¦       ¦   ¦   ¦       video-text.mdx
+¦   ¦       ¦   ¦   ¦       warp-background.mdx
+¦   ¦       ¦   ¦   ¦       word-rotate.mdx
+¦   ¦       ¦   ¦   ¦       
+¦   ¦       ¦   ¦   +---installation
+¦   ¦       ¦   ¦   ¦       astro.mdx
+¦   ¦       ¦   ¦   ¦       gatsby.mdx
+¦   ¦       ¦   ¦   ¦       index.mdx
+¦   ¦       ¦   ¦   ¦       laravel.mdx
+¦   ¦       ¦   ¦   ¦       manual.mdx
+¦   ¦       ¦   ¦   ¦       next.mdx
+¦   ¦       ¦   ¦   ¦       remix.mdx
+¦   ¦       ¦   ¦   ¦       vite.mdx
+¦   ¦       ¦   ¦   ¦       
+¦   ¦       ¦   ¦   +---templates
+¦   ¦       ¦   ¦           agent.mdx
+¦   ¦       ¦   ¦           devtool.mdx
+¦   ¦       ¦   ¦           mobile.mdx
+¦   ¦       ¦   ¦           portfolio.mdx
+¦   ¦       ¦   ¦           saas.mdx
+¦   ¦       ¦   ¦           startup.mdx
+¦   ¦       ¦   ¦           
+¦   ¦       ¦   +---pages
+¦   ¦       ¦   ¦       home.mdx
+¦   ¦       ¦   ¦       privacy.mdx
+¦   ¦       ¦   ¦       terms.mdx
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +---showcase
+¦   ¦       ¦           anara.mdx
+¦   ¦       ¦           anisvsc.mdx
+¦   ¦       ¦           aomni.mdx
+¦   ¦       ¦           cognosys.mdx
+¦   ¦       ¦           elhussary.mdx
+¦   ¦       ¦           gitme.mdx
+¦   ¦       ¦           guarahooks.mdx
+¦   ¦       ¦           infisical.mdx
+¦   ¦       ¦           langfuse.mdx
+¦   ¦       ¦           llmreport.mdx
+¦   ¦       ¦           lyra.mdx
+¦   ¦       ¦           million.mdx
+¦   ¦       ¦           nativeexpress.mdx
+¦   ¦       ¦           querylab.mdx
+¦   ¦       ¦           sherpa.mdx
+¦   ¦       ¦           undrstnd.mdx
+¦   ¦       ¦           writora.mdx
+¦   ¦       ¦           zen-browser.mdx
+¦   ¦       ¦           zzzzshawn.mdx
+¦   ¦       ¦           
+¦   ¦       +---hooks
+¦   ¦       ¦       use-config.ts
+¦   ¦       ¦       use-mounted.ts
+¦   ¦       ¦       
+¦   ¦       +---lib
+¦   ¦       ¦       events.ts
+¦   ¦       ¦       fonts.ts
+¦   ¦       ¦       github.ts
+¦   ¦       ¦       octokit.ts
+¦   ¦       ¦       rehype-component.ts
+¦   ¦       ¦       rehype-npm-command.ts
+¦   ¦       ¦       toc.ts
+¦   ¦       ¦       types.ts
+¦   ¦       ¦       utils.ts
+¦   ¦       ¦       
+¦   ¦       +---packages
+¦   ¦       ¦   +---cli
+¦   ¦       ¦       ¦   .gitignore
+¦   ¦       ¦       ¦   .prettierignore
+¦   ¦       ¦       ¦   package.json
+¦   ¦       ¦       ¦   pnpm-lock.yaml
+¦   ¦       ¦       ¦   README.md
+¦   ¦       ¦       ¦   tsconfig.json
+¦   ¦       ¦       ¦   tsup.config.ts
+¦   ¦       ¦       ¦   
+¦   ¦       ¦       +---src
+¦   ¦       ¦           ¦   index.ts
+¦   ¦       ¦           ¦   
+¦   ¦       ¦           +---commands
+¦   ¦       ¦           ¦       add.ts
+¦   ¦       ¦           ¦       auth.ts
+¦   ¦       ¦           ¦       diff.ts
+¦   ¦       ¦           ¦       init.ts
+¦   ¦       ¦           ¦       template.ts
+¦   ¦       ¦           ¦       
+¦   ¦       ¦           +---utils
+¦   ¦       ¦               ¦   distinct-id.ts
+¦   ¦       ¦               ¦   get-config.ts
+¦   ¦       ¦               ¦   get-env.ts
+¦   ¦       ¦               ¦   get-package-info.ts
+¦   ¦       ¦               ¦   get-package-manager.ts
+¦   ¦       ¦               ¦   get-project-info.ts
+¦   ¦       ¦               ¦   handle-error.ts
+¦   ¦       ¦               ¦   install-project.ts
+¦   ¦       ¦               ¦   logger.ts
+¦   ¦       ¦               ¦   posthog.ts
+¦   ¦       ¦               ¦   resolve-import.ts
+¦   ¦       ¦               ¦   templates.ts
+¦   ¦       ¦               ¦   
+¦   ¦       ¦               +---registry
+¦   ¦       ¦               ¦       index.ts
+¦   ¦       ¦               ¦       schema.ts
+¦   ¦       ¦               ¦       
+¦   ¦       ¦               +---transformers
+¦   ¦       ¦                       index.ts
+¦   ¦       ¦                       transform-css-vars.ts
+¦   ¦       ¦                       transform-import.ts
+¦   ¦       ¦                       transform-jsx.ts
+¦   ¦       ¦                       transform-rsc.ts
+¦   ¦       ¦                       transform-tw-prefix.ts
+¦   ¦       ¦                       
+¦   ¦       +---public
+¦   ¦       ¦   ¦   agent-demo.mp4
+¦   ¦       ¦   ¦   android-chrome-192x192.png
+¦   ¦       ¦   ¦   android-chrome-512x512.png
+¦   ¦       ¦   ¦   devtool-demo.mp4
+¦   ¦       ¦   ¦   mcp.json
+¦   ¦       ¦   ¦   mobile-demo.mp4
+¦   ¦       ¦   ¦   placeholder-dark.svg
+¦   ¦       ¦   ¦   placeholder.svg
+¦   ¦       ¦   ¦   portfolio-demo.mp4
+¦   ¦       ¦   ¦   registry.json
+¦   ¦       ¦   ¦   saas-demo.mp4
+¦   ¦       ¦   ¦   site.webmanifest
+¦   ¦       ¦   ¦   startup-template-demo.mp4
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---r
+¦   ¦       ¦   ¦       android-demo-2.json
+¦   ¦       ¦   ¦       android-demo-3.json
+¦   ¦       ¦   ¦       android-demo.json
+¦   ¦       ¦   ¦       android.json
+¦   ¦       ¦   ¦       animated-beam-bidirectional.json
+¦   ¦       ¦   ¦       animated-beam-demo.json
+¦   ¦       ¦   ¦       animated-beam-multiple-inputs.json
+¦   ¦       ¦   ¦       animated-beam-multiple-outputs.json
+¦   ¦       ¦   ¦       animated-beam-unidirectional.json
+¦   ¦       ¦   ¦       animated-beam.json
+¦   ¦       ¦   ¦       animated-circular-progress-bar-demo.json
+¦   ¦       ¦   ¦       animated-circular-progress-bar.json
+¦   ¦       ¦   ¦       animated-gradient-text-demo-2.json
+¦   ¦       ¦   ¦       animated-gradient-text-demo.json
+¦   ¦       ¦   ¦       animated-gradient-text.json
+¦   ¦       ¦   ¦       animated-grid-pattern-demo.json
+¦   ¦       ¦   ¦       animated-grid-pattern.json
+¦   ¦       ¦   ¦       animated-list-demo.json
+¦   ¦       ¦   ¦       animated-list.json
+¦   ¦       ¦   ¦       animated-shiny-text-demo.json
+¦   ¦       ¦   ¦       animated-shiny-text.json
+¦   ¦       ¦   ¦       animated-subscribe-button-demo.json
+¦   ¦       ¦   ¦       animated-subscribe-button.json
+¦   ¦       ¦   ¦       aurora-text-demo.json
+¦   ¦       ¦   ¦       aurora-text.json
+¦   ¦       ¦   ¦       avatar-circles-demo.json
+¦   ¦       ¦   ¦       avatar-circles.json
+¦   ¦       ¦   ¦       bento-demo-vertical.json
+¦   ¦       ¦   ¦       bento-demo.json
+¦   ¦       ¦   ¦       bento-grid.json
+¦   ¦       ¦   ¦       blur-fade-demo.json
+¦   ¦       ¦   ¦       blur-fade-text-demo.json
+¦   ¦       ¦   ¦       blur-fade.json
+¦   ¦       ¦   ¦       border-beam-demo-2.json
+¦   ¦       ¦   ¦       border-beam-demo-3.json
+¦   ¦       ¦   ¦       border-beam-demo-4.json
+¦   ¦       ¦   ¦       border-beam-demo.json
+¦   ¦       ¦   ¦       border-beam.json
+¦   ¦       ¦   ¦       box-reveal-demo.json
+¦   ¦       ¦   ¦       box-reveal.json
+¦   ¦       ¦   ¦       client-tweet-card.json
+¦   ¦       ¦   ¦       code-comparison-demo.json
+¦   ¦       ¦   ¦       code-comparison.json
+¦   ¦       ¦   ¦       confetti-basic-cannon.json
+¦   ¦       ¦   ¦       confetti-custom-shapes.json
+¦   ¦       ¦   ¦       confetti-demo.json
+¦   ¦       ¦   ¦       confetti-emoji.json
+¦   ¦       ¦   ¦       confetti-fireworks.json
+¦   ¦       ¦   ¦       confetti-random-direction.json
+¦   ¦       ¦   ¦       confetti-side-cannons.json
+¦   ¦       ¦   ¦       confetti-stars.json
+¦   ¦       ¦   ¦       confetti.json
+¦   ¦       ¦   ¦       cool-mode-custom.json
+¦   ¦       ¦   ¦       cool-mode-demo.json
+¦   ¦       ¦   ¦       cool-mode.json
+¦   ¦       ¦   ¦       dock-demo-2.json
+¦   ¦       ¦   ¦       dock-demo-3.json
+¦   ¦       ¦   ¦       dock-demo.json
+¦   ¦       ¦   ¦       dock.json
+¦   ¦       ¦   ¦       dot-pattern-demo.json
+¦   ¦       ¦   ¦       dot-pattern-linear-gradient.json
+¦   ¦       ¦   ¦       dot-pattern-with-glow-effect.json
+¦   ¦       ¦   ¦       dot-pattern.json
+¦   ¦       ¦   ¦       file-tree-demo.json
+¦   ¦       ¦   ¦       file-tree.json
+¦   ¦       ¦   ¦       flickering-grid-demo.json
+¦   ¦       ¦   ¦       flickering-grid-rounded-demo.json
+¦   ¦       ¦   ¦       flickering-grid.json
+¦   ¦       ¦   ¦       flip-text-demo.json
+¦   ¦       ¦   ¦       flip-text.json
+¦   ¦       ¦   ¦       globe-demo.json
+¦   ¦       ¦   ¦       globe.json
+¦   ¦       ¦   ¦       grid-pattern-dashed.json
+¦   ¦       ¦   ¦       grid-pattern-demo.json
+¦   ¦       ¦   ¦       grid-pattern-linear-gradient.json
+¦   ¦       ¦   ¦       grid-pattern.json
+¦   ¦       ¦   ¦       hero-video-dialog-demo-top-in-bottom-out.json
+¦   ¦       ¦   ¦       hero-video-dialog-demo.json
+¦   ¦       ¦   ¦       hero-video-dialog.json
+¦   ¦       ¦   ¦       hyper-text-demo.json
+¦   ¦       ¦   ¦       hyper-text.json
+¦   ¦       ¦   ¦       icon-cloud-demo-2.json
+¦   ¦       ¦   ¦       icon-cloud-demo-3.json
+¦   ¦       ¦   ¦       icon-cloud-demo.json
+¦   ¦       ¦   ¦       icon-cloud.json
+¦   ¦       ¦   ¦       index.json
+¦   ¦       ¦   ¦       interactive-grid-pattern-demo-2.json
+¦   ¦       ¦   ¦       interactive-grid-pattern-demo.json
+¦   ¦       ¦   ¦       interactive-grid-pattern.json
+¦   ¦       ¦   ¦       interactive-hover-button-demo.json
+¦   ¦       ¦   ¦       interactive-hover-button.json
+¦   ¦       ¦   ¦       iphone-15-pro-demo-2.json
+¦   ¦       ¦   ¦       iphone-15-pro-demo-3.json
+¦   ¦       ¦   ¦       iphone-15-pro-demo.json
+¦   ¦       ¦   ¦       iphone-15-pro.json
+¦   ¦       ¦   ¦       lens-demo-2.json
+¦   ¦       ¦   ¦       lens-demo-3.json
+¦   ¦       ¦   ¦       lens-demo.json
+¦   ¦       ¦   ¦       lens.json
+¦   ¦       ¦   ¦       line-shadow-text-demo.json
+¦   ¦       ¦   ¦       line-shadow-text.json
+¦   ¦       ¦   ¦       magic-card-demo.json
+¦   ¦       ¦   ¦       magic-card.json
+¦   ¦       ¦   ¦       marquee-3d.json
+¦   ¦       ¦   ¦       marquee-demo-vertical.json
+¦   ¦       ¦   ¦       marquee-demo.json
+¦   ¦       ¦   ¦       marquee-logos.json
+¦   ¦       ¦   ¦       marquee.json
+¦   ¦       ¦   ¦       meteors-demo.json
+¦   ¦       ¦   ¦       meteors.json
+¦   ¦       ¦   ¦       morphing-text-demo.json
+¦   ¦       ¦   ¦       morphing-text.json
+¦   ¦       ¦   ¦       neon-gradient-card-demo.json
+¦   ¦       ¦   ¦       neon-gradient-card.json
+¦   ¦       ¦   ¦       number-ticker-decimal-demo.json
+¦   ¦       ¦   ¦       number-ticker-demo-2.json
+¦   ¦       ¦   ¦       number-ticker-demo.json
+¦   ¦       ¦   ¦       number-ticker.json
+¦   ¦       ¦   ¦       orbiting-circles-demo.json
+¦   ¦       ¦   ¦       orbiting-circles.json
+¦   ¦       ¦   ¦       particles-demo.json
+¦   ¦       ¦   ¦       particles.json
+¦   ¦       ¦   ¦       pointer-demo-1.json
+¦   ¦       ¦   ¦       pointer.json
+¦   ¦       ¦   ¦       pulsating-button-demo.json
+¦   ¦       ¦   ¦       pulsating-button.json
+¦   ¦       ¦   ¦       rainbow-button-demo-2.json
+¦   ¦       ¦   ¦       rainbow-button-demo.json
+¦   ¦       ¦   ¦       rainbow-button.json
+¦   ¦       ¦   ¦       retro-grid-demo.json
+¦   ¦       ¦   ¦       retro-grid.json
+¦   ¦       ¦   ¦       ripple-button-demo.json
+¦   ¦       ¦   ¦       ripple-button.json
+¦   ¦       ¦   ¦       ripple-demo.json
+¦   ¦       ¦   ¦       ripple.json
+¦   ¦       ¦   ¦       safari-demo-2.json
+¦   ¦       ¦   ¦       safari-demo-3.json
+¦   ¦       ¦   ¦       safari-demo-4.json
+¦   ¦       ¦   ¦       safari-demo.json
+¦   ¦       ¦   ¦       safari.json
+¦   ¦       ¦   ¦       scratch-to-reveal-demo.json
+¦   ¦       ¦   ¦       scratch-to-reveal.json
+¦   ¦       ¦   ¦       script-copy-btn-demo.json
+¦   ¦       ¦   ¦       script-copy-btn.json
+¦   ¦       ¦   ¦       scroll-based-velocity-demo.json
+¦   ¦       ¦   ¦       scroll-based-velocity.json
+¦   ¦       ¦   ¦       scroll-progress-demo.json
+¦   ¦       ¦   ¦       scroll-progress.json
+¦   ¦       ¦   ¦       shimmer-button-demo.json
+¦   ¦       ¦   ¦       shimmer-button.json
+¦   ¦       ¦   ¦       shine-border-demo-2.json
+¦   ¦       ¦   ¦       shine-border-demo.json
+¦   ¦       ¦   ¦       shine-border.json
+¦   ¦       ¦   ¦       shiny-button-demo.json
+¦   ¦       ¦   ¦       shiny-button.json
+¦   ¦       ¦   ¦       smooth-cursor-demo.json
+¦   ¦       ¦   ¦       smooth-cursor.json
+¦   ¦       ¦   ¦       sparkles-text-demo.json
+¦   ¦       ¦   ¦       sparkles-text.json
+¦   ¦       ¦   ¦       spinning-text-demo-2.json
+¦   ¦       ¦   ¦       spinning-text-demo.json
+¦   ¦       ¦   ¦       spinning-text.json
+¦   ¦       ¦   ¦       terminal-demo.json
+¦   ¦       ¦   ¦       terminal.json
+¦   ¦       ¦   ¦       text-animate-demo-2.json
+¦   ¦       ¦   ¦       text-animate-demo-3.json
+¦   ¦       ¦   ¦       text-animate-demo-4.json
+¦   ¦       ¦   ¦       text-animate-demo-5.json
+¦   ¦       ¦   ¦       text-animate-demo-6.json
+¦   ¦       ¦   ¦       text-animate-demo-7.json
+¦   ¦       ¦   ¦       text-animate-demo-8.json
+¦   ¦       ¦   ¦       text-animate-demo-9.json
+¦   ¦       ¦   ¦       text-animate-demo.json
+¦   ¦       ¦   ¦       text-animate.json
+¦   ¦       ¦   ¦       text-reveal-demo.json
+¦   ¦       ¦   ¦       text-reveal.json
+¦   ¦       ¦   ¦       tweet-card-demo.json
+¦   ¦       ¦   ¦       tweet-card-images.json
+¦   ¦       ¦   ¦       tweet-card-meta-preview.json
+¦   ¦       ¦   ¦       tweet-card.json
+¦   ¦       ¦   ¦       typing-animation-demo.json
+¦   ¦       ¦   ¦       typing-animation.json
+¦   ¦       ¦   ¦       utils.json
+¦   ¦       ¦   ¦       video-text-demo.json
+¦   ¦       ¦   ¦       video-text.json
+¦   ¦       ¦   ¦       warp-background-demo.json
+¦   ¦       ¦   ¦       warp-background.json
+¦   ¦       ¦   ¦       word-rotate-demo.json
+¦   ¦       ¦   ¦       word-rotate.json
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +---showcase
+¦   ¦       ¦           guarahooks.png
+¦   ¦       ¦           lyra.png
+¦   ¦       ¦           
+¦   ¦       +---registry
+¦   ¦       ¦   ¦   registry-examples.ts
+¦   ¦       ¦   ¦   registry-lib.ts
+¦   ¦       ¦   ¦   registry-ui.ts
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---example
+¦   ¦       ¦   ¦       android-demo-2.tsx
+¦   ¦       ¦   ¦       android-demo-3.tsx
+¦   ¦       ¦   ¦       android-demo.tsx
+¦   ¦       ¦   ¦       animated-beam-bidirectional.tsx
+¦   ¦       ¦   ¦       animated-beam-demo.tsx
+¦   ¦       ¦   ¦       animated-beam-multiple-inputs.tsx
+¦   ¦       ¦   ¦       animated-beam-multiple-outputs.tsx
+¦   ¦       ¦   ¦       animated-beam-unidirectional.tsx
+¦   ¦       ¦   ¦       animated-circular-progress-bar-demo.tsx
+¦   ¦       ¦   ¦       animated-gradient-text-demo-2.tsx
+¦   ¦       ¦   ¦       animated-gradient-text-demo.tsx
+¦   ¦       ¦   ¦       animated-grid-pattern-demo.tsx
+¦   ¦       ¦   ¦       animated-list-demo.tsx
+¦   ¦       ¦   ¦       animated-shiny-text-demo.tsx
+¦   ¦       ¦   ¦       animated-subscribe-button-demo.tsx
+¦   ¦       ¦   ¦       aurora-text-demo.tsx
+¦   ¦       ¦   ¦       avatar-circles-demo.tsx
+¦   ¦       ¦   ¦       bento-demo-vertical.tsx
+¦   ¦       ¦   ¦       bento-demo.tsx
+¦   ¦       ¦   ¦       blur-fade-demo.tsx
+¦   ¦       ¦   ¦       blur-fade-text-demo.tsx
+¦   ¦       ¦   ¦       border-beam-demo-2.tsx
+¦   ¦       ¦   ¦       border-beam-demo-3.tsx
+¦   ¦       ¦   ¦       border-beam-demo-4.tsx
+¦   ¦       ¦   ¦       border-beam-demo.tsx
+¦   ¦       ¦   ¦       box-reveal-demo.tsx
+¦   ¦       ¦   ¦       code-comparison-demo.tsx
+¦   ¦       ¦   ¦       confetti-basic-cannon.tsx
+¦   ¦       ¦   ¦       confetti-custom-shapes.tsx
+¦   ¦       ¦   ¦       confetti-demo.tsx
+¦   ¦       ¦   ¦       confetti-emoji.tsx
+¦   ¦       ¦   ¦       confetti-fireworks.tsx
+¦   ¦       ¦   ¦       confetti-random-direction.tsx
+¦   ¦       ¦   ¦       confetti-side-cannons.tsx
+¦   ¦       ¦   ¦       confetti-stars.tsx
+¦   ¦       ¦   ¦       cool-mode-custom.tsx
+¦   ¦       ¦   ¦       cool-mode-demo.tsx
+¦   ¦       ¦   ¦       dock-demo-2.tsx
+¦   ¦       ¦   ¦       dock-demo-3.tsx
+¦   ¦       ¦   ¦       dock-demo.tsx
+¦   ¦       ¦   ¦       dot-pattern-demo.tsx
+¦   ¦       ¦   ¦       dot-pattern-linear-gradient.tsx
+¦   ¦       ¦   ¦       dot-pattern-with-glow-effect.tsx
+¦   ¦       ¦   ¦       file-tree-demo.tsx
+¦   ¦       ¦   ¦       flickering-grid-demo.tsx
+¦   ¦       ¦   ¦       flickering-grid-rounded-demo.tsx
+¦   ¦       ¦   ¦       flip-text-demo.tsx
+¦   ¦       ¦   ¦       globe-demo.tsx
+¦   ¦       ¦   ¦       grid-pattern-dashed.tsx
+¦   ¦       ¦   ¦       grid-pattern-demo.tsx
+¦   ¦       ¦   ¦       grid-pattern-linear-gradient.tsx
+¦   ¦       ¦   ¦       hero-video-dialog-demo-top-in-bottom-out.tsx
+¦   ¦       ¦   ¦       hero-video-dialog-demo.tsx
+¦   ¦       ¦   ¦       hyper-text-demo.tsx
+¦   ¦       ¦   ¦       icon-cloud-demo-2.tsx
+¦   ¦       ¦   ¦       icon-cloud-demo-3.tsx
+¦   ¦       ¦   ¦       icon-cloud-demo.tsx
+¦   ¦       ¦   ¦       interactive-grid-pattern-demo-2.tsx
+¦   ¦       ¦   ¦       interactive-grid-pattern-demo.tsx
+¦   ¦       ¦   ¦       interactive-hover-button-demo.tsx
+¦   ¦       ¦   ¦       iphone-15-pro-demo-2.tsx
+¦   ¦       ¦   ¦       iphone-15-pro-demo-3.tsx
+¦   ¦       ¦   ¦       iphone-15-pro-demo.tsx
+¦   ¦       ¦   ¦       lens-demo-2.tsx
+¦   ¦       ¦   ¦       lens-demo-3.tsx
+¦   ¦       ¦   ¦       lens-demo.tsx
+¦   ¦       ¦   ¦       line-shadow-text-demo.tsx
+¦   ¦       ¦   ¦       magic-card-demo.tsx
+¦   ¦       ¦   ¦       marquee-3d.tsx
+¦   ¦       ¦   ¦       marquee-demo-vertical.tsx
+¦   ¦       ¦   ¦       marquee-demo.tsx
+¦   ¦       ¦   ¦       marquee-logos.tsx
+¦   ¦       ¦   ¦       meteors-demo.tsx
+¦   ¦       ¦   ¦       morphing-text-demo.tsx
+¦   ¦       ¦   ¦       neon-gradient-card-demo.tsx
+¦   ¦       ¦   ¦       number-ticker-decimal-demo.tsx
+¦   ¦       ¦   ¦       number-ticker-demo-2.tsx
+¦   ¦       ¦   ¦       number-ticker-demo.tsx
+¦   ¦       ¦   ¦       orbiting-circles-demo.tsx
+¦   ¦       ¦   ¦       particles-demo.tsx
+¦   ¦       ¦   ¦       pointer-demo-1.tsx
+¦   ¦       ¦   ¦       pulsating-button-demo.tsx
+¦   ¦       ¦   ¦       rainbow-button-demo-2.tsx
+¦   ¦       ¦   ¦       rainbow-button-demo.tsx
+¦   ¦       ¦   ¦       retro-grid-demo.tsx
+¦   ¦       ¦   ¦       ripple-button-demo.tsx
+¦   ¦       ¦   ¦       ripple-demo.tsx
+¦   ¦       ¦   ¦       safari-demo-2.tsx
+¦   ¦       ¦   ¦       safari-demo-3.tsx
+¦   ¦       ¦   ¦       safari-demo-4.tsx
+¦   ¦       ¦   ¦       safari-demo.tsx
+¦   ¦       ¦   ¦       scratch-to-reveal-demo.tsx
+¦   ¦       ¦   ¦       script-copy-btn-demo.tsx
+¦   ¦       ¦   ¦       scroll-based-velocity-demo.tsx
+¦   ¦       ¦   ¦       scroll-progress-demo.tsx
+¦   ¦       ¦   ¦       shimmer-button-demo.tsx
+¦   ¦       ¦   ¦       shine-border-demo-2.tsx
+¦   ¦       ¦   ¦       shine-border-demo.tsx
+¦   ¦       ¦   ¦       shiny-button-demo.tsx
+¦   ¦       ¦   ¦       smooth-cursor-demo.tsx
+¦   ¦       ¦   ¦       sparkles-text-demo.tsx
+¦   ¦       ¦   ¦       spinning-text-demo-2.tsx
+¦   ¦       ¦   ¦       spinning-text-demo.tsx
+¦   ¦       ¦   ¦       terminal-demo.tsx
+¦   ¦       ¦   ¦       text-animate-demo-2.tsx
+¦   ¦       ¦   ¦       text-animate-demo-3.tsx
+¦   ¦       ¦   ¦       text-animate-demo-4.tsx
+¦   ¦       ¦   ¦       text-animate-demo-5.tsx
+¦   ¦       ¦   ¦       text-animate-demo-6.tsx
+¦   ¦       ¦   ¦       text-animate-demo-7.tsx
+¦   ¦       ¦   ¦       text-animate-demo-8.tsx
+¦   ¦       ¦   ¦       text-animate-demo-9.tsx
+¦   ¦       ¦   ¦       text-animate-demo.tsx
+¦   ¦       ¦   ¦       text-reveal-demo.tsx
+¦   ¦       ¦   ¦       tweet-card-demo.tsx
+¦   ¦       ¦   ¦       tweet-card-images.tsx
+¦   ¦       ¦   ¦       tweet-card-meta-preview.tsx
+¦   ¦       ¦   ¦       typing-animation-demo.tsx
+¦   ¦       ¦   ¦       video-text-demo.tsx
+¦   ¦       ¦   ¦       warp-background-demo.tsx
+¦   ¦       ¦   ¦       word-rotate-demo.tsx
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +---lib
+¦   ¦       ¦   ¦       utils.ts
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +---magicui
+¦   ¦       ¦           android.tsx
+¦   ¦       ¦           animated-beam.tsx
+¦   ¦       ¦           animated-circular-progress-bar.tsx
+¦   ¦       ¦           animated-gradient-text.tsx
+¦   ¦       ¦           animated-grid-pattern.tsx
+¦   ¦       ¦           animated-list.tsx
+¦   ¦       ¦           animated-shiny-text.tsx
+¦   ¦       ¦           animated-subscribe-button.tsx
+¦   ¦       ¦           aurora-text.tsx
+¦   ¦       ¦           avatar-circles.tsx
+¦   ¦       ¦           bento-grid.tsx
+¦   ¦       ¦           blur-fade.tsx
+¦   ¦       ¦           border-beam.tsx
+¦   ¦       ¦           box-reveal.tsx
+¦   ¦       ¦           client-tweet-card.tsx
+¦   ¦       ¦           code-comparison.tsx
+¦   ¦       ¦           confetti-button.tsx
+¦   ¦       ¦           confetti.tsx
+¦   ¦       ¦           cool-mode.tsx
+¦   ¦       ¦           dock.tsx
+¦   ¦       ¦           dot-pattern.tsx
+¦   ¦       ¦           file-tree.tsx
+¦   ¦       ¦           flickering-grid.tsx
+¦   ¦       ¦           flip-text.tsx
+¦   ¦       ¦           globe.tsx
+¦   ¦       ¦           grid-pattern.tsx
+¦   ¦       ¦           hero-video-dialog.tsx
+¦   ¦       ¦           hyper-text.tsx
+¦   ¦       ¦           icon-cloud.tsx
+¦   ¦       ¦           interactive-grid-pattern.tsx
+¦   ¦       ¦           interactive-hover-button.tsx
+¦   ¦       ¦           iphone-15-pro.tsx
+¦   ¦       ¦           lens.tsx
+¦   ¦       ¦           line-shadow-text.tsx
+¦   ¦       ¦           linear-mask.tsx
+¦   ¦       ¦           magic-card.tsx
+¦   ¦       ¦           marquee.tsx
+¦   ¦       ¦           meteors.tsx
+¦   ¦       ¦           mode-toggle.tsx
+¦   ¦       ¦           morphing-text.tsx
+¦   ¦       ¦           neon-gradient-card.tsx
+¦   ¦       ¦           number-ticker.tsx
+¦   ¦       ¦           orbiting-circles.tsx
+¦   ¦       ¦           particles.tsx
+¦   ¦       ¦           pointer.tsx
+¦   ¦       ¦           pulsating-button.tsx
+¦   ¦       ¦           rainbow-button.tsx
+¦   ¦       ¦           retro-grid.tsx
+¦   ¦       ¦           ripple-button.tsx
+¦   ¦       ¦           ripple.tsx
+¦   ¦       ¦           safari.tsx
+¦   ¦       ¦           scratch-to-reveal.tsx
+¦   ¦       ¦           script-copy-btn.tsx
+¦   ¦       ¦           scroll-based-velocity.tsx
+¦   ¦       ¦           scroll-progress.tsx
+¦   ¦       ¦           shimmer-button.tsx
+¦   ¦       ¦           shine-border.tsx
+¦   ¦       ¦           shiny-button.tsx
+¦   ¦       ¦           smooth-cursor.tsx
+¦   ¦       ¦           sparkles-text.tsx
+¦   ¦       ¦           spinning-text.tsx
+¦   ¦       ¦           terminal.tsx
+¦   ¦       ¦           text-animate.tsx
+¦   ¦       ¦           text-reveal.tsx
+¦   ¦       ¦           tweet-card.tsx
+¦   ¦       ¦           typing-animation.tsx
+¦   ¦       ¦           video-text.tsx
+¦   ¦       ¦           warp-background.tsx
+¦   ¦       ¦           word-rotate.tsx
+¦   ¦       ¦           
+¦   ¦       +---scripts
+¦   ¦       ¦       build-registry.mts
+¦   ¦       ¦       
+¦   ¦       +---styles
+¦   ¦       ¦       globals.css
+¦   ¦       ¦       mdx.css
+¦   ¦       ¦       
+¦   ¦       +---types
+¦   ¦       ¦       index.d.ts
+¦   ¦       ¦       next-auth.d.ts
+¦   ¦       ¦       unist.ts
+¦   ¦       ¦       
+¦   ¦       +---__registry__
+¦   ¦               index.tsx
+¦   ¦               
+¦   +---magnifying-image-view-with-zoom-touch-support
+¦   ¦   +---magnifying-image-view-with-zoom-touch-support
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.scss
+¦   ¦               
+¦   +---metal-buttons-main
+¦   ¦   +---metal-buttons-main
+¦   ¦       ¦   .gitignore
+¦   ¦       ¦   .prettierrc
+¦   ¦       ¦   bun.lockb
+¦   ¦       ¦   components.json
+¦   ¦       ¦   eslint.config.mjs
+¦   ¦       ¦   LICENSE
+¦   ¦       ¦   mdx-components.tsx
+¦   ¦       ¦   next.config.mjs
+¦   ¦       ¦   package.json
+¦   ¦       ¦   postcss.config.mjs
+¦   ¦       ¦   README.md
+¦   ¦       ¦   registry.json
+¦   ¦       ¦   sync-mdx.ts
+¦   ¦       ¦   tsconfig.json
+¦   ¦       ¦   
+¦   ¦       +---app
+¦   ¦       ¦   ¦   favicon.ico
+¦   ¦       ¦   ¦   globals.css
+¦   ¦       ¦   ¦   layout.tsx
+¦   ¦       ¦   ¦   opengraph-image.png
+¦   ¦       ¦   ¦   page.mdx
+¦   ¦       ¦   ¦   twitter-image.png
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---registry
+¦   ¦       ¦       +---[name]
+¦   ¦       ¦               route.ts
+¦   ¦       ¦               
+¦   ¦       +---components
+¦   ¦       ¦   ¦   blur-bottom.tsx
+¦   ¦       ¦   ¦   code-block-command.tsx
+¦   ¦       ¦   ¦   code-block-with-copy.tsx
+¦   ¦       ¦   ¦   code-block-wrapper.tsx
+¦   ¦       ¦   ¦   component-preview.tsx
+¦   ¦       ¦   ¦   component-source.tsx
+¦   ¦       ¦   ¦   component-wrapper.tsx
+¦   ¦       ¦   ¦   copy-button.tsx
+¦   ¦       ¦   ¦   dropdown-menu.tsx
+¦   ¦       ¦   ¦   github-btn.tsx
+¦   ¦       ¦   ¦   metal-button.tsx
+¦   ¦       ¦   ¦   open-in-v0.tsx
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---ui
+¦   ¦       ¦           accordion.tsx
+¦   ¦       ¦           button.tsx
+¦   ¦       ¦           collapsible.tsx
+¦   ¦       ¦           tabs.tsx
+¦   ¦       ¦           
+¦   ¦       +---hooks
+¦   ¦       ¦       config.ts
+¦   ¦       ¦       use-mounted.ts
+¦   ¦       ¦       
+¦   ¦       +---lib
+¦   ¦       ¦       metal-source.mdx
+¦   ¦       ¦       utils.ts
+¦   ¦       ¦       
+¦   ¦       +---public
+¦   ¦       ¦   +---r
+¦   ¦       ¦           metal-button-bronze.json
+¦   ¦       ¦           metal-button-demo.json
+¦   ¦       ¦           metal-button-error.json
+¦   ¦       ¦           metal-button-gold.json
+¦   ¦       ¦           metal-button-primary.json
+¦   ¦       ¦           metal-button-success.json
+¦   ¦       ¦           metal-button.json
+¦   ¦       ¦           
+¦   ¦       +---registry
+¦   ¦       ¦   +---example
+¦   ¦       ¦   ¦       metal-button-bronze.tsx
+¦   ¦       ¦   ¦       metal-button-demo.tsx
+¦   ¦       ¦   ¦       metal-button-error.tsx
+¦   ¦       ¦   ¦       metal-button-gold.tsx
+¦   ¦       ¦   ¦       metal-button-primary.tsx
+¦   ¦       ¦   ¦       metal-button-success.tsx
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +---metal-button
+¦   ¦       ¦           metal-button.tsx
+¦   ¦       ¦           
+¦   ¦       +---types
+¦   ¦               unist.ts
+¦   ¦               
+¦   +---out-of-the-darkness
+¦   ¦   +---out-of-the-darkness
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.scss
+¦   ¦               
+¦   +---parallax-photo-carousel
+¦   ¦   +---parallax-photo-carousel
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---poc-journey-explorer
+¦   ¦   +---poc-journey-explorer
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               
+¦   +---radios-with-sliding-focus
+¦   ¦   +---radios-with-sliding-focus
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.css
+¦   ¦               
+¦   +---responsive-hoveractivated-mega-menu
+¦   ¦   +---responsive-hoveractivated-mega-menu
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---responsive-image-carousel-animation
+¦   ¦   +---responsive-image-carousel-animation
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---responsive-sidebar-css-only
+¦   ¦   +---responsive-sidebar-css-only
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---rizzui-main
+¦   ¦   +---rizzui-main
+¦   ¦       ¦   .gitignore
+¦   ¦       ¦   .npmrc
+¦   ¦       ¦   package.json
+¦   ¦       ¦   pnpm-lock.yaml
+¦   ¦       ¦   pnpm-workspace.yaml
+¦   ¦       ¦   README.md
+¦   ¦       ¦   turbo.json
+¦   ¦       ¦   
+¦   ¦       +---.changeset
+¦   ¦       ¦       config.json
+¦   ¦       ¦       README.md
+¦   ¦       ¦       
+¦   ¦       +---.husky
+¦   ¦       ¦       pre-commit
+¦   ¦       ¦       
+¦   ¦       +---.vscode
+¦   ¦       ¦       settings.json
+¦   ¦       ¦       
+¦   ¦       +---apps
+¦   ¦       ¦   +---docs
+¦   ¦       ¦   ¦   ¦   .gitignore
+¦   ¦       ¦   ¦   ¦   babel.config.js
+¦   ¦       ¦   ¦   ¦   docusaurus.config.ts
+¦   ¦       ¦   ¦   ¦   package.json
+¦   ¦       ¦   ¦   ¦   prism-theme.ts
+¦   ¦       ¦   ¦   ¦   sidebars.ts
+¦   ¦       ¦   ¦   ¦   tailwind.config.js
+¦   ¦       ¦   ¦   ¦   tsconfig.json
+¦   ¦       ¦   ¦   ¦   versions.json
+¦   ¦       ¦   ¦   ¦   
+¦   ¦       ¦   ¦   +---blog
+¦   ¦       ¦   ¦   ¦   +---2025
+¦   ¦       ¦   ¦   ¦           2025-1-1.mdx
+¦   ¦       ¦   ¦   ¦           
+¦   ¦       ¦   ¦   +---docs
+¦   ¦       ¦   ¦   ¦   +---buttons
+¦   ¦       ¦   ¦   ¦   ¦       action-icon.mdx
+¦   ¦       ¦   ¦   ¦   ¦       button.mdx
+¦   ¦       ¦   ¦   ¦   ¦       _category_.json
+¦   ¦       ¦   ¦   ¦   ¦       
+¦   ¦       ¦   ¦   ¦   +---data-display
+¦   ¦       ¦   ¦   ¦   ¦       accordion.mdx
+¦   ¦       ¦   ¦   ¦   ¦       announcement.mdx
+¦   ¦       ¦   ¦   ¦   ¦       avatar.mdx
+¦   ¦       ¦   ¦   ¦   ¦       badge.mdx
+¦   ¦       ¦   ¦   ¦   ¦       empty.mdx
+¦   ¦       ¦   ¦   ¦   ¦       table.mdx
+¦   ¦       ¦   ¦   ¦   ¦       _category_.json
+¦   ¦       ¦   ¦   ¦   ¦       
+¦   ¦       ¦   ¦   ¦   +---feedback
+¦   ¦       ¦   ¦   ¦   ¦       alert.mdx
+¦   ¦       ¦   ¦   ¦   ¦       loader.mdx
+¦   ¦       ¦   ¦   ¦   ¦       progressbar.mdx
+¦   ¦       ¦   ¦   ¦   ¦       radial-progressbar.mdx
+¦   ¦       ¦   ¦   ¦   ¦       _category_.json
+¦   ¦       ¦   ¦   ¦   ¦       
+¦   ¦       ¦   ¦   ¦   +---guide
+¦   ¦       ¦   ¦   ¦   ¦       dark-mode.mdx
+¦   ¦       ¦   ¦   ¦   ¦       getting-started.mdx
+¦   ¦       ¦   ¦   ¦   ¦       theming.mdx
+¦   ¦       ¦   ¦   ¦   ¦       _category_.json
+¦   ¦       ¦   ¦   ¦   ¦       
+¦   ¦       ¦   ¦   ¦   +---Inputs
+¦   ¦       ¦   ¦   ¦   ¦       advanced-checkbox.mdx
+¦   ¦       ¦   ¦   ¦   ¦       advanced-radio.mdx
+¦   ¦       ¦   ¦   ¦   ¦       checkbox-group.mdx
+¦   ¦       ¦   ¦   ¦   ¦       checkbox.mdx
+¦   ¦       ¦   ¦   ¦   ¦       fileinput.mdx
+¦   ¦       ¦   ¦   ¦   ¦       input.mdx
+¦   ¦       ¦   ¦   ¦   ¦       multi-select.mdx
+¦   ¦       ¦   ¦   ¦   ¦       number-input.mdx
+¦   ¦       ¦   ¦   ¦   ¦       password.mdx
+¦   ¦       ¦   ¦   ¦   ¦       pin-code.mdx
+¦   ¦       ¦   ¦   ¦   ¦       radio-group.mdx
+¦   ¦       ¦   ¦   ¦   ¦       radio.mdx
+¦   ¦       ¦   ¦   ¦   ¦       select.mdx
+¦   ¦       ¦   ¦   ¦   ¦       switch.mdx
+¦   ¦       ¦   ¦   ¦   ¦       textarea.mdx
+¦   ¦       ¦   ¦   ¦   ¦       _category_.json
+¦   ¦       ¦   ¦   ¦   ¦       
+¦   ¦       ¦   ¦   ¦   +---integrations
+¦   ¦       ¦   ¦   ¦   ¦       pagination.mdx
+¦   ¦       ¦   ¦   ¦   ¦       phone-number.mdx
+¦   ¦       ¦   ¦   ¦   ¦       range-slider.mdx
+¦   ¦       ¦   ¦   ¦   ¦       rate.mdx
+¦   ¦       ¦   ¦   ¦   ¦       react-datepicker.mdx
+¦   ¦       ¦   ¦   ¦   ¦       react-hook-form.mdx
+¦   ¦       ¦   ¦   ¦   ¦       table.mdx
+¦   ¦       ¦   ¦   ¦   ¦       tan-stack.mdx
+¦   ¦       ¦   ¦   ¦   ¦       _category_.json
+¦   ¦       ¦   ¦   ¦   ¦       
+¦   ¦       ¦   ¦   ¦   +---layouts
+¦   ¦       ¦   ¦   ¦   ¦       box.mdx
+¦   ¦       ¦   ¦   ¦   ¦       flex.mdx
+¦   ¦       ¦   ¦   ¦   ¦       grid.mdx
+¦   ¦       ¦   ¦   ¦   ¦       _category_.json
+¦   ¦       ¦   ¦   ¦   ¦       
+¦   ¦       ¦   ¦   ¦   +---navigation
+¦   ¦       ¦   ¦   ¦   ¦       dropdown.mdx
+¦   ¦       ¦   ¦   ¦   ¦       stepper.mdx
+¦   ¦       ¦   ¦   ¦   ¦       tabs.mdx
+¦   ¦       ¦   ¦   ¦   ¦       _category_.json
+¦   ¦       ¦   ¦   ¦   ¦       
+¦   ¦       ¦   ¦   ¦   +---overlays
+¦   ¦       ¦   ¦   ¦   ¦       drawer.mdx
+¦   ¦       ¦   ¦   ¦   ¦       modal.mdx
+¦   ¦       ¦   ¦   ¦   ¦       popover.mdx
+¦   ¦       ¦   ¦   ¦   ¦       tooltip.mdx
+¦   ¦       ¦   ¦   ¦   ¦       _category_.json
+¦   ¦       ¦   ¦   ¦   ¦       
+¦   ¦       ¦   ¦   ¦   +---typography
+¦   ¦       ¦   ¦   ¦           blockquote.mdx
+¦   ¦       ¦   ¦   ¦           code.mdx
+¦   ¦       ¦   ¦   ¦           text.mdx
+¦   ¦       ¦   ¦   ¦           title.mdx
+¦   ¦       ¦   ¦   ¦           _category_.json
+¦   ¦       ¦   ¦   ¦           
+¦   ¦       ¦   ¦   +---src
+¦   ¦       ¦   ¦   ¦   +---components
+¦   ¦       ¦   ¦   ¦   ¦   ¦   alert.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   auto-responsive-tab.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   checkbox-group.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   copy-button.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   date-picker.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   drawer.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   file-input.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   form.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   header-cell.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   input.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   modal.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   multi-select.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   native-select.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   number-input.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   pagination.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   paper.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   password.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   phone-number.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   playground.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   radial-progressbar.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   radio-group.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   range-slider.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   rate.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   rc-table.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   select.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   star-particles.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   stepper.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   table-two.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   table.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   text-area.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   
+¦   ¦       ¦   ¦   ¦   ¦   +---client-component
+¦   ¦       ¦   ¦   ¦   ¦   ¦       index.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦       
+¦   ¦       ¦   ¦   ¦   ¦   +---code-editors
+¦   ¦       ¦   ¦   ¦   ¦   ¦   ¦   code-editor.config.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   ¦   copy-button.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   ¦   multi-files-editor.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   ¦   
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---api-sdk
+¦   ¦       ¦   ¦   ¦   ¦   ¦           index.ts
+¦   ¦       ¦   ¦   ¦   ¦   ¦           installation-command.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦           post-installation-command.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦           
+¦   ¦       ¦   ¦   ¦   ¦   +---color-tokens
+¦   ¦       ¦   ¦   ¦   ¦   ¦       index.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦       tokens.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦       
+¦   ¦       ¦   ¦   ¦   ¦   +---home
+¦   ¦       ¦   ¦   ¦   ¦   ¦   ¦   feature-block.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   ¦   footer.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   ¦   hero-block.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦   ¦   
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---component-block
+¦   ¦       ¦   ¦   ¦   ¦   ¦           button-block.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦           component-card.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦           data-display-block.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦           feedback-block.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦           index.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦           input-block.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦           integration-block.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦           overlay-block.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦           tab-block.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦           typography-block.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦           
+¦   ¦       ¦   ¦   ¦   ¦   +---icons
+¦   ¦       ¦   ¦   ¦   ¦   ¦       bun-icon.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦       color-swatch.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦       heart.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦       mega-phone.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦       npm-icon.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦       pnpm-icon.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦       rocket.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦       shield.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦       yarn-icon.tsx
+¦   ¦       ¦   ¦   ¦   ¦   ¦       
+¦   ¦       ¦   ¦   ¦   ¦   +---integrations
+¦   ¦       ¦   ¦   ¦   ¦       +---tan-stack-table
+¦   ¦       ¦   ¦   ¦   ¦               column.tsx
+¦   ¦       ¦   ¦   ¦   ¦               data.ts
+¦   ¦       ¦   ¦   ¦   ¦               index.tsx
+¦   ¦       ¦   ¦   ¦   ¦               pagination.tsx
+¦   ¦       ¦   ¦   ¦   ¦               table.tsx
+¦   ¦       ¦   ¦   ¦   ¦               toolbar.tsx
+¦   ¦       ¦   ¦   ¦   ¦               utils.tsx
+¦   ¦       ¦   ¦   ¦   ¦               
+¦   ¦       ¦   ¦   ¦   +---css
+¦   ¦       ¦   ¦   ¦   ¦       custom.css
+¦   ¦       ¦   ¦   ¦   ¦       
+¦   ¦       ¦   ¦   ¦   +---data
+¦   ¦       ¦   ¦   ¦   ¦       advanced-select-data.tsx
+¦   ¦       ¦   ¦   ¦   ¦       collapse-data.tsx
+¦   ¦       ¦   ¦   ¦   ¦       form-data.ts
+¦   ¦       ¦   ¦   ¦   ¦       notification-card-data.tsx
+¦   ¦       ¦   ¦   ¦   ¦       rate-data.tsx
+¦   ¦       ¦   ¦   ¦   ¦       table-data.ts
+¦   ¦       ¦   ¦   ¦   ¦       
+¦   ¦       ¦   ¦   ¦   +---pages
+¦   ¦       ¦   ¦   ¦   ¦       index.tsx
+¦   ¦       ¦   ¦   ¦   ¦       
+¦   ¦       ¦   ¦   ¦   +---theme
+¦   ¦       ¦   ¦   ¦   ¦       NotFound.js
+¦   ¦       ¦   ¦   ¦   ¦       
+¦   ¦       ¦   ¦   ¦   +---utils
+¦   ¦       ¦   ¦   ¦       ¦   hext-to-rgb.ts
+¦   ¦       ¦   ¦   ¦       ¦   
+¦   ¦       ¦   ¦   ¦       +---hooks
+¦   ¦       ¦   ¦   ¦               useInView.tsx
+¦   ¦       ¦   ¦   ¦               
+¦   ¦       ¦   ¦   +---static
+¦   ¦       ¦   ¦   ¦   ¦   .nojekyll
+¦   ¦       ¦   ¦   ¦   ¦   
+¦   ¦       ¦   ¦   ¦   +---fonts
+¦   ¦       ¦   ¦   ¦   ¦       Geist-Black.woff2
+¦   ¦       ¦   ¦   ¦   ¦       Geist-Bold.woff2
+¦   ¦       ¦   ¦   ¦   ¦       geist-font.css
+¦   ¦       ¦   ¦   ¦   ¦       Geist-Light.woff2
+¦   ¦       ¦   ¦   ¦   ¦       Geist-Medium.woff2
+¦   ¦       ¦   ¦   ¦   ¦       Geist-Regular.woff2
+¦   ¦       ¦   ¦   ¦   ¦       Geist-SemiBold.woff2
+¦   ¦       ¦   ¦   ¦   ¦       Geist-Thin.woff2
+¦   ¦       ¦   ¦   ¦   ¦       Geist-UltraBlack.woff2
+¦   ¦       ¦   ¦   ¦   ¦       Geist-UltraLight.woff2
+¦   ¦       ¦   ¦   ¦   ¦       
+¦   ¦       ¦   ¦   ¦   +---img
+¦   ¦       ¦   ¦   ¦           order.png
+¦   ¦       ¦   ¦   ¦           rizz-favicon.svg
+¦   ¦       ¦   ¦   ¦           rizz-logo.svg
+¦   ¦       ¦   ¦   ¦           rizz-social-card.jpg
+¦   ¦       ¦   ¦   ¦           
+¦   ¦       ¦   ¦   +---versioned_docs
+¦   ¦       ¦   ¦   ¦   +---version-0.8.7
+¦   ¦       ¦   ¦   ¦       +---buttons
+¦   ¦       ¦   ¦   ¦       ¦       action-icon.mdx
+¦   ¦       ¦   ¦   ¦       ¦       button.mdx
+¦   ¦       ¦   ¦   ¦       ¦       _category_.json
+¦   ¦       ¦   ¦   ¦       ¦       
+¦   ¦       ¦   ¦   ¦       +---data-display
+¦   ¦       ¦   ¦   ¦       ¦       accordion.mdx
+¦   ¦       ¦   ¦   ¦       ¦       announcement.mdx
+¦   ¦       ¦   ¦   ¦       ¦       avatar.mdx
+¦   ¦       ¦   ¦   ¦       ¦       badge.mdx
+¦   ¦       ¦   ¦   ¦       ¦       empty.mdx
+¦   ¦       ¦   ¦   ¦       ¦       table.mdx
+¦   ¦       ¦   ¦   ¦       ¦       _category_.json
+¦   ¦       ¦   ¦   ¦       ¦       
+¦   ¦       ¦   ¦   ¦       +---feedback
+¦   ¦       ¦   ¦   ¦       ¦       alert.mdx
+¦   ¦       ¦   ¦   ¦       ¦       loader.mdx
+¦   ¦       ¦   ¦   ¦       ¦       progressbar.mdx
+¦   ¦       ¦   ¦   ¦       ¦       radial-progressbar.mdx
+¦   ¦       ¦   ¦   ¦       ¦       _category_.json
+¦   ¦       ¦   ¦   ¦       ¦       
+¦   ¦       ¦   ¦   ¦       +---guide
+¦   ¦       ¦   ¦   ¦       ¦       dark-mode.mdx
+¦   ¦       ¦   ¦   ¦       ¦       getting-started.mdx
+¦   ¦       ¦   ¦   ¦       ¦       theming.mdx
+¦   ¦       ¦   ¦   ¦       ¦       _category_.json
+¦   ¦       ¦   ¦   ¦       ¦       
+¦   ¦       ¦   ¦   ¦       +---Inputs
+¦   ¦       ¦   ¦   ¦       ¦       advanced-checkbox.mdx
+¦   ¦       ¦   ¦   ¦       ¦       advanced-radio.mdx
+¦   ¦       ¦   ¦   ¦       ¦       checkbox-group.mdx
+¦   ¦       ¦   ¦   ¦       ¦       checkbox.mdx
+¦   ¦       ¦   ¦   ¦       ¦       fileinput.mdx
+¦   ¦       ¦   ¦   ¦       ¦       input.mdx
+¦   ¦       ¦   ¦   ¦       ¦       multi-select.mdx
+¦   ¦       ¦   ¦   ¦       ¦       number-input.mdx
+¦   ¦       ¦   ¦   ¦       ¦       password.mdx
+¦   ¦       ¦   ¦   ¦       ¦       pin-code.mdx
+¦   ¦       ¦   ¦   ¦       ¦       radio-group.mdx
+¦   ¦       ¦   ¦   ¦       ¦       radio.mdx
+¦   ¦       ¦   ¦   ¦       ¦       select.mdx
+¦   ¦       ¦   ¦   ¦       ¦       switch.mdx
+¦   ¦       ¦   ¦   ¦       ¦       textarea.mdx
+¦   ¦       ¦   ¦   ¦       ¦       _category_.json
+¦   ¦       ¦   ¦   ¦       ¦       
+¦   ¦       ¦   ¦   ¦       +---integrations
+¦   ¦       ¦   ¦   ¦       ¦       pagination.mdx
+¦   ¦       ¦   ¦   ¦       ¦       phone-number.mdx
+¦   ¦       ¦   ¦   ¦       ¦       range-slider.mdx
+¦   ¦       ¦   ¦   ¦       ¦       rate.mdx
+¦   ¦       ¦   ¦   ¦       ¦       react-datepicker.mdx
+¦   ¦       ¦   ¦   ¦       ¦       react-hook-form.mdx
+¦   ¦       ¦   ¦   ¦       ¦       table.mdx
+¦   ¦       ¦   ¦   ¦       ¦       tan-stack.mdx
+¦   ¦       ¦   ¦   ¦       ¦       _category_.json
+¦   ¦       ¦   ¦   ¦       ¦       
+¦   ¦       ¦   ¦   ¦       +---layouts
+¦   ¦       ¦   ¦   ¦       ¦       box.mdx
+¦   ¦       ¦   ¦   ¦       ¦       flex.mdx
+¦   ¦       ¦   ¦   ¦       ¦       grid.mdx
+¦   ¦       ¦   ¦   ¦       ¦       _category_.json
+¦   ¦       ¦   ¦   ¦       ¦       
+¦   ¦       ¦   ¦   ¦       +---navigation
+¦   ¦       ¦   ¦   ¦       ¦       dropdown.mdx
+¦   ¦       ¦   ¦   ¦       ¦       stepper.mdx
+¦   ¦       ¦   ¦   ¦       ¦       tabs.mdx
+¦   ¦       ¦   ¦   ¦       ¦       _category_.json
+¦   ¦       ¦   ¦   ¦       ¦       
+¦   ¦       ¦   ¦   ¦       +---overlays
+¦   ¦       ¦   ¦   ¦       ¦       drawer.mdx
+¦   ¦       ¦   ¦   ¦       ¦       modal.mdx
+¦   ¦       ¦   ¦   ¦       ¦       popover.mdx
+¦   ¦       ¦   ¦   ¦       ¦       tooltip.mdx
+¦   ¦       ¦   ¦   ¦       ¦       _category_.json
+¦   ¦       ¦   ¦   ¦       ¦       
+¦   ¦       ¦   ¦   ¦       +---typography
+¦   ¦       ¦   ¦   ¦               blockquote.mdx
+¦   ¦       ¦   ¦   ¦               code.mdx
+¦   ¦       ¦   ¦   ¦               text.mdx
+¦   ¦       ¦   ¦   ¦               title.mdx
+¦   ¦       ¦   ¦   ¦               _category_.json
+¦   ¦       ¦   ¦   ¦               
+¦   ¦       ¦   ¦   +---versioned_sidebars
+¦   ¦       ¦   ¦           version-0.8.7-sidebars.json
+¦   ¦       ¦   ¦           
+¦   ¦       ¦   +---next
+¦   ¦       ¦       ¦   .eslintrc.json
+¦   ¦       ¦       ¦   .gitignore
+¦   ¦       ¦       ¦   next.config.ts
+¦   ¦       ¦       ¦   package.json
+¦   ¦       ¦       ¦   postcss.config.mjs
+¦   ¦       ¦       ¦   README.md
+¦   ¦       ¦       ¦   tailwind.config.ts
+¦   ¦       ¦       ¦   tsconfig.json
+¦   ¦       ¦       ¦   
+¦   ¦       ¦       +---public
+¦   ¦       ¦       ¦       file.svg
+¦   ¦       ¦       ¦       globe.svg
+¦   ¦       ¦       ¦       next.svg
+¦   ¦       ¦       ¦       vercel.svg
+¦   ¦       ¦       ¦       window.svg
+¦   ¦       ¦       ¦       
+¦   ¦       ¦       +---src
+¦   ¦       ¦           +---app
+¦   ¦       ¦                   globals.css
+¦   ¦       ¦                   layout.tsx
+¦   ¦       ¦                   page.tsx
+¦   ¦       ¦                   
+¦   ¦       +---packages
+¦   ¦           +---tsconfig
+¦   ¦           ¦       base.json
+¦   ¦           ¦       nextjs.json
+¦   ¦           ¦       package.json
+¦   ¦           ¦       react-library.json
+¦   ¦           ¦       README.md
+¦   ¦           ¦       
+¦   ¦           +---ui
+¦   ¦               ¦   .eslintignore
+¦   ¦               ¦   .eslintrc.js
+¦   ¦               ¦   .prettierignore
+¦   ¦               ¦   CHANGELOG.md
+¦   ¦               ¦   jest.config.js
+¦   ¦               ¦   licenses
+¦   ¦               ¦   package.json
+¦   ¦               ¦   postcss.config.js
+¦   ¦               ¦   prettier.config.js
+¦   ¦               ¦   README.md
+¦   ¦               ¦   tailwind.config.js
+¦   ¦               ¦   tsconfig.json
+¦   ¦               ¦   tsup.config.js
+¦   ¦               ¦   
+¦   ¦               +---src
+¦   ¦                   ¦   index.ts
+¦   ¦                   ¦   
+¦   ¦                   +---components
+¦   ¦                   ¦   ¦   field-clear-button.tsx
+¦   ¦                   ¦   ¦   field-error-text.tsx
+¦   ¦                   ¦   ¦   field-helper-text.tsx
+¦   ¦                   ¦   ¦   highlight.tsx
+¦   ¦                   ¦   ¦   
+¦   ¦                   ¦   +---accordion
+¦   ¦                   ¦   ¦       accordion-body.tsx
+¦   ¦                   ¦   ¦       accordion-context.tsx
+¦   ¦                   ¦   ¦       accordion-header.tsx
+¦   ¦                   ¦   ¦       accordion.tsx
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---action-icon
+¦   ¦                   ¦   ¦       action-icon.tsx
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---advanced-checkbox
+¦   ¦                   ¦   ¦       advanced-checkbox.tsx
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---advanced-radio
+¦   ¦                   ¦   ¦       advanced-radio.tsx
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---alert
+¦   ¦                   ¦   ¦       alert.tsx
+¦   ¦                   ¦   ¦       icons.tsx
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---announcement
+¦   ¦                   ¦   ¦       announcement.tsx
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---avatar
+¦   ¦                   ¦   ¦       avatar.tsx
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---badge
+¦   ¦                   ¦   ¦       badge.tsx
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---button
+¦   ¦                   ¦   ¦       button.tsx
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---checkbox
+¦   ¦                   ¦   ¦       checkbox.tsx
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---checkbox-group
+¦   ¦                   ¦   ¦       checkbox-group.tsx
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---collapse
+¦   ¦                   ¦   ¦       collapse.tsx
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---drawer
+¦   ¦                   ¦   ¦       drawer.lib.ts
+¦   ¦                   ¦   ¦       drawer.tsx
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---dropdown
+¦   ¦                   ¦   ¦       dropdown-context.tsx
+¦   ¦                   ¦   ¦       dropdown-item.tsx
+¦   ¦                   ¦   ¦       dropdown-menu.tsx
+¦   ¦                   ¦   ¦       dropdown-trigger.tsx
+¦   ¦                   ¦   ¦       dropdown.lib.ts
+¦   ¦                   ¦   ¦       dropdown.tsx
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---empty
+¦   ¦                   ¦   ¦       empty-icons.tsx
+¦   ¦                   ¦   ¦       empty.tsx
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---input
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       input.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---layouts
+¦   ¦                   ¦   ¦   +---box
+¦   ¦                   ¦   ¦   ¦       box.tsx
+¦   ¦                   ¦   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦   ¦       
+¦   ¦                   ¦   ¦   +---flex
+¦   ¦                   ¦   ¦   ¦       flex.tsx
+¦   ¦                   ¦   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦   ¦       
+¦   ¦                   ¦   ¦   +---grid
+¦   ¦                   ¦   ¦           grid-col.tsx
+¦   ¦                   ¦   ¦           grid.tsx
+¦   ¦                   ¦   ¦           index.ts
+¦   ¦                   ¦   ¦           
+¦   ¦                   ¦   +---loader
+¦   ¦                   ¦   ¦       bars-spinner.tsx
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       loader.tsx
+¦   ¦                   ¦   ¦       pulse-loader.tsx
+¦   ¦                   ¦   ¦       spinner.tsx
+¦   ¦                   ¦   ¦       three-dot-scale.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---modal
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       modal.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---multi-select
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       multi-select.lib.ts
+¦   ¦                   ¦   ¦       multi-select.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---number-input
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       number-input.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---password
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       password-toggle-icon.tsx
+¦   ¦                   ¦   ¦       password.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---pin-code
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       pin-code.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---popover
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       popover-content.tsx
+¦   ¦                   ¦   ¦       popover-context.tsx
+¦   ¦                   ¦   ¦       popover-trigger.tsx
+¦   ¦                   ¦   ¦       popover.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---progressbar
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       progressbar.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---radial-progressbar
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       radial-progressbar.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---radio
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       radio.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---radio-group
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       radio-group.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---select
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       select.lib.ts
+¦   ¦                   ¦   ¦       select.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---stepper
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       step.tsx
+¦   ¦                   ¦   ¦       stepper.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---switch
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       switch.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---table
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       table.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---tabs
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       tab-context.tsx
+¦   ¦                   ¦   ¦       tab-lib.ts
+¦   ¦                   ¦   ¦       tab-list-item.tsx
+¦   ¦                   ¦   ¦       tab-list.tsx
+¦   ¦                   ¦   ¦       tab-panel.tsx
+¦   ¦                   ¦   ¦       tab-panels.tsx
+¦   ¦                   ¦   ¦       tab.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---textarea
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       textarea.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---tooltip
+¦   ¦                   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦       tooltip.tsx
+¦   ¦                   ¦   ¦       
+¦   ¦                   ¦   +---typography
+¦   ¦                   ¦   ¦   ¦   index.ts
+¦   ¦                   ¦   ¦   ¦   
+¦   ¦                   ¦   ¦   +---blockquote
+¦   ¦                   ¦   ¦   ¦       blockquote.tsx
+¦   ¦                   ¦   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦   ¦       
+¦   ¦                   ¦   ¦   +---bold
+¦   ¦                   ¦   ¦   ¦       bold.tsx
+¦   ¦                   ¦   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦   ¦       
+¦   ¦                   ¦   ¦   +---code
+¦   ¦                   ¦   ¦   ¦       code.tsx
+¦   ¦                   ¦   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦   ¦       
+¦   ¦                   ¦   ¦   +---italic
+¦   ¦                   ¦   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦   ¦       italic.tsx
+¦   ¦                   ¦   ¦   ¦       
+¦   ¦                   ¦   ¦   +---text
+¦   ¦                   ¦   ¦   ¦       index.ts
+¦   ¦                   ¦   ¦   ¦       text.tsx
+¦   ¦                   ¦   ¦   ¦       
+¦   ¦                   ¦   ¦   +---title
+¦   ¦                   ¦   ¦           index.ts
+¦   ¦                   ¦   ¦           title.tsx
+¦   ¦                   ¦   ¦           
+¦   ¦                   ¦   +---upload
+¦   ¦                   ¦           file-input.tsx
+¦   ¦                   ¦           index.ts
+¦   ¦                   ¦           
+¦   ¦                   +---icons
+¦   ¦                   ¦       calendar.tsx
+¦   ¦                   ¦       checkmark.tsx
+¦   ¦                   ¦       chevron-down.tsx
+¦   ¦                   ¦       chevron-up-down.tsx
+¦   ¦                   ¦       link.tsx
+¦   ¦                   ¦       moon.tsx
+¦   ¦                   ¦       plus.tsx
+¦   ¦                   ¦       question-mark-circle.tsx
+¦   ¦                   ¦       search.tsx
+¦   ¦                   ¦       shopping-bag.tsx
+¦   ¦                   ¦       shopping-cart.tsx
+¦   ¦                   ¦       spinner.tsx
+¦   ¦                   ¦       star.tsx
+¦   ¦                   ¦       sun.tsx
+¦   ¦                   ¦       upload.tsx
+¦   ¦                   ¦       x-circle.tsx
+¦   ¦                   ¦       x-mark.tsx
+¦   ¦                   ¦       
+¦   ¦                   +---lib
+¦   ¦                   ¦       button-variant.ts
+¦   ¦                   ¦       cn.ts
+¦   ¦                   ¦       dropdown-list-style.ts
+¦   ¦                   ¦       extract-props.ts
+¦   ¦                   ¦       font-weight.ts
+¦   ¦                   ¦       label-size.ts
+¦   ¦                   ¦       make-class-name.ts
+¦   ¦                   ¦       rounded.ts
+¦   ¦                   ¦       table-style.ts
+¦   ¦                   ¦       use-collapse.ts
+¦   ¦                   ¦       use-element-size.ts
+¦   ¦                   ¦       use-event-listener.ts
+¦   ¦                   ¦       use-interactive-event.ts
+¦   ¦                   ¦       use-previous.ts
+¦   ¦                   ¦       use-rect.ts
+¦   ¦                   ¦       
+¦   ¦                   +---styles
+¦   ¦                   ¦       global.css
+¦   ¦                   ¦       
+¦   ¦                   +---tests
+¦   ¦                           action-icon.test.tsx
+¦   ¦                           advanced-checkbox.test.tsx
+¦   ¦                           advanced-radio.test.tsx
+¦   ¦                           alert.test.tsx
+¦   ¦                           announcement.test.tsx
+¦   ¦                           badge.test.tsx
+¦   ¦                           button.test.tsx
+¦   ¦                           checkbox.test.tsx
+¦   ¦                           collapse.test.tsx
+¦   ¦                           empty.test.tsx
+¦   ¦                           loader.test.tsx
+¦   ¦                           progressbar.test.tsx
+¦   ¦                           radio.test.tsx
+¦   ¦                           tooltip.test.tsx
+¦   ¦                           
+¦   +---scroll-driven-gooey-island
+¦   ¦   +---scroll-driven-gooey-island
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.css
+¦   ¦               
+¦   +---scrolleable-wheel-items
+¦   ¦   +---scrolleable-wheel-items
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---shader-image-transition
+¦   ¦   +---shader-image-transition
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---shimmer-effect
+¦   ¦   +---shimmer-effect
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.css
+¦   ¦               
+¦   +---sleek-product-item
+¦   ¦   +---sleek-product-item
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.css
+¦   ¦               
+¦   +---smooothy-master
+¦   ¦   +---smooothy-master
+¦   ¦       ¦   .DS_Store
+¦   ¦       ¦   .gitignore
+¦   ¦       ¦   .prettierrc
+¦   ¦       ¦   LICENSE
+¦   ¦       ¦   package.json
+¦   ¦       ¦   pnpm-lock.yaml
+¦   ¦       ¦   pnpm-workspace.yaml
+¦   ¦       ¦   readme.md
+¦   ¦       ¦   tsconfig.json
+¦   ¦       ¦   
+¦   ¦       +---.vercel
+¦   ¦       ¦       .env.development.local
+¦   ¦       ¦       project.json
+¦   ¦       ¦       README.txt
+¦   ¦       ¦       
+¦   ¦       +---bin
+¦   ¦       ¦       build.ts
+¦   ¦       ¦       dev.ts
+¦   ¦       ¦       
+¦   ¦       +---docs
+¦   ¦       ¦   ¦   callbacks.md
+¦   ¦       ¦   ¦   changelog.md
+¦   ¦       ¦   ¦   extend.md
+¦   ¦       ¦   ¦   frameworks.md
+¦   ¦       ¦   ¦   todos.md
+¦   ¦       ¦   ¦   webflow.md
+¦   ¦       ¦   ¦   webgl.md
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---img
+¦   ¦       ¦           github-brand-short.svg
+¦   ¦       ¦           
+¦   ¦       +---package
+¦   ¦       ¦   ¦   index.ts
+¦   ¦       ¦   ¦   package.json
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---src
+¦   ¦       ¦       ¦   core.ts
+¦   ¦       ¦       ¦   utils.ts
+¦   ¦       ¦       ¦   
+¦   ¦       ¦       +---examples
+¦   ¦       ¦               keyboard.ts
+¦   ¦       ¦               
+¦   ¦       +---web
+¦   ¦           ¦   .gitignore
+¦   ¦           ¦   .prettierrc
+¦   ¦           ¦   astro.config.mjs
+¦   ¦           ¦   package.json
+¦   ¦           ¦   README.md
+¦   ¦           ¦   tsconfig.json
+¦   ¦           ¦   
+¦   ¦           +---.vscode
+¦   ¦           ¦       extensions.json
+¦   ¦           ¦       launch.json
+¦   ¦           ¦       
+¦   ¦           +---public
+¦   ¦           ¦   ¦   code.css
+¦   ¦           ¦   ¦   favicon.svg
+¦   ¦           ¦   ¦   favicon_svg.svg
+¦   ¦           ¦   ¦   favicon_svg@2x.png
+¦   ¦           ¦   ¦   og_img.jpg
+¦   ¦           ¦   ¦   og_img1.jpg
+¦   ¦           ¦   ¦   og_img2.jpg
+¦   ¦           ¦   ¦   
+¦   ¦           ¦   +---fonts
+¦   ¦           ¦   ¦       Geist-Regular.woff2
+¦   ¦           ¦   ¦       Geist-SemiBold.woff2
+¦   ¦           ¦   ¦       GeistMono-Regular.woff2
+¦   ¦           ¦   ¦       SKPupok-Solid.woff2
+¦   ¦           ¦   ¦       
+¦   ¦           ¦   +---webgl
+¦   ¦           ¦           model.000.glb
+¦   ¦           ¦           model.001.glb
+¦   ¦           ¦           model.002.glb
+¦   ¦           ¦           model.003.glb
+¦   ¦           ¦           model.004.glb
+¦   ¦           ¦           model.005.glb
+¦   ¦           ¦           model.006.glb
+¦   ¦           ¦           model.007.glb
+¦   ¦           ¦           model.008.glb
+¦   ¦           ¦           moonless_golf_1k.jpg
+¦   ¦           ¦           spruit_sunrise_2k.hdr.jpg
+¦   ¦           ¦           
+¦   ¦           +---src
+¦   ¦               ¦   content.tsx
+¦   ¦               ¦   
+¦   ¦               +---assets
+¦   ¦               ¦       astro.svg
+¦   ¦               ¦       background.svg
+¦   ¦               ¦       
+¦   ¦               +---components
+¦   ¦               ¦   ¦   Canvas.astro
+¦   ¦               ¦   ¦   Code.astro
+¦   ¦               ¦   ¦   Css.astro
+¦   ¦               ¦   ¦   Cursor.astro
+¦   ¦               ¦   ¦   ExampleHead.astro
+¦   ¦               ¦   ¦   ExamplePageHead.astro
+¦   ¦               ¦   ¦   Footer.astro
+¦   ¦               ¦   ¦   GithubLink.astro
+¦   ¦               ¦   ¦   Grid.astro
+¦   ¦               ¦   ¦   HoverUl.astro
+¦   ¦               ¦   ¦   Nav.astro
+¦   ¦               ¦   ¦   Script.astro
+¦   ¦               ¦   ¦   Section.astro
+¦   ¦               ¦   ¦   
+¦   ¦               ¦   +---frameworks
+¦   ¦               ¦   ¦       ReactSlider.tsx
+¦   ¦               ¦   ¦       VueSlider.vue
+¦   ¦               ¦   ¦       
+¦   ¦               ¦   +---landing
+¦   ¦               ¦   ¦   ¦   BouncySvg.astro
+¦   ¦               ¦   ¦   ¦   Callout.astro
+¦   ¦               ¦   ¦   ¦   Get.astro
+¦   ¦               ¦   ¦   ¦   Hero.astro
+¦   ¦               ¦   ¦   ¦   InUse.astro
+¦   ¦               ¦   ¦   ¦   LargeTitle.astro
+¦   ¦               ¦   ¦   ¦   Loader.astro
+¦   ¦               ¦   ¦   ¦   Open.astro
+¦   ¦               ¦   ¦   ¦   Set.astro
+¦   ¦               ¦   ¦   ¦   Use.astro
+¦   ¦               ¦   ¦   ¦   Webgl.astro
+¦   ¦               ¦   ¦   ¦   
+¦   ¦               ¦   ¦   +---comps
+¦   ¦               ¦   ¦           FoodSlider.astro
+¦   ¦               ¦   ¦           GetSlider.astro
+¦   ¦               ¦   ¦           TitleText.astro
+¦   ¦               ¦   ¦           
+¦   ¦               ¦   +---svg
+¦   ¦               ¦   ¦   ¦   github.astro
+¦   ¦               ¦   ¦   ¦   Svgg.astro
+¦   ¦               ¦   ¦   ¦   twitter.astro
+¦   ¦               ¦   ¦   ¦   
+¦   ¦               ¦   ¦   +---landing
+¦   ¦               ¦   ¦           arrow-r.svg
+¦   ¦               ¦   ¦           drink.svg
+¦   ¦               ¦   ¦           events.svg
+¦   ¦               ¦   ¦           extend.svg
+¦   ¦               ¦   ¦           food_cake.svg
+¦   ¦               ¦   ¦           food_fish.svg
+¦   ¦               ¦   ¦           food_fungus.svg
+¦   ¦               ¦   ¦           food_hotdog.svg
+¦   ¦               ¦   ¦           food_ramen.svg
+¦   ¦               ¦   ¦           food_toast.svg
+¦   ¦               ¦   ¦           get.svg
+¦   ¦               ¦   ¦           github.svg
+¦   ¦               ¦   ¦           letter_d.svg
+¦   ¦               ¦   ¦           letter_e.svg
+¦   ¦               ¦   ¦           letter_i.svg
+¦   ¦               ¦   ¦           letter_l.svg
+¦   ¦               ¦   ¦           letter_m.svg
+¦   ¦               ¦   ¦           letter_s.svg
+¦   ¦               ¦   ¦           logo.svg
+¦   ¦               ¦   ¦           open.svg
+¦   ¦               ¦   ¦           person_maybe.svg
+¦   ¦               ¦   ¦           person_why.svg
+¦   ¦               ¦   ¦           read.svg
+¦   ¦               ¦   ¦           ready.svg
+¦   ¦               ¦   ¦           set.svg
+¦   ¦               ¦   ¦           set_conditional.svg
+¦   ¦               ¦   ¦           set_configure.svg
+¦   ¦               ¦   ¦           set_css.svg
+¦   ¦               ¦   ¦           set_drag.svg
+¦   ¦               ¦   ¦           set_extensible.svg
+¦   ¦               ¦   ¦           set_infinite.svg
+¦   ¦               ¦   ¦           set_snapping.svg
+¦   ¦               ¦   ¦           set_speed.svg
+¦   ¦               ¦   ¦           slider.svg
+¦   ¦               ¦   ¦           source.svg
+¦   ¦               ¦   ¦           toggle.svg
+¦   ¦               ¦   ¦           use.svg
+¦   ¦               ¦   ¦           use_framework.svg
+¦   ¦               ¦   ¦           use_vanilla.svg
+¦   ¦               ¦   ¦           use_webflow.svg
+¦   ¦               ¦   ¦           wave.svg
+¦   ¦               ¦   ¦           webgl.svg
+¦   ¦               ¦   ¦           
+¦   ¦               ¦   +---vanilla
+¦   ¦               ¦           Base.astro
+¦   ¦               ¦           ControlsSlider.astro
+¦   ¦               ¦           FullInterface.astro
+¦   ¦               ¦           KeyboardControls.astro
+¦   ¦               ¦           LinkSlider.astro
+¦   ¦               ¦           Parallax1Slider.astro
+¦   ¦               ¦           ParallaxSpeed.astro
+¦   ¦               ¦           VanillaFinite.astro
+¦   ¦               ¦           VanillaInfinite.astro
+¦   ¦               ¦           
+¦   ¦               +---js
+¦   ¦               ¦   ¦   app.ts
+¦   ¦               ¦   ¦   dom.ts
+¦   ¦               ¦   ¦   gsap.ts
+¦   ¦               ¦   ¦   hey.ts
+¦   ¦               ¦   ¦   mouse.ts
+¦   ¦               ¦   ¦   scroll.ts
+¦   ¦               ¦   ¦   
+¦   ¦               ¦   +---gl
+¦   ¦               ¦   ¦   ¦   gl.js
+¦   ¦               ¦   ¦   ¦   ray.js
+¦   ¦               ¦   ¦   ¦   
+¦   ¦               ¦   ¦   +---assets
+¦   ¦               ¦   ¦   ¦       index.js
+¦   ¦               ¦   ¦   ¦       
+¦   ¦               ¦   ¦   +---dom
+¦   ¦               ¦   ¦   ¦       fragment.frag
+¦   ¦               ¦   ¦   ¦       group.js
+¦   ¦               ¦   ¦   ¦       index.js
+¦   ¦               ¦   ¦   ¦       vertex.vert
+¦   ¦               ¦   ¦   ¦       
+¦   ¦               ¦   ¦   +---fslider
+¦   ¦               ¦   ¦   ¦   ¦   index.js
+¦   ¦               ¦   ¦   ¦   ¦   slide.js
+¦   ¦               ¦   ¦   ¦   ¦   
+¦   ¦               ¦   ¦   ¦   +---bg
+¦   ¦               ¦   ¦   ¦   ¦       fragment.frag
+¦   ¦               ¦   ¦   ¦   ¦       index.js
+¦   ¦               ¦   ¦   ¦   ¦       pass.glsl
+¦   ¦               ¦   ¦   ¦   ¦       vertex.vert
+¦   ¦               ¦   ¦   ¦   ¦       
+¦   ¦               ¦   ¦   ¦   +---food
+¦   ¦               ¦   ¦   ¦           index.js
+¦   ¦               ¦   ¦   ¦           
+¦   ¦               ¦   ¦   +---glsl
+¦   ¦               ¦   ¦   ¦   ¦   constants.glsl
+¦   ¦               ¦   ¦   ¦   ¦   imageuv.glsl
+¦   ¦               ¦   ¦   ¦   ¦   perlin3d.glsl
+¦   ¦               ¦   ¦   ¦   ¦   rand.glsl
+¦   ¦               ¦   ¦   ¦   ¦   rotate3d.glsl
+¦   ¦               ¦   ¦   ¦   ¦   
+¦   ¦               ¦   ¦   ¦   +---_
+¦   ¦               ¦   ¦   ¦       +---basic
+¦   ¦               ¦   ¦   ¦               fragment.frag
+¦   ¦               ¦   ¦   ¦               index.js
+¦   ¦               ¦   ¦   ¦               vertex.vert
+¦   ¦               ¦   ¦   ¦               
+¦   ¦               ¦   ¦   +---instance
+¦   ¦               ¦   ¦   ¦       fragment.frag
+¦   ¦               ¦   ¦   ¦       index.js
+¦   ¦               ¦   ¦   ¦       utils.js
+¦   ¦               ¦   ¦   ¦       vertex.vert
+¦   ¦               ¦   ¦   ¦       
+¦   ¦               ¦   ¦   +---item
+¦   ¦               ¦   ¦   ¦       index.js
+¦   ¦               ¦   ¦   ¦       
+¦   ¦               ¦   ¦   +---post
+¦   ¦               ¦   ¦   ¦   ¦   index.js
+¦   ¦               ¦   ¦   ¦   ¦   
+¦   ¦               ¦   ¦   ¦   +---base
+¦   ¦               ¦   ¦   ¦           fragment.frag
+¦   ¦               ¦   ¦   ¦           index.js
+¦   ¦               ¦   ¦   ¦           vertex.vert
+¦   ¦               ¦   ¦   ¦           
+¦   ¦               ¦   ¦   +---quad
+¦   ¦               ¦   ¦   ¦       fragment.frag
+¦   ¦               ¦   ¦   ¦       index.js
+¦   ¦               ¦   ¦   ¦       vertex.vert
+¦   ¦               ¦   ¦   ¦       
+¦   ¦               ¦   ¦   +---scenes
+¦   ¦               ¦   ¦   ¦       scene.js
+¦   ¦               ¦   ¦   ¦       
+¦   ¦               ¦   ¦   +---screen
+¦   ¦               ¦   ¦   ¦       index.js
+¦   ¦               ¦   ¦   ¦       
+¦   ¦               ¦   ¦   +---utils
+¦   ¦               ¦   ¦           cube-loader.js
+¦   ¦               ¦   ¦           draco-loader.js
+¦   ¦               ¦   ¦           hdr-loader.js
+¦   ¦               ¦   ¦           index.js
+¦   ¦               ¦   ¦           loader.js
+¦   ¦               ¦   ¦           model-loader.js
+¦   ¦               ¦   ¦           texture-loader.js
+¦   ¦               ¦   ¦           
+¦   ¦               ¦   +---modules
+¦   ¦               ¦   ¦   ¦   alpha.ts
+¦   ¦               ¦   ¦   ¦   block.ts
+¦   ¦               ¦   ¦   ¦   bouncy.ts
+¦   ¦               ¦   ¦   ¦   callout.ts
+¦   ¦               ¦   ¦   ¦   cursor.ts
+¦   ¦               ¦   ¦   ¦   draw.ts
+¦   ¦               ¦   ¦   ¦   footer.ts
+¦   ¦               ¦   ¦   ¦   fslider.ts
+¦   ¦               ¦   ¦   ¦   gslider.ts
+¦   ¦               ¦   ¦   ¦   loader.ts
+¦   ¦               ¦   ¦   ¦   logo.ts
+¦   ¦               ¦   ¦   ¦   text.ts
+¦   ¦               ¦   ¦   ¦   
+¦   ¦               ¦   ¦   +---_
+¦   ¦               ¦   ¦           create.ts
+¦   ¦               ¦   ¦           index.ts
+¦   ¦               ¦   ¦           module.ts
+¦   ¦               ¦   ¦           observe.ts
+¦   ¦               ¦   ¦           track.ts
+¦   ¦               ¦   ¦           
+¦   ¦               ¦   +---utils
+¦   ¦               ¦           client-rect.ts
+¦   ¦               ¦           index.ts
+¦   ¦               ¦           math.ts
+¦   ¦               ¦           media.ts
+¦   ¦               ¦           subscribable.ts
+¦   ¦               ¦           
+¦   ¦               +---layouts
+¦   ¦               ¦       Layout.astro
+¦   ¦               ¦       
+¦   ¦               +---pages
+¦   ¦               ¦   ¦   index.astro
+¦   ¦               ¦   ¦   
+¦   ¦               ¦   +---examples
+¦   ¦               ¦   ¦       configurable.astro
+¦   ¦               ¦   ¦       frameworks.astro
+¦   ¦               ¦   ¦       index.astro
+¦   ¦               ¦   ¦       
+¦   ¦               ¦   +---wip
+¦   ¦               ¦           index.astro
+¦   ¦               ¦           
+¦   ¦               +---styles
+¦   ¦               ¦       animation.css
+¦   ¦               ¦       fonts.css
+¦   ¦               ¦       global.css
+¦   ¦               ¦       grid.css
+¦   ¦               ¦       modules.css
+¦   ¦               ¦       variables.css
+¦   ¦               ¦       
+¦   ¦               +---wip
+¦   ¦                   +---slider
+¦   ¦                           index.js
+¦   ¦                           
+¦   +---smoothui-main
+¦   ¦   +---smoothui-main
+¦   ¦       ¦   .eslintrc.json
+¦   ¦       ¦   .gitignore
+¦   ¦       ¦   components.json
+¦   ¦       ¦   CONTRIBUTING.md
+¦   ¦       ¦   LICENSE
+¦   ¦       ¦   next.config.js
+¦   ¦       ¦   package.json
+¦   ¦       ¦   pnpm-lock.yaml
+¦   ¦       ¦   postcss.config.mjs
+¦   ¦       ¦   prettier.config.js
+¦   ¦       ¦   README.md
+¦   ¦       ¦   tsconfig.json
+¦   ¦       ¦   
+¦   ¦       +---.github
+¦   ¦       ¦   ¦   FUNDING.yml
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---ISSUE_TEMPLATE
+¦   ¦       ¦           bug_report.md
+¦   ¦       ¦           feature_request.md
+¦   ¦       ¦           
+¦   ¦       +---public
+¦   ¦       ¦       dynamic-og.png
+¦   ¦       ¦       icon.png
+¦   ¦       ¦       og.jpg
+¦   ¦       ¦       pixel-edu-calvo.png
+¦   ¦       ¦       readme.png
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦           +---app
+¦   ¦           ¦   ¦   favicon.ico
+¦   ¦           ¦   ¦   layout.tsx
+¦   ¦           ¦   ¦   page.tsx
+¦   ¦           ¦   ¦   robots.ts
+¦   ¦           ¦   ¦   sitemap.ts
+¦   ¦           ¦   ¦   
+¦   ¦           ¦   +---actions
+¦   ¦           ¦   ¦       changelogAction.ts
+¦   ¦           ¦   ¦       
+¦   ¦           ¦   +---api
+¦   ¦           ¦   ¦   +---og
+¦   ¦           ¦   ¦           route.tsx
+¦   ¦           ¦   ¦           
+¦   ¦           ¦   +---doc
+¦   ¦           ¦   ¦   ¦   layout.tsx
+¦   ¦           ¦   ¦   ¦   page.tsx
+¦   ¦           ¦   ¦   ¦   schema.ts
+¦   ¦           ¦   ¦   ¦   
+¦   ¦           ¦   ¦   +---basic
+¦   ¦           ¦   ¦   ¦   +---[slug]
+¦   ¦           ¦   ¦   ¦           page.tsx
+¦   ¦           ¦   ¦   ¦           
+¦   ¦           ¦   ¦   +---changelog
+¦   ¦           ¦   ¦   ¦       page.tsx
+¦   ¦           ¦   ¦   ¦       
+¦   ¦           ¦   ¦   +---data
+¦   ¦           ¦   ¦   ¦       basicComponents.ts
+¦   ¦           ¦   ¦   ¦       changelog.ts
+¦   ¦           ¦   ¦   ¦       components.ts
+¦   ¦           ¦   ¦   ¦       
+¦   ¦           ¦   ¦   +---[slug]
+¦   ¦           ¦   ¦           page.tsx
+¦   ¦           ¦   ¦           
+¦   ¦           ¦   +---styles
+¦   ¦           ¦   ¦       globals.css
+¦   ¦           ¦   ¦       smoothui.css
+¦   ¦           ¦   ¦       
+¦   ¦           ¦   +---utils
+¦   ¦           ¦           copyToClipboard.ts
+¦   ¦           ¦           schema.ts
+¦   ¦           ¦           shiki.ts
+¦   ¦           ¦           
+¦   ¦           +---assets
+¦   ¦           ¦   +---images
+¦   ¦           ¦           airlume.png
+¦   ¦           ¦           sparkbites.png
+¦   ¦           ¦           
+¦   ¦           +---components
+¦   ¦           ¦   ¦   analytics.tsx
+¦   ¦           ¦   ¦   blurMagic.tsx
+¦   ¦           ¦   ¦   button.tsx
+¦   ¦           ¦   ¦   ColorPickerFloatNav.tsx
+¦   ¦           ¦   ¦   floatNav.tsx
+¦   ¦           ¦   ¦   footer.tsx
+¦   ¦           ¦   ¦   frame.tsx
+¦   ¦           ¦   ¦   icon.tsx
+¦   ¦           ¦   ¦   logo.tsx
+¦   ¦           ¦   ¦   logoAnimation.tsx
+¦   ¦           ¦   ¦   themeSwitch.tsx
+¦   ¦           ¦   ¦   toastChangelog.tsx
+¦   ¦           ¦   ¦   tooltip.tsx
+¦   ¦           ¦   ¦   
+¦   ¦           ¦   +---doc
+¦   ¦           ¦   ¦   ¦   badgeBeta.tsx
+¦   ¦           ¦   ¦   ¦   breadcrumbs.tsx
+¦   ¦           ¦   ¦   ¦   code.tsx
+¦   ¦           ¦   ¦   ¦   codeBlock.tsx
+¦   ¦           ¦   ¦   ¦   codeBlocKWarapper.tsx
+¦   ¦           ¦   ¦   ¦   collapsible.tsx
+¦   ¦           ¦   ¦   ¦   componentSource.tsx
+¦   ¦           ¦   ¦   ¦   componentView.tsx
+¦   ¦           ¦   ¦   ¦   copyCode.tsx
+¦   ¦           ¦   ¦   ¦   header.tsx
+¦   ¦           ¦   ¦   ¦   openInV0.tsx
+¦   ¦           ¦   ¦   ¦   PropsTable.tsx
+¦   ¦           ¦   ¦   ¦   tableOfContent.tsx
+¦   ¦           ¦   ¦   ¦   tabs.tsx
+¦   ¦           ¦   ¦   ¦   
+¦   ¦           ¦   ¦   +---sidebar
+¦   ¦           ¦   ¦           app-sidebar.tsx
+¦   ¦           ¦   ¦           sidebarButton.tsx
+¦   ¦           ¦   ¦           sidebarButtonClient.tsx
+¦   ¦           ¦   ¦           SidebarLinkClient.tsx
+¦   ¦           ¦   ¦           trigger.tsx
+¦   ¦           ¦   ¦           
+¦   ¦           ¦   +---landing
+¦   ¦           ¦   ¦       animated-group.tsx
+¦   ¦           ¦   ¦       animated-number.tsx
+¦   ¦           ¦   ¦       animated-text.tsx
+¦   ¦           ¦   ¦       components-slideshow.tsx
+¦   ¦           ¦   ¦       divider.tsx
+¦   ¦           ¦   ¦       faq.tsx
+¦   ¦           ¦   ¦       features.tsx
+¦   ¦           ¦   ¦       githubstars.tsx
+¦   ¦           ¦   ¦       hero.tsx
+¦   ¦           ¦   ¦       navbar.tsx
+¦   ¦           ¦   ¦       rule.tsx
+¦   ¦           ¦   ¦       
+¦   ¦           ¦   +---resources
+¦   ¦           ¦   ¦   +---logos
+¦   ¦           ¦   ¦           ReactLogo.tsx
+¦   ¦           ¦   ¦           TailwindLogo.tsx
+¦   ¦           ¦   ¦           
+¦   ¦           ¦   +---smoothui
+¦   ¦           ¦   ¦   +---examples
+¦   ¦           ¦   ¦   ¦       AnimatedTagsDemo.tsx
+¦   ¦           ¦   ¦   ¦       AppDownloadStackDemo.tsx
+¦   ¦           ¦   ¦   ¦       AppleInvitesDemo.tsx
+¦   ¦           ¦   ¦   ¦       BasicAccordionDemo.tsx
+¦   ¦           ¦   ¦   ¦       BasicDropdownDemo.tsx
+¦   ¦           ¦   ¦   ¦       BasicModalDemo.tsx
+¦   ¦           ¦   ¦   ¦       BasicToastDemo.tsx
+¦   ¦           ¦   ¦   ¦       ButtonCopyDemo.tsx
+¦   ¦           ¦   ¦   ¦       DynamicIslandDemo.tsx
+¦   ¦           ¦   ¦   ¦       ExpandableCardsDemo.tsx
+¦   ¦           ¦   ¦   ¦       FluidMorphDemo.tsx
+¦   ¦           ¦   ¦   ¦       ImageMetadataPreviewDemo.tsx
+¦   ¦           ¦   ¦   ¦       InteractiveImageSelectorDemo.tsx
+¦   ¦           ¦   ¦   ¦       JobListingComponentDemo.tsx
+¦   ¦           ¦   ¦   ¦       MatrixCardDemo.tsx
+¦   ¦           ¦   ¦   ¦       NumberFlowDemo.tsx
+¦   ¦           ¦   ¦   ¦       PowerOffSlideDemo.tsx
+¦   ¦           ¦   ¦   ¦       SocialSelectorDemo.tsx
+¦   ¦           ¦   ¦   ¦       UserAccountAvatarDemo.tsx
+¦   ¦           ¦   ¦   ¦       
+¦   ¦           ¦   ¦   +---hooks
+¦   ¦           ¦   ¦   ¦       use-mobile.tsx
+¦   ¦           ¦   ¦   ¦       
+¦   ¦           ¦   ¦   +---ui
+¦   ¦           ¦   ¦   ¦       AnimatedTags.tsx
+¦   ¦           ¦   ¦   ¦       AppDownloadStack.tsx
+¦   ¦           ¦   ¦   ¦       AppleInvites.tsx
+¦   ¦           ¦   ¦   ¦       BasicAccordion.tsx
+¦   ¦           ¦   ¦   ¦       BasicDropdown.tsx
+¦   ¦           ¦   ¦   ¦       BasicModal.tsx
+¦   ¦           ¦   ¦   ¦       BasicToast.tsx
+¦   ¦           ¦   ¦   ¦       ButtonCopy.tsx
+¦   ¦           ¦   ¦   ¦       DynamicIsland.tsx
+¦   ¦           ¦   ¦   ¦       ExpandableCards.tsx
+¦   ¦           ¦   ¦   ¦       FluidMorph.tsx
+¦   ¦           ¦   ¦   ¦       ImageMetadataPreview.tsx
+¦   ¦           ¦   ¦   ¦       InteractiveImageSelector.tsx
+¦   ¦           ¦   ¦   ¦       JobListingComponent.tsx
+¦   ¦           ¦   ¦   ¦       MatrixCard.tsx
+¦   ¦           ¦   ¦   ¦       NumberFlow.tsx
+¦   ¦           ¦   ¦   ¦       PowerOffSlide.tsx
+¦   ¦           ¦   ¦   ¦       SocialSelector.tsx
+¦   ¦           ¦   ¦   ¦       UserAccountAvatar.tsx
+¦   ¦           ¦   ¦   ¦       
+¦   ¦           ¦   ¦   +---utils
+¦   ¦           ¦   ¦           cn.ts
+¦   ¦           ¦   ¦           
+¦   ¦           ¦   +---ui
+¦   ¦           ¦       ¦   accordion.tsx
+¦   ¦           ¦       ¦   avatar.tsx
+¦   ¦           ¦       ¦   badge.tsx
+¦   ¦           ¦       ¦   button.tsx
+¦   ¦           ¦       ¦   card.tsx
+¦   ¦           ¦       ¦   input.tsx
+¦   ¦           ¦       ¦   separator.tsx
+¦   ¦           ¦       ¦   sheet.tsx
+¦   ¦           ¦       ¦   sidebar.tsx
+¦   ¦           ¦       ¦   skeleton.tsx
+¦   ¦           ¦       ¦   tooltip.tsx
+¦   ¦           ¦       ¦   
+¦   ¦           ¦       +---hooks
+¦   ¦           ¦               use-mobile.tsx
+¦   ¦           ¦               
+¦   ¦           +---lib
+¦   ¦           ¦       domain.ts
+¦   ¦           ¦       utils.ts
+¦   ¦           ¦       
+¦   ¦           +---scripts
+¦   ¦                   build-registry-index.ts
+¦   ¦                   build-registry-sources.ts
+¦   ¦                   
+¦   +---spectral.js-3.0.0
+¦   ¦   +---spectral.js-3.0.0
+¦   ¦       ¦   LICENSE
+¦   ¦       ¦   README.md
+¦   ¦       ¦   spectral.js
+¦   ¦       ¦   spectral.min.js
+¦   ¦       ¦   
+¦   ¦       +---images
+¦   ¦       ¦       banner.png
+¦   ¦       ¦       image01.png
+¦   ¦       ¦       image02.png
+¦   ¦       ¦       image03.png
+¦   ¦       ¦       image04.png
+¦   ¦       ¦       image05.png
+¦   ¦       ¦       image06.png
+¦   ¦       ¦       image07.png
+¦   ¦       ¦       
+¦   ¦       +---shader
+¦   ¦       ¦       spectral.glsl
+¦   ¦       ¦       
+¦   ¦       +---site
+¦   ¦           ¦   android-chrome-192x192.png
+¦   ¦           ¦   android-chrome-512x512.png
+¦   ¦           ¦   apple-touch-icon.png
+¦   ¦           ¦   favicon-16x16.png
+¦   ¦           ¦   favicon-32x32.png
+¦   ¦           ¦   favicon.ico
+¦   ¦           ¦   index.html
+¦   ¦           ¦   site.webmanifest
+¦   ¦           ¦   
+¦   ¦           +---css
+¦   ¦           ¦       bootstrap.min.css
+¦   ¦           ¦       vs-code-dark.css
+¦   ¦           ¦       
+¦   ¦           +---images
+¦   ¦           ¦       a
+¦   ¦           ¦       github-mark.png
+¦   ¦           ¦       logo.png
+¦   ¦           ¦       
+¦   ¦           +---js
+¦   ¦                   codedye.all.umd.js
+¦   ¦                   spectral.min.js
+¦   ¦                   
+¦   +---squircle-avatar-generator
+¦   ¦   +---squircle-avatar-generator
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---squircle-slider
+¦   ¦   +---squircle-slider
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---squircle-tasks
+¦   ¦   +---squircle-tasks
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---squircles-gallery-with-view-transition
+¦   ¦   +---squircles-gallery-with-view-transition
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---stacked-poetic-cards-css-only
+¦   ¦   +---stacked-poetic-cards-css-only
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---stacked-poetic-cards-css-only (1)
+¦   ¦   +---stacked-poetic-cards-css-only
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       script.js
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               script.js
+¦   ¦               style.css
+¦   ¦               
+¦   +---the-moonglowing-cards
+¦   ¦   +---the-moonglowing-cards
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.css
+¦   ¦               
+¦   +---untitled
+¦   ¦   +---untitled
+¦   ¦       ¦   LICENSE.txt
+¦   ¦       ¦   README.md
+¦   ¦       ¦   
+¦   ¦       +---dist
+¦   ¦       ¦       index.html
+¦   ¦       ¦       style.css
+¦   ¦       ¦       
+¦   ¦       +---src
+¦   ¦               index.html
+¦   ¦               style.css
+¦   ¦               
+¦   +---zip
+¦           3d-card-hover.zip
+¦           3d-product-cards.zip
+¦           activities-widget.zip
+¦           ai-hero-chatpopover-api-example.zip
+¦           animated-file-sorting.zip
+¦           animated-navigation-with-gsap-mix-blend-mode-and-boxicon-web-components-v2.zip
+¦           apple-liquid-glass-ui-2025.zip
+¦           apple-style-glassmorphism-sidebar.zip
+¦           border-punch-outs-w-mask-composite.zip
+¦           butterflies.zip
+¦           canvas-gauges-master.zip
+¦           card-carousel-css-only-no-repeat-hover-over-card-to-pause-scroll.zip
+¦           card-clip-path.zip
+¦           climbingcubecsseffect.zip
+¦           collection-grid.zip
+¦           component-library.html
+¦           course-design-cards-scss.zip
+¦           cpc-circle.zip
+¦           css-3d-card-with-vanilla-tilt.zip
+¦           css-animationcircular-floating-action.zip
+¦           css-bar-chart.zip
+¦           css-gradient-clock.zip
+¦           css-image-stack-cycle.zip
+¦           css-pro-tips-for-cleaner-smarter-and-accessible-hover-effects.zip
+¦           css-rain.zip
+¦           darkmodejs-master.zip
+¦           design-wormhole.zip
+¦           ecg-tsl.zip
+¦           elc.zip
+¦           fancy-fading-footer.zip
+¦           fancy-main.zip
+¦           frosted-glass-card.zip
+¦           glass-button.zip
+¦           glass-buttons.zip
+¦           glass-cards.zip
+¦           gsap-component-interactive-mystery-card-hover-effect.zip
+¦           gsap-inertia-card-animations-showcasechallenge-2-entry-2 (1).zip
+¦           gsap-inertia-card-animations-showcasechallenge-2-entry-2.zip
+¦           gsap-lenis-grid-to-slider-transition-with-gsap-lenis-splittext.zip
+¦           gsap-lenis-layout-explorations-with-gsap-lenis-and-scrolltrigger-n-5.zip
+¦           hover-card-interaction.zip
+¦           infinite-layers-grid-main.zip
+¦           interactive-droplets-main.zip
+¦           javascript-canvas-dot-controls-interactive-grid-based-ui-with-canvas.zip
+¦           javascript-guage-animations-set-n-3.zip
+¦           light-dark-black-theme.zip
+¦           liquid-glass-apple.zip
+¦           liquid-glass.zip
+¦           magic-card.zip
+¦           magicui-main.zip
+¦           magnifying-image-view-with-zoom-touch-support.zip
+¦           metal-buttons-main.zip
+¦           out-of-the-darkness.zip
+¦           parallax-photo-carousel.zip
+¦           poc-journey-explorer.zip
+¦           radios-with-sliding-focus.zip
+¦           responsive-hoveractivated-mega-menu.zip
+¦           responsive-image-carousel-animation.zip
+¦           responsive-sidebar-css-only.zip
+¦           rizzui-main.zip
+¦           scroll-driven-gooey-island.zip
+¦           scrolleable-wheel-items.zip
+¦           shader-image-transition.zip
+¦           shimmer-effect.zip
+¦           sleek-product-item.zip
+¦           smooothy-master.zip
+¦           smoothui-main.zip
+¦           spectral.js-3.0.0.zip
+¦           squircle-avatar-generator.zip
+¦           squircle-slider.zip
+¦           squircle-tasks.zip
+¦           squircles-gallery-with-view-transition.zip
+¦           stacked-poetic-cards-css-only (1).zip
+¦           stacked-poetic-cards-css-only.zip
+¦           the-moonglowing-cards.zip
+¦           untitled.zip
+¦           
++---web-lib
+        accordion.jsx
+        alert-dialog.jsx
+        alert.jsx
+        aspect-ratio.jsx
+        avatar.jsx
+        badge.jsx
+        BarChart.jsx
+        BottomNav.jsx
+        breadcrumb.jsx
+        Butterflies.jsx
+        button.jsx
+        calendar.jsx
+        Canvas.jsx
+        card.jsx
+        Card3DHover.jsx
+        carousel.jsx
+        chart.jsx
+        ChatSphere.jsx
+        checkbox.jsx
+        ClimbingCube.jsx
+        collapsible.jsx
+        CollectionGrid.jsx
+        command.jsx
+        context-menu.jsx
+        CSSRain.jsx
+        DesignWormhole.jsx
+        dialog.jsx
+        drawer.jsx
+        dropdown-menu.jsx
+        FloatingAction.jsx
+        form.jsx
+        GlassButton.jsx
+        GlassCards.jsx
+        GlowyMouseEffect.jsx
+        GradientClock.jsx
+        hover-card.jsx
+        ImageStack.jsx
+        InfiniteGrid.jsx
+        input-otp.jsx
+        input.jsx
+        InteractiveDroplets.jsx
+        label.jsx
+        LiquidGlassApple.jsx
+        MagicCard.jsx
+        menubar.jsx
+        MetalButtons.jsx
+        MoonglowCards.jsx
+        navigation-menu.jsx
+        orb.png
+        pagination.jsx
+        ParallaxCarousel.jsx
+        popover.jsx
+        progress.jsx
+        radio-group.jsx
+        resizable.jsx
+        ResponsiveSidebar.jsx
+        scroll-area.jsx
+        ScrollableWheel.jsx
+        ScrollGooey.jsx
+        select.jsx
+        separator.jsx
+        SettingsPanel.jsx
+        sheet.jsx
+        ShellTerminal.jsx
+        ShimmerEffect.jsx
+        sidebar.jsx
+        skeleton.jsx
+        SleekProduct.jsx
+        slider.jsx
+        sonner.jsx
+        SquircleSlider.jsx
+        style.css
+        switch.jsx
+        table.jsx
+        tabs.jsx
+        textarea.jsx
+        toggle-group.jsx
+        toggle.jsx
+        tooltip.jsx
+        usage.txt
+        

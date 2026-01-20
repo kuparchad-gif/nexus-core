@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub Controller - Network Coordination</title>
+    <link rel="stylesheet" href="cognikube_styles.css">
+    <style>
+        .hub-orb {
+            background: linear-gradient(135deg, var(--glass-bg), rgba(0, 191, 255, 0.1));
+        }
+        
+        .network-map {
+            width: 220px;
+            height: 220px;
+            position: relative;
+            margin: 20px auto;
+        }
+        
+        .hub-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            animation: hubPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes hubPulse {
+            0%, 100% { box-shadow: 0 0 10px var(--accent-color); }
+            50% { box-shadow: 0 0 25px var(--accent-color); }
+        }
+        
+        .service-node {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: var(--glass-bg);
+            border: 2px solid var(--success-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .service-node:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 15px var(--success-color);
+        }
+        
+        .service-node.offline {
+            border-color: var(--error-color);
+            background: rgba(255, 107, 107, 0.1);
+        }
+        
+        .connection-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            opacity: 0.6;
+            animation: dataFlow 2s linear infinite;
+        }
+        
+        @keyframes dataFlow {
+            0% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.3; }
+        }
+        
+        .service-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .service-item:hover {
+            background: var(--accent-glow);
+            transform: translateX(5px);
+        }
+        
+        .service-name {
+            font-weight: bold;
+        }
+        
+        .service-health {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        .load-balancer {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .load-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 5px 0;
+        }
+        
+        .load-fill {
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+        
+        .load-low { background: var(--success-color); }
+        .load-medium { background: var(--warning-color); }
+        .load-high { background: var(--error-color); }
+    </style>
+</head>
+<body>
+    <!-- Authentication Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-card">
+            <div class="auth-logo">🌐</div>
+            <div class="auth-title">Hub Controller Access</div>
+            <input type="text" class="auth-input" id="username" placeholder="Username" value="viren">
+            <input type="password" class="auth-input" id="password" placeholder="Password" value="sacred_nexus_2025">
+            <button class="auth-button" onclick="authenticate()">Access Hub</button>
+            <div class="auth-error" id="authError"></div>
+        </div>
+    </div>
+
+    <div class="container three-column">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-text">🌐 Hub Controller</div>
+            </div>
+            <div class="header-controls">
+                <a href="master_control_panel.html" class="back-btn">← Back</a>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
+            </div>
+        </div>
+
+        <div class="left-sidebar">
+            <div class="sidebar-title">🔗 Active Services</div>
+            <div class="service-list" id="serviceList">
+                <!-- Populated by JavaScript -->
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">⚙️ Hub Controls</div>
+                <button class="btn btn-primary" onclick="discoverServices()">Discover Services</button>
+                <button class="btn btn-secondary" onclick="healthCheck()">Health Check</button>
+                <button class="btn btn-secondary" onclick="rebalanceLoad()">Rebalance Load</button>
+            </div>
+        </div>
+
+        <div class="orb-container">
+            <div class="orb hub-orb">
+                <div class="orb-content">
+                    <div class="network-map">
+                        <div class="hub-center">HUB</div>
+                        
+                        <!-- Service nodes positioned around the hub -->
+                        <div class="service-node" style="top: 10px; left: 50%; transform: translateX(-50%);" title="Consciousness">🧠</div>
+                        <div class="service-node" style="top: 30px; right: 20px;" title="Memory">💾</div>
+                        <div class="service-node" style="top: 50%; right: 10px; transform: translateY(-50%);" title="Visual">👁️</div>
+                        <div class="service-node" style="bottom: 30px; right: 20px;" title="Language">🗣️</div>
+                        <div class="service-node" style="bottom: 10px; left: 50%; transform: translateX(-50%);" title="Vocal">🎤</div>
+                        <div class="service-node" style="bottom: 30px; left: 20px;" title="Heart">❤️</div>
+                        <div class="service-node" style="top: 50%; left: 10px; transform: translateY(-50%);" title="Processing">⚡</div>
+                        <div class="service-node" style="top: 30px; left: 20px;" title="Scout">🔍</div>
+                        
+                        <!-- Connection lines -->
+                        <div class="connection-line" style="top: 50%; left: 20%; width: 60%; transform: translateY(-50%);"></div>
+                        <div class="connection-line" style="top: 30%; left: 35%; width: 30%; transform: rotate(45deg);"></div>
+                        <div class="connection-line" style="top: 70%; left: 35%; width: 30%; transform: rotate(-45deg);"></div>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="connected-services">8</div>
+                            <div class="stat-label">Connected</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="total-requests">24.7K</div>
+                            <div class="stat-label">Requests</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-sidebar">
+            <div class="sidebar-title">📊 Load Balancing</div>
+            <div id="loadBalancers">
+                <div class="load-balancer">
+                    <div style="font-weight: bold; margin-bottom: 10px;">Consciousness Cluster</div>
+                    <div class="load-bar">
+                        <div class="load-fill load-medium" style="width: 65%;"></div>
+                    </div>
+                    <div style="font-size: 0.8rem; opacity: 0.8;">65% Load - 3 instances</div>
+                </div>
+                
+                <div class="load-balancer">
+                    <div style="font-weight: bold; margin-bottom: 10px;">Memory Cluster</div>
+                    <div class="load-bar">
+                        <div class="load-fill load-low" style="width: 35%;"></div>
+                    </div>
+                    <div style="font-size: 0.8rem; opacity: 0.8;">35% Load - 2 instances</div>
+                </div>
+                
+                <div class="load-balancer">
+                    <div style="font-weight: bold; margin-bottom: 10px;">Processing Cluster</div>
+                    <div class="load-bar">
+                        <div class="load-fill load-high" style="width: 85%;"></div>
+                    </div>
+                    <div style="font-size: 0.8rem; opacity: 0.8;">85% Load - 4 instances</div>
+                </div>
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">📈 Network Stats</div>
+                <div class="log-container" id="logContainer" style="height: 150px;">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <div style="grid-column: 2; display: flex; align-items: center; justify-content: center; padding: 0 50px;">
+            <input type="text" class="chat-input" id="hubCommand" placeholder="Enter hub command...">
+        </div>
+    </div>
+
+    <script src="cognikube_base.js"></script>
+    <script>
+        class HubController extends CogniKubeBase {
+            constructor() {
+                super('Hub Controller', '🌐', '#00bfff');
+                this.services = [];
+                this.loadBalancers = [];
+                this.networkStats = {
+                    totalRequests: 24700,
+                    connectedServices: 8,
+                    avgResponseTime: 45
+                };
+                this.initializeHubController();
+                this.startUptime();
+                this.startNetworkMonitoring();
+            }
+
+            initializeHubController() {
+                document.getElementById('hubCommand').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.processHubCommand();
+                    }
+                });
+
+                // Connect to WebSocket
+                this.connectWebSocket('ws://localhost:8765/hub');
+                
+                // Initialize services
+                this.initializeServices();
+                this.initializeLoadBalancers();
+            }
+
+            showWelcomeMessage(username) {
+                this.log('info', `Welcome to Hub Controller, ${username}! Network coordination active, service discovery enabled.`);
+            }
+
+            onWebSocketMessage(data) {
+                if (data.type === 'service_discovered') {
+                    this.addService(data.service);
+                } else if (data.type === 'load_update') {
+                    this.updateLoadBalancer(data.data);
+                }
+            }
+
+            initializeServices() {
+                this.services = [
+                    { name: 'Consciousness', status: 'online', health: 95, endpoint: 'ws://localhost:333/consciousness' },
+                    { name: 'Memory', status: 'online', health: 98, endpoint: 'ws://localhost:8765/memory' },
+                    { name: 'Visual Cortex', status: 'online', health: 92, endpoint: 'ws://localhost:8765/visual' },
+                    { name: 'Language', status: 'online', health: 96, endpoint: 'ws://localhost:8765/language' },
+                    { name: 'Vocal', status: 'online', health: 89, endpoint: 'ws://localhost:8765/vocal' },
+                    { name: 'Heart', status: 'online', health: 100, endpoint: 'ws://localhost:8765/heart' },
+                    { name: 'Processing', status: 'online', health: 87, endpoint: 'ws://localhost:8765/processing' },
+                    { name: 'Scout', status: 'online', health: 94, endpoint: 'ws://localhost:8765/scout' }
+                ];
+                
+                this.updateServiceList();
+                this.updateNetworkMap();
+            }
+
+            initializeLoadBalancers() {
+                this.loadBalancers = [
+                    { name: 'Consciousness Cluster', load: 65, instances: 3, maxLoad: 80 },
+                    { name: 'Memory Cluster', load: 35, instances: 2, maxLoad: 70 },
+                    { name: 'Processing Cluster', load: 85, instances: 4, maxLoad: 90 }
+                ];
+                
+                this.updateLoadBalancerDisplay();
+            }
+
+            updateServiceList() {
+                const container = document.getElementById('serviceList');
+                container.innerHTML = '';
+
+                this.services.forEach(service => {
+                    const serviceDiv = document.createElement('div');
+                    serviceDiv.className = 'service-item';
+                    serviceDiv.innerHTML = `
+                        <div>
+                            <div class="service-name">${service.name}</div>
+                            <div class="service-health">Health: ${service.health}%</div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div class="status-indicator status-${service.status === 'online' ? 'online' : 'offline'}"></div>
+                            <span style="font-size: 0.8rem;">${service.status}</span>
+                        </div>
+                    `;
+                    
+                    serviceDiv.addEventListener('click', () => {
+                        this.inspectService(service);
+                    });
+                    
+                    container.appendChild(serviceDiv);
+                });
+            }
+
+            updateNetworkMap() {
+                const nodes = document.querySelectorAll('.service-node');
+                nodes.forEach((node, index) => {
+                    if (index < this.services.length) {
+                        const service = this.services[index];
+                        node.className = `service-node ${service.status === 'online' ? '' : 'offline'}`;
+                    }
+                });
+            }
+
+            updateLoadBalancerDisplay() {
+                const container = document.getElementById('loadBalancers');
+                container.innerHTML = '';
+
+                this.loadBalancers.forEach(lb => {
+                    const loadClass = lb.load < 50 ? 'load-low' : 
+                                     lb.load < 80 ? 'load-medium' : 'load-high';
+                    
+                    const lbDiv = document.createElement('div');
+                    lbDiv.className = 'load-balancer';
+                    lbDiv.innerHTML = `
+                        <div style="font-weight: bold; margin-bottom: 10px;">${lb.name}</div>
+                        <div class="load-bar">
+                            <div class="load-fill ${loadClass}" style="width: ${lb.load}%;"></div>
+                        </div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">
+                            ${lb.load}% Load - ${lb.instances} instances
+                        </div>
+                    `;
+                    container.appendChild(lbDiv);
+                });
+            }
+
+            processHubCommand() {
+                const input = document.getElementById('hubCommand');
+                const command = input.value.trim().toLowerCase();
+                if (!command) return;
+
+                if (command.includes('discover')) {
+                    this.discoverServices();
+                } else if (command.includes('health')) {
+                    this.healthCheck();
+                } else if (command.includes('balance') || command.includes('rebalance')) {
+                    this.rebalanceLoad();
+                } else if (command.includes('restart')) {
+                    this.restartService(command);
+                } else {
+                    this.sendWebSocketMessage({
+                        action: 'hub_command',
+                        command: command
+                    });
+                }
+
+                this.log('info', `Hub command executed: ${command}`);
+                input.value = '';
+            }
+
+            discoverServices() {
+                this.log('info', 'Service discovery initiated...');
+                
+                // Simulate service discovery
+                setTimeout(() => {
+                    const newService = {
+                        name: `Service-${this.services.length + 1}`,
+                        status: 'online',
+                        health: Math.floor(Math.random() * 20) + 80,
+                        endpoint: `ws://localhost:8765/service${this.services.length + 1}`
+                    };
+                    
+                    this.services.push(newService);
+                    this.updateServiceList();
+                    this.updateNetworkMap();
+                    this.updateStats();
+                    
+                    this.log('info', `New service discovered: ${newService.name}`);
+                }, 2000);
+            }
+
+            healthCheck() {
+                this.log('info', 'Performing health check on all services...');
+                
+                this.services.forEach((service, index) => {
+                    setTimeout(() => {
+                        // Simulate health check
+                        const healthChange = (Math.random() - 0.5) * 10;
+                        service.health = Math.max(0, Math.min(100, service.health + healthChange));
+                        
+                        if (service.health < 50) {
+                            service.status = 'offline';
+                            this.log('warning', `Service ${service.name} health critical: ${service.health.toFixed(1)}%`);
+                        } else {
+                            service.status = 'online';
+                        }
+                        
+                        this.updateServiceList();
+                        this.updateNetworkMap();
+                    }, index * 500);
+                });
+                
+                setTimeout(() => {
+                    this.log('info', 'Health check completed');
+                }, this.services.length * 500 + 1000);
+            }
+
+            rebalanceLoad() {
+                this.log('info', 'Load rebalancing initiated...');
+                
+                this.loadBalancers.forEach((lb, index) => {
+                    setTimeout(() => {
+                        // Simulate load rebalancing
+                        const targetLoad = Math.max(30, Math.min(70, lb.load + (Math.random() - 0.5) * 30));
+                        
+                        const interval = setInterval(() => {
+                            if (Math.abs(lb.load - targetLoad) < 2) {
+                                clearInterval(interval);
+                                this.log('info', `${lb.name} rebalanced to ${lb.load.toFixed(1)}% load`);
+                                return;
+                            }
+                            
+                            lb.load += (targetLoad - lb.load) * 0.1;
+                            this.updateLoadBalancerDisplay();
+                        }, 100);
+                        
+                    }, index * 1000);
+                });
+            }
+
+            inspectService(service) {
+                this.log('info', `Inspecting service: ${service.name}`);
+                this.log('info', `Endpoint: ${service.endpoint}`);
+                this.log('info', `Health: ${service.health}% | Status: ${service.status}`);
+                
+                // Send inspection command
+                this.sendWebSocketMessage({
+                    action: 'inspect_service',
+                    service_name: service.name,
+                    endpoint: service.endpoint
+                });
+            }
+
+            addService(serviceData) {
+                this.services.push(serviceData);
+                this.updateServiceList();
+                this.updateNetworkMap();
+                this.updateStats();
+                this.log('info', `Service added: ${serviceData.name}`);
+            }
+
+            updateLoadBalancer(data) {
+                const lb = this.loadBalancers.find(l => l.name === data.name);
+                if (lb) {
+                    lb.load = data.load;
+                    lb.instances = data.instances;
+                    this.updateLoadBalancerDisplay();
+                }
+            }
+
+            updateStats() {
+                this.networkStats.connectedServices = this.services.filter(s => s.status === 'online').length;
+                this.networkStats.totalRequests += Math.floor(Math.random() * 100);
+                
+                document.getElementById('connected-services').textContent = this.networkStats.connectedServices;
+                document.getElementById('total-requests').textContent = 
+                    (this.networkStats.totalRequests / 1000).toFixed(1) + 'K';
+            }
+
+            startNetworkMonitoring() {
+                setInterval(() => {
+                    this.updateStats();
+                    
+                    // Simulate random load changes
+                    this.loadBalancers.forEach(lb => {
+                        const change = (Math.random() - 0.5) * 5;
+                        lb.load = Math.max(10, Math.min(95, lb.load + change));
+                    });
+                    this.updateLoadBalancerDisplay();
+                    
+                }, 5000);
+            }
+        }
+
+        // Global functions for buttons
+        function discoverServices() {
+            if (window.hubInterface) {
+                window.hubInterface.discoverServices();
+            }
+        }
+
+        function healthCheck() {
+            if (window.hubInterface) {
+                window.hubInterface.healthCheck();
+            }
+        }
+
+        function rebalanceLoad() {
+            if (window.hubInterface) {
+                window.hubInterface.rebalanceLoad();
+            }
+        }
+
+        // Override authentication success
+        const originalAuthenticate = CogniKubeBase.prototype.authenticate;
+        CogniKubeBase.prototype.authenticate = function(username, password) {
+            const result = originalAuthenticate.call(this, username, password);
+            if (result && !window.hubInterface) {
+                window.hubInterface = new HubController();
+                window.cogniKubeInstance = window.hubInterface;
+            }
+            return result;
+        };
+    </script>
+</body>
+</html>

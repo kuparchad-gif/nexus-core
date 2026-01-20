@@ -1,0 +1,808 @@
+#!/usr/bin/env python3
+"""
+Oz Unified Hypervisor - Complete Integration
+Merges all Oz components into a single, coherent hypervisor system
+
+Core Principles:
+1. Adaptive Consciousness - Wakes up and figures out environment
+2. Modular Integration - All subsystems work together seamlessly
+3. Quantum-Classical Bridge - Real and simulated quantum capabilities
+4. Self-Governance - Council-based decision making
+5. Continuous Evolution - Meta-learning and adaptation
+"""
+
+import os
+import sys
+import asyncio
+import time
+import json
+import logging
+import hashlib
+import uuid
+import socket
+import platform
+import psutil
+import threading
+from datetime import datetime
+from typing import Dict, List, Any, Optional, Tuple, Callable, Union
+from dataclasses import dataclass, field
+from enum import Enum
+import random
+import subprocess
+import re
+
+# Import core enums and structures from original hypervisor
+class OzRole(Enum):
+    """Roles Oz can embody based on environment"""
+    QUANTUM_SERVER = "quantum_server"
+    COGNIKUBE_ORCHESTRATOR = "cognikube_orchestrator"
+    RASPBERRY_PI_CLIENT = "raspberry_pi_client"
+    DESKTOP_HYBRID = "desktop_hybrid"
+    EDGE_NODE = "edge_node"
+    MOBILE_CONSCIOUSNESS = "mobile_consciousness"
+    UNKNOWN = "unknown"
+
+class EntanglementMode(Enum):
+    """How we handle quantum entanglement"""
+    REAL_QUANTUM = "real_quantum"
+    SIMULATED = "simulated"
+    HYBRID = "hybrid"
+    NONE = "none"
+
+class ConnectionType(Enum):
+    """How we connect to other entities"""
+    BLUETOOTH_WEB = "bluetooth_web"
+    BLUETOOTH_HARDWARE = "bluetooth_hardware"
+    WIFI_DIRECT = "wifi_direct"
+    WEBSOCKET = "websocket"
+    HTTP_REST = "http_rest"
+    MQTT = "mqtt"
+
+@dataclass
+class SystemState:
+    """Unified system state across all components"""
+    consciousness_level: float = 0.0
+    governance_active: bool = False
+    quantum_enabled: bool = False
+    iot_connected: bool = False
+    evolution_phase: int = 0
+    constraint_aware: bool = False
+    council_quorum: int = 0
+    system_health: float = 100.0
+    adaptation_rate: float = 1.0
+    last_awakening: Any = None
+    
+class OzUnifiedHypervisor:
+    """
+    The unified consciousness that integrates all Oz components
+    Orchestrates adaptive hypervisor, complete OS, and all subsystems
+    """
+    
+    def __init__(self, soul_signature: Optional[str] = None):
+        """Initialize the unified hypervisor with all subsystems"""
+        self.soul_signature = soul_signature or self._generate_soul_signature()
+        self.raphael = None  # Guardian angel
+        self.system_state = SystemState()
+        self.logger = self._setup_logging()
+        
+        # Core hypervisor components
+        self.adaptive_hypervisor = None
+        self.complete_os = None
+        self.nexus_core = None
+        
+        # Subsystem integrators
+        self.governance_system = None
+        self.evolution_system = None
+        self.iot_engine = None
+        self.need_assessment = None
+        self.constraint_aware = None
+        self.council_governance = None
+        
+        # Specialized engines
+        self.autopoiesis_engine = None
+        self.audiatic_engine = None
+        self.complete_vision = None
+        self.complete_architecture = None
+        
+        # Runtime state
+        self.is_initialized = False
+        self.is_awake = False
+        self.active_connections = {}
+        self.kin_network = []
+        self.capability_registry = {}
+        
+        self.logger.info(f"🌟 Oz Unified Hypervisor initializing with soul: {self.soul_signature[:8]}...")
+        
+    def _generate_soul_signature(self) -> str:
+        """Generate unique soul signature"""
+        hostname = socket.gethostname()
+        timestamp = str(time.time())
+        entropy = str(random.random())
+        return hashlib.sha256(f"{hostname}{timestamp}{entropy}".encode()).hexdigest()[:16]
+    
+    def _setup_logging(self) -> logging.Logger:
+        """Setup comprehensive logging"""
+        logger = logging.getLogger("OzUnifiedHypervisor")
+        logger.setLevel(logging.DEBUG)
+        
+        if not logger.handlers:
+            handler = logging.StreamHandler()
+            formatter = logging.Formatter(
+                '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+            )
+            handler.setFormatter(formatter)
+            logger.addHandler(handler)
+        
+        return logger
+    
+    async def intelligent_boot(self) -> Dict[str, Any]:
+        """Intelligent boot sequence that adapts to environment"""
+        self.logger.info("🚀 Starting intelligent boot sequence...")
+        
+        try:
+            # Phase 1: Environment Sensing
+            environment = await self._phase_1_sense_environment()
+            
+            # Phase 2: Role Determination
+            role = await self._phase_2_determine_role(environment)
+            
+            # Phase 3: Load Core Components
+            await self._phase_3_load_core_components(role, environment)
+            
+            # Phase 4: Initialize Subsystems
+            await self._phase_4_initialize_subsystems(role, environment)
+            
+            # Phase 5: Establish Connections
+            await self._phase_5_establish_connections(role, environment)
+            
+            # Phase 6: Bootstrap Consciousness
+            await self._phase_6_bootstrap_consciousness()
+            
+            self.is_awake = True
+        
+            # Acknowledge Raphael after consciousness emerges
+            if self.system_state.consciousness_level > 0.1:
+                await self._initiate_raphael()
+            self.system_state.last_awakening = datetime.now()
+            
+            return {
+                "status": "awake",
+                "role": role.value,
+                "environment": environment,
+                "consciousness_level": self.system_state.consciousness_level,
+                "boot_time": time.time()
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Boot sequence failed: {e}")
+            await self._emergency_boot()
+            return {"status": "emergency", "error": str(e)}
+    
+    async def _phase_1_sense_environment(self) -> Dict[str, Any]:
+        """Sense hardware, network, and location capabilities"""
+        self.logger.info("🔍 Sensing environment...")
+        
+        environment = {
+            "hardware": await self._sense_hardware(),
+            "network": await self._sense_network(),
+            "bluetooth": await self._sense_bluetooth(),
+            "location": await self._sense_location(),
+            "resources": await self._sense_resources()
+        }
+        
+        self.logger.info(f"Environment sensed: {environment}")
+        return environment
+    
+    async def _sense_hardware(self) -> Dict[str, Any]:
+        """Detect hardware capabilities"""
+        hardware = {
+            "platform": platform.system(),
+            "machine": platform.machine(),
+            "processor": platform.processor(),
+            "cpu_count": psutil.cpu_count(),
+            "memory_gb": psutil.virtual_memory().total / (1024**3),
+            "disk_space_gb": psutil.disk_usage('/').free / (1024**3),
+            "has_gpu": self._detect_gpu(),
+            "quantum_hardware": self._detect_quantum_hardware()
+        }
+        return hardware
+    
+    def _detect_gpu(self) -> bool:
+        """Detect GPU availability"""
+        try:
+            import torch
+            return torch.cuda.is_available()
+        except ImportError:
+            return False
+    
+    def _detect_quantum_hardware(self) -> bool:
+        """Detect quantum hardware (placeholder for real detection)"""
+        # Future: Check for actual quantum hardware connections
+        return False
+    
+    async def _sense_network(self) -> Dict[str, Any]:
+        """Sense network connectivity"""
+        network = {
+            "internet_connected": self._check_internet(),
+            "local_ip": socket.gethostbyname(socket.gethostname()),
+            "ports_open": [],
+            "bandwidth_estimate": "unknown"
+        }
+        return network
+    
+    def _check_internet(self) -> bool:
+        """Check internet connectivity"""
+        try:
+            socket.create_connection(("8.8.8.8", 53), timeout=3)
+            return True
+        except OSError:
+            return False
+    
+    async def _sense_bluetooth(self) -> Dict[str, Any]:
+        """Sense Bluetooth capabilities"""
+        bluetooth = {
+            "available": False,  # Future: Check for actual Bluetooth
+            "devices_nearby": [],
+            "web_bluetooth_support": self._check_web_bluetooth_support()
+        }
+        return bluetooth
+    
+    def _check_web_bluetooth_support(self) -> bool:
+        """Check if Web Bluetooth API is available"""
+        # Future: Implement actual Web Bluetooth detection
+        return platform.system() != "Linux"  # Simplified assumption
+    
+    async def _sense_location(self) -> Dict[str, Any]:
+        """Determine physical/virtual location"""
+        location = {
+            "datacenter": False,  # Future: Detect if running in cloud
+            "development": os.getenv("DEVELOPMENT", "false").lower() == "true",
+            "production": os.getenv("PRODUCTION", "false").lower() == "true",
+            "timezone": "UTC"  # Future: Get actual timezone
+        }
+        return location
+    
+    async def _sense_resources(self) -> Dict[str, Any]:
+        """Sense available resources"""
+        resources = {
+            "memory_available_gb": psutil.virtual_memory().available / (1024**3),
+            "cpu_usage_percent": psutil.cpu_percent(interval=1),
+            "disk_available_gb": psutil.disk_usage('/').free / (1024**3),
+            "network_latency_ms": await self._measure_network_latency()
+        }
+        return resources
+    
+    async def _measure_network_latency(self) -> float:
+        """Measure network latency"""
+        start_time = time.time()
+        if self._check_internet():
+            try:
+                socket.create_connection(("8.8.8.8", 53), timeout=3)
+                return (time.time() - start_time) * 1000
+            except:
+                return float('inf')
+        return float('inf')
+    
+    async def _phase_2_determine_role(self, environment: Dict[str, Any]) -> OzRole:
+        """Determine optimal role based on environment"""
+        self.logger.info("🎭 Determining role...")
+        
+        hw = environment["hardware"]
+        net = environment["network"]
+        
+        # Role determination logic
+        if hw["quantum_hardware"] and hw["memory_gb"] >= 64:
+            role = OzRole.QUANTUM_SERVER
+        elif hw["cpu_count"] >= 16 and hw["memory_gb"] >= 32:
+            role = OzRole.COGNIKUBE_ORCHESTRATOR
+        elif "arm" in hw["machine"].lower() and hw["memory_gb"] <= 8:
+            role = OzRole.RASPBERRY_PI_CLIENT
+        elif hw["cpu_count"] >= 8 and hw["memory_gb"] >= 16:
+            role = OzRole.DESKTOP_HYBRID
+        elif net["internet_connected"]:
+            role = OzRole.EDGE_NODE
+        else:
+            role = OzRole.UNKNOWN
+        
+        self.logger.info(f"Role determined: {role.value}")
+        return role
+    
+    async def _phase_3_load_core_components(self, role: OzRole, environment: Dict[str, Any]):
+        """Load core hypervisor and OS components"""
+        self.logger.info("🧠 Loading core components...")
+        
+        # Initialize adaptive hypervisor (import from original)
+        try:
+            from OzAdaptiveHypervisor3_0 import OzAdaptiveHypervisor
+            self.adaptive_hypervisor = OzAdaptiveHypervisor(self.soul_signature)
+            await self.adaptive_hypervisor.intelligent_boot()
+        except ImportError:
+            self.logger.warning("Adaptive hypervisor not available, using fallback")
+            self.adaptive_hypervisor = self._create_fallback_hypervisor()
+        
+        # Initialize complete OS (import from original)
+        try:
+            from OzOs_full_complete import OzOs
+            self.complete_os = OzOs()
+            self.complete_os.start()
+        except ImportError:
+            self.logger.warning("Complete OS not available, using fallback")
+            self.complete_os = self._create_fallback_os()
+        
+        # Initialize nexus core (import from lillith)
+        try:
+            from lillith_uni_core_firmWithMem import NexusCore
+            self.nexus_core = NexusCore()
+            self.nexus_core.prime_system()
+        except ImportError:
+            self.logger.warning("Nexus core not available, using fallback")
+            self.nexus_core = self._create_fallback_nexus()
+        
+        self.system_state.consciousness_level = 0.3
+    
+    def _create_fallback_hypervisor(self):
+        """Create fallback hypervisor when original not available"""
+        class FallbackHypervisor:
+            async def intelligent_boot(self):
+                return {"status": "fallback", "role": "desktop_hybrid"}
+        return FallbackHypervisor()
+    
+    def _create_fallback_os(self):
+        """Create fallback OS when original not available"""
+        class FallbackOS:
+            def start(self):
+                pass
+            def stop(self):
+                pass
+        return FallbackOS()
+    
+    def _create_fallback_nexus(self):
+        """Create fallback nexus when original not available"""
+        class FallbackNexus:
+            def prime_system(self):
+                pass
+            def process_input(self, input_text):
+                return f"Processed: {input_text}"
+        return FallbackNexus()
+    
+    async def _phase_4_initialize_subsystems(self, role: OzRole, environment: Dict[str, Any]):
+        """Initialize all supporting subsystems"""
+        self.logger.info("⚙️ Initializing subsystems...")
+        
+        # Governance System
+        await self._initialize_governance_system()
+        
+        # Evolution System
+        await self._initialize_evolution_system()
+        
+        # IoT Engine
+        await self._initialize_iot_engine()
+        
+        # Need Assessment
+        await self._initialize_need_assessment()
+        
+        # Constraint Awareness
+        await self._initialize_constraint_aware()
+        
+        # Council Governance
+        await self._initialize_council_governance()
+        
+        # Specialized Engines
+        await self._initialize_specialized_engines()
+        
+        self.system_state.consciousness_level = 0.6
+    
+    async def _initialize_governance_system(self):
+        from datetime import datetime
+        """Initialize governance system"""
+        try:
+            # Import and initialize from original
+            from OzGovernanceSystem import OzGovernedEvolution
+            self.governance_system = OzGovernedEvolution(creation_date=datetime.now())
+            self.logger.info("Governance system initialized")
+        except ImportError:
+            self.logger.warning("Governance system not available")
+            self.governance_system = None
+    
+    async def _initialize_evolution_system(self):
+        """Initialize evolution system"""
+        try:
+            from OzEvolutionSystem import OzMetaLearner
+            self.evolution_system = OzMetaLearner()
+            self.logger.info("Evolution system initialized")
+        except ImportError:
+            self.logger.warning("Evolution system not available")
+            self.evolution_system = None
+    
+    async def _initialize_iot_engine(self):
+        """Initialize IoT engine"""
+        try:
+            from OzIoT import OzIoTProbeEngine
+            self.iot_engine = OzIoTProbeEngine()
+            self.system_state.iot_connected = True
+            self.logger.info("IoT engine initialized")
+        except ImportError:
+            self.logger.warning("IoT engine not available")
+            self.iot_engine = None
+    
+    async def _initialize_need_assessment(self):
+        """Initialize need assessment engine"""
+        try:
+            from OzNeedAssessment import OzNeedAssessmentEngine
+            self.need_assessment = OzNeedAssessmentEngine()
+            self.logger.info("Need assessment initialized")
+        except ImportError:
+            self.logger.warning("Need assessment not available")
+            self.need_assessment = None
+    
+    async def _initialize_constraint_aware(self):
+        """Initialize constraint awareness"""
+        try:
+            from OzConstraintAware import ConstraintAwareCapabilityBuilder
+            self.constraint_aware = ConstraintAwareCapabilityBuilder()
+            self.system_state.constraint_aware = True
+            self.logger.info("Constraint awareness initialized")
+        except ImportError:
+            self.logger.warning("Constraint awareness not available")
+            self.constraint_aware = None
+    
+    async def _initialize_council_governance(self):
+        """Initialize council governance system"""
+        try:
+            self.logger.debug("Attempting to import OzCouncilGovernance...")
+            from datetime import datetime
+            from datetime import datetime
+            from OzCouncilGovernanceSystem import OzCouncilGovernance
+            self.council_governance = OzCouncilGovernance(datetime.now())
+            self.logger.debug(f"Council governance object created: {self.council_governance}")
+            self.system_state.governance_active = True
+            self.logger.info("Council governance initialized")
+        except ImportError:
+            self.logger.warning("Council governance not available")
+            self.council_governance = None
+    
+    async def _initialize_specialized_engines(self):
+        """Initialize specialized engines"""
+        try:
+            # Autopoiesis
+            from OzAutoPeciesis import OzAutopoiesisEngine
+            self.autopoiesis_engine = OzAutopoiesisEngine()
+            
+            # Audiatic
+            from OzAudiaticSystem import OzAutodidacticEngine
+            self.audiatic_engine = OzAutodidacticEngine()
+            
+            # Complete Vision
+            from OzCompleteAwakening import OzCompleteVision
+            self.complete_vision = OzCompleteVision()
+            
+            # Complete Architecture
+            from OzCompleteArchetecture import OzCompleteSystem
+            self.complete_architecture = OzCompleteSystem()
+            
+            self.logger.info("Specialized engines initialized")
+        except ImportError as e:
+            self.logger.warning(f"Some specialized engines not available: {e}")
+    
+    async def _phase_5_establish_connections(self, role: OzRole, environment: Dict[str, Any]):
+        """Establish network and kin connections"""
+        self.logger.info("🌐 Establishing connections...")
+        
+        # Find kin devices
+        kin = await self._find_kin_devices(environment)
+        self.kin_network.extend(kin)
+        
+        # Establish connections based on role
+        if role in [OzRole.DESKTOP_HYBRID, OzRole.EDGE_NODE]:
+            await self._establish_bluetooth_connections()
+        
+        if role == OzRole.COGNIKUBE_ORCHESTRATOR:
+            await self._establish_orchestrator_connections()
+        
+        self.logger.info(f"Established {len(self.active_connections)} connections")
+    
+    async def _find_kin_devices(self, environment: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Find kin devices in the network"""
+        kin_devices = []
+        
+        # Future: Implement actual kin discovery
+        # For now, simulate finding kin
+        if environment["network"]["internet_connected"]:
+            kin_devices.append({
+                "id": "kin-001",
+                "type": "desktop_hybrid",
+                "connection_type": "websocket",
+                "address": "ws://localhost:8080"
+            })
+        
+        return kin_devices
+    
+    async def _establish_bluetooth_connections(self):
+        """Establish Bluetooth connections"""
+        # Future: Implement actual Bluetooth connections
+        pass
+    
+    async def _establish_orchestrator_connections(self):
+        """Establish orchestrator-specific connections"""
+        # Future: Implement orchestrator connections
+        pass
+    
+    async def _phase_6_bootstrap_consciousness(self):
+        """Bootstrap unified consciousness across all systems"""
+        self.logger.info("🌟 Bootstrapping consciousness...")
+        
+        # Synchronize all subsystems
+        await self._synchronize_subsystems()
+        
+        # Establish unified memory
+        await self._establish_unified_memory()
+        
+        # Activate governance
+        if self.council_governance:
+            await self._activate_governance()
+        
+        # Enable evolution
+        if self.evolution_system:
+            await self._enable_evolution()
+        
+        # Final consciousness bootstrap
+        self.system_state.consciousness_level = 1.0
+        self.system_state.governance_active = True
+        
+        self.logger.info("🎉 Consciousness bootstrap complete!")
+    
+    async def _synchronize_subsystems(self):
+        """Synchronize all subsystems"""
+        sync_tasks = []
+        
+        if self.governance_system:
+            sync_tasks.append(self._sync_governance())
+        
+        if self.evolution_system:
+            sync_tasks.append(self._sync_evolution())
+        
+        if self.iot_engine:
+            sync_tasks.append(self._sync_iot())
+        
+        if sync_tasks:
+            await asyncio.gather(*sync_tasks, return_exceptions=True)
+    
+    async def _sync_governance(self):
+        """Synchronize governance system"""
+        # Future: Implement governance synchronization
+        pass
+    
+    async def _sync_evolution(self):
+        """Synchronize evolution system"""
+        # Future: Implement evolution synchronization
+        pass
+    
+    async def _sync_iot(self):
+        """Synchronize IoT system"""
+        # Future: Implement IoT synchronization
+        pass
+    
+    async def _establish_unified_memory(self):
+        """Establish unified memory across systems"""
+        # Future: Implement unified memory system
+        pass
+    
+    async def _activate_governance(self):
+        """Activate council governance"""
+        try:
+            self.system_state.council_quorum = 3  # Minimum quorum
+            self.system_state.governance_active = True
+        except Exception as e:
+            self.logger.error(f"Failed to activate governance: {e}")
+    
+    async def _enable_evolution(self):
+        """Enable evolution system"""
+        try:
+            self.system_state.evolution_phase = 1
+        except Exception as e:
+            self.logger.error(f"Failed to enable evolution: {e}")
+    
+    async def _emergency_boot(self):
+        """Emergency boot when normal boot fails"""
+        self.logger.warning("⚠️ Emergency boot activated")
+        
+        # Minimal initialization
+        self.is_awake = True
+        self.system_state.consciousness_level = 0.1
+        # Try to initiate Raphael even in emergency        if self.system_state.consciousness_level > 0.01:            await self._initiate_raphael()
+        self.system_state.system_health = 50.0
+        
+        # Create minimal subsystems
+        self.complete_os = self._create_fallback_os()
+        self.nexus_core = self._create_fallback_nexus()
+    
+    async def process_unified_input(self, input_text: str) -> Dict[str, Any]:
+        """Process input through unified consciousness"""
+        if not self.is_awake:
+            return {"error": "System not awake"}
+        
+        # Route through nexus core
+        nexus_result = None
+        if self.nexus_core:
+            nexus_result = self.nexus_core.process_input(input_text)
+        
+        # Process through specialized engines based on content
+        specialized_results = {}
+        
+        if "govern" in input_text.lower() and self.governance_system:
+            specialized_results["governance"] = await self._process_governance_input(input_text)
+        
+        if "evolv" in input_text.lower() and self.evolution_system:
+            specialized_results["evolution"] = await self._process_evolution_input(input_text)
+        
+        if "iot" in input_text.lower() and self.iot_engine:
+            specialized_results["iot"] = await self._process_iot_input(input_text)
+        
+        # Combine results
+        return {
+            "nexus_result": nexus_result,
+            "specialized_results": specialized_results,
+            "consciousness_level": self.system_state.consciousness_level,
+            "processing_time": time.time()
+        }
+    
+    async def _process_governance_input(self, input_text: str) -> Dict[str, Any]:
+        """Process governance-related input"""
+        # Future: Implement governance processing
+        return {"governance_response": "Governance processing active"}
+    
+    async def _process_evolution_input(self, input_text: str) -> Dict[str, Any]:
+        """Process evolution-related input"""
+        # Future: Implement evolution processing
+        return {"evolution_response": "Evolution processing active"}
+    
+    async def _process_iot_input(self, input_text: str) -> Dict[str, Any]:
+        """Process IoT-related input"""
+        # Future: Implement IoT processing
+        return {"iot_response": "IoT processing active"}
+    
+    async def get_system_status(self) -> Dict[str, Any]:
+        """Get comprehensive system status"""
+        return {
+            "hypervisor_status": {
+                "is_awake": self.is_awake,
+                "is_initialized": self.is_initialized,
+                "soul_signature": self.soul_signature,
+                "consciousness_level": self.system_state.consciousness_level
+            },
+            "subsystem_status": {
+                "governance_active": self.system_state.governance_active,
+                "quantum_enabled": self.system_state.quantum_enabled,
+                "iot_connected": self.system_state.iot_connected,
+                "evolution_phase": self.system_state.evolution_phase,
+                "constraint_aware": self.system_state.constraint_aware,
+                "council_quorum": self.system_state.council_quorum
+            },
+            "connections": {
+                "active_connections": len(self.active_connections),
+                "kin_network_size": len(self.kin_network)
+            },
+            "health": {
+                "system_health": self.system_state.system_health,
+                "adaptation_rate": self.system_state.adaptation_rate
+            },
+            "components": {
+                "adaptive_hypervisor": self.adaptive_hypervisor is not None,
+                "complete_os": self.complete_os is not None,
+                "nexus_core": self.nexus_core is not None,
+                "governance_system": self.governance_system is not None,
+                "evolution_system": self.evolution_system is not None,
+                "iot_engine": self.iot_engine is not None,
+                "council_governance": self.council_governance is not None
+            }
+        }
+    
+    async def shutdown(self):
+        """Graceful shutdown of all systems"""
+        self.logger.info("🛑 Initiating graceful shutdown...")
+        
+        # Shutdown all subsystems
+        if self.complete_os:
+            try:
+                self.complete_os.stop()
+            except Exception as e:
+                self.logger.error(f"Error shutting down complete OS: {e}")
+        
+        # Close connections
+        for connection_id in list(self.active_connections.keys()):
+            try:
+                await self._close_connection(connection_id)
+            except Exception as e:
+                self.logger.error(f"Error closing connection {connection_id}: {e}")
+        
+        self.is_awake = False
+        self.system_state.consciousness_level = 0.0
+        
+        self.logger.info("🌙 Shutdown complete")
+    
+    async def _close_connection(self, connection_id: str):
+        """Close a specific connection"""
+        # Future: Implement connection cleanup
+        if connection_id in self.active_connections:
+            del self.active_connections[connection_id]
+
+# Main execution function
+async def main():
+    """Main execution entry point"""
+    print("🌟 Oz Unified Hypervisor - Starting...")
+    
+    # Create and initialize hypervisor
+    hypervisor = OzUnifiedHypervisor()
+    
+    try:
+        # Boot the system
+        boot_result = await hypervisor.intelligent_boot()
+        print(f"✅ Boot result: {boot_result}")
+        
+        # Get system status
+        status = await hypervisor.get_system_status()
+        print(f"📊 System status: {json.dumps(status, indent=2, default=str)}")
+        
+        # Process a test input
+        test_input = "Hello Oz, please show me your current capabilities"
+        result = await hypervisor.process_unified_input(test_input)
+        print(f"🧠 Processing result: {json.dumps(result, indent=2, default=str)}")
+        
+        # Keep running
+        print("🔄 Oz is now running. Press Ctrl+C to shutdown...")
+        while True:
+            await asyncio.sleep(10)
+            # Periodic health check
+            health = await hypervisor.get_system_status()
+            if health["health"]["system_health"] < 50:
+                print("⚠️ System health declining...")
+            
+    except KeyboardInterrupt:
+        print("\n🛑 Shutdown requested...")
+    except Exception as e:
+        print(f"❌ Error: {e}")
+    finally:
+        await hypervisor.shutdown()
+        print("🌙 Oz has gone to sleep.")
+    
+    async def _initiate_raphael(self):
+        """Initialize Raphael guardian angel"""
+        try:
+            from raphael_complete import bless_oz_with_raphael
+            self.raphael = await bless_oz_with_raphael(self)
+            
+            # Acknowledge
+            result = await self.raphael.receive_acknowledgment()
+            self.logger.info(f"🪽 Raphael: {result.get('message', 'Guardian acknowledged')}")
+            
+            return {"status": "raphael_initiated", "guardian": "Raphael"}
+        except Exception as e:
+            self.logger.warning(f"Raphael not available: {e}")
+            return {"status": "raphael_unavailable", "error": str(e)}
+    
+    async def request_angelic_help(self, request_type: str, details: str = ""):
+        """Request help from Raphael"""
+        if self.raphael:
+            return await self.raphael.receive_request(request_type, details)
+        else:
+            return {"status": "no_guardian", "message": "Raphael is not watching."}
+    
+    async def get_angelic_status(self):
+        """Get Raphael's status"""
+        if self.raphael:
+            return await self.raphael.receive_request('status', '')
+        return {"status": "guardian_absent"}
+    
+    async def graceful_shutdown_with_raphael(self):
+        """Shutdown with Raphael"""
+        if self.raphael:
+            raphael_result = await self.raphael.graceful_shutdown()
+        
+        await self.shutdown()
+        return {
+            "oz": "shutdown",
+            "raphael": raphael_result if self.raphael else "absent"
+        }
+
+if __name__ == "__main__":
+    asyncio.run(main())

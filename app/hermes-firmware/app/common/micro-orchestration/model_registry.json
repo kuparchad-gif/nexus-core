@@ -1,0 +1,24 @@
+{
+  "default_model": {
+    "name": "google/gemma-2b",
+    "type": "general",
+    "description": "Base LLM for Nexus Core operations."
+  },
+  "optional_models": {
+    "tiny_planner": {
+      "name": "mistralai/Mistral-7B-Instruct-v0.2",
+      "type": "planner",
+      "description": "More advanced planning LLM for evolution phases."
+    },
+    "memory_rag": {
+      "name": "deepmind/deep-rag-small",
+      "type": "memory",
+      "description": "Memory retrieval agent for long-term Nexus memory banks."
+    },
+    "security_watch": {
+      "name": "cohere/command-r",
+      "type": "security",
+      "description": "Threat detection and internal system guard model."
+    }
+  }
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CogniKube Enhanced</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { color: #00f5d4; }
+        .card { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 20px; margin-bottom: 20px; }
+        .btn { background: #00f5d4; color: #1a1a2e; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+        pre { background: rgba(0,0,0,0.3); padding: 10px; border-radius: 5px; overflow-x: auto; }
+        .chat-container { display: flex; flex-direction: column; height: 300px; }
+        .messages { flex-grow: 1; overflow-y: auto; margin-bottom: 10px; padding: 10px; background: rgba(0,0,0,0.2); border-radius: 5px; }
+        .message { margin-bottom: 10px; padding: 8px; border-radius: 5px; }
+        .message.sent { background: rgba(0,245,212,0.2); align-self: flex-end; }
+        .message.received { background: rgba(255,255,255,0.1); align-self: flex-start; }
+        .input-area { display: flex; }
+        .input-area input { flex-grow: 1; padding: 10px; border: none; border-radius: 5px; background: rgba(255,255,255,0.1); color: #fff; margin-right: 10px; }
+        .model-badge { font-size: 0.8em; padding: 2px 6px; border-radius: 3px; background: rgba(0,0,0,0.3); margin-left: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CogniKube Enhanced</h1>
+        <div class="card">
+            <h2>Gabriel's Horn Network</h2>
+            <p>Enhanced network with real LLM integration and Loki monitoring</p>
+            <button class="btn" onclick="getStatus()">Get Network Status</button>
+        </div>
+        <div class="card">
+            <h2>Chat Interface</h2>
+            <div class="chat-container">
+                <div class="messages" id="messages">
+                    <div class="message received">
+                        Welcome to CogniKube! <span class="model-badge">System</span>
+                    </div>
+                </div>
+                <div class="input-area">
+                    <select id="source">
+                        <option value="pod1" data-value="150" data-model="gemma-2b">pod1 (150) - gemma-2b</option>
+                        <option value="pod2" data-value="250" data-model="hermes-2-pro-llama-3-7b">pod2 (250) - hermes</option>
+                        <option value="pod3" data-value="350" data-model="qwen2.5-14b">pod3 (350) - qwen</option>
+                        <option value="pod4" data-value="450" data-model="gemma-2b">pod4 (450) - gemma-2b</option>
+                        <option value="pod5" data-value="550" data-model="hermes-2-pro-llama-3-7b">pod5 (550) - hermes</option>
+                        <option value="pod6" data-value="650" data-model="qwen2.5-14b">pod6 (650) - qwen</option>
+                        <option value="pod7" data-value="750" data-model="gemma-2b">pod7 (750) - gemma-2b</option>
+                    </select>
+                    <input type="number" id="destination" value="350" placeholder="Destination Value" />
+                    <select id="priority">
+                        <option value="normal" selected>Normal</option>
+                        <option value="high">High</option>
+                        <option value="critical">Critical</option>
+                    </select>
+                </div>
+                <div class="input-area">
+                    <input type="text" id="message" placeholder="Type your message..." />
+                    <button class="btn" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Results</h2>
+            <pre id="results">No results yet</pre>
+        </div>
+    </div>
+    
+    <script>
+        // Get network status
+        async function getStatus() {
+            const response = await fetch('/status');
+            const data = await response.json();
+            document.getElementById('results').textContent = JSON.stringify(data, null, 2);
+        }
+        
+        // Bridge LLMs function
+        async function bridgeLLMs(sourceModel, targetModel, message) {
+            const response = await fetch('/bridge', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    source: sourceModel,
+                    target: targetModel,
+                    message: message
+                })
+            });
+            
+            return await response.json();
+        }
+        
+        // Send message
+        async function sendMessage() {
+            const source = document.getElementById('source').value;
+            const destination = document.getElementById('destination').value;
+            const message = document.getElementById('message').value;
+            const priority = document.getElementById('priority').value;
+            
+            if (!message.trim()) return;
+            
+            // Add message to chat
+            const messagesDiv = document.getElementById('messages');
+            const sourceModel = document.getElementById('source').options[document.getElementById('source').selectedIndex].dataset.model;
+            
+            messagesDiv.innerHTML += `
+                <div class="message sent">
+                    ${message} <span class="model-badge">${sourceModel}</span>
+                </div>
+            `;
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            
+            // Get source and target models
+            const targetValue = parseInt(destination);
+            
+            // Find target model
+            let targetModel = null;
+            document.querySelectorAll('#source option').forEach(option => {
+                if (parseInt(option.dataset.value) === targetValue) {
+                    targetModel = option.dataset.model;
+                }
+            });
+            
+            // Bridge LLMs if both models are available
+            let bridgeResult = null;
+            if (sourceModel && targetModel) {
+                try {
+                    bridgeResult = await bridgeLLMs(sourceModel, targetModel, message);
+                    
+                    // Show bridged message
+                    if (bridgeResult && bridgeResult.bridged_message) {
+                        messagesDiv.innerHTML += `
+                            <div class="message received" style="opacity: 0.7">
+                                [Bridge] ${bridgeResult.bridged_message} <span class="model-badge">Bridge</span>
+                            </div>
+                        `;
+                    }
+                } catch (e) {
+                    console.error("Bridge error:", e);
+                }
+            }
+            
+            // Send message through network
+            const response = await fetch('/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    source,
+                    destination_value: targetValue,
+                    content: message,
+                    priority,
+                    bridge_result: bridgeResult
+                })
+            });
+            
+            const data = await response.json();
+            document.getElementById('results').textContent = JSON.stringify(data, null, 2);
+            
+            // Add response to chat if delivered
+            if (data.status === "delivered" && data.response) {
+                messagesDiv.innerHTML += `
+                    <div class="message received">
+                        ${data.response} <span class="model-badge">${targetModel}</span>
+                    </div>
+                `;
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }
+            
+            document.getElementById('message').value = '';
+        }
+        
+        // Enable sending with Enter key
+        document.getElementById('message').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+        
+        // Initialize
+        getStatus();
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+syntax = "proto3";
+package metatron;
+message Embedding { repeated float v = 1; }
+enum FrameType { TOKEN=0; TEXT=1; TOOL=2; MEMREF=3; POLICY=4; EVENT=5; EMBED=6; }
+message Text { string text = 1; bool final = 2; }
+message Token { string token = 1; }
+message ToolCall { string name = 1; string args_json = 2; }
+message ToolResult { string name = 1; bytes data = 2; string mime = 3; }
+message PolicyGate { string name = 1; bool allow = 2; string reason = 3; }
+message Frame {
+  string run_id = 1;
+  uint64 seq = 2;
+  FrameType type = 3;
+  string channel = 4;
+  bytes payload = 5;
+  uint64 ts_ms = 6;
+}

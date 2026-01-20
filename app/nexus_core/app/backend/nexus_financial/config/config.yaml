@@ -1,0 +1,29 @@
+universe:
+  symbols: ["AAPL", "MSFT", "SPY", "QQQ"]
+  bar: "1d"
+  start: "2018-01-01"
+  end: "2025-10-01"
+
+fees:
+  slippage_bps: 2
+  fee_bps: 1
+
+risk:
+  target_vol_annual: 0.10
+  max_gross: 1.5
+  max_single: 0.10
+
+strategy:
+  name: "rule_combo_v1"
+  params:
+    lookback_fast: 10
+    lookback_slow: 50
+    breakout_lb: 20
+    atr_lb: 14
+    vol_floor_annual: 0.05
+
+backtest:
+  initial_cash: 100000
+  rebalance: "daily"     # daily | weekly | monthly
+  allow_short: true
+  borrow_cost_bps_daily: 0.5

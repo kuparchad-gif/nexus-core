@@ -1,0 +1,2 @@
+# Multi-arch llama.cpp server image (includes aarch64)
+FROM ghcr.io/ggerganov/llama.cpp:server

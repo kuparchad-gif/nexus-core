@@ -1,0 +1,7 @@
+FROM python:3.10-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY white_rabbit.py .
+EXPOSE 5004
+CMD ["python", "white_rabbit.py"]

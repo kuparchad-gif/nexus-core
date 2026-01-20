@@ -1,0 +1,85 @@
+<!-- Variation 1: Futuristic Neon Glow
+# Theme: Neon purple and black with a glowing edge.
+# Logo: Circled cube with a subtle neon pulse animation.
+# Buttons: Black with glowing purple icons.
+# Icons: Sleek SVG icons with neon outlines.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aethereal</title>
+  <style>
+    body {
+      background: linear-gradient(to top, #0a0a0a, #4a2a6a);
+      color: #e0e0e0;
+      font-family: 'Arial", sans-serif;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 20px rgba(107, 78, 154, 0.3);
+      text-align: center;
+    }
+    .logo {
+      width: 180px;
+      height: 180px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px #6b4e9a; }
+      50% { box-shadow: 0 0 20px #8a6ec9; }
+      100% { box-shadow: 0 0 10px #6b4e9a; }
+    }
+    .btn {
+      background: #1a0d1a;
+      color: #e0e0e0;
+      border: 2px solid #6b4e9a;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 20px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: #6b4e9a;
+      box-shadow: 0 0 15px #8a6ec9;
+    }
+    .btn svg {
+      margin-right: 8px;
+      fill: #6b4e9a;
+      transition: fill 0.3s;
+    }
+    .btn:hover svg {
+      fill: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="C:\Users\Admin\Desktop\QueenBee\Sites\static\purplerain.png" alt="Aethereal Logo" class="logo">
+    <p>Welcome to Aethereal—where AI meets ethics and innovation. Download now or support our mission!</p>
+    <a href="#" class="btn">
+      <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-10 10v4l4-4h12a10 10 0 00-6-10zM4 18v2a2 2 0 002 2h12a2 2 0 002-2v-2H4z"/></svg>
+      Download
+    </a>
+    <a href="#" class="btn">
+      <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      Support Us
+    </a>
+  </div>
+</body>
+</html>

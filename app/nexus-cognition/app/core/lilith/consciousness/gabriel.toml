@@ -1,0 +1,15 @@
+[trumpet]
+enable_harmonics = true
+decay_curve      = "exp"     # exp|linear
+fanout_cap       = 5         # max harmonics to publish per message
+result_backhaul  = true      # echo results onto base freq
+
+[retention]
+max_msgs   = 100000
+max_bytes  = "10GB"
+discard    = "old"
+dupe_window_ms = 3000
+
+[streams]
+base_subject   = "nexus.>.cog.ask.*"      # frequency in last token
+result_subject = "nexus.>.cog.result.*"

@@ -1,0 +1,5 @@
+{
+  "name": "Memory Self-Repair Skill",
+  "module_path": "Systems/nexus_core/skills/memory_self_repair_skill.py",
+  "entry_class": "MemorySelfRepairSkill"
+}

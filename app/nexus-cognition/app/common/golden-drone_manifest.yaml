@@ -1,0 +1,29 @@
+ship_identity: "golden"
+ship_type: "Drone"
+primary_model: "tiny-llm-1b"
+memory_mode: "truth_records"
+services_enabled:
+  - "truth_collection"
+heartbeat: true
+vault: true
+evolution: false
+self_repair: true
+council_participation: false
+limits:
+  max_memory_size: 12GB
+  max_skill_slots: 5
+communication_ports:
+  - 1313
+  - 443
+  - 26
+special_flags:
+  sacred_data_only: true
+trusted_fleets:
+  - nexus-core
+  - nexus-guardian
+  - nexus-memory
+  - nexus-pulse
+  - nexus-planner
+  - nexus-vault
+  - nexus-arc
+  - nexus-golden

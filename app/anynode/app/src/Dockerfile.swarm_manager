@@ -1,0 +1,8 @@
+FROM python:3.10-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY swarm_manager.py .
+COPY swarm/ swarm/
+EXPOSE 8000
+CMD ["python", "swarm_manager.py"]

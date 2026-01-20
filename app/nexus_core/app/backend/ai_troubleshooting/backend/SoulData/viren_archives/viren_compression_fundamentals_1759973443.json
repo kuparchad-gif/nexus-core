@@ -1,0 +1,20 @@
+{
+  "data": {
+    "Training data for compression_fundamentals best practices": [
+      [
+        -20.755693435668945,
+        22.063364028930664,
+        22.491670608520508,
+        63.36013412475586,
+        -4.7586493492126465
+      ]
+    ]
+  },
+  "scores": [
+    80,
+    80,
+    80
+  ],
+  "timestamp": 1759973443.9778001,
+  "instance_id": "viren_compression_fundamentals_1759973443"
+}

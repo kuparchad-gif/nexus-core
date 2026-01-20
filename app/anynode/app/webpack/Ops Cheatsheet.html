@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ops Cheatsheet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body { font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+code, pre { background:#f5f5f7; border-radius:8px; padding:.25rem .5rem; }
+pre { overflow-x:auto; padding:1rem; }
+table { border-collapse: collapse; width:100%; }
+th, td { border:1px solid #e6e6eb; padding:.5rem .6rem; text-align:left; }
+thead th { background:#fafbfc; }
+h1,h2,h3 { margin-top:1.2rem; }
+blockquote { border-left:3px solid #ddd; margin:1rem 0; padding:.5rem 1rem; color:#444; background:#fafafa; }
+kbd { background:#eee; border-radius:4px; padding:.15rem .35rem; border:1px solid #ccc; box-shadow: inset 0 -1px 0 #bbb; }
+</style>
+</head>
+<body>
+<h1>Ops Cheatsheet</h1>
+
+<h2>Commands Cheatsheet</h2>
+<pre><code># Bring up (prefers podman-compose; falls back to python -m podman_compose)
+./scripts/deploy.ps1
+
+# Force rebuild
+./scripts/deploy.ps1 -Rebuild
+
+# Down (if needed)
+$Compose = (Get-Command podman-compose -ErrorAction SilentlyContinue) ? 'podman-compose' : 'python -m podman_compose'
+& $Compose -f podman-compose.yaml down
+
+# Logs
+podman logs -f viren
+podman logs -f loki
+podman logs -f promtail
+podman logs -f grafana
+
+# Health quickies
+iwr http://localhost:8715/health | % Content
+iwr http://localhost:3100/ready  | % StatusCode
+iwr http://localhost:3000/login  -UseBasicParsing | % StatusCode
+
+# Test Viren (HTTP)
+$Body = @{ action="purchase"; subject="credits"; amount=125; consent_token=$env:CONSENT_TOKEN; stats=@{meditation_minutes=600; metaphor_count=15} } | ConvertTo-Json
+irm "http://localhost:8715/authorize" -Method POST -ContentType "application/json" -Body $Body
+
+# Test Viren (NATS)
+nats req viren.authorize.test '{"action":"purchase","amount":50}'
+
+# Redis receipts (optional)
+podman exec -it neexus_redis_1 redis-cli LLEN viren:receipts
+podman exec -it neexus_redis_1 redis-cli LINDEX viren:receipts 0</code></pre>
+
+<footer><hr><p><small>Generated: 2025-09-09 07:04:45 </small></p></footer>
+</body>
+</html>

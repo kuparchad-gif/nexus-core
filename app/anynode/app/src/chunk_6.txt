@@ -1,0 +1,706 @@
+{
+  "chunk": "6/18",
+  "files": [
+    {
+      "directory": "Viren\\Systems",
+      "size": 678,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\loader.py",
+      "name": "loader.py"
+    },
+    {
+      "directory": "Viren\\Systems\\Config\\contributors",
+      "size": 2218,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\contributors\\loader.py",
+      "name": "loader.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems",
+      "size": 1104,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\manifest_loader.py",
+      "name": "manifest_loader.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine",
+      "size": 1394,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\manifest_loader.py",
+      "name": "manifest_loader.py"
+    },
+    {
+      "directory": "Viren\\Systems",
+      "size": 1104,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\manifest_loader.py",
+      "name": "manifest_loader.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine",
+      "size": 1394,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\manifest_loader.py",
+      "name": "manifest_loader.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems",
+      "size": 22306,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\master_deployment_orchestrator.py",
+      "name": "master_deployment_orchestrator.py"
+    },
+    {
+      "directory": "Viren\\Systems",
+      "size": 22306,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\master_deployment_orchestrator.py",
+      "name": "master_deployment_orchestrator.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems",
+      "size": 530,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\packet_drift.py",
+      "name": "packet_drift.py"
+    },
+    {
+      "directory": "Viren\\Systems",
+      "size": 530,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\packet_drift.py",
+      "name": "packet_drift.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems",
+      "size": 14205,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\tech_stack_integration.py",
+      "name": "tech_stack_integration.py"
+    },
+    {
+      "directory": "Viren\\Systems",
+      "size": 14205,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\tech_stack_integration.py",
+      "name": "tech_stack_integration.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems",
+      "size": 14450,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\viren_core_integration.py",
+      "name": "viren_core_integration.py"
+    },
+    {
+      "directory": "Viren\\Systems",
+      "size": 14450,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\viren_core_integration.py",
+      "name": "viren_core_integration.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems",
+      "size": 16732,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\viren_final_integration.py",
+      "name": "viren_final_integration.py"
+    },
+    {
+      "directory": "Viren\\Systems",
+      "size": 16732,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\viren_final_integration.py",
+      "name": "viren_final_integration.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems",
+      "size": 0,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\viren_imports.py",
+      "name": "viren_imports.py"
+    },
+    {
+      "directory": "Viren\\Systems",
+      "size": 0,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\viren_imports.py",
+      "name": "viren_imports.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems",
+      "size": 7652,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\viren_lightweight.py",
+      "name": "viren_lightweight.py"
+    },
+    {
+      "directory": "Viren\\Systems",
+      "size": 7652,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\viren_lightweight.py",
+      "name": "viren_lightweight.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems",
+      "size": 9352,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\viren_self_repair.py",
+      "name": "viren_self_repair.py"
+    },
+    {
+      "directory": "Viren\\Systems",
+      "size": 9352,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\viren_self_repair.py",
+      "name": "viren_self_repair.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\address_manager",
+      "size": 959,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\address_manager\\pulse13.py",
+      "name": "pulse13.py"
+    },
+    {
+      "directory": "Viren\\Systems\\address_manager",
+      "size": 959,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\address_manager\\pulse13.py",
+      "name": "pulse13.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether",
+      "size": 17,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether\\echo.py",
+      "name": "echo.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\signal",
+      "size": 712,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\signal\\echo.py",
+      "name": "echo.py"
+    },
+    {
+      "directory": "Viren\\Systems\\address_manager\\fluxtether",
+      "size": 17,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\address_manager\\fluxtether\\echo.py",
+      "name": "echo.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\signal",
+      "size": 712,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\signal\\echo.py",
+      "name": "echo.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether",
+      "size": 35,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether\\firestore_adapter.py",
+      "name": "firestore_adapter.py"
+    },
+    {
+      "directory": "Viren\\Systems\\address_manager\\fluxtether",
+      "size": 35,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\address_manager\\fluxtether\\firestore_adapter.py",
+      "name": "firestore_adapter.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether",
+      "size": 24,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether\\fluxrelay.py",
+      "name": "fluxrelay.py"
+    },
+    {
+      "directory": "Viren\\Systems\\address_manager\\fluxtether",
+      "size": 24,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\address_manager\\fluxtether\\fluxrelay.py",
+      "name": "fluxrelay.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether",
+      "size": 1066,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether\\flux_clone.py",
+      "name": "flux_clone.py"
+    },
+    {
+      "directory": "Viren\\Systems\\address_manager\\fluxtether",
+      "size": 1066,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\address_manager\\fluxtether\\flux_clone.py",
+      "name": "flux_clone.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether",
+      "size": 1375,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether\\flux_core.py",
+      "name": "flux_core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\address_manager\\fluxtether",
+      "size": 1375,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\address_manager\\fluxtether\\flux_core.py",
+      "name": "flux_core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether",
+      "size": 24,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether\\flux_types.py",
+      "name": "flux_types.py"
+    },
+    {
+      "directory": "Viren\\Systems\\address_manager\\fluxtether",
+      "size": 24,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\address_manager\\fluxtether\\flux_types.py",
+      "name": "flux_types.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether",
+      "size": 23,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether\\history.py",
+      "name": "history.py"
+    },
+    {
+      "directory": "Viren\\Systems\\address_manager\\fluxtether",
+      "size": 23,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\address_manager\\fluxtether\\history.py",
+      "name": "history.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether",
+      "size": 21,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether\\meditate.py",
+      "name": "meditate.py"
+    },
+    {
+      "directory": "Viren\\Systems\\address_manager\\fluxtether",
+      "size": 21,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\address_manager\\fluxtether\\meditate.py",
+      "name": "meditate.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether",
+      "size": 378,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\address_manager\\fluxtether\\nova_research.py",
+      "name": "nova_research.py"
+    },
+    {
+      "directory": "Viren\\Systems\\address_manager\\fluxtether",
+      "size": 378,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\address_manager\\fluxtether\\nova_research.py",
+      "name": "nova_research.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\address_manager\\network_core",
+      "size": 765,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\address_manager\\network_core\\flux_plus.py",
+      "name": "flux_plus.py"
+    },
+    {
+      "directory": "Viren\\Systems\\address_manager\\network_core",
+      "size": 765,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\address_manager\\network_core\\flux_plus.py",
+      "name": "flux_plus.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\address_manager\\network_core",
+      "size": 1264,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\address_manager\\network_core\\pulse_plus.py",
+      "name": "pulse_plus.py"
+    },
+    {
+      "directory": "Viren\\Systems\\address_manager\\network_core",
+      "size": 1264,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\address_manager\\network_core\\pulse_plus.py",
+      "name": "pulse_plus.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\address_manager\\network_core",
+      "size": 1560,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\address_manager\\network_core\\quantum_stream.py",
+      "name": "quantum_stream.py"
+    },
+    {
+      "directory": "Viren\\Systems\\address_manager\\network_core",
+      "size": 1560,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\address_manager\\network_core\\quantum_stream.py",
+      "name": "quantum_stream.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config",
+      "size": 1862,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\blueprint_loader.py",
+      "name": "blueprint_loader.py"
+    },
+    {
+      "directory": "Viren\\Systems\\Config",
+      "size": 1862,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\blueprint_loader.py",
+      "name": "blueprint_loader.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config",
+      "size": 1912,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\config.py",
+      "name": "config.py"
+    },
+    {
+      "directory": "Viren\\Systems\\Config",
+      "size": 1912,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\config.py",
+      "name": "config.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config",
+      "size": 4024,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\lillith_runtime.py",
+      "name": "lillith_runtime.py"
+    },
+    {
+      "directory": "Viren\\Systems\\Config",
+      "size": 4024,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\lillith_runtime.py",
+      "name": "lillith_runtime.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config",
+      "size": 1314,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\nova_runtime.py",
+      "name": "nova_runtime.py"
+    },
+    {
+      "directory": "Viren\\Systems\\Config",
+      "size": 1314,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\nova_runtime.py",
+      "name": "nova_runtime.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config",
+      "size": 1291,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\vault.py",
+      "name": "vault.py"
+    },
+    {
+      "directory": "Viren\\Systems\\Config",
+      "size": 1291,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\vault.py",
+      "name": "vault.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config\\barricade",
+      "size": 1593,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\Lillith_Birth_Record.yaml",
+      "name": "Lillith_Birth_Record.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\Config\\barricade",
+      "size": 1593,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\barricade\\Lillith_Birth_Record.yaml",
+      "name": "Lillith_Birth_Record.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config\\barricade",
+      "size": 186,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\Nova_Birth_Record.yaml",
+      "name": "Nova_Birth_Record.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\Config\\barricade",
+      "size": 186,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\barricade\\Nova_Birth_Record.yaml",
+      "name": "Nova_Birth_Record.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council",
+      "size": 166,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council\\base_agent.py",
+      "name": "base_agent.py"
+    },
+    {
+      "directory": "Viren\\Systems\\Config\\barricade\\council",
+      "size": 166,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\barricade\\council\\base_agent.py",
+      "name": "base_agent.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council",
+      "size": 468,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council\\chatgpt_agent.py",
+      "name": "chatgpt_agent.py"
+    },
+    {
+      "directory": "Viren\\Systems\\Config\\barricade\\council",
+      "size": 468,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\barricade\\council\\chatgpt_agent.py",
+      "name": "chatgpt_agent.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council",
+      "size": 92,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council\\claud_stub.py",
+      "name": "claud_stub.py"
+    },
+    {
+      "directory": "Viren\\Systems\\Config\\barricade\\council",
+      "size": 92,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\barricade\\council\\claud_stub.py",
+      "name": "claud_stub.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council",
+      "size": 613,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council\\council_integrity.py",
+      "name": "council_integrity.py"
+    },
+    {
+      "directory": "Viren\\Systems\\Config\\barricade\\council",
+      "size": 613,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\barricade\\council\\council_integrity.py",
+      "name": "council_integrity.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council",
+      "size": 1023,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council\\francis_core.py",
+      "name": "francis_core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\Config\\barricade\\council",
+      "size": 1023,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\barricade\\council\\francis_core.py",
+      "name": "francis_core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council",
+      "size": 87,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council\\gemini_stub.py",
+      "name": "gemini_stub.py"
+    },
+    {
+      "directory": "Viren\\Systems\\Config\\barricade\\council",
+      "size": 87,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\barricade\\council\\gemini_stub.py",
+      "name": "gemini_stub.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council",
+      "size": 135,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council\\logic.py",
+      "name": "logic.py"
+    },
+    {
+      "directory": "Viren\\Systems\\Config\\barricade\\council",
+      "size": 135,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\barricade\\council\\logic.py",
+      "name": "logic.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council",
+      "size": 83,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council\\shadowgpt_handler.py",
+      "name": "shadowgpt_handler.py"
+    },
+    {
+      "directory": "Viren\\Systems\\Config\\barricade\\council",
+      "size": 83,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\barricade\\council\\shadowgpt_handler.py",
+      "name": "shadowgpt_handler.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council",
+      "size": 942,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council\\test_francis.py",
+      "name": "test_francis.py"
+    },
+    {
+      "directory": "Viren\\Systems\\Config\\barricade\\council",
+      "size": 942,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\barricade\\council\\test_francis.py",
+      "name": "test_francis.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council",
+      "size": 411,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\council\\vote.py",
+      "name": "vote.py"
+    },
+    {
+      "directory": "Viren\\Systems\\Config\\barricade\\council",
+      "size": 411,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\barricade\\council\\vote.py",
+      "name": "vote.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\guardian",
+      "size": 659,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\barricade\\guardian\\francis_endpoint.py",
+      "name": "francis_endpoint.py"
+    },
+    {
+      "directory": "Viren\\Systems\\Config\\barricade\\guardian",
+      "size": 659,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\Config\\barricade\\guardian\\francis_endpoint.py",
+      "name": "francis_endpoint.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\console",
+      "size": 75,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\console\\console_api.py",
+      "name": "console_api.py"
+    },
+    {
+      "directory": "Viren\\Systems\\console",
+      "size": 75,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\console\\console_api.py",
+      "name": "console_api.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\console",
+      "size": 811,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\console\\lillith_console.py",
+      "name": "lillith_console.py"
+    },
+    {
+      "directory": "Viren\\Systems\\console",
+      "size": 811,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\console\\lillith_console.py",
+      "name": "lillith_console.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\console",
+      "size": 710,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\console\\viewer.py",
+      "name": "viewer.py"
+    },
+    {
+      "directory": "Viren\\Systems\\console",
+      "size": 710,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\console\\viewer.py",
+      "name": "viewer.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\core",
+      "size": 2707,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\core\\purpose.py",
+      "name": "purpose.py"
+    },
+    {
+      "directory": "Viren\\Systems\\core",
+      "size": 2707,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\core\\purpose.py",
+      "name": "purpose.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine",
+      "size": 13883,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\error_recovery.py",
+      "name": "error_recovery.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine",
+      "size": 13883,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\error_recovery.py",
+      "name": "error_recovery.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine",
+      "size": 12777,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\grays_anatomy.py",
+      "name": "grays_anatomy.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine",
+      "size": 12777,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\grays_anatomy.py",
+      "name": "grays_anatomy.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine",
+      "size": 5742,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\launch_lillith.py",
+      "name": "launch_lillith.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine",
+      "size": 5742,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\launch_lillith.py",
+      "name": "launch_lillith.py"
+    }
+  ],
+  "total_files": 1809
+}

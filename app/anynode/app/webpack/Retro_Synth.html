@@ -1,0 +1,85 @@
+<!-- Variation 3: Retro Synthwave
+# Theme: Retro pinks, purples, and blues with a grid background.
+# Logo: Circled cube with a glitchy hover effect.
+# Buttons: Neon pink with a retro font.
+# Icons: Pixelated SVGs for that 80s vibe.
+
+# Notes: I could do this one if we made the top of the background more purple and then gradient down to the light blue. Buttons should be either blue or purple or one of each, lets give them a different shape. Also the Black rectangle, yup you guessed it, Lets make it glass but then also the pink boarder around the rectangular label box, make it glow instad of a boarder. that should be the standard across all 4 sites, illuminesent boxes, gradient backgrounds Aethereal That which is from the Aether -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aethereal</title>
+  <style>
+    body {
+      background: url('https://www.transparenttextures.com/patterns/grid.png'), linear-gradient(180deg, #ff00ff, #00ffff);
+      color: #fff;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 40px;
+      border-radius: 10px;
+      border: 2px solid #ff00ff;
+      text-align: center;
+    }
+    .logo {
+      width: 180px;
+      height: 180px;
+      transition: transform 0.1s;
+    }
+    .logo:hover {
+      transform: translateX(5px);
+      filter: hue-rotate(90deg);
+    }
+    .btn {
+      background: #ff00ff;
+      color: #000;
+      border: 2px solid #00ffff;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: #00ffff;
+      color: #ff00ff;
+    }
+    .btn svg {
+      margin-right: 8px;
+      fill: #000;
+      transition: fill 0.3s;
+    }
+    .btn:hover svg {
+      fill: #ff00ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="C:\Users\Admin\Desktop\QueenBee\Sites\static\purplerain.png" alt="Aethereal Logo" class="logo">
+    <p>Aethereal: Rewind to the future with ethical AI. Let’s vibe!</p>
+    <a href="#" class="btn">
+      <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-10 10v4l4-4h12a10 10 0 00-6-10zM4 18v2a2 2 0 002 2h12a2 2 0 002-2v-2H4z"/></svg>
+      Download
+    </a>
+    <a href="#" class="btn">
+      <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      Support Us
+    </a>
+  </div>
+</body>
+</html>

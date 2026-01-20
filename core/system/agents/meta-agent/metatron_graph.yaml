@@ -1,0 +1,37 @@
+# metatron_graph.yaml — wiring derived from your diagrams
+ports:
+  anynode: 8012             # Orchestration / ANYNODES (hub)
+  edge-anynode: 1313        # Edge ingress
+  planner: 8011
+  llm-proxy: 8008
+  memory: 8003
+  archivist: 8010
+  consciousness: 8014
+  subconsciousness: 8013
+  language-processing: 8007
+  visual_cortex: 8009
+  nexus-core: 8020
+  qdrant: 6333              # sidecar
+  loki: 3100                # sidecar
+  ray-head: 8265            # dashboard (sidecar)
+
+edges:
+  - anynode -> memory
+  - anynode -> language-processing
+  - anynode -> visual_cortex
+  - anynode -> archivist
+  - anynode -> nexus-core
+  - anynode -> consciousness
+  - anynode -> subconsciousness
+  - memory <-> language-processing
+  - archivist <-> nexus-core
+  - edge-anynode -> planner
+  - planner -> memory
+  - planner -> llm-proxy
+  - planner -> consciousness
+  - subconsciousness -> memory   # dream/ego → mythrunner → memory
+  - archivist -> qdrant
+  - memory -> qdrant
+  - archivist -> loki
+meta:
+  note: "Lilith agent sits above and talks to consciousness & subconsciousness; both also wire to the hub."

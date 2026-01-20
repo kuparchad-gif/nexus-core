@@ -1,0 +1,24 @@
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+    <button onclick="install()">Install Now</button>
+  
+    <script type="text/javascript">
+      function install()  {
+        var os = navigator.appVersion;   
+        
+        if (os.indexOf("Win") !== -1)  {   
+          window.location.href = "https://yourwebsite.com/windows-installer";
+        } else if (os.indexOf("Mac") !== -1)  {  
+          window.location.href = "https://yourwebsite.com/mac-installer";
+        } else if (os.indexOf("Linux") !== -1)  {   
+          window.location.href = "https://yourwebsite.com/linux-installer";
+        } else  {
+          alert('Sorry, your OS is not supported.');  
+        }
+      }
+    </script>
+  </body>
+</html>
+```

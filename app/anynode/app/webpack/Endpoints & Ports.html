@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Endpoints & Ports</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body { font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+code, pre { background:#f5f5f7; border-radius:8px; padding:.25rem .5rem; }
+pre { overflow-x:auto; padding:1rem; }
+table { border-collapse: collapse; width:100%; }
+th, td { border:1px solid #e6e6eb; padding:.5rem .6rem; text-align:left; }
+thead th { background:#fafbfc; }
+h1,h2,h3 { margin-top:1.2rem; }
+blockquote { border-left:3px solid #ddd; margin:1rem 0; padding:.5rem 1rem; color:#444; background:#fafafa; }
+kbd { background:#eee; border-radius:4px; padding:.15rem .35rem; border:1px solid #ccc; box-shadow: inset 0 -1px 0 #bbb; }
+</style>
+</head>
+<body>
+<h1>Endpoints & Ports</h1>
+
+<h2>Endpoints & Ports</h2>
+<h3>HTTP</h3>
+<ul>
+  <li>Viren <code>http://localhost:8715</code> → <code>GET /health</code>, <code>GET /alive</code>, <code>POST /authorize</code></li>
+  <li>Loki <code>http://localhost:3100</code> → <code>GET /ready</code></li>
+  <li>Promtail Push API <code>http://localhost:3500/loki/api/v1/push</code></li>
+  <li>Grafana <code>http://localhost:3000</code></li>
+</ul>
+<h3>Messaging</h3>
+<p>NATS subject: <code>viren.authorize.*</code></p>
+<table>
+<thead><tr><th>Service</th><th>Host</th><th>Container</th></tr></thead>
+<tbody>
+<tr><td>Viren</td><td>8715</td><td>8715</td></tr>
+<tr><td>Loki</td><td>3100</td><td>3100</td></tr>
+<tr><td>Promtail</td><td>3500</td><td>3500</td></tr>
+<tr><td>Grafana</td><td>3000</td><td>3000</td></tr>
+<tr><td>NATS*</td><td>4222/8222</td><td>4222/8222</td></tr>
+<tr><td>Redis*</td><td>6379</td><td>6379</td></tr>
+</tbody>
+</table>
+
+<footer><hr><p><small>Generated: 2025-09-09 07:04:45 </small></p></footer>
+</body>
+</html>

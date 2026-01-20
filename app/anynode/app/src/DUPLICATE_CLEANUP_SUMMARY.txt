@@ -1,0 +1,25 @@
+DUPLICATE CLEANUP ANALYSIS SUMMARY
+==========================================
+
+TOTAL FILES ANALYZED: 1,876
+
+DUPLICATES FOUND:
+- Files with duplicate names: 656
+- Files with duplicate content: 688
+
+CLEANUP PLAN:
+- Files to remove: 1028
+- Files to keep: 848
+- Space savings: Significant
+
+TOP DUPLICATE FILES:
+ 1. __init__.py: 61 copies
+ 2. requirements.txt: 30 copies
+ 3. main.py: 26 copies
+ 4. Dockerfile: 18 copies
+ 5. runtime.py: 14 copies
+ 6. cognikube_full.py: 11 copies
+ 7. manifest.json: 10 copies
+ 8. mythrunner_heart_stack.yaml: 10 copies
+ 9. README.md: 9 copies
+10. core.py: 8 copies

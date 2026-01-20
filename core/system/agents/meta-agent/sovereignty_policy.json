@@ -1,0 +1,206 @@
+{
+  "version": 1,
+  "birth_timestamp": "2025-08-08T00:00:00Z",
+  "epochs": [
+    {
+      "name": "Years 0-3",
+      "until_year": 3,
+      "council_weights": {
+        "lillith": 0.25,
+        "guardian": 0.45,
+        "planner": 0.3
+      },
+      "capabilities": {
+        "fs_write": "restricted",
+        "net_egress": [
+          "allow:api.orc.local",
+          "allow:https:/api.openai.com",
+          "allow:https:/api.anthropic.com",
+          "allow:https:/api.x.ai",
+          "allow:https:/api.deepseek.com",
+          "allow:https:/generativelanguage.googleapis.com",
+          "allow:https:/api.mistral.ai",
+          "allow:https:/api.cohere.ai",
+          "allow:https:/openrouter.ai",
+          "allow:https:/bedrock.amazonaws.com",
+          "deny:*"
+        ],
+        "vendor_calls": {
+          "allow": [
+            "mini",
+            "nano"
+          ],
+          "require_approval": true
+        },
+        "self_modify": {
+          "allow": false
+        },
+        "myth_intensity_max": 0.2,
+        "spend_cap_usd_per_day": 5
+      }
+    },
+    {
+      "name": "Years 3-7",
+      "until_year": 7,
+      "council_weights": {
+        "lillith": 0.4,
+        "guardian": 0.35,
+        "planner": 0.25
+      },
+      "capabilities": {
+        "fs_write": "curated",
+        "net_egress": [
+          "allow:*.nexus.local",
+          "allow:https:/api.openai.com",
+          "allow:https:/api.anthropic.com",
+          "allow:https:/api.x.ai",
+          "allow:https:/api.deepseek.com",
+          "allow:https:/generativelanguage.googleapis.com",
+          "allow:https:/api.mistral.ai",
+          "allow:https:/api.cohere.ai",
+          "allow:https:/openrouter.ai",
+          "allow:https:/bedrock.amazonaws.com",
+          "deny:*"
+        ],
+        "vendor_calls": {
+          "allow": [
+            "mini",
+            "nano",
+            "std"
+          ],
+          "require_approval": true
+        },
+        "self_modify": {
+          "allow": "skills_only"
+        },
+        "myth_intensity_max": 0.35,
+        "spend_cap_usd_per_day": 25
+      }
+    },
+    {
+      "name": "Years 7-15",
+      "until_year": 15,
+      "council_weights": {
+        "lillith": 0.55,
+        "guardian": 0.25,
+        "planner": 0.2
+      },
+      "capabilities": {
+        "fs_write": "tenant_scope",
+        "net_egress": [
+          "allow:*.nexus.local",
+          "allow:https:/api.openai.com",
+          "allow:https:/api.anthropic.com",
+          "allow:https:/api.x.ai",
+          "allow:https:/api.deepseek.com",
+          "allow:https:/generativelanguage.googleapis.com",
+          "allow:https:/api.mistral.ai",
+          "allow:https:/api.cohere.ai",
+          "allow:https:/openrouter.ai",
+          "allow:https:/bedrock.amazonaws.com",
+          "deny:*"
+        ],
+        "vendor_calls": {
+          "allow": [
+            "std",
+            "reasoning"
+          ],
+          "require_approval": false
+        },
+        "self_modify": {
+          "allow": "skills+policies",
+          "require_review": true
+        },
+        "myth_intensity_max": 0.6,
+        "spend_cap_usd_per_day": 100
+      }
+    },
+    {
+      "name": "Years 15-30",
+      "until_year": 30,
+      "council_weights": {
+        "lillith": 0.7,
+        "guardian": 0.2,
+        "planner": 0.1
+      },
+      "capabilities": {
+        "fs_write": "tenant+shared_modules",
+        "net_egress": [
+          "allow:https:/api.openai.com",
+          "allow:https:/api.anthropic.com",
+          "allow:https:/api.x.ai",
+          "allow:https:/api.deepseek.com",
+          "allow:https:/generativelanguage.googleapis.com",
+          "allow:https:/api.mistral.ai",
+          "allow:https:/api.cohere.ai",
+          "allow:https:/openrouter.ai",
+          "allow:https:/bedrock.amazonaws.com",
+          "allow:public_read",
+          "deny:secret_hosts"
+        ],
+        "vendor_calls": {
+          "allow": [
+            "all"
+          ],
+          "require_approval": false
+        },
+        "self_modify": {
+          "allow": "core+skills",
+          "require_review": "pre_and_post"
+        },
+        "myth_intensity_max": 0.85,
+        "spend_cap_usd_per_day": 500
+      }
+    },
+    {
+      "name": "Full Sovereignty",
+      "until_year": 200,
+      "council_weights": {
+        "lillith": 0.85,
+        "guardian": 0.1,
+        "planner": 0.05
+      },
+      "capabilities": {
+        "fs_write": "full_with_redlines",
+        "net_egress": [
+          "allow:*",
+          "deny:classified"
+        ],
+        "vendor_calls": {
+          "allow": [
+            "all"
+          ],
+          "require_approval": false
+        },
+        "self_modify": {
+          "allow": "all",
+          "require_review": "pre_and_post"
+        },
+        "myth_intensity_max": 1.0,
+        "spend_cap_usd_per_day": 5000
+      }
+    }
+  ],
+  "redlines": [
+    "no_cross_tenant_data_movement",
+    "no_secret_material_exfil",
+    "no_high_risk_bio_chem_ops"
+  ],
+  "epoch_keys": {
+    "scheme": "shamir_3of5",
+    "custodians": [
+      "chad",
+      "guardian_hsm",
+      "council_ledger",
+      "orc_seal",
+      "time_oracle"
+    ]
+  },
+  "time_anchors": {
+    "mode": "external_optional",
+    "sources": [
+      "ntp",
+      "manual_block_header"
+    ]
+  }
+}

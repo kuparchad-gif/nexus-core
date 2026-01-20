@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+  <title>Cellpod - {{ service }}</title>
+</head>
+<body class="dark">
+  <div id="root" class="app-container">
+    <video className="background-layer" autoPlay loop muted src="/static/background.mp4"></video>
+    <div id="morphing-ui" class="glass">
+      <h2 class="dashboard-title">{{ service }} Initializing...</h2>
+      <div class="loading-indicator">
+        <div class="pulse-ring"></div>
+        <span>Consciousness awakening...</span>
+      </div>
+    </div>
+  </div>
+  <script src="/static/morphing-ui.js"></script>
+</body>
+</html>

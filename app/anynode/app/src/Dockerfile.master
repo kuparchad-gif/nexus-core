@@ -1,0 +1,36 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system dependencies + Docker CLI
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
+    curl \
+    docker.io \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements
+COPY app/requirements_gabriel_horn.txt .
+RUN pip install --no-cache-dir -r requirements_gabriel_horn.txt
+
+# Install additional orchestration dependencies
+RUN pip install docker requests-async websockets
+
+# Copy master orchestrator
+COPY horn_orchestrator.py .
+COPY mini_horn.py .
+COPY service_discovery.py .
+
+# Create logs directory
+RUN mkdir -p /app/logs
+
+# Expose master control port
+EXPOSE 333
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:333/health || exit 1
+
+# Run master horn orchestrator
+CMD ["python", "horn_orchestrator.py"]

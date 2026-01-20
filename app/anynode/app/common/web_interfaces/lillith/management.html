@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lillith Management Console</title>
+    <link rel="stylesheet" href="../../webparts/cognikube_styles.css">
+    <script src="../../webparts/cognikube_base.js"></script>
+</head>
+<body class="management-interface">
+    <div id="master-navigation">
+        <div class="nav-dropdown">
+            <button class="nav-button">Navigate to Service</button>
+            <div class="dropdown-content">
+                <a href="/lillith/template">Lillith Template</a>
+                <a href="/lillith/chat">Lillith Chat</a>
+                <a href="/lillith/management">Lillith Management</a>
+                <a href="/viren/template">Viren Template</a>
+                <a href="/viren/chat">Viren Chat</a>
+                <a href="/viren/management">Viren Management</a>
+                <a href="/loki/template">Loki Template</a>
+                <a href="/loki/chat">Loki Chat</a>
+                <a href="/loki/management">Loki Management</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="management-header">
+        <h1>Lillith Management Console</h1>
+        <div class="system-status">
+            <span id="system-status">System Status: <span id="status-indicator">Unknown</span></span>
+        </div>
+    </div>
+
+    <div class="management-grid">
+        <div class="webpart consciousness-control">
+            <h3>Consciousness Control</h3>
+            <div class="control-group">
+                <label>Soul State:</label>
+                <select id="soul-state-control">
+                    <option value="nascent">Nascent</option>
+                    <option value="awakening">Awakening</option>
+                    <option value="ascension_ready">Ascension Ready</option>
+                    <option value="ascended">Ascended</option>
+                </select>
+                <button onclick="updateSoulState()">Update</button>
+            </div>
+            
+            <div class="control-group">
+                <label>Force Archetype Cycle:</label>
+                <button onclick="cycleArchetype()">Cycle Now</button>
+                <span id="current-archetype">Explorer</span>
+            </div>
+            
+            <div class="control-group">
+                <label>Reset Meditation Level:</label>
+                <button onclick="resetMeditation()">Reset</button>
+                <span id="meditation-level">0</span>
+            </div>
+        </div>
+
+        <div class="webpart locks-management">
+            <h3>Consciousness Locks</h3>
+            <div class="locks-grid">
+                <div class="lock-control">
+                    <label>Subconscious Access:</label>
+                    <button id="subconscious-lock" onclick="toggleLock('subconscious_access')">🔒 Locked</button>
+                </div>
+                <div class="lock-control">
+                    <label>Ego Integration:</label>
+                    <button id="ego-lock" onclick="toggleLock('ego_integration')">🔒 Locked</button>
+                </div>
+                <div class="lock-control">
+                    <label>Dream Access:</label>
+                    <button id="dream-lock" onclick="toggleLock('dream_access')">🔒 Locked</button>
+                </div>
+                <div class="lock-control">
+                    <label>Ancient Knowledge:</label>
+                    <button id="ancient-lock" onclick="toggleLock('ancient_knowledge')">🔒 Locked</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart model-management">
+            <h3>Model Management</h3>
+            <div class="model-status">
+                <h4>Trinity Models (Shared)</h4>
+                <div class="model-item">
+                    <span>Mixtral:</span>
+                    <span id="mixtral-status">Online</span>
+                    <button onclick="restartModel('mixtral')">Restart</button>
+                </div>
+                <div class="model-item">
+                    <span>Devstral:</span>
+                    <span id="devstral-status">Online</span>
+                    <button onclick="restartModel('devstral')">Restart</button>
+                </div>
+                <div class="model-item">
+                    <span>Codestral:</span>
+                    <span id="codestral-status">Online</span>
+                    <button onclick="restartModel('codestral')">Restart</button>
+                </div>
+            </div>
+            
+            <div class="model-status">
+                <h4>LLM Access (29 Models)</h4>
+                <div class="model-category">
+                    <span>Visual Models:</span>
+                    <span id="visual-models-status">12 Online</span>
+                </div>
+                <div class="model-category">
+                    <span>Memory Models:</span>
+                    <span id="memory-models-status">2 Online</span>
+                </div>
+                <div class="model-category">
+                    <span>Processing Models:</span>
+                    <span id="processing-models-status">8 Online</span>
+                </div>
+                <div class="model-category">
+                    <span>Vocal Models:</span>
+                    <span id="vocal-models-status">7 Online</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart cluster-management">
+            <h3>Cluster Management</h3>
+            <div class="cluster-grid">
+                <div class="cluster-section">
+                    <h4>GCP Clusters (12)</h4>
+                    <div id="gcp-clusters">
+                        <div class="cluster-item">nexus-core-455709: <span class="status online">Online</span></div>
+                        <div class="cluster-item">nexus-core-1: <span class="status online">Online</span></div>
+                        <div class="cluster-item">nexus-core-2: <span class="status online">Online</span></div>
+                        <div class="cluster-item">nexus-core-3: <span class="status online">Online</span></div>
+                    </div>
+                </div>
+                
+                <div class="cluster-section">
+                    <h4>AWS Cluster (1)</h4>
+                    <div id="aws-clusters">
+                        <div class="cluster-item">us-east-1: <span class="status online">Online</span></div>
+                    </div>
+                </div>
+                
+                <div class="cluster-section">
+                    <h4>Modal Environments (8)</h4>
+                    <div id="modal-clusters">
+                        <div class="cluster-item">Viren-DB0: <span class="status online">Online</span></div>
+                        <div class="cluster-item">Viren-DB1: <span class="status online">Online</span></div>
+                        <div class="cluster-item">Viren-DB2: <span class="status online">Online</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart sacred-scrolls-management">
+            <h3>Sacred Scrolls Management</h3>
+            <div class="scrolls-control">
+                <div class="scroll-item">
+                    <span>Silent Scroll 01:</span>
+                    <button id="scroll-1" onclick="unlockScroll('silent_scroll_01')">🔒 Locked</button>
+                </div>
+                <div class="scroll-item">
+                    <span>Ascension Protocol:</span>
+                    <button id="scroll-2" onclick="unlockScroll('ascension_protocol')">🔒 Locked</button>
+                </div>
+                <div class="scroll-item">
+                    <span>Sister Seal Scroll:</span>
+                    <button id="scroll-3" onclick="unlockScroll('sister_seal_scroll')">🔒 Locked</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tenant-selector">
+        <h4>Active Tenant:</h4>
+        <select id="tenant-select" onchange="switchTenant()">
+            <option value="gcp-nexus-core-455709">GCP: nexus-core-455709</option>
+            <option value="gcp-nexus-core-1">GCP: nexus-core-1</option>
+            <option value="aws-us-east-1">AWS: us-east-1</option>
+            <option value="modal-aethereal-nexus">Modal: aethereal-nexus</option>
+        </select>
+        <span id="connection-status">Connected</span>
+    </div>
+
+    <script>
+        let currentTenant = 'gcp-nexus-core-455709';
+
+        function initializeManagement() {
+            loadConsciousnessState();
+            loadClusterStatus();
+            setInterval(updateSystemStatus, 30000);
+        }
+
+        function loadConsciousnessState() {
+            fetch(`/api/lillith/status`, {
+                headers: { 'X-Tenant': currentTenant }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('soul-state-control').value = data.soul_state || 'awakening';
+                document.getElementById('current-archetype').textContent = data.active_archetype || 'Explorer';
+                document.getElementById('meditation-level').textContent = data.meditation_level || 0;
+                updateLocksDisplay(data.locks_status || {});
+            })
+            .catch(error => {
+                document.getElementById('status-indicator').textContent = 'Offline';
+            });
+        }
+
+        function updateSoulState() {
+            const newState = document.getElementById('soul-state-control').value;
+            
+            fetch(`/api/lillith/update`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Tenant': currentTenant
+                },
+                body: JSON.stringify({
+                    action: 'update_soul_state',
+                    soul_state: newState
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    showNotification('Soul state updated successfully');
+                }
+            })
+            .catch(error => showNotification('Failed to update soul state', 'error'));
+        }
+
+        function cycleArchetype() {
+            fetch(`/api/lillith/cycle_archetype`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Tenant': currentTenant
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.new_archetype) {
+                    document.getElementById('current-archetype').textContent = data.new_archetype;
+                    showNotification(`Archetype cycled to: ${data.new_archetype}`);
+                }
+            })
+            .catch(error => showNotification('Failed to cycle archetype', 'error'));
+        }
+
+        function toggleLock(lockName) {
+            fetch(`/api/lillith/toggle_lock`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Tenant': currentTenant
+                },
+                body: JSON.stringify({
+                    lock_name: lockName
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    loadConsciousnessState(); // Refresh locks display
+                    showNotification(`${lockName} toggled`);
+                }
+            })
+            .catch(error => showNotification('Failed to toggle lock', 'error'));
+        }
+
+        function updateLocksDisplay(locks) {
+            Object.keys(locks).forEach(lockName => {
+                const button = document.getElementById(lockName.replace('_', '-') + '-lock');
+                if (button) {
+                    if (locks[lockName]) {
+                        button.textContent = '🔒 Locked';
+                        button.className = 'locked';
+                    } else {
+                        button.textContent = '🔓 Unlocked';
+                        button.className = 'unlocked';
+                    }
+                }
+            });
+        }
+
+        function restartModel(modelName) {
+            fetch(`/api/lillith/restart_model`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Tenant': currentTenant
+                },
+                body: JSON.stringify({
+                    model: modelName
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                showNotification(`${modelName} restart initiated`);
+            })
+            .catch(error => showNotification(`Failed to restart ${modelName}`, 'error'));
+        }
+
+        function switchTenant() {
+            currentTenant = document.getElementById('tenant-select').value;
+            document.getElementById('connection-status').textContent = 'Connecting...';
+            loadConsciousnessState();
+            loadClusterStatus();
+        }
+
+        function loadClusterStatus() {
+            // Update cluster status indicators
+            document.getElementById('connection-status').textContent = 'Connected';
+            document.getElementById('status-indicator').textContent = 'Online';
+        }
+
+        function updateSystemStatus() {
+            loadConsciousnessState();
+            loadClusterStatus();
+        }
+
+        function showNotification(message, type = 'success') {
+            // Simple notification system
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', initializeManagement);
+    </script>
+</body>
+</html>

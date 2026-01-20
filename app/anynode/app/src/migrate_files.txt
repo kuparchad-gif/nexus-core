@@ -1,0 +1,57 @@
+import os
+import shutil
+from pathlib import Path
+from difflib import SequenceMatcher
+import time
+
+SOURCE_DIR = Path(r"C:\Projects\Archive\LillithArchiveRestore\LillithNew")
+DEST_ROOT = Path(r"C:\Projects\meta-nexus")
+
+def get_best_match_subfolder(file_name):
+    best_score = 0
+    best_match = DEST_ROOT
+    for root, dirs, _ in os.walk(DEST_ROOT):
+        for d in dirs:
+            full_path = Path(root) / d
+            score = SequenceMatcher(None, file_name.lower(), d.lower()).ratio()
+            if score > best_score:
+                best_score = score
+                best_match = full_path
+    return best_match
+
+def find_duplicate_in_dest(file_name, target_dir):
+    candidates = list(target_dir.rglob(file_name))
+    if not candidates:
+        return None
+    # Sort by size and modified time
+    candidates.sort(key=lambda f: (f.stat().st_size, f.stat().st_mtime), reverse=True)
+    return candidates[0]
+
+def smart_restore():
+    count = 0
+    for file_path in SOURCE_DIR.rglob("*.*"):
+        if file_path.is_file():
+            rel_name = file_path.name
+            best_dest = get_best_match_subfolder(rel_name)
+            target_file = best_dest / rel_name
+
+            # Only copy if newer/larger or not present
+            existing = find_duplicate_in_dest(rel_name, best_dest)
+            if not existing or (
+                file_path.stat().st_mtime > existing.stat().st_mtime
+                or file_path.stat().st_size > existing.stat().st_size
+            ):
+                best_dest.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(file_path, target_file)
+                print(f"✔ Restored: {file_path} → {target_file}")
+                count += 1
+            else:
+                print(f"✘ Skipped (existing better): {file_path}")
+    print(f"\n✅ Done. {count} files restored to {DEST_ROOT}.")
+
+if __name__ == "__main__":
+    start = time.time()
+    smart_restore()
+    print(f"\n⏱ Completed in {round(time.time() - start, 2)}s.")
+
+

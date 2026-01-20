@@ -1,0 +1,1095 @@
+
+New Filestructure
++---archive
++---blueprints
++---clients
+¦   +---EdgeExtension
+¦   +---LilithPhone
+¦       +---src
++---docs
+¦   +---CONFIG
++---drop
+¦   +---incoming
+¦       +---discord
+¦       +---discourse
+¦       +---github
+¦       +---irc
+¦       +---lillith
+¦       +---loki
+¦       +---reddit
+¦       +---slack
+¦       +---stackoverflow
+¦       +---viren
++---edge
+¦   +---bin
+¦   ¦   +---caddy
+¦   ¦   +---nats
+¦   ¦       +---nats-server-v2.11.9-windows-amd64
+¦   +---conf
++---logs
++---metatron core systems
+¦   +---CogniKubes
+¦       +---AnyKubes
+¦       ¦   +---all networking protocols
+¦       ¦       +---LLMs
+¦       ¦           +---Qdrant databases
+¦       +---Bert Layer
+¦       ¦   +---LLM Distribution
+¦       ¦   ¦   +---Qdrant database build
+¦       ¦   ¦       +---LLMs in charge of database and service function
+¦       ¦   +---stem-adapters
+¦       +---Consciousness Services
+¦       ¦   +---LLM Distribution
+¦       ¦   ¦   +---Qdrant database build
+¦       ¦   ¦       +---LLMs in charge of database and service function
+¦       ¦   ¦           +---lillith advanced thinking modules
+¦       ¦   +---stem-adapters
+¦       +---Edge-Anykubes
+¦       ¦   +---AnyKube with Smart Firewall and so on
+¦       +---Firmware Orchestration Layer
+¦       ¦   +---LLM Distribution
+¦       ¦   ¦   +---Qdrant database build
+¦       ¦   ¦       +---LLMs in charge of database and service function
+¦       ¦   ¦           +---anynodes
+¦       ¦   +---stem-adapters
+¦       +---Language-Processing
+¦       ¦   +---LLM Distribution
+¦       ¦   ¦   +---Qdrant database build
+¦       ¦   ¦       +---LLMs in charge of database and service function
+¦       ¦   ¦           +---etc
+¦       ¦   ¦           +---text
+¦       ¦   ¦           +---tone
+¦       ¦   +---stem-adapters
+¦       +---Master Orchestration Layer
+¦       ¦   +---LLM Distribution
+¦       ¦   ¦   +---Qdrant database build
+¦       ¦   ¦       +---LLMs in charge of database and service function
+¦       ¦   ¦           +---anynodes
+¦       ¦   +---stem-adapters
+¦       +---Memory
+¦       ¦   +---LLM Distribution
+¦       ¦   ¦   +---Qdrant database build
+¦       ¦   ¦       +---LLMs in charge of database and service function
+¦       ¦   ¦           +---archivist
+¦       ¦   ¦           +---memory
+¦       ¦   ¦           +---planner
+¦       ¦   +---stem-adapters
+¦       +---Service Orchestration Layer
+¦       ¦   +---anynodes
+¦       +---stem-adapters
+¦       ¦   +---common
+¦       +---Subconscious Services
+¦           +---LLM Distribution
+¦           ¦   +---Qdrant database build
+¦           ¦       +---LLMs in charge of database and service function
+¦           ¦           +---dream
+¦           ¦           +---ego
+¦           ¦           +---mythrunner
+¦           +---stem-adapters
++---nexus-core
+¦   +---pineal
+¦   ¦   +---__pycache__
+¦   +---stem
+¦       +---__pycache__
++---NexusClusters
+¦   +---clusters
+¦   ¦   +---dist
+¦   ¦   ¦   +---alpha-pack
+¦   ¦   ¦   +---bravo-pack
+¦   ¦   ¦   +---charlie-pack
+¦   ¦   +---gateway
+¦   ¦   ¦   +---gateway-api
+¦   ¦   +---infra
+¦   ¦   ¦   +---loki
+¦   ¦   +---logs
+¦   ¦   +---loki
+¦   ¦   ¦   +---viren-agent
+¦   ¦   +---metanet
+¦   ¦   ¦   +---logs
+¦   ¦   ¦   +---promtail
+¦   ¦   ¦       +---positions
+¦   ¦   +---nexus-cognikubes
+¦   ¦   ¦   +---backend
+¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   ¦   +---cubes
+¦   ¦   ¦   ¦   ¦   +---inference
+¦   ¦   ¦   ¦   ¦   +---modal
+¦   ¦   ¦   ¦   ¦   +---scripts
+¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦   +---frontend
+¦   ¦   ¦       +---src
+¦   ¦   ¦           +---assets
+¦   ¦   ¦           +---components
+¦   ¦   ¦           +---data
+¦   ¦   ¦           +---lib
+¦   ¦   ¦           +---views
+¦   ¦   +---nexus_avatar_forge
+¦   ¦   ¦   +---.github
+¦   ¦   ¦   ¦   +---workflows
+¦   ¦   ¦   +---backend
+¦   ¦   ¦   ¦   +---src
+¦   ¦   ¦   ¦       +---controllers
+¦   ¦   ¦   ¦       +---routes
+¦   ¦   ¦   ¦       +---services
+¦   ¦   ¦   ¦           +---providers
+¦   ¦   ¦   +---components
+¦   ¦   ¦   +---frontend
+¦   ¦   ¦   ¦   +---src
+¦   ¦   ¦   ¦       +---components
+¦   ¦   ¦   ¦       +---contexts
+¦   ¦   ¦   ¦       +---services
+¦   ¦   ¦   ¦       +---state
+¦   ¦   ¦   ¦       +---utils
+¦   ¦   ¦   +---k8s
+¦   ¦   ¦   +---services
+¦   ¦   ¦   +---src
+¦   ¦   ¦   ¦   +---components
+¦   ¦   ¦   ¦   +---services
+¦   ¦   ¦   ¦   +---utils
+¦   ¦   ¦   +---utils
+¦   ¦   +---nexus_cognition
+¦   ¦   ¦   +---apps
+¦   ¦   ¦   ¦   +---agents
+¦   ¦   ¦   ¦   ¦   +---lilith
+¦   ¦   ¦   ¦   +---lillith
+¦   ¦   ¦   ¦   ¦   +---common
+¦   ¦   ¦   ¦   ¦   ¦   +---dreams
+¦   ¦   ¦   ¦   ¦   ¦   +---soul_injector_core_lilith
+¦   ¦   ¦   ¦   ¦   ¦       +---app
+¦   ¦   ¦   ¦   ¦   +---routers
+¦   ¦   ¦   ¦   +---modules
+¦   ¦   ¦   ¦   ¦   +---bridge
+¦   ¦   ¦   ¦   ¦   +---common
+¦   ¦   ¦   ¦   ¦   ¦   +---api
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---endpoints
+¦   ¦   ¦   ¦   ¦   ¦   +---config
+¦   ¦   ¦   ¦   ¦   ¦   +---macro-orchestration
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---handlers
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---llm-router
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---gateway
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---llm-proxy
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---modules
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---router
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---script
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---tools
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---utils
+¦   ¦   ¦   ¦   ¦   ¦   +---micro-orchestration
+¦   ¦   ¦   ¦   ¦   ¦       +---handlers
+¦   ¦   ¦   ¦   ¦   ¦       +---llm-router
+¦   ¦   ¦   ¦   ¦   ¦       ¦   +---gateway
+¦   ¦   ¦   ¦   ¦   ¦       ¦   ¦   +---app
+¦   ¦   ¦   ¦   ¦   ¦       ¦   +---llm-proxy
+¦   ¦   ¦   ¦   ¦   ¦       ¦   +---modules
+¦   ¦   ¦   ¦   ¦   ¦       ¦   +---router
+¦   ¦   ¦   ¦   ¦   ¦       ¦   +---script
+¦   ¦   ¦   ¦   ¦   ¦       ¦   +---tools
+¦   ¦   ¦   ¦   ¦   ¦       +---utils
+¦   ¦   ¦   ¦   ¦   +---core
+¦   ¦   ¦   ¦   ¦   +---logs
+¦   ¦   ¦   ¦   ¦   +---memory
+¦   ¦   ¦   ¦   ¦   ¦   +---sessions
+¦   ¦   ¦   ¦   ¦   +---services
+¦   ¦   ¦   ¦   ¦   ¦   +---advanced_reasoning
+¦   ¦   ¦   ¦   ¦   +---src
+¦   ¦   ¦   ¦   ¦   +---utils
+¦   ¦   ¦   ¦   ¦   ¦   +---vir_sys
+¦   ¦   ¦   ¦   ¦   ¦       +---services
+¦   ¦   ¦   ¦   ¦   +---webpack
+¦   ¦   ¦   ¦   ¦       +---lib
+¦   ¦   ¦   ¦   ¦       ¦   +---native-modules
+¦   ¦   ¦   ¦   ¦       ¦       +---prebuilds
+¦   ¦   ¦   ¦   ¦       ¦           +---win32-x64
+¦   ¦   ¦   ¦   ¦       +---main
+¦   ¦   ¦   ¦   ¦       ¦   +---native-modules
+¦   ¦   ¦   ¦   ¦       ¦       +---node-gyp-bin
+¦   ¦   ¦   ¦   ¦       ¦       +---node-gyp-bin1
+¦   ¦   ¦   ¦   ¦       ¦       +---prebuilds
+¦   ¦   ¦   ¦   ¦       ¦           +---win32-x64
+¦   ¦   ¦   ¦   ¦       +---renderer
+¦   ¦   ¦   ¦   +---scripts
+¦   ¦   ¦   ¦   +---services
+¦   ¦   ¦   ¦   ¦   +---emotional_codec
+¦   ¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   ¦   +---filters
+¦   ¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   ¦   +---hermes_os_full
+¦   ¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   ¦   +---lillith
+¦   ¦   ¦   ¦   ¦   ¦   +---ascension
+¦   ¦   ¦   ¦   ¦   ¦   +---core
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---hooks
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦   ¦   ¦   ¦   +---psych
+¦   ¦   ¦   ¦   ¦   ¦   +---specialized
+¦   ¦   ¦   ¦   ¦   +---llm_client
+¦   ¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   ¦   +---nexus_psyche
+¦   ¦   ¦   ¦   ¦   ¦   +---consciousness
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---adapters
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---core
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---hooks
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---modules
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---narrative
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---registry
+¦   ¦   ¦   ¦   ¦   ¦   +---CorpusCallosum
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---apps
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---acidemikube
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---modules
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---acidemikube-bridge
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---cmd
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---bridge
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---acidemikube_client
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---manager
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---script
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---train
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---berts
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---firmware-foundry
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---firmware-foundry
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---cli
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---libs
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦   +---gate_client
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦       +---micropython
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---templates
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---esp-idf
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           ¦   +---main
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---micropython
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---clone-pool
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---deepseek_r1_qwen_1_5b
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---gemma
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---Mungert
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---DeepSeek-R1-Distill-Qwen-1.5B-GGUF
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---tinyllama
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---deepseek_r1_qwen_1_5b
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---business-dev
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---deepseek-r1-distill-qwen-1-5b-gguf
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---Finance
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---marketing
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---Psychology
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---Spirituality
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---gemma
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---gpt-oss-20b-GGUF
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---internlm
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---internlm2-5-20b-chat-gguf
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---Mungert
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---DeepSeek-R1-Distill-Qwen-1.5B-GGUF
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---tinyllama
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---modules
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---tools
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---cognition_bridge
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---consciousness
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦   +---backend
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦       +---contracts
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦       +---infra
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦       ¦   +---logging
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦       ¦   +---nats
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦       +---protocols
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦       +---services
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦           +---agent_shell
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦           +---bridge_gabriel_ws
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦           +---common
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦           +---corpus_callosum
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦           +---curiosity_engine
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦           +---dream_engine
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦           +---ego_guard
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦           +---firmware_loader
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦           +---horn
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦           +---lattice_router
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦           +---metafilter
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦           +---muse_engine
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦           +---perception_engine
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦           +---planner
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦           +---reasoner
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦           +---reflex_arc
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---subconsciousness
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---advanced reasoning Services
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---backend
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦               +---contracts
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦               +---infra
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦               ¦   +---logging
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦               ¦   +---nats
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦               +---protocols
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦               +---services
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦                   +---agent_shell
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦                   +---bridge_gabriel_ws
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦                   +---common
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦                   +---corpus_callosum
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦                   +---curiosity_engine
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦                   +---dream_engine
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦                   +---ego_guard
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦                   +---firmware_loader
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦                   +---horn
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦                   +---lattice_router
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦                   +---metafilter
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦                   +---muse_engine
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦                   +---perception_engine
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦                   +---planner
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦                   +---reasoner
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦                   +---reflex_arc
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---etc
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---llm-router
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---gateway
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---llm-proxy
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---modules
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---router
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---script
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---tools
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---var
+¦   ¦   ¦   ¦   ¦   ¦   ¦       +---log
+¦   ¦   ¦   ¦   ¦   ¦   +---subconsciousness
+¦   ¦   ¦   ¦   ¦   ¦       +---adapters
+¦   ¦   ¦   ¦   ¦   ¦       +---core
+¦   ¦   ¦   ¦   ¦   ¦       ¦   +---hooks
+¦   ¦   ¦   ¦   ¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦   ¦   ¦   ¦   ¦       ¦   +---__pycache__
+¦   ¦   ¦   ¦   ¦   ¦       +---modules
+¦   ¦   ¦   ¦   ¦   ¦       +---narrative
+¦   ¦   ¦   ¦   ¦   ¦       +---registry
+¦   ¦   ¦   ¦   ¦   +---niv_engine
+¦   ¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   ¦   +---qdrant_bootstrap
+¦   ¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   ¦   +---retriever
+¦   ¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   ¦   +---viraa
+¦   ¦   ¦   ¦   ¦   +---viren
+¦   ¦   ¦   ¦   ¦   +---ws_gateway
+¦   ¦   ¦   ¦   ¦       +---app
+¦   ¦   ¦   ¦   +---viraa
+¦   ¦   ¦   ¦   ¦   +---archiver
+¦   ¦   ¦   ¦   ¦   +---archivist
+¦   ¦   ¦   ¦   ¦   ¦   +---files
+¦   ¦   ¦   ¦   ¦   +---soul_injector_core_viren
+¦   ¦   ¦   ¦   ¦       +---app
+¦   ¦   ¦   ¦   +---viren
+¦   ¦   ¦   ¦       +---soul_injector_core_viren
+¦   ¦   ¦   ¦           +---app
+¦   ¦   ¦   +---bin
+¦   ¦   ¦   +---db
+¦   ¦   ¦   ¦   +---qdrant-mml
+¦   ¦   ¦   +---etc
+¦   ¦   ¦   +---infra
+¦   ¦   ¦   ¦   +---docker
+¦   ¦   ¦   +---var
+¦   ¦   ¦       +---data
+¦   ¦   ¦       ¦   +---common
+¦   ¦   ¦       ¦   +---integrity_aegis
+¦   ¦   ¦       ¦   ¦   +---app
+¦   ¦   ¦       ¦   ¦   +---etc
+¦   ¦   ¦       ¦   +---memory_sentinel
+¦   ¦   ¦       ¦   ¦   +---app
+¦   ¦   ¦       ¦   ¦   +---etc
+¦   ¦   ¦       ¦   +---prompt_firewall
+¦   ¦   ¦       ¦   +---psych_shield
+¦   ¦   ¦       ¦   ¦   +---app
+¦   ¦   ¦       ¦   ¦   +---etc
+¦   ¦   ¦       ¦   ¦   +---rules
+¦   ¦   ¦       ¦   +---scripts
+¦   ¦   ¦       +---log
+¦   ¦   ¦       +---logs
+¦   ¦   ¦       +---run
+¦   ¦   ¦       ¦   +---nim_svc
+¦   ¦   ¦       ¦       +---app
+¦   ¦   ¦       ¦           +---niv
+¦   ¦   ¦       +---tools
+¦   ¦   +---nexus_core
+¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   +---agents
+¦   ¦   ¦   ¦   ¦   +---core-agents
+¦   ¦   ¦   ¦   ¦       +---shared
+¦   ¦   ¦   ¦   ¦       +---viraa
+¦   ¦   ¦   ¦   ¦       +---viren
+¦   ¦   ¦   ¦   +---anomaly
+¦   ¦   ¦   ¦   +---autopilot
+¦   ¦   ¦   ¦   +---compactifi
+¦   ¦   ¦   ¦   ¦   +---config
+¦   ¦   ¦   ¦   +---forge_compactifi
+¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   ¦   +---config
+¦   ¦   ¦   ¦   ¦   +---db
+¦   ¦   ¦   ¦   ¦   +---deploy
+¦   ¦   ¦   ¦   ¦   +---etc
+¦   ¦   ¦   ¦   ¦   +---modules
+¦   ¦   ¦   ¦   ¦   +---tests
+¦   ¦   ¦   ¦   ¦   +---utilities
+¦   ¦   ¦   ¦   ¦   +---var
+¦   ¦   ¦   ¦   ¦       +---data
+¦   ¦   ¦   ¦   ¦       +---logs
+¦   ¦   ¦   ¦   ¦       +---run
+¦   ¦   ¦   ¦   +---lilith_core
+¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   ¦   ¦   +---agents
+¦   ¦   ¦   ¦   ¦   +---config
+¦   ¦   ¦   ¦   ¦   +---db
+¦   ¦   ¦   ¦   ¦   +---deploy
+¦   ¦   ¦   ¦   ¦   ¦   +---modal
+¦   ¦   ¦   ¦   ¦   ¦       +---openai-gateway
+¦   ¦   ¦   ¦   ¦   +---etc
+¦   ¦   ¦   ¦   ¦   +---modules
+¦   ¦   ¦   ¦   ¦   +---stem
+¦   ¦   ¦   ¦   ¦   ¦   +---agents
+¦   ¦   ¦   ¦   ¦   ¦       +---nexus_router
+¦   ¦   ¦   ¦   ¦   +---tests
+¦   ¦   ¦   ¦   ¦   +---ui
+¦   ¦   ¦   ¦   ¦   ¦   +---node_modules
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---.bin
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---.vite
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---deps
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---.vite-temp
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---@babel
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---code-frame
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---compat-data
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---data
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---core
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---config
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---files
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---helpers
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---validation
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---errors
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---gensync-utils
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---parser
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---util
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---tools
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---transformation
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---file
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---util
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---vendor
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---src
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---config
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---files
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---generator
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---generators
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---node
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---helper-compilation-targets
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---helper-globals
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---data
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---helper-module-imports
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---helper-module-transforms
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---helper-plugin-utils
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---helper-string-parser
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---helper-validator-identifier
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---helper-validator-option
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---helpers
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---helpers
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---parser
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---bin
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---typings
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---plugin-transform-react-jsx-self
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---plugin-transform-react-jsx-source
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---template
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---traverse
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---path
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦   +---inference
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---scope
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---types
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---asserts
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           ¦   +---generated
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---ast-types
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           ¦   +---generated
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---builders
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           ¦   +---flow
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           ¦   +---generated
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           ¦   +---react
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           ¦   +---typescript
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---clone
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---comments
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---constants
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           ¦   +---generated
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---converters
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---definitions
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---modifications
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           ¦   +---flow
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           ¦   +---typescript
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---retrievers
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---traverse
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---utils
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           ¦   +---react
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---validators
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦               +---generated
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦               +---react
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---@esbuild
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---win32-x64
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---@google
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---genai
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦   +---node
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦   +---web
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---node
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---web
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---@jridgewell
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---gen-mapping
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---types
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---src
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---types
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---remapping
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---src
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---types
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---resolve-uri
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---types
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---sourcemap-codec
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---src
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---types
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---trace-mapping
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---src
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---types
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---@rolldown
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---pluginutils
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---@rollup
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---rollup-win32-x64-gnu
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---rollup-win32-x64-msvc
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---@types
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---babel__core
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---babel__generator
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---babel__template
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---babel__traverse
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---estree
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---node
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---assert
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---compatibility
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---dns
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---fs
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---readline
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---stream
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---timers
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---ts5.6
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---web-globals
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---@vitejs
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---plugin-react
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---agent-base
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---asynckit
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---axios
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---browser
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---esm
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---node
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---adapters
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---cancel
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---core
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---defaults
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---env
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦   +---classes
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---helpers
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---platform
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---browser
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           ¦   +---classes
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---common
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---node
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦               +---classes
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---base64-js
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---baseline-browser-mapping
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---bignumber.js
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---doc
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---browserslist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---buffer-equal-constant-time
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---call-bind-apply-helpers
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---.github
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---test
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---caniuse-lite
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---data
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---features
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---regions
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---unpacker
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---combined-stream
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---convert-source-map
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---debug
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---src
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---delayed-stream
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dunder-proto
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---.github
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---test
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---ecdsa-sig-formatter
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---src
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---electron-to-chromium
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---es-define-property
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---.github
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---test
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---es-errors
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---.github
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---test
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---es-object-atoms
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---.github
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---test
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---es-set-tostringtag
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---test
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---esbuild
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---bin
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---escalade
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---sync
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---extend
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---fdir
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---follow-redirects
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---form-data
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---function-bind
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---.github
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---test
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---gaxios
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---build
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---src
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---node_modules
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---.bin
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---uuid
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦               +---bin
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦               +---commonjs-browser
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦               +---esm-browser
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦               +---esm-node
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---gcp-metadata
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---build
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---src
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---gensync
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---test
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---get-intrinsic
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---.github
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---test
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---get-proto
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---.github
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---test
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---google-auth-library
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---build
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---src
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---auth
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦           +---crypto
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦               +---browser
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦               +---node
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---google-logging-utils
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---build
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---src
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---gopd
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---.github
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---test
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---gtoken
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---build
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---src
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---has-symbols
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---.github
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---test
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---shams
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---has-tostringtag
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---.github
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---test
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---shams
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---hasown
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---.github
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---https-proxy-agent
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---is-stream
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---js-tokens
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---jsesc
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---bin
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---man
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---json-bigint
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---json5
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---jwa
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---jws
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lru-cache
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---math-intrinsics
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---.github
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---constants
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---test
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---mime-db
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---mime-types
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---ms
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---nanoid
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---async
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---bin
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---non-secure
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---url-alphabet
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---node-fetch
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---node-releases
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---data
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---processed
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---release-schedule
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---picocolors
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---picomatch
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---postcss
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---proxy-from-env
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---react
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---cjs
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---react-dom
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---cjs
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---react-refresh
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---cjs
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---rollup
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---bin
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---es
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       ¦   +---shared
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---shared
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---safe-buffer
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---scheduler
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---cjs
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---semver
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---bin
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---source-map-js
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---tinyglobby
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---tr46
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---typescript
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---bin
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---cs
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---de
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---es
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---fr
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---it
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---ja
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---ko
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---pl
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---pt-br
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---ru
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---tr
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---zh-cn
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---zh-tw
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---undici-types
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---update-browserslist-db
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---uuid
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dist-node
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---bin
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---vite
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---bin
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---dist
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---client
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---node
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---chunks
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---node-cjs
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---misc
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---types
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦       +---internal
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---webidl-conversions
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---whatwg-url
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---ws
+¦   ¦   ¦   ¦   ¦   ¦   ¦   ¦   +---lib
+¦   ¦   ¦   ¦   ¦   ¦   ¦   +---yallist
+¦   ¦   ¦   ¦   ¦   ¦   +---src
+¦   ¦   ¦   ¦   ¦   ¦       +---components
+¦   ¦   ¦   ¦   ¦   ¦       ¦   +---layout
+¦   ¦   ¦   ¦   ¦   ¦       ¦   +---pages
+¦   ¦   ¦   ¦   ¦   ¦       +---services
+¦   ¦   ¦   ¦   ¦   ¦           +---__pycache__
+¦   ¦   ¦   ¦   ¦   +---utilities
+¦   ¦   ¦   ¦   ¦   +---var
+¦   ¦   ¦   ¦   ¦       +---data
+¦   ¦   ¦   ¦   ¦       +---logs
+¦   ¦   ¦   ¦   ¦       +---run
+¦   ¦   ¦   ¦   +---lillith
+¦   ¦   ¦   ¦   ¦   +---connect point
+¦   ¦   ¦   ¦   +---loki
+¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   ¦   +---config
+¦   ¦   ¦   ¦   ¦   +---db
+¦   ¦   ¦   ¦   ¦   +---deploy
+¦   ¦   ¦   ¦   ¦   +---etc
+¦   ¦   ¦   ¦   ¦   +---modules
+¦   ¦   ¦   ¦   ¦   +---tests
+¦   ¦   ¦   ¦   ¦   +---utilities
+¦   ¦   ¦   ¦   ¦   +---var
+¦   ¦   ¦   ¦   ¦       +---data
+¦   ¦   ¦   ¦   ¦       +---logs
+¦   ¦   ¦   ¦   ¦       +---run
+¦   ¦   ¦   ¦   +---nats
+¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   ¦   +---config
+¦   ¦   ¦   ¦   ¦   +---db
+¦   ¦   ¦   ¦   ¦   +---deploy
+¦   ¦   ¦   ¦   ¦   +---etc
+¦   ¦   ¦   ¦   ¦   +---modules
+¦   ¦   ¦   ¦   ¦   +---tests
+¦   ¦   ¦   ¦   ¦   +---utilities
+¦   ¦   ¦   ¦   ¦   +---var
+¦   ¦   ¦   ¦   ¦       +---data
+¦   ¦   ¦   ¦   ¦       +---logs
+¦   ¦   ¦   ¦   ¦       +---run
+¦   ¦   ¦   ¦   +---souls
+¦   ¦   ¦   ¦   ¦   +---lilith
+¦   ¦   ¦   ¦   ¦   +---viraa
+¦   ¦   ¦   ¦   ¦   +---viren
+¦   ¦   ¦   ¦   +---stem
+¦   ¦   ¦   ¦   ¦   +---config
+¦   ¦   ¦   ¦   +---viraa_archiver
+¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   ¦   ¦   +---modules
+¦   ¦   ¦   ¦   ¦   ¦       +---tests
+¦   ¦   ¦   ¦   ¦   ¦       +---utilities
+¦   ¦   ¦   ¦   ¦   +---config
+¦   ¦   ¦   ¦   ¦   +---db
+¦   ¦   ¦   ¦   ¦   +---deploy
+¦   ¦   ¦   ¦   ¦   +---etc
+¦   ¦   ¦   ¦   ¦   +---var
+¦   ¦   ¦   ¦   ¦       +---data
+¦   ¦   ¦   ¦   ¦       +---logs
+¦   ¦   ¦   ¦   ¦       +---run
+¦   ¦   ¦   ¦   +---viren_ms
+¦   ¦   ¦   ¦       +---app
+¦   ¦   ¦   ¦       ¦   +---modules
+¦   ¦   ¦   ¦       ¦       +---archiver
+¦   ¦   ¦   ¦       ¦       +---loki-ai
+¦   ¦   ¦   ¦       ¦       +---viren-ai
+¦   ¦   ¦   ¦       +---config
+¦   ¦   ¦   ¦       +---db
+¦   ¦   ¦   ¦       +---deploy
+¦   ¦   ¦   ¦       +---etc
+¦   ¦   ¦   ¦       +---var
+¦   ¦   ¦   ¦           +---data
+¦   ¦   ¦   ¦           +---logs
+¦   ¦   ¦   ¦           +---run
+¦   ¦   ¦   +---config
+¦   ¦   ¦   +---containers
+¦   ¦   ¦   ¦   +---core-agents
+¦   ¦   ¦   ¦   +---core-trio
+¦   ¦   ¦   +---db
+¦   ¦   ¦   +---etc
+¦   ¦   ¦   +---gateway
+¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   +---config
+¦   ¦   ¦   ¦   +---db
+¦   ¦   ¦   ¦   +---deploy
+¦   ¦   ¦   ¦   +---etc
+¦   ¦   ¦   ¦   +---modules
+¦   ¦   ¦   ¦   +---tests
+¦   ¦   ¦   ¦   +---utilities
+¦   ¦   ¦   ¦   +---var
+¦   ¦   ¦   ¦       +---data
+¦   ¦   ¦   ¦       +---logs
+¦   ¦   ¦   ¦       +---run
+¦   ¦   ¦   +---pineal
+¦   ¦   ¦   +---policies
+¦   ¦   ¦   ¦   +---docs
+¦   ¦   ¦   ¦   +---guardrails
+¦   ¦   ¦   ¦   +---locks
+¦   ¦   ¦   ¦   +---state
+¦   ¦   ¦   +---qdrant
+¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   +---config
+¦   ¦   ¦   ¦   +---db
+¦   ¦   ¦   ¦   +---deploy
+¦   ¦   ¦   ¦   +---etc
+¦   ¦   ¦   ¦   +---modules
+¦   ¦   ¦   ¦   +---tests
+¦   ¦   ¦   ¦   +---utilities
+¦   ¦   ¦   ¦   +---var
+¦   ¦   ¦   ¦       +---aliases
+¦   ¦   ¦   ¦       +---collections
+¦   ¦   ¦   ¦       +---data
+¦   ¦   ¦   ¦       +---logs
+¦   ¦   ¦   ¦       +---run
+¦   ¦   ¦   +---services
+¦   ¦   ¦   ¦   +---browser_receiver
+¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   ¦       +---static
+¦   ¦   ¦   ¦   +---emotional_codec
+¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   +---filters
+¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   +---llm_client
+¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   +---niv_engine
+¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   +---os_lite
+¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   +---qdrant_bootstrap
+¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   +---retriever
+¦   ¦   ¦   ¦   ¦   +---app
+¦   ¦   ¦   ¦   +---ws_gateway
+¦   ¦   ¦   ¦       +---app
+¦   ¦   ¦   +---var
+¦   ¦   ¦       +---data
+¦   ¦   ¦       +---logs
+¦   ¦   ¦       +---run
+¦   ¦   +---nexus_edge
+¦   ¦   ¦   +---services
+¦   ¦   ¦       +---emotional_codec
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---filters
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---llm_client
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---niv_engine
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---os_lite
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---qdrant_bootstrap
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---retriever
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---ws_gateway
+¦   ¦   ¦           +---app
+¦   ¦   +---nexus_memory
+¦   ¦   ¦   +---packs
+¦   ¦   ¦   +---services
+¦   ¦   ¦       +---emotional_codec
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---filters
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---llm_client
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---memory_runtime
+¦   ¦   ¦       ¦   +---integrations
+¦   ¦   ¦       ¦   ¦   +---langchain
+¦   ¦   ¦       ¦   +---js
+¦   ¦   ¦       ¦   +---pods
+¦   ¦   ¦       ¦   +---proto
+¦   ¦   ¦       ¦   +---sdk
+¦   ¦   ¦       ¦   ¦   +---python
+¦   ¦   ¦       ¦   ¦   +---ts
+¦   ¦   ¦       ¦   +---services
+¦   ¦   ¦       ¦       +---common
+¦   ¦   ¦       ¦       +---stream_runtime
+¦   ¦   ¦       ¦       +---truncated_mem_api
+¦   ¦   ¦       +---memory_store
+¦   ¦   ¦       ¦   +---_store
+¦   ¦   ¦       +---niv_engine
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---os_lite
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---planner
+¦   ¦   ¦       ¦   +---planner
+¦   ¦   ¦       +---qdrant_bootstrap
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---retriever
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---ws_gateway
+¦   ¦   ¦           +---app
+¦   ¦   +---nexus_visual
+¦   ¦   ¦   +---services
+¦   ¦   ¦       +---emotional_codec
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---filters
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---llm_client
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---niv_engine
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---os_lite
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---qdrant_bootstrap
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---retriever
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---ws_gateway
+¦   ¦   ¦           +---app
+¦   ¦   +---nexus_voice
+¦   ¦   ¦   +---services
+¦   ¦   ¦       +---emotional_codec
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---filters
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---llm_client
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---niv_engine
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---os_lite
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---qdrant_bootstrap
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---retriever
+¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦       +---ws_gateway
+¦   ¦   ¦           +---app
+¦   ¦   +---pods
+¦   ¦   ¦   +---nexus_cognition
+¦   ¦   ¦   ¦   +---services
+¦   ¦   ¦   ¦       +---acidemi_kubes
+¦   ¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦   ¦       +---cognition-bridge
+¦   ¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦   ¦       +---dream-orchestrator
+¦   ¦   ¦   ¦       +---lilith
+¦   ¦   ¦   +---nexus_core
+¦   ¦   ¦   ¦   +---services
+¦   ¦   ¦   ¦       +---anomaly-autostart
+¦   ¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦   ¦       +---hermese-firmware
+¦   ¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦   ¦       +---viraa
+¦   ¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦   ¦       +---viren-ms
+¦   ¦   ¦   ¦           +---app
+¦   ¦   ¦   +---nexus_edge
+¦   ¦   ¦   ¦   +---services
+¦   ¦   ¦   ¦       +---Neus_forge
+¦   ¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦   ¦       +---nexus_anynodes
+¦   ¦   ¦   ¦       ¦   +---app
+¦   ¦   ¦   ¦       +---web-llm-ui
+¦   ¦   ¦   ¦           +---web-llm-ui
+¦   ¦   ¦   ¦               +---app
+¦   ¦   ¦   ¦               +---extension
+¦   ¦   ¦   +---web-llm-ui
+¦   ¦   ¦       +---app
+¦   ¦   ¦       +---extension
+¦   ¦   +---state
+¦   ¦   +---tools
+¦   ¦   ¦   +---run
+¦   ¦   +---viraa
+¦   ¦   ¦   +---viren-agent
+¦   ¦   +---viren
+¦   ¦       +---app
+¦   +---wired
+¦       +---services
++---NexusStacks
+¦   +---infra
+¦       +---data
+¦           +---grafana
+¦           +---loki
++---packs
++---Policies
+¦   +---30 year degrade
+¦   +---what we agreed on
++---reports
++---scripts

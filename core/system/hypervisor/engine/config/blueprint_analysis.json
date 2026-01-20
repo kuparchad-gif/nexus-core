@@ -1,0 +1,30 @@
+{
+  "deployment_patterns": [
+    "_deploy_service",
+    "deploy_complete_stack",
+    "_simulate_modal_deploy"
+  ],
+  "cluster_architecture": [],
+  "consciousness_layers": [
+    "MockStorage",
+    "ConsciousnessMemory",
+    "ConsciousnessService",
+    "ConsciousnessOrchestrationService"
+  ],
+  "quantum_components": [
+    "QuantumWalkGenerator"
+  ],
+  "orchestration_systems": [
+    "ServiceHealthChecker",
+    "LilithStackOrchestrator"
+  ],
+  "core_services": [
+    "NexusBridge",
+    "NexusAPI",
+    "BiomechanicalInterface",
+    "NexusSpinal",
+    "QuantumMemeInjector",
+    "BillingGuardian",
+    "NeuroplasticEngine"
+  ]
+}

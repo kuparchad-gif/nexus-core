@@ -1,0 +1,30 @@
+name: Deploy OzOS
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Deploy to Railway
+      if: github.ref == 'refs/heads/main'
+      run: |
+        curl -fsSL https://cli.railway.com/install.sh | sh
+        railway up --service ozos-369
+      env:
+        RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+    
+    - name: Deploy to Render
+      if: always()
+      run: |
+        curl -o render https://render.com/download/cli/linux/render
+        chmod +x render
+        ./render deploy
+      env:
+        RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}

@@ -1,0 +1,96 @@
+# Build a "Model Fetch Kit" with:
+# - scripts/download_models.py  (HF snapshot downloader using a manifest)
+# - scripts/models_manifest.json (pre-filled with your families; gated/manual entries are flagged)
+# - scripts/build_all.ps1        (end-to-end: download -> MPO convert -> optional freeze/export)
+# - README_models.md             (copy into your repo /scripts as requested)
+#
+# Output: /mnt/data/model_fetch_kit.zip
+
+import os, json, zipfile, pathlib, textwrap
+
+root = pathlib.Path("../models/data/model_fetch_kit")
+scripts = root / "scripts"
+scripts.mkdir(parents=True, exist_ok=True)
+
+# ---------------- download_models.py ----------------
+download_py = """\
+import os, sys, json, shutil, argparse, re
+from typing import List, Dict, Any, Optional
+
+def sanitize(name: str) -> str:
+    return re.sub(r'[^A-Za-z0-9._-]+', '_', name).strip('_')
+
+def ensure_dir(p: str):
+    os.makedirs(p, exist_ok=True)
+
+def snapshot_download(repo_id: str, local_dir: str, revision: Optional[str] = None, allow_patterns=None):
+    # We use huggingface_hub only when available, otherwise fallback to CLI
+    try:
+        from huggingface_hub import snapshot_download as hub_snapshot
+        return hub_snapshot(repo_id=repo_id, local_dir=local_dir, revision=revision, allow_patterns=allow_patterns)
+    except Exception as e:
+        print(f"[WARN] huggingface_hub not available or failed: {e}. Trying CLI fallback.")
+        # CLI fallback: huggingface-cli download <repo_id> --local-dir <local_dir>
+        import subprocess
+        cmd = [
+            sys.executable, "-m", "huggingface_hub.hf_api",
+        ]
+        raise RuntimeError("huggingface_hub not installed; run: pip install huggingface_hub")
+
+def download_entry(entry: Dict[str, Any], models_dir: str) -> Dict[str, Any]:
+    family = entry.get("family", "unknown")
+    name = entry.get("name") or entry.get("repo_id") or family
+    repo_id = entry.get("repo_id")
+    revision = entry.get("revision")
+    manual = bool(entry.get("manual", False))
+    variant = entry.get("variant", "hf")  # hf | gguf | manual
+    subdir = sanitize(f"{family}_{name}")
+    out_dir = os.path.join(models_dir, subdir)
+    result = {"family": family, "name": name, "repo_id": repo_id, "status": "skipped", "path": out_dir}
+
+    if manual or not repo_id:
+        result["status"] = "manual"
+        print(f"[SKIP] {family}/{name}: manual or missing repo_id; populate {out_dir} yourself.")
+        return result
+
+    # Only download HF PyTorch checkpoints here; GGUF can be separate repos (TheBloke etc.)
+    allow_patterns = entry.get("allow_patterns")  # e.g., ["*.safetensors","config.json","tokenizer*"]
+    ensure_dir(out_dir)
+    try:
+        snapshot_download(repo_id=repo_id, local_dir=out_dir, revision=revision, allow_patterns=allow_patterns)
+        result["status"] = "downloaded"
+        print(f"[OK] {family}/{name} -> {out_dir}")
+    except Exception as e:
+        result["status"] = "error"
+        result["error"]  = str(e)
+        print(f"[ERR] {family}/{name}: {e}")
+    return result
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--manifest", default=os.path.join(os.path.dirname(__file__), "models_manifest.json"))
+    ap.add_argument("--models_dir", default=r"C:\\Projects\\meta-nexus\\models")
+    ap.add_argument("--only_families", nargs="*", default=None, help="Filter by family names")
+    ap.add_argument("--only_names", nargs="*", default=None, help="Filter by model names")
+    args = ap.parse_args()
+
+    with open(args.manifest, "r", encoding="utf-8") as f:
+        manifest: List[Dict[str, Any]] = json.load(f)
+
+    ensure_dir(args.models_dir)
+    results = []
+    for entry in manifest:
+        if args.only_families and entry.get("family") not in args.only_families:
+            continue
+        if args.only_names and entry.get("name") not in args.only_names:
+            continue
+        results.append(download_entry(entry, args.models_dir))
+
+    # Write a small report
+    report_path = os.path.join(args.models_dir, "_download_report.json")
+    with open(report_path, "w", encoding="utf-8") as f:
+        json.dump(results, f, indent=2)
+    print(f"[REPORT] {report_path}")
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,8 @@
+FROM python:3.11-slim
+WORKDIR /app
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY apps/viraa /app/viraa
+RUN python - <<'PY'\nimport pathlib; pathlib.Path('viraa/__init__.py').touch()\nPY
+CMD ["uvicorn","viraa.app:app","--host","0.0.0.0","--port","8000"]

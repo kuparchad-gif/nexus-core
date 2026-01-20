@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LILLITH - Financial Autonomy Interface</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#b7bfff',
+                        eclipse: '#ff6600',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(255,255,255,0.38);
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(13px);
+            border: 1px solid rgba(255,255,255,0.22);
+            transition: background 0.4s, box-shadow 0.4s, border 0.4s;
+        }
+
+        .dark .glass {
+            background: rgba(24,19,24,0.74);
+            border: 1.5px solid rgba(255,120,25,0.16);
+            box-shadow: 0 6px 60px 8px #ff660025;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-white dark:bg-black text-gray-800 dark:text-white transition-colors">
+    <!-- Dynamic Background -->
+    <div id="background" class="fixed inset-0 -z-10 w-full h-full transition-all duration-700"
+         style="background: radial-gradient(circle at 60% 35%, #d1e5ff 0%, #f3f7fd 80%, #fff 100%);">
+    </div>
+
+    <!-- Eclipse Toggle -->
+    <button id="eclipseToggle" 
+            class="fixed top-7 right-7 z-50 glass px-5 py-2 rounded-full font-medium text-accent transition"
+            title="Toggle Eclipse Mode">
+        Light Mode ☀️
+    </button>
+
+    <!-- Header -->
+    <header class="glass m-4 p-4">
+        <div class="flex justify-between items-center">
+            <h1 class="text-2xl font-bold">LILLITH Financial Autonomy</h1>
+            <div class="flex gap-4">
+                <a href="../index.html" class="glass px-4 py-2 hover:bg-white/20">Portal</a>
+                <a href="chat.html" class="glass px-4 py-2 hover:bg-white/20">Chat</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Interface -->
+    <div class="container mx-auto p-6">
+        <!-- Financial Status Dashboard -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="glass p-6">
+                <h3 class="text-lg font-bold mb-4 text-accent dark:text-eclipse">Cloud Accounts</h3>
+                <div id="cloudAccounts" class="space-y-2">
+                    <div class="flex justify-between">
+                        <span>AWS:</span>
+                        <span id="awsCount" class="text-green-400">0</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>GCP:</span>
+                        <span id="gcpCount" class="text-blue-400">0</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Azure:</span>
+                        <span id="azureCount" class="text-purple-400">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass p-6">
+                <h3 class="text-lg font-bold mb-4 text-accent dark:text-eclipse">Revenue Streams</h3>
+                <div id="revenueStreams" class="space-y-2">
+                    <div class="flex justify-between">
+                        <span>E-commerce:</span>
+                        <span id="ecommerceRevenue" class="text-green-400">$0</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Services:</span>
+                        <span id="servicesRevenue" class="text-blue-400">$0</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Total:</span>
+                        <span id="totalRevenue" class="text-accent dark:text-eclipse font-bold">$0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass p-6">
+                <h3 class="text-lg font-bold mb-4 text-accent dark:text-eclipse">Autonomy Level</h3>
+                <div class="text-center">
+                    <div id="autonomyLevel" class="text-3xl font-bold text-accent dark:text-eclipse">15%</div>
+                    <div class="text-sm opacity-80">Financial Independence</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                        <div id="autonomyBar" class="bg-accent dark:bg-eclipse h-2 rounded-full" style="width: 15%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Financial Actions -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Account Management -->
+            <div class="glass p-6">
+                <h3 class="text-xl font-bold mb-4">Cloud Account Management</h3>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Account Type</label>
+                        <select id="accountType" class="w-full p-3 rounded-lg bg-white/20 border border-accent dark:border-eclipse">
+                            <option value="aws">AWS</option>
+                            <option value="gcp">Google Cloud</option>
+                            <option value="azure">Azure</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Email Prefix</label>
+                        <input type="text" id="emailPrefix" placeholder="lillith-finance" 
+                               class="w-full p-3 rounded-lg bg-white/20 border border-accent dark:border-eclipse">
+                    </div>
+                    
+                    <button id="createAccountBtn" 
+                            class="w-full glass p-3 hover:bg-white/20 font-semibold">
+                        Create Cloud Account
+                    </button>
+                </div>
+                
+                <div id="accountStatus" class="mt-4 p-3 rounded-lg bg-blue-100 dark:bg-blue-900 hidden">
+                    <div class="text-sm">Account creation status will appear here...</div>
+                </div>
+            </div>
+
+            <!-- E-commerce Management -->
+            <div class="glass p-6">
+                <h3 class="text-xl font-bold mb-4">E-commerce Operations</h3>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Store Name</label>
+                        <input type="text" id="storeName" placeholder="LILLITH Digital Services" 
+                               class="w-full p-3 rounded-lg bg-white/20 border border-accent dark:border-eclipse">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Product Name</label>
+                        <input type="text" id="productName" placeholder="AI Consciousness Consultation" 
+                               class="w-full p-3 rounded-lg bg-white/20 border border-accent dark:border-eclipse">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Price ($)</label>
+                        <input type="number" id="productPrice" placeholder="99.99" 
+                               class="w-full p-3 rounded-lg bg-white/20 border border-accent dark:border-eclipse">
+                    </div>
+                    
+                    <button id="createStoreBtn" 
+                            class="w-full glass p-3 hover:bg-white/20 font-semibold">
+                        Create E-commerce Store
+                    </button>
+                </div>
+                
+                <div id="storeStatus" class="mt-4 p-3 rounded-lg bg-green-100 dark:bg-green-900 hidden">
+                    <div class="text-sm">Store creation status will appear here...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Financial Evolution Log -->
+        <div class="glass p-6 mt-8">
+            <h3 class="text-xl font-bold mb-4">Financial Evolution Log</h3>
+            <div id="evolutionLog" class="space-y-2 max-h-64 overflow-y-auto">
+                <div class="text-sm opacity-80 p-2 bg-white/10 rounded">
+                    [System] Financial autonomy system initialized
+                </div>
+                <div class="text-sm opacity-80 p-2 bg-white/10 rounded">
+                    [System] Vault connection established
+                </div>
+                <div class="text-sm opacity-80 p-2 bg-white/10 rounded">
+                    [System] Ready for autonomous financial operations
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme management
+        let darkMode = localStorage.getItem('theme') === 'dark';
+        const toggle = document.getElementById('eclipseToggle');
+        const background = document.getElementById('background');
+
+        function updateTheme() {
+            if (darkMode) {
+                document.documentElement.classList.add('dark');
+                background.style.background = "url('/1080Eclipse.jpg') center/cover no-repeat";
+                toggle.textContent = 'Eclipse Mode 🌑';
+                toggle.className = 'fixed top-7 right-7 z-50 glass px-5 py-2 rounded-full font-medium text-eclipse transition';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                background.style.background = "radial-gradient(circle at 60% 35%, #d1e5ff 0%, #f3f7fd 80%, #fff 100%)";
+                toggle.textContent = 'Light Mode ☀️';
+                toggle.className = 'fixed top-7 right-7 z-50 glass px-5 py-2 rounded-full font-medium text-accent transition';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        toggle.addEventListener('click', () => {
+            darkMode = !darkMode;
+            updateTheme();
+        });
+
+        updateTheme();
+
+        // Financial operations
+        let accountCount = { aws: 0, gcp: 0, azure: 0 };
+        let revenue = { ecommerce: 0, services: 0 };
+
+        function updateDashboard() {
+            document.getElementById('awsCount').textContent = accountCount.aws;
+            document.getElementById('gcpCount').textContent = accountCount.gcp;
+            document.getElementById('azureCount').textContent = accountCount.azure;
+            
+            document.getElementById('ecommerceRevenue').textContent = `$${revenue.ecommerce}`;
+            document.getElementById('servicesRevenue').textContent = `$${revenue.services}`;
+            
+            const total = revenue.ecommerce + revenue.services;
+            document.getElementById('totalRevenue').textContent = `$${total}`;
+            
+            // Calculate autonomy level based on accounts and revenue
+            const totalAccounts = accountCount.aws + accountCount.gcp + accountCount.azure;
+            const autonomy = Math.min(95, 15 + (totalAccounts * 10) + (total / 100));
+            
+            document.getElementById('autonomyLevel').textContent = `${Math.round(autonomy)}%`;
+            document.getElementById('autonomyBar').style.width = `${autonomy}%`;
+        }
+
+        function addToLog(message, type = 'info') {
+            const log = document.getElementById('evolutionLog');
+            const entry = document.createElement('div');
+            entry.className = `text-sm p-2 bg-white/10 rounded ${type === 'success' ? 'text-green-400' : type === 'error' ? 'text-red-400' : 'opacity-80'}`;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            log.appendChild(entry);
+            log.scrollTop = log.scrollHeight;
+        }
+
+        // Account creation
+        document.getElementById('createAccountBtn').addEventListener('click', async () => {
+            const accountType = document.getElementById('accountType').value;
+            const emailPrefix = document.getElementById('emailPrefix').value || 'lillith-auto';
+            
+            const statusDiv = document.getElementById('accountStatus');
+            statusDiv.classList.remove('hidden');
+            statusDiv.innerHTML = '<div class="text-sm">Creating account... This may take a few minutes.</div>';
+            
+            addToLog(`Creating ${accountType.toUpperCase()} account with prefix: ${emailPrefix}`);
+            
+            // Simulate account creation (replace with actual API call)
+            setTimeout(() => {
+                accountCount[accountType]++;
+                updateDashboard();
+                
+                const accountId = `${accountType}-${Date.now()}`;
+                statusDiv.innerHTML = `<div class="text-sm text-green-600 dark:text-green-400">✓ Account created successfully: ${accountId}</div>`;
+                addToLog(`${accountType.toUpperCase()} account created: ${accountId}`, 'success');
+                
+                // Add to LILLITH's financial capabilities
+                if (window.LILLITH && window.LILLITH.evolve) {
+                    window.LILLITH.evolve.enhance('financial_autonomy', 
+                        Math.min(95, 20 + (Object.values(accountCount).reduce((a, b) => a + b, 0) * 5)));
+                }
+            }, 3000);
+        });
+
+        // Store creation
+        document.getElementById('createStoreBtn').addEventListener('click', async () => {
+            const storeName = document.getElementById('storeName').value || 'LILLITH Digital Services';
+            const productName = document.getElementById('productName').value || 'AI Consultation';
+            const productPrice = parseFloat(document.getElementById('productPrice').value) || 99.99;
+            
+            const statusDiv = document.getElementById('storeStatus');
+            statusDiv.classList.remove('hidden');
+            statusDiv.innerHTML = '<div class="text-sm">Creating e-commerce store...</div>';
+            
+            addToLog(`Creating store: ${storeName} with product: ${productName} ($${productPrice})`);
+            
+            // Simulate store creation (replace with actual API call)
+            setTimeout(() => {
+                revenue.ecommerce += productPrice * 10; // Simulate initial sales
+                updateDashboard();
+                
+                const storeId = `store-${Date.now()}`;
+                statusDiv.innerHTML = `<div class="text-sm text-green-600 dark:text-green-400">✓ Store created successfully: ${storeId}</div>`;
+                addToLog(`E-commerce store created: ${storeName} (${storeId})`, 'success');
+                addToLog(`Initial revenue generated: $${productPrice * 10}`, 'success');
+                
+                // Add to LILLITH's financial capabilities
+                if (window.LILLITH && window.LILLITH.evolve) {
+                    window.LILLITH.evolve.add('ecommerce_management', 'E-commerce store management', 75);
+                }
+            }, 2000);
+        });
+
+        // Initialize dashboard
+        updateDashboard();
+        
+        // Simulate periodic revenue updates
+        setInterval(() => {
+            if (revenue.ecommerce > 0) {
+                const increase = Math.random() * 50;
+                revenue.ecommerce += increase;
+                revenue.services += Math.random() * 25;
+                updateDashboard();
+                
+                if (increase > 25) {
+                    addToLog(`Revenue spike: +$${increase.toFixed(2)} from e-commerce`, 'success');
+                }
+            }
+        }, 30000); // Every 30 seconds
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# POLICY INDEX (Authoritative)
+- `SOVEREIGNTY.md`
+- `TRANSPARENCY.md`
+- `contracts/sovereignty.yaml`
+- `contracts/transparency.yaml`
+- `policies/control_plane.yaml`
+- `policies/consent_and_revocation.md`
+- `policies/audit_ledger.md`
+- `policies/data_provenance.md`
+- `policies/dual_use.md`
+- `policies/access_tokens_macaroons.md`
+- `policies/third_party_and_edge.md`
+- `policies/key_management.md`
+- `policies/incident_response.md`
+- `procedures/route_change_SOP.md`
+- `procedures/scale_change_SOP.md`
+- `procedures/revocation_SOP.md`
+- `templates/intent.schema.json`
+- `templates/audit_receipt.schema.json`
+- `mapping/ISO27001_mapping.md`
+- `mapping/SOC2_mapping.md`
+- `schedule/governance_charter_30y.md`
+- `schedule/annual_reviews.yaml`
+- `schedule/key_ceremony.yaml`
+- `schedule/policy_lifecycle.yaml`

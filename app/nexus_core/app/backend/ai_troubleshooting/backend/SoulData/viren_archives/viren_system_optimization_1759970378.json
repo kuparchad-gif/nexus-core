@@ -1,0 +1,20 @@
+{
+  "data": {
+    "Training data for system_optimization best practices": [
+      [
+        54.7552375793457,
+        -21.606613159179688,
+        -38.391387939453125,
+        -28.078399658203125,
+        -17.47983741760254
+      ]
+    ]
+  },
+  "scores": [
+    80,
+    80,
+    80
+  ],
+  "timestamp": 1759970378.312784,
+  "instance_id": "viren_system_optimization_1759970378"
+}

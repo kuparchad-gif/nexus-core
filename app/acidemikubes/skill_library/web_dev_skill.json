@@ -1,0 +1,5 @@
+{
+  "name": "Web Development Skill",
+  "module_path": "Systems/nexus_core/skills/web_dev_skill.py",
+  "entry_class": "WebDevSkill"
+}

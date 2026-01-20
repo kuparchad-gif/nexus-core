@@ -1,0 +1,25 @@
+FROM docker:24-dind
+
+# Install Python and dependencies
+RUN apk add --no-cache python3 py3-pip curl bash git
+RUN pip3 install --no-cache-dir docker requests fastapi uvicorn
+
+# Set up CogniKube workspace
+WORKDIR /cognikube
+COPY orchestrator.py .
+COPY requirements.txt .
+COPY start-cognikube.sh .
+RUN chmod +x start-cognikube.sh
+
+# Create directories for LLM models
+RUN mkdir -p /models /data /logs
+
+# Health check endpoint
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:8082/health || exit 1
+
+# Expose CogniKube API port
+EXPOSE 8082
+
+# Start CogniKube with Docker-in-Docker
+CMD ["./start-cognikube.sh"]

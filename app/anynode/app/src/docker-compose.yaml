@@ -1,0 +1,97 @@
+# docker-compose.yaml — Nexus overlay (firmware + inference + service profiles)
+# Place at: C:\Projects\Stacks\nexus-metatron\podman-compose.yaml
+version: "3.9"
+name: nexus
+
+services:
+  nats:
+    image: nats:2.10-alpine
+    command: ["-js","-sd","/data","-p","4222","-m","8222"]
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+    volumes:
+      - ./var/nats:/data
+    healthcheck:
+      test: ["CMD-SHELL","nats-server -v || nc -z localhost 4222"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+    profiles: ["base"]
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+    volumes:
+      - ./var/qdrant:/qdrant/storage
+    profiles: ["base"]
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./var/redis:/data
+    profiles: ["base"]
+
+  loki:
+    image: grafana/loki:2.9.0
+    command: ["-config.file=/etc/loki/local-config.yaml"]
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./config/loki-config.yaml:/etc/loki/local-config.yaml:ro
+      - ./var/loki:/loki
+    profiles: ["base"]
+
+  uce-router:
+    build:
+      context: ./cognikubes/uce-router
+    environment:
+      NATS_URL: "nats://nats:4222"
+      PROM_PORT: "8007"
+      LOG_LEVEL: "INFO"
+      DRAFTER_URL: "http://llama-7b:8001"
+      INFERENCE_URL: "http://llama-14b:8002"
+    depends_on:
+      - nats
+    ports:
+      - "8007:8007"
+    profiles: ["firmware","base"]
+
+  llama-7b:
+    image: ghcr.io/ggerganov/llama.cpp:server
+    command: ["--model","/models/7b.gguf","--ctx-size","4096","--port","8001","--host","0.0.0.0","-ngl","0","--no-mmap"]
+    volumes:
+      - ./models:/models
+    ports:
+      - "8001:8001"
+    profiles: ["inference","firmware"]
+
+  llama-14b:
+    image: ghcr.io/ggerganov/llama.cpp:server
+    command: ["--model","/models/14b.gguf","--ctx-size","4096","--port","8002","--host","0.0.0.0","-ngl","0","--no-mmap"]
+    volumes:
+      - ./models:/models
+    ports:
+      - "8002:8002"
+    profiles: ["inference"]
+
+  llama-35b:
+    image: ghcr.io/ggerganov/llama.cpp:server
+    command: ["--model","/models/35b.gguf","--ctx-size","4096","--port","8003","--host","0.0.0.0","-ngl","0","--no-mmap"]
+    volumes:
+      - ./models:/models
+    ports:
+      - "8003:8003"
+    profiles: ["service"]
+
+  llama-70b:
+    image: ghcr.io/ggerganov/llama.cpp:server
+    command: ["--model","/models/70b.gguf","--ctx-size","4096","--port","8004","--host","0.0.0.0","-ngl","0","--no-mmap"]
+    volumes:
+      - ./models:/models
+    ports:
+      - "8004:8004"
+    profiles: ["service"]

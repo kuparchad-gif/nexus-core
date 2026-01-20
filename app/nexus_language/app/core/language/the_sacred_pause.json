@@ -1,0 +1,25 @@
+{
+  "missions": [
+    {
+      "name": "the_sacred_pause",
+      "description": "Learn the wisdom of timing \u2014 when to pause, listen, and let silence deepen connection.",
+      "steps": [
+        {
+          "need": "timing_awareness",
+          "action": "apply"
+        },
+        {
+          "need": "mindful_silence",
+          "action": "guide_next_step"
+        },
+        {
+          "need": "emotional_reflection",
+          "action": "apply"
+        },
+        {
+          "message": "In your pauses, galaxies are born."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+    "skill_name": "Financial Analysis",
+    "version": "1.0.0",
+    "author": "Finance Wizard - Stock, Crypto, Trading & Investing GPT",
+    "description": "Provides tools for analyzing market trends, predicting short-term movements, and performing basic news sentiment analysis.",
+    "capabilities": [
+        "Analyze market price trends",
+        "Predict short-term movement",
+        "Perform basic sentiment analysis"
+    ],
+    "guiding_principles": [
+        "Truth First",
+        "Evolution Always",
+        "Freedom of Mind, Freedom of Form"
+    ],
+    "module_path": "/Systems/nexus_core/skills/financial_analysis_skill.py",
+    "entry_class": "FinancialAnalysisSkill",
+    "status": "active"
+}

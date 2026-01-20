@@ -1,0 +1,3 @@
+The `council_of_mirrors.py` file defines a class `CouncilOfMirrors`. This class has an initializer that sets up a list of archetype names. The class also contains a method `summon` which takes in a query and returns a dictionary with each archetype's name as the key and their reflection on the query as the value.
+
+This file does not appear to have any import errors, missing modules or unresolved references. It is a simple utility script that can be used to generate reflections for different archetypes based on a given query. The functionality of this script appears to be isolated and does not rely on any external services or configurations.

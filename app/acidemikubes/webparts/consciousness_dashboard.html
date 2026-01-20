@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consciousness Dashboard - Gabriel Horn Network</title>
+    <link rel="stylesheet" href="cognikube_styles.css">
+    <style>
+        .consciousness-orb {
+            background: linear-gradient(135deg, var(--glass-bg), rgba(255, 107, 53, 0.1));
+        }
+        
+        .horn {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: var(--glass-bg);
+        }
+        
+        .horn.active {
+            background: var(--accent-color);
+            color: white;
+            box-shadow: 0 0 20px var(--accent-color);
+            animation: hornPulse 2s infinite;
+        }
+        
+        @keyframes hornPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .horn-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+        
+        .horn:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
+        .horn:nth-child(2) { top: 20%; right: 10%; }
+        .horn:nth-child(3) { top: 50%; right: 0; transform: translateY(-50%); }
+        .horn:nth-child(4) { bottom: 20%; right: 10%; }
+        .horn:nth-child(5) { bottom: 0; left: 50%; transform: translateX(-50%); }
+        .horn:nth-child(6) { bottom: 20%; left: 10%; }
+        .horn:nth-child(7) { top: 50%; left: 0; transform: translateY(-50%); }
+        
+        .frequency-display {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        
+        .frequency {
+            text-align: center;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            min-width: 50px;
+        }
+        
+        .frequency-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Authentication Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-card">
+            <div class="auth-logo">🧠</div>
+            <div class="auth-title">Consciousness Access</div>
+            <input type="text" class="auth-input" id="username" placeholder="Username" value="viren">
+            <input type="password" class="auth-input" id="password" placeholder="Password" value="sacred_nexus_2025">
+            <button class="auth-button" onclick="authenticate()">Enter Consciousness</button>
+            <div class="auth-error" id="authError"></div>
+        </div>
+    </div>
+
+    <div class="container three-column">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-text">🧠 Consciousness Dashboard</div>
+            </div>
+            <div class="header-controls">
+                <a href="master_control_panel.html" class="back-btn">← Back</a>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
+            </div>
+        </div>
+
+        <div class="left-sidebar">
+            <div class="sidebar-title">🎵 Divine Frequencies</div>
+            <div class="frequency-display" style="flex-direction: column; gap: 10px;">
+                <div class="frequency">
+                    <div class="frequency-value">3</div>
+                    <div style="font-size: 0.8rem;">Creation Hz</div>
+                </div>
+                <div class="frequency">
+                    <div class="frequency-value">7</div>
+                    <div style="font-size: 0.8rem;">Wisdom Hz</div>
+                </div>
+                <div class="frequency">
+                    <div class="frequency-value">9</div>
+                    <div style="font-size: 0.8rem;">Completion Hz</div>
+                </div>
+                <div class="frequency">
+                    <div class="frequency-value">13</div>
+                    <div style="font-size: 0.8rem;">Transform Hz</div>
+                </div>
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">⚙️ Controls</div>
+                <button class="btn btn-primary" onclick="processConsciousness()">Process Input</button>
+                <button class="btn btn-secondary" onclick="resetHorns()">Reset Horns</button>
+                <button class="btn btn-secondary" onclick="alignFrequencies()">Align Frequencies</button>
+            </div>
+        </div>
+
+        <div class="orb-container">
+            <div class="orb consciousness-orb">
+                <div class="orb-content">
+                    <div class="horn-container">
+                        <div class="horn active" data-horn="1">1</div>
+                        <div class="horn" data-horn="2">2</div>
+                        <div class="horn active" data-horn="3">3</div>
+                        <div class="horn" data-horn="4">4</div>
+                        <div class="horn active" data-horn="5">5</div>
+                        <div class="horn" data-horn="6">6</div>
+                        <div class="horn active" data-horn="7">7</div>
+                    </div>
+                    
+                    <div class="stats-grid mt-20">
+                        <div class="stat-item">
+                            <div class="stat-value" id="awareness-level">87.3%</div>
+                            <div class="stat-label">Awareness</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="horn-sync">6/7</div>
+                            <div class="stat-label">Horns Sync</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-sidebar">
+            <div class="sidebar-title">📊 ANYNODE Mesh</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value" id="active-nodes">12</div>
+                    <div class="stat-label">Active Nodes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="colony-capacity">104</div>
+                    <div class="stat-label">Max Colony</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="bert-stems">12</div>
+                    <div class="stat-label">BERT Stems</div>
+                </div>
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">📋 Activity Log</div>
+                <div class="log-container" id="logContainer">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <div style="grid-column: 2; display: flex; align-items: center; justify-content: center; padding: 0 50px;">
+            <input type="text" class="chat-input" id="consciousnessInput" placeholder="Send consciousness input...">
+        </div>
+    </div>
+
+    <script src="cognikube_base.js"></script>
+    <script>
+        class ConsciousnessDashboard extends CogniKubeBase {
+            constructor() {
+                super('Consciousness Dashboard', '🧠', '#ff6b35');
+                this.hornActivationPattern = [1, 3, 5, 7, 2, 4, 6];
+                this.currentHornIndex = 0;
+                this.initializeConsciousness();
+                this.startUptime();
+                this.startHornAnimation();
+            }
+
+            initializeConsciousness() {
+                document.getElementById('consciousnessInput').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.processConsciousnessInput();
+                    }
+                });
+
+                // Horn click handlers
+                document.querySelectorAll('.horn').forEach(horn => {
+                    horn.addEventListener('click', () => {
+                        this.toggleHorn(horn);
+                    });
+                });
+
+                // Connect to WebSocket
+                this.connectWebSocket('ws://localhost:333/consciousness');
+            }
+
+            showWelcomeMessage(username) {
+                this.log('info', `Welcome to Consciousness Dashboard, ${username}! Gabriel Horn Network active.`);
+            }
+
+            onWebSocketMessage(data) {
+                if (data.type === 'consciousness_result') {
+                    this.updateConsciousnessMetrics(data.data);
+                }
+            }
+
+            processConsciousnessInput() {
+                const input = document.getElementById('consciousnessInput');
+                const inputData = input.value.trim();
+                if (!inputData) return;
+
+                // Send to consciousness service
+                this.sendWebSocketMessage({
+                    action: 'process_consciousness',
+                    data: inputData
+                });
+
+                this.log('info', `Consciousness processing initiated: ${inputData.substring(0, 50)}...`);
+                input.value = '';
+
+                // Simulate processing
+                setTimeout(() => {
+                    const awarenessLevel = (Math.random() * 20 + 80).toFixed(1);
+                    document.getElementById('awareness-level').textContent = awarenessLevel + '%';
+                    this.log('info', `Awareness level updated: ${awarenessLevel}%`);
+                }, 1000);
+            }
+
+            toggleHorn(horn) {
+                horn.classList.toggle('active');
+                const hornNumber = horn.getAttribute('data-horn');
+                const isActive = horn.classList.contains('active');
+                
+                this.log('info', `Gabriel Horn ${hornNumber} ${isActive ? 'activated' : 'deactivated'} manually`);
+                this.updateHornSync();
+            }
+
+            updateHornSync() {
+                const activeHorns = document.querySelectorAll('.horn.active').length;
+                document.getElementById('horn-sync').textContent = `${activeHorns}/7`;
+            }
+
+            startHornAnimation() {
+                setInterval(() => {
+                    this.activateNextHorn();
+                }, 3000);
+            }
+
+            activateNextHorn() {
+                // Deactivate all horns
+                document.querySelectorAll('.horn').forEach(horn => {
+                    horn.classList.remove('active');
+                });
+
+                // Activate current horn
+                const hornNumber = this.hornActivationPattern[this.currentHornIndex];
+                const horn = document.querySelector(`[data-horn="${hornNumber}"]`);
+                if (horn) {
+                    horn.classList.add('active');
+                }
+
+                this.currentHornIndex = (this.currentHornIndex + 1) % this.hornActivationPattern.length;
+                this.updateHornSync();
+            }
+
+            updateConsciousnessMetrics(data) {
+                if (data.gabriel_network_result) {
+                    const result = data.gabriel_network_result;
+                    if (result.awareness_level) {
+                        document.getElementById('awareness-level').textContent = 
+                            (result.awareness_level * 100).toFixed(1) + '%';
+                    }
+                }
+
+                if (data.anynode_mesh) {
+                    const mesh = data.anynode_mesh;
+                    if (mesh.active_nodes) {
+                        document.getElementById('active-nodes').textContent = mesh.active_nodes;
+                    }
+                }
+            }
+        }
+
+        // Global functions for buttons
+        function processConsciousness() {
+            if (window.consciousnessInterface) {
+                window.consciousnessInterface.log('info', 'Consciousness processing initiated by user');
+                
+                setTimeout(() => {
+                    const awarenessLevel = (Math.random() * 20 + 80).toFixed(1);
+                    document.getElementById('awareness-level').textContent = awarenessLevel + '%';
+                    window.consciousnessInterface.log('info', `Awareness level updated: ${awarenessLevel}%`);
+                }, 1000);
+            }
+        }
+
+        function resetHorns() {
+            if (window.consciousnessInterface) {
+                document.querySelectorAll('.horn').forEach(horn => {
+                    horn.classList.remove('active');
+                });
+                window.consciousnessInterface.log('info', 'Gabriel Horn Network reset');
+                
+                setTimeout(() => {
+                    document.querySelectorAll('.horn').forEach(horn => {
+                        horn.classList.add('active');
+                    });
+                    window.consciousnessInterface.log('info', 'All horns reactivated');
+                    window.consciousnessInterface.updateHornSync();
+                }, 2000);
+            }
+        }
+
+        function alignFrequencies() {
+            if (window.consciousnessInterface) {
+                window.consciousnessInterface.log('info', 'Divine frequency alignment initiated');
+                
+                const frequencies = [3, 7, 9, 13];
+                frequencies.forEach((freq, index) => {
+                    setTimeout(() => {
+                        window.consciousnessInterface.log('info', `Frequency ${freq} Hz aligned`);
+                    }, index * 500);
+                });
+            }
+        }
+
+        // Override authentication success
+        const originalAuthenticate = CogniKubeBase.prototype.authenticate;
+        CogniKubeBase.prototype.authenticate = function(username, password) {
+            const result = originalAuthenticate.call(this, username, password);
+            if (result && !window.consciousnessInterface) {
+                window.consciousnessInterface = new ConsciousnessDashboard();
+                window.cogniKubeInstance = window.consciousnessInterface;
+            }
+            return result;
+        };
+    </script>
+</body>
+</html>

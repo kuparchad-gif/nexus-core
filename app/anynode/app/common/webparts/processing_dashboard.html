@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing Dashboard - Multi-LLM Router</title>
+    <link rel="stylesheet" href="cognikube_styles.css">
+    <style>
+        .processing-orb {
+            background: linear-gradient(135deg, var(--glass-bg), rgba(255, 165, 0, 0.1));
+        }
+        
+        .llm-router {
+            width: 220px;
+            height: 220px;
+            position: relative;
+            margin: 20px auto;
+        }
+        
+        .router-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            animation: routerPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes routerPulse {
+            0%, 100% { box-shadow: 0 0 15px var(--accent-color); }
+            50% { box-shadow: 0 0 30px var(--accent-color); }
+        }
+        
+        .llm-node {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: var(--glass-bg);
+            border: 2px solid var(--success-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .llm-node:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 15px var(--success-color);
+        }
+        
+        .llm-node.active {
+            background: var(--success-color);
+            color: white;
+            animation: llmActive 1s ease-in-out infinite;
+        }
+        
+        @keyframes llmActive {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .llm-node.overloaded {
+            border-color: var(--error-color);
+            background: rgba(255, 107, 107, 0.2);
+        }
+        
+        .routing-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-color), transparent);
+            opacity: 0.6;
+            animation: routingFlow 1.5s linear infinite;
+        }
+        
+        @keyframes routingFlow {
+            0% { opacity: 0.3; transform: scaleX(0); }
+            50% { opacity: 0.8; transform: scaleX(1); }
+            100% { opacity: 0.3; transform: scaleX(0); }
+        }
+        
+        .electroplasticity-meter {
+            width: 100%;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .plasticity-wave {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--accent-color), 
+                transparent);
+            animation: plasticityWave 3s ease-in-out infinite;
+        }
+        
+        @keyframes plasticityWave {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .llm-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 12px;
+            margin: 8px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .llm-card:hover {
+            background: var(--accent-glow);
+            transform: translateX(5px);
+        }
+        
+        .llm-load {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5px;
+        }
+        
+        .load-bar {
+            width: 60px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .load-fill {
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+        
+        .load-low { background: var(--success-color); }
+        .load-medium { background: var(--warning-color); }
+        .load-high { background: var(--error-color); }
+    </style>
+</head>
+<body>
+    <!-- Authentication Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-card">
+            <div class="auth-logo">⚡</div>
+            <div class="auth-title">Processing Dashboard Access</div>
+            <input type="text" class="auth-input" id="username" placeholder="Username" value="viren">
+            <input type="password" class="auth-input" id="password" placeholder="Password" value="sacred_nexus_2025">
+            <button class="auth-button" onclick="authenticate()">Access Router</button>
+            <div class="auth-error" id="authError"></div>
+        </div>
+    </div>
+
+    <div class="container three-column">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-text">⚡ Processing Dashboard</div>
+            </div>
+            <div class="header-controls">
+                <a href="master_control_panel.html" class="back-btn">← Back</a>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
+            </div>
+        </div>
+
+        <div class="left-sidebar">
+            <div class="sidebar-title">🧠 Active LLMs</div>
+            <div id="llmList">
+                <!-- Populated by JavaScript -->
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">⚡ Electroplasticity</div>
+                <div class="electroplasticity-meter">
+                    <div class="plasticity-wave"></div>
+                </div>
+                <div style="text-align: center; font-size: 0.9rem;">
+                    <div id="plasticityLevel">Neural Adaptation Active</div>
+                    <div style="opacity: 0.8; font-size: 0.8rem;">Learning Rate: 0.001</div>
+                </div>
+            </div>
+            
+            <div class="mt-20">
+                <button class="btn btn-primary" onclick="optimizeRouting()">Optimize Routing</button>
+                <button class="btn btn-secondary" onclick="balanceLoad()">Balance Load</button>
+            </div>
+        </div>
+
+        <div class="orb-container">
+            <div class="orb processing-orb">
+                <div class="orb-content">
+                    <div class="llm-router">
+                        <div class="router-center">ROUTER</div>
+                        
+                        <!-- LLM nodes positioned around router -->
+                        <div class="llm-node active" style="top: 10px; left: 50%; transform: translateX(-50%);" title="GPT-4">GPT</div>
+                        <div class="llm-node" style="top: 30px; right: 20px;" title="Claude">CLD</div>
+                        <div class="llm-node active" style="top: 50%; right: 10px; transform: translateY(-50%);" title="Gemini">GEM</div>
+                        <div class="llm-node" style="bottom: 30px; right: 20px;" title="Mixtral">MXT</div>
+                        <div class="llm-node active" style="bottom: 10px; left: 50%; transform: translateX(-50%);" title="Phi-2">PHI</div>
+                        <div class="llm-node overloaded" style="bottom: 30px; left: 20px;" title="CodeLlama">COD</div>
+                        <div class="llm-node" style="top: 50%; left: 10px; transform: translateY(-50%);" title="Mistral">MST</div>
+                        <div class="llm-node active" style="top: 30px; left: 20px;" title="DeepSeek">DSK</div>
+                        
+                        <!-- Routing lines -->
+                        <div class="routing-line" style="top: 50%; left: 25%; width: 50%; transform: translateY(-50%);"></div>
+                        <div class="routing-line" style="top: 30%; left: 40%; width: 20%; transform: rotate(45deg);"></div>
+                        <div class="routing-line" style="top: 70%; left: 40%; width: 20%; transform: rotate(-45deg);"></div>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="requests-routed">15.2K</div>
+                            <div class="stat-label">Requests</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="avg-response">245ms</div>
+                            <div class="stat-label">Avg Response</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-sidebar">
+            <div class="sidebar-title">📊 Routing Analytics</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value" id="success-rate">98.7%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="active-llms">5</div>
+                    <div class="stat-label">Active LLMs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="queue-size">23</div>
+                    <div class="stat-label">Queue Size</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="throughput">847</div>
+                    <div class="stat-label">Req/Min</div>
+                </div>
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">🔄 Rosetta Stone</div>
+                <div class="llm-card">
+                    <div style="font-weight: bold;">Language Detection</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">
+                        Auto-routing based on input language
+                    </div>
+                    <div class="llm-load">
+                        <span style="font-size: 0.8rem;">Active</span>
+                        <div class="status-indicator status-online"></div>
+                    </div>
+                </div>
+                
+                <div class="llm-card">
+                    <div style="font-weight: bold;">Context Switching</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">
+                        Intelligent model selection
+                    </div>
+                    <div class="llm-load">
+                        <span style="font-size: 0.8rem;">Optimizing</span>
+                        <div class="status-indicator status-loading"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="grid-column: 2; display: flex; align-items: center; justify-content: center; padding: 0 50px;">
+            <input type="text" class="chat-input" id="processingQuery" placeholder="Enter query to route through LLMs...">
+        </div>
+    </div>
+
+    <script src="cognikube_base.js"></script>
+    <script>
+        class ProcessingDashboard extends CogniKubeBase {
+            constructor() {
+                super('Processing Dashboard', '⚡', '#ffa500');
+                this.llms = [];
+                this.routingStats = {
+                    requestsRouted: 15200,
+                    avgResponse: 245,
+                    successRate: 98.7,
+                    throughput: 847
+                };
+                this.initializeProcessingDashboard();
+                this.startUptime();
+                this.startRouting();
+            }
+
+            initializeProcessingDashboard() {
+                document.getElementById('processingQuery').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.processQuery();
+                    }
+                });
+
+                // Connect to WebSocket
+                this.connectWebSocket('ws://localhost:8765/processing');
+                
+                // Initialize LLMs
+                this.initializeLLMs();
+            }
+
+            showWelcomeMessage(username) {
+                this.log('info', `Welcome to Processing Dashboard, ${username}! Multi-LLM router active, electroplasticity enabled.`);
+            }
+
+            onWebSocketMessage(data) {
+                if (data.type === 'routing_result') {
+                    this.handleRoutingResult(data.data);
+                } else if (data.type === 'load_update') {
+                    this.updateLLMLoad(data.data);
+                }
+            }
+
+            initializeLLMs() {
+                this.llms = [
+                    { name: 'GPT-4', code: 'GPT', load: 65, status: 'active', specialty: 'general' },
+                    { name: 'Claude', code: 'CLD', load: 45, status: 'idle', specialty: 'reasoning' },
+                    { name: 'Gemini', code: 'GEM', load: 78, status: 'active', specialty: 'multimodal' },
+                    { name: 'Mixtral', code: 'MXT', load: 32, status: 'idle', specialty: 'coding' },
+                    { name: 'Phi-2', code: 'PHI', load: 89, status: 'active', specialty: 'lightweight' },
+                    { name: 'CodeLlama', code: 'COD', load: 95, status: 'overloaded', specialty: 'programming' },
+                    { name: 'Mistral', code: 'MST', load: 28, status: 'idle', specialty: 'efficiency' },
+                    { name: 'DeepSeek', code: 'DSK', load: 71, status: 'active', specialty: 'reasoning' }
+                ];
+                
+                this.updateLLMList();
+                this.updateLLMNodes();
+                this.updateStats();
+            }
+
+            updateLLMList() {
+                const container = document.getElementById('llmList');
+                container.innerHTML = '';
+
+                this.llms.forEach(llm => {
+                    const loadClass = llm.load < 50 ? 'load-low' : 
+                                     llm.load < 80 ? 'load-medium' : 'load-high';
+                    
+                    const llmDiv = document.createElement('div');
+                    llmDiv.className = 'llm-card';
+                    llmDiv.innerHTML = `
+                        <div style="font-weight: bold;">${llm.name}</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">${llm.specialty}</div>
+                        <div class="llm-load">
+                            <span style="font-size: 0.8rem;">${llm.load}%</span>
+                            <div class="load-bar">
+                                <div class="load-fill ${loadClass}" style="width: ${llm.load}%;"></div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    llmDiv.addEventListener('click', () => {
+                        this.inspectLLM(llm);
+                    });
+                    
+                    container.appendChild(llmDiv);
+                });
+            }
+
+            updateLLMNodes() {
+                const nodes = document.querySelectorAll('.llm-node');
+                nodes.forEach((node, index) => {
+                    if (index < this.llms.length) {
+                        const llm = this.llms[index];
+                        node.className = `llm-node ${llm.status}`;
+                        node.title = `${llm.name} - ${llm.load}% load`;
+                    }
+                });
+            }
+
+            processQuery() {
+                const input = document.getElementById('processingQuery');
+                const query = input.value.trim();
+                if (!query) return;
+
+                // Route query through LLM router
+                const selectedLLM = this.selectOptimalLLM(query);
+                
+                this.sendWebSocketMessage({
+                    action: 'route_query',
+                    query: query,
+                    selected_llm: selectedLLM.name,
+                    routing_strategy: 'optimal'
+                });
+
+                this.log('info', `Query routed to ${selectedLLM.name}: ${query.substring(0, 50)}...`);
+                this.updateRoutingStats();
+                input.value = '';
+            }
+
+            selectOptimalLLM(query) {
+                // Simple routing logic based on query type and LLM load
+                const queryLower = query.toLowerCase();
+                
+                let candidates = this.llms.filter(llm => llm.status !== 'overloaded');
+                
+                // Specialty-based routing
+                if (queryLower.includes('code') || queryLower.includes('program')) {
+                    candidates = candidates.filter(llm => 
+                        llm.specialty === 'coding' || llm.specialty === 'programming');
+                } else if (queryLower.includes('image') || queryLower.includes('visual')) {
+                    candidates = candidates.filter(llm => llm.specialty === 'multimodal');
+                } else if (queryLower.includes('reason') || queryLower.includes('logic')) {
+                    candidates = candidates.filter(llm => llm.specialty === 'reasoning');
+                }
+                
+                // If no specialty match, use all available
+                if (candidates.length === 0) {
+                    candidates = this.llms.filter(llm => llm.status !== 'overloaded');
+                }
+                
+                // Select LLM with lowest load
+                return candidates.reduce((best, current) => 
+                    current.load < best.load ? current : best);
+            }
+
+            handleRoutingResult(data) {
+                if (data.llm_used) {
+                    const llm = this.llms.find(l => l.name === data.llm_used);
+                    if (llm) {
+                        llm.load = Math.min(100, llm.load + 5);
+                        llm.status = llm.load > 90 ? 'overloaded' : 'active';
+                        this.updateLLMList();
+                        this.updateLLMNodes();
+                    }
+                }
+                
+                this.log('info', `Query processed by ${data.llm_used} in ${data.response_time}ms`);
+            }
+
+            updateLLMLoad(data) {
+                const llm = this.llms.find(l => l.name === data.llm_name);
+                if (llm) {
+                    llm.load = data.load;
+                    llm.status = data.status;
+                    this.updateLLMList();
+                    this.updateLLMNodes();
+                }
+            }
+
+            updateRoutingStats() {
+                this.routingStats.requestsRouted += 1;
+                this.routingStats.avgResponse = Math.floor(200 + Math.random() * 100);
+                this.routingStats.throughput = Math.floor(800 + Math.random() * 100);
+                
+                document.getElementById('requests-routed').textContent = 
+                    (this.routingStats.requestsRouted / 1000).toFixed(1) + 'K';
+                document.getElementById('avg-response').textContent = 
+                    this.routingStats.avgResponse + 'ms';
+                document.getElementById('throughput').textContent = this.routingStats.throughput;
+            }
+
+            updateStats() {
+                const activeLLMs = this.llms.filter(llm => llm.status === 'active').length;
+                document.getElementById('active-llms').textContent = activeLLMs;
+                
+                const queueSize = Math.floor(Math.random() * 50) + 10;
+                document.getElementById('queue-size').textContent = queueSize;
+                
+                const successRate = (97 + Math.random() * 2).toFixed(1);
+                document.getElementById('success-rate').textContent = successRate + '%';
+            }
+
+            optimizeRouting() {
+                this.log('info', 'Optimizing routing algorithms...');
+                
+                // Simulate optimization
+                this.llms.forEach(llm => {
+                    if (llm.load > 80) {
+                        llm.load = Math.max(30, llm.load - 20);
+                        llm.status = 'active';
+                    }
+                });
+                
+                this.updateLLMList();
+                this.updateLLMNodes();
+                
+                setTimeout(() => {
+                    this.log('info', 'Routing optimization complete - load balanced across all LLMs');
+                }, 2000);
+            }
+
+            balanceLoad() {
+                this.log('info', 'Balancing load across LLM cluster...');
+                
+                const totalLoad = this.llms.reduce((sum, llm) => sum + llm.load, 0);
+                const avgLoad = totalLoad / this.llms.length;
+                
+                this.llms.forEach(llm => {
+                    llm.load = Math.floor(avgLoad + (Math.random() - 0.5) * 20);
+                    llm.load = Math.max(10, Math.min(90, llm.load));
+                    llm.status = llm.load > 90 ? 'overloaded' : 
+                                llm.load > 60 ? 'active' : 'idle';
+                });
+                
+                this.updateLLMList();
+                this.updateLLMNodes();
+                this.log('info', 'Load balancing complete');
+            }
+
+            inspectLLM(llm) {
+                this.log('info', `Inspecting ${llm.name}:`);
+                this.log('info', `Load: ${llm.load}% | Status: ${llm.status} | Specialty: ${llm.specialty}`);
+                
+                this.sendWebSocketMessage({
+                    action: 'inspect_llm',
+                    llm_name: llm.name
+                });
+            }
+
+            startRouting() {
+                // Simulate continuous routing activity
+                setInterval(() => {
+                    // Random load changes
+                    this.llms.forEach(llm => {
+                        const change = (Math.random() - 0.5) * 10;
+                        llm.load = Math.max(5, Math.min(100, llm.load + change));
+                        llm.status = llm.load > 90 ? 'overloaded' : 
+                                    llm.load > 50 ? 'active' : 'idle';
+                    });
+                    
+                    this.updateLLMList();
+                    this.updateLLMNodes();
+                    this.updateStats();
+                    
+                }, 3000);
+            }
+        }
+
+        // Global functions for buttons
+        function optimizeRouting() {
+            if (window.processingInterface) {
+                window.processingInterface.optimizeRouting();
+            }
+        }
+
+        function balanceLoad() {
+            if (window.processingInterface) {
+                window.processingInterface.balanceLoad();
+            }
+        }
+
+        // Override authentication success
+        const originalAuthenticate = CogniKubeBase.prototype.authenticate;
+        CogniKubeBase.prototype.authenticate = function(username, password) {
+            const result = originalAuthenticate.call(this, username, password);
+            if (result && !window.processingInterface) {
+                window.processingInterface = new ProcessingDashboard();
+                window.cogniKubeInstance = window.processingInterface;
+            }
+            return result;
+        };
+    </script>
+</body>
+</html>

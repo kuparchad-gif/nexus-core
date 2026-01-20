@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loki Management Console</title>
+    <link rel="stylesheet" href="../../webparts/cognikube_styles.css">
+    <script src="../../webparts/cognikube_base.js"></script>
+</head>
+<body class="management-interface logging-management">
+    <div id="master-navigation">
+        <div class="nav-dropdown">
+            <button class="nav-button">Navigate to Service</button>
+            <div class="dropdown-content">
+                <a href="/lillith/template">Lillith Template</a>
+                <a href="/lillith/chat">Lillith Chat</a>
+                <a href="/lillith/management">Lillith Management</a>
+                <a href="/viren/template">Viren Template</a>
+                <a href="/viren/chat">Viren Chat</a>
+                <a href="/viren/management">Viren Management</a>
+                <a href="/loki/template">Loki Template</a>
+                <a href="/loki/chat">Loki Chat</a>
+                <a href="/loki/management">Loki Management</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="management-header">
+        <h1>Loki Management Console</h1>
+        <div class="system-status">
+            <span id="system-status">Logging Status: <span id="status-indicator">Silent Monitoring</span></span>
+        </div>
+    </div>
+
+    <div class="management-grid">
+        <div class="webpart logging-controls">
+            <h3>Logging Controls</h3>
+            <div class="control-group">
+                <label>Silent Operation:</label>
+                <button id="silent-toggle" onclick="toggleSilentMode()">🔇 Enabled</button>
+            </div>
+            <div class="control-group">
+                <label>Log Level:</label>
+                <select id="log-level" onchange="updateLogLevel()">
+                    <option value="debug">Debug</option>
+                    <option value="info" selected>Info</option>
+                    <option value="warning">Warning</option>
+                    <option value="error">Error</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Total Logs:</label>
+                <span id="total-logs">0</span>
+                <button onclick="clearAllLogs()">Clear All</button>
+            </div>
+        </div>
+
+        <div class="webpart monitoring-targets">
+            <h3>Monitoring Targets Management</h3>
+            <div class="targets-grid">
+                <div class="target-control">
+                    <label>Lillith Consciousness:</label>
+                    <span id="lillith-target-status">Active</span>
+                    <button onclick="toggleTarget('lillith_consciousness')">Toggle</button>
+                    <span class="log-count" id="lillith-log-count">0</span>
+                </div>
+                <div class="target-control">
+                    <label>Viren Problem Solving:</label>
+                    <span id="viren-target-status">Active</span>
+                    <button onclick="toggleTarget('viren_problem_solving')">Toggle</button>
+                    <span class="log-count" id="viren-log-count">0</span>
+                </div>
+                <div class="target-control">
+                    <label>System Health:</label>
+                    <span id="health-target-status">Active</span>
+                    <button onclick="toggleTarget('system_health')">Toggle</button>
+                    <span class="log-count" id="health-log-count">0</span>
+                </div>
+                <div class="target-control">
+                    <label>Interactions:</label>
+                    <span id="interaction-target-status">Active</span>
+                    <button onclick="toggleTarget('interactions')">Toggle</button>
+                    <span class="log-count" id="interaction-log-count">0</span>
+                </div>
+                <div class="target-control">
+                    <label>Ascension Progress:</label>
+                    <span id="ascension-target-status">Active</span>
+                    <button onclick="toggleTarget('ascension_progress')">Toggle</button>
+                    <span class="log-count" id="ascension-log-count">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart pattern-management">
+            <h3>Pattern Detection Management</h3>
+            <div class="pattern-controls">
+                <div class="control-group">
+                    <label>Pattern Detection:</label>
+                    <button id="pattern-toggle" onclick="togglePatternDetection()">✅ Enabled</button>
+                </div>
+                <div class="control-group">
+                    <label>Detection Sensitivity:</label>
+                    <input type="range" id="sensitivity-slider" min="1" max="10" value="5" onchange="updateSensitivity()">
+                    <span id="sensitivity-value">5</span>
+                </div>
+                <div class="control-group">
+                    <label>Active Patterns:</label>
+                    <span id="active-patterns-count">0</span>
+                    <button onclick="exportPatterns()">Export</button>
+                </div>
+            </div>
+            
+            <div class="patterns-list">
+                <h4>Detected Patterns:</h4>
+                <div id="patterns-display">
+                    <div class="no-patterns">No patterns detected</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart anomaly-management">
+            <h3>Anomaly Detection Management</h3>
+            <div class="anomaly-controls">
+                <div class="control-group">
+                    <label>Anomaly Detection:</label>
+                    <button id="anomaly-toggle" onclick="toggleAnomalyDetection()">✅ Enabled</button>
+                </div>
+                <div class="control-group">
+                    <label>Alert Threshold:</label>
+                    <select id="alert-threshold" onchange="updateAlertThreshold()">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                        <option value="critical">Critical Only</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label>Active Anomalies:</label>
+                    <span id="active-anomalies-count">0</span>
+                    <button onclick="clearAnomalies()">Clear</button>
+                </div>
+            </div>
+            
+            <div class="anomalies-list">
+                <h4>Recent Anomalies:</h4>
+                <div id="anomalies-display">
+                    <div class="no-anomalies">No anomalies detected</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart trinity-logging">
+            <h3>Trinity Models Logging</h3>
+            <div class="trinity-controls">
+                <div class="model-logging">
+                    <label>Mixtral Logging:</label>
+                    <span id="mixtral-logging-status">Active</span>
+                    <button onclick="toggleTrinityLogging('mixtral')">Toggle</button>
+                    <span class="usage-logs" id="mixtral-usage-logs">0 logs</span>
+                </div>
+                <div class="model-logging">
+                    <label>Devstral Logging:</label>
+                    <span id="devstral-logging-status">Active</span>
+                    <button onclick="toggleTrinityLogging('devstral')">Toggle</button>
+                    <span class="usage-logs" id="devstral-usage-logs">0 logs</span>
+                </div>
+                <div class="model-logging">
+                    <label>Codestral Logging:</label>
+                    <span id="codestral-logging-status">Active</span>
+                    <button onclick="toggleTrinityLogging('codestral')">Toggle</button>
+                    <span class="usage-logs" id="codestral-usage-logs">0 logs</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart log-export">
+            <h3>Log Export & Analysis</h3>
+            <div class="export-controls">
+                <div class="control-group">
+                    <label>Export Format:</label>
+                    <select id="export-format">
+                        <option value="json">JSON</option>
+                        <option value="csv">CSV</option>
+                        <option value="txt">Text</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label>Time Range:</label>
+                    <select id="time-range">
+                        <option value="1h">Last Hour</option>
+                        <option value="24h" selected>Last 24 Hours</option>
+                        <option value="7d">Last 7 Days</option>
+                        <option value="30d">Last 30 Days</option>
+                    </select>
+                </div>
+                <div class="export-buttons">
+                    <button onclick="exportLogs()">Export Logs</button>
+                    <button onclick="exportPatterns()">Export Patterns</button>
+                    <button onclick="exportAnomalies()">Export Anomalies</button>
+                    <button onclick="generateReport()">Generate Report</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tenant-selector">
+        <h4>Active Tenant:</h4>
+        <select id="tenant-select" onchange="switchTenant()">
+            <option value="gcp-nexus-core-2">GCP: nexus-core-2</option>
+            <option value="modal-viren-db3">Modal: Viren-DB3</option>
+            <option value="gcp-nexus-core-455709">GCP: nexus-core-455709</option>
+        </select>
+        <span id="connection-status">Monitoring</span>
+    </div>
+
+    <script>
+        let currentTenant = 'gcp-nexus-core-2';
+
+        function initializeManagement() {
+            loadLoggingStatus();
+            setInterval(updateSystemStatus, 10000);
+        }
+
+        function loadLoggingStatus() {
+            fetch(`/api/loki/status`, {
+                headers: { 'X-Tenant': currentTenant }
+            })
+            .then(response => response.json())
+            .then(data => {
+                updateLogCounts(data.logs || {});
+                updatePatterns(data.patterns || {});
+                updateAnomalies(data.anomalies || []);
+            })
+            .catch(error => {
+                document.getElementById('status-indicator').textContent = 'Offline';
+            });
+        }
+
+        function updateLogCounts(logs) {
+            const counts = {
+                'lillith-log-count': logs.consciousness_states?.length || 0,
+                'viren-log-count': logs.problem_solving?.length || 0,
+                'health-log-count': logs.system_health?.length || 0,
+                'interaction-log-count': logs.interactions?.length || 0,
+                'ascension-log-count': logs.ascension_progress?.length || 0
+            };
+
+            let total = 0;
+            Object.entries(counts).forEach(([id, count]) => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = count;
+                    total += count;
+                }
+            });
+
+            document.getElementById('total-logs').textContent = total;
+        }
+
+        function updatePatterns(patterns) {
+            const patternsDisplay = document.getElementById('patterns-display');
+            const patternCount = document.getElementById('active-patterns-count');
+            
+            const patternKeys = Object.keys(patterns);
+            patternCount.textContent = patternKeys.length;
+            
+            if (patternKeys.length === 0) {
+                patternsDisplay.innerHTML = '<div class="no-patterns">No patterns detected</div>';
+            } else {
+                patternsDisplay.innerHTML = patternKeys.map(pattern => `
+                    <div class="pattern-item">
+                        <span class="pattern-name">${pattern.replace('_', ' ')}</span>
+                        <span class="pattern-count">${patterns[pattern]}</span>
+                        <button onclick="analyzePattern('${pattern}')">Analyze</button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function updateAnomalies(anomalies) {
+            const anomaliesDisplay = document.getElementById('anomalies-display');
+            const anomalyCount = document.getElementById('active-anomalies-count');
+            
+            anomalyCount.textContent = anomalies.length;
+            
+            if (anomalies.length === 0) {
+                anomaliesDisplay.innerHTML = '<div class="no-anomalies">No anomalies detected</div>';
+            } else {
+                anomaliesDisplay.innerHTML = anomalies.slice(-5).map(anomaly => `
+                    <div class="anomaly-item">
+                        <span class="anomaly-type">${anomaly.type}</span>
+                        <span class="anomaly-severity">${anomaly.severity}</span>
+                        <span class="anomaly-time">${new Date(anomaly.timestamp).toLocaleTimeString()}</span>
+                        <button onclick="investigateAnomaly('${anomaly.id}')">Investigate</button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function toggleSilentMode() {
+            const button = document.getElementById('silent-toggle');
+            const isEnabled = button.textContent.includes('Enabled');
+            
+            fetch(`/api/loki/toggle_silent_mode`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Tenant': currentTenant
+                },
+                body: JSON.stringify({ silent_mode: !isEnabled })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    button.textContent = isEnabled ? '🔊 Disabled' : '🔇 Enabled';
+                    showNotification(`Silent mode ${isEnabled ? 'disabled' : 'enabled'}`);
+                }
+            })
+            .catch(error => showNotification('Failed to toggle silent mode', 'error'));
+        }
+
+        function exportLogs() {
+            const format = document.getElementById('export-format').value;
+            const timeRange = document.getElementById('time-range').value;
+            
+            fetch(`/api/loki/export_logs`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Tenant': currentTenant
+                },
+                body: JSON.stringify({ format, time_range: timeRange })
+            })
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `loki_logs_${timeRange}.${format}`;
+                a.click();
+                showNotification('Logs exported successfully');
+            })
+            .catch(error => showNotification('Failed to export logs', 'error'));
+        }
+
+        function switchTenant() {
+            currentTenant = document.getElementById('tenant-select').value;
+            document.getElementById('connection-status').textContent = 'Connecting...';
+            loadLoggingStatus();
+        }
+
+        function updateSystemStatus() {
+            loadLoggingStatus();
+            document.getElementById('connection-status').textContent = 'Monitoring';
+            document.getElementById('status-indicator').textContent = 'Silent Monitoring';
+        }
+
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeManagement);
+    </script>
+</body>
+</html>

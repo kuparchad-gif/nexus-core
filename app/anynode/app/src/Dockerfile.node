@@ -1,0 +1,8 @@
+FROM node:20-slim
+WORKDIR /app
+COPY it-pro-diag.js .
+COPY it-pro-diag-lib.js .
+COPY package.json .
+RUN npm install
+EXPOSE 5003
+CMD ["node", "it-pro-diag.js"]

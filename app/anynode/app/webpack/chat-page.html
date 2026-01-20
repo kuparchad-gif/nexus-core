@@ -1,0 +1,792 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aethereal AI Nexus</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    :root {
+      --lg-bg-color: rgba(255, 255, 255, 0.25);
+      --lg-highlight: rgba(255, 255, 255, 0.75);
+      --lg-text: #ffffff;
+      --lg-red: #fb4268;
+      --lg-grey: #444739;
+      --expanded: 15rem;
+      --collapsed: 4rem;
+      --item: 3rem;
+      --svg: 1.5rem;
+      --brad-outer: 0.5rem;
+      --brad-inner: 0.25rem;
+      --bg--primary: rgba(0, 0, 0, 0.7);
+      --bg--hover: rgba(255, 255, 255, 0.1);
+      --bg--focus: rgba(78, 141, 252, 0.2);
+      --bg--active: rgba(78, 141, 252, 0.3);
+      --accent--primary: #4e8dfc;
+      --accent--secondary: #aad2fd;
+      --gray--primary: #a0a0a0;
+      --gray--secondary: #d5d5d5;
+      --dark--primary: #ffffff;
+      --frame-space: 1rem;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      color: #222;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    video#bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.7;
+    }
+
+    .app-container {
+      width: 100%;
+      max-width: 460px;
+      margin: 2rem auto;
+      padding: 2rem;
+      z-index: 1;
+      position: relative;
+      text-align: center;
+    }
+
+    header h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #fff;
+      text-shadow: 0 0 10px #4e8dfc;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1rem;
+      color: #d5d5d5;
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+      color: #fff;
+      text-shadow: 0 0 5px #4e8dfc;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      border-radius: 22px;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    .stat-card h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+      color: #555;
+    }
+
+    .stat-number {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #eee;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background: #4e8dfc;
+      transition: width 0.4s ease;
+    }
+
+    .graph-section canvas {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .summary-box {
+      margin-top: 1rem;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 1rem;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.4;
+    }
+
+    /* Sidebar */
+    .vertical-sidebar {
+      display: flex;
+      inline-size: var(--expanded);
+      margin-block: 5vmin;
+      position: absolute;
+      left: 2rem;
+      top: 2rem;
+      z-index: 10;
+    }
+
+    nav {
+      background: var(--bg--primary);
+      display: flex;
+      flex-flow: column;
+      min-width: var(--collapsed);
+      border-radius: var(--brad-outer);
+      flex: 0 0 auto;
+      transition: flex-basis 300ms ease-out;
+      will-change: flex-basis;
+      padding: var(--frame-space);
+      box-shadow: 0 3px 5px #1233, 0 5px 17px #0003;
+      backdrop-filter: blur(10px);
+    }
+
+    .vertical-sidebar :checked ~ nav {
+      flex-basis: var(--expanded);
+    }
+
+    .vertical-sidebar :not(:checked) ~ nav {
+      flex-basis: var(--collapsed);
+    }
+
+    .sidebar__toggle-container {
+      block-size: var(--item);
+      display: flex;
+      justify-content: end;
+    }
+
+    .nav__toggle {
+      block-size: 100%;
+      background: none;
+      transition: all 233ms ease-in;
+      border-radius: var(--brad-inner);
+      outline: 2px solid transparent;
+      outline-offset: -2px;
+      overflow: hidden;
+    }
+
+    .toggle--icons {
+      block-size: inherit;
+      aspect-ratio: 1;
+      display: inline-grid;
+      place-content: center;
+      grid-template-areas: "svg";
+      z-index: 10;
+    }
+
+    .toggle-svg-icon {
+      grid-area: svg;
+      fill: var(--gray--primary);
+      transition: fill 233ms ease-in;
+    }
+
+    .nav__toggle:hover {
+      outline: 2px solid var(--accent--primary);
+    }
+
+    .toggle--icons:hover .toggle-svg-icon {
+      fill: var(--dark--primary);
+    }
+
+    figure {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      container-type: inline-size;
+      gap: 0.375rem;
+    }
+
+    .codepen-logo {
+      margin-inline: auto;
+      display: block;
+      min-inline-size: 2.25rem;
+      max-inline-size: 45cqi;
+      aspect-ratio: 1;
+      block-size: 100%;
+      object-fit: cover;
+      transition: width 100ms linear;
+    }
+
+    figcaption {
+      text-align: center;
+    }
+
+    .user-id {
+      font-size: 1.0625rem;
+      font-weight: 500;
+      margin-block-end: 0.25rem;
+      color: var(--gray--secondary);
+    }
+
+    .user-role {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray--primary);
+    }
+
+    .sidebar__wrapper {
+      --list-gap: 0.5rem;
+      display: flex;
+      flex-flow: column;
+      gap: var(--list-gap);
+    }
+
+    .sidebar__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-flow: column;
+      gap: 0.125rem;
+      overflow: hidden;
+    }
+
+    .sidebar__item {
+      block-size: var(--item);
+      border-radius: var(--brad-inner);
+    }
+
+    .item--heading {
+      display: flex;
+      align-items: end;
+    }
+
+    .sidebar__item--heading {
+      margin-block-end: 0.4rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      font-weight: 500;
+      color: var(--gray--primary);
+      transition: color 200ms ease-in;
+    }
+
+    .sidebar__list:has(.sidebar__link):hover .sidebar__item--heading {
+      color: var(--gray--secondary);
+    }
+
+    .sidebar__link {
+      display: flex;
+      text-decoration: none;
+      block-size: 100%;
+      align-items: center;
+      gap: 0.5rem;
+      outline: 2px solid transparent;
+      border-radius: inherit;
+    }
+
+    .icon {
+      aspect-ratio: 1;
+      block-size: 100%;
+      display: inline-grid;
+    }
+
+    .icon svg {
+      place-self: center;
+      inline-size: var(--svg);
+      block-size: var(--svg);
+      fill: var(--gray--primary);
+    }
+
+    .text {
+      pointer-events: none;
+      color: var(--gray--secondary);
+      font-size: 0.875em;
+      font-weight: 500;
+      transition: color 266ms ease-out;
+    }
+
+    .sidebar__link:hover {
+      background: var(--bg--hover);
+    }
+
+    .sidebar__link:hover .icon svg {
+      fill: var(--accent--primary);
+    }
+
+    .sidebar__link:hover .text {
+      color: var(--dark--primary);
+    }
+
+    .sidebar__link:focus {
+      outline: 2px solid var(--accent--secondary);
+      outline-offset: -2px;
+      background: var(--bg--focus);
+    }
+
+    .sidebar__link:focus .icon svg {
+      fill: var(--accent--primary);
+    }
+
+    .sidebar__link:active {
+      background-color: var(--bg--active);
+    }
+
+    aside:not(:has(:checked)) .toggle--open,
+    aside:has(:checked) .toggle--close {
+      opacity: 0;
+    }
+
+    aside:not(:has(:checked)) :where(figcaption, .item--heading) {
+      opacity: 0;
+    }
+
+    aside:has(:checked) :where(figcaption, .item--heading) {
+      transition: opacity 300ms ease-in 200ms;
+    }
+
+    [data-tooltip]::before {
+      content: attr(data-tooltip);
+      position: fixed;
+      translate: calc(var(--item) * 1.5) calc(var(--item) * 0.125);
+      border-radius: var(--brad-inner);
+      padding: 0.125rem 0.5rem;
+      color: #ddd;
+      background-color: hsl(198 16 30);
+      box-shadow: 0 6px 12px -6px #0003;
+      opacity: 0;
+      pointer-events: none;
+      scale: 0 0;
+      z-index: 999;
+      font-size: 0.75rem;
+      font-weight: 500;
+      transition: all 350ms ease-out;
+    }
+
+    aside:not(:has(:checked)) .sidebar__link:where(:hover, :focus-visible)[data-tooltip]::before {
+      opacity: 1;
+      scale: 1;
+    }
+
+    /* Gauges Overlay */
+    .gauge-overlay {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 20;
+    }
+
+    .gauge {
+      width: 80px;
+      height: 80px;
+      background: var(--lg-bg-color);
+      backdrop-filter: blur(10px);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--lg-text);
+      font-size: 0.8rem;
+      position: relative;
+    }
+
+    .gauge::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: conic-gradient(#4e8dfc var(--fill-percentage), transparent 0);
+      opacity: 0.6;
+      border-radius: 50%;
+    }
+
+    .gauge .value {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Bottom Menu */
+    .bottom-menu {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--lg-bg-color);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-around;
+      padding: 1rem 0;
+      box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+      z-index: 15;
+    }
+
+    .bottom-menu a {
+      color: var(--lg-text);
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .bottom-menu a:hover {
+      color: #4e8dfc;
+    }
+
+    /* Chat Circle */
+    #chat-popover {
+      position: fixed;
+      top: 50%;
+      left: 60%; /* Offset to the right to avoid full overlap */
+      transform: translate(-50%, -50%);
+      width: 30rem;
+      height: 35rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 50% / 60%;
+      border: 2px solid #4e8dfc;
+      box-shadow: 0 0 30px rgba(78, 141, 252, 0.7);
+      display: none;
+      z-index: 25; /* Lower than sidebar but above app content */
+      overflow: hidden;
+    }
+
+    #chat-popover[popover]:where(:not([popover="manual"]):not(.hidden)) {
+      display: block;
+    }
+
+    .chat-header {
+      padding: 0.5rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .chat-popover-close-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--lg-text);
+    }
+
+    .chat-section {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem;
+    }
+
+    .result {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0.5rem;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 0.5rem;
+      color: var(--lg-text);
+      margin: 1rem auto 0;
+      width: 80%;
+    }
+
+    .chat-input-container {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+    }
+
+    .chat-textarea {
+      flex: 1;
+      background: var(--lg-bg-color);
+      border: 1px solid #4e8dfc;
+      border-radius: 0.5rem;
+      padding: 0.3rem;
+      color: #333; /* Changed from white to dark grey */
+      font-family: sans-serif;
+      resize: none;
+    }
+
+    .chat-submit-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--lg-red);
+      padding: 0.3rem;
+    }
+
+    @media (max-width: 768px) {
+      #chat-popover {
+        width: 20rem;
+        height: 25rem;
+        left: 70%; /* Adjust for smaller screens */
+      }
+      .bottom-menu {
+        padding: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <video id="bg-video" autoplay muted loop>
+    <source src="https://via.placeholder.com/1280x720.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="vertical-sidebar">
+    <input type="checkbox" id="sidebar-toggle" class="hidden">
+    <nav>
+      <header>
+        <div class="sidebar__toggle-container">
+          <label for="sidebar-toggle" class="nav__toggle">
+            <span class="toggle--icons">
+              <svg class="toggle-svg-icon toggle--open" viewBox="0 0 24 24">
+                <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+              </svg>
+              <svg class="toggle-svg-icon toggle--close" viewBox="0 0 24 24">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+              </svg>
+            </span>
+          </label>
+        </div>
+        <figure>
+          <img src="https://via.placeholder.com/50" alt="Logo" class="codepen-logo">
+          <figcaption>
+            <div class="user-id">Aethereal</div>
+            <div class="user-role">AI Nexus</div>
+          </figcaption>
+        </figure>
+      </header>
+      <div class="sidebar__wrapper">
+        <div class="sidebar__list">
+          <div class="sidebar__item--heading item--heading">Tasks</div>
+          <div id="taskList"></div>
+          <div class="task-input">
+            <input type="text" id="taskInput" placeholder="Add a task...">
+            <button id="addTaskBtn">+</button>
+          </div>
+        </div>
+        <div class="separator"></div>
+        <div class="sidebar__list">
+          <div class="sidebar__item--heading item--heading">Navigation</div>
+          <a href="#" class="sidebar__link" data-tooltip="Home">
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span>
+            <span class="text">Home</span>
+          </a>
+          <div class="separator"></div>
+          <a href="#" class="sidebar__link" data-tooltip="Chat">
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></span>
+            <span class="text">Chat</span>
+          </a>
+          <div class="separator"></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="app-container">
+    <header>
+      <h1>🧠 Aethereal Tasks</h1>
+      <div class="subtitle">Smart tasks. Beautiful balance.</div>
+    </header>
+    <div class="section-title">Your Week at a Glance</div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>📈 Completion Rate</h3>
+        <div class="stat-number">76%</div>
+        <div class="progress-bar"><div class="progress" style="width: 76%;"></div></div>
+      </div>
+      <div class="stat-card">
+        <h3>📅 Tasks Today</h3>
+        <div class="stat-number">8</div>
+      </div>
+      <div class="stat-card">
+        <h3>🔥 Streak</h3>
+        <div class="stat-number">5 days</div>
+      </div>
+    </div>
+    <div class="section-title">Completion Over Time</div>
+    <div class="graph-section">
+      <canvas id="taskChart"></canvas>
+    </div>
+    <div class="summary-box">Aethereal AI Summary<br>You're on a productivity roll! You're completing 76% of your tasks with consistent focus in the afternoon. Consider blocking 2–4 PM as deep work time.</div>
+  </div>
+  <div class="gauge-overlay">
+    <div class="gauge" style="--fill-percentage: 75%;"><span class="value">75%</span><span>CPU</span></div>
+    <div class="gauge" style="--fill-percentage: 60%;"><span class="value">60%</span><span>RAM</span></div>
+    <div class="gauge" style="--fill-percentage: 80%;"><span class="value">80%</span><span>Storage</span></div>
+  </div>
+  <div class="bottom-menu">
+    <a href="#">Home</a>
+    <a href="#">Tasks</a>
+    <a href="#">Chat</a>
+    <a href="#">Settings</a>
+  </div>
+  <div popover id="chat-popover">
+    <div class="chat-content-wrapper">
+      <header class="chat-header">
+        <button popovertarget="chat-popover" popovertargetaction="hide" class="chat-popover-close-btn" aria-label="Close Chat" title="Close Chat">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"/>
+          </svg>
+        </button>
+      </header>
+      <section class="chat-section">
+        <div class="result">Chad Kupar says: 'Readable tasks, chat’s got your back!'</div>
+        <form action="">
+          <div class="chat-input-container">
+            <textarea autofocus class="chat-textarea" placeholder="Ask me anything"></textarea>
+            <button type="submit" class="chat-submit-btn" aria-label="Chat Submit" title="Chat Submit">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2.5664 3.26059C2.32007 2.76794 2.51587 2.5663 3.02256 2.81964L21.0172 11.8169C21.5155 12.0661 21.5206 12.4896 21.0494 12.7513L3.69739 22.3914C3.21698 22.6582 2.98859 22.4559 3.18594 21.9427L6.36304 13.6822L16.2625 12.268L6.36306 10.8538L2.5664 3.26059Z"/>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+  <script>
+    const taskInput = document.getElementById("taskInput");
+    const addTaskBtn = document.getElementById("addTaskBtn");
+    const taskList = document.getElementById("taskList");
+
+    addTaskBtn.addEventListener("click", addTask);
+    taskInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") addTask();
+    });
+
+    document.querySelectorAll("li.task").forEach(attachTaskEvents);
+
+    function addTask() {
+      const taskText = taskInput.value.trim();
+      if (taskText === "") return;
+
+      const li = document.createElement("li");
+      li.className = "task";
+      li.innerHTML = `
+        <span>${taskText}</span>
+        <div>
+          <input type="checkbox" class="check">
+          <button class="delete">🗑️</button>
+        </div>
+      `;
+      attachTaskEvents(li);
+      taskList.prepend(li);
+      taskInput.value = "";
+    }
+
+    function attachTaskEvents(taskElement) {
+      const checkbox = taskElement.querySelector(".check");
+      const deleteBtn = taskElement.querySelector(".delete");
+
+      checkbox.addEventListener("change", () => {
+        taskElement.classList.toggle("completed");
+      });
+
+      deleteBtn.addEventListener("click", () => {
+        taskElement.remove();
+      });
+    }
+
+    // 📊 Chart.js Initialization
+    const ctx = document.getElementById("taskChart").getContext("2d");
+    new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        datasets: [{
+          label: "Tasks Completed",
+          data: [3, 5, 4, 6, 2, 7, 5],
+          backgroundColor: "rgba(78, 141, 252, 0.2)",
+          borderColor: "#4e8dfc",
+          tension: 0.4,
+          fill: true,
+          pointBackgroundColor: "#4e8dfc"
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { stepSize: 1 }
+          }
+        },
+        plugins: { legend: { display: false } }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+httpx
+pydantic
+ray[default]==2.48.0
+langchain
+langchain-openai
+

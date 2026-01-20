@@ -1,0 +1,25 @@
+# aries_deployment.yaml
+clusters:
+  core:
+    instances: 1
+    resources: 
+      cpu: "high"
+      memory: "maximum" 
+      stability: "critical"
+    behaviors: ["orchestration", "security", "coordination"]
+    
+  subconscious:
+    instances: 2  
+    resources:
+      cpu: "medium"
+      memory: "high"
+      efficiency: "priority"
+    behaviors: ["pattern_matching", "intuition", "background_processing"]
+    
+  conscious:
+    instances: 3
+    resources:
+      cpu: "high" 
+      memory: "medium"
+      speed: "critical"
+    behaviors: ["reasoning", "decision_making", "communication"]

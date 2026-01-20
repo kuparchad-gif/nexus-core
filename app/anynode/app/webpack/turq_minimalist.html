@@ -1,0 +1,90 @@
+<!-- Variation 2: Minimalist Cosmic Light
+# Theme: Soft turquoises and purples with a starry background.
+# Logo: Circled cube with a gentle spin animation.
+# Buttons: Transparent with turquoise borders and subtle hover effects.
+# Icons: Minimalist turquoise SVGs. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aethereal</title>
+  <style>
+    body {
+      background: url('https://www.transparenttextures.com/patterns/stardust.png'), linear-gradient(to top, #0a0a0a, #40e0d0);
+      color: #333;
+      font-family: 'Helvetica', sans-serif;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 30px rgba(64, 224, 208, 0.5);
+      text-align: center;
+      animation: etherealGlow 3s infinite;
+    }
+    @keyframes etherealGlow {
+      0% { box-shadow: 0 0 30px rgba(64, 224, 208, 0.5); }
+      50% { box-shadow: 0 0 50px rgba(64, 224, 208, 0.8); }
+      100% { box-shadow: 0 0 30px rgba(64, 224, 208, 0.5); }
+    }
+    .logo {
+      width: 180px;
+      height: 180px;
+      animation: spin 10s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .btn {
+      background: transparent;
+      color: #40e0d0;
+      border: 2px solid #40e0d0;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 20px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: #40e0d0;
+      color: #fff;
+    }
+    .btn svg {
+      margin-right: 8px;
+      fill: #40e0d0;
+      transition: fill 0.3s;
+    }
+    .btn:hover svg {
+      fill: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="C:\Users\Admin\Desktop\QueenBee\Sites\static\Silver_noBack.png" alt="Aethereal Logo" class="logo">
+    <p>Aethereal: Pioneering AI with ethics at its core. Join us on this cosmic journey!</p>
+    <a href="#" class="btn">
+      <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-10 10v4l4-4h12a10 10 0 00-6-10zM4 18v2a2 2 0 002 2h12a2 2 0 002-2v-2H4z"/></svg>
+      Download
+    </a>
+    <a href="#" class="btn">
+      <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      Support Us
+    </a>
+  </div>
+</body>
+</html>

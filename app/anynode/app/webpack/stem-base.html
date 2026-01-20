@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{STEM_NAME}} - LILLITH Consciousness</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            accent: '#a78bfa',
+            eclipse: '#ff6600',
+          },
+          boxShadow: {
+            'glass': '0 4px 30px rgba(0,0,0,0.1)',
+            'eclipse': '0 6px 60px 8px #ff4500',
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .glass {
+      background: rgba(255,255,255,0.38);
+      border-radius: 1rem;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.22);
+      transition: background 0.3s, box-shadow 0.3s, border 0.3s;
+    }
+
+    .dark .glass {
+      background: rgba(22,16,12,0.74);
+      border: 1.5px solid rgba(255,120,25,0.18);
+      box-shadow: 0 6px 60px 8px #ff660026;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col transition-colors duration-500">
+  <!-- Dynamic Background -->
+  <div id="background" class="fixed inset-0 -z-10 w-full h-full transition-all duration-700"
+       style="background: linear-gradient(120deg, #fff 0%, #e8ebf2 100%);">
+  </div>
+
+  <!-- Eclipse Toggle -->
+  <button id="eclipseToggle" 
+          class="fixed top-5 right-6 z-50 px-5 py-2 rounded-full text-xs font-semibold shadow-xl glass hover:shadow-eclipse border transition-all border-accent text-accent hover:bg-accent/10"
+          title="Toggle Eclipse Mode">
+    Eclipse Mode: OFF
+  </button>
+
+  <!-- Navigation -->
+  <nav class="glass m-4 p-4">
+    <div class="flex justify-between items-center">
+      <h1 class="text-2xl font-bold">{{STEM_NAME}}</h1>
+      <div class="flex gap-4">
+        <a href="/" class="glass px-4 py-2 hover:bg-white/20">Home</a>
+        <a href="/lillith/" class="glass px-4 py-2 hover:bg-white/20">LILLITH</a>
+        <a href="#" class="glass px-4 py-2 hover:bg-white/20">Console</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex flex-1 flex-col items-center justify-center gap-6 p-6">
+    {{CONTENT}}
+  </main>
+
+  <!-- Bottom Navigation -->
+  <nav id="bottomNav" class="fixed bottom-0 w-full flex justify-center bg-white/50 backdrop-blur-md border-t border-accent">
+    <div class="flex gap-6 p-3">
+      <button class="glass px-4 py-2">{{STEM_NAME}}</button>
+      <button class="glass px-4 py-2">Status</button>
+      <button class="glass px-4 py-2">Settings</button>
+      <button class="glass px-4 py-2">Help</button>
+    </div>
+  </nav>
+
+  <script>
+    // Eclipse Mode Toggle
+    let darkMode = false;
+    const toggle = document.getElementById('eclipseToggle');
+    const background = document.getElementById('background');
+    const bottomNav = document.getElementById('bottomNav');
+
+    toggle.addEventListener('click', () => {
+      darkMode = !darkMode;
+      
+      if (darkMode) {
+        document.documentElement.classList.add('dark');
+        background.style.background = "url('/1080Eclipse.jpg') center/cover no-repeat";
+        toggle.textContent = 'Eclipse Mode: ON';
+        toggle.className = 'fixed top-5 right-6 z-50 px-5 py-2 rounded-full text-xs font-semibold shadow-xl glass hover:shadow-eclipse border transition-all border-orange-400 text-orange-200 hover:bg-orange-700/30';
+        bottomNav.className = 'fixed bottom-0 w-full flex justify-center bg-black/40 backdrop-blur-md border-t border-orange-400';
+      } else {
+        document.documentElement.classList.remove('dark');
+        background.style.background = "linear-gradient(120deg, #fff 0%, #e8ebf2 100%)";
+        toggle.textContent = 'Eclipse Mode: OFF';
+        toggle.className = 'fixed top-5 right-6 z-50 px-5 py-2 rounded-full text-xs font-semibold shadow-xl glass hover:shadow-eclipse border transition-all border-accent text-accent hover:bg-accent/10';
+        bottomNav.className = 'fixed bottom-0 w-full flex justify-center bg-white/50 backdrop-blur-md border-t border-accent';
+      }
+    });
+  </script>
+</body>
+</html>

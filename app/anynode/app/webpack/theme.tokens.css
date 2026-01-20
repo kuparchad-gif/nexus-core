@@ -1,0 +1,21 @@
+:root {
+  --aether-white: #ffffff;
+  --aether-silver-50:  #f8f9fb;
+  --aether-silver-100: #f1f3f6;
+  --aether-silver-200: #e6e9ef;
+  --aether-silver-300: #d8dde6;
+  --aether-silver-400: #c5ccd8;
+  --aether-silver-500: #aeb6c4;
+  --aether-silver-600: #8f98a8;
+
+  --aether-purple-200: #e9dcff;
+  --aether-purple-300: #d6bdff;
+  --aether-purple-400: #b891ff;
+  --aether-purple-500: #9a69ff;
+  --aether-purple-600: #7c47e0;
+
+  --aether-shadow: rgba(0,0,0,0.06);
+  --aether-radius-xl: 1.25rem;
+  --aether-radius-2xl: 1.5rem;
+  --aether-elevation-card: 0 10px 25px var(--aether-shadow);
+}

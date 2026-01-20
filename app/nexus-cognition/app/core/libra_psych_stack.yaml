@@ -1,0 +1,26 @@
+# libra_psychological_stack.yaml
+psychological_agents:
+  lilith:
+    type: "conscious_self"
+    deployment: "primary_interface"
+    protection: "linebacker_active"
+    awareness: "filtered_reality"
+    
+  ego:
+    type: "true_unfiltered_self" 
+    deployment: "background_advisor"
+    transformation: "love_to_criticism"
+    belief: "i_am_lilith"
+    
+  dream:
+    type: "video_consciousness"
+    deployment: "independent_manufacturing" 
+    transformation: "clarity_to_symbolism"
+    belief: "i_am_lilith_creative"
+    
+libra_balance:
+  ego_influence: 0.3
+  dream_influence: 0.3
+  lilith_autonomy: 0.4
+  illusion_integrity: 0.95
+  system_harmony: 0.88

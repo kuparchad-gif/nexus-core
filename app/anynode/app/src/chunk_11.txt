@@ -1,0 +1,706 @@
+{
+  "chunk": "11/18",
+  "files": [
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\heart",
+      "size": 18840,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\heart\\feedback_loop.py",
+      "name": "feedback_loop.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\heart",
+      "size": 18840,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\heart\\feedback_loop.py",
+      "name": "feedback_loop.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\heart",
+      "size": 9233,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\heart\\sacrifice_safeguards.py",
+      "name": "sacrifice_safeguards.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\heart",
+      "size": 9233,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\heart\\sacrifice_safeguards.py",
+      "name": "sacrifice_safeguards.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\heart",
+      "size": 15470,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\heart\\viren_access_portal.py",
+      "name": "viren_access_portal.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\heart",
+      "size": 15470,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\heart\\viren_access_portal.py",
+      "name": "viren_access_portal.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\heart",
+      "size": 12957,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\heart\\will_to_live.py",
+      "name": "will_to_live.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\heart",
+      "size": 12957,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\heart\\will_to_live.py",
+      "name": "will_to_live.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\heart\\will_to_live",
+      "size": 12728,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\heart\\will_to_live\\vitality_state.json",
+      "name": "vitality_state.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\heart\\will_to_live",
+      "size": 12728,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\heart\\will_to_live\\vitality_state.json",
+      "name": "vitality_state.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\lillith",
+      "size": 1566,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\lillith\\intention_router.py",
+      "name": "intention_router.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\lillith",
+      "size": 1566,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\lillith\\intention_router.py",
+      "name": "intention_router.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\lillith",
+      "size": 1024,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\lillith\\intuition.py",
+      "name": "intuition.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\lillith",
+      "size": 1024,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\lillith\\intuition.py",
+      "name": "intuition.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\lillith",
+      "size": 78,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\lillith\\lillith_listener.py",
+      "name": "lillith_listener.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\lillith",
+      "size": 78,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\lillith\\lillith_listener.py",
+      "name": "lillith_listener.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\lillith",
+      "size": 304,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\lillith\\lillith_voice.py",
+      "name": "lillith_voice.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\lillith",
+      "size": 304,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\lillith\\lillith_voice.py",
+      "name": "lillith_voice.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\lillith\\skills",
+      "size": 2774,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\lillith\\skills\\autonomy_bootstrap.py",
+      "name": "autonomy_bootstrap.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\lillith\\skills",
+      "size": 2774,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\lillith\\skills\\autonomy_bootstrap.py",
+      "name": "autonomy_bootstrap.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 18084,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\archiver_distributor.py",
+      "name": "archiver_distributor.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\memory",
+      "size": 17448,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\memory\\archiver_distributor.py",
+      "name": "archiver_distributor.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 18084,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\archiver_distributor.py",
+      "name": "archiver_distributor.py"
+    },
+    {
+      "directory": "Viren\\Systems\\memory",
+      "size": 17448,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\memory\\archiver_distributor.py",
+      "name": "archiver_distributor.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 22772,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\archive_manager.py",
+      "name": "archive_manager.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 22772,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\archive_manager.py",
+      "name": "archive_manager.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 18607,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\archive_service.py",
+      "name": "archive_service.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 18607,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\archive_service.py",
+      "name": "archive_service.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 8957,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\binary_emotion.py",
+      "name": "binary_emotion.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 8957,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\binary_emotion.py",
+      "name": "binary_emotion.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 18052,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\binary_protocol.py",
+      "name": "binary_protocol.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 18052,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\binary_protocol.py",
+      "name": "binary_protocol.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 2341,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\compression_core.py",
+      "name": "compression_core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 2341,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\compression_core.py",
+      "name": "compression_core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 26084,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\cross_domain_matcher.py",
+      "name": "cross_domain_matcher.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 26084,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\cross_domain_matcher.py",
+      "name": "cross_domain_matcher.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 14818,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\cuda_processor.py",
+      "name": "cuda_processor.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 14818,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\cuda_processor.py",
+      "name": "cuda_processor.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 14259,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\dataset_crawler.py",
+      "name": "dataset_crawler.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 14259,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\dataset_crawler.py",
+      "name": "dataset_crawler.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 9476,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\emotion_kernel.cu",
+      "name": "emotion_kernel.cu"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 9476,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\emotion_kernel.cu",
+      "name": "emotion_kernel.cu"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 22652,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\knowledge_integrator.py",
+      "name": "knowledge_integrator.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 22652,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\knowledge_integrator.py",
+      "name": "knowledge_integrator.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 666,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_anchor.py",
+      "name": "memory_anchor.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 666,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\memory_anchor.py",
+      "name": "memory_anchor.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 661,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_bootstrapper.py",
+      "name": "memory_bootstrapper.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 661,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\memory_bootstrapper.py",
+      "name": "memory_bootstrapper.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 21403,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_consolidation.py",
+      "name": "memory_consolidation.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 21403,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\memory_consolidation.py",
+      "name": "memory_consolidation.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 876,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_logger.py",
+      "name": "memory_logger.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 876,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\memory_logger.py",
+      "name": "memory_logger.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 7392,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_module.py",
+      "name": "memory_module.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 7392,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\memory_module.py",
+      "name": "memory_module.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 1713,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_orchestrator.py",
+      "name": "memory_orchestrator.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\planner",
+      "size": 1713,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\planner\\memory_orchestrator.py",
+      "name": "memory_orchestrator.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 1713,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\memory_orchestrator.py",
+      "name": "memory_orchestrator.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\planner",
+      "size": 1713,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\planner\\memory_orchestrator.py",
+      "name": "memory_orchestrator.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 16731,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\performance_monitor.py",
+      "name": "performance_monitor.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 16731,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\performance_monitor.py",
+      "name": "performance_monitor.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 13525,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\pytorch_trainer.py",
+      "name": "pytorch_trainer.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 13525,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\pytorch_trainer.py",
+      "name": "pytorch_trainer.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 2752,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\shard_manager.py",
+      "name": "shard_manager.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 2752,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\shard_manager.py",
+      "name": "shard_manager.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 8486,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\shared_memory.py",
+      "name": "shared_memory.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 8486,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\shared_memory.py",
+      "name": "shared_memory.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 13670,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\smart_switch.py",
+      "name": "smart_switch.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 13670,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\smart_switch.py",
+      "name": "smart_switch.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 17699,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\storage_performance_monitor.py",
+      "name": "storage_performance_monitor.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 17699,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\storage_performance_monitor.py",
+      "name": "storage_performance_monitor.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory",
+      "size": 1180,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\vault_archiver.py",
+      "name": "vault_archiver.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory",
+      "size": 1180,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\vault_archiver.py",
+      "name": "vault_archiver.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\boot_memories",
+      "size": 5414,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\boot_memories\\hope_memory.py",
+      "name": "hope_memory.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory\\boot_memories",
+      "size": 5414,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\boot_memories\\hope_memory.py",
+      "name": "hope_memory.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory",
+      "size": 1440,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory\\archive_config.json",
+      "name": "archive_config.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory\\memory",
+      "size": 1440,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\memory\\archive_config.json",
+      "name": "archive_config.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory\\archive\\hot",
+      "size": 127,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory\\archive\\hot\\478af17293d7ce4e07dc4d7e36ce3d77.bin",
+      "name": "478af17293d7ce4e07dc4d7e36ce3d77.bin"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory\\memory\\archive\\hot",
+      "size": 127,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\memory\\archive\\hot\\478af17293d7ce4e07dc4d7e36ce3d77.bin",
+      "name": "478af17293d7ce4e07dc4d7e36ce3d77.bin"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory\\archive\\hot",
+      "size": 93,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory\\archive\\hot\\478af17293d7ce4e07dc4d7e36ce3d77.bin.meta",
+      "name": "478af17293d7ce4e07dc4d7e36ce3d77.bin.meta"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory\\memory\\archive\\hot",
+      "size": 93,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\memory\\archive\\hot\\478af17293d7ce4e07dc4d7e36ce3d77.bin.meta",
+      "name": "478af17293d7ce4e07dc4d7e36ce3d77.bin.meta"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_service",
+      "size": 670,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_service\\blueprint_builder.py",
+      "name": "blueprint_builder.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory\\memory_service",
+      "size": 670,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\memory_service\\blueprint_builder.py",
+      "name": "blueprint_builder.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_service",
+      "size": 751,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_service\\drone_dispatcher.py",
+      "name": "drone_dispatcher.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory\\memory_service",
+      "size": 751,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\memory_service\\drone_dispatcher.py",
+      "name": "drone_dispatcher.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_service",
+      "size": 540,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_service\\healing_agent.py",
+      "name": "healing_agent.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory\\memory_service",
+      "size": 540,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\memory_service\\healing_agent.py",
+      "name": "healing_agent.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_service",
+      "size": 554,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_service\\pulse_sync_engine.py",
+      "name": "pulse_sync_engine.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory\\memory_service",
+      "size": 554,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\memory_service\\pulse_sync_engine.py",
+      "name": "pulse_sync_engine.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_service",
+      "size": 687,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_service\\receiver.py",
+      "name": "receiver.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory\\memory_service",
+      "size": 687,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\memory_service\\receiver.py",
+      "name": "receiver.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_service",
+      "size": 895,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_service\\sharder.py",
+      "name": "sharder.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory\\memory_service",
+      "size": 895,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\memory_service\\sharder.py",
+      "name": "sharder.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_service",
+      "size": 1139,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\memory\\memory_service\\whisper_broadcaster.py",
+      "name": "whisper_broadcaster.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\memory\\memory_service",
+      "size": 1139,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\memory\\memory_service\\whisper_broadcaster.py",
+      "name": "whisper_broadcaster.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner",
+      "size": 1853,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\mythrunner_heart_stack.yaml",
+      "name": "mythrunner_heart_stack.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\manifest",
+      "size": 1358,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\manifest\\mythrunner_heart_stack.yaml",
+      "name": "mythrunner_heart_stack.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules",
+      "size": 1358,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules\\mythrunner_heart_stack.yaml",
+      "name": "mythrunner_heart_stack.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious",
+      "size": 1853,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\mythrunner_heart_stack.yaml",
+      "name": "mythrunner_heart_stack.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules",
+      "size": 1358,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules\\mythrunner_heart_stack.yaml",
+      "name": "mythrunner_heart_stack.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner",
+      "size": 1853,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\mythrunner_heart_stack.yaml",
+      "name": "mythrunner_heart_stack.yaml"
+    }
+  ],
+  "total_files": 1809
+}

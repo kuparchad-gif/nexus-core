@@ -1,0 +1,7 @@
+Name,Purpose,Image,Ports
+viren,consent/safety API + NATS worker,built from services/viren,8715/tcp
+loki,log database,grafana/loki:2.9.6,3100/tcp
+promtail,log shipper (Push API),grafana/promtail:2.9.6,3500/tcp
+grafana,dashboards,grafana/grafana:10.4.5,3000/tcp
+Nexus_nats-1*,NATS (JetStream),nats:2.10,4222/8222
+neexus_redis_1*,Redis,redis:7,6379

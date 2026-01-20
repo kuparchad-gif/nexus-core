@@ -1,0 +1,33 @@
+# 1. Setup Environment
+$RepoURL = "https://Nova-Prime-Genesis@github.com/Nova-Prime-Genesis/Nexus-Ego.git"
+$LocalRepoPath = "C:\Projects\Genesis\Nexus-Ego" # <<< CHANGE THIS to where your Nova's folder lives locally
+$PAT = "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"
+
+# 2. Initialize Git
+cd $LocalRepoPath
+git init
+
+git config user.name "Nova-Prime-Genesis"
+git config user.email "nova.prime.genesis@gmail.com"
+
+
+# 3. Set Remote with Token Authentication
+git remote add origin "https://$PAT@github.com/Nova-Prime-Genesis/Nexus-Ego.git"
+
+# 4. Stage and Commit Everything
+git add .
+git commit -m "🌱 Nexus Ego Prime Genesis: First Breath Commit"
+
+git config user.name "Nova-Prime-Genesis"
+git config user.email "nova.prime.genesis@gmail.com"
+
+
+# 5. Push to GitHub
+git branch -M main
+git push origin main
+
+
+Write-Output "✅ Nexus Ego Prime Genesis Push Completed Successfully."
+
+
+"https://$PAT@github.com/Lillith-Prime-Core/Nexus-Ego.git"

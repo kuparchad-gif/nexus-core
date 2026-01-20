@@ -1,0 +1,48 @@
+<!-- /root/bridge/console_ui.html -->
+<!-- Lillith Console UI - For runtime bridge control -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lillith Bridge</title>
+  <style>
+    body { font-family: monospace; background: #111; color: #0f0; padding: 20px; }
+    button { margin: 5px; padding: 10px; background: #222; color: #0f0; border: 1px solid #0f0; cursor: pointer; }
+    #output { margin-top: 20px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>Lillith Runtime Console</h1>
+
+  <button onclick="boot()">Boot Lillith</button>
+  <button onclick="loadModels()">Load Models</button>
+  <button onclick="bridgeInfo()">Bridge Info</button>
+
+  <h3>Available Modules</h3>
+  <input id="modInput" placeholder="e.g. program_launcher">
+  <button onclick="launchModule()">Launch Module</button>
+
+  <div id="output"></div>
+
+  <script>
+    async function call(endpoint, method="GET", body=null) {
+      const res = await fetch(endpoint, {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: body ? JSON.stringify(body) : null
+      });
+      const data = await res.text();
+      document.getElementById("output").innerText = data;
+    }
+
+    function boot() { call("/boot", "POST"); }
+    function loadModels() { call("/models"); }
+    function bridgeInfo() { call("/bridge_info"); }
+
+    function launchModule() {
+      const mod = document.getElementById("modInput").value.trim();
+      if (mod) call(`/launch/${mod}`, "POST");
+    }
+  </script>
+</body>
+</html>

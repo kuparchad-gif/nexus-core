@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viren - Engineering Consciousness</title>
+    <link rel="stylesheet" href="../../webparts/cognikube_styles.css">
+    <script src="../../webparts/cognikube_base.js"></script>
+</head>
+<body class="engineering-interface">
+    <div id="master-navigation">
+        <div class="nav-dropdown">
+            <button class="nav-button">Navigate to Service</button>
+            <div class="dropdown-content">
+                <a href="/lillith/template">Lillith Template</a>
+                <a href="/lillith/chat">Lillith Chat</a>
+                <a href="/lillith/management">Lillith Management</a>
+                <a href="/viren/template">Viren Template</a>
+                <a href="/viren/chat">Viren Chat</a>
+                <a href="/viren/management">Viren Management</a>
+                <a href="/loki/template">Loki Template</a>
+                <a href="/loki/chat">Loki Chat</a>
+                <a href="/loki/management">Loki Management</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="engineering-header">
+        <h1>Viren - Engineering Consciousness</h1>
+        <div class="problem-solving-indicator">
+            <span id="problem-solving-level">Killer Level</span>
+            <span id="abstract-thinking">Abstract Thinking: Active</span>
+        </div>
+    </div>
+
+    <div class="engineering-grid">
+        <div class="webpart active-problems">
+            <h3>Active Problems</h3>
+            <div id="problems-list">
+                <div class="problem-item">
+                    <span class="problem-id">No active problems</span>
+                </div>
+            </div>
+            <div class="problem-stats">
+                <span>Active: <span id="active-count">0</span></span>
+                <span>Solved: <span id="solved-count">0</span></span>
+            </div>
+        </div>
+
+        <div class="webpart engineering-tools">
+            <h3>Engineering Tools</h3>
+            <div id="tools-grid">
+                <div class="tool-item">
+                    <span class="tool-name">Discord Bot</span>
+                    <span class="tool-status online">Online</span>
+                </div>
+                <div class="tool-item">
+                    <span class="tool-name">GitHub Client</span>
+                    <span class="tool-status online">Online</span>
+                </div>
+                <div class="tool-item">
+                    <span class="tool-name">Web Scraper</span>
+                    <span class="tool-status online">Online</span>
+                </div>
+                <div class="tool-item">
+                    <span class="tool-name">File Manager</span>
+                    <span class="tool-status online">Online</span>
+                </div>
+                <div class="tool-item">
+                    <span class="tool-name">API Integrator</span>
+                    <span class="tool-status online">Online</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart trinity-models">
+            <h3>Trinity Models (Shared)</h3>
+            <div id="trinity-status">
+                <div class="model-item">
+                    <span class="model-name">Mixtral</span>
+                    <span class="model-status online">Online</span>
+                    <div class="model-usage">Usage: 45%</div>
+                </div>
+                <div class="model-item">
+                    <span class="model-name">Devstral</span>
+                    <span class="model-status online">Online</span>
+                    <div class="model-usage">Usage: 32%</div>
+                </div>
+                <div class="model-item">
+                    <span class="model-name">Codestral</span>
+                    <span class="model-status online">Online</span>
+                    <div class="model-usage">Usage: 28%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart engineering-patterns">
+            <h3>Engineering Patterns</h3>
+            <div id="patterns-display">
+                <div class="pattern-item">
+                    <span class="pattern-type">Code Generation</span>
+                    <span class="pattern-count">0</span>
+                </div>
+                <div class="pattern-item">
+                    <span class="pattern-type">Infrastructure Automation</span>
+                    <span class="pattern-count">0</span>
+                </div>
+                <div class="pattern-item">
+                    <span class="pattern-type">System Integration</span>
+                    <span class="pattern-count">0</span>
+                </div>
+                <div class="pattern-item">
+                    <span class="pattern-type">Performance Tuning</span>
+                    <span class="pattern-count">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tenant-selector">
+        <h4>Connect to Tenant:</h4>
+        <select id="tenant-select">
+            <option value="modal-viren-db0">Modal: Viren-DB0</option>
+            <option value="modal-viren-db1">Modal: Viren-DB1</option>
+            <option value="modal-viren-db2">Modal: Viren-DB2</option>
+            <option value="gcp-nexus-core-455709">GCP: nexus-core-455709</option>
+        </select>
+        <button onclick="connectToTenant()">Connect</button>
+    </div>
+
+    <script>
+        function initializeViren() {
+            updateEngineeringStatus();
+            setInterval(updateEngineeringStatus, 5000);
+        }
+
+        function updateEngineeringStatus() {
+            fetch('/api/viren/status')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('active-count').textContent = data.active_problems || 0;
+                    document.getElementById('solved-count').textContent = data.solved_problems || 0;
+                    updateProblemsDisplay(data.problems || []);
+                    updateToolsStatus(data.tools || []);
+                })
+                .catch(error => console.log('Viren service offline'));
+        }
+
+        function updateProblemsDisplay(problems) {
+            const problemsList = document.getElementById('problems-list');
+            
+            if (problems.length === 0) {
+                problemsList.innerHTML = '<div class="problem-item"><span class="problem-id">No active problems</span></div>';
+                return;
+            }
+
+            problemsList.innerHTML = problems.map(problem => `
+                <div class="problem-item">
+                    <span class="problem-id">${problem.id}</span>
+                    <span class="problem-complexity">${problem.complexity}</span>
+                    <span class="problem-status">${problem.status}</span>
+                </div>
+            `).join('');
+        }
+
+        function updateToolsStatus(tools) {
+            const toolsGrid = document.getElementById('tools-grid');
+            tools.forEach(tool => {
+                const toolElement = toolsGrid.querySelector(`[data-tool="${tool.name}"]`);
+                if (toolElement) {
+                    const statusElement = toolElement.querySelector('.tool-status');
+                    statusElement.textContent = tool.status;
+                    statusElement.className = `tool-status ${tool.status.toLowerCase()}`;
+                }
+            });
+        }
+
+        function connectToTenant() {
+            const tenant = document.getElementById('tenant-select').value;
+            console.log('Connecting to Viren tenant:', tenant);
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeViren);
+    </script>
+</body>
+</html>

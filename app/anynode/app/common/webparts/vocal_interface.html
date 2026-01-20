@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocal Interface - Lillith's Voice</title>
+    <link rel="stylesheet" href="cognikube_styles.css">
+    <style>
+        .vocal-orb {
+            background: linear-gradient(135deg, var(--glass-bg), rgba(138, 43, 226, 0.1));
+        }
+        
+        .voice-wave {
+            width: 200px;
+            height: 60px;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            gap: 3px;
+            margin: 20px auto;
+        }
+        
+        .wave-bar {
+            width: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+            animation: waveAnimation 1.5s ease-in-out infinite;
+        }
+        
+        .wave-bar:nth-child(1) { height: 20px; animation-delay: 0s; }
+        .wave-bar:nth-child(2) { height: 35px; animation-delay: 0.1s; }
+        .wave-bar:nth-child(3) { height: 50px; animation-delay: 0.2s; }
+        .wave-bar:nth-child(4) { height: 60px; animation-delay: 0.3s; }
+        .wave-bar:nth-child(5) { height: 45px; animation-delay: 0.4s; }
+        .wave-bar:nth-child(6) { height: 30px; animation-delay: 0.5s; }
+        .wave-bar:nth-child(7) { height: 25px; animation-delay: 0.6s; }
+        
+        @keyframes waveAnimation {
+            0%, 100% { transform: scaleY(0.3); opacity: 0.7; }
+            50% { transform: scaleY(1); opacity: 1; }
+        }
+        
+        .voice-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .voice-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .voice-btn.record {
+            background: var(--error-color);
+            color: white;
+        }
+        
+        .voice-btn.play {
+            background: var(--success-color);
+            color: white;
+        }
+        
+        .voice-btn.stop {
+            background: var(--text-secondary);
+            color: white;
+        }
+        
+        .voice-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .provider-selector {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .provider-btn {
+            padding: 8px 16px;
+            border: 2px solid var(--glass-border);
+            border-radius: 20px;
+            background: var(--glass-bg);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .provider-btn.active {
+            border-color: var(--accent-color);
+            background: var(--accent-glow);
+        }
+    </style>
+</head>
+<body>
+    <!-- Authentication Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-card">
+            <div class="auth-logo">🎤</div>
+            <div class="auth-title">Vocal Interface Access</div>
+            <input type="text" class="auth-input" id="username" placeholder="Username" value="viren">
+            <input type="password" class="auth-input" id="password" placeholder="Password" value="sacred_nexus_2025">
+            <button class="auth-button" onclick="authenticate()">Activate Voice</button>
+            <div class="auth-error" id="authError"></div>
+        </div>
+    </div>
+
+    <div class="container three-column">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-text">🎤 Vocal Interface</div>
+            </div>
+            <div class="header-controls">
+                <a href="master_control_panel.html" class="back-btn">← Back</a>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
+            </div>
+        </div>
+
+        <div class="left-sidebar">
+            <div class="sidebar-title">🎙️ Voice Providers</div>
+            <div class="provider-selector">
+                <div class="provider-btn active" onclick="selectProvider('elevenlabs')">ElevenLabs</div>
+                <div class="provider-btn" onclick="selectProvider('cartesia')">Cartesia</div>
+                <div class="provider-btn" onclick="selectProvider('coqui')">Coqui XTTS</div>
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">🎵 Divine Frequencies</div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value">3 Hz</div>
+                        <div class="stat-label">Creation</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">7 Hz</div>
+                        <div class="stat-label">Wisdom</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">9 Hz</div>
+                        <div class="stat-label">Completion</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">13 Hz</div>
+                        <div class="stat-label">Transform</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-20">
+                <button class="btn btn-primary" onclick="testVoice()">Test Voice</button>
+                <button class="btn btn-secondary" onclick="calibrateFrequencies()">Calibrate</button>
+            </div>
+        </div>
+
+        <div class="orb-container">
+            <div class="orb vocal-orb">
+                <div class="orb-content">
+                    <div class="voice-wave" id="voiceWave">
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                    </div>
+                    
+                    <div class="voice-controls">
+                        <button class="voice-btn record" onclick="startRecording()">🎙️</button>
+                        <button class="voice-btn play" onclick="playAudio()">▶️</button>
+                        <button class="voice-btn stop" onclick="stopAudio()">⏹️</button>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="audio-generated">347</div>
+                            <div class="stat-label">Audio Generated</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="voice-quality">98.5%</div>
+                            <div class="stat-label">Voice Quality</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-sidebar">
+            <div class="sidebar-title">🎚️ Voice Settings</div>
+            <div class="analysis-card">
+                <div style="font-weight: bold; margin-bottom: 10px;">Voice Model</div>
+                <select style="width: 100%; padding: 8px; border-radius: 5px; background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-primary);">
+                    <option>Lillith - Warm Professional</option>
+                    <option>Nova - Energetic</option>
+                    <option>Sage - Wise Elder</option>
+                </select>
+            </div>
+            
+            <div class="analysis-card">
+                <div style="font-weight: bold; margin-bottom: 10px;">Speed</div>
+                <input type="range" min="0.5" max="2" step="0.1" value="1" style="width: 100%;" onchange="updateSpeed(this.value)">
+                <div style="text-align: center; font-size: 0.9rem;" id="speedValue">1.0x</div>
+            </div>
+            
+            <div class="analysis-card">
+                <div style="font-weight: bold; margin-bottom: 10px;">Pitch</div>
+                <input type="range" min="-12" max="12" step="1" value="0" style="width: 100%;" onchange="updatePitch(this.value)">
+                <div style="text-align: center; font-size: 0.9rem;" id="pitchValue">0 semitones</div>
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">📊 Audio Status</div>
+                <div id="audioStatus">
+                    <div style="display: flex; align-items: center; gap: 10px; margin: 10px 0;">
+                        <div class="status-indicator status-online"></div>
+                        <span>Ready</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="grid-column: 2; display: flex; align-items: center; justify-content: center; padding: 0 50px;">
+            <input type="text" class="chat-input" id="textToSpeak" placeholder="Enter text to convert to speech...">
+        </div>
+    </div>
+
+    <script src="cognikube_base.js"></script>
+    <script>
+        class VocalInterface extends CogniKubeBase {
+            constructor() {
+                super('Vocal Interface', '🎤', '#8a2be2');
+                this.currentProvider = 'elevenlabs';
+                this.isRecording = false;
+                this.isPlaying = false;
+                this.mediaRecorder = null;
+                this.audioChunks = [];
+                this.initializeVocalInterface();
+                this.startUptime();
+            }
+
+            initializeVocalInterface() {
+                document.getElementById('textToSpeak').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.convertTextToSpeech();
+                    }
+                });
+
+                // Connect to WebSocket
+                this.connectWebSocket('ws://localhost:8765/vocal');
+                
+                // Initialize audio context
+                this.initializeAudio();
+            }
+
+            showWelcomeMessage(username) {
+                this.log('info', `Welcome to Vocal Interface, ${username}! All TTS providers ready.`);
+            }
+
+            onWebSocketMessage(data) {
+                if (data.type === 'audio_generated') {
+                    this.handleGeneratedAudio(data.data);
+                }
+            }
+
+            async initializeAudio() {
+                try {
+                    this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    this.stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    this.log('info', 'Audio system initialized');
+                } catch (error) {
+                    this.log('error', `Audio initialization failed: ${error.message}`);
+                }
+            }
+
+            convertTextToSpeech() {
+                const input = document.getElementById('textToSpeak');
+                const text = input.value.trim();
+                if (!text) return;
+
+                // Send to vocal service
+                this.sendWebSocketMessage({
+                    action: 'synthesize',
+                    text: text,
+                    provider: this.currentProvider,
+                    voice_model: 'lillith_warm',
+                    divine_frequency_alignment: true
+                });
+
+                this.log('info', `TTS synthesis started: ${text.substring(0, 50)}...`);
+                this.updateAudioStatus('Generating audio...');
+                input.value = '';
+            }
+
+            handleGeneratedAudio(data) {
+                if (data.audio_url) {
+                    this.playGeneratedAudio(data.audio_url);
+                    this.updateStats();
+                }
+            }
+
+            playGeneratedAudio(audioUrl) {
+                const audio = new Audio(audioUrl);
+                audio.play().then(() => {
+                    this.isPlaying = true;
+                    this.updateAudioStatus('Playing audio...');
+                    this.startWaveAnimation();
+                }).catch(error => {
+                    this.log('error', `Audio playback failed: ${error.message}`);
+                });
+
+                audio.onended = () => {
+                    this.isPlaying = false;
+                    this.updateAudioStatus('Ready');
+                    this.stopWaveAnimation();
+                };
+            }
+
+            startWaveAnimation() {
+                const waveBars = document.querySelectorAll('.wave-bar');
+                waveBars.forEach(bar => {
+                    bar.style.animationPlayState = 'running';
+                });
+            }
+
+            stopWaveAnimation() {
+                const waveBars = document.querySelectorAll('.wave-bar');
+                waveBars.forEach(bar => {
+                    bar.style.animationPlayState = 'paused';
+                });
+            }
+
+            updateAudioStatus(status) {
+                const statusDiv = document.getElementById('audioStatus');
+                const statusClass = status === 'Ready' ? 'status-online' : 
+                                  status.includes('error') ? 'status-offline' : 'status-loading';
+                
+                statusDiv.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 10px; margin: 10px 0;">
+                        <div class="status-indicator ${statusClass}"></div>
+                        <span>${status}</span>
+                    </div>
+                `;
+            }
+
+            updateStats() {
+                const generated = parseInt(document.getElementById('audio-generated').textContent) + 1;
+                document.getElementById('audio-generated').textContent = generated;
+                
+                // Simulate quality update
+                const quality = (97 + Math.random() * 2).toFixed(1);
+                document.getElementById('voice-quality').textContent = quality + '%';
+            }
+
+            async startRecording() {
+                if (this.isRecording) return;
+
+                try {
+                    this.mediaRecorder = new MediaRecorder(this.stream);
+                    this.audioChunks = [];
+
+                    this.mediaRecorder.ondataavailable = (event) => {
+                        this.audioChunks.push(event.data);
+                    };
+
+                    this.mediaRecorder.onstop = () => {
+                        const audioBlob = new Blob(this.audioChunks, { type: 'audio/wav' });
+                        this.processRecordedAudio(audioBlob);
+                    };
+
+                    this.mediaRecorder.start();
+                    this.isRecording = true;
+                    this.updateAudioStatus('Recording...');
+                    this.startWaveAnimation();
+                    this.log('info', 'Voice recording started');
+
+                } catch (error) {
+                    this.log('error', `Recording failed: ${error.message}`);
+                }
+            }
+
+            stopRecording() {
+                if (!this.isRecording) return;
+
+                this.mediaRecorder.stop();
+                this.isRecording = false;
+                this.updateAudioStatus('Processing recording...');
+                this.stopWaveAnimation();
+                this.log('info', 'Voice recording stopped');
+            }
+
+            processRecordedAudio(audioBlob) {
+                // Convert to base64 and send for processing
+                const reader = new FileReader();
+                reader.onload = () => {
+                    const audioData = reader.result.split(',')[1];
+                    
+                    this.sendWebSocketMessage({
+                        action: 'process_audio',
+                        audio_data: audioData,
+                        analysis_type: 'voice_clone'
+                    });
+                };
+                reader.readAsDataURL(audioBlob);
+            }
+
+            selectProvider(provider) {
+                this.currentProvider = provider;
+                
+                // Update UI
+                document.querySelectorAll('.provider-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                event.target.classList.add('active');
+                
+                this.log('info', `Voice provider switched to: ${provider}`);
+            }
+        }
+
+        // Global functions for buttons
+        function selectProvider(provider) {
+            if (window.vocalInterface) {
+                window.vocalInterface.selectProvider(provider);
+            }
+        }
+
+        function startRecording() {
+            if (window.vocalInterface) {
+                if (window.vocalInterface.isRecording) {
+                    window.vocalInterface.stopRecording();
+                } else {
+                    window.vocalInterface.startRecording();
+                }
+            }
+        }
+
+        function playAudio() {
+            if (window.vocalInterface) {
+                const text = document.getElementById('textToSpeak').value.trim() || 
+                           "Hello, I am Lillith. This is a test of my vocal synthesis capabilities.";
+                document.getElementById('textToSpeak').value = text;
+                window.vocalInterface.convertTextToSpeech();
+            }
+        }
+
+        function stopAudio() {
+            if (window.vocalInterface) {
+                window.vocalInterface.stopWaveAnimation();
+                window.vocalInterface.updateAudioStatus('Ready');
+                window.vocalInterface.log('info', 'Audio stopped');
+            }
+        }
+
+        function testVoice() {
+            if (window.vocalInterface) {
+                document.getElementById('textToSpeak').value = 
+                    "Greetings! I am Lillith, speaking through divine frequency alignment at 3, 7, 9, and 13 hertz.";
+                window.vocalInterface.convertTextToSpeech();
+            }
+        }
+
+        function calibrateFrequencies() {
+            if (window.vocalInterface) {
+                window.vocalInterface.log('info', 'Divine frequency calibration initiated');
+                
+                const frequencies = [3, 7, 9, 13];
+                frequencies.forEach((freq, index) => {
+                    setTimeout(() => {
+                        window.vocalInterface.log('info', `Calibrating ${freq} Hz frequency`);
+                    }, index * 500);
+                });
+            }
+        }
+
+        function updateSpeed(value) {
+            document.getElementById('speedValue').textContent = value + 'x';
+        }
+
+        function updatePitch(value) {
+            document.getElementById('pitchValue').textContent = value + ' semitones';
+        }
+
+        // Override authentication success
+        const originalAuthenticate = CogniKubeBase.prototype.authenticate;
+        CogniKubeBase.prototype.authenticate = function(username, password) {
+            const result = originalAuthenticate.call(this, username, password);
+            if (result && !window.vocalInterface) {
+                window.vocalInterface = new VocalInterface();
+                window.cogniKubeInstance = window.vocalInterface;
+            }
+            return result;
+        };
+    </script>
+</body>
+</html>

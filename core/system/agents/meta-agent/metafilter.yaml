@@ -1,0 +1,32 @@
+profiles:
+  default:
+    allow_if_tags_any: ["safe","internal"]
+    deny_if_tags_any:  ["secret-leak","legal-risk"]
+    base_score: 0.5
+    weights:
+      priority: 0.3
+      trust_phase: 0.3
+      frequency: 0.2
+      lattice_locality: 0.2
+    enhancers:
+      pi_boost: true         # multiply score by π when confidence>0.8
+      three_six_nine: true   # add harmonic bonus for f3/f6/f9 families
+      void_dampen: true      # dampen speculative/low-evidence intents
+  high_risk:
+    allow_if_tags_any: ["council-approved"]
+    deny_if_tags_any: []
+    base_score: 0.2
+    weights:
+      priority: 0.2
+      trust_phase: 0.5
+      frequency: 0.1
+      lattice_locality: 0.2
+    enhancers:
+      pi_boost: false
+      three_six_nine: true
+      void_dampen: true
+
+thresholds:
+  permit: 0.72
+  canary: 0.55
+  deny:   0.30

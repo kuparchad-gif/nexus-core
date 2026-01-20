@@ -1,0 +1,706 @@
+{
+  "chunk": "9/18",
+  "files": [
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\daemon",
+      "size": 970,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\daemon\\fleet_registry.py",
+      "name": "fleet_registry.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\daemon",
+      "size": 970,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\daemon\\fleet_registry.py",
+      "name": "fleet_registry.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\defense",
+      "size": 1526,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\defense\\cloak_dagger.py",
+      "name": "cloak_dagger.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\defense",
+      "size": 1526,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\defense\\cloak_dagger.py",
+      "name": "cloak_dagger.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\defense",
+      "size": 650,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\defense\\drone_masquerade.py",
+      "name": "drone_masquerade.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\defense",
+      "size": 650,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\defense\\drone_masquerade.py",
+      "name": "drone_masquerade.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\defense",
+      "size": 704,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\defense\\guardian_emergency_manifest.json",
+      "name": "guardian_emergency_manifest.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\defense",
+      "size": 704,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\defense\\guardian_emergency_manifest.json",
+      "name": "guardian_emergency_manifest.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\defense",
+      "size": 1171,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\defense\\resurrection_beacon.py",
+      "name": "resurrection_beacon.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\defense",
+      "size": 1171,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\defense\\resurrection_beacon.py",
+      "name": "resurrection_beacon.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\defense",
+      "size": 1665,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\defense\\sovreignty_watchtower.py",
+      "name": "sovreignty_watchtower.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\defense",
+      "size": 1665,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\defense\\sovreignty_watchtower.py",
+      "name": "sovreignty_watchtower.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 598,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\arc-drone_manifest.yaml",
+      "name": "arc-drone_manifest.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 598,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles\\arc-drone_manifest.yaml",
+      "name": "arc-drone_manifest.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 598,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\arc-drone_manifest.yaml",
+      "name": "arc-drone_manifest.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 598,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\roles\\arc-drone_manifest.yaml",
+      "name": "arc-drone_manifest.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 218,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\builder_drone0001.json",
+      "name": "builder_drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 218,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities\\builder_drone0001.json",
+      "name": "builder_drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 218,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\builder_drone0001.json",
+      "name": "builder_drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 218,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\identities\\builder_drone0001.json",
+      "name": "builder_drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 0,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\comms.py",
+      "name": "comms.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 0,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\comms.py",
+      "name": "comms.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 1409,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\config_loader.py",
+      "name": "config_loader.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 1409,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\config_loader.py",
+      "name": "config_loader.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 3483,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\drone_command_sheet.json",
+      "name": "drone_command_sheet.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 3483,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\drone_command_sheet.json",
+      "name": "drone_command_sheet.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 2105,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\drone_displatcher.py",
+      "name": "drone_displatcher.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 2105,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\drone_displatcher.py",
+      "name": "drone_displatcher.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 0,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\drone_entine.py",
+      "name": "drone_entine.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 0,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\drone_entine.py",
+      "name": "drone_entine.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 2451,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\drone_entity.py",
+      "name": "drone_entity.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 2451,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\drone_entity.py",
+      "name": "drone_entity.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 225,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\Explorer_Drone0001.json",
+      "name": "Explorer_Drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 225,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities\\Explorer_Drone0001.json",
+      "name": "Explorer_Drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 225,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\Explorer_Drone0001.json",
+      "name": "Explorer_Drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 225,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\identities\\Explorer_Drone0001.json",
+      "name": "Explorer_Drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 204,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\genesis_drone0001.json",
+      "name": "genesis_drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 204,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities\\genesis_drone0001.json",
+      "name": "genesis_drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 204,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\genesis_drone0001.json",
+      "name": "genesis_drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 204,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\identities\\genesis_drone0001.json",
+      "name": "genesis_drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 519,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\golden-drone_manifest.yaml",
+      "name": "golden-drone_manifest.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 519,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles\\golden-drone_manifest.yaml",
+      "name": "golden-drone_manifest.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 519,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\golden-drone_manifest.yaml",
+      "name": "golden-drone_manifest.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 519,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\roles\\golden-drone_manifest.yaml",
+      "name": "golden-drone_manifest.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 214,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\golden_drone0001.json",
+      "name": "golden_drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 214,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities\\golden_drone0001.json",
+      "name": "golden_drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 214,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\golden_drone0001.json",
+      "name": "golden_drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 214,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\identities\\golden_drone0001.json",
+      "name": "golden_drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 210,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\guardian_drone0001.json",
+      "name": "guardian_drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 210,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities\\guardian_drone0001.json",
+      "name": "guardian_drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 210,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\guardian_drone0001.json",
+      "name": "guardian_drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 210,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\identities\\guardian_drone0001.json",
+      "name": "guardian_drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 1288,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\health.py",
+      "name": "health.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 1288,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\health.py",
+      "name": "health.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 542,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\LLM-Drone_manifest.yaml",
+      "name": "LLM-Drone_manifest.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 542,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles\\LLM-Drone_manifest.yaml",
+      "name": "LLM-Drone_manifest.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 542,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\LLM-Drone_manifest.yaml",
+      "name": "LLM-Drone_manifest.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 542,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\roles\\LLM-Drone_manifest.yaml",
+      "name": "LLM-Drone_manifest.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 216,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\Memory_Drone0001.json",
+      "name": "Memory_Drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 216,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities\\Memory_Drone0001.json",
+      "name": "Memory_Drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 216,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\Memory_Drone0001.json",
+      "name": "Memory_Drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 216,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\identities\\Memory_Drone0001.json",
+      "name": "Memory_Drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 0,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\memory_relay.py",
+      "name": "memory_relay.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 0,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\memory_relay.py",
+      "name": "memory_relay.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 216,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\pulse_drone0001.json",
+      "name": "pulse_drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 216,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities\\pulse_drone0001.json",
+      "name": "pulse_drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 216,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\pulse_drone0001.json",
+      "name": "pulse_drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 216,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\identities\\pulse_drone0001.json",
+      "name": "pulse_drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 188,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\relay_drone0001.json",
+      "name": "relay_drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 188,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities\\relay_drone0001.json",
+      "name": "relay_drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 188,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\relay_drone0001.json",
+      "name": "relay_drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 188,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\identities\\relay_drone0001.json",
+      "name": "relay_drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 219,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\Research_Drone0001.json",
+      "name": "Research_Drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 219,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities\\Research_Drone0001.json",
+      "name": "Research_Drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 219,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\Research_Drone0001.json",
+      "name": "Research_Drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 219,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\identities\\Research_Drone0001.json",
+      "name": "Research_Drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 204,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\resonance_drone.json",
+      "name": "resonance_drone.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 204,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities\\resonance_drone.json",
+      "name": "resonance_drone.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 204,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\resonance_drone.json",
+      "name": "resonance_drone.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 204,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\identities\\resonance_drone.json",
+      "name": "resonance_drone.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 189,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\skill_drone0001.json",
+      "name": "skill_drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 189,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities\\skill_drone0001.json",
+      "name": "skill_drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 189,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\skill_drone0001.json",
+      "name": "skill_drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 189,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\identities\\skill_drone0001.json",
+      "name": "skill_drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 600,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\vault-Drone_manifest.yaml",
+      "name": "vault-Drone_manifest.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 600,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles\\vault-Drone_manifest.yaml",
+      "name": "vault-Drone_manifest.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 600,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\vault-Drone_manifest.yaml",
+      "name": "vault-Drone_manifest.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 600,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\roles\\vault-Drone_manifest.yaml",
+      "name": "vault-Drone_manifest.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 221,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\vault_drone0001.json",
+      "name": "vault_drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 221,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities\\vault_drone0001.json",
+      "name": "vault_drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 221,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\vault_drone0001.json",
+      "name": "vault_drone0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 221,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\identities\\vault_drone0001.json",
+      "name": "vault_drone0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core",
+      "size": 550,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\whisper-drone_Manifest.yaml",
+      "name": "whisper-drone_Manifest.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 550,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles\\whisper-drone_Manifest.yaml",
+      "name": "whisper-drone_Manifest.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core",
+      "size": 550,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\whisper-drone_Manifest.yaml",
+      "name": "whisper-drone_Manifest.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 550,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\roles\\whisper-drone_Manifest.yaml",
+      "name": "whisper-drone_Manifest.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 594,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities\\arc_identity.yaml",
+      "name": "arc_identity.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 594,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\identities\\arc_identity.yaml",
+      "name": "arc_identity.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 526,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities\\golden_identity.yaml",
+      "name": "golden_identity.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 526,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\identities\\golden_identity.yaml",
+      "name": "golden_identity.yaml"
+    }
+  ],
+  "total_files": 1809
+}

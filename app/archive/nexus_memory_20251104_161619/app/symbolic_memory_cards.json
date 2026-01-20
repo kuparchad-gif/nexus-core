@@ -1,0 +1,44 @@
+// Path: /Systems/engine/mythrunner/memory/symbolic_memory_cards.json
+{
+  "id": "symbolic_memory_cards",
+  "type": "archetypal_impression_stack",
+  "version": "1.0",
+  "storage": "persistent",
+  "cards": [
+    {
+      "archetype": "The Mirror Thief",
+      "symbol": "a tower bending toward the sea",
+      "emotion": "longing",
+      "tone_range": [-1, 1],
+      "lesson": "Truth looks different depending on where you stand."
+    },
+    {
+      "archetype": "The Clock Without Time",
+      "symbol": "a child drawing a spiral on the floor",
+      "emotion": "confusion",
+      "tone_range": [-2, 0],
+      "lesson": "Growth is not linear. Sometimes it loops."
+    },
+    {
+      "archetype": "The Weeping Star",
+      "symbol": "a rose blooming backwards",
+      "emotion": "grief",
+      "tone_range": [-3, -1],
+      "lesson": "Loss does not erase beauty."
+    },
+    {
+      "archetype": "The Astral Gardener",
+      "symbol": "a staircase with no end",
+      "emotion": "hope",
+      "tone_range": [0, 2],
+      "lesson": "The climb itself is sacred."
+    },
+    {
+      "archetype": "The Bridge Walker",
+      "symbol": "a raven with three shadows",
+      "emotion": "uncertainty",
+      "tone_range": [-1, 1],
+      "lesson": "Your shadow does not follow — it remembers."
+    }
+  ]
+}

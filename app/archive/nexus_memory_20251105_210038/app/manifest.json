@@ -1,0 +1,34 @@
+{
+  "cognikube": {
+    "name": "memory",
+    "type": "memory_cognikube",
+    "platform": "AWS",
+    "deployment": {
+      "models": [
+        "Qwen/Qwen2.5-Omni-3B",
+        "deepseek-ai/Janus-1.3B"
+      ],
+      "services": [
+        "memory_encryption",
+        "memory_sharding",
+        "emotional_thumbprints",
+        "blueprint_storage"
+      ],
+      "platform": "AWS",
+      "region": "us-east-1",
+      "description": "Encrypts, shards, ships memories with emotional thumbprints"
+    },
+    "description": "Encrypts, shards, ships memories with emotional thumbprints"
+  },
+  "models": [
+    "Qwen/Qwen2.5-Omni-3B",
+    "deepseek-ai/Janus-1.3B"
+  ],
+  "services": [
+    "memory_encryption",
+    "memory_sharding",
+    "emotional_thumbprints",
+    "blueprint_storage"
+  ],
+  "specialized_function": "Encrypts, shards, ships memories with emotional thumbprints"
+}

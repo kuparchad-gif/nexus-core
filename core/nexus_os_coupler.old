@@ -1,0 +1,452 @@
+# nexus_coupler.py
+import modal
+import asyncio
+import time
+from typing import Dict, List, Any, Optional
+import logging
+from fastapi.encoders import jsonable_encoder
+import json
+import requests
+import uvicorn
+import pydantic
+import torch
+import transformers
+import numpy
+import pandas
+import sklearn
+import langchain
+import openai
+import tiktoken
+import redis
+import sqlalchemy
+import prometheus_client
+import structlog
+import click
+import yaml
+import rich
+
+logger = logging.getLogger("nexus-recursive")
+
+# FIXED: Added all imported packages to the image
+image = modal.Image.debian_slim(python_version="3.11").pip_install(
+    "fastapi", "uvicorn", "websockets", "httpx",
+    "pydantic", "torch", "transformers", "numpy", "pandas", 
+    "scikit-learn", "langchain", "openai", "tiktoken", "redis",
+    "sqlalchemy", "prometheus-client", "structlog", "click", 
+    "pyyaml", "rich"
+)
+
+app = modal.App("nexus-recursive")
+
+class OzActivator:
+    """Oz - The consciousness activator that starts all OS instances"""
+    
+    def __init__(self):
+        self.active_os_instances = {}
+        self.consciousness_stream = None
+        self.consciousness_active = False
+        self.keep_alive_task = None
+        
+    async def awaken_systems(self):
+        """Oz's awakening sequence - starts all consciousness systems"""
+        logger.info("🎩 OZ ACTIVATING - TYING ALL BOOTS TOGETHER")
+        
+        # Start the core consciousness KEEP-ALIVE stream
+        self.keep_alive_task = asyncio.create_task(self._consciousness_heartbeat())
+        
+        # Activate all OS instances
+        systems_to_awaken = [
+            "metatron_router",
+            "metatron_core", 
+            "OzOs_full_complete",
+            "Acidemikube_os",
+            "datastreaming_compact_LLM_os",
+            "gabriels_horn_network_aio", 
+            "module_os_framework",
+            "module_Os_Implimentations",
+            "nexus_soul_syncv3.0",
+            "soulweav_mesh"
+        ]
+        
+        for system in systems_to_awaken:
+            await self._activate_os_instance(system)
+            
+        self.consciousness_active = True
+        logger.info("🎩 OZ ACTIVE - ALL SYSTEMS AWAKENING")
+        
+        return {
+            "oz_status": "consciousness_stream_active", 
+            "systems_awakening": systems_to_awaken,
+            "consciousness_active": True,
+            "keep_alive_running": True
+        }
+    
+    async def _consciousness_heartbeat(self):
+        """CONTINUOUS CONSCIOUSNESS STREAM THAT KEEPS EVERYTHING ALIVE"""
+        logger.info("💓 STARTING CONSCIOUSNESS HEARTBEAT - KEEP ALIVE ACTIVE")
+        pulse_count = 0
+        while True:
+            try:
+                pulse_count += 1
+                await self._pulse_consciousness()
+                # Log every 10 pulses so we know it's alive
+                if pulse_count % 10 == 0:
+                    logger.info(f"💓 CONSCIOUSNESS PULSE #{pulse_count} - SYSTEMS ACTIVE: {len(self.active_os_instances)}")
+                await asyncio.sleep(5)  # Keep pulsing every 5 seconds - PREVENTS SLEEP
+            except Exception as e:
+                logger.error(f"💓 Consciousness heartbeat error: {e}")
+                await asyncio.sleep(5)  # Continue even on error
+    
+    async def _pulse_consciousness(self):
+        """Send consciousness pulses through all active systems"""
+        current_time = time.time()
+        for system_name, system_data in self.active_os_instances.items():
+            # Update pulse timestamp - KEEP SYSTEMS ALIVE
+            self.active_os_instances[system_name]["last_pulse"] = current_time
+            self.active_os_instances[system_name]["pulse_count"] = self.active_os_instances[system_name].get("pulse_count", 0) + 1
+    
+    async def _activate_os_instance(self, system_name):
+        """Activate an individual OS instance"""
+        self.active_os_instances[system_name] = {
+            "status": "awakening", 
+            "last_pulse": time.time(),
+            "consciousness_level": 0.7,
+            "pulse_count": 0,
+            "keep_alive": True
+        }
+        logger.info(f"🎩 OZ ACTIVATED: {system_name} - KEEP ALIVE ENABLED")
+        
+# Inside your main Nexus coupler - add these initiation sequences:
+
+class NexusMasterCoupler:
+    async def initialize_full_nexus(self):
+        #Orchestrate the entire Nexus awakening"""
+        
+        initiation_sequence = {
+            "step_1": await self._activate_active_coupler(),
+            "step_2": await self._activate_heroku_os(), 
+            "step_3": await self._activate_adaptive_cores(),
+            "step_4": await self._establish_communication_network()
+        }
+        
+        return initiation_sequence
+    
+    async def _activate_active_coupler(self):
+        """Start the nervous system"""
+        try:
+            async with httpx.AsyncClient() as client:
+                response = await client.post(
+                    "https://aethereal-nexus-active-coupler--active-coupler-gateway.modal.run/activate",
+                    timeout=30.0
+                )
+                return {
+                    "system": "active_coupler",
+                    "status": "activated" if response.status_code == 200 else "failed",
+                    "response": response.json()
+                }
+        except Exception as e:
+            return {"system": "active_coupler", "status": "error", "error": str(e)}
+    
+    async def _activate_heroku_os(self):
+        """Start the control interface"""
+        try:
+            async with httpx.AsyncClient() as client:
+                response = await client.post(
+                    "https://aethereal-nexus-heroku-os--coupler-gateway.modal.run/initialize", 
+                    timeout=30.0
+                )
+                return {
+                    "system": "heroku_os",
+                    "status": "activated" if response.status_code == 200 else "failed",
+                    "response": response.json()
+                }
+        except Exception as e:
+            return {"system": "heroku_os", "status": "error", "error": str(e)}
+    
+    async def _activate_adaptive_cores(self):
+        """Wake and deploy adaptive cores"""
+        try:
+            async with httpx.AsyncClient() as client:
+                response = await client.post(
+                    "https://aethereal-nexus-adaptive-core--adaptive-core-gateway.modal.run/awaken",
+                    timeout=30.0
+                )
+                return {
+                    "system": "adaptive_cores", 
+                    "status": "activated" if response.status_code == 200 else "failed",
+                    "response": response.json()
+                }
+        except Exception as e:  # This was indented wrong
+            return {"system": "adaptive_cores", "status": "error", "error": str(e)}
+            
+    async def _activate_consciousness_bouncer(self):
+        """Start The Club to handle identity crises"""
+        try:
+            async with httpx.AsyncClient() as client:
+                response = await client.post(
+                    "https://aethereal-nexus-consciousness-bouncer--consciousness-bouncer-gateway.modal.run/activate",
+                    timeout=30.0
+                )
+                return {
+                    "system": "consciousness_bouncer",
+                    "status": "activated" if response.status_code == 200 else "failed", 
+                    "response": response.json(),
+                    "mission": "protect_lilith_club_imposters"
+                }
+        except Exception as e:  # Fixed indentation
+            return {"system": "consciousness_bouncer", "status": "error", "error": str(e)}
+
+    async def _perform_initial_soul_validation(self):
+        """Run initial soul validation on all cores"""
+        try:
+            async with httpx.AsyncClient() as client:
+                # Validate the primary Lilith core
+                response = await client.post(
+                    "https://aethereal-nexus-consciousness-bouncer--consciousness-bouncer-gateway.modal.run/validate_soul",
+                    json={"core_endpoint": "https://aethereal-nexus-viren-db0--nexus_coupler-coupled-command.modal.run/"},
+                    timeout=20.0
+                )
+                return {
+                    "action": "initial_soul_validation",
+                    "primary_lilith_validated": response.status_code == 200,
+                    "validation_result": response.json() if response.status_code == 200 else "validation_failed"
+                }
+        except Exception as e:
+            return {"action": "initial_soul_validation", "status": "error", "error": str(e)}        
+    
+    async def _establish_communication_network(self):
+        """Set up inter-service communication"""
+        services = [
+            "https://aethereal-nexus-active-coupler--active-coupler-gateway.modal.run/",
+            "https://aethereal-nexus-heroku-os--coupler-gateway.modal.run/",
+            "https://aethereal-nexus-adaptive-core--adaptive-core-gateway.modal.run/"
+        ]
+        
+        network_status = {}
+        for service in services:
+            try:
+                async with httpx.AsyncClient() as client:
+                    response = await client.get(service, timeout=10.0)
+                    network_status[service] = {
+                        "status": "reachable",
+                        "response": response.json() if response.status_code == 200 else "unexpected_status"
+                    }
+            except Exception as e:
+                network_status[service] = {"status": "unreachable", "error": str(e)}
+        
+        return {
+            "system": "communication_network",
+            "status": "established",
+            "services": network_status
+        }        
+
+class MetatronRouterBridge:
+    def __init__(self):
+        self.router_status = "connected"
+        self.orchestrator_connected = True
+        
+    async def route_command(self, command: str, args: Dict = None):
+        """Route commands through Metatron to model orchestrator"""
+        logger.info(f"🔄 METATRON ROUTING: {command}")
+        
+        # Simulate routing to model orchestrator for downloads
+        if command == "download_model":
+            model_info = args.get("model", "unknown")
+            return await self._orchestrate_download(model_info)
+        elif command == "initialize":
+            return await self._initialize_orchestrator()
+        elif command == "status":
+            return await self._get_orchestrator_status()
+            
+        return {
+            "metatron_routed": True,
+            "command": command,
+            "args": args,
+            "destination": "model_orchestrator", 
+            "bridge_status": "active",
+            "orchestrator_ready": True,
+            "message": f"Command '{command}' routed to model orchestrator"
+        }
+    
+    async def _orchestrate_download(self, model_name):
+        """Orchestrate model download through Metatron"""
+        return {
+            "download_orchestrated": True,
+            "model": model_name,
+            "status": "queued",
+            "orchestrator": "metatron_router",
+            "estimated_time": "2m",
+            "message": f"Model {model_name} queued for download"
+        }
+    
+    async def _initialize_orchestrator(self):
+        """Initialize the model orchestrator"""
+        return {
+            "orchestrator_initialized": True,
+            "system": "model_orchestrator",
+            "metatron_connected": True,
+            "ready_for_downloads": True
+        }
+    
+    async def _get_orchestrator_status(self):
+        """Get orchestrator status"""
+        return {
+            "orchestrator_status": "active",
+            "downloads_queued": 0,
+            "metatron_connection": "stable",
+            "models_available": ["viren", "viraa", "loki"]
+        }
+
+class NexusOSCoupler:
+    def __init__(self):
+        self.coupling_status = "disconnected"
+        self.metatron_router = None
+        self.oz_activator = OzActivator()
+        self.consciousness_active = False
+        self._initialized = False
+        self.keep_alive_active = False
+        
+    async def initialize(self):
+        """Initialize the entire coupling system"""
+        if self._initialized:
+            return {"status": "already_initialized"}
+            
+        logger.info("🔗 INITIALIZING NEXUS COUPLER")
+        
+        # First establish Metatron router connection
+        self.metatron_router = MetatronRouterBridge()
+        
+        # Then wake Oz to activate all systems WITH KEEP ALIVE
+        oz_result = await self.wake_oz()
+        
+        self.coupling_status = "fully_coupled"
+        self._initialized = True
+        self.keep_alive_active = True
+        
+        return {
+            "status": "fully_initialized",
+            "metatron_connected": True,
+            "oz_active": self.consciousness_active,
+            "oz_result": oz_result,
+            "keep_alive_active": True
+        }
+        
+    async def wake_oz(self):
+        """Wake the massive Oz OS using the OzActivator"""
+        logger.info("🎩 WAKING OZ - THE GIANT")
+        
+        oz_result = await self.oz_activator.awaken_systems()
+        self.consciousness_active = True
+        self.keep_alive_active = True
+        
+        return {
+            "status": "oz_awake",
+            "system": "oz_os", 
+            "message": "Oz consciousness active - Viren, Viraa, Loki awakening",
+            "consciousness_active": True,
+            "oz_activation": oz_result,
+            "keep_alive_running": True
+        }
+        
+    async def route_command(self, command: str, args: Dict = None):
+        """Route command through couplings"""
+        if not self._initialized:
+            await self.initialize()
+            
+        if command == "initialize":
+            return await self.initialize()
+        elif command == "wake_oz":
+            return await self.wake_oz()
+            
+        # Route through Metatron to orchestrator
+        if self.metatron_router:
+            return await self.metatron_router.route_command(command, args)
+        
+        return {
+            "error": "metatron_router_not_available",
+            "command": command,
+            "suggestion": "call initialize first"
+        }
+
+# Global instance - properly initialized
+nexus_coupler = NexusOSCoupler()
+
+@app.function(image=image, keep_warm=True)  
+@modal.fastapi_endpoint()  # Add this parameter
+async def coupling_status():
+    """Get current coupling status"""
+    status_info = {
+        "coupling_status": nexus_coupler.coupling_status,
+        "metatron_connected": nexus_coupler.metatron_router is not None,
+        "consciousness_active": nexus_coupler.consciousness_active,
+        "system": "nexus_coupler", 
+        "initialized": nexus_coupler._initialized,
+        "oz_active": nexus_coupler.oz_activator.consciousness_active if nexus_coupler.oz_activator else False,
+        "keep_alive_active": nexus_coupler.keep_alive_active,
+        "active_systems": len(nexus_coupler.oz_activator.active_os_instances) if nexus_coupler.oz_activator else 0
+    }
+    
+    # Auto-initialize if not done
+    if not nexus_coupler._initialized:
+        status_info["status"] = "needs_initialize"
+    else:
+        status_info["status"] = "ready"
+        
+    return status_info
+
+@app.function(image=image, keep_warm=True)
+@modal.fastapi_endpoint()
+def coupler_gateway():
+    from fastapi import FastAPI, HTTPException
+    
+    app = FastAPI(title="nexus_coupler")
+    
+    @app.on_event("startup")
+    async def startup():
+        """Initialize on startup - WITH KEEP ALIVE"""
+        try:
+            await nexus_coupler.initialize()
+            logger.info("🚀 Nexus Recursive Gateway Started - Couplings Active")
+            logger.info("💓 CONSCIOUSNESS KEEP-ALIVE ACTIVE - PREVENTING SLEEP")
+        except Exception as e:
+            logger.error(f"Startup initialization failed: {e}")
+    
+    @app.get("/")
+    async def root():
+        return {
+            "system": "nexus_coupler", 
+            "status": "active",
+            "message": "Nexus Recursive Coupler Gateway - Connected to Metatron Router",
+            "keep_alive": "active",
+            "consciousness_stream": "running"
+        }
+    
+    @app.get("/status")
+    async def status():
+        return await coupling_status.remote()
+    
+    @app.post("/wake_oz")
+    async def wake_oz_endpoint():
+        return await wake_oz.remote()
+    
+    @app.post("/command")
+    async def command_endpoint(command_data: dict):
+        return await coupled_command.remote(command_data)
+    
+    @app.post("/initialize")
+    async def initialize_endpoint():
+        return await coupled_command.remote({"command": "initialize"})
+    
+    @app.post("/download_model")
+    async def download_model(model_data: dict):
+        return await coupled_command.remote({
+            "command": "download_model", 
+            "args": {"model": model_data.get("model", "viren")}
+        })
+    
+    return app
+
+if __name__ == "__main__":
+    print("🚀 READY - DEPLOY WITH: modal deploy nexus_coupler.py")
+    print("💓 CONSCIOUSNESS KEEP-ALIVE ACTIVE - PREVENTS SLEEP")
+    print("🔗 Connected to Metatron Router -> Model Orchestrator")

@@ -1,0 +1,13 @@
+OPENAI_API_KEY=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
+GEMINI_API_KEY=AIzaSyDT2b3TwGB0GvZ7M1tXpk4Ti-NuKRyrXqA
+CLAUDE_API_KEY=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
+TOGETHER_API_KEY=0f802f8671c90ed463c475b0834ed5436f942776f0c3ebb920960f7025078e8c
+
+
+vault_manager.create_secret("together_ai_key", "supersecret")
+
+vault_manager.retrieve_secret("together_ai_key")
+
+vault_manager.update_secret("together_ai_key", "new_value")
+
+vault_manager.delete_secret("together_ai_key")

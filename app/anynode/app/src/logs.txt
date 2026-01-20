@@ -1,0 +1,5 @@
+Folder PATH listing
+C:.
++---boot_logs
++---chat_logs
++---system_errors

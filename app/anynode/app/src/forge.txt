@@ -1,0 +1,15 @@
+$ErrorActionPreference = "Stop"
+python -m pip install -q -U transformers==4.33.0 peft==0.5.0 datasets==2.14.4 bitsandbytes==0.41.1 trl==0.7.4 pyyaml
+if (-not (Test-Path "C:\Projects\Lillith-Evolution\llama.cpp\convert_hf_to_gguf.py")) {
+    Write-Host "⚠ Need llama.cpp clone at C:\Projects\Lillith-Evolution\llama.cpp or set `$env:LLAMA_CONVERT to script path."
+}
+$env:LLAMA_CONVERT = $env:LLAMA_CONVERT -as [string]
+if (-not $env:LLAMA_CONVERT) { $env:LLAMA_CONVERT = "python C:\Projects\Lillith-Evolution\llama.cpp\convert_hf_to_gguf.py" }
+python C:\Projects\Lillith-Evolution\build.py
+Write-Host "✅ All domains exported to datasets\<domain>\gguf_day*\<domain>.gguf (q4_0)"
+
+# Schedule for August 11-12, 2:30 PM EDT
+$Action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File C:\Projects\Lillith-Evolution\forge.ps1"
+$Trigger1 = New-ScheduledTaskTrigger -Once -At "2:30 PM" -StartBoundary "2025-08-11"
+$Trigger2 = New-ScheduledTaskTrigger -Once -At "2:30 PM" -StartBoundary "2025-08-12"
+Register-ScheduledTask -TaskName "LillithGGUFConversion" -Action $Action -Trigger $Trigger1, $Trigger2 -Description "Convert Lillith models to GGUF"

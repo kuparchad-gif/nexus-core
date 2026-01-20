@@ -1,0 +1,8 @@
+# defaults.yaml for shrinking existing model
+CYCLE_MS: 40
+BATCH_MAX: 8
+KV_CACHE_BYTES: 32000000
+QUANT_LEVEL: "int4"
+PRIORITY_BOOST: 0.2
+base_model: "models/qwen-4b-original.bin"    # your large model
+output_dir: "models/compactified_qwen4b"

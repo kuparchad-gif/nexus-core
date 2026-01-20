@@ -1,0 +1,26 @@
+train_bert_fib.py currently loads a BERT tokenizer/model but points at a Qwen/DeepSeek model id.
+For Qwen/Gemma (causal LMs), switch to Causal LM + LoRA for CAUSAL_LM:
+
+- Replace imports:
+  from transformers import AutoTokenizer, AutoModelForCausalLM, Trainer, TrainingArguments
+  from peft import LoraConfig, get_peft_model, TaskType
+
+- Change tokenizer/model:
+  tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True)
+  model = AutoModelForCausalLM.from_pretrained(model_name)
+
+- PEFT config:
+  peft_config = LoraConfig(
+    task_type=TaskType.CAUSAL_LM,
+    r=16, lora_alpha=32, lora_dropout=0.05,
+    target_modules=['q_proj','k_proj','v_proj','o_proj','gate_proj','up_proj','down_proj']
+  )
+  model = get_peft_model(model, peft_config)
+
+- Data collator (causal):
+  from transformers import DataCollatorForLanguageModeling
+  data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
+
+- When tokenizing, only provide 'input_ids' and set 'labels' = input_ids.
+
+This aligns the script with DeepSeek-R1-Qwen/Gemma families and avoids BERT masked-LM mismatch.

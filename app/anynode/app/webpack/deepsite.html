@@ -1,0 +1,87 @@
+<!-- deepsite.html -->
+<!-- Location: C:/Engineers/root/app/mcp_utils/deepsite -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeepSite - AI Modular Interface</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(ellipse at center, #0f0f1a, #000);
+      color: white;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .deep-wrapper {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .sidebar {
+      width: 72px;
+      background: linear-gradient(to bottom, #C0C0C0, #B0E0E6, #D8BFD8);
+      box-shadow: 4px 0 12px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      gap: 24px;
+    }
+
+    .sidebar button {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.1);
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .main-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 32px;
+      overflow-y: auto;
+      background-color: rgba(255,255,255,0.02);
+    }
+
+    .module-tile {
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 0 12px rgba(255,255,255,0.08);
+    }
+  </style>
+</head>
+<body>
+  <div class="deep-wrapper">
+    <div class="sidebar">
+      <button title="Chat">💬</button>
+      <button title="Diagnostics">🧠</button>
+      <button title="Files">📂</button>
+      <button title="Env">🖥️</button>
+    </div>
+    <div class="main-panel">
+      <div class="module-tile">
+        <h2>Welcome to DeepSite</h2>
+        <p>This is your AI's modular control panel. Drop in tools, diagnostics, model info, or anything else you need right here.</p>
+      </div>
+      <div class="module-tile">
+        <h3>Example Module Placeholder</h3>
+        <p>You could mount a chat, database viewer, system monitor, or even an email client here.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

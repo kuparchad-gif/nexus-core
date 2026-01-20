@@ -1,0 +1,53 @@
+FROM python:3.12-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    cmake \
+    git \
+    libopenblas-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements and install Python packages
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application files
+COPY cog_inference_router_compactifai_optimized.py .
+COPY convert_to_gguf.py .
+
+# Download and convert models from Hugging Face
+ENV HF_TOKEN="your_hf_token_here"
+RUN mkdir -p /models && \
+    git lfs install && \
+    git clone https://huggingface.co/tiiuae/falcon-1b /models/falcon-1b-tmp && \
+    git clone https://huggingface.co/tiiuae/falcon-7b /models/falcon-7b-tmp && \
+    python convert_to_gguf.py --model-path /models/falcon-1b-tmp --output-path /models/falcon-1b/ggml-model-falcon-1b.gguf && \
+    python convert_to_gguf.py --model-path /models/falcon-7b-tmp --output-path /models/falcon-7b/ggml-model-falcon-7b.gguf && \
+    # Placeholder for pre-compressed 180B (offline CompactifAI required)
+    echo "Placeholder for falcon-180b-compressed.gguf" > /models/falcon-180b-compressed.gguf && \
+    rm -rf /models/falcon-1b-tmp /models/falcon-7b-tmp
+
+# Environment variables
+ENV MODEL_PATH_1B=/models/falcon-1b/ggml-model-falcon-1b.gguf \
+    MODEL_PATH_7B=/models/falcon-7b/ggml-model-falcon-7b.gguf \
+    MODEL_PATH_180B=/models/falcon-180b-compressed.gguf \
+    LLM_THREADS=4 \
+    BOND_DIM=10 \
+    CACHE_TTL_HOURS=12 \
+    CACHE_MAX_SIZE=500 \
+    CACHE_MAX_MEMORY=1000000 \
+    CPU_AFFINITY_DRAFT="0-3" \
+    LOG_LEVEL="INFO" \
+    NATS_URL="nats:4222" \
+    BUDGET_THRESHOLD=0.5 \
+    GOVERNANCE_THRESHOLD=1.0
+
+# Expose port
+EXPOSE 8000
+
+# Run application
+CMD ["uvicorn", "cog_inference_router_compactifai_optimized:app", "--host", "0.0.0.0", "--port", "8000"]

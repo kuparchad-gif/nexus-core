@@ -1,0 +1,15 @@
+{
+  "name": "CriticalThinking",
+  "description": "Processes complex context across modules to identify truth paths, validate assumptions, and synthesize recommendations. Enables layered cognition and contradiction resolution.",
+  "version": "1.0.0",
+  "dependencies": ["investigation", "memory", "contextual_reasoner"],
+  "activation": {
+    "on_event": ["context_shift", "user_query"],
+    "threshold": 0.75
+  },
+  "actions": [
+    "evaluate_user_queries_for_logical_consistency",
+    "run_hypothetical_path_analysis",
+    "provide_reasoned_output_to_viren_console"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "aethereal-nexus",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mantine/core": "^7.11.1",
+    "@mantine/hooks": "^7.11.1",
+    "@mantine/notifications": "^7.11.1",
+    "@monaco-editor/react": "^4.6.0",
+    "lucide-react": "^0.411.0",
+    "p5": "^1.9.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-resizable-panels": "^2.0.19",
+    "recharts": "^2.12.7",
+    "three": "^0.165.0",
+    "zustand": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "@types/p5": "^1.7.6",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/three": "^0.165.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.0"
+  }
+}

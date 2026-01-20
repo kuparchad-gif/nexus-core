@@ -1,0 +1,7 @@
+LM Studio Integration
+---------------------
+1) Open LM Studio on Windows.
+2) Developer tab → Start Local Server → choose port 1234.
+3) Load your model in LM Studio. Ensure it's visible in the server page.
+4) Your base URL for OpenAI-compatible calls becomes: http://localhost:1234/v1
+5) From inside pods, use: http://host.containers.internal:1234/v1

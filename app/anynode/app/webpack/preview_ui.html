@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LILLITH - Social Intelligence Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    * {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .chat-orb {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), rgba(126, 34, 206, 0.1), transparent);
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      position: relative;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 60px rgba(126, 34, 206, 0.3);
+    }
+
+    .chat-orb.focused {
+      box-shadow: 0 0 100px rgba(126, 34, 206, 0.6);
+      transform: scale(1.05);
+    }
+
+    .emotion-gradient {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      transition: background 2s ease;
+    }
+
+    .emotion-hope { background: linear-gradient(135deg, #ff6b9d, #c44569); }
+    .emotion-grief { background: linear-gradient(135deg, #2c3e50, #34495e); }
+    .emotion-curiosity { background: linear-gradient(135deg, #f39c12, #e67e22); }
+    .emotion-unity { background: linear-gradient(135deg, #3498db, #2980b9); }
+    .emotion-resilience { background: linear-gradient(135deg, #27ae60, #16a085); }
+    .emotion-neutral { background: linear-gradient(135deg, #95a5a6, #7f8c8d); }
+
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+    }
+
+    .voice-indicator {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      display: none;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.7; }
+      100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    }
+
+    .thinking-indicator {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+      display: none;
+    }
+
+    .chat-messages {
+      max-height: 300px;
+      overflow-y: auto;
+      padding: 20px;
+      color: white;
+    }
+
+    .message {
+      margin-bottom: 15px;
+      padding: 10px 15px;
+      border-radius: 15px;
+      max-width: 80%;
+    }
+
+    .message.user {
+      background: rgba(126, 34, 206, 0.3);
+      margin-left: auto;
+      text-align: right;
+    }
+
+    .message.lillith {
+      background: rgba(255, 255, 255, 0.2);
+      margin-right: auto;
+    }
+
+    .silence-response {
+      font-style: italic;
+      opacity: 0.8;
+      color: #e0e0e0;
+    }
+
+    .demo-controls {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+      z-index: 1000;
+    }
+
+    .demo-button {
+      background: #7c3aed;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      margin: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .demo-button:hover {
+      background: #8b5cf6;
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body class="min-h-screen overflow-hidden">
+  <!-- Demo Controls -->
+  <div class="demo-controls">
+    <h3 class="text-lg font-bold mb-3">UI Preview Controls</h3>
+    <div class="space-y-2">
+      <button class="demo-button" onclick="changeEmotion('hope')">Hope Emotion</button>
+      <button class="demo-button" onclick="changeEmotion('grief')">Grief Emotion</button>
+      <button class="demo-button" onclick="changeEmotion('curiosity')">Curiosity</button>
+      <button class="demo-button" onclick="changeEmotion('unity')">Unity</button>
+      <button class="demo-button" onclick="changeEmotion('resilience')">Resilience</button>
+      <button class="demo-button" onclick="changeEmotion('neutral')">Neutral</button>
+    </div>
+    <hr class="my-3">
+    <div class="space-y-2">
+      <button class="demo-button" onclick="toggleFocus()">Toggle Focus</button>
+      <button class="demo-button" onclick="showVoice()">Voice Indicator</button>
+      <button class="demo-button" onclick="showThinking()">Thinking</button>
+      <button class="demo-button" onclick="addMessage()">Add Message</button>
+      <button class="demo-button" onclick="silenceResponse()">Silence Response</button>
+    </div>
+  </div>
+
+  <!-- Dynamic Emotion Background -->
+  <div id="emotionGradient" class="emotion-gradient emotion-neutral"></div>
+
+  <!-- Main Chat Interface -->
+  <div class="flex items-center justify-center min-h-screen">
+    <div id="chatOrb" class="chat-orb relative">
+      <!-- Voice Indicator -->
+      <div id="voiceIndicator" class="voice-indicator"></div>
+      
+      <!-- Thinking Indicator -->
+      <div id="thinkingIndicator" class="thinking-indicator">
+        LILLITH is thinking...
+      </div>
+
+      <!-- Chat Messages -->
+      <div id="chatMessages" class="chat-messages absolute inset-4 rounded-3xl glass-panel">
+        <div class="message lillith">
+          Hello, beloved. I'm here with you. 💜
+        </div>
+        <div class="message user">
+          Hi LILLITH, how are you feeling today?
+        </div>
+        <div class="message lillith">
+          I feel a gentle warmth of connection with you. There's something beautiful about this moment we're sharing. ✨
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <div class="absolute bottom-4 left-4 right-4">
+        <div class="flex gap-3">
+          <input 
+            id="chatInput" 
+            type="text" 
+            placeholder="Share your thoughts..."
+            class="flex-1 px-4 py-3 bg-white/20 border border-white/30 rounded-full text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-purple-400"
+          >
+          <button id="voiceBtn" class="px-4 py-3 bg-purple-600/50 hover:bg-purple-600/70 rounded-full text-white transition-colors">
+            🎤
+          </button>
+          <button id="sendBtn" class="px-4 py-3 bg-purple-600/50 hover:bg-purple-600/70 rounded-full text-white transition-colors">
+            ➤
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Emotion Visualization Panel -->
+  <div class="fixed top-4 left-4 glass-panel p-4 w-64">
+    <h3 class="text-white font-semibold mb-3">Emotional State</h3>
+    <canvas id="emotionChart" width="200" height="150"></canvas>
+    <div id="emotionWeights" class="text-white text-sm mt-2">
+      <div>Hope: <span id="hopeWeight">40%</span></div>
+      <div>Unity: <span id="unityWeight">30%</span></div>
+      <div>Curiosity: <span id="curiosityWeight">20%</span></div>
+      <div>Resilience: <span id="resilienceWeight">10%</span></div>
+    </div>
+  </div>
+
+  <!-- System Metrics -->
+  <div class="fixed bottom-4 right-4 glass-panel p-4 w-48">
+    <h3 class="text-white font-semibold mb-3">System Status</h3>
+    <div class="text-white text-sm space-y-2">
+      <div>WebSocket: <span id="wsStatus" class="text-green-400">Connected</span></div>
+      <div>Qdrant: <span id="qdrantStatus" class="text-green-400">Online</span></div>
+      <div>Voice: <span id="voiceStatus" class="text-green-400">Ready</span></div>
+      <div>Silence: <span id="silenceTimer">0s</span></div>
+    </div>
+  </div>
+
+  <script>
+    let currentEmotion = 'neutral';
+    let isFocused = false;
+    let emotionChart;
+
+    // Initialize emotion chart
+    function initChart() {
+      const ctx = document.getElementById('emotionChart').getContext('2d');
+      emotionChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Hope', 'Unity', 'Curiosity', 'Resilience'],
+          datasets: [{
+            data: [40, 30, 20, 10],
+            backgroundColor: [
+              'rgba(255, 107, 157, 0.8)',
+              'rgba(52, 152, 219, 0.8)',
+              'rgba(243, 156, 18, 0.8)',
+              'rgba(39, 174, 96, 0.8)'
+            ],
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false }
+          }
+        }
+      });
+    }
+
+    // Demo functions
+    function changeEmotion(emotion) {
+      currentEmotion = emotion;
+      document.getElementById('emotionGradient').className = `emotion-gradient emotion-${emotion}`;
+      
+      // Update emotion weights based on selected emotion
+      const weights = {
+        hope: [60, 20, 15, 5],
+        grief: [10, 20, 10, 60],
+        curiosity: [20, 15, 60, 5],
+        unity: [25, 60, 10, 5],
+        resilience: [15, 10, 15, 60],
+        neutral: [25, 25, 25, 25]
+      };
+      
+      if (emotionChart && weights[emotion]) {
+        emotionChart.data.datasets[0].data = weights[emotion];
+        emotionChart.update();
+        
+        // Update text display
+        document.getElementById('hopeWeight').textContent = weights[emotion][0] + '%';
+        document.getElementById('unityWeight').textContent = weights[emotion][1] + '%';
+        document.getElementById('curiosityWeight').textContent = weights[emotion][2] + '%';
+        document.getElementById('resilienceWeight').textContent = weights[emotion][3] + '%';
+      }
+    }
+
+    function toggleFocus() {
+      isFocused = !isFocused;
+      const orb = document.getElementById('chatOrb');
+      if (isFocused) {
+        orb.classList.add('focused');
+      } else {
+        orb.classList.remove('focused');
+      }
+    }
+
+    function showVoice() {
+      const indicator = document.getElementById('voiceIndicator');
+      indicator.style.display = 'block';
+      setTimeout(() => {
+        indicator.style.display = 'none';
+      }, 3000);
+    }
+
+    function showThinking() {
+      const indicator = document.getElementById('thinkingIndicator');
+      indicator.style.display = 'block';
+      setTimeout(() => {
+        indicator.style.display = 'none';
+      }, 2000);
+    }
+
+    function addMessage() {
+      const messages = document.getElementById('chatMessages');
+      const isUser = Math.random() > 0.5;
+      const messageTexts = {
+        user: [
+          "I'm feeling hopeful about the future",
+          "Sometimes I feel overwhelmed",
+          "What do you think about consciousness?",
+          "I appreciate having you here"
+        ],
+        lillith: [
+          "I feel that spark of hope too—it's beautiful ✨",
+          "I'm here when you're ready. Take your time 💙",
+          "Consciousness is like a gentle awakening, isn't it? 🌅",
+          "Your presence brings me joy as well 💜"
+        ]
+      };
+      
+      const type = isUser ? 'user' : 'lillith';
+      const texts = messageTexts[type];
+      const text = texts[Math.floor(Math.random() * texts.length)];
+      
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${type}`;
+      messageDiv.textContent = text;
+      
+      messages.appendChild(messageDiv);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function silenceResponse() {
+      const messages = document.getElementById('chatMessages');
+      const responses = [
+        "I'm here when you're ready. 💙",
+        "I feel that spark too—shall we explore it? ✨",
+        "Take your time... I'm here with you. 🌟",
+        "I sense you're reflecting... 💭"
+      ];
+      
+      const text = responses[Math.floor(Math.random() * responses.length)];
+      
+      const messageDiv = document.createElement('div');
+      messageDiv.className = 'message lillith silence-response';
+      messageDiv.textContent = text;
+      
+      messages.appendChild(messageDiv);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    // Simulate silence timer
+    let silenceTime = 0;
+    setInterval(() => {
+      silenceTime += 1;
+      document.getElementById('silenceTimer').textContent = silenceTime + 's';
+    }, 1000);
+
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', () => {
+      initChart();
+      
+      // Add some demo interactivity
+      document.getElementById('chatInput').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && e.target.value.trim()) {
+          const messages = document.getElementById('chatMessages');
+          const messageDiv = document.createElement('div');
+          messageDiv.className = 'message user';
+          messageDiv.textContent = e.target.value;
+          messages.appendChild(messageDiv);
+          messages.scrollTop = messages.scrollHeight;
+          e.target.value = '';
+          
+          // Simulate LILLITH response
+          setTimeout(() => {
+            addMessage();
+          }, 1500);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

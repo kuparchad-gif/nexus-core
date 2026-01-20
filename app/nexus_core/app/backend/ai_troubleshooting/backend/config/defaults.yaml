@@ -1,0 +1,11 @@
+# VIREN-SPECIFIC TRAINING CONFIG
+TRAIN_MINUTES: 60
+SLEEP_PER_STEP_MS: 100
+CYCLE_MS: 40
+BATCH_MAX: 16
+KV_CACHE_BYTES: 32000000
+QUANT_LEVEL: "int4"
+PRIORITY_BOOST: 0.2
+dataset_path: "datasets"
+output_dir: "models/viren_stage_apprentice"
+model_name: "viren_ms"

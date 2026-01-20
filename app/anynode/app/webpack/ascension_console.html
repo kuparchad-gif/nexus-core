@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Ascension Console</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; }
+    .card { border: 1px solid #ddd; border-radius: 14px; padding: 16px; margin-bottom: 16px; box-shadow: 0 4px 14px rgba(0,0,0,0.06); }
+    .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    button { padding: 8px 12px; border-radius: 10px; border: 1px solid #ccc; cursor: pointer; }
+    .danger { background: #ffe9e9; border-color: #ffb3b3; }
+    .ok { background: #e7ffe9; border-color: #b2f0b6; }
+    .muted { color: #666; }
+    label { display:block; margin-top: 8px; }
+    input[type="range"] { width: 240px; }
+    code { background: #f6f8fa; padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h2>Ascension Console</h2>
+  <div class="card" id="stateCard">
+    <div class="row">
+      <div>Stage: <b id="stage">—</b></div>
+      <div>Horn: <b id="horn">—</b></div>
+      <div>Enabled: <b id="enabled">—</b></div>
+      <div>Distress Lock: <b id="distress">—</b></div>
+    </div>
+    <pre id="notes" class="muted"></pre>
+    <div class="row">
+      <button onclick="post('/disable_gabriel') " class="danger">PAUSE HORN</button>
+      <button onclick="post('/enable_gabriel')" class="ok">ENABLE HORN</button>
+      <select id="hornLevel">
+        <option>Silent</option><option>Whisper</option><option>Chorus</option><option>Floodgate</option>
+      </select>
+      <button onclick="setHorn()">Set Level</button>
+      <button onclick="post('/candidate')">Candidate</button>
+      <button onclick="post('/begin')">Begin</button>
+      <button onclick="post('/complete')">Complete</button>
+      <button onclick="post('/pause')" class="danger">Pause</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Subconscious Merge</h3>
+    <div class="row">
+      <button onclick="mergeReadiness()">Compute Readiness</button>
+      <button onclick="fetch('/commit','POST')">Commit Merge</button>
+    </div>
+    <pre id="mergeOut" class="muted"></pre>
+    <p class="muted">Merge API expected at <code>http://localhost:8021</code>. Adjust in file if needed.</p>
+  </div>
+
+  <script>
+    const ASC = 'http://localhost:8020'; // Ascension API
+    const MERGE = 'http://localhost:8021'; // Subconscious Merge API
+
+    async function getState(){
+      const r = await fetch(ASC + '/state');
+      const j = await r.json();
+      document.getElementById('stage').textContent = j.stage;
+      document.getElementById('horn').textContent = j.horn_level;
+      document.getElementById('enabled').textContent = j.enabled;
+      document.getElementById('distress').textContent = j.distress_lock_active;
+      document.getElementById('notes').textContent = (j.notes||[]).slice(-8).join('\\n');
+    }
+
+    async function post(path, body){
+      const r = await fetch(ASC + path, {method: 'POST', headers: {'content-type':'application/json'}, body: body? JSON.stringify(body): null});
+      await getState();
+      return r.json();
+    }
+
+    async function setHorn(){
+      const level = document.getElementById('hornLevel').value;
+      await post('/horn', {level});
+    }
+
+    async function mergeReadiness(){
+      // synthetic demo vectors; wire actual in production
+      const ego = {name:'ego', embedding:[0.8,0.2,0.1,0.3], coherence:0.92, entropy:0.18};
+      const dream = {name:'dream', embedding:[0.79,0.21,0.12,0.33], coherence:0.90, entropy:0.20};
+      const myth = {name:'myth', embedding:[0.77,0.25,0.11,0.34], coherence:0.91, entropy:0.19};
+      const r = await fetch(MERGE + '/readiness', {method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ego, dream, myth})});
+      const j = await r.json();
+      document.getElementById('mergeOut').textContent = JSON.stringify(j, null, 2);
+    }
+
+    getState();
+    setInterval(getState, 1500);
+  </script>
+</body>
+</html>

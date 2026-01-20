@@ -1,0 +1,20 @@
+{
+  "data": {
+    "Training data for architectural_awareness best practices": [
+      [
+        -28.596282958984375,
+        30.374347686767578,
+        31.068941116333008,
+        87.47491455078125,
+        -6.571869373321533
+      ]
+    ]
+  },
+  "scores": [
+    80,
+    80,
+    80
+  ],
+  "timestamp": 1759973446.9806845,
+  "instance_id": "viren_architectural_awareness_1759973446"
+}

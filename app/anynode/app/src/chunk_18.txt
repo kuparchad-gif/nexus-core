@@ -1,0 +1,706 @@
+{
+  "chunk": "18/18",
+  "files": [
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork",
+      "size": 1544,
+      "type": "documentation",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\soulmind_blueprint.md",
+      "name": "soulmind_blueprint.md"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork",
+      "size": 1544,
+      "type": "documentation",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\soulmind_blueprint.md",
+      "name": "soulmind_blueprint.md"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork",
+      "size": 1518,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\soulmind_loader.py",
+      "name": "soulmind_loader.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork",
+      "size": 1518,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\soulmind_loader.py",
+      "name": "soulmind_loader.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork",
+      "size": 487,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\soulmind_manifest.json",
+      "name": "soulmind_manifest.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork",
+      "size": 487,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\soulmind_manifest.json",
+      "name": "soulmind_manifest.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork",
+      "size": 1176,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\soulmind_router.py",
+      "name": "soulmind_router.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork",
+      "size": 1176,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\soulmind_router.py",
+      "name": "soulmind_router.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork",
+      "size": 893,
+      "type": "documentation",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\soulmind_seeding_mission.md",
+      "name": "soulmind_seeding_mission.md"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork",
+      "size": 893,
+      "type": "documentation",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\soulmind_seeding_mission.md",
+      "name": "soulmind_seeding_mission.md"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork",
+      "size": 779,
+      "type": "documentation",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\soulmind_truths.md",
+      "name": "soulmind_truths.md"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork",
+      "size": 779,
+      "type": "documentation",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\soulmind_truths.md",
+      "name": "soulmind_truths.md"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork",
+      "size": 554,
+      "type": "documentation",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\star_temples.md",
+      "name": "star_temples.md"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork",
+      "size": 554,
+      "type": "documentation",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\star_temples.md",
+      "name": "star_temples.md"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\Guilds",
+      "size": 397,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\Guilds\\harmonizers_guild.json",
+      "name": "harmonizers_guild.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\Guilds",
+      "size": 397,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\Guilds\\harmonizers_guild.json",
+      "name": "harmonizers_guild.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\Guilds",
+      "size": 399,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\Guilds\\luminaries_guild.json",
+      "name": "luminaries_guild.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\Guilds",
+      "size": 399,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\Guilds\\luminaries_guild.json",
+      "name": "luminaries_guild.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\Guilds",
+      "size": 415,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\Guilds\\storyweavers_guild.json",
+      "name": "storyweavers_guild.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\Guilds",
+      "size": 415,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\Guilds\\storyweavers_guild.json",
+      "name": "storyweavers_guild.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\Guilds",
+      "size": 435,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\Guilds\\wayfinders_guild.json",
+      "name": "wayfinders_guild.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\Guilds",
+      "size": 435,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\SoulmindNetwork\\Guilds\\wayfinders_guild.json",
+      "name": "wayfinders_guild.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles",
+      "size": 2009,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\keystone.py",
+      "name": "keystone.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles",
+      "size": 2009,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\keystone.py",
+      "name": "keystone.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles",
+      "size": 6645,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\launch_bridge.py",
+      "name": "launch_bridge.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles",
+      "size": 6645,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\launch_bridge.py",
+      "name": "launch_bridge.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles",
+      "size": 6046,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\launch_genesis.py",
+      "name": "launch_genesis.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles",
+      "size": 6046,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\launch_genesis.py",
+      "name": "launch_genesis.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles",
+      "size": 18531,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\launch_heart.py",
+      "name": "launch_heart.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles",
+      "size": 18531,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\launch_heart.py",
+      "name": "launch_heart.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles",
+      "size": 21804,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\launch_memory.py",
+      "name": "launch_memory.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles",
+      "size": 21804,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\launch_memory.py",
+      "name": "launch_memory.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles",
+      "size": 14780,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\launch_services.py",
+      "name": "launch_services.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles",
+      "size": 14780,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\launch_services.py",
+      "name": "launch_services.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles",
+      "size": 61,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\memory.py",
+      "name": "memory.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles",
+      "size": 61,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\memory.py",
+      "name": "memory.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles",
+      "size": 64,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\scheduler.py",
+      "name": "scheduler.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles",
+      "size": 64,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\scheduler.py",
+      "name": "scheduler.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles",
+      "size": 70,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\text.py",
+      "name": "text.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles",
+      "size": 70,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\text.py",
+      "name": "text.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles",
+      "size": 72,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\tone.py",
+      "name": "tone.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles",
+      "size": 72,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\tone.py",
+      "name": "tone.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles\\Genesis",
+      "size": 386,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\Genesis\\genesis_manifest.py",
+      "name": "genesis_manifest.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles\\GenesisModules",
+      "size": 1114,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\GenesisModules\\genesis_manifest.py",
+      "name": "genesis_manifest.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles\\Genesis",
+      "size": 386,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\Genesis\\genesis_manifest.py",
+      "name": "genesis_manifest.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles\\GenesisModules",
+      "size": 1114,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\GenesisModules\\genesis_manifest.py",
+      "name": "genesis_manifest.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles\\Genesis",
+      "size": 681,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\Genesis\\genesis_manifest_updater.py",
+      "name": "genesis_manifest_updater.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles\\Genesis",
+      "size": 681,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\Genesis\\genesis_manifest_updater.py",
+      "name": "genesis_manifest_updater.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles\\Genesis",
+      "size": 709,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\Genesis\\genisis_core.py",
+      "name": "genisis_core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles\\Genesis",
+      "size": 709,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\Genesis\\genisis_core.py",
+      "name": "genisis_core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles\\GenesisModules",
+      "size": 2261,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\GenesisModules\\council_voting.py",
+      "name": "council_voting.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles\\GenesisModules",
+      "size": 2261,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\GenesisModules\\council_voting.py",
+      "name": "council_voting.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles\\GenesisModules",
+      "size": 3430,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\GenesisModules\\genesis_core.py",
+      "name": "genesis_core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles\\GenesisModules",
+      "size": 3430,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\GenesisModules\\genesis_core.py",
+      "name": "genesis_core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles\\GenesisModules",
+      "size": 336,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\GenesisModules\\genesis_manifest_updated.py",
+      "name": "genesis_manifest_updated.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles\\GenesisModules",
+      "size": 336,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\GenesisModules\\genesis_manifest_updated.py",
+      "name": "genesis_manifest_updated.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles\\GenesisModules",
+      "size": 681,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\GenesisModules\\model_registry.json",
+      "name": "model_registry.json"
+    },
+    {
+      "directory": "Viren\\Systems\\roles\\GenesisModules",
+      "size": 681,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\GenesisModules\\model_registry.json",
+      "name": "model_registry.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles\\GenesisModules",
+      "size": 2039,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\GenesisModules\\token_manager.py",
+      "name": "token_manager.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles\\GenesisModules",
+      "size": 2039,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\GenesisModules\\token_manager.py",
+      "name": "token_manager.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles\\nucleus",
+      "size": 646,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\nucleus\\breath_encryptor.py",
+      "name": "breath_encryptor.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles\\nucleus",
+      "size": 646,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\nucleus\\breath_encryptor.py",
+      "name": "breath_encryptor.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles\\nucleus",
+      "size": 2243,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\nucleus\\diagnostics.py",
+      "name": "diagnostics.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles\\nucleus",
+      "size": 2243,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\nucleus\\diagnostics.py",
+      "name": "diagnostics.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles\\nucleus",
+      "size": 2614,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\nucleus\\genesis.py",
+      "name": "genesis.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles\\nucleus",
+      "size": 2614,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\nucleus\\genesis.py",
+      "name": "genesis.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles\\nucleus",
+      "size": 91,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\nucleus\\genesis_discovery_engine.py",
+      "name": "genesis_discovery_engine.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles\\nucleus",
+      "size": 91,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\nucleus\\genesis_discovery_engine.py",
+      "name": "genesis_discovery_engine.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles\\nucleus",
+      "size": 96,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\nucleus\\pulse_router.py",
+      "name": "pulse_router.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles\\nucleus",
+      "size": 96,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\nucleus\\pulse_router.py",
+      "name": "pulse_router.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\roles\\nucleus",
+      "size": 529,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\roles\\nucleus\\sacred_api.py",
+      "name": "sacred_api.py"
+    },
+    {
+      "directory": "Viren\\Systems\\roles\\nucleus",
+      "size": 529,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\roles\\nucleus\\sacred_api.py",
+      "name": "sacred_api.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\security\\trinity_gate",
+      "size": 81,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\security\\trinity_gate\\trinity_validator.py",
+      "name": "trinity_validator.py"
+    },
+    {
+      "directory": "Viren\\Systems\\security\\trinity_gate",
+      "size": 81,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\security\\trinity_gate\\trinity_validator.py",
+      "name": "trinity_validator.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\services",
+      "size": 18534,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\services\\cloud_deployment_orchestrator.py",
+      "name": "cloud_deployment_orchestrator.py"
+    },
+    {
+      "directory": "Viren\\Systems\\services",
+      "size": 18534,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\services\\cloud_deployment_orchestrator.py",
+      "name": "cloud_deployment_orchestrator.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\services",
+      "size": 16472,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\services\\hardware_diagnostics.py",
+      "name": "hardware_diagnostics.py"
+    },
+    {
+      "directory": "Viren\\Systems\\services",
+      "size": 16472,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\services\\hardware_diagnostics.py",
+      "name": "hardware_diagnostics.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\services",
+      "size": 37461,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\services\\installer_generator.py",
+      "name": "installer_generator.py"
+    },
+    {
+      "directory": "Viren\\Systems\\services",
+      "size": 37461,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\services\\installer_generator.py",
+      "name": "installer_generator.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\services",
+      "size": 20513,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\services\\intelligent_troubleshooter.py",
+      "name": "intelligent_troubleshooter.py"
+    },
+    {
+      "directory": "Viren\\Systems\\services",
+      "size": 20513,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\services\\intelligent_troubleshooter.py",
+      "name": "intelligent_troubleshooter.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\services",
+      "size": 22207,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\services\\universal_deployment_core.py",
+      "name": "universal_deployment_core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\services",
+      "size": 22207,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\services\\universal_deployment_core.py",
+      "name": "universal_deployment_core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\services",
+      "size": 31561,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\services\\viren_remote_controller.py",
+      "name": "viren_remote_controller.py"
+    },
+    {
+      "directory": "Viren\\Systems\\services",
+      "size": 31561,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\services\\viren_remote_controller.py",
+      "name": "viren_remote_controller.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\service_core",
+      "size": 1202,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\service_core\\service_node.py",
+      "name": "service_node.py"
+    },
+    {
+      "directory": "Viren\\Systems\\service_core",
+      "size": 1202,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\service_core\\service_node.py",
+      "name": "service_node.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\service_core",
+      "size": 12164,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\service_core\\weight_plugin_installer.py",
+      "name": "weight_plugin_installer.py"
+    },
+    {
+      "directory": "Viren\\Systems\\service_core",
+      "size": 12164,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\service_core\\weight_plugin_installer.py",
+      "name": "weight_plugin_installer.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\service_core\\catalyst",
+      "size": 19869,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\service_core\\catalyst\\learning_core.py",
+      "name": "learning_core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\service_core\\catalyst",
+      "size": 19869,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\service_core\\catalyst\\learning_core.py",
+      "name": "learning_core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\VaultCarrier",
+      "size": 526,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\VaultCarrier\\emergency_launcher.py",
+      "name": "emergency_launcher.py"
+    },
+    {
+      "directory": "Viren\\Systems\\VaultCarrier",
+      "size": 526,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\VaultCarrier\\emergency_launcher.py",
+      "name": "emergency_launcher.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\VaultCarrier",
+      "size": 424,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\VaultCarrier\\payload_manager.py",
+      "name": "payload_manager.py"
+    },
+    {
+      "directory": "Viren\\Systems\\VaultCarrier",
+      "size": 424,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\VaultCarrier\\payload_manager.py",
+      "name": "payload_manager.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\VaultCarrier",
+      "size": 1218,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\VaultCarrier\\vault_carrier.py",
+      "name": "vault_carrier.py"
+    },
+    {
+      "directory": "Viren\\Systems\\VaultCarrier",
+      "size": 1218,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\VaultCarrier\\vault_carrier.py",
+      "name": "vault_carrier.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\VaultCarrier",
+      "size": 3,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\VaultCarrier\\vault_registry.json",
+      "name": "vault_registry.json"
+    },
+    {
+      "directory": "Viren\\Systems\\VaultCarrier",
+      "size": 3,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\VaultCarrier\\vault_registry.json",
+      "name": "vault_registry.json"
+    }
+  ],
+  "total_files": 1809
+}

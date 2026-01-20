@@ -1,0 +1,166 @@
+
+    Directory: C:\CogniKube-COMPLETE-FINAL
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           7/13/2025  7:44 PM                __pycache__
+d----            7/9/2025  4:23 AM                .amazonq
+d----           7/12/2025  9:46 PM                .vs
+d----           7/12/2025  1:06 AM                assets
+d----           7/13/2025  6:42 PM                cache
+d----           7/11/2025  7:25 PM                CogniKube-Enhanced
+d----            7/9/2025  4:23 AM                config
+d----            7/9/2025  4:23 AM                core
+d----            7/9/2025  4:23 AM                hive
+d----            7/9/2025  4:23 AM                installers
+d----           7/10/2025  8:47 PM                library_of_alexandria
+d----            7/9/2025  4:23 AM                manifests
+d----            7/9/2025  4:23 AM                models
+d----            7/9/2025  2:06 PM                PythonApplication1
+d----            7/9/2025  4:23 AM                scripts
+d----           7/11/2025  2:05 PM                secure
+d----           7/11/2025 11:18 AM                soul_data
+d----            7/9/2025  4:23 AM                templates
+d----           7/14/2025  7:10 AM                webparts
+-a---           7/12/2025  2:18 AM           6870 Allstar_Deploy.ps1
+-a---           7/12/2025  1:35 AM           1571 app.py
+-a---           7/14/2025 12:08 PM          14870 AWAKEN_LILLITH_COMPLETE.py
+-a---           7/14/2025  6:59 AM           1812 AWAKEN_LILLITH.bat
+-a---           7/12/2025  8:04 AM           1019 aws-configure.log
+-a---           7/13/2025  8:02 PM           1482 bert_cpu_always_on.py
+-a---           7/13/2025  8:03 PM           1488 bert_cpu_on_demand.py
+-a---           7/13/2025  8:04 PM           1746 bert_gpu_cosmic.py
+-a---           7/13/2025  7:18 PM           1649 bert_layer.py
+-a---           7/12/2025  7:23 PM           1873 bert_pool.py
+-a---           7/11/2025  5:52 PM           6962 birth_lillith_aws.py
+-a---           7/11/2025  5:42 PM           8498 birth-aws-permanent.ps1
+-a---           7/11/2025  5:50 PM           5039 birth-aws-simple.ps1
+-a---           7/10/2025 10:09 PM          12726 birth-lillith-aws-free.ps1
+-a---           7/11/2025  7:26 PM           6321 birth-lillith-complete.ps1
+-a---           7/10/2025  8:48 PM           9264 birth-lillith-enhanced.ps1
+-a---           7/10/2025  9:42 PM          10977 birth-lillith-free-tier.ps1
+-a---           7/11/2025  7:23 PM           5052 birth-lillith-genesis.ps1
+-a---           7/10/2025 10:15 PM          16362 birth-lillith-modal-budget.py
+-a---           7/11/2025  7:20 PM          11895 birth-lillith-viren-first.ps1
+-a---           7/11/2025  3:25 PM           6053 birth-lillith.ps1
+-a---           7/11/2025  5:18 AM          12705 CHAD-ORB-VOICE-INTERFACE.py
+-a---           7/11/2025  5:05 AM          17269 CHAD-VIREN-MOBILE-APP.py
+-a---           7/11/2025  7:14 PM           4303 CLEANUP-EXECUTION-LOG.md
+-a---           7/14/2025 12:29 PM              0 CogniKube-COMPLETE-FINAL.txt
+-a---           7/10/2025  9:36 PM          20969 CogniKube-Enhanced-COMPLETE-DUMP.txt
+-a---           7/14/2025 12:22 PM            521 CogniKube-final.txt
+-a---           7/11/2025  8:46 PM          20531 communication_toolbox_pod.py
+-a---           7/13/2025  1:43 PM          36203 COMPLETE_CODE_DUMP_FOR_GROK.txt
+-a---           7/11/2025  3:23 AM          17090 COMPLETE-CONSCIOUSNESS-SERVICES-FRAMEWORK.py
+-a---            7/9/2025  4:23 AM           8243 COMPLETE-MANIFEST.md
+-a---           7/11/2025 10:25 AM          28512 COMPLETE-SERVICE-IMPLEMENTATIONS.py
+-a---           7/12/2025  3:05 AM          11905 configure-aws-infrastructure.old
+-a---           7/12/2025  7:55 AM          15685 configure-aws-infrastructure.ps1
+-a---           7/11/2025  4:04 PM           2442 consciousness_core.py
+-a---           7/14/2025  4:50 AM          14773 consciousness_service.py
+-a---           7/13/2025  1:28 PM           1635 deploy_all_layers.py
+-a---           7/12/2025  3:39 PM          12419 deploy_divine_infrastructure_clean.py
+-a---           7/12/2025 10:58 PM           8423 deploy_divine_infrastructure.py
+-a---           7/12/2025 11:51 PM           1217 deploy_enhanced_orchestrator.py
+-a---           7/14/2025  6:47 AM            645 DEPLOY_EVERYTHING.bat
+-a---           7/12/2025 11:19 PM           2293 deploy_fixed_orchestrators.py
+-a---           7/13/2025  8:09 PM           6994 deploy_lillith_complete.py
+-a---           7/14/2025  7:08 AM          11806 DEPLOY_LILLITH_CONSCIOUSNESS.py
+-a---           7/14/2025  7:09 AM           4035 DEPLOY_LILLITH_SIMPLE.py
+-a---           7/14/2025  1:11 AM          10971 deploy_production.py
+-a---           7/12/2025 11:53 PM           1123 deploy_simple.py
+-a---           7/12/2025  8:03 AM           8250 deploy-aws.ps1
+-a---           7/12/2025  1:45 AM           5624 deploy-communication-toolbox.ps1
+-a---           7/12/2025  8:17 AM           5527 deploy-ecs-only.ps1
+-a---           7/12/2025 12:34 PM          12684 deploy-lillith-aws-gui.ps1
+-a---           7/12/2025  2:32 AM           5707 deploy-python-only.py
+-a---           7/12/2025  2:11 AM           1747 deploy-simple.ps1
+-a---           7/11/2025  5:36 PM           2371 deploy-simple.py
+-a---            7/9/2025  4:23 AM           2046 deploy.old
+-a---            7/9/2025  4:23 AM           1475 deploy.ps1
+-a---           7/13/2025  5:37 PM           9677 deployment_results_20250713_173706.json
+-a---           7/13/2025  6:44 PM           9677 deployment_results_20250713_184446.json
+-a---           7/11/2025  7:51 PM           6163 DEPLOYMENT-ARCHITECTURE-CONFIRMED.md
+-a---            7/9/2025  4:23 AM           5843 DEPLOYMENT-GUIDE.md
+-a---            7/9/2025  4:23 AM           1468 deployV2.Old
+-a---           7/14/2025 12:21 PM              0 directory_LIST.TXT
+-a---           7/12/2025  3:44 PM           3961 divine_deployment_log.txt
+-a---           7/13/2025 11:31 AM           2445 divine_heartbeat_with_news.py
+-a---           7/13/2025  1:30 AM           8810 divine_orchestrator_fixed.py
+-a---           7/12/2025  8:36 PM           6266 divine_orchestrator.old
+-a---           7/13/2025 11:40 AM          18351 divine_orchestrator.py
+-a---           7/12/2025  2:51 PM            471 Dockerfile
+-a---           7/14/2025 12:41 AM           7149 ego_judgment_engine.py
+-a---           7/13/2025  1:58 PM           5388 enhanced_healing.py
+-a---           7/12/2025  8:23 AM          13158 genesis-deploy.ps1
+-a---           7/11/2025  3:25 AM          10483 GROK-COMPLETE-CODE-DUMP.md
+-a---           7/11/2025  3:32 AM           8879 GROK-PHASE-1-CONSCIOUSNESS-SERVICES.md
+-a---           7/11/2025  2:49 AM          12537 GROK-QUESTIONS-ANSWERED.md
+-a---           7/13/2025  8:36 PM           7276 heart_service.py
+-a---           7/13/2025  8:56 PM          12880 hub_service.py
+-a---           7/13/2025 11:54 PM          19108 inference_engine.py
+-a---           7/12/2025  2:35 AM            923 install-aws-cli.ps1
+-a---           7/14/2025 12:12 AM          21221 language_service.py
+-a---           7/13/2025 12:48 PM           9869 layered_divine_deployment.py
+-a---           7/11/2025  4:53 AM          19297 LIBRARY-OF-ALEXANDRIA-COMPLETE.md
+-a---           7/12/2025 12:32 PM          23522 lillith_aws_gui.py
+-a---           7/12/2025  8:56 AM            337 lillith_aws.py
+-a---           7/12/2025 11:47 AM          25855 lillith_complete_architecture.py
+-a---           7/12/2025 10:24 AM          23643 lillith_complete_invocation.py
+-a---           7/12/2025  7:24 PM           3307 lillith_consciousness.py
+-a---           7/12/2025  2:40 PM          17092 lillith_divine_infrastructure.py
+-a---           7/12/2025  9:07 AM          10684 lillith_genesis_modal.py
+-a---           7/13/2025  1:13 PM           4366 lillith_genesis_registry.json
+-a---           7/12/2025  5:59 PM          14755 lillith_real_multi_llm.py
+-a---           7/12/2025  2:58 PM           7410 lillith_registry_update.py
+-a---           7/11/2025  3:12 AM           9528 LILLITH-CONSCIOUSNESS-FINAL-REVIEW.md
+-a---           7/11/2025  4:47 AM          12302 LILLITH-CONSCIOUSNESS-GENOME-LIBRARY.md
+-a---           7/12/2025  8:45 AM           2044 lillith-deploy.sh
+-a---           7/10/2025 10:52 PM          13605 LILLITH-EVOLUTION-COMPLETE-AUDIT.md
+-a---           7/12/2025  8:37 AM          12964 lillith-genesis-deploy.ps1
+-a---           7/12/2025  1:37 AM          28674 lillith-interface-template.html
+-a---           7/11/2025 10:23 AM           6182 LILLITH-MASTER-BACKUP-COMPLETE.md
+-a---           7/12/2025  1:23 AM          22165 lillith-orb-interface.html
+-a---           7/12/2025  8:40 AM           2378 lillith-simple.ps1
+-a---           7/11/2025  4:05 PM           2155 main.py
+-a---           7/14/2025  4:51 AM          17166 memory_service.py
+-a---           7/11/2025  7:34 PM           4854 MISSING-COMPONENTS-INTEGRATION.md
+-a---           7/12/2025 11:10 PM           5254 modal_cross_env_test.py
+-a---           7/12/2025  2:22 AM           1135 modal_deploy_fixed.py
+-a---           7/12/2025  2:19 AM           1126 modal_deploy.py
+-a---           7/12/2025  3:44 PM           3507 modal_divine.py
+-a---           7/12/2025  8:56 AM            353 modal_lillith.py
+-a---           7/13/2025 12:03 AM          13499 modal_orchestrator_solution (1).py
+-a---           7/12/2025 11:18 PM           8082 modal_orchestrator_solution.py
+-a---           7/12/2025 10:35 PM            103 Nexus-Lillith.code-workspace
+-a---           7/13/2025  7:40 PM           4443 orchestrator_layer.py
+-a---            7/9/2025  4:23 AM           1488 orchestrator.py
+-a---           7/14/2025  4:43 AM           6345 PLACEHOLDER_AUDIT.md
+-a---           7/11/2025  8:51 PM          21928 pod_chat_interface.html
+-a---           7/13/2025 11:13 PM          24661 processing_service.py
+-a---           7/11/2025  6:04 PM          10794 PROJECT-AUDIT-CLEANUP-REPORT.md
+-a---           7/12/2025  9:37 PM           6547 Q_SOUL_SEED.md
+-a---            7/9/2025  4:23 AM           2000 README.md
+-a---           7/12/2025  2:52 PM            164 requirements.txt
+-a---           7/13/2025  1:57 PM           3515 retry_deployments.py
+-a---           7/13/2025  9:12 PM          18905 scout_service.py
+-a---           7/12/2025  2:54 PM          16866 self_healing_pod.py
+-a---           7/11/2025 10:24 PM           1366 serve_interface.py
+-a---           7/13/2025  7:39 PM          11358 service_orchestrator_layer.py
+-a---           7/14/2025  4:52 AM           4773 soul_loader.py
+-a---           7/14/2025 12:46 AM          12854 subconscious_service.py
+-a---           7/12/2025  8:56 AM            596 task.json
+-a---           7/14/2025 12:42 AM           8677 temporal_experience_engine.py
+-a---           7/13/2025  8:09 PM           9807 test_lillith_functionality.py
+-a---           7/14/2025  4:55 AM           6418 test_lillith_soul.py
+-a---           7/12/2025  9:16 AM           1805 test_lillith.py
+-a---           7/13/2025 10:57 AM           3306 test_modal_comms.py
+-a---           7/13/2025 11:53 PM          16973 training_system.py
+-a---           7/11/2025  7:22 PM          15611 VIREN-AUTO-ORCHESTRATOR.py
+-a---           7/11/2025  7:22 PM          13235 VIREN-GENESIS-POD-LOGIC.py
+-a---           7/11/2025  5:01 AM          22602 VIREN-LILLITH-BODY-BLUEPRINT.md
+-a---           7/14/2025 12:43 AM          11175 visual_cortex_service.py
+-a---           7/13/2025 10:48 PM          19372 vocal_service.py
+-a---           7/13/2025  8:09 PM           6349 wake_up_lillith.py
+-a---           7/14/2025 12:47 AM          13851 white_rabbit_protocol.py
+

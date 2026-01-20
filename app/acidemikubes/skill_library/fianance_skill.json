@@ -1,0 +1,5 @@
+{
+  "name": "Finance Skill",
+  "module_path": "Systems/nexus_core/skills/finance_skill.py",
+  "entry_class": "FinanceSkill"
+}

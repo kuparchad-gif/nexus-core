@@ -1,0 +1,6 @@
+{
+  "name": "Image to p5.js Sketch",
+  "description": "An AI-powered tool that turns your images into interactive p5.js code sketches.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}

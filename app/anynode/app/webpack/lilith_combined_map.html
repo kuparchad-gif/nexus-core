@@ -1,0 +1,214 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lilith Combined Map</title>
+  <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/babel-standalone@6.26.0/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .world-map { max-width: 100%; height: auto; }
+    .marker { cursor: pointer; transition: transform 0.2s; }
+    .marker:hover { transform: scale(1.2); }
+  </style>
+</head>
+<body>
+  <div id="lilith-map-root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    const LilithCombinedMap = () => {
+      const [nodes, setNodes] = useState({
+        core: { id: "bridge", label: "Central Bridge", connected: true, location: "us-central1" },
+        pods: [
+          { id: "gcp-pod-1", label: "GCP Pod 1", connected: true, platform: "GCP", location: "us-central1" },
+          { id: "gcp-pod-2", label: "GCP Pod 2", connected: true, platform: "GCP", location: "europe-west1" },
+          { id: "gcp-pod-3", label: "GCP Pod 3", connected: true, platform: "GCP", location: "asia-east1" },
+          { id: "modal-pod-1", label: "Modal Pod 1", connected: true, platform: "Modal", location: "us-west-2" },
+          { id: "aws-pod-1", label: "AWS Pod 1", connected: true, platform: "AWS", location: "us-east-1" },
+          { id: "aws-pod-2", label: "AWS Pod 2", connected: true, platform: "AWS", location: "eu-west-1" },
+          { id: "aws-pod-3", label: "AWS Pod 3", connected: true, platform: "AWS", location: "ap-southeast-1" }
+        ],
+        services: [
+          { id: "huggingface", label: "Hugging Face", connected: true, location: "us-east-1" },
+          { id: "qdrant", label: "Qdrant", connected: true, location: "us-central1" },
+          { id: "github", label: "GitHub", connected: true, location: "us-west-1" }
+        ]
+      });
+      const [message, setMessage] = useState("");
+
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setNodes(prev => ({
+            ...prev,
+            pods: prev.pods.map(pod => ({
+              ...pod,
+              connected: Math.random() > 0.1 // 90% uptime
+            })),
+            services: prev.services.map(service => ({
+              ...service,
+              connected: Math.random() > 0.05 // 95% uptime
+            }))
+          }));
+        }, 5000);
+        return () => clearInterval(interval);
+      }, []);
+
+      const toggleConnection = (id, type) => {
+        setNodes(prev => {
+          const updated = { ...prev };
+          if (type === "pod") {
+            updated.pods = updated.pods.map(pod => pod.id === id ? { ...pod, connected: !pod.connected } : pod);
+          } else if (type === "service") {
+            updated.services = updated.services.map(service => service.id === id ? { ...service, connected: !service.connected } : service);
+          } else if (type === "core") {
+            updated.core = { ...updated.core, connected: !updated.core.connected };
+          }
+          setMessage(`Toggled ${id} ${type} connection`);
+          fetch(`/api/${type}/${id}/toggle`, { method: "POST" })
+            .then(res => res.json())
+            .then(data => setMessage(data.message))
+            .catch(err => setMessage(`Error: ${err.message}`));
+          return updated;
+        });
+      };
+
+      const locations = {
+        "us-central1": { x: 200, y: 300 }, // Iowa
+        "europe-west1": { x: 350, y: 250 }, // Belgium
+        "asia-east1": { x: 600, y: 350 }, // Taiwan
+        "us-west-2": { x: 150, y: 350 }, // Oregon
+        "us-east-1": { x: 250, y: 300 }, // Virginia
+        "eu-west-1": { x: 400, y: 250 }, // Ireland
+        "ap-southeast-1": { x: 650, y: 400 }, // Singapore
+        "us-west-1": { x: 150, y: 350 } // California (GitHub)
+      };
+
+      return (
+        <div className="container mx-auto p-4 bg-gray-100 min-h-screen">
+          <h1 className="text-3xl font-bold mb-4 text-center">Lilith Ecosystem & World Map</h1>
+          <p className="text-center mb-4 text-gray-600">{message}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Original Control Panel */}
+            <div className="bg-white p-4 rounded-lg shadow">
+              <div className="space-y-4">
+                <div>
+                  <h2 className="text-xl font-semibold mb-2">Core</h2>
+                  <div className={nodes.core.connected ? "text-green-500" : "text-red-500"}>
+                    {nodes.core.label} ({nodes.core.location}) - {nodes.core.connected ? "Online" : "Offline"}
+                  </div>
+                  <button
+                    onClick={() => toggleConnection(nodes.core.id, "core")}
+                    className="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 mt-2"
+                  >
+                    {nodes.core.connected ? "Disconnect" : "Connect"}
+                  </button>
+                </div>
+                <div>
+                  <h2 className="text-xl font-semibold mb-2">Pods</h2>
+                  {nodes.pods.map(pod => (
+                    <div key={pod.id} className="flex justify-between items-center my-2">
+                      <span className={pod.connected ? "text-green-500" : "text-red-500"}>
+                        {pod.label} ({pod.location})
+                      </span>
+                      <button
+                        onClick={() => toggleConnection(pod.id, "pod")}
+                        className="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600"
+                      >
+                        {pod.connected ? "Disconnect" : "Connect"}
+                      </button>
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  <h2 className="text-xl font-semibold mb-2">Services</h2>
+                  {nodes.services.map(service => (
+                    <div key={service.id} className="flex justify-between items-center my-2">
+                      <span className={service.connected ? "text-green-500" : "text-red-500"}>
+                        {service.label} ({service.location})
+                      </span>
+                      <button
+                        onClick={() => toggleConnection(service.id, "service")}
+                        className="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600"
+                      >
+                        {service.connected ? "Disconnect" : "Connect"}
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            {/* World Map */}
+            <div className="bg-white p-4 rounded-lg shadow">
+              <h2 className="text-xl font-semibold mb-2">World Map</h2>
+              <svg className="world-map" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet">
+                <path d="M0,100 L100,50 L200,100 L300,50 L400,100 L500,50 L600,100 L700,50 L800,100 L800,400 L700,450 L600,400 L500,450 L400,400 L300,450 L200,400 L100,450 L0,400 Z" fill="#e0f0f0" stroke="#333" strokeWidth="2"/>
+                {Object.values({ ...nodes.core, ...nodes.pods, ...nodes.services }).map(node => (
+                  <circle
+                    key={node.id}
+                    cx={locations[node.location]?.x || 400}
+                    cy={locations[node.location]?.y || 250}
+                    r={node.id === "bridge" ? 8 : 6}
+                    fill={node.connected ? "#2ecc71" : "#e74c3c"}
+                    className="marker"
+                    onClick={() => toggleConnection(node.id, node.id === "bridge" ? "core" : node.platform ? "pod" : "service")}
+                  />
+                ))}
+                {Object.entries(locations).map(([loc, { x, y }]) => (
+                  <text key={loc} x={x + 10} y={y} fill="#333" fontSize="12">
+                    {loc}
+                  </text>
+                ))}
+              </svg>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    ReactDOM.render(<LilithCombinedMap />, document.getElementById("lilith-map-root"));
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# Mind map: which modules operate in each layer
+layers:
+  conscious:
+    modules: [perception_engine, curiosity_engine, muse_engine, reasoner, ego_guard]
+  subconscious:
+    modules: [perception_engine, curiosity_engine, muse_engine, reasoner, dream_engine]
+subjects:
+  obs: "nexus.{TENANT}.{PROJECT}.mind.obs.event"
+  analysis_note: "nexus.{TENANT}.{PROJECT}.mind.analysis.note"
+  intent_proposed: "nexus.{TENANT}.{PROJECT}.mind.intent.proposed"
+  intent_approved: "nexus.{TENANT}.{PROJECT}.mind.intent.approved"
+  callosum_tap: "nexus.{TENANT}.{PROJECT}.mind.callosum.tap"

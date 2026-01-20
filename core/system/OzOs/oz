@@ -1,0 +1,3 @@
+#!/bin/bash
+cd "$(dirname "$0")"  # Ensure we're in the right directory
+./oz_runmodes.sh "$@"

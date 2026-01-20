@@ -1,0 +1,26 @@
+{
+  "dashboard": {
+    "title": "AI Engine Monitoring",
+    "panels": [
+      {
+        "title": "Logs Table",
+        "type": "logs",
+        "targets": [{"expr": "{level=\"info\"} |~ \"pnl|phase\""}]
+      },
+      {
+        "title": "Request Rate",
+        "type": "timeseries",
+        "targets": [{"expr": "rate(http_requests_total[5m])"}]
+      },
+      {
+        "title": "Drawdown Alert",
+        "type": "stat",
+        "targets": [{"expr": "max_over_time(drawdown[5m]) > 0.2"}],
+        "thresholds": [{"color": "red", "value": 0.2}]
+      }
+    ],
+    "time": {"from": "now-1h", "to": "now"},
+    "datasource": {"type": "loki", "uid": "loki"}
+  },
+  "__inputs": [{"name": "DS_PROM", "label": "Prometheus", "type": "datasource", "pluginId": "prometheus"}]
+}

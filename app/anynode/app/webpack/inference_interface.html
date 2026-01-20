@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inference Interface - Query Processing</title>
+    <link rel="stylesheet" href="cognikube_styles.css">
+    <style>
+        .inference-orb {
+            background: linear-gradient(135deg, var(--glass-bg), rgba(75, 0, 130, 0.1));
+        }
+        
+        .llm-cluster {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin: 20px auto;
+        }
+        
+        .tiny-llm {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: var(--success-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: tinyLLMPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes tinyLLMPulse {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        
+        .tiny-llm:hover {
+            transform: scale(1.3);
+            box-shadow: 0 0 15px var(--success-color);
+        }
+        
+        .tiny-llm.processing {
+            background: var(--accent-color);
+            animation: processingPulse 1s ease-in-out infinite;
+        }
+        
+        @keyframes processingPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .specialist-llm {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: var(--warning-color);
+            border: 2px solid var(--accent-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .specialist-llm:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 20px var(--warning-color);
+        }
+        
+        .crowd-wisdom {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .wisdom-bar {
+            width: 100%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .wisdom-fill {
+            height: 100%;
+            background: linear-gradient(90deg, 
+                var(--success-color) 0%, 
+                var(--accent-color) 50%, 
+                var(--warning-color) 100%);
+            transition: width 0.3s ease;
+            animation: wisdomFlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes wisdomFlow {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+        
+        .query-result {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .query-result:hover {
+            background: var(--accent-glow);
+        }
+        
+        .consensus-indicator {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .consensus-high { background: var(--success-color); color: white; }
+        .consensus-medium { background: var(--warning-color); color: #333; }
+        .consensus-low { background: var(--error-color); color: white; }
+        
+        .polling-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--success-color);
+            display: inline-block;
+            margin-right: 8px;
+            animation: pollingBlink 1s ease-in-out infinite;
+        }
+        
+        @keyframes pollingBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Authentication Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-card">
+            <div class="auth-logo">🎯</div>
+            <div class="auth-title">Inference Interface Access</div>
+            <input type="text" class="auth-input" id="username" placeholder="Username" value="viren">
+            <input type="password" class="auth-input" id="password" placeholder="Password" value="sacred_nexus_2025">
+            <button class="auth-button" onclick="authenticate()">Access Inference</button>
+            <div class="auth-error" id="authError"></div>
+        </div>
+    </div>
+
+    <div class="container three-column">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-text">🎯 Inference Interface</div>
+            </div>
+            <div class="header-controls">
+                <a href="master_control_panel.html" class="back-btn">← Back</a>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
+            </div>
+        </div>
+
+        <div class="left-sidebar">
+            <div class="sidebar-title">🤖 Tiny LLMs</div>
+            <div style="display: flex; align-items: center; margin: 10px 0;">
+                <div class="polling-indicator"></div>
+                <span style="font-size: 0.9rem;">Always Polling</span>
+            </div>
+            
+            <div class="crowd-wisdom">
+                <div style="font-weight: bold; margin-bottom: 10px;">Crowd Wisdom</div>
+                <div class="wisdom-bar">
+                    <div class="wisdom-fill" id="wisdomLevel" style="width: 78%;"></div>
+                </div>
+                <div style="font-size: 0.8rem; opacity: 0.8; text-align: center;">
+                    Consensus: 78% Agreement
+                </div>
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">🎯 Specialist LLMs</div>
+                <div class="query-result">
+                    <div style="font-weight: bold;">Code Specialist</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">Ready for programming queries</div>
+                </div>
+                <div class="query-result">
+                    <div style="font-weight: bold;">Math Specialist</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">Ready for calculations</div>
+                </div>
+                <div class="query-result">
+                    <div style="font-weight: bold;">Science Specialist</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">Ready for research queries</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="orb-container">
+            <div class="orb inference-orb">
+                <div class="orb-content">
+                    <div class="llm-cluster">
+                        <!-- Tiny LLMs scattered around -->
+                        <div class="tiny-llm" style="top: 20px; left: 30px;" title="Tiny-1">T1</div>
+                        <div class="tiny-llm processing" style="top: 40px; right: 25px;" title="Tiny-2">T2</div>
+                        <div class="tiny-llm" style="top: 80px; left: 15px;" title="Tiny-3">T3</div>
+                        <div class="tiny-llm processing" style="top: 120px; right: 40px;" title="Tiny-4">T4</div>
+                        <div class="tiny-llm" style="bottom: 60px; left: 25px;" title="Tiny-5">T5</div>
+                        <div class="tiny-llm" style="bottom: 30px; right: 20px;" title="Tiny-6">T6</div>
+                        <div class="tiny-llm processing" style="bottom: 80px; left: 50px;" title="Tiny-7">T7</div>
+                        <div class="tiny-llm" style="top: 60px; left: 70px;" title="Tiny-8">T8</div>
+                        
+                        <!-- Specialist LLMs in corners -->
+                        <div class="specialist-llm" style="top: 10px; right: 10px;" title="Code Specialist">CODE</div>
+                        <div class="specialist-llm" style="bottom: 10px; left: 10px;" title="Math Specialist">MATH</div>
+                        <div class="specialist-llm" style="bottom: 10px; right: 10px;" title="Science Specialist">SCI</div>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="queries-processed">8.4K</div>
+                            <div class="stat-label">Queries</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="consensus-rate">87%</div>
+                            <div class="stat-label">Consensus</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="active-tinys">8</div>
+                            <div class="stat-label">Tiny LLMs</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="specialists">3</div>
+                            <div class="stat-label">Specialists</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-sidebar">
+            <div class="sidebar-title">📊 Query Results</div>
+            <div id="queryResults">
+                <div class="query-result">
+                    <div style="font-weight: bold; margin-bottom: 10px;">Ready for Queries</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">
+                        Tiny LLMs are polling continuously. Enter a query to get crowd wisdom.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">🧠 Consensus Analysis</div>
+                <div id="consensusAnalysis">
+                    <div style="display: flex; align-items: center; gap: 10px; margin: 10px 0;">
+                        <div class="status-indicator status-online"></div>
+                        <span>High Consensus</span>
+                        <span class="consensus-indicator consensus-high">87%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="grid-column: 2; display: flex; align-items: center; justify-content: center; padding: 0 50px;">
+            <input type="text" class="chat-input" id="inferenceQuery" placeholder="Enter query for crowd wisdom processing...">
+        </div>
+    </div>
+
+    <script src="cognikube_base.js"></script>
+    <script>
+        class InferenceInterface extends CogniKubeBase {
+            constructor() {
+                super('Inference Interface', '🎯', '#4b0082');
+                this.tinyLLMs = [];
+                this.specialistLLMs = [];
+                this.queryHistory = [];
+                this.consensusThreshold = 0.7;
+                this.initializeInferenceInterface();
+                this.startUptime();
+                this.startPolling();
+            }
+
+            initializeInferenceInterface() {
+                document.getElementById('inferenceQuery').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.processInferenceQuery();
+                    }
+                });
+
+                // Connect to WebSocket
+                this.connectWebSocket('ws://localhost:8765/inference');
+                
+                // Initialize LLMs
+                this.initializeLLMs();
+            }
+
+            showWelcomeMessage(username) {
+                this.log('info', `Welcome to Inference Interface, ${username}! Tiny LLMs polling, crowd wisdom active.`);
+            }
+
+            onWebSocketMessage(data) {
+                if (data.type === 'inference_result') {
+                    this.displayInferenceResult(data.data);
+                } else if (data.type === 'consensus_update') {
+                    this.updateConsensus(data.data);
+                }
+            }
+
+            initializeLLMs() {
+                this.tinyLLMs = [
+                    { id: 'T1', name: 'Tiny-1', status: 'polling', confidence: 0.8 },
+                    { id: 'T2', name: 'Tiny-2', status: 'processing', confidence: 0.9 },
+                    { id: 'T3', name: 'Tiny-3', status: 'polling', confidence: 0.7 },
+                    { id: 'T4', name: 'Tiny-4', status: 'processing', confidence: 0.85 },
+                    { id: 'T5', name: 'Tiny-5', status: 'polling', confidence: 0.75 },
+                    { id: 'T6', name: 'Tiny-6', status: 'polling', confidence: 0.82 },
+                    { id: 'T7', name: 'Tiny-7', status: 'processing', confidence: 0.88 },
+                    { id: 'T8', name: 'Tiny-8', status: 'polling', confidence: 0.79 }
+                ];
+
+                this.specialistLLMs = [
+                    { id: 'CODE', name: 'Code Specialist', specialty: 'programming', status: 'ready' },
+                    { id: 'MATH', name: 'Math Specialist', specialty: 'mathematics', status: 'ready' },
+                    { id: 'SCI', name: 'Science Specialist', specialty: 'research', status: 'ready' }
+                ];
+            }
+
+            processInferenceQuery() {
+                const input = document.getElementById('inferenceQuery');
+                const query = input.value.trim();
+                if (!query) return;
+
+                // Send query to inference engine
+                this.sendWebSocketMessage({
+                    action: 'process_query',
+                    query: query,
+                    use_crowd_wisdom: true,
+                    consensus_threshold: this.consensusThreshold
+                });
+
+                this.log('info', `Query submitted for crowd wisdom: ${query.substring(0, 50)}...`);
+                this.showProcessingState();
+                input.value = '';
+            }
+
+            showProcessingState() {
+                const resultsDiv = document.getElementById('queryResults');
+                resultsDiv.innerHTML = `
+                    <div class="query-result">
+                        <div style="font-weight: bold; margin-bottom: 10px;">🔄 Processing Query...</div>
+                        <div style="font-size: 0.9rem; opacity: 0.8;">
+                            Consulting ${this.tinyLLMs.length} tiny LLMs for crowd wisdom...
+                        </div>
+                    </div>
+                `;
+
+                // Animate tiny LLMs
+                document.querySelectorAll('.tiny-llm').forEach(llm => {
+                    llm.classList.add('processing');
+                });
+            }
+
+            displayInferenceResult(data) {
+                const resultsDiv = document.getElementById('queryResults');
+                
+                if (data.error) {
+                    resultsDiv.innerHTML = `
+                        <div class="query-result">
+                            <div style="font-weight: bold; color: var(--error-color);">❌ Error</div>
+                            <div style="font-size: 0.9rem;">${data.error}</div>
+                        </div>
+                    `;
+                    return;
+                }
+
+                const consensusLevel = data.consensus || 0.87;
+                const consensusClass = consensusLevel > 0.8 ? 'consensus-high' :
+                                     consensusLevel > 0.6 ? 'consensus-medium' : 'consensus-low';
+                
+                let resultsHTML = `
+                    <div class="query-result">
+                        <div style="font-weight: bold; margin-bottom: 10px;">
+                            🎯 Crowd Wisdom Result
+                            <span class="consensus-indicator ${consensusClass}">
+                                ${(consensusLevel * 100).toFixed(0)}%
+                            </span>
+                        </div>
+                        <div style="font-size: 0.9rem; margin-bottom: 10px;">
+                            ${data.result || 'Query processed successfully'}
+                        </div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">
+                            Consensus from ${data.participating_llms || 8} tiny LLMs
+                        </div>
+                    </div>
+                `;
+
+                if (data.specialist_input) {
+                    resultsHTML += `
+                        <div class="query-result">
+                            <div style="font-weight: bold; margin-bottom: 10px;">
+                                🎓 Specialist Input
+                            </div>
+                            <div style="font-size: 0.9rem;">
+                                ${data.specialist_input}
+                            </div>
+                        </div>
+                    `;
+                }
+
+                resultsDiv.innerHTML = resultsHTML;
+                
+                // Update consensus display
+                this.updateConsensusDisplay(consensusLevel);
+                
+                // Update stats
+                this.updateStats();
+                
+                // Reset LLM animations
+                setTimeout(() => {
+                    this.resetLLMAnimations();
+                }, 2000);
+            }
+
+            updateConsensusDisplay(level) {
+                const wisdomFill = document.getElementById('wisdomLevel');
+                wisdomFill.style.width = (level * 100) + '%';
+                
+                const consensusDiv = document.getElementById('consensusAnalysis');
+                const consensusClass = level > 0.8 ? 'consensus-high' :
+                                     level > 0.6 ? 'consensus-medium' : 'consensus-low';
+                const statusClass = level > 0.8 ? 'status-online' :
+                                   level > 0.6 ? 'status-loading' : 'status-offline';
+                const consensusText = level > 0.8 ? 'High Consensus' :
+                                     level > 0.6 ? 'Medium Consensus' : 'Low Consensus';
+                
+                consensusDiv.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 10px; margin: 10px 0;">
+                        <div class="status-indicator ${statusClass}"></div>
+                        <span>${consensusText}</span>
+                        <span class="consensus-indicator ${consensusClass}">${(level * 100).toFixed(0)}%</span>
+                    </div>
+                `;
+            }
+
+            resetLLMAnimations() {
+                document.querySelectorAll('.tiny-llm').forEach((llm, index) => {
+                    llm.classList.remove('processing');
+                    
+                    // Randomly set some to processing state
+                    if (Math.random() > 0.6) {
+                        llm.classList.add('processing');
+                    }
+                });
+            }
+
+            updateStats() {
+                const processed = parseInt(document.getElementById('queries-processed').textContent.replace('K', '')) * 1000 + 1;
+                document.getElementById('queries-processed').textContent = (processed / 1000).toFixed(1) + 'K';
+                
+                const consensus = (85 + Math.random() * 10).toFixed(0);
+                document.getElementById('consensus-rate').textContent = consensus + '%';
+            }
+
+            startPolling() {
+                // Simulate continuous polling activity
+                setInterval(() => {
+                    // Randomly change tiny LLM states
+                    document.querySelectorAll('.tiny-llm').forEach(llm => {
+                        if (Math.random() > 0.8) {
+                            llm.classList.toggle('processing');
+                        }
+                    });
+                    
+                    // Update wisdom level slightly
+                    const currentLevel = parseFloat(document.getElementById('wisdomLevel').style.width) / 100;
+                    const newLevel = Math.max(0.6, Math.min(0.95, currentLevel + (Math.random() - 0.5) * 0.1));
+                    document.getElementById('wisdomLevel').style.width = (newLevel * 100) + '%';
+                    
+                }, 3000);
+            }
+
+            updateConsensus(data) {
+                if (data.consensus_level) {
+                    this.updateConsensusDisplay(data.consensus_level);
+                }
+                
+                if (data.participating_llms) {
+                    document.getElementById('active-tinys').textContent = data.participating_llms;
+                }
+            }
+        }
+
+        // Override authentication success
+        const originalAuthenticate = CogniKubeBase.prototype.authenticate;
+        CogniKubeBase.prototype.authenticate = function(username, password) {
+            const result = originalAuthenticate.call(this, username, password);
+            if (result && !window.inferenceInterface) {
+                window.inferenceInterface = new InferenceInterface();
+                window.cogniKubeInstance = window.inferenceInterface;
+            }
+            return result;
+        };
+    </script>
+</body>
+</html>

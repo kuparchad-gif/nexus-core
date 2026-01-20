@@ -1,0 +1,287 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* STERILE LABORATORY COLOR PALETTE */
+    --sterile-white: #FFFFFF;
+    --sterile-off-white: #FEFEFE;
+    --sterile-background: #FDFDFD;
+    --sterile-surface: #FBFCFD;
+    --sterile-border: #F1F5F9;
+    --sterile-accent: #E2E8F0;
+    --sterile-muted: #CBD5E1;
+    --sterile-text: #475569;
+    --sterile-text-light: #64748B;
+    --sterile-text-muted: #94A3B8;
+    
+    /* CLINICAL ACCENT COLORS (MINIMAL USAGE) */
+    --clinical-blue: #3B82F6;
+    --clinical-blue-light: #DBEAFE;
+    --clinical-purple: #A855F7;
+    --clinical-purple-light: #E9D5FF;
+    --clinical-silver: #8B5CF6;
+    --clinical-silver-light: #EDE9FE;
+    
+    /* STERILE GLASS MORPHISM VARIABLES */
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(241, 245, 249, 0.8);
+    --glass-shadow: rgba(148, 163, 184, 0.1);
+  }
+
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+/* STERILE LABORATORY BASE STYLES */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background: linear-gradient(135deg, 
+    var(--sterile-white) 0%, 
+    var(--sterile-off-white) 25%, 
+    var(--sterile-background) 50%, 
+    var(--sterile-surface) 75%, 
+    var(--sterile-white) 100%);
+  color: var(--sterile-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* CLINICAL GLASS MORPHISM SYSTEM */
+.glass-morphism {
+  background: var(--glass-bg);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px var(--glass-shadow), 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-morphism-strong {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 12px 40px rgba(148, 163, 184, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-morphism-light {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(241, 245, 249, 0.6);
+  box-shadow: 0 4px 16px rgba(148, 163, 184, 0.08), 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* STERILE LABORATORY PATTERNS */
+.sterile-pattern {
+  position: relative;
+  background: linear-gradient(135deg, 
+    var(--sterile-white) 0%, 
+    var(--sterile-surface) 100%);
+}
+
+.sterile-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(168, 85, 247, 0.02) 0%, transparent 50%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* CLINICAL GRID LAYOUT */
+.sterile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 24px;
+}
+
+/* LABORATORY MODULE STYLES */
+.sterile-module {
+  position: relative;
+  border-radius: 16px;
+  background: var(--sterile-white);
+  border: 1px solid var(--sterile-border);
+  box-shadow: 0 2px 8px rgba(148, 163, 184, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.sterile-module:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(148, 163, 184, 0.12);
+  border-color: var(--sterile-accent);
+}
+
+/* MEDICAL EQUIPMENT STYLE ANIMATIONS */
+.sterile-pulse {
+  animation: sterilePulse 3s ease-in-out infinite;
+}
+
+.sterile-float {
+  animation: sterileFloat 8s ease-in-out infinite;
+}
+
+@keyframes sterilePulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes sterileFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* CLINICAL STATUS INDICATORS */
+.status-healthy {
+  background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+  border-color: #A7F3D0;
+  color: #065F46;
+}
+
+.status-warning {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+  border-color: #FDE68A;
+  color: #92400E;
+}
+
+.status-critical {
+  background: linear-gradient(135deg, #FEF2F2 0%, #FECACA 100%);
+  border-color: #FCA5A5;
+  color: #991B1B;
+}
+
+/* STERILE TYPOGRAPHY */
+.sterile-heading {
+  color: var(--sterile-text);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.sterile-subheading {
+  color: var(--sterile-text-light);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.sterile-body {
+  color: var(--sterile-text-light);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.sterile-caption {
+  color: var(--sterile-text-muted);
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* CLINICAL ACCENT ELEMENTS (MINIMAL USAGE) */
+.accent-blue {
+  color: var(--clinical-blue);
+}
+
+.accent-purple {
+  color: var(--clinical-purple);
+}
+
+.accent-silver {
+  color: var(--clinical-silver);
+}
+
+/* LABORATORY INTERACTION STATES */
+.hover\:sterile:hover {
+  background: var(--sterile-surface);
+  border-color: var(--sterile-accent);
+}
+
+.focus\:sterile:focus {
+  outline: 2px solid var(--clinical-blue);
+  outline-offset: 2px;
+}
+
+/* STERILE UTILITY CLASSES */
+.bg-sterile {
+  background: var(--sterile-white);
+}
+
+.bg-sterile-surface {
+  background: var(--sterile-surface);
+}
+
+.border-sterile {
+  border-color: var(--sterile-border);
+}
+
+.text-sterile {
+  color: var(--sterile-text);
+}
+
+.text-sterile-light {
+  color: var(--sterile-text-light);
+}
+
+.text-sterile-muted {
+  color: var(--sterile-text-muted);
+}
+
+/* CLEAN SCROLLBAR FOR STERILE INTERFACE */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sterile-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sterile-muted);
+  border-radius: 4px;
+  border: 2px solid var(--sterile-white);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sterile-text-light);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--sterile-white);
+}

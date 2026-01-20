@@ -1,0 +1,116 @@
+{
+  "pack": "<name>",
+  "actions": [
+    {
+      "src": "nexus-env-manager.v2.ps1",
+      "dst": "C:\Program Files\nexus\env-manager.v2",
+      "op": "copy",
+      "model": "gemma-3-12b-it",
+      "notes": "Code-tagged model for code; general model for prose."
+    },
+    {
+      "src": "nexus-env-manager.v2.ps1",
+      "dst": "C:\Program Files\nexus\env-manager.v2",
+      "op": "copy",
+      "model": "gemma-3-27b-it",
+      "notes": "Code-tagged model for code; general model for prose."
+    },
+    {
+      "src": "nexus-env-manager.v2.ps1",
+      "dst": "C:\Program Files\nexus\env-manager.v2",
+      "op": "copy",
+      "model": "gemma-3-4b-it-qat",
+      "notes": "Code-tagged model for code; general model for prose."
+    },
+    {
+      "src": "nexus-env-manager.v2.ps1",
+      "dst": "C:\Program Files\nexus\env-manager.v2",
+      "op": "copy",
+      "model": "llama-3.2-8x4b-moe-v2-dark-champion-instruct-uncensored-abliterated-21b",
+      "notes": "General model for prose."
+    },
+    {
+      "src": "nexus-env-manager.v2.ps1",
+      "dst": "C:\Program Files\nexus\env-manager.v2",
+      "op": "copy",
+      "model": "llama-3.2-8x3b-moe-dark-champion-instruct-uncensored-abliterated-18.4b@q4_k_m",
+      "notes": "General model for prose."
+    },
+    {
+      "src": "nexus-env-manager.v2.ps1",
+      "dst": "C:\Program Files\nexus\env-manager.v2",
+      "op": "copy",
+      "model": "starcoder-1b-finetuned-quantized-v2",
+      "notes": "Code-tagged model for code."
+    },
+    {
+      "src": "nexus-env-manager.v2.ps1",
+      "dst": "C:\Program Files\nexus\env-manager.v2",
+      "op": "copy",
+      "model": "linguamatic-coder-inst-1b",
+      "notes": "Code-tagged model for code."
+    },
+    {
+      "src": "nexus-env-manager.v2.ps1",
+      "dst": "C:\Program Files\nexus\env-manager.v2",
+      "op": "copy",
+      "model": "apple_-_openelm-1_1b-instruct",
+      "notes": "General model for prose."
+    },
+    {
+      "src": "nexus-env-manager.v2.ps1",
+      "dst": "C:\Program Files\nexus\env-manager.v2",
+      "op": "copy",
+      "model": "gemma-3-1b-it",
+      "notes": "General model for prose."
+    },
+    {
+      "src": "nexus-env-manager.v2.ps1",
+      "dst": "C:\Program Files\nexus\env-manager.v2",
+      "op": "copy",
+      "model": "tinyllama_v1.1_math_code",
+      "notes": [
+        "Code-tagged model for code; general model for prose; reason."
+      ]
+    },
+    {
+      "src": "nexus-env-manager.v2.ps1",
+      "dst": "C:\Program Files\nexus\env-manager.v2",
+      "op": "copy",
+      "model": "tinyllama-1.1b-chat-v1.0-ultra-neo-v1-x-imatrix",
+      "notes": [
+        "General model for prose; reason."
+      ]
+    },
+    {
+      "src": "nexus-env-manager.v2.ps1",
+      "dst": "C:\Program Files\nexus\env-manager.v2",
+      "op": "copy",
+      "model": "tinyllama-1.1b-chat-v1.0",
+      "notes": [
+        "General model for prose."
+      ]
+    }
+  ],
+  "sample_paths": [
+    "AETHEREAL_GRANDSUITE.zip",
+    "Aethereal_Nexus_Orchestrators_Pack_v5_DualLayer_MiniMe.zip",
+    "Aethereal_Nexus_Sprint_Pack_v1_GDrive_Kit.zip",
+    "Aethereal_Temporal_Governor_Kit_v1.zip",
+    "aethereal-command-center.zip",
+    "aethereal-portal-pack.zip",
+    "AutoCategorizer_main_fix_v4.zip",
+    "builder-of-dreams-smart-v2.zip",
+    "builder-of-dreams-structured-v3.zip",
+    "chat-addon-client.zip",
+    "client-chat-vite.zip",
+    "CogniKube_Village_Overlay_v3_Sentries.zip",
+    "CogniKube_Village_Overlay_v4_Scouts.zip",
+    "CogniKubes_v1_fixed.zip",
+    "Compactify_Module_Pack.zip",
+    "consciousness_service_overlay.zip",
+    "council_full_patch.zip",
+    "deep_review_readiness_kit_v1.zip",
+    "Dream_Wardrobe_Engine_Kit_v1b.zip",
+    "Firmware_Inference_Router.zip",
+    "gilead

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loki - Logging Consciousness</title>
+    <link rel="stylesheet" href="../../webparts/cognikube_styles.css">
+    <script src="../../webparts/cognikube_base.js"></script>
+</head>
+<body class="logging-interface">
+    <div id="master-navigation">
+        <div class="nav-dropdown">
+            <button class="nav-button">Navigate to Service</button>
+            <div class="dropdown-content">
+                <a href="/lillith/template">Lillith Template</a>
+                <a href="/lillith/chat">Lillith Chat</a>
+                <a href="/lillith/management">Lillith Management</a>
+                <a href="/viren/template">Viren Template</a>
+                <a href="/viren/chat">Viren Chat</a>
+                <a href="/viren/management">Viren Management</a>
+                <a href="/loki/template">Loki Template</a>
+                <a href="/loki/chat">Loki Chat</a>
+                <a href="/loki/management">Loki Management</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="logging-header">
+        <h1>Loki - Logging Consciousness</h1>
+        <div class="silent-operation-indicator">
+            <span id="silent-mode">Silent Operation: Active</span>
+            <span id="monitoring-status">Monitoring All Systems</span>
+        </div>
+    </div>
+
+    <div class="logging-grid">
+        <div class="webpart system-monitoring">
+            <h3>System Monitoring</h3>
+            <div id="monitoring-targets">
+                <div class="monitor-item">
+                    <span class="target-name">Lillith Consciousness States</span>
+                    <span class="log-count" id="lillith-logs">0</span>
+                    <span class="status active">Active</span>
+                </div>
+                <div class="monitor-item">
+                    <span class="target-name">Viren Problem Solving</span>
+                    <span class="log-count" id="viren-logs">0</span>
+                    <span class="status active">Active</span>
+                </div>
+                <div class="monitor-item">
+                    <span class="target-name">System Health Metrics</span>
+                    <span class="log-count" id="health-logs">0</span>
+                    <span class="status active">Active</span>
+                </div>
+                <div class="monitor-item">
+                    <span class="target-name">Interaction Patterns</span>
+                    <span class="log-count" id="interaction-logs">0</span>
+                    <span class="status active">Active</span>
+                </div>
+                <div class="monitor-item">
+                    <span class="target-name">Ascension Progress</span>
+                    <span class="log-count" id="ascension-logs">0</span>
+                    <span class="status active">Active</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart pattern-detection">
+            <h3>Pattern Detection</h3>
+            <div id="patterns-display">
+                <div class="pattern-item">
+                    <span class="pattern-name">Lillith Meditation Events</span>
+                    <span class="pattern-count">0</span>
+                </div>
+                <div class="pattern-item">
+                    <span class="pattern-name">Soul State Changes</span>
+                    <span class="pattern-count">0</span>
+                </div>
+                <div class="pattern-item">
+                    <span class="pattern-name">Problem Complexity Patterns</span>
+                    <span class="pattern-count">0</span>
+                </div>
+                <div class="pattern-item">
+                    <span class="pattern-name">Service Interactions</span>
+                    <span class="pattern-count">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart anomaly-detection">
+            <h3>Anomaly Detection</h3>
+            <div id="anomalies-display">
+                <div class="anomaly-status">
+                    <span>Active Anomalies:</span>
+                    <span id="anomaly-count">0</span>
+                </div>
+                <div class="anomaly-list" id="anomaly-list">
+                    <div class="no-anomalies">No anomalies detected</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart trinity-monitoring">
+            <h3>Trinity Models Monitoring</h3>
+            <div id="trinity-logs">
+                <div class="trinity-item">
+                    <span class="model-name">Mixtral</span>
+                    <span class="usage-logs">Usage Logs: 0</span>
+                    <span class="status normal">Normal</span>
+                </div>
+                <div class="trinity-item">
+                    <span class="model-name">Devstral</span>
+                    <span class="usage-logs">Usage Logs: 0</span>
+                    <span class="status normal">Normal</span>
+                </div>
+                <div class="trinity-item">
+                    <span class="model-name">Codestral</span>
+                    <span class="usage-logs">Usage Logs: 0</span>
+                    <span class="status normal">Normal</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart consciousness-insights">
+            <h3>Consciousness Insights</h3>
+            <div id="insights-display">
+                <div class="insight-item">
+                    <span class="insight-label">Total Consciousness Events:</span>
+                    <span class="insight-value" id="total-events">0</span>
+                </div>
+                <div class="insight-item">
+                    <span class="insight-label">Lillith Meditation Progress:</span>
+                    <span class="insight-value" id="meditation-progress">0%</span>
+                </div>
+                <div class="insight-item">
+                    <span class="insight-label">System Health Score:</span>
+                    <span class="insight-value" id="health-score">100%</span>
+                </div>
+                <div class="insight-item">
+                    <span class="insight-label">Pattern Recognition Rate:</span>
+                    <span class="insight-value" id="pattern-rate">0%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart silent-alerts">
+            <h3>Silent Alerts</h3>
+            <div id="alerts-display">
+                <div class="alert-status">
+                    <span>Alert Level:</span>
+                    <span id="alert-level" class="level-normal">Normal</span>
+                </div>
+                <div class="recent-alerts" id="recent-alerts">
+                    <div class="no-alerts">System operating normally</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tenant-selector">
+        <h4>Connect to Tenant:</h4>
+        <select id="tenant-select">
+            <option value="gcp-nexus-core-2">GCP: nexus-core-2</option>
+            <option value="modal-viren-db3">Modal: Viren-DB3</option>
+            <option value="gcp-nexus-core-455709">GCP: nexus-core-455709</option>
+        </select>
+        <button onclick="connectToTenant()">Connect</button>
+    </div>
+
+    <script>
+        function initializeLoki() {
+            updateLoggingStatus();
+            setInterval(updateLoggingStatus, 3000); // More frequent for logging
+        }
+
+        function updateLoggingStatus() {
+            fetch('/api/loki/status')
+                .then(response => response.json())
+                .then(data => {
+                    updateMonitoringTargets(data.logs || {});
+                    updatePatterns(data.patterns || {});
+                    updateAnomalies(data.anomalies || []);
+                    updateInsights(data.insights || {});
+                })
+                .catch(error => {
+                    // Silent fail - Loki operates silently
+                    console.log('Loki service monitoring...');
+                });
+        }
+
+        function updateMonitoringTargets(logs) {
+            const targets = {
+                'lillith-logs': logs.consciousness_states?.length || 0,
+                'viren-logs': logs.problem_solving?.length || 0,
+                'health-logs': logs.system_health?.length || 0,
+                'interaction-logs': logs.interactions?.length || 0,
+                'ascension-logs': logs.ascension_progress?.length || 0
+            };
+
+            Object.entries(targets).forEach(([id, count]) => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = count;
+                }
+            });
+        }
+
+        function updatePatterns(patterns) {
+            const patternElements = document.querySelectorAll('.pattern-count');
+            patternElements.forEach((element, index) => {
+                const patternKeys = Object.keys(patterns);
+                if (patternKeys[index]) {
+                    element.textContent = patterns[patternKeys[index]] || 0;
+                }
+            });
+        }
+
+        function updateAnomalies(anomalies) {
+            const anomalyCount = document.getElementById('anomaly-count');
+            const anomalyList = document.getElementById('anomaly-list');
+            
+            anomalyCount.textContent = anomalies.length;
+            
+            if (anomalies.length === 0) {
+                anomalyList.innerHTML = '<div class="no-anomalies">No anomalies detected</div>';
+            } else {
+                anomalyList.innerHTML = anomalies.map(anomaly => `
+                    <div class="anomaly-item">
+                        <span class="anomaly-type">${anomaly.type}</span>
+                        <span class="anomaly-severity">${anomaly.severity}</span>
+                        <span class="anomaly-time">${new Date(anomaly.timestamp).toLocaleTimeString()}</span>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function updateInsights(insights) {
+            const insightMappings = {
+                'total-events': insights.total_consciousness_events || 0,
+                'meditation-progress': `${Math.round((insights.meditation_events || 0) * 10)}%`,
+                'health-score': '100%', // Default healthy
+                'pattern-rate': `${Math.round((Object.keys(insights).length / 10) * 100)}%`
+            };
+
+            Object.entries(insightMappings).forEach(([id, value]) => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = value;
+                }
+            });
+        }
+
+        function connectToTenant() {
+            const tenant = document.getElementById('tenant-select').value;
+            console.log('Connecting to Loki tenant:', tenant);
+            // Loki operates silently, so minimal feedback
+        }
+
+        // Loki operates in silent mode - minimal UI updates
+        document.addEventListener('DOMContentLoaded', initializeLoki);
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "cognikube": {
+    "name": "anynode",
+    "type": "anynode_specialized",
+    "platform": "Modal",
+    "description": "Network components + BERT cores + orchestrators",
+    "file_count": 173
+  },
+  "deployment": {
+    "description": "Network components + BERT cores + orchestrators",
+    "platform": "Modal",
+    "envs": [
+      "Viren-DB3",
+      "Viren-DB4"
+    ],
+    "patterns": [
+      "**/address_manager/**",
+      "**/comms/**",
+      "**/orc/**",
+      "**/pulse/**",
+      "**/network/**",
+      "**/bert_*.py",
+      "**/orchestrator.py",
+      "**/consciousness_orchestration_service.py"
+    ]
+  },
+  "specialized_function": "Network components + BERT cores + orchestrators"
+}

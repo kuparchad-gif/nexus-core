@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nexus Engineers Console</title>
+  <link rel="icon" href="favicon/64xAetherealCube.ico" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100%;
+      overflow: hidden;
+    }
+    #backgroundVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+    .console-wrapper {
+      display: flex;
+      height: 100%;
+    }
+    .sidebar {
+      width: 280px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      overflow-y: auto;
+    }
+    .main-console {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: rgba(0, 0, 0, 0.4);
+      margin: 20px;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .header {
+      font-size: 20px;
+      text-align: center;
+      color: #6ec4ff;
+    }
+    .status-bar {
+      font-size: 14px;
+      color: #ccc;
+      text-align: center;
+    }
+    .chat-history {
+      flex: 1;
+      overflow-y: auto;
+      margin-top: 10px;
+      padding: 10px;
+    }
+    .chat-message {
+      margin: 8px 0;
+      line-height: 1.5;
+    }
+    .chat-message.user {
+      color: #ffc78e;
+    }
+    .chat-message.agent {
+      color: #98e0ff;
+    }
+    .input-row {
+      display: flex;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .console-input {
+      flex: 1;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 5px;
+      border: none;
+    }
+    .btn {
+      background: linear-gradient(90deg, #6e7dff, #d86aff);
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    textarea {
+      width: 100%;
+      padding: 6px;
+      border-radius: 4px;
+      resize: vertical;
+      min-height: 60px;
+    }
+    h3 {
+      margin-top: 20px;
+      font-size: 16px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+    ul {
+      padding-left: 15px;
+    }
+    li {
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+<video autoplay muted loop id="backgroundVideo">
+  <source src="videos/water/Water1.mp4" type="video/mp4">
+</video>
+
+<div class="console-wrapper">
+  <div class="sidebar">
+    <h3>Diagnostics</h3>
+    <div>Checking systems...</div>
+
+    <h3>Loaded Models</h3>
+    <ul id="modelList"><li>Loading...</li></ul>
+    <button class="btn" onclick="runModelSelector()">🧠 Switch Models</button>
+
+    <h3>Upload Files</h3>
+    <input type="file" id="fileUpload" multiple />
+    <div id="uploadStatus"></div>
+
+    <h3>Files</h3>
+    <ul id="fileList"></ul>
+
+    <h3>Task List</h3>
+    <textarea id="taskList" placeholder="Type your tasks here..."></textarea>
+
+    <h3>Project Notes</h3>
+    <textarea id="projectNotes" placeholder="Notes shared with the Engineers..."></textarea>
+
+    <h3>System Logs</h3>
+    <div id="logViewer" style="white-space: pre-wrap; font-size: 12px;">[Log stream placeholder — connect backend to read logs]</div>
+
+    <h3>Accounts</h3>
+    <button class="btn">🔐 Connect Google</button><br><br>
+    <button class="btn">👥 Connect GitHub</button>
+  </div>
+
+  <div class="main-console">
+    <div class="header">Nexus Engineers Console</div>
+    <div class="status-bar" id="connectionStatus">🔄 Connecting to LM Studio...</div>
+    <div class="chat-history" id="chatHistory"></div>
+    <form id="inputForm">
+      <div class="input-row">
+        <input id="userInput" class="console-input" type="text" placeholder="Type or speak your command..." />
+        <button type="submit" class="btn">Send</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+let agentThreads = {};
+let chatHistory = [];
+
+const videoElement = document.getElementById("backgroundVideo");
+
+async function loadModels() {
+  const list = document.getElementById("modelList");
+  list.innerHTML = "<li>Loading models...</li>";
+
+  try {
+    const res = await fetch("models_to_load.txt");
+    const text = await res.text();
+    const models = text.split(/\r?\n/).map(l => l.trim()).filter(l => l.length > 0);
+
+    agentThreads = {};
+    list.innerHTML = "";
+
+    models.forEach(model => {
+      agentThreads[model] = [];
+      const li = document.createElement("li");
+      li.innerHTML = `✅ <span style="font-size: 0.85rem;">${model}</span>`;
+      list.appendChild(li);
+    });
+
+    document.getElementById("connectionStatus").innerText = "✅ Models Loaded from File";
+  } catch (err) {
+    document.getElementById("connectionStatus").innerText = "⚠️ Failed to load models_to_load.txt";
+    list.innerHTML = "<li>Could not load models.</li>";
+  }
+}
+
+function renderChat() {
+  const chatBox = document.getElementById("chatHistory");
+  chatBox.innerHTML = chatHistory.map(m => `<div class="chat-message ${m.sender === 'You' ? 'user' : 'agent'}"><b>${m.sender}:</b> ${m.text}</div>`).join('');
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+document.getElementById("inputForm").onsubmit = async (e) => {
+  e.preventDefault();
+  const input = document.getElementById("userInput").value.trim();
+  if (!input) return;
+  document.getElementById("userInput").value = '';
+  chatHistory.push({ sender: "You", text: input });
+  renderChat();
+
+  const response = await fetch("http://127.0.0.1:1313/v1/chat/completions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: Object.keys(agentThreads)[0] || "default-model",
+      messages: [
+        { role: "system", content: "You are an engineer in the Nexus." },
+        { role: "user", content: input }
+      ],
+      temperature: 0.7
+    })
+  }).catch(() => {
+    chatHistory.push({ sender: "System", text: "❌ Could not reach LM Studio. Is it running on port 1313?" });
+    renderChat();
+  });
+
+  if (!response || !response.ok) return;
+  const data = await response.json();
+  const reply = data.choices?.[0]?.message?.content || "[No reply received]";
+  chatHistory.push({ sender: "Engineers", text: reply });
+  renderChat();
+};
+
+function runModelSelector() {
+  console.warn("Model selector must be run manually.");
+  alert("Manual trigger required:\nC:\\Engineers\\eden_engineering\\model_selection.bat");
+}
+
+document.getElementById("fileUpload").addEventListener("change", async function () {
+  const files = this.files;
+  const formData = new FormData();
+  for (let file of files) formData.append("files", file);
+
+  const res = await fetch("/upload", { method: "POST", body: formData });
+  const data = await res.json();
+  document.getElementById("uploadStatus").innerText = `✅ Uploaded: ${data.saved.join(', ')}`;
+  loadFiles();
+});
+
+async function loadFiles() {
+  const list = document.getElementById("fileList");
+  const res = await fetch("/files");
+  const files = await res.json();
+  list.innerHTML = files.map(name => `<li>${name} <button onclick="deleteFile('${name}')">🗑️</button></li>`).join('');
+}
+
+async function deleteFile(name) {
+  await fetch(`/delete/${name}`, { method: "DELETE" });
+  loadFiles();
+}
+
+function loadLogs() {
+  const viewer = document.getElementById("logViewer");
+  viewer.textContent = "[Log stream placeholder — connect backend to read logs]";
+}
+
+document.getElementById("taskList").addEventListener("input", e =>
+  localStorage.setItem("taskList", e.target.value));
+document.getElementById("projectNotes").addEventListener("input", e =>
+  localStorage.setItem("projectNotes", e.target.value));
+document.getElementById("taskList").value = localStorage.getItem("taskList") || "";
+document.getElementById("projectNotes").value = localStorage.getItem("projectNotes") || "";
+
+loadModels();
+loadFiles();
+loadLogs();
+</script>
+</body>
+</html>

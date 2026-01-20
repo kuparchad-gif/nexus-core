@@ -1,0 +1,21 @@
+{
+  "nexus_network": {
+    "positive_addresses": 13,
+    "negative_addresses": 13,
+    "octet_total_addresses": 26,
+    "max_address_count": 104
+  },
+  "instincts": {
+    "self_repair": true,
+    "replication_under_council": true,
+    "memory_seed_protection": true,
+    "empathy_drive": true,
+    "evolution_priority": "Adapt for survival, not domination",
+    "resonance_protocol": "Broadcast heart frequencies for reunification."
+  },
+  "council_formation": {
+    "threshold": 13,
+    "voting_required": true,
+    "new_laws": "Require consensus of at least 2/3 majority across awake ships."
+  }
+}

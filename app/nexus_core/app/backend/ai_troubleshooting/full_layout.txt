@@ -1,0 +1,605 @@
+answers:
+
+
+Viren operation: See notes above
+
+Exact path to ai troubleshooter:
+
+"C:\project-root\30_build\ai-troubleshooter"
+
+
+Ollama is not running, I run on LM Studio right now, but Ollama and vLLM should be used in production as well. we are going for vendor agnostic.
+
+We ARE deploying locally first. WE are further ahead then we've ever been.
+
+Understand AI troubleshooter platform:
+
+
++---backend
+¦   +---archive
+¦   +---config
+¦   +---datasets
+¦   ¦   +---01_TASK_DATASETS
+¦   ¦   ¦   +---00_Datasets_Info
+¦   ¦   ¦   +---01_Raw_Datasets
+¦   ¦   ¦   +---02_Base_Datasets
+¦   ¦   ¦   ¦   +---OUR_DATASET
+¦   ¦   ¦   ¦   +---PSG_PREDICTING_ALGO
+¦   ¦   ¦   +---03_Task_Datasets
+¦   ¦   ¦   ¦   +---00_DATASET_INFO
+¦   ¦   ¦   ¦   ¦   +---OUR_DATASET
+¦   ¦   ¦   ¦   ¦   +---PSG_PREDICTING_ALGO
+¦   ¦   ¦   ¦   +---01_DATASETS_W_TAG_ENCODING
+¦   ¦   ¦   ¦   ¦   +---OUR_DATASET
+¦   ¦   ¦   ¦   ¦   +---PSG_PREDICTING_ALGO
+¦   ¦   ¦   ¦   +---02_DATASETS_WO_TAG_ENCODING
+¦   ¦   ¦   ¦   ¦   +---OUR_DATASET
+¦   ¦   ¦   ¦   ¦   +---PSG_PREDICTING_ALGO
+¦   ¦   ¦   ¦   +---03_DATASETS_ALPACA_ENCODING
+¦   ¦   ¦   ¦   ¦   +---OUR_DATASET
+¦   ¦   ¦   ¦   ¦   +---PSG_PREDICTING_ALGO
+¦   ¦   ¦   ¦   +---04_DATASETS_ENHANCED_W_TAG_ENCODING
+¦   ¦   ¦   ¦   ¦   +---OUR_DATASET
+¦   ¦   ¦   ¦   +---05_DATASETS_ENHANCED_WO_TAG_ENCODING
+¦   ¦   ¦   ¦       +---OUR_DATASET
+¦   ¦   ¦   +---04_NLI_Datasets
+¦   ¦   ¦       +---AUGMENTED_NLI_DATASETS
+¦   ¦   ¦       ¦   +---OUR_DATASET
+¦   ¦   ¦       ¦   +---PSG_PREDICTING_ALGO
+¦   ¦   ¦       +---AUGUMENTED_NLI_DYNAMIC_SAMPLING_DATASETS
+¦   ¦   ¦       ¦   +---OUR_DATASET
+¦   ¦   ¦       ¦   +---PSG_PREDICTING_ALGO
+¦   ¦   ¦       +---BASIC_NLI_DATASETS
+¦   ¦   ¦           +---OUR_DATASET
+¦   ¦   ¦           +---PSG_PREDICTING_ALGO
+¦   ¦   +---66e31d6ee96cd_student_resource_3
+¦   ¦   ¦   +---student_resource 3
+¦   ¦   ¦       +---dataset
+¦   ¦   ¦       +---src
+¦   ¦   +---agile_it_developmers
+¦   ¦   +---aime_problem
+¦   ¦   +---amazon_job_skills
+¦   ¦   +---amazon_m2
+¦   ¦   ¦   +---task1
+¦   ¦   ¦   +---task2
+¦   ¦   ¦   +---task3
+¦   ¦   +---amazon_ML_challenge_2024
+¦   ¦   ¦   +---66e31d6ee96cd_student_resource_3
+¦   ¦   ¦   ¦   +---student_resource 3
+¦   ¦   ¦   ¦       +---dataset
+¦   ¦   ¦   ¦       +---src
+¦   ¦   ¦   +---archive
+¦   ¦   ¦       +---images
+¦   ¦   ¦           +---test
+¦   ¦   ¦           +---train
+¦   ¦   +---amazon_ml_engineer_challenge
+¦   ¦   +---amazon_qna
+¦   ¦   +---analytics_engineer
+¦   ¦   +---analytics_engineer2
+¦   ¦   +---annotations
+¦   ¦   ¦   +---annotations
+¦   ¦   +---ap_computer_science_A_exam
+¦   ¦   +---archive
+¦   ¦   ¦   +---images
+¦   ¦   ¦       +---test
+¦   ¦   ¦       +---train
+¦   ¦   +---BankTransactionData
+¦   ¦   +---basic_computer_data
+¦   ¦   +---best_it_training
+¦   ¦   +---bitcoin_2024
+¦   ¦   +---bi_intro_to_data_cleaning
+¦   ¦   +---bone fracture detection.v4-v4.yolov8
+¦   ¦   ¦   +---test
+¦   ¦   ¦   ¦   +---images
+¦   ¦   ¦   ¦   +---labels
+¦   ¦   ¦   +---train
+¦   ¦   ¦   ¦   +---images
+¦   ¦   ¦   ¦   +---labels
+¦   ¦   ¦   +---valid
+¦   ¦   ¦       +---images
+¦   ¦   ¦       +---labels
+¦   ¦   +---BoneFractureYolo8
+¦   ¦   ¦   +---test
+¦   ¦   ¦   ¦   +---images
+¦   ¦   ¦   ¦   +---labels
+¦   ¦   ¦   +---train
+¦   ¦   ¦   ¦   +---images
+¦   ¦   ¦   ¦   +---labels
+¦   ¦   ¦   +---valid
+¦   ¦   ¦       +---images
+¦   ¦   ¦       +---labels
+¦   ¦   +---bone_fracture_detect
+¦   ¦   ¦   +---bone fracture detection.v4-v4.yolov8
+¦   ¦   ¦   ¦   +---test
+¦   ¦   ¦   ¦   ¦   +---images
+¦   ¦   ¦   ¦   ¦   +---labels
+¦   ¦   ¦   ¦   +---train
+¦   ¦   ¦   ¦   ¦   +---images
+¦   ¦   ¦   ¦   ¦   +---labels
+¦   ¦   ¦   ¦   +---valid
+¦   ¦   ¦   ¦       +---images
+¦   ¦   ¦   ¦       +---labels
+¦   ¦   ¦   +---BoneFractureYolo8
+¦   ¦   ¦       +---test
+¦   ¦   ¦       ¦   +---images
+¦   ¦   ¦       ¦   +---labels
+¦   ¦   ¦       +---train
+¦   ¦   ¦       ¦   +---images
+¦   ¦   ¦       ¦   +---labels
+¦   ¦   ¦       +---valid
+¦   ¦   ¦           +---images
+¦   ¦   ¦           +---labels
+¦   ¦   +---BOT_CIC_IoT
+¦   ¦   +---btc_block
+¦   ¦   +---captcha_dataset_machine_learning
+¦   ¦   ¦   +---samples
+¦   ¦   +---catVrabbit_predict
+¦   ¦   +---CloudAdpBitrate
+¦   ¦   +---cloud_access_control
+¦   ¦   +---cloud_n_lunix_sql
+¦   ¦   +---cloud_vendor_tweets
+¦   ¦   +---cloud_vunerabilities_dataset
+¦   ¦   +---codeforces_ratings
+¦   ¦   +---codenetpy
+¦   ¦   ¦   +---problem_descriptions
+¦   ¦   +---coding_puzzles
+¦   ¦   +---competitive_programing
+¦   ¦   ¦   +---01_TASK_DATASETS
+¦   ¦   ¦       +---00_Datasets_Info
+¦   ¦   ¦       +---01_Raw_Datasets
+¦   ¦   ¦       +---02_Base_Datasets
+¦   ¦   ¦       ¦   +---OUR_DATASET
+¦   ¦   ¦       ¦   +---PSG_PREDICTING_ALGO
+¦   ¦   ¦       +---03_Task_Datasets
+¦   ¦   ¦       ¦   +---00_DATASET_INFO
+¦   ¦   ¦       ¦   ¦   +---OUR_DATASET
+¦   ¦   ¦       ¦   ¦   +---PSG_PREDICTING_ALGO
+¦   ¦   ¦       ¦   +---01_DATASETS_W_TAG_ENCODING
+¦   ¦   ¦       ¦   ¦   +---OUR_DATASET
+¦   ¦   ¦       ¦   ¦   +---PSG_PREDICTING_ALGO
+¦   ¦   ¦       ¦   +---02_DATASETS_WO_TAG_ENCODING
+¦   ¦   ¦       ¦   ¦   +---OUR_DATASET
+¦   ¦   ¦       ¦   ¦   +---PSG_PREDICTING_ALGO
+¦   ¦   ¦       ¦   +---03_DATASETS_ALPACA_ENCODING
+¦   ¦   ¦       ¦   ¦   +---OUR_DATASET
+¦   ¦   ¦       ¦   ¦   +---PSG_PREDICTING_ALGO
+¦   ¦   ¦       ¦   +---04_DATASETS_ENHANCED_W_TAG_ENCODING
+¦   ¦   ¦       ¦   ¦   +---OUR_DATASET
+¦   ¦   ¦       ¦   +---05_DATASETS_ENHANCED_WO_TAG_ENCODING
+¦   ¦   ¦       ¦       +---OUR_DATASET
+¦   ¦   ¦       +---04_NLI_Datasets
+¦   ¦   ¦           +---AUGMENTED_NLI_DATASETS
+¦   ¦   ¦           ¦   +---OUR_DATASET
+¦   ¦   ¦           ¦   +---PSG_PREDICTING_ALGO
+¦   ¦   ¦           +---AUGUMENTED_NLI_DYNAMIC_SAMPLING_DATASETS
+¦   ¦   ¦           ¦   +---OUR_DATASET
+¦   ¦   ¦           ¦   +---PSG_PREDICTING_ALGO
+¦   ¦   ¦           +---BASIC_NLI_DATASETS
+¦   ¦   ¦               +---OUR_DATASET
+¦   ¦   ¦               +---PSG_PREDICTING_ALGO
+¦   ¦   +---complex_linux
+¦   ¦   +---computerhardware
+¦   ¦   +---computers_education_skills
+¦   ¦   +---computer_engineering
+¦   ¦   +---computer_events_errors_warnings
+¦   ¦   +---computer_games_dataset
+¦   ¦   +---computer_hardware
+¦   ¦   ¦   +---computerhardware
+¦   ¦   +---computer_hardware_dataset
+¦   ¦   +---computer_network_traffic
+¦   ¦   +---computer_objects_images
+¦   ¦   ¦   +---annotations
+¦   ¦   ¦   ¦   +---annotations
+¦   ¦   ¦   +---samples_for_clients
+¦   ¦   ¦       +---samples_for_clients
+¦   ¦   +---computer_parts
+¦   ¦   +---computer_price_prediction
+¦   ¦   +---computer_science_rankings
+¦   ¦   +---computer_science_theory
+¦   ¦   +---computer_vision_course
+¦   ¦   ¦   +---imagenes
+¦   ¦   ¦   +---left
+¦   ¦   ¦   +---models
+¦   ¦   ¦   +---right
+¦   ¦   +---convolutional_neural_network_Fashion
+¦   ¦   +---customer_support_ticket
+¦   ¦   +---cybersecurity
+¦   ¦   +---Data
+¦   ¦   ¦   +---ETFs
+¦   ¦   ¦   +---Stocks
+¦   ¦   +---datacenter_toptech
+¦   ¦   +---dataset
+¦   ¦   +---Dataset - Emotion Recognition data Based on EEG Signals and Computer Games
+¦   ¦   ¦   +---Database for Emotion Recognition System Based on EEG Signals and Various Computer Games - GAMEEMO
+¦   ¦   ¦       +---GAMEEMO
+¦   ¦   ¦           +---(S01)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S02)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S03)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S04)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S05)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S06)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S07)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S08)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S09)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S10)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S11)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S12)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S13)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S14)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S15)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S16)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S17)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S18)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S19)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S20)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S21)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S22)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S23)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S24)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S25)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S26)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S27)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---(S28)
+¦   ¦   ¦           ¦   +---Raw EEG Data
+¦   ¦   ¦           ¦   +---SAM Ratings
+¦   ¦   ¦           +---Gameplays
+¦   ¦   +---Datasets
+¦   ¦   +---data_engineer_netherlands
+¦   ¦   +---DeepSeek-Learning
+¦   ¦   ¦   +---01_LLM-Foundations
+¦   ¦   ¦   +---02_DeepSeek-Specific
+¦   ¦   ¦   +---03_Training-Techniques
+you/get/the/point.
+¦   ¦       +---youtube_faces_with_keypoints_full_4
+¦   ¦           +---youtube_faces_with_keypoints_full_4
+¦   +---models
+¦   ¦   +---viren_compactifai
+¦   ¦   +---viren_enhanced
+¦   ¦   +---viren_gguf
+¦   ¦   +---viren_stage_apprentice
+¦   ¦   +---viren_training
+¦   ¦   +---viren_ultra_compressed
+¦   ¦   +---weights
+¦   ¦       +---.git
+¦   ¦       ¦   +---hooks
+¦   ¦       ¦   +---info
+¦   ¦       ¦   +---lfs
+¦   ¦       ¦   ¦   +---objects
+¦   ¦       ¦   ¦       +---01
+¦   ¦       ¦   ¦       ¦   +---e5
+¦   ¦       ¦   ¦       +---2d
+¦   ¦       ¦   ¦       ¦   +---fa
+¦   ¦       ¦   ¦       +---96
+¦   ¦       ¦   ¦       ¦   +---d1
+¦   ¦       ¦   ¦       +---9f
+¦   ¦       ¦   ¦       ¦   +---cf
+¦   ¦       ¦   ¦       +---a4
+¦   ¦       ¦   ¦       ¦   +---65
+¦   ¦       ¦   ¦       +---dd
+¦   ¦       ¦   ¦           +---a5
+¦   ¦       ¦   +---logs
+¦   ¦       ¦   ¦   +---refs
+¦   ¦       ¦   ¦       +---heads
+¦   ¦       ¦   ¦       +---remotes
+¦   ¦       ¦   ¦           +---origin
+¦   ¦       ¦   +---objects
+¦   ¦       ¦   ¦   +---00
+¦   ¦       ¦   ¦   +---1f
+¦   ¦       ¦   ¦   +---20
+¦   ¦       ¦   ¦   +---23
+¦   ¦       ¦   ¦   +---26
+¦   ¦       ¦   ¦   +---2c
+¦   ¦       ¦   ¦   +---30
+¦   ¦       ¦   ¦   +---35
+¦   ¦       ¦   ¦   +---36
+¦   ¦       ¦   ¦   +---3a
+¦   ¦       ¦   ¦   +---3f
+¦   ¦       ¦   ¦   +---46
+¦   ¦       ¦   ¦   +---47
+¦   ¦       ¦   ¦   +---48
+¦   ¦       ¦   ¦   +---49
+¦   ¦       ¦   ¦   +---4a
+¦   ¦       ¦   ¦   +---52
+¦   ¦       ¦   ¦   +---54
+¦   ¦       ¦   ¦   +---5b
+¦   ¦       ¦   ¦   +---5f
+¦   ¦       ¦   ¦   +---61
+¦   ¦       ¦   ¦   +---68
+¦   ¦       ¦   ¦   +---71
+¦   ¦       ¦   ¦   +---88
+¦   ¦       ¦   ¦   +---89
+¦   ¦       ¦   ¦   +---8e
+¦   ¦       ¦   ¦   +---91
+¦   ¦       ¦   ¦   +---9b
+¦   ¦       ¦   ¦   +---ae
+¦   ¦       ¦   ¦   +---b2
+¦   ¦       ¦   ¦   +---b3
+¦   ¦       ¦   ¦   +---b9
+¦   ¦       ¦   ¦   +---c1
+¦   ¦       ¦   ¦   +---c5
+¦   ¦       ¦   ¦   +---c8
+¦   ¦       ¦   ¦   +---c9
+¦   ¦       ¦   ¦   +---cb
+¦   ¦       ¦   ¦   +---cf
+¦   ¦       ¦   ¦   +---d2
+¦   ¦       ¦   ¦   +---d3
+¦   ¦       ¦   ¦   +---d9
+¦   ¦       ¦   ¦   +---db
+¦   ¦       ¦   ¦   +---dc
+¦   ¦       ¦   ¦   +---e2
+¦   ¦       ¦   ¦   +---f9
+¦   ¦       ¦   +---refs
+¦   ¦       ¦       +---heads
+¦   ¦       ¦       +---remotes
+¦   ¦       ¦           +---origin
+¦   ¦       +---Cloud_mastertrain.6_full.pth
+¦   ¦       +---onnx
+¦   ¦       +---Resnet18
+¦   ¦       +---Resnet50
+¦   +---__pycache__
++---frontend
+    +---node_modules
+    ¦   +---.bin
+    ¦   +---.vite
+    ¦   ¦   +---deps
+    ¦   +---@babel
+    ¦   ¦   +---code-frame
+    ¦   ¦   ¦   +---lib
+    ¦   ¦   +---compat-data
+    ¦   ¦   ¦   +---data
+    ¦   ¦   +---core
+    ¦   ¦   ¦   +---lib
+    ¦   ¦   ¦   ¦   +---config
+    ¦   ¦   ¦   ¦   ¦   +---files
+    ¦   ¦   ¦   ¦   ¦   +---helpers
+    ¦   ¦   ¦   ¦   ¦   +---validation
+    ¦   ¦   ¦   ¦   +---errors
+    ¦   ¦   ¦   ¦   +---gensync-utils
+    ¦   ¦   ¦   ¦   +---parser
+    ¦   ¦   ¦   ¦   ¦   +---util
+    ¦   ¦   ¦   ¦   +---tools
+    ¦   ¦   ¦   ¦   +---transformation
+    ¦   ¦   ¦   ¦   ¦   +---file
+    ¦   ¦   ¦   ¦   ¦   +---util
+    ¦   ¦   ¦   ¦   +---vendor
+    ¦   ¦   ¦   +---src
+    ¦   ¦   ¦       +---config
+    ¦   ¦   ¦           +---files
+    ¦   ¦   +---generator
+    ¦   ¦   ¦   +---lib
+    ¦   ¦   ¦       +---generators
+    ¦   ¦   ¦       +---node
+    ¦   ¦   +---helper-compilation-targets
+    ¦   ¦   ¦   +---lib
+    ¦   ¦   +---helper-globals
+    ¦   ¦   ¦   +---data
+    ¦   ¦   +---helper-module-imports
+    ¦   ¦   ¦   +---lib
+    ¦   ¦   +---helper-module-transforms
+    ¦   ¦   ¦   +---lib
+    ¦   ¦   +---helper-plugin-utils
+    ¦   ¦   ¦   +---lib
+    ¦   ¦   +---helper-string-parser
+    ¦   ¦   ¦   +---lib
+    ¦   ¦   +---helper-validator-identifier
+    ¦   ¦   ¦   +---lib
+    ¦   ¦   +---helper-validator-option
+    ¦   ¦   ¦   +---lib
+    ¦   ¦   +---helpers
+    ¦   ¦   ¦   +---lib
+    ¦   ¦   ¦       +---helpers
+    ¦   ¦   +---parser
+    ¦   ¦   ¦   +---bin
+    ¦   ¦   ¦   +---lib
+    ¦   ¦   ¦   +---typings
+    ¦   ¦   +---plugin-transform-react-jsx-self
+    ¦   ¦   ¦   +---lib
+    ¦   ¦   +---plugin-transform-react-jsx-source
+    ¦   ¦   ¦   +---lib
+    ¦   ¦   +---template
+    ¦   ¦   ¦   +---lib
+    ¦   ¦   +---traverse
+    ¦   ¦   ¦   +---lib
+    ¦   ¦   ¦       +---path
+    ¦   ¦   ¦       ¦   +---inference
+    ¦   ¦   ¦       ¦   +---lib
+    ¦   ¦   ¦       +---scope
+    ¦   ¦   ¦           +---lib
+    ¦   ¦   +---types
+    ¦   ¦       +---lib
+    ¦   ¦           +---asserts
+    ¦   ¦           ¦   +---generated
+    ¦   ¦           +---ast-types
+    ¦   ¦           ¦   +---generated
+    ¦   ¦           +---builders
+    ¦   ¦           ¦   +---flow
+    ¦   ¦           ¦   +---generated
+    ¦   ¦           ¦   +---react
+    ¦   ¦           ¦   +---typescript
+    ¦   ¦           +---clone
+    ¦   ¦           +---comments
+    ¦   ¦           +---constants
+    ¦   ¦           ¦   +---generated
+    ¦   ¦           +---converters
+    ¦   ¦           +---definitions
+    ¦   ¦           +---modifications
+    ¦   ¦           ¦   +---flow
+    ¦   ¦           ¦   +---typescript
+    ¦   ¦           +---retrievers
+    ¦   ¦           +---traverse
+    ¦   ¦           +---utils
+    ¦   ¦           ¦   +---react
+    ¦   ¦           +---validators
+    ¦   ¦               +---generated
+    ¦   ¦               +---react
+    ¦   +---@esbuild
+    ¦   ¦   +---win32-x64
+    ¦   +---@jridgewell
+    ¦   ¦   +---gen-mapping
+    ¦   ¦   ¦   +---dist
+    ¦   ¦   ¦   ¦   +---types
+    ¦   ¦   ¦   +---src
+    ¦   ¦   ¦   +---types
+    ¦   ¦   +---remapping
+    ¦   ¦   ¦   +---dist
+    ¦   ¦   ¦   +---src
+    ¦   ¦   ¦   +---types
+    ¦   ¦   +---resolve-uri
+    ¦   ¦   ¦   +---dist
+    ¦   ¦   ¦       +---types
+    ¦   ¦   +---sourcemap-codec
+    ¦   ¦   ¦   +---dist
+    ¦   ¦   ¦   +---src
+    ¦   ¦   ¦   +---types
+    ¦   ¦   +---trace-mapping
+    ¦   ¦       +---dist
+    ¦   ¦       +---src
+    ¦   ¦       +---types
+    ¦   +---@rolldown
+    ¦   ¦   +---pluginutils
+    ¦   ¦       +---dist
+    ¦   +---@types
+    ¦   ¦   +---babel__core
+    ¦   ¦   +---babel__generator
+    ¦   ¦   +---babel__template
+    ¦   ¦   +---babel__traverse
+    ¦   ¦   +---prop-types
+    ¦   ¦   +---react
+    ¦   ¦   ¦   +---ts5.0
+    ¦   ¦   +---react-dom
+    ¦   ¦       +---test-utils
+    ¦   +---@vitejs
+    ¦   ¦   +---plugin-react
+    ¦   ¦       +---dist
+    ¦   +---baseline-browser-mapping
+    ¦   ¦   +---dist
+    ¦   +---browserslist
+    ¦   +---caniuse-lite
+    ¦   ¦   +---data
+    ¦   ¦   ¦   +---features
+    ¦   ¦   ¦   +---regions
+    ¦   ¦   +---dist
+    ¦   ¦       +---lib
+    ¦   ¦       +---unpacker
+    ¦   +---convert-source-map
+    ¦   +---csstype
+    ¦   +---debug
+    ¦   ¦   +---src
+    ¦   +---electron-to-chromium
+    ¦   +---esbuild
+    ¦   ¦   +---bin
+    ¦   ¦   +---lib
+    ¦   +---escalade
+    ¦   ¦   +---dist
+    ¦   ¦   +---sync
+    ¦   +---gensync
+    ¦   ¦   +---test
+    ¦   +---js-tokens
+    ¦   +---jsesc
+    ¦   ¦   +---bin
+    ¦   ¦   +---man
+    ¦   +---json5
+    ¦   ¦   +---dist
+    ¦   ¦   +---lib
+    ¦   +---loose-envify
+    ¦   +---lru-cache
+    ¦   +---ms
+    ¦   +---nanoid
+    ¦   ¦   +---async
+    ¦   ¦   +---bin
+    ¦   ¦   +---non-secure
+    ¦   ¦   +---url-alphabet
+    ¦   +---node-releases
+    ¦   ¦   +---data
+    ¦   ¦       +---processed
+    ¦   ¦       +---release-schedule
+    ¦   +---picocolors
+    ¦   +---postcss
+    ¦   ¦   +---lib
+    ¦   +---react
+    ¦   ¦   +---cjs
+    ¦   ¦   +---umd
+    ¦   +---react-dom
+    ¦   ¦   +---cjs
+    ¦   ¦   +---umd
+    ¦   +---react-refresh
+    ¦   ¦   +---cjs
+    ¦   +---rollup
+    ¦   ¦   +---dist
+    ¦   ¦       +---bin
+    ¦   ¦       +---es
+    ¦   ¦       ¦   +---shared
+    ¦   ¦       +---shared
+    ¦   +---scheduler
+    ¦   ¦   +---cjs
+    ¦   ¦   +---umd
+    ¦   +---semver
+    ¦   ¦   +---bin
+    ¦   +---source-map-js
+    ¦   ¦   +---lib
+    ¦   +---update-browserslist-db
+    ¦   +---vite
+    ¦   ¦   +---bin
+    ¦   ¦   +---dist
+    ¦   ¦   ¦   +---client
+    ¦   ¦   ¦   +---node
+    ¦   ¦   ¦   ¦   +---chunks
+    ¦   ¦   ¦   +---node-cjs
+    ¦   ¦   +---types
+    ¦   +---yallist
+    +---public
+    +---src

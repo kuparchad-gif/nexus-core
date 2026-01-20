@@ -1,0 +1,107 @@
+
+
+AUTO_TURBO.idle_threshold = 5.0    # Activate turbo at <5% CPU
+AUTO_TURBO.active_threshold = 70.0 # Deactivate at >70% CPU  
+AUTO_TURBO.check_interval = 60     # Check every minute
+
+
+
+
+🐍 PYTHON COMMAND SYNTAX:
+Option 1: Direct Python commands
+
+python
+python -c "
+from viren_evolution_system import set_cycle_preset, set_turbo_mode, quick_train
+set_cycle_preset('quick')
+set_turbo_mode('turbo')
+result = quick_train('neural networks')
+print(result)
+"
+Option 2: Create a simple script (create train.py)
+
+python
+from viren_evolution_system import set_cycle_preset, set_turbo_mode, quick_train
+
+# Set your preferences
+set_cycle_preset('comprehensive')
+set_turbo_mode('turbo')
+
+# Start training
+result = quick_train('machine learning')
+print("Training completed:", result)
+Then run:
+
+bash
+python train.py
+Option 3: Interactive Python session
+
+bash
+python
+Then in the Python shell:
+
+python
+>>> from viren_evolution_system import *
+>>> set_cycle_preset('standard')
+>>> set_turbo_mode('turbo') 
+>>> result = quick_train('data compression')
+>>> print(result)
+Option 4: Command line with imports
+
+bash
+python -c "from viren_evolution_system import set_cycle_preset, set_turbo_mode, quick_train; set_cycle_preset('quick'); set_turbo_mode('standard'); result = quick_train('ai systems'); print(result)"
+🎯 MOST COMMON USAGE:
+Quick training:
+
+bash
+python -c "from viren_evolution_system import quick_train; result = quick_train('neural networks', 'turbo', 'quick'); print(result)"
+Custom training:
+
+bash
+python -c "
+from viren_evolution_system import *
+set_cycle_preset('comprehensive')
+set_turbo_mode('hyper')
+result = quick_train('quantum computing')
+print('DONE:', result)
+"
+The system is designed to be called directly from Python commands - no need to modify the main script! 🚀
+
+
+
+
+
+
+# Set cycle length using presets
+set_cycle_preset('quick')        # 2 phases, 1 epoch each
+set_cycle_preset('standard')     # 4 phases, 2 epochs each  
+set_cycle_preset('comprehensive') # 6 phases, 3 epochs each
+set_cycle_preset('research')     # 7 phases, 4 epochs each
+
+# Create custom cycles
+create_custom_cycle(
+    name="my_custom_cycle",
+    phases=["phase1", "phase2", "phase3", "phase4"],
+    epochs=3,      # Epochs per phase
+    samples=75     # Data samples per phase
+)
+set_cycle_preset("my_custom_cycle")
+
+# Combined turbo + cycle control
+set_turbo_mode('turbo')
+set_cycle_preset('comprehensive')
+
+# Quick training with both settings
+result = quick_train("your_topic", "turbo", "comprehensive")
+
+
+# Set turbo mode first, then train
+set_turbo_mode('turbo')  # or 'eco', 'standard', 'hyper'
+
+# Quick training
+result = quick_train("neural networks", "turbo")
+
+# Full training pipeline
+orchestrator = TurboTrainingOrchestrator()
+await orchestrator.evolve_viren()
+

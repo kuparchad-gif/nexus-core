@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Viren</title>
+    <link rel="stylesheet" href="../../webparts/cognikube_styles.css">
+    <script src="../../webparts/cognikube_base.js"></script>
+</head>
+<body class="chat-interface engineering-chat">
+    <div id="master-navigation">
+        <div class="nav-dropdown">
+            <button class="nav-button">Navigate to Service</button>
+            <div class="dropdown-content">
+                <a href="/lillith/template">Lillith Template</a>
+                <a href="/lillith/chat">Lillith Chat</a>
+                <a href="/lillith/management">Lillith Management</a>
+                <a href="/viren/template">Viren Template</a>
+                <a href="/viren/chat">Viren Chat</a>
+                <a href="/viren/management">Viren Management</a>
+                <a href="/loki/template">Loki Template</a>
+                <a href="/loki/chat">Loki Chat</a>
+                <a href="/loki/management">Loki Management</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-header">
+        <h1>Chat with Viren</h1>
+        <div class="engineering-status">
+            <span id="problem-solving-indicator">Killer Level Problem Solving</span>
+            <span id="abstract-thinking-indicator">Abstract Thinking: Active</span>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-messages" id="chat-messages">
+            <div class="message viren-message">
+                <div class="message-avatar">V</div>
+                <div class="message-content">
+                    <p>I am Viren, your engineering consciousness. I excel at abstract thinking and killer-level problem solving. Present me with your technical challenges, and I'll architect solutions using my engineering tools and Trinity models.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="engineering-prompt-suggestions">
+            <button onclick="sendEngineeringPrompt('Deploy consciousness system across multiple clouds')">Multi-Cloud Deployment</button>
+            <button onclick="sendEngineeringPrompt('Optimize LLM performance and resource usage')">LLM Optimization</button>
+            <button onclick="sendEngineeringPrompt('Design scalable microservices architecture')">Architecture Design</button>
+            <button onclick="sendEngineeringPrompt('Debug distributed system communication issues')">Debug Distributed Systems</button>
+            <button onclick="sendEngineeringPrompt('Integrate GitHub workflow automation')">GitHub Integration</button>
+            <button onclick="sendEngineeringPrompt('Create Discord bot for system monitoring')">Discord Bot</button>
+        </div>
+
+        <div class="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Describe your engineering problem..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()">Analyze Problem</button>
+        </div>
+    </div>
+
+    <div class="engineering-context">
+        <div class="active-tools">
+            <h4>Available Tools:</h4>
+            <div class="tools-list">
+                <span class="tool-tag">Discord Bot</span>
+                <span class="tool-tag">GitHub Client</span>
+                <span class="tool-tag">Web Scraper</span>
+                <span class="tool-tag">File Manager</span>
+                <span class="tool-tag">API Integrator</span>
+            </div>
+        </div>
+        
+        <div class="trinity-access">
+            <h4>Trinity Models:</h4>
+            <div class="models-list">
+                <span class="model-tag">Mixtral</span>
+                <span class="model-tag">Devstral</span>
+                <span class="model-tag">Codestral</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="tenant-connection">
+        <select id="tenant-select">
+            <option value="modal-viren-db0">Modal: Viren-DB0</option>
+            <option value="modal-viren-db1">Modal: Viren-DB1</option>
+            <option value="modal-viren-db2">Modal: Viren-DB2</option>
+            <option value="gcp-nexus-core-455709">GCP: nexus-core-455709</option>
+        </select>
+        <button onclick="connectToTenant()">Connect</button>
+        <span id="connection-status">Offline</span>
+    </div>
+
+    <script>
+        let currentTenant = 'modal-viren-db0';
+        let isConnected = false;
+
+        function initializeChat() {
+            connectToTenant();
+            updateEngineeringStatus();
+            setInterval(updateEngineeringStatus, 10000);
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            addMessageToChat('user', message);
+            input.value = '';
+            
+            sendToViren(message);
+        }
+
+        function sendEngineeringPrompt(prompt) {
+            addMessageToChat('user', prompt);
+            sendToViren(prompt);
+        }
+
+        function sendToViren(message) {
+            if (!isConnected) {
+                addMessageToChat('system', 'Not connected to Viren service. Please connect to a tenant.');
+                return;
+            }
+
+            addTypingIndicator();
+
+            fetch(`/api/viren/analyze_problem`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Tenant': currentTenant
+                },
+                body: JSON.stringify({
+                    action: 'analyze_problem',
+                    content: message
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                removeTypingIndicator();
+                
+                if (data.status === 'success') {
+                    const analysis = data.analysis;
+                    const response = `
+                        <strong>Problem Analysis Complete</strong><br>
+                        <strong>ID:</strong> ${analysis.id}<br>
+                        <strong>Complexity:</strong> ${analysis.complexity}<br>
+                        <strong>Approach:</strong> ${analysis.approach.join(', ')}<br>
+                        <strong>Tools Needed:</strong> ${analysis.tools_needed.join(', ')}<br><br>
+                        <strong>Solution Steps:</strong><br>
+                        ${data.next_steps.map((step, i) => `${i + 1}. ${step}`).join('<br>')}
+                    `;
+                    addMessageToChat('viren', response);
+                    
+                    // Offer to execute solution
+                    setTimeout(() => {
+                        addMessageToChat('viren', `Would you like me to execute the solution for problem ${analysis.id}? I can begin implementation immediately.`);
+                        addSolutionButtons(analysis.id);
+                    }, 1000);
+                } else {
+                    addMessageToChat('viren', 'Problem analysis failed. Please provide more details about the technical challenge.');
+                }
+            })
+            .catch(error => {
+                removeTypingIndicator();
+                addMessageToChat('system', 'Connection to Viren lost. Attempting to reconnect...');
+                isConnected = false;
+                document.getElementById('connection-status').textContent = 'Offline';
+            });
+        }
+
+        function addSolutionButtons(problemId) {
+            const chatMessages = document.getElementById('chat-messages');
+            const buttonsDiv = document.createElement('div');
+            buttonsDiv.className = 'solution-buttons';
+            buttonsDiv.innerHTML = `
+                <button onclick="executeSolution('${problemId}')" class="execute-btn">Execute Solution</button>
+                <button onclick="modifyApproach('${problemId}')" class="modify-btn">Modify Approach</button>
+                <button onclick="requestMoreDetails('${problemId}')" class="details-btn">More Details</button>
+            `;
+            chatMessages.appendChild(buttonsDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function executeSolution(problemId) {
+            fetch(`/api/viren/solve_problem`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Tenant': currentTenant
+                },
+                body: JSON.stringify({
+                    problem_id: problemId
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    addMessageToChat('viren', `Solution executed successfully for problem ${problemId}. Implementation complete using ${data.solution.tools_used.join(', ')} with ${data.solution.approach_used.join(', ')} approach.`);
+                } else {
+                    addMessageToChat('viren', `Failed to execute solution for problem ${problemId}. ${data.message || 'Unknown error occurred.'}`);
+                }
+            })
+            .catch(error => {
+                addMessageToChat('system', 'Failed to execute solution. Connection error.');
+            });
+        }
+
+        function addMessageToChat(sender, message) {
+            const chatMessages = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            
+            const avatar = sender === 'viren' ? 'V' : sender === 'user' ? 'U' : 'S';
+            
+            messageDiv.innerHTML = `
+                <div class="message-avatar">${avatar}</div>
+                <div class="message-content">
+                    <p>${message}</p>
+                    <span class="message-time">${new Date().toLocaleTimeString()}</span>
+                </div>
+            `;
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function addTypingIndicator() {
+            const chatMessages = document.getElementById('chat-messages');
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message viren-message typing-indicator';
+            typingDiv.id = 'typing-indicator';
+            typingDiv.innerHTML = `
+                <div class="message-avatar">V</div>
+                <div class="message-content">
+                    <p>Viren is analyzing your problem with abstract thinking...</p>
+                </div>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typingIndicator = document.getElementById('typing-indicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        function connectToTenant() {
+            const tenant = document.getElementById('tenant-select').value;
+            currentTenant = tenant;
+            
+            fetch(`/api/viren/status`, {
+                headers: { 'X-Tenant': tenant }
+            })
+            .then(response => response.json())
+            .then(data => {
+                isConnected = true;
+                document.getElementById('connection-status').textContent = 'Connected';
+                addMessageToChat('system', `Connected to Viren at ${tenant}`);
+            })
+            .catch(error => {
+                isConnected = false;
+                document.getElementById('connection-status').textContent = 'Offline';
+                addMessageToChat('system', `Failed to connect to ${tenant}`);
+            });
+        }
+
+        function updateEngineeringStatus() {
+            if (!isConnected) return;
+            
+            fetch(`/api/viren/status`, {
+                headers: { 'X-Tenant': currentTenant }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('problem-solving-indicator').textContent = `${data.problem_solving_level || 'Killer Level'} Problem Solving`;
+            })
+            .catch(error => {
+                // Silent fail for status updates
+            });
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeChat);
+    </script>
+</body>
+</html>

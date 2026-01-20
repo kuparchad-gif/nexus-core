@@ -1,0 +1,11 @@
+$base64String = @"
+iVBORw0KGgoAAAANSUhEUgAAAoAAAAHgCAYAAAA10dzkAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAADz9SURBVHhe7d3bcxtVHcfx7zNmZtxEWECCCEQQ
+QQRBpHZk97QLyAdwGynA0b6W6IGkxArNBVtG5FLB2AwB2PQNqBJMRXf1YI4YV8IbYEEMJsl0h5ve
+...
+(middle chunk omitted here for example - real file is way bigger)
+...
+kIs5nCrryb8f+gWFXqiwbd08TuJ1Bmnv0V5iRG0gS0j8lxkkAAAAASUVORK5CYII=
+"@
+
+[System.IO.File]::WriteAllBytes("C:\YourPath\ship_circuit.png", [Convert]::FromBase64String($base64String))

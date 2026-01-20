@@ -1,0 +1,10 @@
+model_management_systems:
+  lm_studio:
+    url: http://localhost:1234/v1
+    type: openai_compatible
+  ollama:
+    url: http://localhost:11434/api
+    type: ollama
+  vllm:
+    url: http://localhost:8000/v1
+    type: openai_compatible

@@ -1,0 +1,5 @@
+# Example
+$src = 'C:\drop\incoming'        # where you put the packs/files
+$root = 'C:\Projects\Nexus_Meta_Hermes'  # project root (this script will use $root\NEXUS)
+.\Invoke-IntakeV3.ps1 -SrcDir $src -ProjectRoot $root         # dry run, plan only
+.\Invoke-IntakeV3.ps1 -SrcDir $src -ProjectRoot $root -Apply  # do it

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viren Management Console</title>
+    <link rel="stylesheet" href="../../webparts/cognikube_styles.css">
+    <script src="../../webparts/cognikube_base.js"></script>
+</head>
+<body class="management-interface engineering-management">
+    <div id="master-navigation">
+        <div class="nav-dropdown">
+            <button class="nav-button">Navigate to Service</button>
+            <div class="dropdown-content">
+                <a href="/lillith/template">Lillith Template</a>
+                <a href="/lillith/chat">Lillith Chat</a>
+                <a href="/lillith/management">Lillith Management</a>
+                <a href="/viren/template">Viren Template</a>
+                <a href="/viren/chat">Viren Chat</a>
+                <a href="/viren/management">Viren Management</a>
+                <a href="/loki/template">Loki Template</a>
+                <a href="/loki/chat">Loki Chat</a>
+                <a href="/loki/management">Loki Management</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="management-header">
+        <h1>Viren Management Console</h1>
+        <div class="system-status">
+            <span id="system-status">Engineering Status: <span id="status-indicator">Online</span></span>
+        </div>
+    </div>
+
+    <div class="management-grid">
+        <div class="webpart problem-management">
+            <h3>Problem Management</h3>
+            <div class="problem-controls">
+                <div class="control-group">
+                    <label>Active Problems:</label>
+                    <span id="active-problems-count">0</span>
+                    <button onclick="clearAllProblems()">Clear All</button>
+                </div>
+                <div class="control-group">
+                    <label>Solved Problems:</label>
+                    <span id="solved-problems-count">0</span>
+                    <button onclick="exportSolutions()">Export Solutions</button>
+                </div>
+            </div>
+            
+            <div class="problems-list">
+                <h4>Active Problems:</h4>
+                <div id="active-problems-display">
+                    <div class="no-problems">No active problems</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart tools-management">
+            <h3>Engineering Tools Management</h3>
+            <div class="tools-grid">
+                <div class="tool-control">
+                    <label>Discord Bot:</label>
+                    <span id="discord-status">Online</span>
+                    <button onclick="restartTool('discord_bot')">Restart</button>
+                    <button onclick="configureTool('discord_bot')">Configure</button>
+                </div>
+                <div class="tool-control">
+                    <label>GitHub Client:</label>
+                    <span id="github-status">Online</span>
+                    <button onclick="restartTool('github_client')">Restart</button>
+                    <button onclick="configureTool('github_client')">Configure</button>
+                </div>
+                <div class="tool-control">
+                    <label>Web Scraper:</label>
+                    <span id="webscraper-status">Online</span>
+                    <button onclick="restartTool('web_scraper')">Restart</button>
+                    <button onclick="configureTool('web_scraper')">Configure</button>
+                </div>
+                <div class="tool-control">
+                    <label>File Manager:</label>
+                    <span id="filemanager-status">Online</span>
+                    <button onclick="restartTool('file_manager')">Restart</button>
+                    <button onclick="configureTool('file_manager')">Configure</button>
+                </div>
+                <div class="tool-control">
+                    <label>API Integrator:</label>
+                    <span id="apiintegrator-status">Online</span>
+                    <button onclick="restartTool('api_integrator')">Restart</button>
+                    <button onclick="configureTool('api_integrator')">Configure</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart trinity-management">
+            <h3>Trinity Models Management</h3>
+            <div class="trinity-controls">
+                <div class="model-control">
+                    <label>Mixtral:</label>
+                    <span id="mixtral-status">Online</span>
+                    <div class="usage-bar">
+                        <div id="mixtral-usage" style="width: 45%"></div>
+                    </div>
+                    <button onclick="restartTrinityModel('mixtral')">Restart</button>
+                </div>
+                <div class="model-control">
+                    <label>Devstral:</label>
+                    <span id="devstral-status">Online</span>
+                    <div class="usage-bar">
+                        <div id="devstral-usage" style="width: 32%"></div>
+                    </div>
+                    <button onclick="restartTrinityModel('devstral')">Restart</button>
+                </div>
+                <div class="model-control">
+                    <label>Codestral:</label>
+                    <span id="codestral-status">Online</span>
+                    <div class="usage-bar">
+                        <div id="codestral-usage" style="width: 28%"></div>
+                    </div>
+                    <button onclick="restartTrinityModel('codestral')">Restart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart engineering-patterns">
+            <h3>Engineering Patterns Analytics</h3>
+            <div class="patterns-analytics">
+                <div class="pattern-stat">
+                    <label>Code Generation:</label>
+                    <span id="codegen-count">0</span>
+                    <button onclick="viewPatternDetails('code_generation')">Details</button>
+                </div>
+                <div class="pattern-stat">
+                    <label>Infrastructure Automation:</label>
+                    <span id="infra-count">0</span>
+                    <button onclick="viewPatternDetails('infrastructure_automation')">Details</button>
+                </div>
+                <div class="pattern-stat">
+                    <label>System Integration:</label>
+                    <span id="integration-count">0</span>
+                    <button onclick="viewPatternDetails('system_integration')">Details</button>
+                </div>
+                <div class="pattern-stat">
+                    <label>Performance Tuning:</label>
+                    <span id="performance-count">0</span>
+                    <button onclick="viewPatternDetails('performance_tuning')">Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart modal-environments">
+            <h3>Modal Environments</h3>
+            <div class="modal-grid">
+                <div class="modal-env">
+                    <span>Viren-DB0:</span>
+                    <span class="status online">Online</span>
+                    <button onclick="manageModalEnv('viren-db0')">Manage</button>
+                </div>
+                <div class="modal-env">
+                    <span>Viren-DB1:</span>
+                    <span class="status online">Online</span>
+                    <button onclick="manageModalEnv('viren-db1')">Manage</button>
+                </div>
+                <div class="modal-env">
+                    <span>Viren-DB2:</span>
+                    <span class="status online">Online</span>
+                    <button onclick="manageModalEnv('viren-db2')">Manage</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpart system-diagnostics">
+            <h3>System Diagnostics</h3>
+            <div class="diagnostics-controls">
+                <button onclick="runDiagnostics()">Run Full Diagnostics</button>
+                <button onclick="exportLogs()">Export Logs</button>
+                <button onclick="clearCache()">Clear Cache</button>
+            </div>
+            <div class="diagnostics-results">
+                <div id="diagnostics-output">
+                    <div class="diagnostic-item">
+                        <span>System Health:</span>
+                        <span class="status-good">Good</span>
+                    </div>
+                    <div class="diagnostic-item">
+                        <span>Memory Usage:</span>
+                        <span class="status-good">Normal</span>
+                    </div>
+                    <div class="diagnostic-item">
+                        <span>CPU Usage:</span>
+                        <span class="status-good">Normal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tenant-selector">
+        <h4>Active Tenant:</h4>
+        <select id="tenant-select" onchange="switchTenant()">
+            <option value="modal-viren-db0">Modal: Viren-DB0</option>
+            <option value="modal-viren-db1">Modal: Viren-DB1</option>
+            <option value="modal-viren-db2">Modal: Viren-DB2</option>
+            <option value="gcp-nexus-core-455709">GCP: nexus-core-455709</option>
+        </select>
+        <span id="connection-status">Connected</span>
+    </div>
+
+    <script>
+        let currentTenant = 'modal-viren-db0';
+
+        function initializeManagement() {
+            loadEngineeringStatus();
+            loadToolsStatus();
+            setInterval(updateSystemStatus, 30000);
+        }
+
+        function loadEngineeringStatus() {
+            fetch(`/api/viren/status`, {
+                headers: { 'X-Tenant': currentTenant }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('active-problems-count').textContent = data.active_problems || 0;
+                document.getElementById('solved-problems-count').textContent = data.solved_problems || 0;
+                updateProblemsDisplay(data.problems || []);
+            })
+            .catch(error => {
+                document.getElementById('status-indicator').textContent = 'Offline';
+            });
+        }
+
+        function updateProblemsDisplay(problems) {
+            const display = document.getElementById('active-problems-display');
+            
+            if (problems.length === 0) {
+                display.innerHTML = '<div class="no-problems">No active problems</div>';
+                return;
+            }
+
+            display.innerHTML = problems.map(problem => `
+                <div class="problem-item">
+                    <span class="problem-id">${problem.id}</span>
+                    <span class="problem-complexity">${problem.complexity}</span>
+                    <span class="problem-status">${problem.status}</span>
+                    <button onclick="solveProblem('${problem.id}')">Solve</button>
+                    <button onclick="deleteProblem('${problem.id}')">Delete</button>
+                </div>
+            `).join('');
+        }
+
+        function restartTool(toolName) {
+            fetch(`/api/viren/restart_tool`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Tenant': currentTenant
+                },
+                body: JSON.stringify({ tool: toolName })
+            })
+            .then(response => response.json())
+            .then(data => {
+                showNotification(`${toolName} restart initiated`);
+                loadToolsStatus();
+            })
+            .catch(error => showNotification(`Failed to restart ${toolName}`, 'error'));
+        }
+
+        function restartTrinityModel(modelName) {
+            fetch(`/api/viren/restart_trinity_model`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Tenant': currentTenant
+                },
+                body: JSON.stringify({ model: modelName })
+            })
+            .then(response => response.json())
+            .then(data => {
+                showNotification(`${modelName} restart initiated`);
+            })
+            .catch(error => showNotification(`Failed to restart ${modelName}`, 'error'));
+        }
+
+        function runDiagnostics() {
+            fetch(`/api/viren/diagnostics`, {
+                method: 'POST',
+                headers: { 'X-Tenant': currentTenant }
+            })
+            .then(response => response.json())
+            .then(data => {
+                updateDiagnosticsDisplay(data);
+                showNotification('Diagnostics completed');
+            })
+            .catch(error => showNotification('Diagnostics failed', 'error'));
+        }
+
+        function updateDiagnosticsDisplay(diagnostics) {
+            const output = document.getElementById('diagnostics-output');
+            output.innerHTML = Object.entries(diagnostics).map(([key, value]) => `
+                <div class="diagnostic-item">
+                    <span>${key}:</span>
+                    <span class="status-${value.status}">${value.message}</span>
+                </div>
+            `).join('');
+        }
+
+        function switchTenant() {
+            currentTenant = document.getElementById('tenant-select').value;
+            document.getElementById('connection-status').textContent = 'Connecting...';
+            loadEngineeringStatus();
+            loadToolsStatus();
+        }
+
+        function loadToolsStatus() {
+            document.getElementById('connection-status').textContent = 'Connected';
+            document.getElementById('status-indicator').textContent = 'Online';
+        }
+
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        function updateSystemStatus() {
+            loadEngineeringStatus();
+            loadToolsStatus();
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeManagement);
+    </script>
+</body>
+</html>

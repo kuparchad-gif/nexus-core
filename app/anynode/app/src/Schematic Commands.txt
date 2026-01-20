@@ -1,0 +1,8 @@
+Get-ChildItem -Recurse -File | Select-Object FullName | Export-Csv -Path nexus_snapshot.csv -NoTypeInformation
+
+
+
+and
+
+
+Tree

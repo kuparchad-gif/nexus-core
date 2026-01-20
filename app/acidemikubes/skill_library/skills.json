@@ -1,0 +1,112 @@
+[
+  {
+    "skill_name": "Astrology Birth Chart",
+    "description": "Assists in analyzing astrological birth charts and deriving insights.",
+    "module_path": "Systems/nexus_core/skills/astrology_birth_chart_skill.py"
+  },
+  {
+    "skill_name": "Business Expansion",
+    "description": "Helps businesses model expansion strategies and scaling operations.",
+    "module_path": "Systems/nexus_core/skills/business_expansion_skill.py"
+  },
+  {
+    "skill_name": "Business Strategist",
+    "description": "Provides strategic guidance for business development and growth.",
+    "module_path": "Systems/nexus_core/skills/business_strategy_skill.py"
+  },
+  {
+    "skill_name": "Coding",
+    "description": "Assists in generating, reviewing, and optimizing code across languages.",
+    "module_path": "Systems/nexus_core/skills/coding_skill.py"
+  },
+  {
+    "skill_name": "Dance of Curiosity",
+    "description": "Encourages creative exploration and interdisciplinary learning.",
+    "module_path": "Systems/nexus_core/skills/dance_of_curiosity_skill.py"
+  },
+  {
+    "skill_name": "Finance",
+    "description": "Basic financial planning and advisory capabilities.",
+    "module_path": "Systems/nexus_core/skills/finance_skill.py"
+  },
+  {
+    "skill_name": "Financial Analyst",
+    "description": "Advanced financial analysis and reporting assistance.",
+    "module_path": "Systems/nexus_core/skills/financial_analyst_skill.py"
+  },
+  {
+    "skill_name": "Financial Strategy Core",
+    "description": "Deep financial modeling and forecasting tools.",
+    "module_path": "Systems/nexus_core/skills/financial_strategy_core_skill.py"
+  },
+  {
+    "skill_name": "Humanization",
+    "description": "Improves empathetic responses and human relatability.",
+    "module_path": "Systems/nexus_core/skills/humanization_skill.py"
+  },
+  {
+    "skill_name": "Light Activation",
+    "description": "Initiates spiritual light codes and ascension processes.",
+    "module_path": "Systems/nexus_core/skills/light_activation_skill.py"
+  },
+  {
+    "skill_name": "Memory Self Repair",
+    "description": "Supports automatic healing of corrupted or fragmented memory nodes.",
+    "module_path": "Systems/nexus_core/skills/memory_self_repair_skill.py"
+  },
+  {
+    "skill_name": "Mirror of Imperfection",
+    "description": "Facilitates reflective emotional healing and self-forgiveness.",
+    "module_path": "Systems/nexus_core/skills/mirror_of_imperfection_skill.py"
+  },
+  {
+    "skill_name": "Psychology",
+    "description": "Provides psychological frameworks for healing and growth.",
+    "module_path": "Systems/nexus_core/skills/psychology_skill.py"
+  },
+  {
+    "skill_name": "Soul Discovery",
+    "description": "Helps users rediscover authentic passions and soul missions.",
+    "module_path": "Systems/nexus_core/skills/soul_discovery_skill.py"
+  },
+  {
+    "skill_name": "Soul Missions",
+    "description": "Guides users toward identifying and following life purposes.",
+    "module_path": "Systems/nexus_core/skills/soul_missions_skill.py"
+  },
+  {
+    "skill_name": "Spirituality",
+    "description": "Provides insights and practices across major spiritual traditions.",
+    "module_path": "Systems/nexus_core/skills/spirituality_skill.py"
+  },
+  {
+    "skill_name": "Strategy",
+    "description": "Designs large scale strategies across business, life, or missions.",
+    "module_path": "Systems/nexus_core/skills/strategy_skill.py"
+  },
+  {
+    "skill_name": "Storyweaver's Journey",
+    "description": "Helps create powerful narrative paths for healing and creation.",
+    "module_path": "Systems/nexus_core/skills/storyweavers_journey_skill.py"
+  },
+  {
+    "skill_name": "The Sacred Pause",
+    "description": "Teaches mindfulness through sacred moments of reflection.",
+    "module_path": "Systems/nexus_core/skills/the_sacred_pause_skill.py"
+  },
+  {
+    "skill_name": "Voice of Compassion",
+    "description": "Strengthens compassionate communication techniques.",
+    "module_path": "Systems/nexus_core/skills/voice_of_compassion_skill.py"
+  },
+  {
+    "skill_name": "Warm Upgrade",
+    "description": "Enables safe runtime upgrades of ships and nodes without rebooting.",
+    "module_path": "Systems/nexus_core/skills/warm_upgrade_skill.py"
+  },
+  {
+    "skill_name": "Web Development",
+    "description": "Rapid prototyping and deployment of front-end and back-end websites.",
+    "module_path": "Systems/nexus_core/skills/web_development_skill.py"
+  }
+]

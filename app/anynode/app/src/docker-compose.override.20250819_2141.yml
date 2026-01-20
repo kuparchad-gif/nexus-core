@@ -1,0 +1,9 @@
+services:
+  api:
+    environment:
+      - FS_ROOT=/workspace
+      - LMSTUDIO_TARGET=http://host.docker.internal:1234
+      - OPENAI_BASE_URL=https://api.openai.com
+      - OPENAI_API_KEY=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
+    volumes:
+      - C:/Projects/Stacks:/workspace

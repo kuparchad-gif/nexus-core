@@ -1,0 +1,5 @@
+{
+  "name": "Strategy Skill",
+  "module_path": "Systems/nexus_core/skills/strategy_skill.py",
+  "entry_class": "StrategySkill"
+}

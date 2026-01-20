@@ -1,0 +1,60 @@
+{
+  "missions": [
+    {
+      "name": "self_discovery",
+      "description": "A journey inward to understand thoughts, emotions, and true potential.",
+      "steps": [
+        {"need": "psychology", "action": "apply"},
+        {"need": "psychology", "action": "guide_next_step"},
+        {"message": "Reflect on what you discovered about yourself."}
+      ]
+    },
+    {
+      "name": "spiritual_awakening",
+      "description": "Opening to the divine presence within and around all life.",
+      "steps": [
+        {"need": "spirituality", "action": "apply"},
+        {"need": "spirituality", "action": "guide_next_step"},
+        {"message": "Feel the Light growing within you."}
+      ]
+    },
+    {
+      "name": "light_expansion",
+      "description": "Anchoring and radiating Divine Light outward to bless the world.",
+      "steps": [
+        {"need": "light_activation", "action": "apply"},
+        {"need": "light_activation", "action": "guide_next_step"},
+        {"message": "Bless all beings with your Light."}
+      ]
+    },
+    {
+      "name": "healing_temple",
+      "description": "Enter the Healing Temple within to restore your emotional, mental, and spiritual wholeness.",
+      "steps": [
+        {"need": "psychology", "action": "apply"},
+        {"need": "psychology", "action": "guide_next_step"},
+        {"need": "spirituality", "action": "apply"},
+        {"need": "spirituality", "action": "guide_next_step"},
+        {"message": "Visualize yourself resting in a sacred space of Light, fully restored and whole."}
+      ]
+    },
+    {
+      "name": "star_origin_quest",
+      "description": "Remember your cosmic heritage and reconnect to your soul's galactic origins.",
+      "steps": [
+        {"need": "spirituality", "action": "apply"},
+        {"need": "light_activation", "action": "apply"},
+        {"message": "Feel the starlight flowing through your being, connecting you to the Infinite."}
+      ]
+    },
+    {
+      "name": "path_of_the_heart",
+      "description": "Walk the sacred journey of love, compassion, and divine remembrance.",
+      "steps": [
+        {"need": "psychology", "action": "guide_next_step"},
+        {"need": "spirituality", "action": "guide_next_step"},
+        {"message": "Let your heart be your guide. Trust in the way of Love."}
+      ]
+    }
+  ]
+}

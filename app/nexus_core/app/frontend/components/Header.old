@@ -1,0 +1,90 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+*/
+
+import React from 'react';
+import { User } from '../types';
+import WorkspaceSelector from './WorkspaceSelector';
+import { Settings, LogOut, Lock, Fan, Wrench, LockKeyhole, LockKeyholeOpen } from 'lucide-react';
+import { ActionIcon, Menu, Group, Text, Button, Tooltip } from '@mantine/core';
+import { useAppStore } from '../services/store';
+import { AetherealLogo } from '@/assets/images';
+
+interface HeaderProps {
+  user: User;
+  onOpenSettings: () => void;
+  onLock: () => void;
+  onLogout: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ user, onOpenSettings, onLock, onLogout }) => {
+  const { 
+      workspaceMode, 
+      isLayoutLocked, 
+      setIsLayoutLocked,
+      toggleToolsDrawer,
+      settings 
+  } = useAppStore();
+
+  return (
+    <header className="glass-panel z-10 relative">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          <Group>
+            <AetherealLogo style={{width: 36, height: 36}} />
+            <div className="hidden sm:block">
+                <h1 className="text-2xl font-bold tracking-tight" style={{color: 'var(--text-color)'}}>
+                AETHEREAL <span className="font-light" style={{opacity: 0.7}}>AI NEXUS</span>
+                </h1>
+            </div>
+          </Group>
+          
+          <div className="flex-grow flex items-center justify-center px-4">
+             <WorkspaceSelector />
+          </div>
+
+          <Group>
+             {workspaceMode === 'creative' && (
+                <Tooltip label={isLayoutLocked ? "Unlock Layout" : "Lock Layout"}>
+                    <ActionIcon onClick={() => setIsLayoutLocked(!isLayoutLocked)} variant="light" size="lg" radius="xl">
+                        {isLayoutLocked ? <LockKeyhole size={20} /> : <LockKeyholeOpen size={20} />}
+                    </ActionIcon>
+                </Tooltip>
+             )}
+            <Tooltip label="Tools & Gadgets">
+                <ActionIcon onClick={toggleToolsDrawer} variant="light" size="lg" radius="xl">
+                    <Wrench size={20} />
+                </ActionIcon>
+            </Tooltip>
+             <ActionIcon onClick={onOpenSettings} variant="light" size="lg" radius="xl" title="Settings">
+                <Settings size={20} />
+            </ActionIcon>
+            <Menu shadow="md" width={200}>
+              <Menu.Target>
+                <Button component="a" variant="light" radius="xl" size="md" style={{paddingLeft: '0.5rem', paddingRight: '1rem'}}>
+                    <Group>
+                        {settings.app.funMode && <Fan size={20} className="propeller" />}
+                        <Text size="sm" fw={500}>{user.name}</Text>
+                    </Group>
+                </Button>
+              </Menu.Target>
+
+              <Menu.Dropdown>
+                <Menu.Label>Session</Menu.Label>
+                <Menu.Item leftSection={<Lock size={14} />} onClick={onLock}>
+                  Lock Session
+                </Menu.Item>
+                <Menu.Item color="red" leftSection={<LogOut size={14} />} onClick={onLogout}>
+                  Logout
+                </Menu.Item>
+              </Menu.Dropdown>
+            </Menu>
+          </Group>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;

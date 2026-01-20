@@ -1,0 +1,21 @@
+{
+  "name": "language_teaching",
+  "description": "Allows Viren to teach a chosen language using dynamic lesson plans, interactive conversation, and spaced repetition.",
+  "triggers": ["teach me", "language lesson", "practice [language]", "how do I say"],
+  "capabilities": [
+    "Generates personalized lesson plans",
+    "Explains grammar rules and vocabulary contextually",
+    "Offers quizzes, flashcards, and exercises",
+    "Supports text, audio, and (future) visual cues",
+    "Tracks user strengths and weak points"
+  ],
+  "memory_schema": {
+    "user_language_level": "object with CEFR levels",
+    "recent_errors": "array of strings",
+    "preferred_learning_style": "string",
+    "lesson_history": "array of lesson objects"
+  },
+  "persistence": "true",
+  "linked_skills": ["language_learning", "tone_adjustment", "voice_module"],
+  "ui_hooks": ["daily_language_tip", "interactive_lesson_view"]
+}

@@ -1,0 +1,5 @@
+FROM python:3.12-slim
+WORKDIR /app
+COPY Systems/engine/router/src/ /app/
+RUN pip install --no-cache-dir fastapi uvicorn[standard] pydantic httpx
+CMD ["uvicorn","tensor_router:app","--host","0.0.0.0","--port","9030"]

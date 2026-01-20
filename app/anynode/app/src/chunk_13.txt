@@ -1,0 +1,706 @@
+{
+  "chunk": "13/18",
+  "files": [
+    {
+      "directory": "Viren\\Systems\\engine\\pulse",
+      "size": 3568,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\pulse\\pulse_server.py",
+      "name": "pulse_server.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart\\static_links",
+      "size": 1048,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\static_links\\pulse_server.py",
+      "name": "pulse_server.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\pulse",
+      "size": 3400,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\pulse\\pulse_udp_broadcaster.py",
+      "name": "pulse_udp_broadcaster.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\pulse",
+      "size": 3400,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\pulse\\pulse_udp_broadcaster.py",
+      "name": "pulse_udp_broadcaster.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\pulse\\memory\\bootstrap\\genesis",
+      "size": 5564,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\pulse\\memory\\bootstrap\\genesis\\nova_birth_record.json",
+      "name": "nova_birth_record.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\pulse\\memory\\bootstrap\\genesis",
+      "size": 5564,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\pulse\\memory\\bootstrap\\genesis\\nova_birth_record.json",
+      "name": "nova_birth_record.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious",
+      "size": 26471,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\abstract_reasoning.py",
+      "name": "abstract_reasoning.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious",
+      "size": 26471,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\abstract_reasoning.py",
+      "name": "abstract_reasoning.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious",
+      "size": 9416,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\jungian_archetypes.py",
+      "name": "jungian_archetypes.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious",
+      "size": 9416,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\jungian_archetypes.py",
+      "name": "jungian_archetypes.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious",
+      "size": 13063,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\metaphor_engine.py",
+      "name": "metaphor_engine.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious",
+      "size": 13063,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\metaphor_engine.py",
+      "name": "metaphor_engine.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious",
+      "size": 983,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\switchboard.py",
+      "name": "switchboard.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious",
+      "size": 983,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\switchboard.py",
+      "name": "switchboard.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules",
+      "size": 4938,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules\\dream_stream.py",
+      "name": "dream_stream.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious\\modules",
+      "size": 4938,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\modules\\dream_stream.py",
+      "name": "dream_stream.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules",
+      "size": 6887,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules\\ego_stream_enhanced.py",
+      "name": "ego_stream_enhanced.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious\\modules",
+      "size": 6887,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\modules\\ego_stream_enhanced.py",
+      "name": "ego_stream_enhanced.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules",
+      "size": 12295,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules\\mythrunner_enhanced.py",
+      "name": "mythrunner_enhanced.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious\\modules",
+      "size": 12295,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\modules\\mythrunner_enhanced.py",
+      "name": "mythrunner_enhanced.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\text",
+      "size": 5831,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\text\\text_integration.py",
+      "name": "text_integration.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\text",
+      "size": 5831,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\text\\text_integration.py",
+      "name": "text_integration.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\text",
+      "size": 494,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\text\\text_memory_uploader.py",
+      "name": "text_memory_uploader.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\text",
+      "size": 494,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\text\\text_memory_uploader.py",
+      "name": "text_memory_uploader.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\text",
+      "size": 15324,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\text\\text_processor.py",
+      "name": "text_processor.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\text",
+      "size": 15324,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\text\\text_processor.py",
+      "name": "text_processor.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\text",
+      "size": 3643,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\text\\text_service.py",
+      "name": "text_service.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\text",
+      "size": 3643,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\text\\text_service.py",
+      "name": "text_service.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\tone",
+      "size": 7104,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\tone\\tone_integration.py",
+      "name": "tone_integration.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\tone",
+      "size": 7104,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\tone\\tone_integration.py",
+      "name": "tone_integration.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\tone",
+      "size": 494,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\tone\\tone_memory_uploader.py",
+      "name": "tone_memory_uploader.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\tone",
+      "size": 494,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\tone\\tone_memory_uploader.py",
+      "name": "tone_memory_uploader.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\tone",
+      "size": 13507,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\tone\\tone_processor.py",
+      "name": "tone_processor.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\tone",
+      "size": 13507,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\tone\\tone_processor.py",
+      "name": "tone_processor.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\tone",
+      "size": 3649,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\tone\\tone_service.py",
+      "name": "tone_service.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\tone",
+      "size": 3649,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\tone\\tone_service.py",
+      "name": "tone_service.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules",
+      "size": 296,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules\\console_diagnostics_api.py",
+      "name": "console_diagnostics_api.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\tone_mesh\\modules",
+      "size": 296,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\tone_mesh\\modules\\console_diagnostics_api.py",
+      "name": "console_diagnostics_api.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules",
+      "size": 331,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules\\emotion_intensity_regulator.py",
+      "name": "emotion_intensity_regulator.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\tone_mesh\\modules",
+      "size": 331,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\tone_mesh\\modules\\emotion_intensity_regulator.py",
+      "name": "emotion_intensity_regulator.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules",
+      "size": 380,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules\\guardian_emotion_audit.py",
+      "name": "guardian_emotion_audit.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\tone_mesh\\modules",
+      "size": 380,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\tone_mesh\\modules\\guardian_emotion_audit.py",
+      "name": "guardian_emotion_audit.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules",
+      "size": 709,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules\\lillith_emotion_gate.py",
+      "name": "lillith_emotion_gate.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\tone_mesh\\modules",
+      "size": 709,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\tone_mesh\\modules\\lillith_emotion_gate.py",
+      "name": "lillith_emotion_gate.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules",
+      "size": 477,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules\\mythrunner_pulse_integration.py",
+      "name": "mythrunner_pulse_integration.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\tone_mesh\\modules",
+      "size": 477,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\tone_mesh\\modules\\mythrunner_pulse_integration.py",
+      "name": "mythrunner_pulse_integration.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules",
+      "size": 267,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules\\resonance_state_tracker.py",
+      "name": "resonance_state_tracker.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\tone_mesh\\modules",
+      "size": 267,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\tone_mesh\\modules\\resonance_state_tracker.py",
+      "name": "resonance_state_tracker.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules",
+      "size": 802,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules\\tone_agent.py",
+      "name": "tone_agent.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\tone_mesh\\modules",
+      "size": 802,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\tone_mesh\\modules\\tone_agent.py",
+      "name": "tone_agent.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules",
+      "size": 360,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules\\tone_mesh_coordinator.py",
+      "name": "tone_mesh_coordinator.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\tone_mesh\\modules",
+      "size": 360,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\tone_mesh\\modules\\tone_mesh_coordinator.py",
+      "name": "tone_mesh_coordinator.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules",
+      "size": 380,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules\\tone_mesh_diagnostics.py",
+      "name": "tone_mesh_diagnostics.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\tone_mesh\\modules",
+      "size": 380,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\tone_mesh\\modules\\tone_mesh_diagnostics.py",
+      "name": "tone_mesh_diagnostics.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules",
+      "size": 382,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules\\tone_registry.py",
+      "name": "tone_registry.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\tone_mesh\\modules",
+      "size": 382,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\tone_mesh\\modules\\tone_registry.py",
+      "name": "tone_registry.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules",
+      "size": 620,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules\\tone_simulated_load.py",
+      "name": "tone_simulated_load.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\tone_mesh\\modules",
+      "size": 620,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\tone_mesh\\modules\\tone_simulated_load.py",
+      "name": "tone_simulated_load.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules",
+      "size": 353,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\tone_mesh\\modules\\tone_sync_pulse.py",
+      "name": "tone_sync_pulse.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\tone_mesh\\modules",
+      "size": 353,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\tone_mesh\\modules\\tone_sync_pulse.py",
+      "name": "tone_sync_pulse.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\crowdfunding_engine",
+      "size": 149,
+      "type": "dockerfile",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\crowdfunding_engine\\dockerfile",
+      "name": "dockerfile"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\crowdfunding_engine",
+      "size": 149,
+      "type": "dockerfile",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\crowdfunding_engine\\dockerfile",
+      "name": "dockerfile"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\crowdfunding_engine\\templates",
+      "size": 1083,
+      "type": "html_interface",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\crowdfunding_engine\\templates\\simple_campaign.html",
+      "name": "simple_campaign.html"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\crowdfunding_engine\\templates",
+      "size": 1083,
+      "type": "html_interface",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\crowdfunding_engine\\templates\\simple_campaign.html",
+      "name": "simple_campaign.html"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal",
+      "size": 1822,
+      "type": "html_interface",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\console.html",
+      "name": "console.html"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal",
+      "size": 1822,
+      "type": "html_interface",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\console.html",
+      "name": "console.html"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal",
+      "size": 27,
+      "type": "stylesheet",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\eden.css",
+      "name": "eden.css"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal",
+      "size": 27,
+      "type": "stylesheet",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\eden.css",
+      "name": "eden.css"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal",
+      "size": 555,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\eden_portal_server.py",
+      "name": "eden_portal_server.py"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal",
+      "size": 555,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\eden_portal_server.py",
+      "name": "eden_portal_server.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal",
+      "size": 29,
+      "type": "html_interface",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\index.html",
+      "name": "index.html"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\templates",
+      "size": 67,
+      "type": "html_interface",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\templates\\index.html",
+      "name": "index.html"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates",
+      "size": 363,
+      "type": "html_interface",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\index.html",
+      "name": "index.html"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal",
+      "size": 29,
+      "type": "html_interface",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\index.html",
+      "name": "index.html"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\templates",
+      "size": 67,
+      "type": "html_interface",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\lillith_web_console\\templates\\index.html",
+      "name": "index.html"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates",
+      "size": 363,
+      "type": "html_interface",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\index.html",
+      "name": "index.html"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal",
+      "size": 29,
+      "type": "javascript",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\lillith.js",
+      "name": "lillith.js"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal",
+      "size": 29,
+      "type": "javascript",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\lillith.js",
+      "name": "lillith.js"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal",
+      "size": 2379,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\LillithConsoleWebApp.tmplt",
+      "name": "LillithConsoleWebApp.tmplt"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates",
+      "size": 2379,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\LillithConsoleWebApp.tmplt",
+      "name": "LillithConsoleWebApp.tmplt"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal",
+      "size": 2379,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\LillithConsoleWebApp.tmplt",
+      "name": "LillithConsoleWebApp.tmplt"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates",
+      "size": 2379,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\LillithConsoleWebApp.tmplt",
+      "name": "LillithConsoleWebApp.tmplt"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal",
+      "size": 3285,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\LillithConsoleWebApp2.tmplt",
+      "name": "LillithConsoleWebApp2.tmplt"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates",
+      "size": 3285,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\LillithConsoleWebApp2.tmplt",
+      "name": "LillithConsoleWebApp2.tmplt"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal",
+      "size": 3285,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\LillithConsoleWebApp2.tmplt",
+      "name": "LillithConsoleWebApp2.tmplt"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates",
+      "size": 3285,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\LillithConsoleWebApp2.tmplt",
+      "name": "LillithConsoleWebApp2.tmplt"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\api",
+      "size": 575,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\api\\archetypes.py",
+      "name": "archetypes.py"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\api",
+      "size": 575,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\api\\archetypes.py",
+      "name": "archetypes.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 2210068,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\Angry.Mirror.Type.png",
+      "name": "Angry.Mirror.Type.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 2210068,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\Angry.Mirror.Type.png",
+      "name": "Angry.Mirror.Type.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 3094777,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\FlameArchetype.png",
+      "name": "FlameArchetype.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 3094777,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\FlameArchetype.png",
+      "name": "FlameArchetype.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 2528564,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\Mirror Archetype.png",
+      "name": "Mirror Archetype.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 2528564,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\Mirror Archetype.png",
+      "name": "Mirror Archetype.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 2384616,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\Mirror_Type.png",
+      "name": "Mirror_Type.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 2384616,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\Mirror_Type.png",
+      "name": "Mirror_Type.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 2199013,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\Mirror_Type2.png",
+      "name": "Mirror_Type2.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 2199013,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\Mirror_Type2.png",
+      "name": "Mirror_Type2.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 1851996,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\Mystic.Archetype.png",
+      "name": "Mystic.Archetype.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes",
+      "size": 1851996,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\assets\\images\\archetypes\\Mystic.Archetype.png",
+      "name": "Mystic.Archetype.png"
+    }
+  ],
+  "total_files": 1809
+}

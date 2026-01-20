@@ -1,0 +1,15 @@
+📝 Starting deployment survey...
+Local Oz installation:
+Current directory: /home/architect/Downloads/0zHypervisor2
+Files found:
+-rw-rw-r-- 1 architect architect 32412 Dec 11 21:30 OzUnifiedHypervisor.py
+-rw-rw-r-- 1 architect architect 48908 Dec 10 18:19 raphael_complete.py
+
+Python version:
+Python 3.12.3
+
+Key Oz files:
+✓ OzUnifiedHypervisor.py
+✓ raphael_complete.py
+✓ build_oz_cluster.sh
+✓ Backup created: oz_backup_20251213_225348.tar.gz (504K)

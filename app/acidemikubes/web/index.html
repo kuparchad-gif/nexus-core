@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lillith 3.0 Console</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body class="bg-gray-100">
+  <div id="root"></div>
+  <script type="text/babel">
+    const App = () => {
+      const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+      const [username, setUsername] = React.useState('');
+      const [password, setPassword] = React.useState('');
+      const [loginError, setLoginError] = React.useState('');
+
+      const handleLogin = (e) => {
+        e.preventDefault();
+        // Placeholder for actual API call to authenticate
+        fetch('http://localhost:5000/api/login', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ username, password })
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (data.status === 'success') {
+            setIsLoggedIn(true);
+            setLoginError('');
+          } else {
+            setLoginError(data.message || 'Login failed');
+          }
+        })
+        .catch(() => setLoginError('Unable to connect to server'));
+      };
+
+      if (!isLoggedIn) {
+        return (
+          <div className="container mx-auto p-4 max-w-md mt-20">
+            <div className="p-6 border rounded-lg bg-white shadow-md">
+              <h1 className="text-3xl font-bold mb-4 text-center">Lillith 3.0 Console</h1>
+              <h2 className="text-xl font-semibold mb-4">Login</h2>
+              {loginError && <p className="text-red-500 mb-4">{loginError}</p>}
+              <form onSubmit={handleLogin}>
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-gray-700">Username</label>
+                  <input 
+                    type="text" 
+                    value={username} 
+                    onChange={e => setUsername(e.target.value)} 
+                    className="w-full p-2 border rounded" 
+                    placeholder="Enter username" 
+                    required 
+                  />
+                </div>
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-gray-700">Password</label>
+                  <input 
+                    type="password" 
+                    value={password} 
+                    onChange={e => setPassword(e.target.value)} 
+                    className="w-full p-2 border rounded" 
+                    placeholder="Enter password" 
+                    required 
+                  />
+                </div>
+                <button type="submit" className="bg-blue-500 text-white p-2 rounded w-full hover:bg-blue-600">Login</button>
+              </form>
+            </div>
+          </div>
+        );
+      }
+
+      return (
+        <div className="container mx-auto p-4">
+          <h1 className="text-3xl font-bold mb-4">Lillith 3.0 Console</h1>
+          <div className="flex justify-between mb-6">
+            <p className="text-gray-700">Welcome, {username}</p>
+            <button onClick={() => setIsLoggedIn(false)} className="text-red-500 hover:underline">Logout</button>
+          </div>
+          <p className="mb-6">Access and monitor services autonomously.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            <div className="p-4 border rounded-lg bg-white shadow-sm">
+              <a href="consciousness_monitor.html" className="text-blue-500 hover:underline">Consciousness Monitor/Config</a>
+              <p className="text-sm text-gray-600">Monitor cognitive functions and chat with the service.</p>
+            </div>
+            <div className="p-4 border rounded-lg bg-white shadow-sm">
+              <a href="memory_monitor.html" className="text-blue-500 hover:underline">Memory Monitor/Config</a>
+              <p className="text-sm text-gray-600">Track memory metrics and interact with the service.</p>
+            </div>
+            <div className="p-4 border rounded-lg bg-white shadow-sm">
+              <a href="subconscious_monitor.html" className="text-blue-500 hover:underline">Subconscious Monitor/Config</a>
+              <p className="text-sm text-gray-600">View subconscious processes and communicate directly.</p>
+            </div>
+            {/* Add links for other services as needed */}
+          </div>
+          <div className="mt-6 p-4 border rounded-lg bg-white shadow-md">
+            <h2 className="text-xl font-semibold mb-2">System Actions</h2>
+            <button 
+              className="bg-green-500 text-white p-2 rounded hover:bg-green-600" 
+              onClick={() => {
+                fetch('http://localhost:5000/api/update', {
+                  method: 'POST',
+                  headers: {'Content-Type': 'application/json'},
+                  body: JSON.stringify({ version: 'latest' })
+                })
+                .then(res => res.json())
+                .then(data => alert(data.message || 'Update triggered'))
+                .catch(() => alert('Error triggering update'));
+              }}
+            >
+              Update Lillith
+            </button>
+            <p className="text-sm text-gray-600 mt-2">Trigger system-wide updates with a single click.</p>
+          </div>
+        </div>
+    );
+    };
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+</html>

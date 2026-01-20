@@ -1,0 +1,39 @@
+// C:\Projects\Stacks\nexus-metatron\backend\contracts\messages.proto
+syntax = "proto3";
+package nexus.v1;
+
+enum OrchestrationTier { TIER_INFRA=0; TIER_SERVICE=1; TIER_COGNITIVE=2; }
+enum TaskKind { KIND_PLAN=0; KIND_EXECUTE=1; KIND_EVAL=2; KIND_ARCHIVE=3; }
+
+message ABEv1 {
+  // Aethereal Binary Envelope v1
+  bytes  signature      = 1;   // ed25519 signature over header+payload
+  uint32 header_crc32   = 2;   // CRC32 of header (gz JSON)
+  uint32 payload_crc32  = 3;   // CRC32 of payload (gz data)
+  bytes  header         = 4;   // gzipped JSON header → includes freq, lattice, algo
+  bytes  payload        = 5;   // gzipped binary (CBOR/JSON/flat), opaque to transport
+}
+
+message TaskIntent {
+  string id = 1;                       // ULID/UUID
+  OrchestrationTier tier = 2;
+  TaskKind kind = 3;
+  string subject = 4;                  // human label
+  string goal = 5;                     // NL goal
+  string frequency = 6;                // e.g., "f369", "f432", "f528"
+  uint64 lattice_id = 7;               // Morton/Hilbert ID for locality
+  string lattice_algo = 8;             // "morton32", "hilbert64"
+  string filter_profile = 9;           // which metafilter profile to use
+  ABEv1  envelope = 10;                // The Binary
+  map<string,string> tags = 11;
+  string version = 12;                 // contract version
+}
+
+message TaskResult {
+  string id = 1;
+  bool   ok = 2;
+  string summary = 3;
+  ABEv1  envelope = 4;
+  repeated string logs = 5;
+  string error = 6;
+}

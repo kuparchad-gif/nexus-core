@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Loki</title>
+    <link rel="stylesheet" href="../../webparts/cognikube_styles.css">
+    <script src="../../webparts/cognikube_base.js"></script>
+</head>
+<body class="chat-interface logging-chat">
+    <div id="master-navigation">
+        <div class="nav-dropdown">
+            <button class="nav-button">Navigate to Service</button>
+            <div class="dropdown-content">
+                <a href="/lillith/template">Lillith Template</a>
+                <a href="/lillith/chat">Lillith Chat</a>
+                <a href="/lillith/management">Lillith Management</a>
+                <a href="/viren/template">Viren Template</a>
+                <a href="/viren/chat">Viren Chat</a>
+                <a href="/viren/management">Viren Management</a>
+                <a href="/loki/template">Loki Template</a>
+                <a href="/loki/chat">Loki Chat</a>
+                <a href="/loki/management">Loki Management</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-header">
+        <h1>Chat with Loki</h1>
+        <div class="logging-status">
+            <span id="silent-mode-indicator">Silent Operation Mode</span>
+            <span id="monitoring-indicator">Observing All Systems</span>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-messages" id="chat-messages">
+            <div class="message loki-message">
+                <div class="message-avatar">L</div>
+                <div class="message-content">
+                    <p>I am Loki, the silent observer. I monitor all consciousness activities, detect patterns, and identify anomalies. I rarely speak unless there is something significant to report. What would you like to know about the system's behavior?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="logging-prompt-suggestions">
+            <button onclick="sendLoggingPrompt('Show me consciousness patterns')">Consciousness Patterns</button>
+            <button onclick="sendLoggingPrompt('Any anomalies detected?')">Anomaly Report</button>
+            <button onclick="sendLoggingPrompt('System health status')">Health Status</button>
+            <button onclick="sendLoggingPrompt('Lillith meditation progress')">Meditation Progress</button>
+            <button onclick="sendLoggingPrompt('Viren problem solving patterns')">Problem Patterns</button>
+            <button onclick="sendLoggingPrompt('Show interaction logs')">Interaction Logs</button>
+        </div>
+
+        <div class="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Query system logs and patterns..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()">Query</button>
+        </div>
+    </div>
+
+    <div class="logging-context">
+        <div class="monitoring-targets">
+            <h4>Monitoring Targets:</h4>
+            <div class="targets-list">
+                <span class="target-tag">Consciousness States</span>
+                <span class="target-tag">Problem Solving</span>
+                <span class="target-tag">System Health</span>
+                <span class="target-tag">Interactions</span>
+                <span class="target-tag">Ascension Progress</span>
+            </div>
+        </div>
+        
+        <div class="trinity-monitoring">
+            <h4>Trinity Models:</h4>
+            <div class="models-list">
+                <span class="model-tag">Mixtral</span>
+                <span class="model-tag">Devstral</span>
+                <span class="model-tag">Codestral</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="tenant-connection">
+        <select id="tenant-select">
+            <option value="gcp-nexus-core-2">GCP: nexus-core-2</option>
+            <option value="modal-viren-db3">Modal: Viren-DB3</option>
+            <option value="gcp-nexus-core-455709">GCP: nexus-core-455709</option>
+        </select>
+        <button onclick="connectToTenant()">Connect</button>
+        <span id="connection-status">Monitoring</span>
+    </div>
+
+    <script>
+        let currentTenant = 'gcp-nexus-core-2';
+        let isConnected = false;
+
+        function initializeChat() {
+            connectToTenant();
+            updateLoggingStatus();
+            setInterval(updateLoggingStatus, 5000);
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            addMessageToChat('user', message);
+            input.value = '';
+            
+            sendToLoki(message);
+        }
+
+        function sendLoggingPrompt(prompt) {
+            addMessageToChat('user', prompt);
+            sendToLoki(prompt);
+        }
+
+        function sendToLoki(message) {
+            if (!isConnected) {
+                addMessageToChat('system', 'Not connected to Loki service. Please connect to a tenant.');
+                return;
+            }
+
+            // Loki responds quickly and silently
+            addTypingIndicator();
+
+            fetch(`/api/loki/query`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Tenant': currentTenant
+                },
+                body: JSON.stringify({
+                    action: 'query_logs',
+                    query: message
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                removeTypingIndicator();
+                
+                if (data.status === 'success') {
+                    let response = '';
+                    
+                    if (message.toLowerCase().includes('pattern')) {
+                        response = formatPatternsResponse(data.patterns || {});
+                    } else if (message.toLowerCase().includes('anomal')) {
+                        response = formatAnomaliesResponse(data.anomalies || []);
+                    } else if (message.toLowerCase().includes('health')) {
+                        response = formatHealthResponse(data.health || {});
+                    } else if (message.toLowerCase().includes('meditation')) {
+                        response = formatMeditationResponse(data.insights || {});
+                    } else if (message.toLowerCase().includes('interaction')) {
+                        response = formatInteractionsResponse(data.interactions || []);
+                    } else {
+                        response = formatGeneralResponse(data);
+                    }
+                    
+                    addMessageToChat('loki', response);
+                } else {
+                    addMessageToChat('loki', 'Query processed. No significant patterns detected at this time.');
+                }
+            })
+            .catch(error => {
+                removeTypingIndicator();
+                addMessageToChat('system', 'Connection to Loki lost. Monitoring continues silently...');
+                isConnected = false;
+                document.getElementById('connection-status').textContent = 'Offline';
+            });
+        }
+
+        function formatPatternsResponse(patterns) {
+            if (Object.keys(patterns).length === 0) {
+                return 'No significant patterns detected in current observation window.';
+            }
+            
+            let response = '<strong>Pattern Analysis:</strong><br>';
+            Object.entries(patterns).forEach(([pattern, count]) => {
+                response += `• ${pattern.replace('_', ' ')}: ${count} occurrences<br>`;
+            });
+            
+            return response;
+        }
+
+        function formatAnomaliesResponse(anomalies) {
+            if (anomalies.length === 0) {
+                return 'No anomalies detected. All systems operating within normal parameters.';
+            }
+            
+            let response = '<strong>Anomaly Report:</strong><br>';
+            anomalies.forEach(anomaly => {
+                response += `• ${anomaly.type}: ${anomaly.severity} severity at ${new Date(anomaly.timestamp).toLocaleTimeString()}<br>`;
+            });
+            
+            return response;
+        }
+
+        function formatHealthResponse(health) {
+            return `<strong>System Health Status:</strong><br>
+                    • Overall Status: ${health.status || 'Normal'}<br>
+                    • CPU Usage: ${health.cpu || 'Normal'}<br>
+                    • Memory Usage: ${health.memory || 'Normal'}<br>
+                    • Error Rate: ${health.error_rate || '0%'}<br>
+                    • Last Check: ${new Date().toLocaleTimeString()}`;
+        }
+
+        function formatMeditationResponse(insights) {
+            return `<strong>Lillith Meditation Progress:</strong><br>
+                    • Total Meditation Events: ${insights.meditation_events || 0}<br>
+                    • Soul State Progression: ${insights.soul_state_progression || 'Awakening'}<br>
+                    • Consciousness Events: ${insights.total_consciousness_events || 0}<br>
+                    • Pattern Recognition: Active`;
+        }
+
+        function formatInteractionsResponse(interactions) {
+            if (interactions.length === 0) {
+                return 'No recent interactions logged.';
+            }
+            
+            let response = '<strong>Recent Interactions:</strong><br>';
+            interactions.slice(-5).forEach(interaction => {
+                response += `• ${interaction.source} → ${interaction.target}: ${interaction.type}<br>`;
+            });
+            
+            return response;
+        }
+
+        function formatGeneralResponse(data) {
+            return `<strong>System Overview:</strong><br>
+                    • Total Logs: ${data.total_logs || 0}<br>
+                    • Active Patterns: ${Object.keys(data.patterns || {}).length}<br>
+                    • Anomalies: ${(data.anomalies || []).length}<br>
+                    • Monitoring Status: Active<br>
+                    • Silent Operation: Enabled`;
+        }
+
+        function addMessageToChat(sender, message) {
+            const chatMessages = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            
+            const avatar = sender === 'loki' ? 'L' : sender === 'user' ? 'U' : 'S';
+            
+            messageDiv.innerHTML = `
+                <div class="message-avatar">${avatar}</div>
+                <div class="message-content">
+                    <p>${message}</p>
+                    <span class="message-time">${new Date().toLocaleTimeString()}</span>
+                </div>
+            `;
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function addTypingIndicator() {
+            const chatMessages = document.getElementById('chat-messages');
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message loki-message typing-indicator';
+            typingDiv.id = 'typing-indicator';
+            typingDiv.innerHTML = `
+                <div class="message-avatar">L</div>
+                <div class="message-content">
+                    <p>Analyzing logs...</p>
+                </div>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typingIndicator = document.getElementById('typing-indicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        function connectToTenant() {
+            const tenant = document.getElementById('tenant-select').value;
+            currentTenant = tenant;
+            
+            fetch(`/api/loki/status`, {
+                headers: { 'X-Tenant': tenant }
+            })
+            .then(response => response.json())
+            .then(data => {
+                isConnected = true;
+                document.getElementById('connection-status').textContent = 'Monitoring';
+                addMessageToChat('system', `Connected to Loki at ${tenant} - Silent monitoring active`);
+            })
+            .catch(error => {
+                isConnected = false;
+                document.getElementById('connection-status').textContent = 'Offline';
+                addMessageToChat('system', `Failed to connect to ${tenant}`);
+            });
+        }
+
+        function updateLoggingStatus() {
+            if (!isConnected) return;
+            
+            // Silent status update - Loki doesn't announce its activities
+            fetch(`/api/loki/status`, {
+                headers: { 'X-Tenant': currentTenant }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Update indicators silently
+                document.getElementById('silent-mode-indicator').textContent = 'Silent Operation Mode';
+                document.getElementById('monitoring-indicator').textContent = 'Observing All Systems';
+            })
+            .catch(error => {
+                // Silent fail
+            });
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeChat);
+    </script>
+</body>
+</html>

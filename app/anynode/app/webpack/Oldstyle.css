@@ -1,0 +1,206 @@
+/* style.css - Nexus Console */
+
+:root {
+  --primary: #4f79f9;
+  --accent: #c251fb;
+  --background: #141824;
+  --card-bg: rgba(28, 34, 45, 0.85);
+  --glass: rgba(255,255,255,0.12);
+  --text: #fff;
+  --thread-bg: rgba(44, 54, 78, 0.85);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--background);
+  color: var(--text);
+  height: 100%;
+  overflow: hidden;
+}
+
+#backgroundVideo {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.console-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+}
+
+.sidebar, .rightbar {
+  width: 250px;
+  background: rgba(10, 10, 20, 0.8);
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.main-console {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  max-width: 850px;
+  margin: 0 auto;
+  background: rgba(20, 20, 30, 0.5);
+  border-left: 1px solid rgba(255,255,255,0.05);
+  border-right: 1px solid rgba(255,255,255,0.05);
+  overflow-y: auto;
+}
+
+.header {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--primary);
+  text-shadow: 0 1px 6px rgba(50, 50, 100, 0.4);
+  margin-bottom: 1rem;
+}
+
+.status-bar {
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  opacity: 0.8;
+}
+
+.chat-history {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem 0;
+}
+
+.chat-message {
+  margin: 0.6rem 0;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.chat-message.user { color: #c2e6ff; }
+.chat-message.agent { color: #ffd0fb; }
+
+.input-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.console-input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  font-size: 1rem;
+}
+
+.btn {
+  padding: 0.6rem 1rem;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 0.3rem;
+}
+
+.log-viewer {
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  background: rgba(255,255,255,0.05);
+  padding: 0.5rem;
+  border-radius: 8px;
+  height: 120px;
+  overflow-y: auto;
+}
+
+.file-browser ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.file-browser li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+.file-browser button {
+  background: transparent;
+  color: red;
+  border: none;
+  cursor: pointer;
+}
+
+.note-area {
+  width: 100%;
+  height: 100px;
+  background: rgba(255,255,255,0.05);
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 6px;
+  resize: vertical;
+}
+
+.llm-card {
+  background: var(--card-bg);
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+.rightbar .llm-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+.llm-card .model-title {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+.llm-card .response-area {
+  font-size: 0.85rem;
+  color: #c1ffdd;
+  margin-top: 0.5rem;
+  white-space: pre-wrap;
+}
+.llm-card input {
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.4rem;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .sidebar, .rightbar { display: none; }
+  .main-console { width: 100vw; padding: 0.8rem; }
+}

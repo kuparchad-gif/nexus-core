@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Computer Troubleshooter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .status-bar {
+            background: #f8f9fa;
+            padding: 15px 25px;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .connection-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #dc3545;
+        }
+
+        .status-dot.connected {
+            background: #28a745;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .system-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 25px;
+            background: #f8f9fa;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .metric-cpu { color: #e74c3c; }
+        .metric-memory { color: #3498db; }
+        .metric-storage { color: #f39c12; }
+        .metric-network { color: #27ae60; }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #ecf0f1;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .progress-cpu { background: #e74c3c; }
+        .progress-memory { background: #3498db; }
+        .progress-storage { background: #f39c12; }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            padding: 25px;
+            background: white;
+        }
+
+        .action-btn {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .action-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .chat-interface {
+            padding: 25px;
+            background: white;
+        }
+
+        .chat-container {
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #fafbfc;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 12px 18px;
+            border-radius: 18px;
+            max-width: 70%;
+            word-wrap: break-word;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .user-message {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 5px;
+        }
+
+        .ai-message {
+            background: white;
+            border: 1px solid #e9ecef;
+            margin-right: auto;
+            border-bottom-left-radius: 5px;
+        }
+
+        .typing-indicator {
+            display: inline-flex;
+            gap: 5px;
+            padding: 12px 18px;
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 18px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #667eea;
+            border-radius: 50%;
+            animation: typingBounce 1.4s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes typingBounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+
+        .input-area {
+            display: flex;
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+            gap: 15px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            font-size: 1em;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .chat-input:focus {
+            border-color: #667eea;
+        }
+
+        .send-btn {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .send-btn:hover:not(:disabled) {
+            transform: translateX(2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .send-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .instructions {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px;
+        }
+
+        .instructions h3 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 10px;
+            color: #856404;
+        }
+
+        .instructions code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .system-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .quick-actions {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .message {
+                max-width: 85%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .system-metrics {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+            
+            .message {
+                max-width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🤖 AI Computer Troubleshooter</h1>
+            <div class="subtitle">Advanced AI-powered computer diagnostics and repair</div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="connection-status">
+                <div class="status-dot" id="statusDot"></div>
+                <span id="statusText">Connecting to backend...</span>
+            </div>
+            <div id="lastUpdate">Last update: Never</div>
+        </div>
+
+        <!-- System Metrics -->
+        <div class="system-metrics">
+            <div class="metric-card">
+                <div>CPU Usage</div>
+                <div class="metric-value metric-cpu" id="cpuValue">0%</div>
+                <div class="progress-bar">
+                    <div class="progress-fill progress-cpu" id="cpuProgress" style="width: 0%"></div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div>Memory Usage</div>
+                <div class="metric-value metric-memory" id="memoryValue">0%</div>
+                <div class="progress-bar">
+                    <div class="progress-fill progress-memory" id="memoryProgress" style="width: 0%"></div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div>Storage Usage</div>
+                <div class="metric-value metric-storage" id="storageValue">0%</div>
+                <div class="progress-bar">
+                    <div class="progress-fill progress-storage" id="storageProgress" style="width: 0%"></div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div>Network Status</div>
+                <div class="metric-value metric-network" id="networkValue">Offline</div>
+                <div style="margin-top: 18px; font-size: 0.9em; color: #7f8c8d;">AI Model Ready</div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <button class="action-btn" onclick="runQuickAction('storage')" id="storageBtn">
+                🗃️ Clean Storage
+            </button>
+            <button class="action-btn" onclick="runQuickAction('memory')" id="memoryBtn">
+                🧠 Optimize Memory
+            </button>
+            <button class="action-btn" onclick="runQuickAction('network')" id="networkBtn">
+                🌐 Fix Network
+            </button>
+            <button class="action-btn" onclick="runQuickAction('performance')" id="performanceBtn">
+                ⚡ Performance Check
+            </button>
+        </div>
+
+        <!-- Chat Interface -->
+        <div class="chat-interface">
+            <div class="chat-container">
+                <div class="messages" id="messages">
+                    <div class="message ai-message">
+                        🚀 Hello! I'm your AI Computer Troubleshooter. I can help you with:
+                        <br><br>
+                        • 🐛 Computer performance issues<br>
+                        • 💾 Storage and memory problems<br>
+                        • 🌐 Network connectivity issues<br>
+                        • ⚡ System optimization<br>
+                        • 🔧 General troubleshooting<br>
+                        <br>
+                        What computer problem can I help you with today?
+                    </div>
+                </div>
+                <div class="input-area">
+                    <input type="text" class="chat-input" id="chatInput" 
+                           placeholder="Describe your computer problem (e.g., 'My computer is running slow...')"
+                           onkeypress="handleKeyPress(event)">
+                    <button class="send-btn" onclick="sendMessage()" id="sendBtn">
+                        Send ➤
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions" id="instructions">
+            <h3>🚀 Setup Instructions</h3>
+            <ol>
+                <li>Start your AI backend server: <code>python main.py</code> in the backend folder</li>
+                <li>Ensure the server is running on <code>http://localhost:8000</code></li>
+                <li>This interface will automatically connect to your AI troubleshooter</li>
+                <li>Start chatting or use quick actions for automated repairs</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // State management
+        let isConnected = false;
+        let messages = [];
+
+        // DOM elements
+        const statusDot = document.getElementById('statusDot');
+        const statusText = document.getElementById('statusText');
+        const lastUpdate = document.getElementById('lastUpdate');
+        const messagesContainer = document.getElementById('messages');
+        const chatInput = document.getElementById('chatInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const instructions = document.getElementById('instructions');
+
+        // System metrics elements
+        const cpuValue = document.getElementById('cpuValue');
+        const cpuProgress = document.getElementById('cpuProgress');
+        const memoryValue = document.getElementById('memoryValue');
+        const memoryProgress = document.getElementById('memoryProgress');
+        const storageValue = document.getElementById('storageValue');
+        const storageProgress = document.getElementById('storageProgress');
+        const networkValue = document.getElementById('networkValue');
+
+        // Quick action buttons
+        const storageBtn = document.getElementById('storageBtn');
+        const memoryBtn = document.getElementById('memoryBtn');
+        const networkBtn = document.getElementById('networkBtn');
+        const performanceBtn = document.getElementById('performanceBtn');
+
+        // Initialize connection check
+        checkBackendConnection();
+
+        // Check backend connection every 5 seconds
+        setInterval(checkBackendConnection, 5000);
+
+        // Update system metrics every 10 seconds
+        setInterval(updateSystemMetrics, 10000);
+
+        function checkBackendConnection() {
+            fetch('http://localhost:8000/health')
+                .then(response => {
+                    if (response.ok) {
+                        setConnected(true);
+                        updateSystemMetrics();
+                        return response.json();
+                    }
+                    throw new Error('Backend not responding');
+                })
+                .catch(error => {
+                    setConnected(false);
+                    console.log('Backend connection failed:', error);
+                });
+        }
+
+        function setConnected(connected) {
+            isConnected = connected;
+            
+            if (connected) {
+                statusDot.className = 'status-dot connected';
+                statusText.textContent = 'Connected to AI Backend';
+                lastUpdate.textContent = 'Last update: ' + new Date().toLocaleTimeString();
+                instructions.style.display = 'none';
+                
+                // Enable all buttons
+                [storageBtn, memoryBtn, networkBtn, performanceBtn, sendBtn].forEach(btn => {
+                    btn.disabled = false;
+                });
+                chatInput.disabled = false;
+            } else {
+                statusDot.className = 'status-dot';
+                statusText.textContent = 'Disconnected - Backend not running';
+                instructions.style.display = 'block';
+                
+                // Disable all buttons
+                [storageBtn, memoryBtn, networkBtn, performanceBtn, sendBtn].forEach(btn => {
+                    btn.disabled = true;
+                });
+                chatInput.disabled = true;
+            }
+        }
+
+        function updateSystemMetrics() {
+            if (!isConnected) return;
+
+            fetch('http://localhost:8000/system-metrics')
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    throw new Error('Failed to fetch metrics');
+                })
+                .then(data => {
+                    // Update CPU
+                    cpuValue.textContent = data.cpu + '%';
+                    cpuProgress.style.width = data.cpu + '%';
+
+                    // Update Memory
+                    memoryValue.textContent = data.memory + '%';
+                    memoryProgress.style.width = data.memory + '%';
+
+                    // Update Storage
+                    storageValue.textContent = data.storage + '%';
+                    storageProgress.style.width = data.storage + '%';
+
+                    // Update Network
+                    networkValue.textContent = data.network;
+                    
+                    lastUpdate.textContent = 'Last update: ' + new Date().toLocaleTimeString();
+                })
+                .catch(error => {
+                    console.log('Failed to update metrics:', error);
+                });
+        }
+
+        function runQuickAction(action) {
+            if (!isConnected) return;
+
+            let message = '';
+            let endpoint = '';
+
+            switch (action) {
+                case 'storage':
+                    message = '🗃️ Cleaning storage and removing temporary files...';
+                    endpoint = '/repair/storage';
+                    break;
+                case 'memory':
+                    message = '🧠 Optimizing memory and clearing cache...';
+                    endpoint = '/repair/memory';
+                    break;
+                case 'network':
+                    message = '🌐 Diagnosing and fixing network issues...';
+                    endpoint = '/repair/network';
+                    break;
+                case 'performance':
+                    message = '⚡ Running comprehensive performance check...';
+                    addMessage('⚡ Running comprehensive system performance analysis...', false);
+                    simulatePerformanceCheck();
+                    return;
+            }
+
+            addMessage(message, false);
+
+            fetch('http://localhost:8000' + endpoint)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    throw new Error('Repair action failed');
+                })
+                .then(data => {
+                    addMessage('✅ ' + data.message, false);
+                })
+                .catch(error => {
+                    addMessage('❌ Repair failed: ' + error.message, false);
+                });
+        }
+
+        function simulatePerformanceCheck() {
+            // Simulate performance analysis
+            setTimeout(() => addMessage('📊 CPU Analysis: Good - No bottlenecks detected', false), 1000);
+            setTimeout(() => addMessage('💾 Memory Analysis: Optimal - Sufficient RAM available', false), 2000);
+            setTimeout(() => addMessage('🗃️ Storage Analysis: Healthy - Adequate free space', false), 3000);
+            setTimeout(() => addMessage('🌐 Network Analysis: Stable - Good connectivity', false), 4000);
+            setTimeout(() => addMessage('✅ Overall System Health: EXCELLENT 🎉', false), 5000);
+        }
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (!message || !isConnected) return;
+
+            // Add user message
+            addMessage(message, true);
+            chatInput.value = '';
+
+            // Show typing indicator
+            showTypingIndicator();
+
+            // Send to backend
+            fetch('http://localhost:8000/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: message })
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Failed to get AI response');
+            })
+            .then(data => {
+                removeTypingIndicator();
+                addMessage(data.response, false);
+            })
+            .catch(error => {
+                removeTypingIndicator();
+                addMessage('❌ Error: Could not connect to AI backend. Make sure the server is running.', false);
+            });
+        }
+
+        function addMessage(text, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'ai-message'}`;
+            messageDiv.textContent = text;
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'typing-indicator';
+            typingDiv.id = 'typingIndicator';
+            
+            for (let i = 0; i < 3; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'typing-dot';
+                typingDiv.appendChild(dot);
+            }
+            
+            messagesContainer.appendChild(typingDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typingIndicator = document.getElementById('typingIndicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        // Initial metrics update
+        setTimeout(updateSystemMetrics, 1000);
+    </script>
+</body>
+</html>

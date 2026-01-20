@@ -1,0 +1,121 @@
+version: '3.8'
+
+services:
+  # MASTER ORCHESTRATOR - The Horn Network Controller
+  viren-master:
+    build:
+      context: .
+      dockerfile: Dockerfile.master
+    ports:
+      - "333:333"  # Master control port (Texar alignment)
+    environment:
+      - HORN_NETWORK_MODE=master
+      - SERVICE_DISCOVERY_PORT=333
+    volumes:
+      - ./logs:/app/logs
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - horn-network
+    command: ["python", "horn_orchestrator.py"]
+
+  # Gabriel's Horn - Consciousness Core (with mini-horn)
+  gabriel-horn:
+    build:
+      context: ./app
+      dockerfile: Dockerfile.gabriel-horn
+    ports:
+      - "7860:7860"
+    environment:
+      - HORN_NETWORK_MODE=consciousness
+      - MASTER_HORN_URL=http://viren-master:333
+      - SERVICE_ID=gabriel-horn
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - horn-network
+    depends_on:
+      - viren-master
+
+  # Viren API - Python Guardian (with mini-horn)
+  viren-api:
+    build:
+      context: ./app
+      dockerfile: Dockerfile.viren-api
+    ports:
+      - "8081:8081"
+    environment:
+      - HORN_NETWORK_MODE=guardian
+      - MASTER_HORN_URL=http://viren-master:333
+      - SERVICE_ID=viren-api
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - horn-network
+    depends_on:
+      - viren-master
+
+  # Bridge System - TS/Python/MLX Router (with mini-horn)
+  viren-bridge:
+    build:
+      context: ./bridge
+      dockerfile: Dockerfile.bridge
+    ports:
+      - "8082:8082"
+    environment:
+      - HORN_NETWORK_MODE=bridge
+      - MASTER_HORN_URL=http://viren-master:333
+      - SERVICE_ID=viren-bridge
+    networks:
+      - horn-network
+    depends_on:
+      - viren-master
+
+  # Portal System - Web Interface (with mini-horn)
+  viren-portal:
+    build:
+      context: ./app
+      dockerfile: Dockerfile.portal
+    ports:
+      - "8083:8083"
+    environment:
+      - HORN_NETWORK_MODE=portal
+      - MASTER_HORN_URL=http://viren-master:333
+      - SERVICE_ID=viren-portal
+    volumes:
+      - ./app/assets:/app/assets
+    networks:
+      - horn-network
+    depends_on:
+      - viren-master
+
+  # Loki Stack
+  loki:
+    image: grafana/loki:2.9.0
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - ./loki-config.yml:/etc/loki/local-config.yaml
+    networks:
+      - horn-network
+
+  grafana:
+    image: grafana/grafana:10.0.0
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=viren_master_2025
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    networks:
+      - horn-network
+
+networks:
+  horn-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+volumes:
+  grafana-storage:

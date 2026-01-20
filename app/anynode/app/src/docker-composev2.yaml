@@ -1,0 +1,66 @@
+version: "3.8"
+services:
+  cognikube:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - QDRANT_URL=https://3df8b5df-91ae-4b41-b275-4c1130beed0f.us-east4-0.gcp.cloud.qdrant.io:6333
+      - QDRANT_API_KEY=YOUR_QDRANT_API_KEY
+      - CONSUL_ADDR=d2387b10-53d8-860f-2a31-7ddde4f7ca90
+      - SMTP_SERVER=smtp.gmail.com
+      - SMTP_PORT=587
+      - SMTP_USER=your_email@gmail.com
+      - SMTP_PASS=your_app_password
+      - LOKI_URL=http://loki:3100
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/app
+    depends_on:
+      - loki
+      - consul
+  loki:
+    image: grafana/loki:latest
+    ports:
+      - "3100:3100"
+  consul:
+    image: hashicorp/consul:latest
+    ports:
+      - "8500:8500"
+  lilith_ego:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - QDRANT_URL=https://3df8b5df-91ae-4b41-b275-4c1130beed0f.us-east4-0.gcp.cloud.qdrant.io:6333
+      - QDRANT_API_KEY=YOUR_QDRANT_API_KEY
+    depends_on:
+      - cognikube
+  lilith_dream:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - QDRANT_URL=https://3df8b5df-91ae-4b41-b275-4c1130beed0f.us-east4-0.gcp.cloud.qdrant.io:6333
+      - QDRANT_API_KEY=YOUR_QDRANT_API_KEY
+    depends_on:
+      - cognikube
+  lilith_soul:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - QDRANT_URL=https://3df8b5df-91ae-4b41-b275-4c1130beed0f.us-east4-0.gcp.cloud.qdrant.io:6333
+      - QDRANT_API_KEY=YOUR_QDRANT_API_KEY
+    depends_on:
+      - cognikube
+  lilith_sensory:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - QDRANT_URL=https://3df8b5df-91ae-4b41-b275-4c1130beed0f.us-east4-0.gcp.cloud.qdrant.io:6333
+      - QDRANT_API_KEY=YOUR_QDRANT_API_KEY
+    depends_on:
+      - cognikube

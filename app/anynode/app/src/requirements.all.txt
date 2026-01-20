@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pydantic
+requests
+websockets
+qdrant-client
+numpy
+python-multipart

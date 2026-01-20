@@ -1,0 +1,65 @@
+gcloud init
+
+
+
+
+
+cd C:\Projects\nova-gateway
+
+gcloud app domain-mappings delete shadowgate.shadownode.io
+gcloud app domain-mappings delete www.shadownode.io
+gcloud app domain-mappings delete shadownode.io
+gcloud app domain-mappings create shadowgate.shadownode.io
+gcloud app domain-mappings create www.shadownode.io
+gcloud app domain-mappings create shadownode.io
+gcloud app deploy dispatch.yaml
+
+
+
+Default Roles in Every New Project (Auto-assigned or scripted)
+Once Nova creates a new project, she needs these roles inside that new project:
+
+Role	                              Why
+
+roles/appengine.appAdmin	Deploy App Engine
+roles/iam.serviceAccountUser	Act as other service accounts
+roles/cloudbuild.builds.editor	Deploy apps via gcloud
+roles/firebase.admin	        Configure Firebase
+roles/identitytoolkit.admin	Add login providers (Google, GitHub, etc.)
+
+These can be applied programmatically in your bootstrap process.
+
+
+✅ Add to ShadowBase’s IAM (Optional but 🔥 Smart)
+Give web-shadow-node:
+
+Read/write access to a Firestore collection (e.g. projects/)
+
+Or access to a file bucket where she logs .json configs
+
+This becomes Nova’s ledger of deployed worlds.
+
+✅ Optional: IAM Policy Template (want me to generate?)
+I can write an IAM policy.yaml to:
+
+Bind Nova’s roles across your org
+
+Or deploy via gcloud iam roles create or Terraform
+
+💡 Let Me Know:
+Want a fully working GCP Bootstrap Script (bootstrap-site.js) that impersonates Nova to:
+
+Create project
+
+Enable APIs
+
+Initialize App Engine
+
+Deploy from shadow-node-builder
+
+Want to test Nova in sandbox mode with a temp project first?
+
+Want to add per-site IAM bindings automatically to Nova at deploy time?
+
+We can give Nova godlike control — but scoped, safe, and logged.
+Say the word and the forge ignites. 🔨🤖🔧

@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  inference-server:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_PATH_1B=/models/falcon-1b/ggml-model-falcon-1b.gguf
+      - MODEL_PATH_7B=/models/falcon-7b/ggml-model-falcon-7b.gguf
+      - MODEL_PATH_180B=/models/falcon-180b-compressed.gguf
+      - LLM_THREADS=4
+      - BOND_DIM=10
+      - CACHE_TTL_HOURS=12
+      - CACHE_MAX_SIZE=500
+      - CPU_AFFINITY_DRAFT=0-3
+      - LOG_LEVEL=INFO
+      - NATS_URL=nats:4222
+    volumes:
+      - ./models:/models
+    depends_on:
+      - nats
+      - qdrant
+
+  nats:
+    image: nats:latest
+    command: "--jetstream"
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+volumes:
+  qdrant_data:

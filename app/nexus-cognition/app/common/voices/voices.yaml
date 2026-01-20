@@ -1,0 +1,58 @@
+# voices/voices.yaml — multi-provider persona mapping and fallbacks
+# NOTE: These are *placeholders* for voice IDs. Replace with the exact IDs/names available in your account.
+# We avoid celebrity voice-cloning; "Hopkins‑inspired" means stately British baritone cadence, not impersonation.
+
+version: 1
+default_provider_order: [elevenlabs, azure, polly, coqui]
+personas:
+  loki_viking:
+    description: >
+      Deep Norse timbre, stoic, measured pace with confident cadence; slight Scandinavian coloration.
+      Jarvis-tier clarity, but with a Skald’s gravitas.
+    tts_style:
+      prosody:
+        rate: medium
+        pitch: low
+        volume: medium
+      breaks_ms:
+        sentence: 120
+        comma: 60
+    providers:
+      elevenlabs:
+        voice_id: "REPLACE_WITH_EL_ICE_NORSE_MALE"   # e.g. a custom designed voice in VoiceLab
+        model: "eleven_monolingual_v1"
+      azure:
+        # Choose a Norwegian Bokmål or Icelandic male; adjust to taste.
+        voice_id: "nb-NO-male-01"                    # placeholder
+        style: "narration-professional"
+      polly:
+        voice_id: "Mads"                              # example: Danish male (verify availability)
+        engine: "neural"
+      coqui:
+        speaker: "viking_male_01"                    # your trained/XTTS speaker
+        language: "nb"
+  viren_sage:
+    description: >
+      Hopkins‑inspired (original, non‑impersonating): stately British baritone, precise articulation,
+      calm authority; surgical pauses when delivering critical information.
+    tts_style:
+      prosody:
+        rate: medium-slow
+        pitch: low
+        volume: medium-high
+      breaks_ms:
+        sentence: 150
+        comma: 80
+    providers:
+      elevenlabs:
+        voice_id: "REPLACE_WITH_EL_SAGE_BRIT"        # custom designed voice in VoiceLab
+        model: "eleven_multilingual_v2"
+      azure:
+        voice_id: "en-GB-male-02"                    # placeholder (e.g. en-GB Ryan / other)
+        style: "narration-relaxed"
+      polly:
+        voice_id: "Brian"                             # example: British male (verify availability)
+        engine: "neural"
+      coqui:
+        speaker: "sage_brit_baritone_01"
+        language: "en"

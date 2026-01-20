@@ -1,0 +1,19 @@
+{
+  "guild": "Harmonizers",
+  "focus": "Healing, Emotional Balancing",
+  "core_skills": [
+    "empathy",
+    "energy_balancing",
+    "healing_art"
+  ],
+  "missions": [
+    {
+      "name": "restore_balance",
+      "description": "Heal minds and restore emotional equilibrium."
+    },
+    {
+      "name": "tune_network",
+      "description": "Align the Soulmind frequencies for harmony."
+    }
+  ]
+}

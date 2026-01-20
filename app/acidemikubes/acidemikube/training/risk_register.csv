@@ -1,0 +1,4 @@
+id,area,risk,likelihood,impact,owner,mitigation
+1,control,Silent control bypass,Low,High,Controller Steward,HMAC+reason enforced; audit fail-closed
+2,ledger,File tamper or desync,Medium,High,Core Maintainer,hash-chain verify; snapshot to WORM
+3,revocation,Consent theater,Low,High,Memory Lead,SLAs+negative verification tests

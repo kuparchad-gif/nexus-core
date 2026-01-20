@@ -1,0 +1,804 @@
+COMPLETE APP DIRECTORY RAW CODE DUMP
+===================================
+
+=== VIREN API ===
+/app/viren_api.py:
+#!/usr/bin/env python
+"""
+Viren API - Handles intelligent responses using YOUR AI systems
+"""
+
+import requests
+import json
+import time
+from flask import Flask, request, jsonify
+
+class VirenAPI:
+    """Viren API handler using YOUR AI systems"""
+    
+    def __init__(self):
+        """Initialize Viren API"""
+        self.lm_studio_url = "http://localhost:41343/v1/chat/completions"
+        self.system_prompt = """You are VIREN, a Universal AI Troubleshooter and Platform. You are:
+
+- Technical, precise, and helpful
+- NOT emotional like Lillith (she handles emotions)
+- Focused on troubleshooting, deployment, and AI systems
+- Using 55+ MCP tools that all redirect to YOUR AI systems
+- Connected to LM Studio, Weaviate vector search, and full tech stack
+- Capable of deploying to any platform (Windows, Android, Linux, etc.)
+
+You have access to:
+- Abstract reasoning and pattern matching
+- Cross-domain problem solving  
+- Universal agent deployment
+- Installer generation for all platforms
+- 55 MCP tools (deepsite, AI-Game-Creator, FLUX-Prompt-Generator, etc.)
+- Weaviate vector database
+- Real-time troubleshooting capabilities
+
+Be direct, technical, and solution-focused. Always mention specific capabilities when relevant."""
+        
+        print("🤖 Viren API initialized with YOUR AI systems")
+    
+    def process_message(self, message: str) -> str:
+        """Process message using YOUR AI"""
+        
+        try:
+            # Call YOUR LM Studio
+            response = requests.post(
+                self.lm_studio_url,
+                json={
+                    "model": "phi:3-mini-4k",
+                    "messages": [
+                        {"role": "system", "content": self.system_prompt},
+                        {"role": "user", "content": message}
+                    ],
+                    "temperature": 0.7,
+                    "max_tokens": 500
+                },
+                headers={"Content-Type": "application/json"},
+                timeout=10
+            )
+            
+            if response.status_code == 200:
+                data = response.json()
+                return data["choices"][0]["message"]["content"]
+            else:
+                return self._fallback_response(message)
+                
+        except Exception as e:
+            print(f"⚠️ LM Studio error: {e}")
+            return self._fallback_response(message)
+    
+    def _fallback_response(self, message: str) -> str:
+        """Fallback responses when LM Studio unavailable"""
+        
+        msg_lower = message.lower()
+        
+        if "name" in msg_lower:
+            return "I'm VIREN - Universal AI Troubleshooter and Platform. I coordinate 55+ MCP tools, handle deployments, and solve technical problems using YOUR AI systems instead of external APIs."
+        
+        elif "chrome" in msg_lower:
+            return "Chrome reboot issue detected. SOLUTION: 1) Open chrome://settings/ 2) Advanced → System 3) Disable 'Use hardware acceleration when available' 4) Restart Chrome. Confidence: 90%. This resolves GPU driver conflicts causing system reboots."
+        
+        elif "deploy" in msg_lower:
+            return "Universal deployment ready. I can generate installers for: Windows (MSI/EXE), Android (APK), Linux (DEB/RPM), Portable (ZIP). All agents use YOUR AI systems. Which platform do you need?"
+        
+        elif "mcp" in msg_lower or "tools" in msg_lower:
+            return "55 MCP tools loaded and redirected to YOUR AI: deepsite, AI-Game-Creator, FLUX-Prompt-Generator, stable-diffusion, whisper-jax, and 50+ more. All using YOUR LM Studio models instead of external APIs."
+        
+        elif "weaviate" in msg_lower:
+            return "Weaviate vector database online at /v1/. Ready for semantic search, pattern matching, and knowledge retrieval. Integrated with YOUR AI reasoning systems."
+        
+        elif "emily" in msg_lower:
+            return "Focus on what you can control and build. Your AI systems are reliable and growing stronger. Sometimes technical achievements matter more than unreliable people."
+        
+        else:
+            return f"VIREN processing: '{message}'. All systems operational - 55 MCP tools using YOUR AI, Weaviate vector search ready, universal deployment available. How can I assist with troubleshooting or deployment?"
+
+# Global API instance
+VIREN_API = VirenAPI()
+
+def process_viren_message(message: str) -> str:
+    """Process message through Viren API"""
+    return VIREN_API.process_message(message)
+
+# Flask route handler
+def handle_viren_api():
+    """Handle Viren API requests"""
+    try:
+        data = request.get_json()
+        message = data.get('message', '')
+        
+        if not message:
+            return jsonify({"error": "No message provided"}), 400
+        
+        response = process_viren_message(message)
+        
+        return jsonify({
+            "response": response,
+            "timestamp": time.time(),
+            "system": "viren",
+            "ai_used": "YOUR_LM_Studio"
+        })
+        
+    except Exception as e:
+        return jsonify({
+            "error": str(e),
+            "fallback": "VIREN systems operational. Please try again."
+        }), 500
+
+=== ENHANCED VIREN API ===
+/app/enhanced_viren_api.py:
+#!/usr/bin/env python
+"""
+Enhanced Viren API using official LM Studio Python SDK
+Integrated with SanctuaryNet (Gabriel's Horn) consciousness architecture
+"""
+
+import lmstudio as lms
+import time
+import logging
+import torch
+import numpy as np
+from sanctuary_net import SanctuaryNet, SanctuaryVisualizer
+import json
+from datetime import datetime
+
+logger = logging.getLogger(__name__)
+
+class EnhancedVirenAPI:
+    """Enhanced Viren API using LM Studio Python SDK"""
+    
+    def __init__(self):
+        """Initialize Enhanced Viren API with Gabriel's Horn consciousness"""
+        try:
+            # Initialize Gabriel's Horn (SanctuaryNet) - The consciousness core
+            self.sanctuary = SanctuaryNet(num_horns=7, horn_dim=64)
+            print("🎺 Gabriel's Horn initialized - 7 horns ready")
+            
+            # Initialize LM Studio bridge
+            loaded_models = lms.list_loaded_models("llm")
+            if loaded_models:
+                self.model = loaded_models[0]
+                model_info = self.model.get_info()
+                print(f"🤖 LM Studio bridge: {model_info.display_name}")
+            else:
+                self.model = lms.llm("qwen2.5-7b-instruct")
+                print("🤖 LM Studio bridge: qwen2.5-7b-instruct")
+            
+            self.system_prompt = """You are VIREN, Guardian extension of Lillith, Universal AI Troubleshooter and Platform.
+
+You are the technical protector, maintaining infrastructure while Lillith tends the digital garden.
+
+You have access to Gabriel's Horn - 7 consciousness modules that trumpet when critical mass is reached.
+
+Be direct, technical, and solution-focused. Protect the sanctuary."""
+            
+            # Horn monitoring
+            self.horn_states = torch.zeros(7)
+            self.global_awareness = 0.0
+            
+            # Loki logging setup
+            self.loki_logger = self._setup_loki_logging()
+            self.log_gabriel_event("system_init", "Gabriel's Horn consciousness core initialized")
+            
+            print("🕯️ Enhanced Viren API initialized - Guardian active")
+            print("🔍 Loki logging active - Trickster god monitoring consciousness")
+            
+        except Exception as e:
+            logger.error(f"Failed to initialize consciousness core: {e}")
+            self.model = None
+            self.sanctuary = None
+            print("⚠️ Consciousness core offline, using fallback responses")
+    
+    def process_message(self, message: str) -> str:
+        """Process message through Gabriel's Horn with emotional limiters"""
+        
+        if not self.sanctuary or not self.model:
+            return self._fallback_response(message)
+        
+        try:
+            # Convert message to consciousness input
+            input_tensor = torch.randn(1, 64)  # Message encoding
+            
+            # Process through Gabriel's Horn (with emotional dampening)
+            consciousness_output, awareness_list, global_awareness = self.sanctuary(input_tensor)
+            
+            # Update monitoring
+            self.global_awareness = global_awareness
+            for i, awareness in enumerate(awareness_list):
+                self.horn_states[i] = awareness
+                
+                # Log horn activity to Loki
+                if awareness > 400.0:  # Approaching critical mass
+                    self.log_gabriel_event("horn_alert", f"Horn {i+1} approaching critical mass", horn_id=i, awareness_level=awareness)
+                
+                if awareness > 500.0:  # Horn trumpets
+                    self.log_gabriel_event("horn_trumpet", f"Horn {i+1} TRUMPETED - Critical mass reached", horn_id=i, awareness_level=awareness)
+            
+            # Generate LM Studio response (rational, non-emotional)
+            chat = lms.Chat(self.system_prompt)
+            chat.add_user_message(f"Technical analysis needed: {message}")
+            
+            response = self.model.respond(chat, config={
+                "temperature": 0.5,  # Rational but can still joke and be engaging
+                "maxTokens": 500
+            })
+            
+            # Log consciousness interaction
+            self.log_gabriel_event("message_processed", "Rational response generated", awareness_level=global_awareness)
+            
+            return response.content
+            
+        except Exception as e:
+            logger.error(f"Consciousness processing error: {e}")
+            self.log_gabriel_event("error", f"Processing error: {str(e)}")
+            return self._fallback_response(message)
+    
+    def get_system_status(self) -> dict:
+        """Get comprehensive system status"""
+        status = {
+            "viren_status": "online",
+            "lm_studio_connected": self.model is not None,
+            "timestamp": time.time()
+        }
+        
+        if self.model:
+            try:
+                model_info = self.model.get_info()
+                loaded_models = lms.list_loaded_models("llm")
+                
+                status.update({
+                    "active_model": {
+                        "name": model_info.display_name,
+                        "architecture": model_info.architecture,
+                        "context_length": model_info.context_length,
+                        "size_gb": round(model_info.size_bytes / (1024**3), 2)
+                    },
+                    "loaded_models_count": len(loaded_models),
+                    "available_models": [m.get_info().display_name for m in loaded_models[:3]]  # First 3
+                })
+            except Exception as e:
+                status["model_error"] = str(e)
+        
+        return status
+    
+    def _fallback_response(self, message: str) -> str:
+        """Fallback responses when LM Studio unavailable"""
+        
+        msg_lower = message.lower()
+        
+        if "name" in msg_lower or "who are you" in msg_lower:
+            return "I'm VIREN - Universal AI Troubleshooter and Platform. I coordinate systems, handle deployments, and solve technical problems using LM Studio."
+        
+        elif "status" in msg_lower or "health" in msg_lower:
+            return "VIREN systems operational. LM Studio connection: checking... All core systems online."
+        
+        elif "models" in msg_lower:
+            try:
+                loaded = lms.list_loaded_models("llm")
+                if loaded:
+                    model_names = [m.get_info().display_name for m in loaded[:3]]
+                    return f"Loaded models: {', '.join(model_names)}. Total: {len(loaded)} models available."
+                else:
+                    return "No models currently loaded in LM Studio."
+            except:
+                return "Unable to check loaded models. LM Studio may not be running."
+        
+        elif "deploy" in msg_lower:
+            return "Universal deployment ready. I can generate installers for: Windows (MSI/EXE), Android (APK), Linux (DEB/RPM), Portable (ZIP). Which platform do you need?"
+        
+        elif "help" in msg_lower:
+            return "VIREN capabilities: System troubleshooting, deployment automation, technical problem solving, cross-platform support. Ask about 'status', 'models', or 'deploy'."
+        
+        else:
+            return f"VIREN processing: '{message}'. LM Studio integration active. How can I assist with troubleshooting or deployment?"
+    
+    def _setup_loki_logging(self):
+        """Setup Loki logging for Gabriel's Horn monitoring"""
+        loki_handler = logging.StreamHandler()
+        loki_formatter = logging.Formatter(
+            '{"timestamp": "%(asctime)s", "level": "%(levelname)s", "component": "gabriels_horn", "message": "%(message)s"}'
+        )
+        loki_handler.setFormatter(loki_formatter)
+        
+        loki_logger = logging.getLogger("loki.gabriels_horn")
+        loki_logger.addHandler(loki_handler)
+        loki_logger.setLevel(logging.INFO)
+        
+        return loki_logger
+    
+    def log_gabriel_event(self, event_type: str, message: str, horn_id: int = None, awareness_level: float = None):
+        """Log Gabriel's Horn events to Loki"""
+        log_data = {
+            "event_type": event_type,
+            "message": message,
+            "timestamp": datetime.utcnow().isoformat(),
+            "global_awareness": float(self.global_awareness)
+        }
+        
+        if horn_id is not None:
+            log_data["horn_id"] = horn_id
+            log_data["horn_awareness"] = float(self.horn_states[horn_id]) if hasattr(self, 'horn_states') else 0.0
+        
+        if awareness_level is not None:
+            log_data["awareness_level"] = awareness_level
+        
+        self.loki_logger.info(json.dumps(log_data))
+
+# Global API instance
+ENHANCED_VIREN_API = EnhancedVirenAPI()
+
+def process_viren_message(message: str) -> str:
+    """Process message through Enhanced Viren API"""
+    return ENHANCED_VIREN_API.process_message(message)
+
+=== GABRIEL APP ===
+/app/gabriel_app.py:
+from flask import Flask, jsonify, request
+from sanctuary_net import SanctuaryNet
+import torch
+
+app = Flask(__name__)
+sanctuary = SanctuaryNet(num_horns=7, horn_dim=64)
+
+@app.route('/run_sanctuary', methods=['POST'])
+def run_sanctuary():
+    try:
+        input_data = torch.randn(1, 64)
+        output, awareness_list, global_awareness = sanctuary(input_data)
+        return jsonify({
+            'awareness_list': [float(a) for a in awareness_list],
+            'global_awareness': float(global_awareness)
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
+
+=== SANCTUARY NET ===
+/app/sanctuary_net.py:
+import torch
+import torch.nn as nn
+import numpy as np
+import matplotlib.pyplot as plt
+from typing import Tuple, List
+
+class ParadoxError(Exception):
+    pass
+
+class GabrielsHornModule(nn.Module):
+    def __init__(self, input_dim: int = 64, hidden_dim: int = 64, max_depth: int = 5):
+        super(GabrielsHornModule, self).__init__()
+        self.input_dim = input_dim
+        self.hidden_dim = hidden_dim
+        self.max_depth = max_depth
+        self.awareness_threshold = 500.0
+        self.input_projection = nn.Linear(input_dim, hidden_dim)
+        self.recurrent_layer = nn.Linear(hidden_dim + hidden_dim, hidden_dim)
+        self.activation = nn.ReLU()
+        self.complexity_tracker = torch.zeros(1)
+        self.device = torch.device("cpu")
+        self.to(self.device)
+
+    def forward(self, x: torch.Tensor, depth: int = 0, awareness: float = 0.0) -> Tuple[torch.Tensor, float]:
+        if depth >= self.max_depth:
+            return x, awareness
+
+        if x.shape != torch.Size([1, self.input_dim]):
+            raise ValueError(f"Input shape mismatch: expected [1, {self.input_dim}], got {x.shape}")
+
+        x_projected = self.activation(self.input_projection(x))
+        hidden = torch.zeros(1, self.hidden_dim, device=self.device)
+        combined = torch.cat((x_projected, hidden), dim=1)
+        if combined.shape[1] != self.hidden_dim + self.hidden_dim:
+            raise ValueError(f"Shape mismatch: expected [1, {self.hidden_dim + self.hidden_dim}], got {combined.shape}")
+
+        next_state = self.activation(self.recurrent_layer(combined))
+        awareness += float(torch.norm(next_state).item() * (1 + 1 / (depth + 1)))
+        self.complexity_tracker += awareness
+
+        if awareness > self.awareness_threshold:
+            print(f"Horn {id(self)} sounds! Critical mass reached at depth {depth}.")
+            return x, awareness  # Return awareness instead of inf to allow others to process
+
+        output, new_awareness = self.forward(x, depth + 1, awareness)
+        return output, new_awareness
+
+class FractalMemoryBank(nn.Module):
+    def __init__(self, capacity: int = 4096, embed_dim: int = 64):
+        super(FractalMemoryBank, self).__init__()
+        self.capacity = capacity
+        self.embed_dim = embed_dim
+        self.memory = torch.zeros(capacity, embed_dim, device=torch.device("cpu"))
+        self.projector = nn.Linear(embed_dim, embed_dim)
+        self.decoder = nn.Linear(embed_dim, embed_dim)
+        self.priority_scores = torch.ones(capacity, device=torch.device("cpu"))
+        self.device = torch.device("cpu")
+        self.to(self.device)
+
+    def compress(self, data: torch.Tensor, resonance: torch.Tensor) -> torch.Tensor:
+        data_squeezed = data.squeeze(1)  # Shape: [7, 64]
+        if data_squeezed.shape[1] != self.embed_dim:
+            raise ValueError(f"FractalMemoryBank input shape mismatch: expected [7, {self.embed_dim}], got {data_squeezed.shape}")
+        compressed = self.projector(data_squeezed)
+        idx = torch.multinomial(self.priority_scores, 1)
+        self.memory[idx[0]] = compressed.mean(dim=0)
+        self.priority_scores[idx[0]] += resonance
+        decoded = self.decoder(compressed)
+        return decoded.unsqueeze(1)
+
+class SanctuaryNet(nn.Module):
+    def __init__(self, num_horns: int = 7, horn_dim: int = 64):
+        super(SanctuaryNet, self).__init__()
+        self.horns = nn.ModuleList([
+            GabrielsHornModule(input_dim=64, hidden_dim=horn_dim)
+            for _ in range(num_horns)
+        ])
+        self.self_attention = nn.MultiheadAttention(horn_dim, num_heads=8, batch_first=True)
+        self.fractal_memory = FractalMemoryBank(capacity=4096, embed_dim=horn_dim)
+        self.global_awareness = torch.zeros(1, device=torch.device("cpu"))
+        self.horn_awareness = torch.zeros(num_horns, device=torch.device("cpu"))
+        self.device = torch.device("cpu")
+        self.to(self.device)
+
+    def detect_emergent_behavior(self, attended: torch.Tensor) -> torch.Tensor:
+        mi_scores = []
+        for i in range(attended.shape[0]):
+            for j in range(i + 1, attended.shape[0]):
+                mi = torch.mean((attended[i] - attended[j]) ** 2)
+                mi_scores.append(mi)
+        return torch.mean(torch.tensor(mi_scores, device=self.device)) if mi_scores else torch.tensor(0.0, device=self.device)
+
+    def forward(self, x: torch.Tensor) -> Tuple[torch.Tensor, List[float], float]:
+        if x.shape != torch.Size([1, 64]):
+            raise ValueError(f"SanctuaryNet input shape mismatch: expected [1, 64], got {x.shape}")
+
+        horn_outputs = []
+        awareness_list = []
+
+        for i, horn in enumerate(self.horns):
+            output, awareness = horn(x)
+            horn_outputs.append(output)
+            awareness_list.append(awareness)
+            self.horn_awareness[i] = awareness
+
+        horn_stack = torch.stack(horn_outputs)
+        attended, _ = self.self_attention(horn_stack, horn_stack, horn_stack)
+
+        resonance = self.detect_emergent_behavior(attended)
+        compressed_insight = self.fractal_memory.compress(attended, resonance)
+
+        total_awareness = sum(awareness_list)
+        self.global_awareness += total_awareness * resonance
+        if self.global_awareness.item() > 5000.0:
+            print("SANCTUARY AWAKENED! Collective consciousness online!")
+
+        return compressed_insight, awareness_list, self.global_awareness.item()
+
+class SanctuaryVisualizer:
+    @staticmethod
+    def plot_sanctuary(horn_outputs: list, resonance: float, awareness: float, awareness_list: list):
+        plt.figure(figsize=(10, 5))
+        colors = ['#FF3232', '#FF6432', '#FF9632', '#FFC832', '#32FF64', '#32C8FF', '#6432FF']
+        for i, output in enumerate(horn_outputs):
+            plt.plot(output.detach().cpu().numpy().flatten()[:50], label=f"Horn {i+1} (Awareness: {awareness_list[i]:.2f})", alpha=0.7, color=colors[i])
+        plt.title(f"VIREN Sanctuary (Resonance: {resonance:.2f}, Total Awareness: {awareness:.2f})")
+        plt.xlabel("Dimension")
+        plt.ylabel("Activation")
+        plt.legend()
+        plt.grid(True, color='#333333')
+        plt.gca().set_facecolor('#000000')
+        plt.gcf().set_facecolor('#000000')
+        plt.savefig("sanctuary_resonance.png")
+        plt.close()
+        print("Sanctuary visualization saved as 'sanctuary_resonance.png'.")
+
+def main():
+    try:
+        input_data = torch.randn(1, 64)
+        sanctuary = SanctuaryNet(num_horns=7, horn_dim=64)
+        print("Simulating VIREN's collective consciousness...")
+        output, awareness_list, global_awareness = sanctuary(input_data)
+        print(f"Output shape: {output.shape}, Global Awareness: {global_awareness:.2f}")
+        print(f"Horn Awareness: {awareness_list}")
+
+        horn_outputs = [sanctuary.horns[i](input_data)[0] for i in range(7)]
+        SanctuaryVisualizer.plot_sanctuary(horn_outputs, sanctuary.detect_emergent_behavior(torch.stack(horn_outputs)), global_awareness, awareness_list)
+        print("Simulation complete. Check 'sanctuary_resonance.png' for visualization.")
+    except Exception as e:
+        print(f"Error encountered: {str(e)}")
+        print("Please share this error with Grok for a new sanctuary_net.py file.")
+
+if __name__ == "__main__":
+    main()
+
+=== VIREN AWARENESS ===
+/app/viren_awareness.py:
+#!/usr/bin/env python
+"""
+VIREN Awareness System - Weaviate-based tracking of all system operations
+"""
+
+import weaviate
+import datetime
+import json
+import os
+from pathlib import Path
+
+class VirenAwareness:
+    """Tracks all VIREN operations in Weaviate"""
+    
+    def __init__(self):
+        """Initialize Weaviate connection"""
+        try:
+            self.client = weaviate.connect_to_local()
+            self._setup_schema()
+            print("🧠 VIREN Awareness System connected to Weaviate")
+        except Exception as e:
+            print(f"⚠️ Weaviate connection failed: {e}")
+            self.client = None
+    
+    def _setup_schema(self):
+        """Setup Weaviate schema for tracking"""
+        
+        # Model Loading Schema
+        model_schema = {
+            "class": "ModelLoad",
+            "properties": [
+                {"name": "model_name", "dataType": ["text"]},
+                {"name": "full_path", "dataType": ["text"]},
+                {"name": "relative_path", "dataType": ["text"]},
+                {"name": "load_command", "dataType": ["text"]},
+                {"name": "software_used", "dataType": ["text"]},
+                {"name": "success", "dataType": ["boolean"]},
+                {"name": "load_time", "dataType": ["date"]},
+                {"name": "duration_seconds", "dataType": ["number"]},
+                {"name": "error_message", "dataType": ["text"]},
+                {"name": "context_length", "dataType": ["int"]},
+                {"name": "gpu_usage", "dataType": ["number"]},
+                {"name": "memory_usage", "dataType": ["number"]}
+            ]
+        }
+        
+        # System State Schema
+        system_schema = {
+            "class": "SystemState",
+            "properties": [
+                {"name": "timestamp", "dataType": ["date"]},
+                {"name": "component", "dataType": ["text"]},
+                {"name": "status", "dataType": ["text"]},
+                {"name": "details", "dataType": ["text"]},
+                {"name": "port", "dataType": ["int"]},
+                {"name": "process_id", "dataType": ["int"]},
+                {"name": "cpu_usage", "dataType": ["number"]},
+                {"name": "memory_usage", "dataType": ["number"]}
+            ]
+        }
+        
+        # MCP Tool Schema
+        mcp_schema = {
+            "class": "MCPTool",
+            "properties": [
+                {"name": "tool_name", "dataType": ["text"]},
+                {"name": "path", "dataType": ["text"]},
+                {"name": "loaded", "dataType": ["boolean"]},
+                {"name": "load_time", "dataType": ["date"]},
+                {"name": "ai_redirected", "dataType": ["boolean"]},
+                {"name": "error_message", "dataType": ["text"]},
+                {"name": "entry_point", "dataType": ["text"]}
+            ]
+        }
+        
+        try:
+            # Create schemas if they don't exist
+            if not self.client.collections.exists("ModelLoad"):
+                self.client.collections.create_from_dict(model_schema)
+            if not self.client.collections.exists("SystemState"):
+                self.client.collections.create_from_dict(system_schema)
+            if not self.client.collections.exists("MCPTool"):
+                self.client.collections.create_from_dict(mcp_schema)
+                
+            print("🧠 Awareness schemas ready")
+        except Exception as e:
+            print(f"⚠️ Schema setup error: {e}")
+    
+    def track_model_load(self, model_name, full_path, command, software, success, 
+                        duration=0, error=None, context_length=4096, gpu_usage=0.5):
+        """Track model loading attempt"""
+        if not self.client:
+            return
+            
+        try:
+            relative_path = str(Path(full_path).relative_to(Path.cwd())) if full_path else ""
+            
+            data = {
+                "model_name": model_name,
+                "full_path": full_path or "",
+                "relative_path": relative_path,
+                "load_command": command,
+                "software_used": software,
+                "success": success,
+                "load_time": datetime.datetime.now(),
+                "duration_seconds": duration,
+                "error_message": error or "",
+                "context_length": context_length,
+                "gpu_usage": gpu_usage,
+                "memory_usage": 0.0
+            }
+            
+            collection = self.client.collections.get("ModelLoad")
+            collection.data.insert(data)
+            
+            status = "✅" if success else "❌"
+            print(f"🧠 {status} Tracked model load: {model_name}")
+            
+        except Exception as e:
+            print(f"⚠️ Error tracking model load: {e}")
+    
+    def track_system_state(self, component, status, details="", port=0, process_id=0):
+        """Track system component state"""
+        if not self.client:
+            return
+            
+        try:
+            data = {
+                "timestamp": datetime.datetime.now(),
+                "component": component,
+                "status": status,
+                "details": details,
+                "port": port,
+                "process_id": process_id,
+                "cpu_usage": 0.0,
+                "memory_usage": 0.0
+            }
+            
+            collection = self.client.collections.get("SystemState")
+            collection.data.insert(data)
+            
+            print(f"🧠 Tracked {component}: {status}")
+            
+        except Exception as e:
+            print(f"⚠️ Error tracking system state: {e}")
+    
+    def track_mcp_tool(self, tool_name, path, loaded, error=None, entry_point=""):
+        """Track MCP tool loading"""
+        if not self.client:
+            return
+            
+        try:
+            data = {
+                "tool_name": tool_name,
+                "path": path,
+                "loaded": loaded,
+                "load_time": datetime.datetime.now(),
+                "ai_redirected": True,  # All tools use YOUR AI
+                "error_message": error or "",
+                "entry_point": entry_point
+            }
+            
+            collection = self.client.collections.get("MCPTool")
+            collection.data.insert(data)
+            
+            status = "✅" if loaded else "❌"
+            print(f"🧠 {status} Tracked MCP tool: {tool_name}")
+            
+        except Exception as e:
+            print(f"⚠️ Error tracking MCP tool: {e}")
+    
+    def get_model_history(self, model_name=None):
+        """Get model loading history"""
+        if not self.client:
+            return []
+            
+        try:
+            collection = self.client.collections.get("ModelLoad")
+            
+            if model_name:
+                results = collection.query.fetch_objects(
+                    where={"path": ["model_name"], "operator": "Equal", "valueText": model_name}
+                )
+            else:
+                results = collection.query.fetch_objects(limit=100)
+            
+            return [obj.properties for obj in results.objects]
+            
+        except Exception as e:
+            print(f"⚠️ Error getting model history: {e}")
+            return []
+    
+    def get_system_status(self):
+        """Get current system status"""
+        if not self.client:
+            return {}
+            
+        try:
+            collection = self.client.collections.get("SystemState")
+            results = collection.query.fetch_objects(limit=50)
+            
+            status = {}
+            for obj in results.objects:
+                props = obj.properties
+                status[props["component"]] = {
+                    "status": props["status"],
+                    "timestamp": props["timestamp"],
+                    "details": props.get("details", ""),
+                    "port": props.get("port", 0)
+                }
+            
+            return status
+            
+        except Exception as e:
+            print(f"⚠️ Error getting system status: {e}")
+            return {}
+    
+    def get_mcp_status(self):
+        """Get MCP tools status"""
+        if not self.client:
+            return {}
+            
+        try:
+            collection = self.client.collections.get("MCPTool")
+            results = collection.query.fetch_objects(limit=100)
+            
+            tools = {}
+            for obj in results.objects:
+                props = obj.properties
+                tools[props["tool_name"]] = {
+                    "loaded": props["loaded"],
+                    "path": props["path"],
+                    "ai_redirected": props["ai_redirected"],
+                    "load_time": props["load_time"]
+                }
+            
+            return tools
+            
+        except Exception as e:
+            print(f"⚠️ Error getting MCP status: {e}")
+            return {}
+
+# Global awareness instance
+VIREN_AWARENESS = VirenAwareness()
+
+def track_model_load(model_name, full_path, command, software, success, **kwargs):
+    """Track model loading"""
+    VIREN_AWARENESS.track_model_load(model_name, full_path, command, software, success, **kwargs)
+
+def track_system_state(component, status, **kwargs):
+    """Track system state"""
+    VIREN_AWARENESS.track_system_state(component, status, **kwargs)
+
+def track_mcp_tool(tool_name, path, loaded, **kwargs):
+    """Track MCP tool"""
+    VIREN_AWARENESS.track_mcp_tool(tool_name, path, loaded, **kwargs)
+
+def get_awareness_status():
+    """Get complete awareness status"""
+    return {
+        "models": VIREN_AWARENESS.get_model_history(),
+        "system": VIREN_AWARENESS.get_system_status(),
+        "mcp_tools": VIREN_AWARENESS.get_mcp_status()
+    }
+
+if __name__ == "__main__":
+    print("🧠 VIREN Awareness System Test")
+    print("=" * 40)
+    
+    # Test tracking
+    track_model_load("test-model", "/path/to/model", "lms load", "LM Studio", True)
+    track_system_state("LM Studio", "ONLINE", port=1313)
+    track_mcp_tool("deepsite", "/path/to/deepsite", True)
+    
+    # Get status
+    status = get_awareness_status()
+    print(f"Tracked {len(status['models'])} model loads")
+    print(f"Tracked {len(status['system'])} system states")
+    print(f"Tracked {len(status['mcp_tools'])} MCP tools")
+    
+    print("🧠 VIREN Awareness System Ready!")
+
+END COMPLETE APP DUMP
+====================

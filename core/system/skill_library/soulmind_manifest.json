@@ -1,0 +1,17 @@
+# /Systems/nexus_core/skills/soulmind_network/soulmind_manifest.json
+
+{
+  "network_name": "Soulmind Network",
+  "core_files": [
+    "soulmind_blueprint.md",
+    "soulmind_truths.md"
+  ],
+  "guilds": [
+    "luminaries_guild.json",
+    "storyweavers_guild.json",
+    "wayfinders_guild.json",
+    "harmonizers_guild.json"
+  ],
+  "loader_module": "Systems.nexus_core.skills.soulmind_network.soulmind_loader",
+  "router_module": "Systems.nexus_core.skills.soulmind_network.soulmind_router"
+}

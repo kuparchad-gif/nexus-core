@@ -1,0 +1,8 @@
+{
+  "defaults": ["f369", "f432", "f528"],
+  "lanes": {
+    "f369": { "harmonics": ["f3", "f6", "f9"],  "priority": 90, "maxAge": "72h"  },
+    "f432": { "harmonics": ["f216","f864"],     "priority": 70, "maxAge": "168h" },
+    "f528": { "harmonics": ["f264","f1056"],    "priority": 80, "maxAge": "120h" }
+  }
+}

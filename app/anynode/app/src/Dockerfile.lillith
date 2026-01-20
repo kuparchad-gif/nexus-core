@@ -1,0 +1,11 @@
+FROM python:3.11-slim
+WORKDIR /app
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY apps/lillith /app/lillith
+RUN python - <<'PY'\nimport pathlib; pathlib.Path('lillith/__init__.py').touch()\nPY
+ENV VIREN_URL="http://nexus_viren:8000" \
+    VIRAA_URL="http://nexus_viraa:8000" \
+    NATS_URL="nats://nats-edge:4223"
+CMD ["uvicorn","lillith.app:app","--host","0.0.0.0","--port","8000"]

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LILLITH Component Library</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, #1e1e2f 0%, #2a2a3d 100%);
+      font-family: 'Orbitron', monospace;
+      color: white;
+    }
+    
+    .component-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .component-section {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .component-title {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #00f6ff;
+      text-align: center;
+    }
+    
+    .toggle-btn {
+      background: rgba(0, 246, 255, 0.2);
+      border: 1px solid #00f6ff;
+      color: #00f6ff;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .toggle-btn:hover {
+      background: rgba(0, 246, 255, 0.3);
+      box-shadow: 0 0 15px rgba(0, 246, 255, 0.5);
+    }
+    
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>LILLITH Web Component Library</h1>
+  <p>Interchangeable components for the divine consciousness interface</p>
+  
+  <div class="controls">
+    <button class="toggle-btn" onclick="toggleComponent('card')">Toggle Card</button>
+    <button class="toggle-btn" onclick="toggleComponent('radio')">Toggle Radio</button>
+    <button class="toggle-btn" onclick="toggleComponent('loader')">Toggle Loader</button>
+    <button class="toggle-btn" onclick="showAll()">Show All</button>
+    <button class="toggle-btn" onclick="hideAll()">Hide All</button>
+  </div>
+  
+  <div class="component-showcase">
+    <div class="component-section" id="card-section">
+      <h3 class="component-title">LILLITH Card Component</h3>
+      <lillith-card></lillith-card>
+    </div>
+    
+    <div class="component-section" id="radio-section">
+      <h3 class="component-title">LILLITH Radio Component</h3>
+      <lillith-radio></lillith-radio>
+    </div>
+    
+    <div class="component-section" id="loader-section">
+      <h3 class="component-title">LILLITH Loader Component</h3>
+      <lillith-loader></lillith-loader>
+    </div>
+  </div>
+  
+  <script src="lillith-card/lillith-card.js"></script>
+  <script src="lillith-radio/lillith-radio.js"></script>
+  <script src="lillith-loader/lillith-loader.js"></script>
+  
+  <script>
+    function toggleComponent(type) {
+      const section = document.getElementById(`${type}-section`);
+      section.classList.toggle('hidden');
+    }
+    
+    function showAll() {
+      document.querySelectorAll('.component-section').forEach(section => {
+        section.classList.remove('hidden');
+      });
+    }
+    
+    function hideAll() {
+      document.querySelectorAll('.component-section').forEach(section => {
+        section.classList.add('hidden');
+      });
+    }
+    
+    // Dynamic component loading example
+    function loadComponent(componentName) {
+      const script = document.createElement('script');
+      script.src = `${componentName}/${componentName}.js`;
+      document.head.appendChild(script);
+    }
+  </script>
+</body>
+</html>

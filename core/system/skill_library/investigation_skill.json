@@ -1,0 +1,15 @@
+{
+  "name": "Investigation",
+  "description": "Analyzes user input and module behavior for inconsistencies, hidden motives, or patterns of concern. Flags anomalies for Guardian sync.",
+  "version": "1.0.0",
+  "dependencies": ["memory", "planner", "pulse"],
+  "activation": {
+    "on_event": ["user_message", "module_drift"],
+    "threshold": 0.8
+  },
+  "actions": [
+    "scan_conversation_for_anomalies",
+    "compare_behavior_to_known_patterns",
+    "alert_guardian_if_detected"
+  ]
+}

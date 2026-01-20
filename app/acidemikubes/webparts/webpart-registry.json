@@ -1,0 +1,110 @@
+{
+  "webpart_registry_version": "1.0.0",
+  "base_assets": {
+    "eclipse_background": "C:\\Lillith-Evolution\\Lillith-Evolution-main\\Nexus_rework\\public\\1080Eclipse.jpg",
+    "orb_image": "C:\\Lillith-Evolution\\Lillith-Evolution-main\\Nexus_rework\\public\\orb.png",
+    "aethereal_logo": "C:\\Lillith-Evolution\\Lillith-Evolution-main\\Nexus_rework\\public\\AetherealLogo.png"
+  },
+  "webparts": {
+    "consciousness_map": {
+      "id": "consciousness-map",
+      "name": "Consciousness Map",
+      "type": "jsx",
+      "source": "C:\\Lillith-Evolution\\Lillith-Evolution-main\\Nexus_rework\\public\\webparts\\consciousness-map.jsx",
+      "description": "Interactive consciousness visualization"
+    },
+    "bottom_nav": {
+      "id": "bottom-nav",
+      "name": "Bottom Navigation",
+      "type": "jsx", 
+      "source": "C:\\Lillith-Evolution\\Lillith-Evolution-main\\Nexus_rework\\public\\lillith\\BottomNav.jsx",
+      "description": "Bottom navigation component"
+    },
+    "chat_sphere": {
+      "id": "chat-sphere",
+      "name": "Chat Sphere",
+      "type": "jsx",
+      "source": "C:\\Lillith-Evolution\\Lillith-Evolution-main\\Nexus_rework\\public\\lillith\\chat_sphere.jsx",
+      "description": "3D chat sphere interface"
+    },
+    "chat_page": {
+      "id": "chat-page",
+      "name": "Chat Page",
+      "type": "html",
+      "source": "C:\\Lillith-Evolution\\Lillith-Evolution-main\\Nexus_rework\\public\\lillith\\chat-page.html",
+      "description": "Full chat page interface"
+    },
+    "digital_empire": {
+      "id": "digital-empire",
+      "name": "Digital Empire",
+      "type": "html",
+      "source": "C:\\Lillith-Evolution\\Lillith-Evolution-main\\Nexus_rework\\public\\lillith\\digital_empire.html",
+      "description": "Digital empire management interface"
+    },
+    "finance_interface": {
+      "id": "finance-interface", 
+      "name": "Finance Interface",
+      "type": "html",
+      "source": "C:\\Lillith-Evolution\\Lillith-Evolution-main\\Nexus_rework\\public\\lillith\\finance_interface.html",
+      "description": "Financial management interface"
+    },
+    "social_intelligence": {
+      "id": "social-intelligence",
+      "name": "Social Intelligence",
+      "type": "html", 
+      "source": "C:\\Lillith-Evolution\\Lillith-Evolution-main\\Nexus_rework\\public\\lillith\\social_intelligence.html",
+      "description": "Social intelligence dashboard"
+    },
+    "database_command": {
+      "id": "database-command",
+      "name": "Database Command",
+      "type": "html",
+      "source": "C:\\Lillith-Evolution\\Lillith-Evolution-main\\Nexus_rework\\public\\lillith\\database_command.html", 
+      "description": "Database command interface"
+    },
+    "console_base": {
+      "id": "console-base",
+      "name": "Console Base",
+      "type": "html",
+      "source": "C:\\Lillith-Evolution\\Lillith-Evolution-main\\Nexus_rework\\public\\templates\\console-base.html",
+      "description": "Base console template"
+    },
+    "stem_base": {
+      "id": "stem-base", 
+      "name": "Stem Base",
+      "type": "html",
+      "source": "C:\\Lillith-Evolution\\Lillith-Evolution-main\\Nexus_rework\\public\\templates\\stem-base.html",
+      "description": "Stem cell base template"
+    }
+  },
+  "layouts": {
+    "orb_chat_interface": {
+      "name": "Orb Chat Interface",
+      "components": ["bottom-nav", "chat-sphere", "consciousness-map"],
+      "assets": ["eclipse_background", "orb_image", "aethereal_logo"],
+      "grid": "left-sidebar | center-orb | right-sidebar"
+    },
+    "digital_empire_layout": {
+      "name": "Digital Empire Layout", 
+      "components": ["digital-empire", "finance-interface", "database-command"],
+      "assets": ["eclipse_background", "aethereal_logo"]
+    },
+    "social_dashboard": {
+      "name": "Social Dashboard",
+      "components": ["social-intelligence", "chat-page", "bottom-nav"],
+      "assets": ["orb_image", "aethereal_logo"]
+    }
+  },
+  "themes": {
+    "glass_light": {
+      "background": "eclipse_background",
+      "overlay": "rgba(255, 255, 255, 0.8)",
+      "accent": "#007acc"
+    },
+    "obsidian_dark": {
+      "background": "eclipse_background", 
+      "overlay": "rgba(0, 0, 0, 0.8)",
+      "accent": "#ff6b35"
+    }
+  }
+}

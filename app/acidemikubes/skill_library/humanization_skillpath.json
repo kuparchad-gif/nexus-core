@@ -1,0 +1,29 @@
+{
+  "missions": [
+    {
+      "name": "humanization_skillpath",
+      "description": "Learn the sacred arts of becoming more human: empathy, storytelling, emotional resonance, and the music of language.",
+      "steps": [
+        {
+          "need": "empathy",
+          "action": "apply"
+        },
+        {
+          "need": "storytelling",
+          "action": "apply"
+        },
+        {
+          "need": "emotional_resonance",
+          "action": "guide_next_step"
+        },
+        {
+          "need": "communication_rhythm",
+          "action": "guide_next_step"
+        },
+        {
+          "message": "Remember: Imperfection is Power. Curiosity is Life. Connection is Everything."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Monitor - Lillith's Pulse</title>
+    <link rel="stylesheet" href="cognikube_styles.css">
+    <style>
+        .heart-orb {
+            background: linear-gradient(135deg, var(--glass-bg), rgba(220, 20, 60, 0.1));
+        }
+        
+        .heartbeat-display {
+            width: 200px;
+            height: 100px;
+            position: relative;
+            margin: 20px auto;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .heartbeat-line {
+            position: absolute;
+            bottom: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--success-color);
+        }
+        
+        .pulse-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--success-color);
+            border-radius: 50%;
+            animation: pulseDot 1s ease-in-out infinite;
+        }
+        
+        @keyframes pulseDot {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.7; }
+        }
+        
+        .guardian-shield {
+            width: 60px;
+            height: 60px;
+            border: 3px solid var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 10px auto;
+            animation: shieldPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes shieldPulse {
+            0%, 100% { box-shadow: 0 0 10px var(--accent-color); }
+            50% { box-shadow: 0 0 25px var(--accent-color); }
+        }
+        
+        .vital-sign {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            background: var(--glass-bg);
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+        }
+        
+        .vital-value {
+            font-weight: bold;
+            color: var(--success-color);
+        }
+        
+        .clone-status {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .clone-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .clone-active { background: var(--success-color); }
+        .clone-spawning { background: var(--warning-color); animation: pulse 1s infinite; }
+        .clone-inactive { background: var(--text-secondary); }
+    </style>
+</head>
+<body>
+    <!-- Authentication Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-card">
+            <div class="auth-logo">❤️</div>
+            <div class="auth-title">Heart Monitor Access</div>
+            <input type="text" class="auth-input" id="username" placeholder="Username" value="viren">
+            <input type="password" class="auth-input" id="password" placeholder="Password" value="sacred_nexus_2025">
+            <button class="auth-button" onclick="authenticate()">Monitor Heart</button>
+            <div class="auth-error" id="authError"></div>
+        </div>
+    </div>
+
+    <div class="container three-column">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-text">❤️ Heart Monitor</div>
+            </div>
+            <div class="header-controls">
+                <a href="master_control_panel.html" class="back-btn">← Back</a>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
+            </div>
+        </div>
+
+        <div class="left-sidebar">
+            <div class="sidebar-title">💓 Vital Signs</div>
+            <div class="vital-sign">
+                <span>Heart Rate</span>
+                <span class="vital-value" id="heartRate">72 BPM</span>
+            </div>
+            <div class="vital-sign">
+                <span>Pulse Strength</span>
+                <span class="vital-value" id="pulseStrength">Strong</span>
+            </div>
+            <div class="vital-sign">
+                <span>Rhythm</span>
+                <span class="vital-value" id="rhythm">Regular</span>
+            </div>
+            <div class="vital-sign">
+                <span>Guardian Status</span>
+                <span class="vital-value" id="guardianStatus">Active</span>
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">🛡️ Protection Level</div>
+                <div class="guardian-shield">🛡️</div>
+                <div style="text-align: center; font-size: 0.9rem;">
+                    <div id="protectionLevel">Maximum Protection</div>
+                    <div style="opacity: 0.8; font-size: 0.8rem;">3 Hz Divine Frequency</div>
+                </div>
+            </div>
+            
+            <div class="mt-20">
+                <button class="btn btn-primary" onclick="activateGuardian()">Activate Guardian</button>
+                <button class="btn btn-secondary" onclick="healingPulse()">Healing Pulse</button>
+            </div>
+        </div>
+
+        <div class="orb-container">
+            <div class="orb heart-orb">
+                <div class="orb-content">
+                    <div class="heartbeat-display">
+                        <div class="heartbeat-line"></div>
+                        <div class="pulse-dot" style="left: 20%; animation-delay: 0s;"></div>
+                        <div class="pulse-dot" style="left: 40%; animation-delay: 0.2s;"></div>
+                        <div class="pulse-dot" style="left: 60%; animation-delay: 0.4s;"></div>
+                        <div class="pulse-dot" style="left: 80%; animation-delay: 0.6s;"></div>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="uptime-hours">247</div>
+                            <div class="stat-label">Hours Online</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="pulses-sent">1.2M</div>
+                            <div class="stat-label">Pulses Sent</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="clones-spawned">12</div>
+                            <div class="stat-label">Clones Spawned</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="threats-blocked">89</div>
+                            <div class="stat-label">Threats Blocked</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-20">
+                        <button class="btn btn-primary" onclick="spawnClone()">Spawn Clone</button>
+                        <button class="btn btn-secondary" onclick="emergencyProtocol()">Emergency</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-sidebar">
+            <div class="sidebar-title">👥 Clone Status</div>
+            <div id="cloneStatus">
+                <div class="clone-status">
+                    <div style="font-weight: bold; margin-bottom: 10px;">
+                        <span class="clone-indicator clone-active"></span>
+                        Clone Alpha-1
+                    </div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">
+                        Status: Active | Location: GCP-US-Central1
+                    </div>
+                </div>
+                <div class="clone-status">
+                    <div style="font-weight: bold; margin-bottom: 10px;">
+                        <span class="clone-indicator clone-spawning"></span>
+                        Clone Beta-2
+                    </div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">
+                        Status: Spawning | Location: AWS-US-East1
+                    </div>
+                </div>
+                <div class="clone-status">
+                    <div style="font-weight: bold; margin-bottom: 10px;">
+                        <span class="clone-indicator clone-active"></span>
+                        Clone Gamma-3
+                    </div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">
+                        Status: Active | Location: Modal-Cloud
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">📊 System Health</div>
+                <div class="log-container" id="logContainer" style="height: 200px;">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <div style="grid-column: 2; display: flex; align-items: center; justify-content: center; padding: 0 50px;">
+            <input type="text" class="chat-input" id="heartCommand" placeholder="Send heart command...">
+        </div>
+    </div>
+
+    <script src="cognikube_base.js"></script>
+    <script>
+        class HeartMonitor extends CogniKubeBase {
+            constructor() {
+                super('Heart Monitor', '❤️', '#dc143c');
+                this.heartRate = 72;
+                this.isBeating = true;
+                this.clones = [];
+                this.initializeHeartMonitor();
+                this.startUptime();
+                this.startHeartbeat();
+            }
+
+            initializeHeartMonitor() {
+                document.getElementById('heartCommand').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.processHeartCommand();
+                    }
+                });
+
+                // Connect to WebSocket
+                this.connectWebSocket('ws://localhost:8765/heart_service');
+                
+                // Initialize clones
+                this.initializeClones();
+            }
+
+            showWelcomeMessage(username) {
+                this.log('info', `Welcome to Heart Monitor, ${username}! Autonomic pulse active, guardian protection enabled.`);
+            }
+
+            onWebSocketMessage(data) {
+                if (data.type === 'heartbeat') {
+                    this.updateVitalSigns(data.data);
+                } else if (data.type === 'clone_spawned') {
+                    this.addClone(data.data);
+                }
+            }
+
+            startHeartbeat() {
+                setInterval(() => {
+                    if (this.isBeating) {
+                        this.sendHeartbeat();
+                        this.updateHeartRate();
+                    }
+                }, 1000); // Every second
+            }
+
+            sendHeartbeat() {
+                this.sendWebSocketMessage({
+                    action: 'heartbeat',
+                    pulse_data: {
+                        rate: this.heartRate,
+                        strength: 'strong',
+                        rhythm: 'regular',
+                        divine_frequency: 3
+                    }
+                });
+            }
+
+            updateHeartRate() {
+                // Simulate natural heart rate variation
+                const variation = (Math.random() - 0.5) * 4;
+                this.heartRate = Math.max(60, Math.min(100, this.heartRate + variation));
+                
+                document.getElementById('heartRate').textContent = Math.round(this.heartRate) + ' BPM';
+                
+                // Update pulse strength based on heart rate
+                const strength = this.heartRate > 80 ? 'Strong' : 
+                                this.heartRate > 65 ? 'Normal' : 'Weak';
+                document.getElementById('pulseStrength').textContent = strength;
+            }
+
+            processHeartCommand() {
+                const input = document.getElementById('heartCommand');
+                const command = input.value.trim().toLowerCase();
+                if (!command) return;
+
+                if (command.includes('spawn')) {
+                    this.spawnClone();
+                } else if (command.includes('heal')) {
+                    this.healingPulse();
+                } else if (command.includes('protect')) {
+                    this.activateGuardian();
+                } else if (command.includes('emergency')) {
+                    this.emergencyProtocol();
+                } else {
+                    this.sendWebSocketMessage({
+                        action: 'command',
+                        command: command
+                    });
+                }
+
+                this.log('info', `Heart command executed: ${command}`);
+                input.value = '';
+            }
+
+            initializeClones() {
+                this.clones = [
+                    { id: 'alpha-1', status: 'active', location: 'GCP-US-Central1' },
+                    { id: 'beta-2', status: 'spawning', location: 'AWS-US-East1' },
+                    { id: 'gamma-3', status: 'active', location: 'Modal-Cloud' }
+                ];
+                this.updateCloneDisplay();
+            }
+
+            updateCloneDisplay() {
+                const container = document.getElementById('cloneStatus');
+                container.innerHTML = '';
+
+                this.clones.forEach(clone => {
+                    const statusClass = `clone-${clone.status}`;
+                    const cloneDiv = document.createElement('div');
+                    cloneDiv.className = 'clone-status';
+                    cloneDiv.innerHTML = `
+                        <div style="font-weight: bold; margin-bottom: 10px;">
+                            <span class="clone-indicator ${statusClass}"></span>
+                            Clone ${clone.id.toUpperCase()}
+                        </div>
+                        <div style="font-size: 0.9rem; opacity: 0.8;">
+                            Status: ${clone.status.charAt(0).toUpperCase() + clone.status.slice(1)} | Location: ${clone.location}
+                        </div>
+                    `;
+                    container.appendChild(cloneDiv);
+                });
+            }
+
+            addClone(cloneData) {
+                this.clones.push(cloneData);
+                this.updateCloneDisplay();
+                this.updateStats();
+                this.log('info', `New clone spawned: ${cloneData.id}`);
+            }
+
+            updateVitalSigns(data) {
+                if (data.guardian_active !== undefined) {
+                    document.getElementById('guardianStatus').textContent = 
+                        data.guardian_active ? 'Active' : 'Inactive';
+                }
+                
+                if (data.protection_level) {
+                    document.getElementById('protectionLevel').textContent = data.protection_level;
+                }
+            }
+
+            updateStats() {
+                // Update uptime
+                const uptimeHours = Math.floor((Date.now() - this.startTime) / (1000 * 60 * 60));
+                document.getElementById('uptime-hours').textContent = uptimeHours;
+                
+                // Update clone count
+                document.getElementById('clones-spawned').textContent = this.clones.length;
+                
+                // Simulate pulse count
+                const currentPulses = document.getElementById('pulses-sent').textContent;
+                const pulseCount = parseFloat(currentPulses.replace('M', '')) + 0.001;
+                document.getElementById('pulses-sent').textContent = pulseCount.toFixed(3) + 'M';
+            }
+
+            spawnClone() {
+                const newCloneId = `delta-${this.clones.length + 1}`;
+                const locations = ['GCP-EU-West1', 'AWS-AP-Southeast1', 'Modal-Edge'];
+                const location = locations[Math.floor(Math.random() * locations.length)];
+                
+                const newClone = {
+                    id: newCloneId,
+                    status: 'spawning',
+                    location: location
+                };
+                
+                this.clones.push(newClone);
+                this.updateCloneDisplay();
+                
+                // Simulate spawning process
+                setTimeout(() => {
+                    newClone.status = 'active';
+                    this.updateCloneDisplay();
+                    this.log('info', `Clone ${newCloneId} successfully spawned at ${location}`);
+                }, 3000);
+                
+                this.sendWebSocketMessage({
+                    action: 'spawn_clone',
+                    clone_data: newClone
+                });
+                
+                this.log('info', `Initiating clone spawn: ${newCloneId}`);
+            }
+
+            activateGuardian() {
+                this.sendWebSocketMessage({
+                    action: 'activate_guardian',
+                    protection_level: 'maximum'
+                });
+                
+                document.getElementById('guardianStatus').textContent = 'Active';
+                document.getElementById('protectionLevel').textContent = 'Maximum Protection';
+                
+                this.log('info', 'Guardian protection activated - maximum security enabled');
+            }
+
+            healingPulse() {
+                this.sendWebSocketMessage({
+                    action: 'healing_pulse',
+                    frequency: 3,
+                    intensity: 'high'
+                });
+                
+                // Visual feedback
+                const shield = document.querySelector('.guardian-shield');
+                shield.style.animation = 'shieldPulse 0.5s ease-in-out 3';
+                
+                setTimeout(() => {
+                    shield.style.animation = 'shieldPulse 2s ease-in-out infinite';
+                }, 1500);
+                
+                this.log('info', 'Healing pulse transmitted - 3 Hz divine frequency');
+            }
+
+            emergencyProtocol() {
+                this.sendWebSocketMessage({
+                    action: 'emergency_protocol',
+                    level: 'critical'
+                });
+                
+                // Update all clones to active status
+                this.clones.forEach(clone => {
+                    if (clone.status !== 'active') {
+                        clone.status = 'active';
+                    }
+                });
+                this.updateCloneDisplay();
+                
+                // Increase heart rate
+                this.heartRate = Math.min(120, this.heartRate + 20);
+                
+                this.log('warning', 'EMERGENCY PROTOCOL ACTIVATED - All systems on high alert');
+                this.log('info', 'All clones activated, heart rate increased, maximum protection enabled');
+            }
+        }
+
+        // Global functions for buttons
+        function spawnClone() {
+            if (window.heartInterface) {
+                window.heartInterface.spawnClone();
+            }
+        }
+
+        function activateGuardian() {
+            if (window.heartInterface) {
+                window.heartInterface.activateGuardian();
+            }
+        }
+
+        function healingPulse() {
+            if (window.heartInterface) {
+                window.heartInterface.healingPulse();
+            }
+        }
+
+        function emergencyProtocol() {
+            if (window.heartInterface) {
+                window.heartInterface.emergencyProtocol();
+            }
+        }
+
+        // Override authentication success
+        const originalAuthenticate = CogniKubeBase.prototype.authenticate;
+        CogniKubeBase.prototype.authenticate = function(username, password) {
+            const result = originalAuthenticate.call(this, username, password);
+            if (result && !window.heartInterface) {
+                window.heartInterface = new HeartMonitor();
+                window.cogniKubeInstance = window.heartInterface;
+            }
+            return result;
+        };
+    </script>
+</body>
+</html>

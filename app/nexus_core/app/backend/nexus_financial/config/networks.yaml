@@ -1,0 +1,58 @@
+chains:
+  - name: Ethereum Sepolia
+    key: eth_sepolia
+    symbol: ETH
+    type: evm
+    network: testnet
+    rpc_env: WEB3_RPC_ETH
+    chain_id: 11155111
+    decimals: 18
+    address_prefix: "0x"
+    supports: ["transfer","erc20"]
+  - name: Polygon Mumbai
+    key: polygon_mumbai
+    symbol: MATIC
+    type: evm
+    network: testnet
+    rpc_env: WEB3_RPC_POLYGON
+    chain_id: 80001
+    decimals: 18
+    address_prefix: "0x"
+    supports: ["transfer","erc20"]
+  - name: BSC Testnet
+    key: bsc_testnet
+    symbol: tBNB
+    type: evm
+    network: testnet
+    rpc_env: WEB3_RPC_BSC
+    chain_id: 97
+    decimals: 18
+    address_prefix: "0x"
+    supports: ["transfer","erc20"]
+  - name: Bitcoin Testnet
+    key: btc_testnet
+    symbol: tBTC
+    type: utxo
+    network: testnet
+    rpc_env: BTC_TESTNET_RPC
+    decimals: 8
+    address_prefix: "tb1"
+    supports: ["transfer"]
+  - name: Solana Devnet
+    key: sol_devnet
+    symbol: SOL
+    type: solana
+    network: testnet
+    rpc_env: WEB3_RPC_SOL
+    decimals: 9
+    address_prefix: ""
+    supports: ["transfer"]
+  - name: Tron Nile
+    key: tron_nile
+    symbol: TRX
+    type: tron
+    network: testnet
+    rpc_env: WEB3_RPC_TRON
+    decimals: 6
+    address_prefix: "T"
+    supports: ["transfer","trc20"]

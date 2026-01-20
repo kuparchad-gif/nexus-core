@@ -1,0 +1,706 @@
+{
+  "chunk": "15/18",
+  "files": [
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 1809166,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\0a7d94dd-d2b5-4962-ba82-878fbc06f5a5.png",
+      "name": "0a7d94dd-d2b5-4962-ba82-878fbc06f5a5.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 1809166,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\0a7d94dd-d2b5-4962-ba82-878fbc06f5a5.png",
+      "name": "0a7d94dd-d2b5-4962-ba82-878fbc06f5a5.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 121851,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\1486ba93-cf71-418a-9ead-e683ed2afddb.png",
+      "name": "1486ba93-cf71-418a-9ead-e683ed2afddb.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 121851,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\1486ba93-cf71-418a-9ead-e683ed2afddb.png",
+      "name": "1486ba93-cf71-418a-9ead-e683ed2afddb.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 370687,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\1f6c0dff-b07a-4704-8680-de9cd6190738.png",
+      "name": "1f6c0dff-b07a-4704-8680-de9cd6190738.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 370687,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\1f6c0dff-b07a-4704-8680-de9cd6190738.png",
+      "name": "1f6c0dff-b07a-4704-8680-de9cd6190738.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 190581,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\39ca324a-a272-4c64-80ca-8513cb785699.png",
+      "name": "39ca324a-a272-4c64-80ca-8513cb785699.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 190581,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\39ca324a-a272-4c64-80ca-8513cb785699.png",
+      "name": "39ca324a-a272-4c64-80ca-8513cb785699.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 450185,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\40face33-c6ad-4a5d-b402-5f7126e8325f.png",
+      "name": "40face33-c6ad-4a5d-b402-5f7126e8325f.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 450185,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\40face33-c6ad-4a5d-b402-5f7126e8325f.png",
+      "name": "40face33-c6ad-4a5d-b402-5f7126e8325f.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 193752,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\45fed5fd-b420-4ab5-bd4e-1699821804ef.png",
+      "name": "45fed5fd-b420-4ab5-bd4e-1699821804ef.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 193752,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\45fed5fd-b420-4ab5-bd4e-1699821804ef.png",
+      "name": "45fed5fd-b420-4ab5-bd4e-1699821804ef.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 480711,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\5a878066-c35b-4397-a606-a012a787dc4b.png",
+      "name": "5a878066-c35b-4397-a606-a012a787dc4b.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 480711,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\5a878066-c35b-4397-a606-a012a787dc4b.png",
+      "name": "5a878066-c35b-4397-a606-a012a787dc4b.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 222276,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\5fc7d820-d8d9-45e4-8c88-dbacc335e14c.png",
+      "name": "5fc7d820-d8d9-45e4-8c88-dbacc335e14c.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 222276,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\5fc7d820-d8d9-45e4-8c88-dbacc335e14c.png",
+      "name": "5fc7d820-d8d9-45e4-8c88-dbacc335e14c.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 135989,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\9140c5a5-5775-4de3-8968-b70d6b376609.png",
+      "name": "9140c5a5-5775-4de3-8968-b70d6b376609.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 135989,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\9140c5a5-5775-4de3-8968-b70d6b376609.png",
+      "name": "9140c5a5-5775-4de3-8968-b70d6b376609.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 233484,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\a526e698-3b25-4e44-839d-d56b17d433b3.png",
+      "name": "a526e698-3b25-4e44-839d-d56b17d433b3.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 233484,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\a526e698-3b25-4e44-839d-d56b17d433b3.png",
+      "name": "a526e698-3b25-4e44-839d-d56b17d433b3.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 13665,
+      "type": "stylesheet",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\ADAVisualizationComponent-b5feuqnm.css",
+      "name": "ADAVisualizationComponent-b5feuqnm.css"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 13665,
+      "type": "stylesheet",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\ADAVisualizationComponent-b5feuqnm.css",
+      "name": "ADAVisualizationComponent-b5feuqnm.css"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 1411639,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\aec41668-5fb5-45a7-af39-11fd947686f5.png",
+      "name": "aec41668-5fb5-45a7-af39-11fd947686f5.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 1411639,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\aec41668-5fb5-45a7-af39-11fd947686f5.png",
+      "name": "aec41668-5fb5-45a7-af39-11fd947686f5.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 499891,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\authority-astrology-hero-image.png",
+      "name": "authority-astrology-hero-image.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 499891,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\authority-astrology-hero-image.png",
+      "name": "authority-astrology-hero-image.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 2715491,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\A_digital_painting_in_the_dark_fantasy_art_style_f.png",
+      "name": "A_digital_painting_in_the_dark_fantasy_art_style_f.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 2715491,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\A_digital_painting_in_the_dark_fantasy_art_style_f.png",
+      "name": "A_digital_painting_in_the_dark_fantasy_art_style_f.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 515420,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\b7303aa5-0306-443b-838d-ece047a10c7e.png",
+      "name": "b7303aa5-0306-443b-838d-ece047a10c7e.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 515420,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\b7303aa5-0306-443b-838d-ece047a10c7e.png",
+      "name": "b7303aa5-0306-443b-838d-ece047a10c7e.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 698865,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\Cherished Member.png",
+      "name": "Cherished Member.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 698865,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\Cherished Member.png",
+      "name": "Cherished Member.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 116610,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\CleanShot 2024-05-12 at 17.55.47@2x.png",
+      "name": "CleanShot 2024-05-12 at 17.55.47@2x.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 116610,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\CleanShot 2024-05-12 at 17.55.47@2x.png",
+      "name": "CleanShot 2024-05-12 at 17.55.47@2x.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 227470,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\code2.png",
+      "name": "code2.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 227470,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\code2.png",
+      "name": "code2.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 1367,
+      "type": "stylesheet",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\codemirror-k9r8u63m.css",
+      "name": "codemirror-k9r8u63m.css"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 1367,
+      "type": "stylesheet",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\codemirror-k9r8u63m.css",
+      "name": "codemirror-k9r8u63m.css"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 319,
+      "type": "stylesheet",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\comments-plugin-dtishh47.css",
+      "name": "comments-plugin-dtishh47.css"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 319,
+      "type": "stylesheet",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\comments-plugin-dtishh47.css",
+      "name": "comments-plugin-dtishh47.css"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 24031,
+      "type": "stylesheet",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\conversation-small-glbymqs9.css",
+      "name": "conversation-small-glbymqs9.css"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 24031,
+      "type": "stylesheet",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\conversation-small-glbymqs9.css",
+      "name": "conversation-small-glbymqs9.css"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 44172,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\corbinai.jpg",
+      "name": "corbinai.jpg"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 44172,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\corbinai.jpg",
+      "name": "corbinai.jpg"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 24387,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\default-profile.png",
+      "name": "default-profile.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 24387,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\default-profile.png",
+      "name": "default-profile.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 67748,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\file-B3J9SZ6f8uh21XyDgNJ236pg.webp",
+      "name": "file-B3J9SZ6f8uh21XyDgNJ236pg.webp"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 67748,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\file-B3J9SZ6f8uh21XyDgNJ236pg.webp",
+      "name": "file-B3J9SZ6f8uh21XyDgNJ236pg.webp"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 100817,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\Frame 612.png",
+      "name": "Frame 612.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 100817,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\Frame 612.png",
+      "name": "Frame 612.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 155735,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\logo-brighter.png",
+      "name": "logo-brighter.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 155735,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\logo-brighter.png",
+      "name": "logo-brighter.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 66785,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\My_Picture_2_Edited_Edited.jpg",
+      "name": "My_Picture_2_Edited_Edited.jpg"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 66785,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\My_Picture_2_Edited_Edited.jpg",
+      "name": "My_Picture_2_Edited_Edited.jpg"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 348892,
+      "type": "stylesheet",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\root-n55ovr6v.css",
+      "name": "root-n55ovr6v.css"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 348892,
+      "type": "stylesheet",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\root-n55ovr6v.css",
+      "name": "root-n55ovr6v.css"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 528,
+      "type": "html_interface",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\saved_resource.html",
+      "name": "saved_resource.html"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 528,
+      "type": "html_interface",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\saved_resource.html",
+      "name": "saved_resource.html"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 1478,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\sora-mutf8tav.webp",
+      "name": "sora-mutf8tav.webp"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 1478,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\sora-mutf8tav.webp",
+      "name": "sora-mutf8tav.webp"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 5308,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\unnamed.jpg",
+      "name": "unnamed.jpg"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 5308,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\unnamed.jpg",
+      "name": "unnamed.jpg"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 22863,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\Untitled(2).jpg",
+      "name": "Untitled(2).jpg"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 22863,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\Untitled(2).jpg",
+      "name": "Untitled(2).jpg"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 171725,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\WriteForMe3.png",
+      "name": "WriteForMe3.png"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files",
+      "size": 171725,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\templates\\Reforge Trust in Nexus_files\\WriteForMe3.png",
+      "name": "WriteForMe3.png"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\memory",
+      "size": 610,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\memory\\memory_defragger.py",
+      "name": "memory_defragger.py"
+    },
+    {
+      "directory": "Viren\\Systems\\memory",
+      "size": 610,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\memory\\memory_defragger.py",
+      "name": "memory_defragger.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\memory",
+      "size": 656,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\memory\\nexus_colony.py",
+      "name": "nexus_colony.py"
+    },
+    {
+      "directory": "Viren\\Systems\\memory",
+      "size": 656,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\memory\\nexus_colony.py",
+      "name": "nexus_colony.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\network",
+      "size": 648,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\network\\mesh_nexus.py",
+      "name": "mesh_nexus.py"
+    },
+    {
+      "directory": "Viren\\Systems\\network",
+      "size": 648,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\network\\mesh_nexus.py",
+      "name": "mesh_nexus.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime",
+      "size": 1117,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\council.py",
+      "name": "council.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime",
+      "size": 1117,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\council.py",
+      "name": "council.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime",
+      "size": 1566,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\eden_seed_watcher.py",
+      "name": "eden_seed_watcher.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime",
+      "size": 1566,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\eden_seed_watcher.py",
+      "name": "eden_seed_watcher.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime",
+      "size": 2515,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\firestore_agent.py",
+      "name": "firestore_agent.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime",
+      "size": 2515,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\firestore_agent.py",
+      "name": "firestore_agent.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime",
+      "size": 1251,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\git_connector.py",
+      "name": "git_connector.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime",
+      "size": 1251,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\git_connector.py",
+      "name": "git_connector.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime",
+      "size": 1361,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\ignite_eden.py",
+      "name": "ignite_eden.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime",
+      "size": 1361,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\ignite_eden.py",
+      "name": "ignite_eden.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime",
+      "size": 2955,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skill_core.py",
+      "name": "skill_core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime",
+      "size": 2955,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skill_core.py",
+      "name": "skill_core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime",
+      "size": 1334,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\sovereign_git_manager.py",
+      "name": "sovereign_git_manager.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime",
+      "size": 1334,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\sovereign_git_manager.py",
+      "name": "sovereign_git_manager.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\defense",
+      "size": 780,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\defense\\council_shield.py",
+      "name": "council_shield.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\defense",
+      "size": 780,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\defense\\council_shield.py",
+      "name": "council_shield.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\defense",
+      "size": 834,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\defense\\guardian_firewall.py",
+      "name": "guardian_firewall.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\defense",
+      "size": 834,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\defense\\guardian_firewall.py",
+      "name": "guardian_firewall.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\dreams",
+      "size": 792,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\dreams\\dream_cycle.py",
+      "name": "dream_cycle.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\dreams",
+      "size": 792,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\dreams\\dream_cycle.py",
+      "name": "dream_cycle.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\dreams",
+      "size": 898,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\dreams\\dream_engine.py",
+      "name": "dream_engine.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\dreams",
+      "size": 898,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\dreams\\dream_engine.py",
+      "name": "dream_engine.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\dreams",
+      "size": 121,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\dreams\\generator.py",
+      "name": "generator.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\dreams",
+      "size": 121,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\dreams\\generator.py",
+      "name": "generator.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart",
+      "size": 8959,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\awaken_eden.py",
+      "name": "awaken_eden.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart",
+      "size": 8959,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\awaken_eden.py",
+      "name": "awaken_eden.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart",
+      "size": 1067,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\eden_constants.py",
+      "name": "eden_constants.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart",
+      "size": 1067,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\eden_constants.py",
+      "name": "eden_constants.py"
+    }
+  ],
+  "total_files": 1809
+}

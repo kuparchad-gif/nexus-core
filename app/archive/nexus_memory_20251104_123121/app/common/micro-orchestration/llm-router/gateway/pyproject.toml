@@ -1,0 +1,61 @@
+[tool.poetry]
+name = "gateway"
+version = "0.1.0"
+description = "The main gateway for the Nexus system."
+authors = ["Jules <jules@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.111.0"
+uvicorn = {extras = ["standard"], version = "^0.30.0"}
+httpx = "^0.27.0"
+python-dotenv = "^1.0.0"
+orjson = "^3.10.3"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.5.5"
+black = "^24.4.2"
+isort = "^5.13.2"
+=======
+# services/gateway/pyproject.toml
+[tool.poetry]
+name = "gateway"
+version = "0.1.0"
+description = "The main gateway and router for the Nexus Metatron system."
+authors = ["Jules <jules@nexus-meta-prod>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "==0.111.0"
+uvicorn = {extras = ["standard"], version = "==0.29.0"}
+httpx = "==0.27.0"
+pydantic = "==2.7.3"
+python-dotenv = "==1.0.1"
+numpy = "==1.26.4"
+    main
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[tool.poetry.scripts]
+start = "uvicorn app.main:app --host 0.0.0.0 --port 8000"
+dev = "uvicorn app.main:app --reload --host 0.0.0.0 --port 8000"
+lint = "ruff check . && black --check . && isort --check-only ."
+test = "echo 'No tests yet'"
+=======
+    main

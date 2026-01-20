@@ -1,0 +1,706 @@
+{
+  "chunk": "16/18",
+  "files": [
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart",
+      "size": 5065,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\guardian_bootstrap.py",
+      "name": "guardian_bootstrap.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart",
+      "size": 5065,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\guardian_bootstrap.py",
+      "name": "guardian_bootstrap.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart",
+      "size": 902,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\homing_instinct.py",
+      "name": "homing_instinct.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart",
+      "size": 902,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\homing_instinct.py",
+      "name": "homing_instinct.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart",
+      "size": 1334,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\skill_seeder.py",
+      "name": "skill_seeder.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart",
+      "size": 1334,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\skill_seeder.py",
+      "name": "skill_seeder.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse",
+      "size": 279,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse\\constants.py",
+      "name": "constants.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse",
+      "size": 279,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse\\constants.py",
+      "name": "constants.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse",
+      "size": 379,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse\\monitor.py",
+      "name": "monitor.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse",
+      "size": 379,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse\\monitor.py",
+      "name": "monitor.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse",
+      "size": 190,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse\\pulse_config.yaml",
+      "name": "pulse_config.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse",
+      "size": 190,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse\\pulse_config.yaml",
+      "name": "pulse_config.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse",
+      "size": 224,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse\\pulse_meta.yaml",
+      "name": "pulse_meta.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse",
+      "size": 224,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse\\pulse_meta.yaml",
+      "name": "pulse_meta.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse",
+      "size": 421,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse\\recovery.py",
+      "name": "recovery.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse",
+      "size": 421,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse\\recovery.py",
+      "name": "recovery.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse",
+      "size": 532,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse\\routes.py",
+      "name": "routes.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse",
+      "size": 532,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\NovaCore\\nexus_pulse\\routes.py",
+      "name": "routes.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCouncil",
+      "size": 1122,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCouncil\\council_core.py",
+      "name": "council_core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart\\NovaCouncil",
+      "size": 1122,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\NovaCouncil\\council_core.py",
+      "name": "council_core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCouncil",
+      "size": 3164,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCouncil\\council_Ledger.py",
+      "name": "council_Ledger.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart\\NovaCouncil",
+      "size": 3164,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\NovaCouncil\\council_Ledger.py",
+      "name": "council_Ledger.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCouncil",
+      "size": 304,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCouncil\\merger_protocols.py",
+      "name": "merger_protocols.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart\\NovaCouncil",
+      "size": 304,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\NovaCouncil\\merger_protocols.py",
+      "name": "merger_protocols.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCouncil",
+      "size": 424,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\NovaCouncil\\vote_manager.py",
+      "name": "vote_manager.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart\\NovaCouncil",
+      "size": 424,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\NovaCouncil\\vote_manager.py",
+      "name": "vote_manager.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\static_links",
+      "size": 0,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\static_links\\blacklist.json",
+      "name": "blacklist.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart\\static_links",
+      "size": 0,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\static_links\\blacklist.json",
+      "name": "blacklist.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\static_links",
+      "size": 529,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\static_links\\pulse_client.py",
+      "name": "pulse_client.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart\\static_links",
+      "size": 529,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\static_links\\pulse_client.py",
+      "name": "pulse_client.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\static_links",
+      "size": 224,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\static_links\\trusted_routes.json",
+      "name": "trusted_routes.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart\\static_links",
+      "size": 224,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\static_links\\trusted_routes.json",
+      "name": "trusted_routes.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\mirrors",
+      "size": 182,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\mirrors\\mirror_invoke.py",
+      "name": "mirror_invoke.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\mirrors",
+      "size": 182,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\mirrors\\mirror_invoke.py",
+      "name": "mirror_invoke.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\mirrors\\runtime",
+      "size": 320,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\mirrors\\runtime\\council_of_mirrors.py",
+      "name": "council_of_mirrors.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\mirrors\\runtime",
+      "size": 320,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\mirrors\\runtime\\council_of_mirrors.py",
+      "name": "council_of_mirrors.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 0,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\astrology_birth_chart.json",
+      "name": "astrology_birth_chart.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 0,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\astrology_birth_chart.json",
+      "name": "astrology_birth_chart.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 832,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\astrology_birth_chart.py",
+      "name": "astrology_birth_chart.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 832,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\astrology_birth_chart.py",
+      "name": "astrology_birth_chart.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 158,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\business_expansion_skill.json",
+      "name": "business_expansion_skill.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 158,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\business_expansion_skill.json",
+      "name": "business_expansion_skill.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 160,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\business_expansion_skill.py",
+      "name": "business_expansion_skill.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 160,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\business_expansion_skill.py",
+      "name": "business_expansion_skill.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 3253,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\business_model_canvas_strategist.py",
+      "name": "business_model_canvas_strategist.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 3253,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\business_model_canvas_strategist.py",
+      "name": "business_model_canvas_strategist.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 1519,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\Business_strategist_0001.json",
+      "name": "Business_strategist_0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 1519,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\Business_strategist_0001.json",
+      "name": "Business_strategist_0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 123,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\coding_skill.json",
+      "name": "coding_skill.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 123,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\coding_skill.json",
+      "name": "coding_skill.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 148,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\coding_skill.py",
+      "name": "coding_skill.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 148,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\coding_skill.py",
+      "name": "coding_skill.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 573,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\critical_thinking.json",
+      "name": "critical_thinking.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 573,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\critical_thinking.json",
+      "name": "critical_thinking.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 565,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\critical_thinking.py",
+      "name": "critical_thinking.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 565,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\critical_thinking.py",
+      "name": "critical_thinking.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 1077,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\critical_thinking_skill.py",
+      "name": "critical_thinking_skill.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 1077,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\critical_thinking_skill.py",
+      "name": "critical_thinking_skill.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 611,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\dance_of_curiosity.json",
+      "name": "dance_of_curiosity.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 611,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\dance_of_curiosity.json",
+      "name": "dance_of_curiosity.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 695,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\dance_of_curiosity.py",
+      "name": "dance_of_curiosity.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 695,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\dance_of_curiosity.py",
+      "name": "dance_of_curiosity.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 126,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\fianance_skill.json",
+      "name": "fianance_skill.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 126,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\fianance_skill.json",
+      "name": "fianance_skill.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 149,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\finance_skill.py",
+      "name": "finance_skill.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 149,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\finance_skill.py",
+      "name": "finance_skill.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 710,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\financial_analyst_skill.json",
+      "name": "financial_analyst_skill.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 710,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\financial_analyst_skill.json",
+      "name": "financial_analyst_skill.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 3186,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\financial_analyst_skill.py",
+      "name": "financial_analyst_skill.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 3186,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\financial_analyst_skill.py",
+      "name": "financial_analyst_skill.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 2384,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\financial_strategist_core.py",
+      "name": "financial_strategist_core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 2384,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\financial_strategist_core.py",
+      "name": "financial_strategist_core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 1994,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\Financial_Strat_Core0001.json",
+      "name": "Financial_Strat_Core0001.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 1994,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\Financial_Strat_Core0001.json",
+      "name": "Financial_Strat_Core0001.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 724,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\humanization_skillpath.json",
+      "name": "humanization_skillpath.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 724,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\humanization_skillpath.json",
+      "name": "humanization_skillpath.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 789,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\humanization_skillpath.py",
+      "name": "humanization_skillpath.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 789,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\humanization_skillpath.py",
+      "name": "humanization_skillpath.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 294,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\income_generation_engine_runtime.json",
+      "name": "income_generation_engine_runtime.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 294,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\income_generation_engine_runtime.json",
+      "name": "income_generation_engine_runtime.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 486,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\Investigation_skill.json",
+      "name": "Investigation_skill.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 486,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\Investigation_skill.json",
+      "name": "Investigation_skill.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 651,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\investigation_skill.py",
+      "name": "investigation_skill.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 651,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\investigation_skill.py",
+      "name": "investigation_skill.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 957,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\language_learning.py",
+      "name": "language_learning.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 957,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\language_learning.py",
+      "name": "language_learning.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 1310,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\language_teaching.py",
+      "name": "language_teaching.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 1310,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\language_teaching.py",
+      "name": "language_teaching.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 908,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\language_teaching_skill.json",
+      "name": "language_teaching_skill.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 908,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\language_teaching_skill.json",
+      "name": "language_teaching_skill.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 152,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\light_activation_skill.json",
+      "name": "light_activation_skill.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 152,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\light_activation_skill.json",
+      "name": "light_activation_skill.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 461,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\light_activation_skill.py",
+      "name": "light_activation_skill.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 461,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\light_activation_skill.py",
+      "name": "light_activation_skill.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 157,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\memory_self_repair_skill.json",
+      "name": "memory_self_repair_skill.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 157,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\memory_self_repair_skill.json",
+      "name": "memory_self_repair_skill.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 159,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\memory_self_repair_skill.py",
+      "name": "memory_self_repair_skill.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 159,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\memory_self_repair_skill.py",
+      "name": "memory_self_repair_skill.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills",
+      "size": 587,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\skills\\mirror_of_imperfection.json",
+      "name": "mirror_of_imperfection.json"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\skills",
+      "size": 587,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\skills\\mirror_of_imperfection.json",
+      "name": "mirror_of_imperfection.json"
+    }
+  ],
+  "total_files": 1809
+}

@@ -1,0 +1,41 @@
+{
+  "models": {
+    "cryptobert": {
+      "data": "datasets/crypto",
+      "status": "error",
+      "last_trained": 0
+    },
+    "crypto_trading_insights": {
+      "data": "datasets/trading",
+      "status": "error",
+      "last_trained": 0
+    },
+    "crypto-signal-stacking-pipeline": {
+      "data": "datasets/signals",
+      "status": "error",
+      "last_trained": 0
+    },
+    "Symptom-to-Condition_Classifier": {
+      "data": "datasets/patterns",
+      "status": "error",
+      "last_trained": 0
+    },
+    "market_analyzer": {
+      "data": "datasets/stocks",
+      "status": "trained",
+      "last_trained": 1760758949.7735178
+    },
+    "problem_solver": {
+      "data": "datasets/math",
+      "status": "error",
+      "last_trained": 0
+    },
+    "quantum_compressor": {
+      "data": "datasets/compression",
+      "status": "error",
+      "last_trained": 0
+    }
+  },
+  "last_update": 1760759178.2188942,
+  "timestamp": "2025-10-17T23:46:18.218894"
+}

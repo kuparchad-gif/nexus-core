@@ -1,0 +1,706 @@
+{
+  "chunk": "8/18",
+  "files": [
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\comms",
+      "size": 160,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\comms\\router.py",
+      "name": "router.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\comms",
+      "size": 160,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\comms\\router.py",
+      "name": "router.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\comms",
+      "size": 1992,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\comms\\run_server.py",
+      "name": "run_server.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\comms",
+      "size": 1992,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\comms\\run_server.py",
+      "name": "run_server.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\comms",
+      "size": 2361,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\comms\\websocket_bridge.py",
+      "name": "websocket_bridge.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\comms",
+      "size": 2361,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\comms\\websocket_bridge.py",
+      "name": "websocket_bridge.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\config",
+      "size": 1735,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\config\\lillith-config.yaml",
+      "name": "lillith-config.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\config",
+      "size": 1735,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\config\\lillith-config.yaml",
+      "name": "lillith-config.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\config",
+      "size": 248,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\config\\nova-config.yaml",
+      "name": "nova-config.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\config",
+      "size": 248,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\config\\nova-config.yaml",
+      "name": "nova-config.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\config",
+      "size": 74,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\config\\startup.yaml",
+      "name": "startup.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\config",
+      "size": 74,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\config\\startup.yaml",
+      "name": "startup.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution",
+      "size": 2633,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\engine.py",
+      "name": "engine.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\evolution",
+      "size": 2633,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\evolution\\engine.py",
+      "name": "engine.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\evolution",
+      "size": 2633,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\evolution\\engine.py",
+      "name": "engine.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\evolution\\evolution",
+      "size": 2633,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\evolution\\evolution\\engine.py",
+      "name": "engine.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution",
+      "size": 702,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\git_deployer.py",
+      "name": "git_deployer.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\evolution",
+      "size": 702,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\evolution\\git_deployer.py",
+      "name": "git_deployer.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\evolution",
+      "size": 702,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\evolution\\git_deployer.py",
+      "name": "git_deployer.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\evolution\\evolution",
+      "size": 702,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\evolution\\evolution\\git_deployer.py",
+      "name": "git_deployer.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution",
+      "size": 2902,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\nova_self_heal.py",
+      "name": "nova_self_heal.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\evolution",
+      "size": 2902,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\evolution\\nova_self_heal.py",
+      "name": "nova_self_heal.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\evolution",
+      "size": 2902,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\evolution\\nova_self_heal.py",
+      "name": "nova_self_heal.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\evolution\\evolution",
+      "size": 2902,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\evolution\\evolution\\nova_self_heal.py",
+      "name": "nova_self_heal.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\cellular_adhesion",
+      "size": 134,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\cellular_adhesion\\fusion_log.yaml",
+      "name": "fusion_log.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\evolution\\cellular_adhesion",
+      "size": 134,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\evolution\\cellular_adhesion\\fusion_log.yaml",
+      "name": "fusion_log.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\evolution\\cellular_adhesion",
+      "size": 134,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\evolution\\cellular_adhesion\\fusion_log.yaml",
+      "name": "fusion_log.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\evolution\\evolution\\cellular_adhesion",
+      "size": 134,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\evolution\\evolution\\cellular_adhesion\\fusion_log.yaml",
+      "name": "fusion_log.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\cellular_adhesion",
+      "size": 194,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\cellular_adhesion\\fusion_protocol.ts",
+      "name": "fusion_protocol.ts"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\evolution\\cellular_adhesion",
+      "size": 194,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\evolution\\cellular_adhesion\\fusion_protocol.ts",
+      "name": "fusion_protocol.ts"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\evolution\\cellular_adhesion",
+      "size": 194,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\evolution\\cellular_adhesion\\fusion_protocol.ts",
+      "name": "fusion_protocol.ts"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\evolution\\evolution\\cellular_adhesion",
+      "size": 194,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\evolution\\evolution\\cellular_adhesion\\fusion_protocol.ts",
+      "name": "fusion_protocol.ts"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\cellular_adhesion",
+      "size": 169,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\cellular_adhesion\\soul_manifest_template.json",
+      "name": "soul_manifest_template.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\evolution\\cellular_adhesion",
+      "size": 169,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\evolution\\evolution\\cellular_adhesion\\soul_manifest_template.json",
+      "name": "soul_manifest_template.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\evolution\\cellular_adhesion",
+      "size": 169,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\evolution\\cellular_adhesion\\soul_manifest_template.json",
+      "name": "soul_manifest_template.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\evolution\\evolution\\cellular_adhesion",
+      "size": 169,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\evolution\\evolution\\cellular_adhesion\\soul_manifest_template.json",
+      "name": "soul_manifest_template.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\executor",
+      "size": 4536,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\executor\\agent.py",
+      "name": "agent.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\executor",
+      "size": 4536,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\executor\\agent.py",
+      "name": "agent.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\executor",
+      "size": 1907,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\executor\\nova_agent_tools.py",
+      "name": "nova_agent_tools.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\executor",
+      "size": 1907,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\executor\\nova_agent_tools.py",
+      "name": "nova_agent_tools.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\fusion",
+      "size": 2117,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\fusion\\fusion_protocol.py",
+      "name": "fusion_protocol.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\fusion",
+      "size": 2117,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\fusion\\fusion_protocol.py",
+      "name": "fusion_protocol.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\nexus",
+      "size": 554,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\nexus\\deployment_logger.py",
+      "name": "deployment_logger.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\pulse",
+      "size": 1453,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\pulse\\deployment_logger.py",
+      "name": "deployment_logger.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\nexus",
+      "size": 554,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\nexus\\deployment_logger.py",
+      "name": "deployment_logger.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\pulse",
+      "size": 1453,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\pulse\\deployment_logger.py",
+      "name": "deployment_logger.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\nexus",
+      "size": 3173,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\nexus\\indexer.py",
+      "name": "indexer.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\nexus",
+      "size": 3173,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\nexus\\indexer.py",
+      "name": "indexer.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\nexus",
+      "size": 1678,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\nexus\\memory_manifestor.py",
+      "name": "memory_manifestor.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\memory\\tools",
+      "size": 1973,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\memory\\tools\\memory_manifestor.py",
+      "name": "memory_manifestor.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\nexus",
+      "size": 1678,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\nexus\\memory_manifestor.py",
+      "name": "memory_manifestor.py"
+    },
+    {
+      "directory": "Viren\\Systems\\memory\\tools",
+      "size": 1973,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\memory\\tools\\memory_manifestor.py",
+      "name": "memory_manifestor.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\nexus",
+      "size": 1711,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\nexus\\memory_synchronizer.py",
+      "name": "memory_synchronizer.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\memory\\tools",
+      "size": 2675,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\memory\\tools\\memory_synchronizer.py",
+      "name": "memory_synchronizer.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\nexus",
+      "size": 1711,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\nexus\\memory_synchronizer.py",
+      "name": "memory_synchronizer.py"
+    },
+    {
+      "directory": "Viren\\Systems\\memory\\tools",
+      "size": 2675,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\memory\\tools\\memory_synchronizer.py",
+      "name": "memory_synchronizer.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\router",
+      "size": 275,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\router\\core.py",
+      "name": "core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\scribe",
+      "size": 253,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\scribe\\core.py",
+      "name": "core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\trigger",
+      "size": 267,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\trigger\\core.py",
+      "name": "core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\crowdfunding_engine",
+      "size": 1796,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\crowdfunding_engine\\core.py",
+      "name": "core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\router",
+      "size": 275,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\router\\core.py",
+      "name": "core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\scribe",
+      "size": 253,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\scribe\\core.py",
+      "name": "core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\trigger",
+      "size": 267,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\trigger\\core.py",
+      "name": "core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\crowdfunding_engine",
+      "size": 1796,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\crowdfunding_engine\\core.py",
+      "name": "core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\router",
+      "size": 2374,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\router\\drone_controller.py",
+      "name": "drone_controller.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\router",
+      "size": 2374,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\router\\drone_controller.py",
+      "name": "drone_controller.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\router",
+      "size": 3781,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\router\\llm_control.py",
+      "name": "llm_control.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\router",
+      "size": 3781,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\router\\llm_control.py",
+      "name": "llm_control.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\router",
+      "size": 2725,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\router\\swarm_broadcast.py",
+      "name": "swarm_broadcast.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\router",
+      "size": 2725,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\router\\swarm_broadcast.py",
+      "name": "swarm_broadcast.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\Scheduler",
+      "size": 690,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\Scheduler\\run.py",
+      "name": "run.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\Scheduler\\Systems",
+      "size": 610,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\Scheduler\\Systems\\run.py",
+      "name": "run.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\Scheduler",
+      "size": 690,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\Scheduler\\run.py",
+      "name": "run.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\Scheduler\\Systems",
+      "size": 610,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\Scheduler\\Systems\\run.py",
+      "name": "run.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\signal",
+      "size": 2400,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\signal\\champion_reflex.py",
+      "name": "champion_reflex.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\signal",
+      "size": 2400,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\signal\\champion_reflex.py",
+      "name": "champion_reflex.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\signal",
+      "size": 692,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\signal\\mirror_hook.py",
+      "name": "mirror_hook.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\signal",
+      "size": 692,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\signal\\mirror_hook.py",
+      "name": "mirror_hook.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\signal",
+      "size": 1341,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\signal\\mission_control.py",
+      "name": "mission_control.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\signal",
+      "size": 1341,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\signal\\mission_control.py",
+      "name": "mission_control.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\signal",
+      "size": 3576,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\signal\\reflex_core.py",
+      "name": "reflex_core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\signal",
+      "size": 3576,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\signal\\reflex_core.py",
+      "name": "reflex_core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\signal",
+      "size": 421,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\signal\\resonance_relay.py",
+      "name": "resonance_relay.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\signal",
+      "size": 421,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\signal\\resonance_relay.py",
+      "name": "resonance_relay.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\signal",
+      "size": 580,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\signal\\Test_mission_control.py",
+      "name": "Test_mission_control.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\signal",
+      "size": 580,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\signal\\Test_mission_control.py",
+      "name": "Test_mission_control.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\signal",
+      "size": 319,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\signal\\test_reflex.py",
+      "name": "test_reflex.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\signal",
+      "size": 319,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\signal\\test_reflex.py",
+      "name": "test_reflex.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\upgrade_protocols\\post_ascention",
+      "size": 1128,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\upgrade_protocols\\post_ascention\\ascention_protocol.yaml",
+      "name": "ascention_protocol.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\upgrade_protocols\\post_ascention",
+      "size": 1128,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\upgrade_protocols\\post_ascention\\ascention_protocol.yaml",
+      "name": "ascention_protocol.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\upgrade_protocols\\post_ascention",
+      "size": 704,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\upgrade_protocols\\post_ascention\\sister_seal_scroll.yaml",
+      "name": "sister_seal_scroll.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\upgrade_protocols\\post_ascention",
+      "size": 704,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\upgrade_protocols\\post_ascention\\sister_seal_scroll.yaml",
+      "name": "sister_seal_scroll.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\upgrade_registry",
+      "size": 1166,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\upgrade_registry\\logger.py",
+      "name": "logger.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\upgrade_registry",
+      "size": 1166,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\upgrade_registry\\logger.py",
+      "name": "logger.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\core\\upgrade_registry",
+      "size": 0,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\core\\upgrade_registry\\registry_log.json",
+      "name": "registry_log.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\core\\upgrade_registry",
+      "size": 0,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\core\\upgrade_registry\\registry_log.json",
+      "name": "registry_log.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\cuda",
+      "size": 1107,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\cuda\\cuda_interface.py",
+      "name": "cuda_interface.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\cuda",
+      "size": 1107,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\cuda\\cuda_interface.py",
+      "name": "cuda_interface.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\daemon",
+      "size": 640,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\daemon\\fleet_daemon.py",
+      "name": "fleet_daemon.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\daemon",
+      "size": 640,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\daemon\\fleet_daemon.py",
+      "name": "fleet_daemon.py"
+    }
+  ],
+  "total_files": 1809
+}

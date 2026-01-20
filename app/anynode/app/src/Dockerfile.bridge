@@ -1,0 +1,39 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
+    curl \
+    nodejs \
+    npm \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy Python requirements
+COPY ../requirements_gabriel_horn.txt .
+RUN pip install --no-cache-dir -r requirements_gabriel_horn.txt
+
+# Copy bridge components
+COPY bridge_engine.py .
+COPY mlx_bridge.py .
+COPY lmstudio_bridge.py .
+COPY python_router.py .
+COPY ts_router.ts .
+
+# Install Node.js dependencies for TypeScript
+RUN npm install -g typescript ts-node
+
+# Create logs directory
+RUN mkdir -p /app/logs
+
+# Expose bridge port
+EXPOSE 8082
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:8082/health || exit 1
+
+# Run bridge system
+CMD ["python", "bridge_engine.py"]

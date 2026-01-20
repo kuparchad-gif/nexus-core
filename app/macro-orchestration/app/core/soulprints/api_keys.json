@@ -1,0 +1,20 @@
+{
+  "grok": "xai-AtKjJlQ01wVGNY2vVIc01nTbMwLpFIzL2GAkSJKvY6x63YPEUQq5DkiAFUpLN7Qb5Uc7eaSHN8CCRNDQ",
+  "deepseek": "sk-50299c2faa7049138c245b3369645d41",
+  "google_gemini": "AIzaSyDT2b3TwGB0GvZ7M1tXpk4Ti-NuKRyrXqA",
+  "claude": "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",
+  "openai": "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",
+  "pinecone": "pcsk_651RKU_UCKknAhKppL5ShTKXjvWbggaR4EM3Bs937TcCosRcnsUcHNjRLehbw1WRdbWACH",
+  "shutterstock": "v2/SThTZWNzZjk4R3lzbnNudERGUWladUU4ZVpQMlN3QUIvNDY4MDgxNjIxL2N1c3RvbWVyLzQvbkZGSV9lbHI0SV9yaUd4dVY2VEE2M2FxQmF2bk8tSGN2dkVQNlphangwWE41RDdRT1ZrTjRxdktNSkpfZVhTQ0xsODZtQ3hqR1JyZ1l0MDN0S1l5MkxiMk5jOWpETHlmYnVmNU9EbV9VajR2Nm9aek1tLUFMQmYzdW9XcDVLWktiTWYzSU5DUGt4Rm5sa1hpUlpmWHFYS1R5WGI5YXppNWpUNmN2QWo0ck5ETkpjd1ROY3ZuNHIzZ2ticWhXTlltN1F5aVlWdjMyemlFMXkzUkpDWTh2dy9mZW10ZmZOUVVVeThMUHdGSVBjN3Rn",
+  "nebius_ai": "eyJhbGciOiJIUzI1NiIsImtpZCI6IlV6SXJWd1h0dnprLVRvdzlLZWstc0M1akptWXBvX1VaVkxUZlpnMDRlOFUiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJnb29nbGUtb2F1dGgyfDEwMjIxNjY3ODUyNDA1NDI3MjU5OSIsInNjb3BlIjoib3BlbmlkIG9mZmxpbmVfYWNjZXNzIiwiaXNzIjoiYXBpX2tleV9pc3N1ZXIiLCJhdWQiOlsiaHR0cHM6Ly9uZWJpdXMtaW5mZXJlbmNlLmV1LmF1dGgwLmNvbS9hcGkvdjIvIl0sImV4cCI6MTkwNzAwNDE3NSwidXVpZCI6IjM4NWY1YjNhLTE0OTItNGNhYy1iZTRlLTEwM2MzZmZlMmMzNyIsIm5hbWUiOiJMaWxsaXRoIEFQSSIsImV4cGlyZXNfYXQiOiIyMDMwLTA2LTA2VDE5OjIyOjU1KzAwMDAifQ.LJGFjUAG4sROrpx1Y3CuTgXY-iODYKvkNV27OtSBpZ0",
+  "hyperbolic": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjaGFkLkt1cGFyQGFldGhlcmVhbG5leHVzLm5ldCIsImlhdCI6MTc0OTMyMTIzNX0.5UCcF0OP1iamQ8wIxFKh7dTk6NK929OBBOUKSRV2BPI",
+  "huggingface_readonly": "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",
+  "viren_huggingface": "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",
+  "together_ai": "153d8a61d8a5fa9376e1e079f26d4fa06bf238296c389be08aaff69a6453e677",
+  "modal": "modal profile activate aethereal-nexus",
+  "modal_token": "modal token set --token-id ak-RrhjMbxFF3JkE0G7MZb86H --token-secret as-g59gSGd0ry6CAa5KsbMtIU --profile=aethereal-nexus",
+  "modal_secret": "modal secret create nexus_key API_KEY=nexus-crew-key",
+  "github_lillith": "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"
+  "mistral_api": "KGIfSHZH9ZqNvSKT8Ob8VSP0yUlww6Fb"
+  "codestral_api": "Y8OxCyjG4GoBCLNzKnJiY5vUt0fGESTK"
+}

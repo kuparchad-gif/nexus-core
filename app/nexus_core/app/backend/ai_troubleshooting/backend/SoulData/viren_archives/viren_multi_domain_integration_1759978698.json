@@ -1,0 +1,20 @@
+{
+  "data": {
+    "Training data for multi_domain_integration best practices": [
+      [
+        -66.69586181640625,
+        -13.945048332214355,
+        -5.543923854827881,
+        11.969842910766602,
+        35.05400466918945
+      ]
+    ]
+  },
+  "scores": [
+    80,
+    80,
+    80
+  ],
+  "timestamp": 1759978698.020138,
+  "instance_id": "viren_multi_domain_integration_1759978698"
+}

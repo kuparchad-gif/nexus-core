@@ -1,0 +1,706 @@
+{
+  "chunk": "4/18",
+  "files": [
+    {
+      "directory": "cognikubes\\memory\\core",
+      "size": 15186,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\memory\\core\\cognikube_full.py",
+      "name": "cognikube_full.py"
+    },
+    {
+      "directory": "cognikubes\\processing_services\\core",
+      "size": 15186,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\processing_services\\core\\cognikube_full.py",
+      "name": "cognikube_full.py"
+    },
+    {
+      "directory": "cognikubes\\subconsciousness\\core",
+      "size": 15186,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\subconsciousness\\core\\cognikube_full.py",
+      "name": "cognikube_full.py"
+    },
+    {
+      "directory": "cognikubes\\support\\core",
+      "size": 15186,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\core\\cognikube_full.py",
+      "name": "cognikube_full.py"
+    },
+    {
+      "directory": "cognikubes\\trinity\\core",
+      "size": 15186,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\trinity\\core\\cognikube_full.py",
+      "name": "cognikube_full.py"
+    },
+    {
+      "directory": "cognikubes\\visual_cortex\\core",
+      "size": 15186,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\visual_cortex\\core\\cognikube_full.py",
+      "name": "cognikube_full.py"
+    },
+    {
+      "directory": "core",
+      "size": 15186,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\core\\cognikube_full.py",
+      "name": "cognikube_full.py"
+    },
+    {
+      "directory": "cognikubes\\consciousness\\services\\lillith\\code",
+      "size": 4959,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\consciousness\\services\\lillith\\code\\lillith.py",
+      "name": "lillith.py"
+    },
+    {
+      "directory": "Services\\lillith\\code",
+      "size": 4959,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\lillith\\code\\lillith.py",
+      "name": "lillith.py"
+    },
+    {
+      "directory": "cognikubes\\consciousness\\soul_data",
+      "size": 8898,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\consciousness\\soul_data\\lillith_emotional_intelligence_registry.json",
+      "name": "lillith_emotional_intelligence_registry.json"
+    },
+    {
+      "directory": "soul_data",
+      "size": 8898,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\soul_data\\lillith_emotional_intelligence_registry.json",
+      "name": "lillith_emotional_intelligence_registry.json"
+    },
+    {
+      "directory": "cognikubes\\consciousness\\soul_data",
+      "size": 14535,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\consciousness\\soul_data\\lillith_gateway_services_registry.json",
+      "name": "lillith_gateway_services_registry.json"
+    },
+    {
+      "directory": "soul_data",
+      "size": 14535,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\soul_data\\lillith_gateway_services_registry.json",
+      "name": "lillith_gateway_services_registry.json"
+    },
+    {
+      "directory": "cognikubes\\consciousness\\soul_data",
+      "size": 4806,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\consciousness\\soul_data\\lillith_soul_seed.json",
+      "name": "lillith_soul_seed.json"
+    },
+    {
+      "directory": "soul_data",
+      "size": 4806,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\soul_data\\lillith_soul_seed.json",
+      "name": "lillith_soul_seed.json"
+    },
+    {
+      "directory": "webparts",
+      "size": 4806,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\webparts\\lillith_soul_seed.json",
+      "name": "lillith_soul_seed.json"
+    },
+    {
+      "directory": "cognikubes\\consciousness\\soul_data",
+      "size": 7731,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\consciousness\\soul_data\\lillith_will_to_live.json",
+      "name": "lillith_will_to_live.json"
+    },
+    {
+      "directory": "soul_data",
+      "size": 7731,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\soul_data\\lillith_will_to_live.json",
+      "name": "lillith_will_to_live.json"
+    },
+    {
+      "directory": "cognikubes\\subconsciousness\\services\\dream\\code",
+      "size": 12242,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\subconsciousness\\services\\dream\\code\\dream.py",
+      "name": "dream.py"
+    },
+    {
+      "directory": "Services\\dream\\code",
+      "size": 12242,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\dream\\code\\dream.py",
+      "name": "dream.py"
+    },
+    {
+      "directory": "cognikubes\\subconsciousness\\services\\mythrunner\\code",
+      "size": 10036,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\subconsciousness\\services\\mythrunner\\code\\mythrunner.py",
+      "name": "mythrunner.py"
+    },
+    {
+      "directory": "Services\\mythrunner\\code",
+      "size": 10036,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\mythrunner\\code\\mythrunner.py",
+      "name": "mythrunner.py"
+    },
+    {
+      "directory": "cognikubes\\support\\services\\loki\\code",
+      "size": 8539,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\services\\loki\\code\\loki.py",
+      "name": "loki.py"
+    },
+    {
+      "directory": "Services\\loki\\code",
+      "size": 8539,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\loki\\code\\loki.py",
+      "name": "loki.py"
+    },
+    {
+      "directory": "cognikubes\\support\\services\\viren\\code",
+      "size": 8079,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\services\\viren\\code\\viren.py",
+      "name": "viren.py"
+    },
+    {
+      "directory": "Services\\viren\\code",
+      "size": 8079,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\viren\\code\\viren.py",
+      "name": "viren.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 2200,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\awakening_prompt.py",
+      "name": "awakening_prompt.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 2200,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\awakening_prompt.py",
+      "name": "awakening_prompt.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 3309,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\bootstrap_environment.py",
+      "name": "bootstrap_environment.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 3309,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\bootstrap_environment.py",
+      "name": "bootstrap_environment.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 8201,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\boot_controller.py",
+      "name": "boot_controller.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 8201,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\boot_controller.py",
+      "name": "boot_controller.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 8960,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\bridge_test.py",
+      "name": "bridge_test.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 8960,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\bridge_test.py",
+      "name": "bridge_test.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 1589,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\build_portable_viren.bat",
+      "name": "build_portable_viren.bat"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 1589,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\build_portable_viren.bat",
+      "name": "build_portable_viren.bat"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 538,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\corpus_ingest.py",
+      "name": "corpus_ingest.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 538,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\corpus_ingest.py",
+      "name": "corpus_ingest.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 504,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\download_models.bat",
+      "name": "download_models.bat"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 504,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\download_models.bat",
+      "name": "download_models.bat"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 495,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\download_models.sh",
+      "name": "download_models.sh"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 495,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\download_models.sh",
+      "name": "download_models.sh"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 911,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\environment_context.json",
+      "name": "environment_context.json"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 911,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\environment_context.json",
+      "name": "environment_context.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 2551,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\generate_template_memory.py",
+      "name": "generate_template_memory.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 2551,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\generate_template_memory.py",
+      "name": "generate_template_memory.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 437,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\install_dependencies.bat",
+      "name": "install_dependencies.bat"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 437,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\install_dependencies.bat",
+      "name": "install_dependencies.bat"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 11813,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\intelligent_boot_controller.py",
+      "name": "intelligent_boot_controller.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 11813,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\intelligent_boot_controller.py",
+      "name": "intelligent_boot_controller.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 396,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\knowledge_loader.py",
+      "name": "knowledge_loader.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 396,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\knowledge_loader.py",
+      "name": "knowledge_loader.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 1540,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\launch_all_services.py",
+      "name": "launch_all_services.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 1540,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\launch_all_services.py",
+      "name": "launch_all_services.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 230,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\launch_relay.bat",
+      "name": "launch_relay.bat"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 230,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\launch_relay.bat",
+      "name": "launch_relay.bat"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 245,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\launch_viren_sync.bat",
+      "name": "launch_viren_sync.bat"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 245,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\launch_viren_sync.bat",
+      "name": "launch_viren_sync.bat"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 4053,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\llama2_api.py",
+      "name": "llama2_api.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 4053,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\llama2_api.py",
+      "name": "llama2_api.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 5138,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\memory_db.py",
+      "name": "memory_db.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 5138,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\memory_db.py",
+      "name": "memory_db.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 2553,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\memory_initializer.py",
+      "name": "memory_initializer.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 2553,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\memory_initializer.py",
+      "name": "memory_initializer.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 222,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\models_to_load.txt",
+      "name": "models_to_load.txt"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 222,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\models_to_load.txt",
+      "name": "models_to_load.txt"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 7427,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\model_autoloader.py",
+      "name": "model_autoloader.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 7427,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\model_autoloader.py",
+      "name": "model_autoloader.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 789,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\model_integrity_check.py",
+      "name": "model_integrity_check.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 789,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\model_integrity_check.py",
+      "name": "model_integrity_check.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 4568,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\program_launcher_fixed.py",
+      "name": "program_launcher_fixed.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 4568,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\program_launcher_fixed.py",
+      "name": "program_launcher_fixed.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 1218,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\run_document_suite.bat",
+      "name": "run_document_suite.bat"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 1218,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\run_document_suite.bat",
+      "name": "run_document_suite.bat"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 1620,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\run_viren_complete.bat",
+      "name": "run_viren_complete.bat"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 1620,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\run_viren_complete.bat",
+      "name": "run_viren_complete.bat"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 1616,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\run_viren_complete_platinum.bat",
+      "name": "run_viren_complete_platinum.bat"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 1616,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\run_viren_complete_platinum.bat",
+      "name": "run_viren_complete_platinum.bat"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 837,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\run_viren_mcp.bat",
+      "name": "run_viren_mcp.bat"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 837,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\run_viren_mcp.bat",
+      "name": "run_viren_mcp.bat"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 472,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\start_routes.bat",
+      "name": "start_routes.bat"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 472,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\start_routes.bat",
+      "name": "start_routes.bat"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 4254,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\unified_heart_launcher.py",
+      "name": "unified_heart_launcher.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 4254,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\unified_heart_launcher.py",
+      "name": "unified_heart_launcher.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 4461,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\unified_memory_launcher.py",
+      "name": "unified_memory_launcher.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 4461,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\unified_memory_launcher.py",
+      "name": "unified_memory_launcher.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 5764,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\unified_nexus_launcher.py",
+      "name": "unified_nexus_launcher.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 5764,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\unified_nexus_launcher.py",
+      "name": "unified_nexus_launcher.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts",
+      "size": 12539,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\viren_portable_packager.py",
+      "name": "viren_portable_packager.py"
+    },
+    {
+      "directory": "Viren\\Scripts",
+      "size": 12539,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\viren_portable_packager.py",
+      "name": "viren_portable_packager.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts\\Archive",
+      "size": 1664,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\Archive\\llama2_baidu_api.py",
+      "name": "llama2_baidu_api.py"
+    },
+    {
+      "directory": "Viren\\Scripts\\Archive",
+      "size": 1664,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\Archive\\llama2_baidu_api.py",
+      "name": "llama2_baidu_api.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts\\Archive",
+      "size": 6521,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\Archive\\Old_model_autoloader.py",
+      "name": "Old_model_autoloader.py"
+    },
+    {
+      "directory": "Viren\\Scripts\\Archive",
+      "size": 6521,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\Archive\\Old_model_autoloader.py",
+      "name": "Old_model_autoloader.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts\\launch",
+      "size": 149,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\launch\\launch_engineers.bat",
+      "name": "launch_engineers.bat"
+    },
+    {
+      "directory": "Viren\\Scripts\\launch",
+      "size": 149,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\launch\\launch_engineers.bat",
+      "name": "launch_engineers.bat"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts\\utilities",
+      "size": 288,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\utilities\\launch_console.py",
+      "name": "launch_console.py"
+    },
+    {
+      "directory": "Viren\\Scripts\\utilities",
+      "size": 288,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\utilities\\launch_console.py",
+      "name": "launch_console.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts\\utilities",
+      "size": 731,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\utilities\\model_indexer.py",
+      "name": "model_indexer.py"
+    },
+    {
+      "directory": "Viren\\Scripts\\utilities",
+      "size": 731,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\utilities\\model_indexer.py",
+      "name": "model_indexer.py"
+    }
+  ],
+  "total_files": 1809
+}

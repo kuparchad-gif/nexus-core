@@ -1,0 +1,62 @@
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+import requests
+
+app = Flask(__name__)
+CORS(app)
+
+@app.route('/health')
+def health():
+    return jsonify({"status": "ready"})
+
+@app.route('/chat', methods=['POST'])
+def chat():
+    try:
+        data = request.get_json()
+        user_input = data.get('message', '')
+        
+        # Try to connect to LM Studio
+        response = requests.post(
+            "http://localhost:1234/v1/chat/completions",
+            json={
+                "model": "local-model",
+                "messages": [{"role": "user", "content": user_input}],
+                "temperature": 0.7
+            },
+            timeout=10
+        )
+        
+        ai_response = response.json()["choices"][0]["message"]["content"]
+        
+        return jsonify({
+            "response": ai_response,
+            "status": "success"
+        })
+        
+    except Exception as e:
+        return jsonify({
+            "response": f"Error: Make sure LM Studio is running on port 1234. Details: {str(e)}",
+            "status": "error"
+        })
+
+@app.route('/system-metrics')
+def system_metrics():
+    return jsonify({
+        "cpu": 45, 
+        "memory": 68,
+        "storage": 72,
+        "network": "connected"
+    })
+
+@app.route('/repair/<action>')
+def repair(action):
+    return jsonify({
+        "message": f"Repair {action} completed!",
+        "status": "success"
+    })
+
+if __name__ == '__main__':
+    print("🚀 AI Troubleshooter Backend Starting...")
+    print("📍 http://localhost:8000")
+    print("📡 Make sure LM Studio is running on http://localhost:1234")
+    app.run(port=8000, debug=True)

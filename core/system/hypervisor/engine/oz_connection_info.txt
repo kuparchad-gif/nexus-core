@@ -1,0 +1,7 @@
+SSH Connection Info:
+===================
+Server: @95.111.211.227:22
+SSH Key: /home/architect/.ssh/oz_upcloud_key
+
+To connect manually:
+ssh -i /home/architect/.ssh/oz_upcloud_key -p 22 @95.111.211.227

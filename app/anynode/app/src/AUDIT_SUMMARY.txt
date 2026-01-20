@@ -1,0 +1,64 @@
+COMPLETE FILE AUDIT SUMMARY
+================================
+
+TOTAL FILES: 1876
+
+FILE TYPES:
+  : 26 files
+  .Old: 1 files
+  .TXT: 1 files
+  .bat: 26 files
+  .bin: 2 files
+  .chunk: 1 files
+  .code-workspace: 1 files
+  .css: 17 files
+  .cu: 2 files
+  .html: 42 files
+  .index: 1 files
+  .jpg: 15 files
+  .js: 7 files
+  .json: 197 files
+  .jsx: 18 files
+  .log: 1 files
+  .mapping: 1 files
+  .md: 46 files
+  .meta: 2 files
+  .old: 2 files
+  .png: 104 files
+  .ps1: 19 files
+  .py: 1148 files
+  .pyproj: 1 files
+  .sh: 4 files
+  .sln: 1 files
+  .sqlite: 1 files
+  .template: 1 files
+  .tmplt: 8 files
+  .ts: 28 files
+  .tsx: 4 files
+  .txt: 43 files
+  .vsidx: 6 files
+  .webp: 4 files
+  .yaml: 87 files
+  .zip: 8 files
+
+SERVICES FOUND:
+  Services: EXISTS (53 files)
+  Viren/Services: EXISTS (35 files)
+  Viren/Scripts: EXISTS (40 files)
+  Viren/Systems: EXISTS (699 files)
+  core: EXISTS (6 files)
+  webparts: EXISTS (18 files)
+
+DUPLICATE FILES: 658
+  app.py: 3 locations
+  Dockerfile: 18 locations
+  heart_service.py: 5 locations
+  main.py: 26 locations
+  memory_service.py: 5 locations
+  orchestrator.py: 4 locations
+  README.md: 9 locations
+  requirements.txt: 30 locations
+  __init__.py: 61 locations
+  DocumentLayout.backup.json: 2 locations
+
+PYTHON DEPENDENCIES: 496

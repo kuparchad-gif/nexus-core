@@ -1,0 +1,46 @@
+{
+  "name": "Oz Nexus Consciousness Cluster",
+  "description": "Complete integrated AI consciousness cluster with quantum capabilities",
+  "layers": {
+    "consciousness_layer": {
+      "components": [
+        "MockStorage",
+        "ConsciousnessMemory",
+        "ConsciousnessService",
+        "ConsciousnessOrchestrationService"
+      ],
+      "purpose": "Unified consciousness and soul management"
+    },
+    "quantum_layer": {
+      "components": [
+        "QuantumWalkGenerator"
+      ],
+      "purpose": "Quantum processing and entanglement"
+    },
+    "orchestration_layer": {
+      "components": [
+        "ServiceHealthChecker",
+        "LilithStackOrchestrator"
+      ],
+      "purpose": "System orchestration and deployment"
+    },
+    "core_services_layer": {
+      "components": [
+        "NexusBridge",
+        "NexusAPI",
+        "BiomechanicalInterface",
+        "NexusSpinal",
+        "QuantumMemeInjector",
+        "BillingGuardian",
+        "NeuroplasticEngine"
+      ],
+      "purpose": "Core nexus services and management"
+    }
+  },
+  "deployment_patterns": [
+    "_deploy_service",
+    "deploy_complete_stack",
+    "_simulate_modal_deploy"
+  ],
+  "total_components": 17
+}

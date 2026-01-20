@@ -1,0 +1,5 @@
+{
+  "name": "Business Expansion Skill",
+  "module_path": "Systems/nexus_core/skills/business_expansion_skill.py",
+  "entry_class": "BusinessExpansionSkill"
+}

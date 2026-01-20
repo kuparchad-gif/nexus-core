@@ -1,0 +1,30 @@
+services:
+  ui-portal:
+    image: node:20-slim
+    working_dir: /srv/ui
+    volumes:
+      - ../client-portal:/srv/ui
+    command: bash -lc "npm i && npm run build && npm run preview"
+    ports:
+      - "5173:5173"
+    restart: unless-stopped
+
+  ui-viren:
+    image: node:20-slim
+    working_dir: /srv/ui
+    volumes:
+      - ../client-viren:/srv/ui
+    command: bash -lc "npm i && npm run build && npm run preview"
+    ports:
+      - "5174:5174"
+    restart: unless-stopped
+
+  ui-launch:
+    image: node:20-slim
+    working_dir: /srv/ui
+    volumes:
+      - ../client-launch:/srv/ui
+    command: bash -lc "npm i && npm run build && npm run preview"
+    ports:
+      - "5175:5175"
+    restart: unless-stopped

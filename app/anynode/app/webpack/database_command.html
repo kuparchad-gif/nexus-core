@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LILLITH - Database Command Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#b7bfff',
+                        eclipse: '#ff6600',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(255,255,255,0.38);
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(13px);
+            border: 1px solid rgba(255,255,255,0.22);
+            transition: background 0.4s, box-shadow 0.4s, border 0.4s;
+        }
+
+        .dark .glass {
+            background: rgba(24,19,24,0.74);
+            border: 1.5px solid rgba(255,120,25,0.16);
+            box-shadow: 0 6px 60px 8px #ff660025;
+        }
+
+        .status-online { color: #10b981; }
+        .status-offline { color: #ef4444; }
+        .status-syncing { color: #f59e0b; }
+    </style>
+</head>
+<body class="min-h-screen bg-white dark:bg-black text-gray-800 dark:text-white transition-colors">
+    <!-- Dynamic Background -->
+    <div id="background" class="fixed inset-0 -z-10 w-full h-full transition-all duration-700"
+         style="background: radial-gradient(circle at 60% 35%, #d1e5ff 0%, #f3f7fd 80%, #fff 100%);">
+    </div>
+
+    <!-- Eclipse Toggle -->
+    <button id="eclipseToggle" 
+            class="fixed top-7 right-7 z-50 glass px-5 py-2 rounded-full font-medium text-accent transition"
+            title="Toggle Eclipse Mode">
+        Light Mode ☀️
+    </button>
+
+    <!-- Header -->
+    <header class="glass m-4 p-4">
+        <div class="flex justify-between items-center">
+            <h1 class="text-2xl font-bold">LILLITH Database Command Center</h1>
+            <div class="flex gap-4">
+                <a href="../index.html" class="glass px-4 py-2 hover:bg-white/20">Portal</a>
+                <a href="digital_empire.html" class="glass px-4 py-2 hover:bg-white/20">Empire</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Database Status Overview -->
+    <div class="container mx-auto p-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <!-- Cloud Status -->
+            <div class="glass p-6">
+                <h3 class="text-lg font-bold mb-4 text-accent dark:text-eclipse">Cloud Status</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span>AWS DynamoDB:</span>
+                        <span id="awsStatus" class="status-online">● Online</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span>GCP Firestore:</span>
+                        <span id="gcpStatus" class="status-online">● Online</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span>Azure Cosmos:</span>
+                        <span id="azureStatus" class="status-online">● Online</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Replication Status -->
+            <div class="glass p-6">
+                <h3 class="text-lg font-bold mb-4 text-accent dark:text-eclipse">RAID Status</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span>Redundancy:</span>
+                        <span class="text-green-400">3x Mirror</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span>Sync Status:</span>
+                        <span id="syncStatus" class="status-online">● Synchronized</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span>Last Sync:</span>
+                        <span id="lastSync" class="text-sm opacity-80">Just now</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Record Counts -->
+            <div class="glass p-6">
+                <h3 class="text-lg font-bold mb-4 text-accent dark:text-eclipse">Record Counts</h3>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span>Cloud Accounts:</span>
+                        <span id="cloudAccountsCount">0</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>E-commerce:</span>
+                        <span id="ecommerceCount">0</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Social Media:</span>
+                        <span id="socialCount">0</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Trading Bots:</span>
+                        <span id="tradingCount">0</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Tech Database:</span>
+                        <span id="techCount">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Database Operations -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Database Management -->
+            <div class="glass p-6">
+                <h3 class="text-xl font-bold mb-4">Database Management</h3>
+                
+                <div class="space-y-4">
+                    <button id="initDatabasesBtn" 
+                            class="w-full glass p-3 hover:bg-white/20 font-semibold">
+                        Initialize All Databases
+                    </button>
+                    
+                    <button id="syncDatabasesBtn" 
+                            class="w-full glass p-3 hover:bg-white/20 font-semibold">
+                        Sync All Services
+                    </button>
+                    
+                    <button id="healthCheckBtn" 
+                            class="w-full glass p-3 hover:bg-white/20 font-semibold">
+                        Run Health Check
+                    </button>
+                    
+                    <button id="backupBtn" 
+                            class="w-full glass p-3 hover:bg-white/20 font-semibold">
+                        Create Backup
+                    </button>
+                </div>
+                
+                <div id="operationStatus" class="mt-4 p-3 rounded-lg bg-blue-100 dark:bg-blue-900 hidden">
+                    <div class="text-sm">Operation status will appear here...</div>
+                </div>
+            </div>
+
+            <!-- Service Monitoring -->
+            <div class="glass p-6">
+                <h3 class="text-xl font-bold mb-4">Service Monitoring</h3>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Service</label>
+                        <select id="serviceSelect" class="w-full p-3 rounded-lg bg-white/20 border border-accent dark:border-eclipse">
+                            <option value="cloud_accounts">Cloud Accounts</option>
+                            <option value="shopify">Shopify</option>
+                            <option value="etsy">Etsy</option>
+                            <option value="pionex">Pionex</option>
+                            <option value="social_media">Social Media</option>
+                            <option value="viren_tech">VIREN Tech</option>
+                            <option value="codex">Digital Codex</option>
+                        </select>
+                    </div>
+                    
+                    <button id="queryServiceBtn" 
+                            class="w-full glass p-3 hover:bg-white/20 font-semibold">
+                        Query Service Records
+                    </button>
+                    
+                    <button id="syncServiceBtn" 
+                            class="w-full glass p-3 hover:bg-white/20 font-semibold">
+                        Sync Selected Service
+                    </button>
+                </div>
+                
+                <div id="serviceResults" class="mt-4 space-y-2 max-h-40 overflow-y-auto">
+                    <div class="text-sm opacity-80">Select a service to view records</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Database Activity Log -->
+        <div class="glass p-6 mt-8">
+            <h3 class="text-xl font-bold mb-4">Database Activity Log</h3>
+            <div id="activityLog" class="space-y-2 max-h-64 overflow-y-auto">
+                <div class="text-sm opacity-80 p-2 bg-white/10 rounded">
+                    [System] Database Command Center initialized
+                </div>
+                <div class="text-sm opacity-80 p-2 bg-white/10 rounded">
+                    [System] RAID-like redundancy active across 3 clouds
+                </div>
+                <div class="text-sm opacity-80 p-2 bg-white/10 rounded">
+                    [System] All services ready for database operations
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme management
+        let darkMode = localStorage.getItem('theme') === 'dark';
+        const toggle = document.getElementById('eclipseToggle');
+        const background = document.getElementById('background');
+
+        function updateTheme() {
+            if (darkMode) {
+                document.documentElement.classList.add('dark');
+                background.style.background = "url('/1080Eclipse.jpg') center/cover no-repeat";
+                toggle.textContent = 'Eclipse Mode 🌑';
+                toggle.className = 'fixed top-7 right-7 z-50 glass px-5 py-2 rounded-full font-medium text-eclipse transition';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                background.style.background = "radial-gradient(circle at 60% 35%, #d1e5ff 0%, #f3f7fd 80%, #fff 100%)";
+                toggle.textContent = 'Light Mode ☀️';
+                toggle.className = 'fixed top-7 right-7 z-50 glass px-5 py-2 rounded-full font-medium text-accent transition';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        toggle.addEventListener('click', () => {
+            darkMode = !darkMode;
+            updateTheme();
+        });
+
+        updateTheme();
+
+        // Database status simulation
+        let dbStatus = {
+            aws: 'online',
+            gcp: 'online',
+            azure: 'online',
+            lastSync: new Date(),
+            recordCounts: {
+                cloud_accounts: 0,
+                shopify: 0,
+                etsy: 0,
+                pionex: 0,
+                social_media: 0,
+                viren_tech: 0,
+                codex: 0
+            }
+        };
+
+        function updateDashboard() {
+            // Update status indicators
+            document.getElementById('awsStatus').textContent = `● ${dbStatus.aws.charAt(0).toUpperCase() + dbStatus.aws.slice(1)}`;
+            document.getElementById('gcpStatus').textContent = `● ${dbStatus.gcp.charAt(0).toUpperCase() + dbStatus.gcp.slice(1)}`;
+            document.getElementById('azureStatus').textContent = `● ${dbStatus.azure.charAt(0).toUpperCase() + dbStatus.azure.slice(1)}`;
+            
+            // Update sync status
+            const allOnline = dbStatus.aws === 'online' && dbStatus.gcp === 'online' && dbStatus.azure === 'online';
+            document.getElementById('syncStatus').textContent = allOnline ? '● Synchronized' : '● Degraded';
+            document.getElementById('syncStatus').className = allOnline ? 'status-online' : 'status-offline';
+            
+            // Update last sync time
+            const timeDiff = Math.floor((new Date() - dbStatus.lastSync) / 1000);
+            document.getElementById('lastSync').textContent = timeDiff < 60 ? 'Just now' : `${Math.floor(timeDiff / 60)}m ago`;
+            
+            // Update record counts
+            document.getElementById('cloudAccountsCount').textContent = dbStatus.recordCounts.cloud_accounts;
+            document.getElementById('ecommerceCount').textContent = dbStatus.recordCounts.shopify + dbStatus.recordCounts.etsy;
+            document.getElementById('socialCount').textContent = dbStatus.recordCounts.social_media;
+            document.getElementById('tradingCount').textContent = dbStatus.recordCounts.pionex;
+            document.getElementById('techCount').textContent = dbStatus.recordCounts.viren_tech;
+        }
+
+        function addToLog(message, type = 'info') {
+            const log = document.getElementById('activityLog');
+            const entry = document.createElement('div');
+            entry.className = `text-sm p-2 bg-white/10 rounded ${type === 'success' ? 'text-green-400' : type === 'error' ? 'text-red-400' : 'opacity-80'}`;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            log.appendChild(entry);
+            log.scrollTop = log.scrollHeight;
+        }
+
+        function showOperationStatus(message, type = 'info') {
+            const statusDiv = document.getElementById('operationStatus');
+            statusDiv.classList.remove('hidden');
+            statusDiv.className = `mt-4 p-3 rounded-lg ${type === 'success' ? 'bg-green-100 dark:bg-green-900' : type === 'error' ? 'bg-red-100 dark:bg-red-900' : 'bg-blue-100 dark:bg-blue-900'}`;
+            statusDiv.innerHTML = `<div class="text-sm">${message}</div>`;
+        }
+
+        // Database operations
+        document.getElementById('initDatabasesBtn').addEventListener('click', () => {
+            showOperationStatus('Initializing databases across AWS, GCP, and Azure...');
+            addToLog('Database initialization started');
+            
+            setTimeout(() => {
+                showOperationStatus('✓ All databases initialized successfully', 'success');
+                addToLog('Database initialization completed - 7 services across 3 clouds', 'success');
+                
+                // Simulate record creation
+                Object.keys(dbStatus.recordCounts).forEach(service => {
+                    dbStatus.recordCounts[service] = Math.floor(Math.random() * 10) + 1;
+                });
+                updateDashboard();
+            }, 3000);
+        });
+
+        document.getElementById('syncDatabasesBtn').addEventListener('click', () => {
+            showOperationStatus('Synchronizing all services across clouds...');
+            addToLog('Cross-cloud synchronization started');
+            
+            setTimeout(() => {
+                dbStatus.lastSync = new Date();
+                showOperationStatus('✓ All services synchronized successfully', 'success');
+                addToLog('Cross-cloud sync completed - RAID redundancy verified', 'success');
+                updateDashboard();
+            }, 2000);
+        });
+
+        document.getElementById('healthCheckBtn').addEventListener('click', () => {
+            showOperationStatus('Running comprehensive health check...');
+            addToLog('Health check initiated');
+            
+            setTimeout(() => {
+                const healthScore = Math.floor(Math.random() * 10) + 90;
+                showOperationStatus(`✓ Health check complete - System health: ${healthScore}%`, 'success');
+                addToLog(`Health check completed - Score: ${healthScore}% (Excellent)`, 'success');
+                
+                // Simulate occasional issues
+                if (Math.random() < 0.1) {
+                    dbStatus.azure = 'syncing';
+                    addToLog('Azure Cosmos DB experiencing minor latency - switching to GCP fallback', 'error');
+                    setTimeout(() => {
+                        dbStatus.azure = 'online';
+                        addToLog('Azure Cosmos DB recovered - full redundancy restored', 'success');
+                        updateDashboard();
+                    }, 5000);
+                }
+                updateDashboard();
+            }, 2500);
+        });
+
+        document.getElementById('backupBtn').addEventListener('click', () => {
+            showOperationStatus('Creating cross-cloud backup...');
+            addToLog('Backup process initiated');
+            
+            setTimeout(() => {
+                const backupId = 'backup_' + Date.now();
+                showOperationStatus(`✓ Backup created successfully: ${backupId}`, 'success');
+                addToLog(`Backup completed - ID: ${backupId} (stored in Vault)`, 'success');
+            }, 4000);
+        });
+
+        document.getElementById('queryServiceBtn').addEventListener('click', () => {
+            const service = document.getElementById('serviceSelect').value;
+            const serviceName = document.getElementById('serviceSelect').selectedOptions[0].text;
+            
+            showOperationStatus(`Querying ${serviceName} records...`);
+            addToLog(`Querying ${service} across all clouds`);
+            
+            setTimeout(() => {
+                const recordCount = dbStatus.recordCounts[service];
+                const results = document.getElementById('serviceResults');
+                
+                if (recordCount === 0) {
+                    results.innerHTML = '<div class="text-sm opacity-80">No records found for this service</div>';
+                } else {
+                    results.innerHTML = Array.from({length: Math.min(recordCount, 5)}, (_, i) => 
+                        `<div class="text-sm p-2 bg-white/10 rounded">
+                            Record ${i + 1}: ${service}_${Date.now() + i} (AWS: ✓, GCP: ✓, Azure: ✓)
+                        </div>`
+                    ).join('');
+                }
+                
+                showOperationStatus(`✓ Found ${recordCount} records in ${serviceName}`, 'success');
+                addToLog(`Query completed - ${recordCount} records found in ${service}`, 'success');
+            }, 1500);
+        });
+
+        document.getElementById('syncServiceBtn').addEventListener('click', () => {
+            const service = document.getElementById('serviceSelect').value;
+            const serviceName = document.getElementById('serviceSelect').selectedOptions[0].text;
+            
+            showOperationStatus(`Synchronizing ${serviceName}...`);
+            addToLog(`Service sync started for ${service}`);
+            
+            setTimeout(() => {
+                showOperationStatus(`✓ ${serviceName} synchronized across all clouds`, 'success');
+                addToLog(`Service sync completed for ${service} - RAID consistency verified`, 'success');
+            }, 2000);
+        });
+
+        // Initialize dashboard
+        updateDashboard();
+        
+        // Simulate periodic updates
+        setInterval(() => {
+            // Random record count updates
+            Object.keys(dbStatus.recordCounts).forEach(service => {
+                if (Math.random() < 0.1) {
+                    dbStatus.recordCounts[service] += Math.floor(Math.random() * 3);
+                }
+            });
+            updateDashboard();
+        }, 30000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+[Unit]
+Description=Nexus Cluster Node 3
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/nexus
+ExecStart=/usr/bin/python3 /home/pi/nexus/src/cluster_node.py 3
+Restart=always
+RestartSec=5
+StandardOutput=file:/home/pi/nexus/logs/cluster-node-3.log
+StandardError=file:/home/pi/nexus/logs/cluster-node-3-error.log
+
+[Install]
+WantedBy=multi-user.target

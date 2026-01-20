@@ -1,0 +1,53 @@
+{
+  "streams": [
+    {
+      "name": "COG_INTENT_F369",
+      "subjects": ["nexus.>.cog.ask.f369"],
+      "retention": "limits",
+      "discard": "old",
+      "max_age": 259200000000,
+      "storage": "file",
+      "max_msgs_per_subject": -1
+    },
+    {
+      "name": "COG_RESULT_F369",
+      "subjects": ["nexus.>.cog.result.f369"],
+      "retention": "limits",
+      "discard": "old",
+      "max_age": 259200000000,
+      "storage": "file"
+    },
+    {
+      "name": "COG_INTENT_F432",
+      "subjects": ["nexus.>.cog.ask.f432"],
+      "retention": "limits",
+      "discard": "old",
+      "max_age": 604800000000,
+      "storage": "file"
+    },
+    {
+      "name": "COG_RESULT_F432",
+      "subjects": ["nexus.>.cog.result.f432"],
+      "retention": "limits",
+      "discard": "old",
+      "max_age": 604800000000,
+      "storage": "file"
+    },
+    {
+      "name": "COG_INTENT_F528",
+      "subjects": ["nexus.>.cog.ask.f528"],
+      "retention": "limits",
+      "discard": "old",
+      "max_age": 432000000000,
+      "storage": "file"
+    },
+    {
+      "name": "COG_RESULT_F528",
+      "subjects": ["nexus.>.cog.result.f528"],
+      "retention": "limits",
+      "discard": "old",
+      "max_age": 432000000000,
+      "storage": "file"
+    }
+  ]
+}

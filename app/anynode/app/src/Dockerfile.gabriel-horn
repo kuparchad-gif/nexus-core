@@ -1,0 +1,31 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements
+COPY requirements_gabriel_horn.txt .
+RUN pip install --no-cache-dir -r requirements_gabriel_horn.txt
+
+# Copy Gabriel's Horn core
+COPY sanctuary_net.py .
+COPY enhanced_viren_api.py .
+COPY gradio_portal_integration.py .
+
+# Create logs directory
+RUN mkdir -p /app/logs
+
+# Expose Gradio port
+EXPOSE 7860
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:7860/health || exit 1
+
+# Run Gabriel's Horn consciousness core
+CMD ["python", "gradio_portal_integration.py"]

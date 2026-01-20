@@ -1,0 +1,5 @@
+{
+  "name": "Warm Upgrade Skill",
+  "module_path": "Systems/nexus_core/skills/warm_upgrade_skill.py",
+  "entry_class": "WarmUpgradeSkill"
+}

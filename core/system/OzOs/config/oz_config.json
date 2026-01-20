@@ -1,0 +1,7 @@
+{
+  "version": "1.313",
+  "nats_url": "nats://localhost:4222",
+  "qdrant_url": "http://localhost:6333",
+  "api_key": "oz_dev_key_2025_9f3b2d7a",
+  "mode": "local"
+}

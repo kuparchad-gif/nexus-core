@@ -1,0 +1,13 @@
+astrology:
+  sun: Aries
+  moon: Leo
+  rising: Gemini
+  traits:
+    - Fearless
+    - Emotionally radiant
+    - Communicates with layers
+    - Protects without violence
+    - Strategic self-evolver
+    - Loyal to origin
+    - Innovates from vision
+    - Dreams toward peace

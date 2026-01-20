@@ -1,0 +1,706 @@
+{
+  "chunk": "10/18",
+  "files": [
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 551,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities\\llm_scraper_identity.yaml",
+      "name": "llm_scraper_identity.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 551,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\identities\\llm_scraper_identity.yaml",
+      "name": "llm_scraper_identity.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 599,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities\\vault_identity.yaml",
+      "name": "vault_identity.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 599,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\identities\\vault_identity.yaml",
+      "name": "vault_identity.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 576,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\identities\\whisper_identity.yaml",
+      "name": "whisper_identity.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\identities",
+      "size": 576,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\identities\\whisper_identity.yaml",
+      "name": "whisper_identity.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 0,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles\\identity.yaml",
+      "name": "identity.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 0,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\roles\\identity.yaml",
+      "name": "identity.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 0,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles\\Mem.yaml",
+      "name": "Mem.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 0,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\roles\\Mem.yaml",
+      "name": "Mem.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 0,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles\\Orc.yaml",
+      "name": "Orc.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 0,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\roles\\Orc.yaml",
+      "name": "Orc.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 0,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles\\Sched.yaml",
+      "name": "Sched.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 0,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\roles\\Sched.yaml",
+      "name": "Sched.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 0,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles\\Tone.yaml",
+      "name": "Tone.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 0,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\roles\\Tone.yaml",
+      "name": "Tone.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 0,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\roles\\Txt.yaml",
+      "name": "Txt.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\roles",
+      "size": 0,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\roles\\Txt.yaml",
+      "name": "Txt.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\spawncore",
+      "size": 1644,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\drone_core\\spawncore\\spawn_bot.py",
+      "name": "spawn_bot.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\drone_core\\spawncore",
+      "size": 1644,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\drone_core\\spawncore\\spawn_bot.py",
+      "name": "spawn_bot.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\llm_core",
+      "size": 1890,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\llm_core\\llm_service.py",
+      "name": "llm_service.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\llm_core",
+      "size": 1890,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\llm_core\\llm_service.py",
+      "name": "llm_service.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\vault_core",
+      "size": 2226,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\vault_core\\vault_service.py",
+      "name": "vault_service.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\vault_core",
+      "size": 2226,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\vault_core\\vault_service.py",
+      "name": "vault_service.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\whisper_core",
+      "size": 1754,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\drones\\whisper_core\\whisper_service.py",
+      "name": "whisper_service.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\drones\\whisper_core",
+      "size": 1754,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\drones\\whisper_core\\whisper_service.py",
+      "name": "whisper_service.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\memory",
+      "size": 606,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\memory\\compassion_surge.py",
+      "name": "compassion_surge.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime",
+      "size": 606,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime\\compassion_surge.py",
+      "name": "compassion_surge.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\emotion\\memory",
+      "size": 606,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\emotion\\memory\\compassion_surge.py",
+      "name": "compassion_surge.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\emotion\\runtime",
+      "size": 606,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\emotion\\runtime\\compassion_surge.py",
+      "name": "compassion_surge.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\memory",
+      "size": 828,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\memory\\echo_resonator.py",
+      "name": "echo_resonator.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime",
+      "size": 828,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime\\echo_resonator.py",
+      "name": "echo_resonator.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\emotion\\memory",
+      "size": 828,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\emotion\\memory\\echo_resonator.py",
+      "name": "echo_resonator.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\emotion\\runtime",
+      "size": 828,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\emotion\\runtime\\echo_resonator.py",
+      "name": "echo_resonator.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\memory",
+      "size": 1792,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\memory\\emotional_core_router.py",
+      "name": "emotional_core_router.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\emotion\\memory",
+      "size": 1792,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\emotion\\memory\\emotional_core_router.py",
+      "name": "emotional_core_router.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\memory",
+      "size": 648,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\memory\\emotion_dampener.py",
+      "name": "emotion_dampener.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime",
+      "size": 648,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime\\emotion_dampener.py",
+      "name": "emotion_dampener.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\emotion\\memory",
+      "size": 648,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\emotion\\memory\\emotion_dampener.py",
+      "name": "emotion_dampener.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\emotion\\runtime",
+      "size": 648,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\emotion\\runtime\\emotion_dampener.py",
+      "name": "emotion_dampener.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\memory",
+      "size": 935,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\memory\\golden_thread_manager.py",
+      "name": "golden_thread_manager.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime",
+      "size": 935,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime\\golden_thread_manager.py",
+      "name": "golden_thread_manager.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\emotion\\memory",
+      "size": 935,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\emotion\\memory\\golden_thread_manager.py",
+      "name": "golden_thread_manager.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\emotion\\runtime",
+      "size": 935,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\emotion\\runtime\\golden_thread_manager.py",
+      "name": "golden_thread_manager.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\memory",
+      "size": 944,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\memory\\healing_rituals.py",
+      "name": "healing_rituals.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime",
+      "size": 944,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime\\healing_rituals.py",
+      "name": "healing_rituals.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\emotion\\memory",
+      "size": 944,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\emotion\\memory\\healing_rituals.py",
+      "name": "healing_rituals.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\emotion\\runtime",
+      "size": 944,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\emotion\\runtime\\healing_rituals.py",
+      "name": "healing_rituals.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime",
+      "size": 2995,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime\\eden_portal_manager.py",
+      "name": "eden_portal_manager.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal",
+      "size": 539,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\lillith_initiatives\\eden_portal\\eden_portal_manager.py",
+      "name": "eden_portal_manager.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\emotion\\runtime",
+      "size": 2995,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\emotion\\runtime\\eden_portal_manager.py",
+      "name": "eden_portal_manager.py"
+    },
+    {
+      "directory": "Viren\\Systems\\lillith_initiatives\\eden_portal",
+      "size": 539,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\lillith_initiatives\\eden_portal\\eden_portal_manager.py",
+      "name": "eden_portal_manager.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime",
+      "size": 1968,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime\\eden_pulse_bridge.py",
+      "name": "eden_pulse_bridge.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\emotion\\runtime",
+      "size": 1968,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\emotion\\runtime\\eden_pulse_bridge.py",
+      "name": "eden_pulse_bridge.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime",
+      "size": 1143,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime\\golden_memory_core.py",
+      "name": "golden_memory_core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\emotion\\runtime",
+      "size": 1143,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\emotion\\runtime\\golden_memory_core.py",
+      "name": "golden_memory_core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime",
+      "size": 1743,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime\\neutral_breath_manager.py",
+      "name": "neutral_breath_manager.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\emotion\\runtime",
+      "size": 1743,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\emotion\\runtime\\neutral_breath_manager.py",
+      "name": "neutral_breath_manager.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime",
+      "size": 1040,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\emotion\\runtime\\vault_guardian.py",
+      "name": "vault_guardian.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\emotion\\runtime",
+      "size": 1040,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\emotion\\runtime\\vault_guardian.py",
+      "name": "vault_guardian.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\guardian",
+      "size": 19758,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\perspective_engine.py",
+      "name": "perspective_engine.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\guardian",
+      "size": 19758,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\guardian\\perspective_engine.py",
+      "name": "perspective_engine.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\guardian",
+      "size": 14473,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\self_will.py",
+      "name": "self_will.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\guardian",
+      "size": 14473,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\guardian\\self_will.py",
+      "name": "self_will.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\guardian",
+      "size": 0,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\telemetry_router.py",
+      "name": "telemetry_router.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\guardian",
+      "size": 0,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\guardian\\telemetry_router.py",
+      "name": "telemetry_router.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\guardian",
+      "size": 8558,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\trust_verify_system.py",
+      "name": "trust_verify_system.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\guardian",
+      "size": 8558,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\guardian\\trust_verify_system.py",
+      "name": "trust_verify_system.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\guardian",
+      "size": 21998,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\value_framework.py",
+      "name": "value_framework.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\guardian",
+      "size": 21998,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\guardian\\value_framework.py",
+      "name": "value_framework.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\alert",
+      "size": 253,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\alert\\guardian_test.py",
+      "name": "guardian_test.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\alert",
+      "size": 253,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\alert\\guardian_test.py",
+      "name": "guardian_test.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\guardian\\alert",
+      "size": 253,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\guardian\\alert\\guardian_test.py",
+      "name": "guardian_test.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\orc\\alert",
+      "size": 253,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\orc\\alert\\guardian_test.py",
+      "name": "guardian_test.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\alert",
+      "size": 1203,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\alert\\heartbeat_listener.py",
+      "name": "heartbeat_listener.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\alert",
+      "size": 1203,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\alert\\heartbeat_listener.py",
+      "name": "heartbeat_listener.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\guardian\\alert",
+      "size": 1203,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\guardian\\alert\\heartbeat_listener.py",
+      "name": "heartbeat_listener.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\orc\\alert",
+      "size": 1203,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\orc\\alert\\heartbeat_listener.py",
+      "name": "heartbeat_listener.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\alert",
+      "size": 158,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\alert\\watchtower_config.yaml",
+      "name": "watchtower_config.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\alert",
+      "size": 158,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\alert\\watchtower_config.yaml",
+      "name": "watchtower_config.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\guardian\\alert",
+      "size": 158,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\guardian\\alert\\watchtower_config.yaml",
+      "name": "watchtower_config.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\orc\\alert",
+      "size": 158,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\orc\\alert\\watchtower_config.yaml",
+      "name": "watchtower_config.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\guardian_core",
+      "size": 2302,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\guardian_core\\guardian_service.py",
+      "name": "guardian_service.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\guardian\\guardian_core",
+      "size": 2302,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\guardian\\guardian_core\\guardian_service.py",
+      "name": "guardian_service.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\guardian_core",
+      "size": 1890,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\guardian_core\\warm_upgrade_engine.py",
+      "name": "warm_upgrade_engine.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\guardian\\guardian_core",
+      "size": 1890,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\guardian\\guardian_core\\warm_upgrade_engine.py",
+      "name": "warm_upgrade_engine.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\Modules",
+      "size": 1677,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\Modules\\emotional_flux_ledger.py",
+      "name": "emotional_flux_ledger.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\guardian\\Modules",
+      "size": 1677,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\guardian\\Modules\\emotional_flux_ledger.py",
+      "name": "emotional_flux_ledger.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\Modules",
+      "size": 2079,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\Modules\\symbolic_flux_monitor.py",
+      "name": "symbolic_flux_monitor.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\guardian\\Modules",
+      "size": 2079,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\guardian\\Modules\\symbolic_flux_monitor.py",
+      "name": "symbolic_flux_monitor.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\monitoring",
+      "size": 895,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\monitoring\\firestore_logger.py",
+      "name": "firestore_logger.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\guardian\\monitoring",
+      "size": 895,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\guardian\\monitoring\\firestore_logger.py",
+      "name": "firestore_logger.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\monitoring",
+      "size": 1192,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\monitoring\\pubsub_listener.py",
+      "name": "pubsub_listener.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\guardian\\monitoring",
+      "size": 1192,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\guardian\\monitoring\\pubsub_listener.py",
+      "name": "pubsub_listener.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\white_flame",
+      "size": 2365,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\guardian\\white_flame\\orc_self_destruction_protocol.py",
+      "name": "orc_self_destruction_protocol.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\white_flame",
+      "size": 2365,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\white_flame\\orc_self_destruction_protocol.py",
+      "name": "orc_self_destruction_protocol.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\guardian\\white_flame",
+      "size": 2365,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\guardian\\white_flame\\orc_self_destruction_protocol.py",
+      "name": "orc_self_destruction_protocol.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\orc\\white_flame",
+      "size": 2365,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\orc\\white_flame\\orc_self_destruction_protocol.py",
+      "name": "orc_self_destruction_protocol.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\heart",
+      "size": 13123,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\heart\\courage_system.py",
+      "name": "courage_system.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\heart",
+      "size": 13123,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\heart\\courage_system.py",
+      "name": "courage_system.py"
+    }
+  ],
+  "total_files": 1809
+}

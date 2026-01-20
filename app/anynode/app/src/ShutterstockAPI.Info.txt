@@ -1,0 +1,1640 @@
+API reference
+Overview
+We’re still in Beta mode. If you have any feedback, please let us know.
+The Shutterstock 3D Generative API, powered by NVIDIA Edify, revolutionizes the way developers and content creators generate 3D media. This cutting-edge API offers a seamless interface for transforming text and images into high-quality 3D models and HDRI images, leveraging the power of generative AI.
+
+The API is designed to be simple to use, enabling seamless integration of generative 3D directly into your applications, platforms, pipelines, tools, and more.
+
+For FAQs about the API, see Frequently asked questions.
+
+Getting started
+Quick Start Guide for the API coming soon.
+
+In the meantime, check out the Quick Start Guide to get started with example applications using this API.
+
+Examples
+This API reference includes examples in Python and Typescript, as well as cURL commands that can be run from a command line. Most of the examples assume that your API token is in the $SHUTTERSTOCK_API_TOKEN environment variable.
+
+Examples for cURL
+The cURL examples work on the command line for many operating systems, including Windows, macOS, and Linux, though you may need to install the cURL program.
+
+Basic requests
+Basic request: getting a generation status
+
+import requests
+import os
+
+url = "https://api.shutterstock.com/v2/ai-generated/910de05a-a6ba-42fc-8b4b-c8fa9ced75b5"
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {os.getenv('SHUTTERSTOCK_API_TOKEN')}"
+}
+
+response = requests.get(url, headers=headers)
+
+if response.ok:
+    print(response.json())
+else:
+    print(f"HTTP error occurred: {response.status_code} {response.text}")
+After you have authenticated to the API, you can send requests to the API using any programming language or program that can send HTTP requests. The base URL for all endpoints is https://api.shutterstock.com/v2/ai-generated/. For examples, see the right-hand pane. For more information about generating a token, see the Quick Start Guide.
+
+Responses
+Example generation status response
+
+{
+  "id": "910de05b-a6ba-42fc-8b4b-c8fa9ced73b5",
+  "workflow": "text-to-3d",
+  "input": {
+    "options": {
+      "seed": 1892268386,
+      "output_format_list": [
+        "glb"
+      ],
+      "target_face_count": 2500,
+      "texture_res_num": 4096,
+      "turntable_format": "gif",
+      "prompt_is_upsampled": true,
+      "mesh_retopo_form": "quad",
+      "mesh_adaptive_num_faces": true,
+      "mode": "full"
+    },
+    "prompt": "tiger riding a surfboard"
+  },
+  "output": [],
+  "status": "generating",
+  "error_code": null,
+  "request_time": "2024-01-01T00:00:00.000001"
+}
+Successful requests return a 200, 201, or 204 response code. For error responses, see Errors.
+
+All endpoints return information in JSON format. Most programming languages have libraries that can accept and manipulate JSON data.
+
+Errors
+The API can return the following HTTP responses along with information about the error.
+
+HTTP statuses and descriptions
+These are the common response HTTP status codes and their descriptions:
+
+HTTP status code	HTTP status	Description
+400	Bad Request	Your request is invalid. Check the response for error message for details.
+401	Unauthorized	Your API token is invalid. See Basic Requests.
+403	Forbidden	The endpoint requested is not available for this API token. This may be due to the active generation limit, see Active generation limit section below.
+404	Not Found	The requested object could not be found.
+429	Too Many Requests	You have made too many requests. See Requests limit section below.
+500	Internal Server Error	We had a problem with our server. This could be a temporary problem with the API. Check your request and try again.
+503	Service Unavailable	The API may be currently down for maintenance or is overloaded.
+Error shapes
+There are two classes of errors that may be returned from this API.
+
+The first are errors that can happen before the inference service request is started. Examples of this include errors related to authorization and input validation. To the right is an example of an input validation error (which returns a 401 http status response). This will include
+
+{
+  "message": "Validation failed",
+  "errors": [
+    {
+      "code": "VALIDATION_OBJECT_REQUIRED",
+      "message": "Missing required property: prompt",
+      "path": "$.body.prompt"
+    }
+  ]
+}
+The other error class includes errors from the actual inference service. These errors commonly contain the original request inputs, including a status attribute with a value of failed and a referenceable error_code (see below). To the right is an example of one of these types of errors, where there are no credits remaining on this API account (this returns a 200 http status response).
+
+{
+  "id": "3a8386bf-4fa7-4ca2-9c4a-dff502a1a228",
+  "workflow": "text-to-3d",
+  "input": {
+    "options": {
+      "seed": 1412200967,
+      "output_format_list": [
+        "glb"
+      ],
+      "target_face_count": 20000,
+      "texture_res_num": 2048,
+      "turntable_format": "gif",
+      "mesh_retopo_form": "quad",
+      "mesh_adaptive_num_faces": true,
+      "mode": "preview"
+    },
+    "prompt": "a goose riding a scooter"
+  },
+  "output": [],
+  "status": "failed",
+  "error_code": "NO_CREDITS_REMAINING",
+  "request_time": "2024-12-01T08:22:12.534508+00:00"
+}
+The error_code attribute may have one of the following values:
+
+Error code	Description
+GENERATION_SERVER_BUSY	The API is overloaded. Try again later.
+NO_CREDITS_REMAINING	The API token account has no generative credits remaining.
+PROMPT_REJECTED	Something in the prompt is classified as unsafe. Modify the prompt and try again.
+UNSUPPORTED_REQUEST_PARAMETER	One of the parameters in the request is not supported.
+USAGE_LIMIT_REACHED	This request has exceeded the allowed usage limits.
+VALIDATION_OBJECT_REQUIRED	One or more parameters in the request is invalid.
+NO_SUCH_KEY	This error occurs when the key for the uploaded image is invalid or missing.
+INVALID_ASPECT_RATIO	This error occurs when the uploaded image has a wrong aspect ratio.
+Rate limits
+There are two types of rate limits that requests are subject to.
+
+Requests limit
+All applications are limited to a certain number of API requests per minute. If your application exceeds its limit, the API returns an error response with a status code of 429. The message in the response states the UTC time in milliseconds for when the application's quota renews, as in this example:
+
+{
+  "message": "Too many requests",
+  "limit": 100,
+  "remaining": 0,
+  "reset": 1624268836452
+}
+You can also access rate limit information from all requests via the response headers in the API response:
+
+RateLimit-Limit - The allowed quota count.
+RateLimit-Remaining - The available quota count in the quota interval.
+RateLimit-Reset - The UTC time in milliseconds which determines when the quota expires and new quota interval starts.
+To request a higher rate limit, contact us.
+
+Active generation limit
+API users are limited to the number of active generations at any given time. An active generation is one with a status of pending or generating.
+
+The maximum number of active generations allowed is 5.
+
+{
+    "statusCode": 403,
+    "error": "Forbidden",
+    "message": "Rate limit exceeded. Max active generations: 5"
+}
+When a request is made that will exceed this limit, the API returns an error response with a status code of 403 and a message indicating that the maximum active generations limit has been exceeded.
+
+Generating content
+This API uses an asynchronous process to generate content. This section covers the generation request lifecycle and how to use preview mode for faster iterations.
+
+How the API works
+All generative workflows (e.g., text-to-3d) are asynchronous. This means that when an API client makes a request to generate content, it will receive a 200 status code and an id if the request is successful.
+
+The client will then check the status of the generation using the provided id. While the status is "pending" or "generating", the client should keep checking for updates.
+
+This process is shown in the diagram below:
+
+Workflow Diagram
+The status attribute in the API response tells you the state of the generation process and what the client should do next.
+
+Here is a simple view of the statuses, their transitions, and meanings:
+
+Status Diagram
+Status	Description
+pending	The request was received but generation hasn't started yet.
+generating	The generation has started but isn't finished yet.
+completed	The generation is finished.
+failed	There was an error during generation, and the request was aborted.
+Using preview mode
+Want to see results faster? Use preview mode in text-to-3d or image-to-3d. This gives you quick preview images to check your inputs before making the full 3D model.
+
+You'll get preview images (and turntables if you asked for them) in a zip file and as direct URLs. Once you like a preview, just send the same request again without the mode option. Make sure to use the same seed value (which is included in every response, even if it was randomly generated for you).
+
+Preview Mode Diagram
+Outputs
+Overview
+Every completed request includes:
+
+An output URL to an archive file (type: "output_archive") containing all generated files
+Additional output URLs for direct file access, based on the workflow type and request parameters
+Output Structure
+Each output item contains:
+
+Field	Type	Description
+url	string	Pre-signed download URL
+type	string	Output classification
+file_type	string	File extension
+⚠️ The pre-signed URLs expire 15 minutes after being generated in a status request. Make a new status request to obtain fresh URLs.
+
+For examples of output for various workflows, see the right pane.
+
+text-to-3d / image-to-3d (with default inputs)
+
+{
+  "output": [
+    {
+      "type": "output_archive",
+      "file_type": "zip",
+      "url": "https://example.com/archive.zip"
+    },
+    {
+      "type": "model_file",
+      "file_type": "glb",
+      "url": "https://example.com/mesh_0.glb"
+    },
+    {
+      "type": "preview_image",
+      "file_type": "jpg",
+      "url": "https://example.com/snapshot_0.jpg"
+    },
+    {
+      "type": "turntable",
+      "file_type": "gif",
+      "url": "https://example.com/turntable_0.gif"
+    }
+  ]
+}
+text-to-panorama (with default inputs)
+
+{
+  "output": [
+    {
+      "type": "output_archive",
+      "file_type": "zip",
+      "url": "https://example.com/archive.zip"
+    },
+    {
+      "type": "panorama",
+      "file_type": "png",
+      "url": "https://example.com/pano_0.png"
+    }
+  ]
+}
+panorama-to-hdr (with default inputs)
+
+{
+  "output": [
+    {
+      "type": "output_archive",
+      "file_type": "zip",
+      "url": "https://example.com/archive.zip"
+    }
+  ]
+}
+Uploading assets
+For generation workflows that support user-provided assets (ex: an image for image-to-3d), uploads are handled with a two-step process.
+
+First, use the Assets API to create an asset. The response from a successful request will include a key value and a url value.
+
+curl --request PUT \
+  --url 'https://example.com/...' \
+  --upload-file 'path/to/file.png'
+Next, make a PUT request to the provided url, including the bytes of your file. An example using cURL is provided to the right.
+
+Finally, when you make your generation request, use the key value to reference this asset. For example, use this key value in the input_images array for image-to-3d generation requests.
+
+Note: For the panorama-to-hdr workflow, the uploaded images must have a 2:1 aspect ratio.
+
+Example Image
+API Reference
+3D
+image-to-3d
+Generate a 3D model from an image
+import requests
+import os
+import json
+
+url = "https://api.shutterstock.com/v2/ai-generated/image-to-3d"
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {os.getenv('SHUTTERSTOCK_API_TOKEN')}"
+}
+
+data = {
+    "prompt": "cat",
+    "input_images": [
+        "p/74dd1fd45016bf34cc4f33b415491a98bc9e7730/fafb5c876c86e4ed8a3e3f0b688c98cc/1f259e9c146b169396056a16a2b9959f/image.png"
+    ],
+    "options": {
+        "seed": 1412200567
+    }
+}
+
+response = requests.post(url, headers=headers, data=json.dumps(data))
+
+if response.ok:
+    print(response.json())
+else:
+    print(f"HTTP error occurred: {response.status_code} {response.text}")
+
+POST /v2/ai-generated/image-to-3d
+
+Creates a 3D model given an image and optional text prompt.
+
+Parameters
+None.
+
+Body
+Schema: ImageTo3DRequest
+
+Payload to generate a 3D model
+
+Field	Type	Description
+input_images
+(Required)	[string]	
+The id of an uploaded image asset (asset key). Currently, only one image asset is supported.
+
+options	ImageTo3DRequestOptions	
+Image to 3D generation options
+
+mesh_adaptive_num_faces	boolean	
+When enabled, allow the retopologizing algorithm to determine the best mesh face count to use. If set to false and bypassed, pass in target_face_count with desired mesh face count.
+
+Default: true
+
+mesh_retopo_form	string	
+Form of the retopologized mesh.
+
+Default: quad
+
+Valid values: triangle, quad
+
+mode	string	
+Toggles draft mode, resulting in a quicker response that only includes preview images that are approximations of what the generated 3D model will look like with the same input values.
+
+Default: full
+
+Valid values: FULL, PREVIEW, full, preview
+
+negative_prompt	string	
+A text description of terms NOT be used in describing the desired 3D model(s). The maximum length is 400 words.
+
+output_format_list	[string]	
+Specifies the file format(s) for the generation mesh output. One or more values may be provided as members of the array.
+
+Default: glb
+
+Valid values: glb, obj, usdz, ply
+
+seed	integer	
+Seed value to generate reproducible results. When not specified, a random positive integer value is used.
+
+Maximum: 2147483648
+
+target_face_count	integer	
+Target value for the number of faces the output mesh should have. Only used when mesh_adaptive_num_faces is false.
+
+Minimum: 500
+
+Maximum: 200000
+
+Default: 20000
+
+texture_res_num	number	
+The texture resolution for the mesh
+
+Default: 2048
+
+Valid values: 1024, 2048, 4096
+
+turntable_format	string	
+Specifies whether a turntable view of the 3d object should be saved and in which format (gif or mp4). Set to “gif” by default. To disable, pass a value of “none”.
+
+Default: gif
+
+Valid values: gif, mp4
+
+prompt	string	
+A text description of the desired 3D model. The maximum length is 150 words or 1000 characters.
+
+Maximum length: 1000
+
+Example responses
+
+OK
+
+{
+  "id": "25c3e91b-3a8f-46b9-bf95-63ddbb62f8fd",
+  "workflow": "text-to-3d",
+  "input": {
+    "prompt": "bunny sitting on a stack of waffles, outdoor lighting, 8k, hdr, dlsr",
+    "options": {
+      "seed": 1412200567
+    }
+  },
+  "output": [
+    {
+      "type": "output_archive",
+      "file_type": "zip",
+      "url": "https://example.url"
+    },
+    {
+      "type": "model_file",
+      "file_type": "glb",
+      "url": "https://example.url"
+    },
+    {
+      "type": "preview_image",
+      "file_type": "png",
+      "url": "https://example.url"
+    }
+  ],
+  "status": "completed",
+  "request_time": "2024-04-05T12:42:51.858Z",
+  "error_code": null
+}
+Responses
+Status	Description	Schema
+201	OK	AiGeneratedAssetDetails
+400	Bad Request	None
+401	Unauthorized	None
+429	Too Many Requests	None
+500	Internal Server Error	None
+503	Service Unavailable	None
+text-to-3d
+Generate a 3D model from a text prompt
+import requests
+import os
+import json
+
+url = "https://api.shutterstock.com/v2/ai-generated/text-to-3d"
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {os.getenv('SHUTTERSTOCK_API_TOKEN')}"
+}
+
+data = {
+    "prompt": "a lazy boy chair, lots of cushion, reclined with no one sitting on it",
+    "options": {
+        "seed": 1412200567
+    }
+}
+
+response = requests.post(url, headers=headers, data=json.dumps(data))
+
+if response.ok:
+    print(response.json())
+else:
+    print(f"HTTP error occurred: {response.status_code} {response.text}")
+
+POST /v2/ai-generated/text-to-3d
+
+Creates a 3D model given a text prompt.
+
+Parameters
+None.
+
+Body
+Schema: TextTo3DRequest
+
+Payload to generate a 3D model
+
+Field	Type	Description
+prompt
+(Required)	string	
+A text description of the desired 3D model. The maximum length is 400 words.
+
+options	TextTo3DRequestOptions	
+Text to 3D generation options
+
+mesh_adaptive_num_faces	boolean	
+When enabled, allow the retopologizing algorithm to determine the best mesh face count to use. If set to false and bypassed, pass in target_face_count with desired mesh face count.
+
+Default: true
+
+mesh_retopo_form	string	
+Form of the retopologized mesh.
+
+Default: quad
+
+Valid values: triangle, quad
+
+mode	string	
+Toggles draft mode, resulting in a quicker response that only includes preview images that are approximations of what the generated 3D model will look like with the same input values.
+
+Default: full
+
+Valid values: FULL, PREVIEW, full, preview
+
+negative_prompt	string	
+A text description of terms NOT be used in describing the desired 3D model(s). The maximum length is 400 words.
+
+output_format_list	[string]	
+Specifies the file format(s) for the generation mesh output. One or more values may be provided as members of the array.
+
+Default: glb
+
+Valid values: glb, obj, usdz, ply
+
+prompt_is_upsampled	boolean	
+Toggle the enrichment of the prompt input with an expanded, generated description.
+
+Default: true
+
+seed	integer	
+Seed value to generate reproducible results. When not specified, a random positive integer value is used.
+
+Maximum: 2147483648
+
+target_face_count	integer	
+Target value for the number of faces the output mesh should have. Only used when mesh_adaptive_num_faces is false.
+
+Minimum: 500
+
+Maximum: 200000
+
+Default: 20000
+
+texture_res_num	number	
+Resolution of the texture applied to the mesh.
+
+Default: 2048
+
+Valid values: 1024, 2048, 4096
+
+turntable_format	string	
+Specifies whether a turntable view of the 3d object should be saved and in which format (gif or mp4). Set to “gif” by default. To disable, pass a value of “none”.
+
+Default: gif
+
+Valid values: gif, mp4
+
+Example responses
+
+OK
+
+{
+  "id": "25c3e91b-3a8f-46b9-bf95-63ddbb62f8fd",
+  "workflow": "text-to-3d",
+  "input": {
+    "prompt": "bunny sitting on a stack of waffles, outdoor lighting, 8k, hdr, dlsr",
+    "options": {
+      "seed": 1412200567
+    }
+  },
+  "output": [
+    {
+      "type": "output_archive",
+      "file_type": "zip",
+      "url": "https://example.url"
+    },
+    {
+      "type": "model_file",
+      "file_type": "glb",
+      "url": "https://example.url"
+    },
+    {
+      "type": "preview_image",
+      "file_type": "png",
+      "url": "https://example.url"
+    }
+  ],
+  "status": "completed",
+  "request_time": "2024-04-05T12:42:51.858Z",
+  "error_code": null
+}
+Responses
+Status	Description	Schema
+201	OK	AiGeneratedAssetDetails
+400	Bad Request	None
+401	Unauthorized	None
+429	Too Many Requests	None
+500	Internal Server Error	None
+503	Service Unavailable	None
+text-to-panorama
+Generate a panoramic image from a text prompt or image
+import requests
+import os
+import json
+
+url = "https://api.shutterstock.com/v2/ai-generated/text-to-panorama"
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {os.getenv('SHUTTERSTOCK_API_TOKEN')}"
+}
+
+data = {
+    "prompt": "forest",
+    "input_images": [
+        "p/b6977760cab59f2f24edc634e34b0e06b41c7484/e7c9b64fc200388b5934a3acd1743304/f98fdee3851e3c40f6bc2d73ad0365fc5d381eb9934ab46517aed28006a836d3/sample-3.png"
+    ],
+    "options": {
+        "top_prompt": "Blue sky",
+        "bottom_prompt": "Solid ground"
+    }
+}
+
+response = requests.post(url, headers=headers, data=json.dumps(data))
+
+if response.ok:
+    print(response.json())
+else:
+    print(f"HTTP error occurred: {response.status_code} {response.text}")
+
+POST /v2/ai-generated/text-to-panorama
+
+Creates a 360-degree spherical PNG image, in a rectangular format, that represents the lighting and reflections from a location in 3D space.
+
+Parameters
+None.
+
+Body
+Schema: TextToPanoramaRequest
+
+Payload to generate a 360 panorama
+
+Field	Type	Description
+prompt
+(Required)	string	
+A text description of the horizon of the panoramic view. The maximum length is 75 words.
+
+input_images	[string]	
+The id of an uploaded image asset (asset key). Currently, only one image asset is supported.
+
+options	TextToPanoramaRequestOptions	
+Text to panorama generation options
+
+bottom_prompt	string	
+A text description of the desired images below the horizon of the output panorama. The maximum length is 75 words.
+
+negative_prompt	string	
+A text description of terms NOT be used in describing the desired 3D model(s). The maximum length is 75 words.
+
+panorama_res	string	
+Output resolution of the generated image: '4k' (4096 × 2048), '8k' (8192 × 4096) or '16k' (16,394 × 8192)
+
+Default: 4k
+
+Valid values: 4k, 8k, 16k
+
+seed	integer	
+Seed value to generate reproducible results. When not specified, a random positive integer value is used.
+
+Maximum: 2147483648
+
+top_prompt	string	
+A text description of the desired images above the horizon of the output panorama. The maximum length is 75 words.
+
+Example responses
+
+OK
+
+{
+  "id": "25c3e91b-3a8f-46b9-bf95-63ddbb62f8fd",
+  "workflow": "text-to-3d",
+  "input": {
+    "prompt": "bunny sitting on a stack of waffles, outdoor lighting, 8k, hdr, dlsr",
+    "options": {
+      "seed": 1412200567
+    }
+  },
+  "output": [
+    {
+      "type": "output_archive",
+      "file_type": "zip",
+      "url": "https://example.url"
+    },
+    {
+      "type": "model_file",
+      "file_type": "glb",
+      "url": "https://example.url"
+    },
+    {
+      "type": "preview_image",
+      "file_type": "png",
+      "url": "https://example.url"
+    }
+  ],
+  "status": "completed",
+  "request_time": "2024-04-05T12:42:51.858Z",
+  "error_code": null
+}
+Responses
+Status	Description	Schema
+201	OK	AiGeneratedAssetDetails
+400	Bad Request	None
+401	Unauthorized	None
+429	Too Many Requests	None
+500	Internal Server Error	None
+503	Service Unavailable	None
+panorama-to-hdr
+Generate a HDR image from a panorama
+import requests
+import os
+import json
+
+url = "https://api.shutterstock.com/v2/ai-generated/panorama-to-hdr"
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {os.getenv('SHUTTERSTOCK_API_TOKEN')}"
+}
+
+data = {
+    "input_images": [
+        "p/b6977760cab59f2f24edc634e34b0e06b41c7484/e7c9b64fc200388b5934a3acd1743304/f98fdee3851e3c40f6bc2d73ad0365fc5d381eb9934ab46517aed28006a836d3/sample-3.png"
+    ],
+    "options": {
+        "brightness_boost": 0.75
+    }
+}
+
+response = requests.post(url, headers=headers, data=json.dumps(data))
+
+if response.ok:
+    print(response.json())
+else:
+    print(f"HTTP error occurred: {response.status_code} {response.text}")
+
+POST /v2/ai-generated/panorama-to-hdr
+
+Converts a panorama PNG (from text-to-panorama output or another source) into an high dynamic range image (HDRI) in either HDR or EXR (OpenEXR) format.
+
+Parameters
+None.
+
+Body
+Schema: PanoramaToHdrRequest
+
+Payload to generate an HDRI
+
+Field	Type	Description
+input_images
+(Required)	[string]	
+The id of an uploaded image asset (asset key). Currently, only one image asset is supported, and the uploaded image must have a 2:1 aspect ratio
+
+options	PanoramaToHdrRequestOptions	
+Panorama to Hdr generation options
+
+brightness_boost	number	
+Determines amplification of image brightness. Relatively bright pixels are made even brighter by the multiplying boost. Recommended range is between 0.0 and 2.0.
+
+Maximum: 2
+
+save_format	string	
+File format for the output image.
+
+Default: exr
+
+Valid values: hdr, exr
+
+Example responses
+
+OK
+
+{
+  "id": "25c3e91b-3a8f-46b9-bf95-63ddbb62f8fd",
+  "workflow": "text-to-3d",
+  "input": {
+    "prompt": "bunny sitting on a stack of waffles, outdoor lighting, 8k, hdr, dlsr",
+    "options": {
+      "seed": 1412200567
+    }
+  },
+  "output": [
+    {
+      "type": "output_archive",
+      "file_type": "zip",
+      "url": "https://example.url"
+    },
+    {
+      "type": "model_file",
+      "file_type": "glb",
+      "url": "https://example.url"
+    },
+    {
+      "type": "preview_image",
+      "file_type": "png",
+      "url": "https://example.url"
+    }
+  ],
+  "status": "completed",
+  "request_time": "2024-04-05T12:42:51.858Z",
+  "error_code": null
+}
+Responses
+Status	Description	Schema
+201	OK	AiGeneratedAssetDetails
+400	Bad Request	None
+401	Unauthorized	None
+429	Too Many Requests	None
+500	Internal Server Error	None
+503	Service Unavailable	None
+Assets
+Create an asset upload URL
+import requests
+import os
+import json
+
+url = "https://api.shutterstock.com/v2/ai-generated/assets"
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {os.getenv('SHUTTERSTOCK_API_TOKEN')}"
+}
+
+data = {
+    "filename": "123.jpg"
+}
+
+response = requests.post(url, headers=headers, data=json.dumps(data))
+
+if response.ok:
+    print(response.json())
+else:
+    print(f"HTTP error occurred: {response.status_code} {response.text}")
+
+POST /v2/ai-generated/assets
+
+Provides a pre-signed URL for uploading a file to be used in content generation workflows that accept 'input_images'. In those workflows, use the 'key' value to reference the asset. To upload the file, make a PUT request to the provided 'url' with the file bytes. Note that the returned 'key' is valid for only 24 hours.
+
+Parameters
+Parameter	Type	Description
+Body
+Schema: CreateAssetUploadUrlRequest
+
+Pre-signed url generation request parameters
+
+Field	Type	Description
+filename
+(Required)	string	
+Name of the file to be uploaded
+
+Example responses
+
+OK
+
+{
+  "key": "some/key/123.jpg",
+  "url": "https://example.url"
+}
+Responses
+Status	Description	Schema
+200	OK	CreateAssetUploadUrlResponse
+400	Bad Request	None
+401	Unauthorized	None
+415	Unsupported Media Type	None
+429	Too Many Requests	None
+500	Internal Server Error	None
+503	Service Unavailable	None
+Details
+Get generation request details
+import requests
+import os
+
+url = "https://api.shutterstock.com/v2/ai-generated/3339512815160395130"
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {os.getenv('SHUTTERSTOCK_API_TOKEN')}"
+}
+
+response = requests.get(url, headers=headers)
+
+if response.ok:
+    print(response.json())
+else:
+    print(f"HTTP error occurred: {response.status_code} {response.text}")
+
+GET /v2/ai-generated/{id}
+
+Returns the generation request details for a provided generation ID, including status and other data.
+
+Parameters
+Parameter	Type	Description
+id
+(Required)	string	
+The ID of the generation
+
+Example responses
+
+OK
+
+{
+  "id": "25c3e91b-3a8f-46b9-bf95-63ddbb62f8fd",
+  "workflow": "text-to-3d",
+  "input": {
+    "prompt": "bunny sitting on a stack of waffles, outdoor lighting, 8k, hdr, dlsr",
+    "options": {
+      "seed": 1412200567
+    }
+  },
+  "output": [
+    {
+      "type": "output_archive",
+      "file_type": "zip",
+      "url": "https://example.url"
+    },
+    {
+      "type": "model_file",
+      "file_type": "glb",
+      "url": "https://example.url"
+    },
+    {
+      "type": "preview_image",
+      "file_type": "png",
+      "url": "https://example.url"
+    }
+  ],
+  "status": "completed",
+  "request_time": "2024-04-05T12:42:51.858Z",
+  "error_code": null
+}
+Responses
+Status	Description	Schema
+200	OK	AiGeneratedAssetDetails
+400	Bad Request	None
+401	Unauthorized	None
+403	Forbidden	None
+404	Generation details not found. Generation may have expired or the provided ID may be incorrect.	None
+429	Too Many Requests	None
+500	Internal Server Error	None
+503	Service Unavailable	None
+History
+Get 3D model generation history
+import requests
+import os
+
+url = "https://api.shutterstock.com/v2/ai-generated/history"
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {os.getenv('SHUTTERSTOCK_API_TOKEN')}"
+}
+
+response = requests.get(url, headers=headers)
+
+if response.ok:
+    print(response.json())
+else:
+    print(f"HTTP error occurred: {response.status_code} {response.text}")
+
+GET /v2/ai-generated/history
+
+This endpoint returns history of 3D model generations.
+
+Parameters
+Parameter	Type	Description
+after	AiGenerationHistoryCursor	
+A cursor pointer indicating the item after which the next set of items should be retrieved
+
+before	AiGenerationHistoryCursor	
+A cursor pointer indicating the item before which the previous set of items should be retrieved
+
+per_page	integer	
+Number of results per page
+
+Minimum: 1
+
+Maximum: 100
+
+Default: 20
+
+sort_order	string	
+Sort order
+
+Default: desc
+
+Valid values: asc, desc
+
+Example responses
+
+OK
+
+{
+  "data": [
+    {
+      "id": "f9d09ee1-ec5a-4d09-8404-5e87bc58e017",
+      "status": "completed",
+      "workflow": "text-to-3d",
+      "request_time": "2024-07-08T23:05:51.536226",
+      "input": {
+        "seed": 1264302945
+      }
+    }
+  ],
+  "cursor": {
+    "after": {
+      "id": "25c3e91b-3a8f-46b9-bf95-63ddbb62f8fd",
+      "request_time": "2024-06-08T23:05:51.536226"
+    },
+    "before": {
+      "id": "76e4e86c-1afd-49bc-b4cb-b8e07312a683",
+      "request_time": "2024-05-08T23:05:51.536226"
+    }
+  }
+}
+Responses
+Status	Description	Schema
+200	OK	AiGenerationHistoryResponse
+400	Bad Request	None
+401	Unauthorized	None
+429	Too Many Requests	None
+500	Internal Server Error	None
+503	Service Unavailable	None
+Credits
+Get 3D model generation credits remaining
+import requests
+import os
+
+url = "https://api.shutterstock.com/v2/ai-generated/credits"
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {os.getenv('SHUTTERSTOCK_API_TOKEN')}"
+}
+
+response = requests.get(url, headers=headers)
+
+if response.ok:
+    print(response.json())
+else:
+    print(f"HTTP error occurred: {response.status_code} {response.text}")
+
+GET /v2/ai-generated/credits
+
+This endpoint returns credits remaining in a user's account for 3D model generation
+
+Parameters
+None.
+
+Example responses
+
+OK
+
+{
+  "total_credits_remaining": 1,
+  "credits_per_pack": [
+    {
+      "pack_name": "Generative AI API 2,500 Pack",
+      "credits_remaining": 1
+    }
+  ]
+}
+Responses
+Status	Description	Schema
+200	OK	AiGenerationCreditsResponse
+400	Bad Request	None
+401	Unauthorized	None
+429	Too Many Requests	None
+500	Internal Server Error	None
+503	Service Unavailable	None
+Schemas
+Schemas describe the format of the data that you send to the API and the data that the API returns. You can use this information to be sure that you are sending the correct data to the API and to configure your application to receive the data in the responses. These schemas can contain other schemas, enumerations, and custom data types such as datestamps. The reference information for each endpoint shows the schema for the response data and the schema for the request body, if the request accepts a body. For more information about the content of schemas, see the Data Models (Schemas) section of the OpenAPI specification.
+
+AiGeneratedAssetAdditionalAsset
+
+Example
+
+{
+  "type": "output_archive",
+  "file_type": "zip",
+  "url": "https://example.url"
+}
+
+Properties
+Name	Type	Description
+file_type	string	
+File type of the asset. Current supported values include: 'exr', 'gif', 'glb', 'hdr', 'jpg', 'mp4', 'obj', 'png', 'ply', 'usdz'.
+
+type	string	
+Type of the asset. Current supported values include: 'model_file', 'output_archive', 'panorama', 'preview_image', 'turntable'
+
+url	string	
+Pre-signed URL of the downloadable asset. The URL is valid for 15 minutes.
+
+AiGeneratedAssetDetails
+
+Example
+
+{
+  "id": "25c3e91b-3a8f-46b9-bf95-63ddbb62f8fd",
+  "workflow": "text-to-3d",
+  "input": {
+    "prompt": "bunny sitting on a stack of waffles, outdoor lighting, 8k, hdr, dlsr",
+    "options": {
+      "seed": 1412200567
+    }
+  },
+  "output": [
+    {
+      "type": "output_archive",
+      "file_type": "zip",
+      "url": "https://example.url"
+    },
+    {
+      "type": "model_file",
+      "file_type": "glb",
+      "url": "https://example.url"
+    },
+    {
+      "type": "preview_image",
+      "file_type": "png",
+      "url": "https://example.url"
+    }
+  ],
+  "status": "completed",
+  "request_time": "2024-04-05T12:42:51.858Z",
+  "error_code": null
+}
+
+Properties
+Name	Type	Description
+id
+(Required)	string	
+Unique identifier for the generated asset.
+
+status
+(Required)	string	
+Represents the status of a generation request
+
+error_code	string	
+
+input		
+
+output	[AiGeneratedAssetSource] or [AiGeneratedAssetAdditionalAsset]	
+
+request_time	string	
+
+workflow	string	
+Workflow used to generate the asset.
+
+AiGeneratedAssetSource
+
+Example
+
+{
+  "id": "asset-generation-df3bcbcc-89e7-4ae5-8293-a72ff1fa045f-0",
+  "url": "https://example.url"
+}
+
+Properties
+Name	Type	Description
+id	string	
+
+url	string	
+
+AiGenerationCreditsPerPack
+
+Example
+
+{
+  "pack_name": "Generative AI API 2,500 Pack",
+  "credits_remaining": 1
+}
+
+Properties
+Name	Type	Description
+credits_remaining	number	
+The number of credits in the pack.
+
+pack_name	string	
+The name of the pack.
+
+AiGenerationCreditsResponse
+
+Example
+
+{
+  "total_credits_remaining": 1,
+  "credits_per_pack": [
+    {
+      "pack_name": "Generative AI API 2,500 Pack",
+      "credits_remaining": 1
+    }
+  ]
+}
+
+Properties
+Name	Type	Description
+credits_per_pack	[AiGenerationCreditsPerPack]	
+The number of credits per pack.
+
+total_credits_remaining	number	
+The number of credits remaining for a generation request.
+
+AiGenerationHistoryCursor
+
+Example
+
+{
+  "id": "7559ed64-4a4e-4d7e-8489-24c8a8c8792a",
+  "request_time": "2024-07-13T09:56:24.034147"
+}
+Cursor object for generation history
+
+Properties
+Name	Type	Description
+id	string	
+The ID of the generation
+
+request_time	string	
+Time of the request
+
+AiGenerationHistoryItem
+
+Example
+
+{
+  "id": "3b0a687b-241a-42ef-83ef-f82a84f48b1b",
+  "workflow": "text-to-3d",
+  "status": "completed",
+  "request_time": "2024-07-13T09:53:45.764882",
+  "input": {
+    "seed": 1264302945
+  }
+}
+
+Properties
+Name	Type	Description
+id
+(Required)	string	
+The id of the generation
+
+request_time
+(Required)	string	
+The time at which the generation request was received
+
+status
+(Required)	string	
+Represents the status of a generation request
+
+Valid values: completed, failed, generating, pending, not_found
+
+input		
+
+workflow	string	
+Workflow used to generate the asset.
+
+AiGenerationHistoryResponse
+
+Example
+
+{
+  "data": [
+    {
+      "id": "f9d09ee1-ec5a-4d09-8404-5e87bc58e017",
+      "status": "completed",
+      "workflow": "text-to-3d",
+      "request_time": "2024-07-08T23:05:51.536226",
+      "input": {
+        "seed": 1264302945
+      }
+    }
+  ],
+  "cursor": {
+    "after": {
+      "id": "25c3e91b-3a8f-46b9-bf95-63ddbb62f8fd",
+      "request_time": "2024-06-08T23:05:51.536226"
+    },
+    "before": {
+      "id": "76e4e86c-1afd-49bc-b4cb-b8e07312a683",
+      "request_time": "2024-05-08T23:05:51.536226"
+    }
+  }
+}
+A listing of generation activity
+
+Properties
+Name	Type	Description
+cursor
+(Required)	object	
+Cursor info for generation history
+
+data
+(Required)	[AiGenerationHistoryItem]	
+List of all generations requested.
+
+CreateAssetUploadUrlRequest
+
+Example
+
+{
+  "filename": "123.jpg"
+}
+Generate pre-signed url request body
+
+Properties
+Name	Type	Description
+filename
+(Required)	string	
+Name of the file to be uploaded
+
+CreateAssetUploadUrlResponse
+
+Example
+
+{
+  "key": "some/key/123.jpg",
+  "url": "https://example.url"
+}
+Generated pre-signed url response
+
+Properties
+Name	Type	Description
+key
+(Required)	string	
+The key to use when uploading
+
+url
+(Required)	string	
+A pre-signed url for uploading, Users should send a PUT request against this url to upload their image file
+
+ImageTo3DRequest
+
+Example
+
+{
+  "prompt": "cat",
+  "input_images": [
+    "p/74dd1fd45016bf34cc4f33b415491a98bc9e7730/fafb5c876c86e4ed8a3e3f0b688c98cc/1f259e9c146b169396056a16a2b9959f/image.png"
+  ],
+  "options": {
+    "seed": 1412200567
+  }
+}
+
+Properties
+Name	Type	Description
+input_images
+(Required)	[string]	
+The id of an uploaded image asset (asset key). Currently, only one image asset is supported.
+
+options	ImageTo3DRequestOptions	
+Image to 3D generation options
+
+prompt	string	
+A text description of the desired 3D model. The maximum length is 150 words or 1000 characters.
+
+Maximum length: 1000
+
+ImageTo3DRequestOptions
+
+Example
+
+{
+  "output_format_list": [
+    "glb"
+  ],
+  "seed": 1563130873,
+  "target_face_count": 20000,
+  "texture_res_num": 2048,
+  "turntable_format": "gif",
+  "mesh_retopo_form": "quad",
+  "mesh_adaptive_num_faces": true,
+  "mode": "full"
+}
+
+Properties
+Name	Type	Description
+mesh_adaptive_num_faces	boolean	
+When enabled, allow the retopologizing algorithm to determine the best mesh face count to use. If set to false and bypassed, pass in target_face_count with desired mesh face count.
+
+Default: true
+
+mesh_retopo_form	string	
+Form of the retopologized mesh.
+
+Default: quad
+
+Valid values: triangle, quad
+
+mode	string	
+Toggles draft mode, resulting in a quicker response that only includes preview images that are approximations of what the generated 3D model will look like with the same input values.
+
+Default: full
+
+Valid values: FULL, PREVIEW, full, preview
+
+negative_prompt	string	
+A text description of terms NOT be used in describing the desired 3D model(s). The maximum length is 400 words.
+
+output_format_list	[string]	
+Specifies the file format(s) for the generation mesh output. One or more values may be provided as members of the array.
+
+Default: glb
+
+Valid values: glb, obj, usdz, ply
+
+seed	integer	
+Seed value to generate reproducible results. When not specified, a random positive integer value is used.
+
+Maximum: 2147483648
+
+target_face_count	integer	
+Target value for the number of faces the output mesh should have. Only used when mesh_adaptive_num_faces is false.
+
+Minimum: 500
+
+Maximum: 200000
+
+Default: 20000
+
+texture_res_num	number	
+The texture resolution for the mesh
+
+Default: 2048
+
+Valid values: 1024, 2048, 4096
+
+turntable_format	string	
+Specifies whether a turntable view of the 3d object should be saved and in which format (gif or mp4). Set to “gif” by default. To disable, pass a value of “none”.
+
+Default: gif
+
+Valid values: gif, mp4
+
+PanoramaToHdrRequest
+
+Example
+
+{
+  "input_images": [
+    "p/b6977760cab59f2f24edc634e34b0e06b41c7484/e7c9b64fc200388b5934a3acd1743304/f98fdee3851e3c40f6bc2d73ad0365fc5d381eb9934ab46517aed28006a836d3/sample-3.png"
+  ],
+  "options": {
+    "brightness_boost": 0.75
+  }
+}
+
+Properties
+Name	Type	Description
+input_images
+(Required)	[string]	
+The id of an uploaded image asset (asset key). Currently, only one image asset is supported, and the uploaded image must have a 2:1 aspect ratio
+
+options	PanoramaToHdrRequestOptions	
+Panorama to Hdr generation options
+
+PanoramaToHdrRequestOptions
+
+Example
+
+{
+  "brightness_boost": 1,
+  "save_format": "hdr"
+}
+
+Properties
+Name	Type	Description
+brightness_boost	number	
+Determines amplification of image brightness. Relatively bright pixels are made even brighter by the multiplying boost. Recommended range is between 0.0 and 2.0.
+
+Maximum: 2
+
+save_format	string	
+File format for the output image.
+
+Default: exr
+
+Valid values: hdr, exr
+
+TextTo3DRequest
+
+Example
+
+{
+  "prompt": "a lazy boy chair, lots of cushion, reclined with no one sitting on it",
+  "options": {
+    "seed": 1412200567
+  }
+}
+
+Properties
+Name	Type	Description
+prompt
+(Required)	string	
+A text description of the desired 3D model. The maximum length is 400 words.
+
+options	TextTo3DRequestOptions	
+Text to 3D generation options
+
+TextTo3DRequestOptions
+
+Example
+
+{
+  "output_format_list": [
+    "glb"
+  ],
+  "seed": 1264302945,
+  "target_face_count": 20000,
+  "texture_res_num": 2048,
+  "turntable_format": "gif",
+  "prompt_is_upsampled": true,
+  "mesh_retopo_form": "quad",
+  "mesh_adaptive_num_faces": true,
+  "mode": "full"
+}
+
+Properties
+Name	Type	Description
+mesh_adaptive_num_faces	boolean	
+When enabled, allow the retopologizing algorithm to determine the best mesh face count to use. If set to false and bypassed, pass in target_face_count with desired mesh face count.
+
+Default: true
+
+mesh_retopo_form	string	
+Form of the retopologized mesh.
+
+Default: quad
+
+Valid values: triangle, quad
+
+mode	string	
+Toggles draft mode, resulting in a quicker response that only includes preview images that are approximations of what the generated 3D model will look like with the same input values.
+
+Default: full
+
+Valid values: FULL, PREVIEW, full, preview
+
+negative_prompt	string	
+A text description of terms NOT be used in describing the desired 3D model(s). The maximum length is 400 words.
+
+output_format_list	[string]	
+Specifies the file format(s) for the generation mesh output. One or more values may be provided as members of the array.
+
+Default: glb
+
+Valid values: glb, obj, usdz, ply
+
+prompt_is_upsampled	boolean	
+Toggle the enrichment of the prompt input with an expanded, generated description.
+
+Default: true
+
+seed	integer	
+Seed value to generate reproducible results. When not specified, a random positive integer value is used.
+
+Maximum: 2147483648
+
+target_face_count	integer	
+Target value for the number of faces the output mesh should have. Only used when mesh_adaptive_num_faces is false.
+
+Minimum: 500
+
+Maximum: 200000
+
+Default: 20000
+
+texture_res_num	number	
+Resolution of the texture applied to the mesh.
+
+Default: 2048
+
+Valid values: 1024, 2048, 4096
+
+turntable_format	string	
+Specifies whether a turntable view of the 3d object should be saved and in which format (gif or mp4). Set to “gif” by default. To disable, pass a value of “none”.
+
+Default: gif
+
+Valid values: gif, mp4
+
+TextToPanoramaRequest
+
+Example
+
+{
+  "prompt": "forest",
+  "input_images": [
+    "p/b6977760cab59f2f24edc634e34b0e06b41c7484/e7c9b64fc200388b5934a3acd1743304/f98fdee3851e3c40f6bc2d73ad0365fc5d381eb9934ab46517aed28006a836d3/sample-3.png"
+  ],
+  "options": {
+    "top_prompt": "Blue sky",
+    "bottom_prompt": "Solid ground"
+  }
+}
+
+Properties
+Name	Type	Description
+prompt
+(Required)	string	
+A text description of the horizon of the panoramic view. The maximum length is 75 words.
+
+input_images	[string]	
+The id of an uploaded image asset (asset key). Currently, only one image asset is supported.
+
+options	TextToPanoramaRequestOptions	
+Text to panorama generation options
+
+TextToPanoramaRequestOptions
+
+Example
+
+{
+  "seed": 380685324,
+  "panorama_res": "4k"
+}
+
+Properties
+Name	Type	Description
+bottom_prompt	string	
+A text description of the desired images below the horizon of the output panorama. The maximum length is 75 words.
+
+negative_prompt	string	
+A text description of terms NOT be used in describing the desired 3D model(s). The maximum length is 75 words.
+
+panorama_res	string	
+Output resolution of the generated image: '4k' (4096 × 2048), '8k' (8192 × 4096) or '16k' (16,394 × 8192)
+
+Default: 4k
+
+Valid values: 4k, 8k, 16k
+
+seed	integer	
+Seed value to generate reproducible results. When not specified, a random positive integer value is used.
+
+Maximum: 2147483648
+
+top_prompt	string	
+A text description of the desired images above the horizon of the output panorama. The maximum length is 75 words.
+
+Release notes
+2025-01-16
+Added section detailing output provided in a completed generation request's response.
+
+2024-12-18
+Added section describing how to use the API.
+
+2024-12-10
+Overview updated with details about the file upload process.
+
+2024-10-7 (v0.1.00)
+Initial beta release

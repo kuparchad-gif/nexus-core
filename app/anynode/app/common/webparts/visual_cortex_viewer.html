@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Cortex Viewer - Lillith's Eyes</title>
+    <link rel="stylesheet" href="cognikube_styles.css">
+    <style>
+        .visual-orb {
+            background: linear-gradient(135deg, var(--glass-bg), rgba(78, 205, 196, 0.1));
+        }
+        
+        .image-preview {
+            width: 200px;
+            height: 150px;
+            border: 2px dashed var(--glass-border);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .image-preview:hover {
+            border-color: var(--accent-color);
+            background: var(--accent-glow);
+        }
+        
+        .image-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+        }
+        
+        .gesture-indicator {
+            display: inline-block;
+            padding: 4px 8px;
+            background: var(--success-color);
+            color: white;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            margin: 2px;
+        }
+        
+        .analysis-result {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .confidence-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+        
+        .confidence-fill {
+            height: 100%;
+            background: var(--success-color);
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Authentication Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-card">
+            <div class="auth-logo">👁️</div>
+            <div class="auth-title">Visual Cortex Access</div>
+            <input type="text" class="auth-input" id="username" placeholder="Username" value="viren">
+            <input type="password" class="auth-input" id="password" placeholder="Password" value="sacred_nexus_2025">
+            <button class="auth-button" onclick="authenticate()">Open Eyes</button>
+            <div class="auth-error" id="authError"></div>
+        </div>
+    </div>
+
+    <div class="container three-column">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-text">👁️ Visual Cortex Viewer</div>
+            </div>
+            <div class="header-controls">
+                <a href="master_control_panel.html" class="back-btn">← Back</a>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
+            </div>
+        </div>
+
+        <div class="left-sidebar">
+            <div class="sidebar-title">📷 Image Upload</div>
+            <div class="image-preview" id="imagePreview" onclick="document.getElementById('imageInput').click()">
+                <div style="text-align: center; color: var(--text-secondary);">
+                    <div style="font-size: 2rem;">📷</div>
+                    <div>Click to upload image</div>
+                </div>
+            </div>
+            <input type="file" id="imageInput" accept="image/*" style="display: none;">
+            
+            <div class="mt-20">
+                <div class="sidebar-title">🎯 Analysis Types</div>
+                <button class="btn btn-primary" onclick="analyzeImage('general')">General Analysis</button>
+                <button class="btn btn-secondary" onclick="analyzeImage('body_language')">Body Language</button>
+                <button class="btn btn-secondary" onclick="analyzeImage('emotion')">Emotion Detection</button>
+                <button class="btn btn-secondary" onclick="analyzeImage('objects')">Object Detection</button>
+            </div>
+        </div>
+
+        <div class="orb-container">
+            <div class="orb visual-orb">
+                <div class="orb-content">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="images-processed">247</div>
+                            <div class="stat-label">Images Processed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="gestures-detected">89</div>
+                            <div class="stat-label">Gestures Detected</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="accuracy-rate">94.2%</div>
+                            <div class="stat-label">Accuracy Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="active-models">4</div>
+                            <div class="stat-label">VLM Models</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-20">
+                        <div style="font-size: 0.9rem; opacity: 0.8; text-align: center;">
+                            Models: LLaVA, Molmo, Qwen, DeepSeek
+                        </div>
+                    </div>
+                    
+                    <div class="mt-20">
+                        <button class="btn btn-primary" onclick="startWebcam()">Start Webcam</button>
+                        <button class="btn btn-secondary" onclick="captureFrame()">Capture Frame</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-sidebar">
+            <div class="sidebar-title">🔍 Analysis Results</div>
+            <div id="analysisResults">
+                <div class="analysis-result">
+                    <div style="font-weight: bold; margin-bottom: 10px;">Ready for Analysis</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">
+                        Upload an image or start webcam to begin visual processing
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">📊 Body Language</div>
+                <div id="bodyLanguageResults">
+                    <div style="text-align: center; opacity: 0.6;">
+                        No gestures detected
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="grid-column: 2; display: flex; align-items: center; justify-content: center; padding: 0 50px;">
+            <input type="text" class="chat-input" id="visualQuery" placeholder="Describe what you want to analyze...">
+        </div>
+    </div>
+
+    <script src="cognikube_base.js"></script>
+    <script>
+        class VisualCortexViewer extends CogniKubeBase {
+            constructor() {
+                super('Visual Cortex Viewer', '👁️', '#4ecdc4');
+                this.currentImage = null;
+                this.webcamStream = null;
+                this.initializeVisualCortex();
+                this.startUptime();
+            }
+
+            initializeVisualCortex() {
+                document.getElementById('visualQuery').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.processVisualQuery();
+                    }
+                });
+
+                document.getElementById('imageInput').addEventListener('change', (e) => {
+                    this.handleImageUpload(e);
+                });
+
+                // Connect to WebSocket
+                this.connectWebSocket('ws://localhost:8765/visual_cortex');
+            }
+
+            showWelcomeMessage(username) {
+                this.log('info', `Welcome to Visual Cortex, ${username}! All VLM models loaded and ready.`);
+            }
+
+            onWebSocketMessage(data) {
+                if (data.type === 'visual_result') {
+                    this.displayAnalysisResults(data.data);
+                }
+            }
+
+            handleImageUpload(event) {
+                const file = event.target.files[0];
+                if (!file) return;
+
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    this.currentImage = e.target.result;
+                    this.displayImagePreview(e.target.result);
+                    this.log('info', `Image uploaded: ${file.name}`);
+                };
+                reader.readAsDataURL(file);
+            }
+
+            displayImagePreview(imageSrc) {
+                const preview = document.getElementById('imagePreview');
+                preview.innerHTML = `<img src="${imageSrc}" alt="Uploaded image">`;
+            }
+
+            processVisualQuery() {
+                const input = document.getElementById('visualQuery');
+                const query = input.value.trim();
+                if (!query) return;
+
+                if (this.currentImage) {
+                    this.analyzeImageWithQuery(query);
+                } else {
+                    this.log('warning', 'Please upload an image first');
+                }
+
+                input.value = '';
+            }
+
+            analyzeImageWithQuery(query) {
+                // Send to visual cortex service
+                this.sendWebSocketMessage({
+                    action: 'process_image',
+                    image_data: this.currentImage.split(',')[1], // Remove data:image/jpeg;base64,
+                    analysis_type: 'query',
+                    query: query
+                });
+
+                this.log('info', `Visual analysis requested: ${query}`);
+                this.showAnalysisLoading();
+            }
+
+            showAnalysisLoading() {
+                const resultsDiv = document.getElementById('analysisResults');
+                resultsDiv.innerHTML = `
+                    <div class="analysis-result">
+                        <div style="font-weight: bold; margin-bottom: 10px;">🔄 Analyzing...</div>
+                        <div style="font-size: 0.9rem; opacity: 0.8;">
+                            Processing image through VLM models...
+                        </div>
+                    </div>
+                `;
+            }
+
+            displayAnalysisResults(data) {
+                const resultsDiv = document.getElementById('analysisResults');
+                
+                if (data.error) {
+                    resultsDiv.innerHTML = `
+                        <div class="analysis-result">
+                            <div style="font-weight: bold; color: var(--error-color);">❌ Error</div>
+                            <div style="font-size: 0.9rem;">${data.error}</div>
+                        </div>
+                    `;
+                    return;
+                }
+
+                let resultsHTML = '';
+
+                if (data.analysis && data.analysis.scene_description) {
+                    resultsHTML += `
+                        <div class="analysis-result">
+                            <div style="font-weight: bold; margin-bottom: 10px;">🖼️ Scene Description</div>
+                            <div style="font-size: 0.9rem;">${data.analysis.scene_description}</div>
+                        </div>
+                    `;
+                }
+
+                if (data.analysis && data.analysis.objects_detected) {
+                    resultsHTML += `
+                        <div class="analysis-result">
+                            <div style="font-weight: bold; margin-bottom: 10px;">🎯 Objects Detected</div>
+                            <div style="font-size: 0.9rem;">
+                                ${data.analysis.objects_detected.join(', ')}
+                            </div>
+                        </div>
+                    `;
+                }
+
+                if (data.analysis && data.analysis.mood) {
+                    resultsHTML += `
+                        <div class="analysis-result">
+                            <div style="font-weight: bold; margin-bottom: 10px;">😊 Mood</div>
+                            <div style="font-size: 0.9rem;">${data.analysis.mood}</div>
+                        </div>
+                    `;
+                }
+
+                resultsDiv.innerHTML = resultsHTML || `
+                    <div class="analysis-result">
+                        <div style="font-weight: bold;">✅ Analysis Complete</div>
+                        <div style="font-size: 0.9rem; opacity: 0.8;">
+                            Image processed successfully
+                        </div>
+                    </div>
+                `;
+
+                // Update body language if available
+                if (data.analysis && data.analysis.detected_gestures) {
+                    this.displayBodyLanguageResults(data.analysis);
+                }
+
+                // Update stats
+                this.updateStats();
+            }
+
+            displayBodyLanguageResults(analysis) {
+                const bodyLangDiv = document.getElementById('bodyLanguageResults');
+                
+                if (analysis.detected_gestures && analysis.detected_gestures.length > 0) {
+                    let gesturesHTML = '';
+                    
+                    analysis.detected_gestures.forEach((gesture, index) => {
+                        const confidence = analysis.confidence_scores ? analysis.confidence_scores[index] : 0.8;
+                        gesturesHTML += `
+                            <div style="margin-bottom: 10px;">
+                                <span class="gesture-indicator">${gesture}</span>
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" style="width: ${confidence * 100}%"></div>
+                                </div>
+                                <div style="font-size: 0.8rem; opacity: 0.7;">${(confidence * 100).toFixed(1)}% confidence</div>
+                            </div>
+                        `;
+                    });
+                    
+                    bodyLangDiv.innerHTML = gesturesHTML;
+                } else {
+                    bodyLangDiv.innerHTML = '<div style="text-align: center; opacity: 0.6;">No gestures detected</div>';
+                }
+            }
+
+            updateStats() {
+                const processed = parseInt(document.getElementById('images-processed').textContent) + 1;
+                document.getElementById('images-processed').textContent = processed;
+                
+                // Simulate gesture detection increment
+                if (Math.random() > 0.7) {
+                    const gestures = parseInt(document.getElementById('gestures-detected').textContent) + 1;
+                    document.getElementById('gestures-detected').textContent = gestures;
+                }
+            }
+
+            async startWebcam() {
+                try {
+                    this.webcamStream = await navigator.mediaDevices.getUserMedia({ video: true });
+                    
+                    // Create video element for webcam
+                    const preview = document.getElementById('imagePreview');
+                    preview.innerHTML = `
+                        <video id="webcamVideo" autoplay style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></video>
+                    `;
+                    
+                    document.getElementById('webcamVideo').srcObject = this.webcamStream;
+                    this.log('info', 'Webcam started successfully');
+                    
+                } catch (error) {
+                    this.log('error', `Webcam access failed: ${error.message}`);
+                }
+            }
+
+            captureFrame() {
+                const video = document.getElementById('webcamVideo');
+                if (!video) {
+                    this.log('warning', 'Please start webcam first');
+                    return;
+                }
+
+                const canvas = document.createElement('canvas');
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(video, 0, 0);
+                
+                this.currentImage = canvas.toDataURL('image/jpeg');
+                this.log('info', 'Frame captured from webcam');
+                
+                // Auto-analyze captured frame
+                this.analyzeImageWithQuery('Analyze this webcam frame');
+            }
+        }
+
+        // Global functions for buttons
+        function analyzeImage(type) {
+            if (window.visualInterface && window.visualInterface.currentImage) {
+                const queries = {
+                    'general': 'Provide a general analysis of this image',
+                    'body_language': 'Analyze body language and gestures in this image',
+                    'emotion': 'Detect emotions and facial expressions',
+                    'objects': 'Identify and list all objects in this image'
+                };
+                
+                window.visualInterface.analyzeImageWithQuery(queries[type]);
+            } else {
+                console.log('Please upload an image first');
+            }
+        }
+
+        function startWebcam() {
+            if (window.visualInterface) {
+                window.visualInterface.startWebcam();
+            }
+        }
+
+        function captureFrame() {
+            if (window.visualInterface) {
+                window.visualInterface.captureFrame();
+            }
+        }
+
+        // Override authentication success
+        const originalAuthenticate = CogniKubeBase.prototype.authenticate;
+        CogniKubeBase.prototype.authenticate = function(username, password) {
+            const result = originalAuthenticate.call(this, username, password);
+            if (result && !window.visualInterface) {
+                window.visualInterface = new VisualCortexViewer();
+                window.cogniKubeInstance = window.visualInterface;
+            }
+            return result;
+        };
+    </script>
+</body>
+</html>

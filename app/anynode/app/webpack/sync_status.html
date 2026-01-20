@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viren Sync Status</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+        .header h1 {
+            margin: 0;
+            color: #4fc3f7;
+        }
+        .status-card {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .status-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .status-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #4fc3f7;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .status-online {
+            background-color: #4caf50;
+        }
+        .status-offline {
+            background-color: #f44336;
+        }
+        .status-warning {
+            background-color: #ff9800;
+        }
+        .status-detail {
+            display: flex;
+            align-items: center;
+        }
+        .status-text {
+            font-size: 14px;
+        }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .metric-item {
+            background-color: #252525;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        .metric-label {
+            font-size: 12px;
+            color: #aaa;
+            margin-bottom: 5px;
+        }
+        .metric-value {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .sync-history {
+            margin-top: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+        th {
+            background-color: #252525;
+            color: #4fc3f7;
+        }
+        tr:hover {
+            background-color: #252525;
+        }
+        .priority-high {
+            color: #f44336;
+        }
+        .priority-medium {
+            color: #ff9800;
+        }
+        .priority-low {
+            color: #4caf50;
+        }
+        .button {
+            background-color: #4fc3f7;
+            color: #121212;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0095c8;
+        }
+        .conflict-badge {
+            background-color: #f44336;
+            color: white;
+            border-radius: 12px;
+            padding: 2px 8px;
+            font-size: 12px;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Viren Sync Status</h1>
+            <button class="button" onclick="triggerSync()">Trigger Sync</button>
+        </div>
+        
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-title">System Status</div>
+                <div class="status-detail">
+                    <span class="status-indicator status-online"></span>
+                    <span class="status-text">Online</span>
+                </div>
+            </div>
+            
+            <div class="metrics">
+                <div class="metric-item">
+                    <div class="metric-label">Last Sync</div>
+                    <div class="metric-value">{{ last_sync_time }}</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-label">Local Database</div>
+                    <div class="metric-value">
+                        <span class="status-indicator status-online"></span>
+                        Connected
+                    </div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-label">Cloud Database</div>
+                    <div class="metric-value">
+                        <span class="status-indicator status-online"></span>
+                        Connected
+                    </div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-label">TinyLlama Model</div>
+                    <div class="metric-value">
+                        <span class="status-indicator status-online"></span>
+                        Loaded
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-title">Sync Metrics</div>
+            </div>
+            
+            <div class="metrics">
+                <div class="metric-item">
+                    <div class="metric-label">Total Syncs Today</div>
+                    <div class="metric-value">12</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-label">Objects Synced</div>
+                    <div class="metric-value">1,245</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-label">Conflicts Resolved</div>
+                    <div class="metric-value">3</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-label">Avg Sync Time</div>
+                    <div class="metric-value">2.3s</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sync-history">
+            <h2>Recent Sync History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Type</th>
+                        <th>Priority</th>
+                        <th>Objects</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025-06-12 14:32:15</td>
+                        <td>Automatic</td>
+                        <td><span class="priority-high">High</span></td>
+                        <td>42 <span class="conflict-badge">2 conflicts</span></td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>2025-06-12 14:02:10</td>
+                        <td>Manual</td>
+                        <td><span class="priority-medium">Medium</span></td>
+                        <td>18</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>2025-06-12 13:32:15</td>
+                        <td>Automatic</td>
+                        <td><span class="priority-low">Low</span></td>
+                        <td>5</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>2025-06-12 13:02:15</td>
+                        <td>Automatic</td>
+                        <td><span class="priority-medium">Medium</span></td>
+                        <td>27</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>2025-06-12 12:32:15</td>
+                        <td>Automatic</td>
+                        <td><span class="priority-low">Low</span></td>
+                        <td>3</td>
+                        <td>Completed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        function triggerSync() {
+            fetch('/api/trigger-sync', {
+                method: 'POST',
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Sync triggered successfully');
+                    setTimeout(() => location.reload(), 2000);
+                } else {
+                    alert('Error triggering sync: ' + data.error);
+                }
+            })
+            .catch(error => {
+                alert('Error: ' + error);
+            });
+        }
+    </script>
+</body>
+</html>

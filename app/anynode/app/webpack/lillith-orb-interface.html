@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lillith Orb Interface</title>
+    <style>
+        :root {
+            /* White Glass Theme */
+            --bg-primary: rgba(255, 255, 255, 0.9);
+            --bg-secondary: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.95);
+            --text-primary: rgba(50, 50, 50, 0.9);
+            --text-secondary: rgba(100, 100, 100, 0.8);
+            --accent-color: #007acc;
+            --accent-glow: rgba(0, 122, 204, 0.3);
+        }
+
+        [data-theme="dark"] {
+            /* Obsidian Theme */
+            --bg-primary: rgba(20, 20, 20, 0.9);
+            --bg-secondary: rgba(40, 40, 40, 0.8);
+            --glass-border: rgba(100, 100, 100, 0.3);
+            --text-primary: rgba(220, 220, 220, 0.9);
+            --text-secondary: rgba(180, 180, 180, 0.8);
+            --accent-color: #ff6b35;
+            --accent-glow: rgba(255, 107, 53, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #ffffff, #f8f9fa, #e9ecef);
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        [data-theme="dark"] body {
+            background: url('assets/1080Eclipse.jpg') center/cover no-repeat fixed;
+        }
+
+        [data-theme="dark"] body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        [data-theme="dark"] .main-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        [data-theme="dark"] .logo-text {
+            color: #ff6b35;
+            text-shadow: 0 0 8px #ff6b35;
+        }
+
+        .main-container {
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            grid-template-rows: 60px 1fr 80px;
+            height: 100vh;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-primary);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 0 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #a855f7;
+            text-shadow: 0 0 8px #a855f7;
+        }
+
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-primary);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent-glow);
+            transform: scale(1.1);
+        }
+
+        /* Left Sidebar - Task List */
+        .left-sidebar {
+            background: var(--bg-primary);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #a855f7;
+            text-shadow: 0 0 8px #a855f7;
+            margin-bottom: 15px;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            margin: 8px 0;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.2s ease;
+        }
+
+        .task-item:hover {
+            background: rgba(200, 180, 255, 0.2);
+            border-color: #a855f7;
+            box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+            transform: translateX(5px);
+        }
+
+        .task-checkbox {
+            accent-color: #a855f7;
+        }
+
+        /* Right Sidebar - Diagnostics */
+        .right-sidebar {
+            background: var(--bg-primary);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        .diagnostic-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #00ff00;
+            animation: statusPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Central Orb Area */
+        .orb-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .orb {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(30px);
+            border: 2px solid rgba(150, 150, 150, 0.15);
+            box-shadow: 0 0 50px rgba(150, 150, 150, 0.08);
+            filter: blur(0.5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: orbPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes orbPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 50px var(--accent-glow); }
+            50% { transform: scale(1.02); box-shadow: 0 0 80px var(--accent-glow); }
+        }
+
+        /* Chat Messages Inside Orb */
+        .chat-messages {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .message {
+            background: var(--bg-secondary);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 8px 12px;
+            max-width: 250px;
+            font-size: 14px;
+            animation: messageFloat 0.5s ease-out;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .message.lillith {
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+        }
+
+        @keyframes messageFloat {
+            from { opacity: 0; transform: translateY(20px) scale(0.8); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .message.user {
+            background: rgba(200, 180, 255, 0.8);
+            border-color: rgba(180, 160, 255, 0.9);
+            color: rgba(80, 60, 120, 0.9);
+        }
+
+        /* Chat Input at Bottom */
+        .chat-input-container {
+            grid-column: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 50px;
+        }
+
+        .chat-input {
+            width: 100%;
+            max-width: 500px;
+            padding: 15px 25px;
+            background: var(--bg-primary);
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--glass-border);
+            border-radius: 30px;
+            color: var(--text-primary);
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+
+        .chat-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        /* Bottom Navigation Drawer */
+        .bottom-nav {
+            grid-column: 1 / -1;
+            position: relative;
+            background: var(--bg-primary);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: height 0.3s ease;
+            overflow: hidden;
+        }
+
+        .nav-toggle {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            color: #a855f7;
+            text-shadow: 0 0 8px #a855f7;
+            transition: all 0.3s ease;
+        }
+
+        .nav-toggle:hover {
+            background: var(--accent-glow);
+        }
+
+        .nav-content {
+            padding: 20px;
+            display: none;
+        }
+
+        .bottom-nav.expanded {
+            height: 300px;
+        }
+
+        .bottom-nav.expanded .nav-content {
+            display: block;
+        }
+
+        .management-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+        }
+
+        .management-site {
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .management-site:hover {
+            background: var(--accent-glow);
+            transform: translateY(-3px);
+        }
+
+        .site-icon {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .site-label {
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .main-container {
+                grid-template-columns: 250px 1fr 250px;
+            }
+            
+            .orb {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .chat-messages {
+                width: 220px;
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: 60px 1fr 60px 80px;
+            }
+            
+            .left-sidebar, .right-sidebar {
+                display: none;
+            }
+            
+            .orb {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .chat-messages {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <img src="assets/AetherealLogo.png" alt="Aethereal">
+                <div class="logo-text">Lillith Interface</div>
+            </div>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
+
+        <!-- Left Sidebar - Task List -->
+        <div class="left-sidebar">
+            <div class="sidebar-title">📋 Tasks</div>
+            <div class="task-item">
+                <input type="checkbox" class="task-checkbox">
+                <span>Deploy Communication Pod</span>
+            </div>
+            <div class="task-item">
+                <input type="checkbox" class="task-checkbox" checked>
+                <span>Setup Discord Integration</span>
+            </div>
+            <div class="task-item">
+                <input type="checkbox" class="task-checkbox">
+                <span>Test Email Automation</span>
+            </div>
+            <div class="task-item">
+                <input type="checkbox" class="task-checkbox">
+                <span>Configure Voice Controls</span>
+            </div>
+            <div class="task-item">
+                <input type="checkbox" class="task-checkbox">
+                <span>Setup MCP Servers</span>
+            </div>
+        </div>
+
+        <!-- Central Orb with Chat -->
+        <div class="orb-container">
+            <div class="orb">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message lillith" style="background: rgba(200, 180, 255, 0.6); border: 1px solid #c084fc; color: rgba(80, 60, 120, 0.9); box-shadow: 0 0 10px rgba(192, 132, 252, 0.3);">Welcome to Lillith!</div>
+                    <div class="message user">Hello there!</div>
+                    <div class="message lillith" style="background: rgba(200, 180, 255, 0.6); border: 1px solid #c084fc; color: rgba(80, 60, 120, 0.9); box-shadow: 0 0 10px rgba(192, 132, 252, 0.3);">How can I assist you?</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar - Diagnostics -->
+        <div class="right-sidebar">
+            <div class="sidebar-title">📊 Diagnostics</div>
+            <div class="diagnostic-item">
+                <span>Pod Status</span>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div class="status-indicator"></div>
+                    <span>Online</span>
+                </div>
+            </div>
+            <div class="diagnostic-item">
+                <span>Discord</span>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div class="status-indicator"></div>
+                    <span>Connected</span>
+                </div>
+            </div>
+            <div class="diagnostic-item">
+                <span>WebSocket</span>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div class="status-indicator"></div>
+                    <span>Active</span>
+                </div>
+            </div>
+            <div class="diagnostic-item">
+                <span>Voice</span>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div class="status-indicator"></div>
+                    <span>Ready</span>
+                </div>
+            </div>
+            <div class="diagnostic-item">
+                <span>Platform</span>
+                <span>GCP</span>
+            </div>
+            <div class="diagnostic-item">
+                <span>Uptime</span>
+                <span id="uptime">00:00:00</span>
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-container">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type your message to Lillith...">
+        </div>
+
+        <!-- Bottom Navigation Drawer -->
+        <div class="bottom-nav" id="bottomNav">
+            <div class="nav-toggle" onclick="toggleNav()">
+                <span id="navIcon">🚀 Management Sites</span>
+            </div>
+            <div class="nav-content">
+                <div class="management-grid">
+                    <div class="management-site" onclick="openSite('discord')">
+                        <div class="site-icon">🎮</div>
+                        <div class="site-label">Discord</div>
+                    </div>
+                    <div class="management-site" onclick="openSite('gcp')">
+                        <div class="site-icon">☁️</div>
+                        <div class="site-label">GCP</div>
+                    </div>
+                    <div class="management-site" onclick="openSite('aws')">
+                        <div class="site-icon">🟠</div>
+                        <div class="site-label">AWS</div>
+                    </div>
+                    <div class="management-site" onclick="openSite('modal')">
+                        <div class="site-icon">🚀</div>
+                        <div class="site-label">Modal</div>
+                    </div>
+                    <div class="management-site" onclick="openSite('qdrant')">
+                        <div class="site-icon">🧠</div>
+                        <div class="site-label">Qdrant</div>
+                    </div>
+                    <div class="management-site" onclick="openSite('consul')">
+                        <div class="site-icon">🏛️</div>
+                        <div class="site-label">Consul</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class LillithOrbInterface {
+            constructor() {
+                this.isDarkMode = false;
+                this.startTime = Date.now();
+                this.initializeEventListeners();
+                this.startUptime();
+            }
+
+            initializeEventListeners() {
+                // Theme toggle
+                document.getElementById('themeToggle').addEventListener('click', () => {
+                    this.toggleTheme();
+                });
+
+                // Chat input
+                document.getElementById('chatInput').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.sendMessage();
+                    }
+                });
+            }
+
+            toggleTheme() {
+                this.isDarkMode = !this.isDarkMode;
+                document.body.setAttribute('data-theme', this.isDarkMode ? 'dark' : 'light');
+                document.getElementById('themeToggle').textContent = this.isDarkMode ? '☀️' : '🌙';
+            }
+
+            sendMessage() {
+                const input = document.getElementById('chatInput');
+                const message = input.value.trim();
+                if (!message) return;
+
+                this.addMessage('user', message);
+                input.value = '';
+
+                setTimeout(() => {
+                    this.simulateResponse(message);
+                }, 1000);
+            }
+
+            addMessage(sender, text) {
+                const messagesContainer = document.getElementById('chatMessages');
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}`;
+                messageDiv.textContent = text;
+                
+                messagesContainer.appendChild(messageDiv);
+                
+                // Keep only last 3 messages visible in orb
+                const messages = messagesContainer.querySelectorAll('.message');
+                if (messages.length > 3) {
+                    messages[0].remove();
+                }
+            }
+
+            simulateResponse(userMessage) {
+                let response = "I understand. How can I help?";
+                
+                if (userMessage.toLowerCase().includes('status')) {
+                    response = "All systems online! 🟢";
+                } else if (userMessage.toLowerCase().includes('deploy')) {
+                    response = "Deployment initiated! 🚀";
+                } else if (userMessage.toLowerCase().includes('hello')) {
+                    response = "Hello! I'm Lillith 👑";
+                }
+                
+                this.addMessage('lillith', response);
+            }
+
+            startUptime() {
+                setInterval(() => {
+                    const uptime = Date.now() - this.startTime;
+                    const hours = Math.floor(uptime / 3600000);
+                    const minutes = Math.floor((uptime % 3600000) / 60000);
+                    const seconds = Math.floor((uptime % 60000) / 1000);
+                    
+                    document.getElementById('uptime').textContent = 
+                        `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                }, 1000);
+            }
+        }
+
+        // Navigation functions
+        function toggleNav() {
+            const nav = document.getElementById('bottomNav');
+            const icon = document.getElementById('navIcon');
+            
+            if (nav.classList.contains('expanded')) {
+                nav.classList.remove('expanded');
+                icon.textContent = '🚀 Management Sites';
+            } else {
+                nav.classList.add('expanded');
+                icon.textContent = '📱 Close Menu';
+            }
+        }
+
+        function openSite(site) {
+            const urls = {
+                discord: 'https://discord.com/developers/applications',
+                gcp: 'https://console.cloud.google.com',
+                aws: 'https://console.aws.amazon.com',
+                modal: 'https://modal.com',
+                qdrant: 'https://aethereal-nexus-viren--viren-cloud-qdrant-server.modal.run',
+                consul: 'https://d2387b10-53d8-860f-2a31-7ddde4f7ca90.consul.run'
+            };
+            
+            if (urls[site]) {
+                window.open(urls[site], '_blank');
+            }
+        }
+
+        // Initialize interface
+        document.addEventListener('DOMContentLoaded', () => {
+            new LillithOrbInterface();
+        });
+    </script>
+</body>
+</html>

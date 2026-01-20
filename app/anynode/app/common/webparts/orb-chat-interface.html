@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lillith Orb Interface</title>
+    <style>
+        :root {
+            /* Light/Glass Theme */
+            --bg-primary: rgba(255, 255, 255, 0.8);
+            --bg-secondary: rgba(255, 255, 255, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.9);
+            --text-primary: rgba(50, 50, 50, 0.9);
+            --text-secondary: rgba(100, 100, 100, 0.8);
+            --accent-color: #007acc;
+            --accent-glow: rgba(0, 122, 204, 0.3);
+            --orb-glow: rgba(0, 122, 204, 0.2);
+        }
+
+        [data-theme="dark"] {
+            /* Dark/Obsidian Theme */
+            --bg-primary: rgba(0, 0, 0, 0.8);
+            --bg-secondary: rgba(20, 20, 20, 0.9);
+            --glass-border: rgba(100, 100, 100, 0.3);
+            --text-primary: rgba(200, 200, 200, 0.9);
+            --text-secondary: rgba(150, 150, 150, 0.7);
+            --accent-color: #ff6b35;
+            --accent-glow: rgba(255, 107, 53, 0.4);
+            --orb-glow: rgba(255, 107, 53, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: url('../Lillith-Evolution/Lillith-Evolution-main/Nexus_rework/public/1080Eclipse.jpg') center/cover no-repeat,
+                        linear-gradient(135deg, #f0f8ff, #e6f3ff, #ddeeff);
+            height: 100vh;
+            overflow: hidden;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] body {
+            background: url('../Lillith-Evolution/Lillith-Evolution-main/Nexus_rework/public/1080Eclipse.jpg') center/cover no-repeat,
+                        linear-gradient(135deg, rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.8), rgba(15, 52, 96, 0.8));
+        }
+
+        /* Glass Morphism Base */
+        .glass {
+            background: var(--bg-primary);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Main Container */
+        .main-container {
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            grid-template-rows: 1fr;
+            height: 100vh;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Left Sidebar */
+        .left-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            height: 100%;
+        }
+
+        /* Right Sidebar */
+        .right-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            height: 100%;
+            align-items: flex-end;
+        }
+
+        /* Central Orb Area */
+        .orb-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+        }
+
+        /* The Orb */
+        .orb {
+            position: absolute;
+            right: 100px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: url('../Lillith-Evolution/Lillith-Evolution-main/Nexus_rework/public/orb.png') center/cover no-repeat,
+                        radial-gradient(circle at 30% 30%, var(--orb-glow), transparent 70%);
+            border: 2px solid var(--accent-color);
+            box-shadow: 
+                0 0 50px var(--accent-glow),
+                inset 0 0 50px rgba(255, 255, 255, 0.1);
+            animation: orbPulse 4s ease-in-out infinite;
+            overflow: hidden;
+        }
+
+        @keyframes orbPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 50px var(--accent-glow); }
+            50% { transform: scale(1.05); box-shadow: 0 0 80px var(--accent-glow); }
+        }
+
+        /* Orb Video Background */
+        .orb-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        /* Chat Messages - Centered in Orb */
+        .chat-messages {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .message {
+            background: var(--bg-primary);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 10px 15px;
+            margin: 5px 0;
+            max-width: 250px;
+            font-size: 14px;
+            animation: messageFloat 0.5s ease-out;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes messageFloat {
+            from { opacity: 0; transform: translateY(20px) scale(0.8); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .message.user {
+            background: var(--accent-glow);
+            border-color: var(--accent-color);
+            align-self: flex-end;
+        }
+
+        .message.lillith {
+            background: var(--bg-secondary);
+            align-self: flex-start;
+        }
+
+        /* Chat Input - Bottom of Screen */
+        .chat-input-container {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            z-index: 100;
+        }
+
+        .chat-input {
+            width: 100%;
+            padding: 15px 25px;
+            background: var(--bg-primary);
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--glass-border);
+            border-radius: 30px;
+            color: var(--text-primary);
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .chat-input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+
+        .chat-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        /* Task List Web Part */
+        .task-list {
+            padding: 20px;
+            height: 50%;
+            overflow-y: auto;
+        }
+
+        /* Chat History Web Part */
+        .chat-history {
+            padding: 20px;
+            height: 50%;
+            overflow-y: auto;
+        }
+
+        .history-item {
+            padding: 8px 12px;
+            margin: 5px 0;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 14px;
+        }
+
+        .history-item:hover {
+            background: var(--accent-glow);
+            transform: translateX(5px);
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin: 8px 0;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.2s ease;
+        }
+
+        .task-item:hover {
+            background: var(--accent-glow);
+            transform: translateX(5px);
+        }
+
+        .task-checkbox {
+            margin-right: 10px;
+            accent-color: var(--accent-color);
+        }
+
+        /* Diagnostics Web Part */
+        .diagnostics {
+            padding: 20px;
+            height: 100%;
+            width: 280px;
+        }
+
+        .diagnostic-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #00ff00;
+            animation: statusPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Bottom Navigation Web Part */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: var(--bg-primary);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .bottom-nav.hidden {
+            transform: translateY(100%);
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--text-secondary);
+            min-width: 60px;
+        }
+
+        .nav-item:hover {
+            background: var(--accent-glow);
+            color: var(--text-primary);
+            transform: translateY(-3px);
+        }
+
+        .nav-item.active {
+            background: var(--accent-glow);
+            color: var(--text-primary);
+        }
+
+        .nav-icon {
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        .nav-label {
+            font-size: 10px;
+            font-weight: 500;
+        }
+
+
+
+
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--bg-primary);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent-glow);
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .main-container {
+                grid-template-columns: 250px 1fr 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr auto;
+            }
+            
+            .left-sidebar, .right-sidebar {
+                display: none;
+            }
+            
+            .orb {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .chat-input-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle">🌙</button>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <div class="left-sidebar">
+            <!-- Task List Web Part -->
+            <div class="glass task-list">
+                <h3 style="margin-bottom: 15px; color: var(--accent-color);">📋 Tasks</h3>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox">
+                    <span>Deploy Communication Pod</span>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" checked>
+                    <span>Setup Discord Integration</span>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox">
+                    <span>Test Email Automation</span>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox">
+                    <span>Configure Voice Controls</span>
+                </div>
+            </div>
+            
+            <!-- Chat History Web Part -->
+            <div class="glass chat-history">
+                <h3 style="margin-bottom: 15px; color: var(--accent-color);">💬 Chat History</h3>
+                <div class="history-item">Session: Discord Setup</div>
+                <div class="history-item">Session: Email Config</div>
+                <div class="history-item">Session: Voice Test</div>
+                <div class="history-item">Session: Pod Deploy</div>
+                <div class="history-item">Session: System Check</div>
+            </div>
+        </div>
+
+        <!-- Central Orb Area -->
+        <div class="orb-container">
+            <div class="orb">
+                <!-- Orb Video Background -->
+                <video class="orb-video" autoplay muted loop>
+                    <source src="assets/chad_orb_video.mp4" type="video/mp4">
+                </video>
+                
+                <!-- Chat Messages Centered in Orb -->
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message lillith">Welcome to your Communication Pod!</div>
+                    <div class="message user">Hello Lillith!</div>
+                    <div class="message lillith">How can I assist you today?</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="right-sidebar">
+            <!-- Diagnostics Web Part -->
+            <div class="glass diagnostics">
+                <h3 style="margin-bottom: 15px; color: var(--accent-color);">📊 Diagnostics</h3>
+                <div class="diagnostic-item">
+                    <span>Pod Status</span>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div class="status-indicator"></div>
+                        <span>Online</span>
+                    </div>
+                </div>
+                <div class="diagnostic-item">
+                    <span>Discord</span>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div class="status-indicator"></div>
+                        <span>Connected</span>
+                    </div>
+                </div>
+                <div class="diagnostic-item">
+                    <span>WebSocket</span>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div class="status-indicator"></div>
+                        <span>Active</span>
+                    </div>
+                </div>
+                <div class="diagnostic-item">
+                    <span>Voice</span>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div class="status-indicator"></div>
+                        <span>Ready</span>
+                    </div>
+                </div>
+                <div class="diagnostic-item">
+                    <span>Platform</span>
+                    <span>GCP</span>
+                </div>
+                <div class="diagnostic-item">
+                    <span>Uptime</span>
+                    <span id="uptime">00:00:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Input -->
+    <div class="chat-input-container">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Type your message or voice command...">
+    </div>
+
+    <!-- Bottom Navigation Web Part -->
+    <div class="bottom-nav" id="bottomNav">
+        <div class="nav-item" onclick="setActiveTab('chat')">
+            <div class="nav-icon">💬</div>
+            <div class="nav-label">Chat</div>
+        </div>
+        <div class="nav-item" onclick="setActiveTab('voice')">
+            <div class="nav-icon">🎤</div>
+            <div class="nav-label">Voice</div>
+        </div>
+        <div class="nav-item" onclick="setActiveTab('tools')">
+            <div class="nav-icon">🔧</div>
+            <div class="nav-label">Tools</div>
+        </div>
+        <div class="nav-item" onclick="setActiveTab('finance')">
+            <div class="nav-icon">💰</div>
+            <div class="nav-label">Finance</div>
+        </div>
+        <div class="nav-item" onclick="setActiveTab('social')">
+            <div class="nav-icon">🌍</div>
+            <div class="nav-label">Social</div>
+        </div>
+        <div class="nav-item" onclick="setActiveTab('admin')">
+            <div class="nav-icon">⚙️</div>
+            <div class="nav-label">Admin</div>
+        </div>
+    </div>
+
+    <script>
+        class OrbChatInterface {
+            constructor() {
+                this.isDarkMode = false;
+                this.drawerExpanded = false;
+                this.startTime = Date.now();
+                
+                this.initializeEventListeners();
+                this.startUptime();
+                this.initializeChat();
+            }
+
+            initializeEventListeners() {
+                // Theme toggle
+                document.getElementById('themeToggle').addEventListener('click', () => {
+                    this.toggleTheme();
+                });
+
+                // Chat input
+                document.getElementById('chatInput').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.sendMessage();
+                    }
+                });
+            }
+
+            toggleTheme() {
+                this.isDarkMode = !this.isDarkMode;
+                document.body.setAttribute('data-theme', this.isDarkMode ? 'dark' : 'light');
+                document.getElementById('themeToggle').textContent = this.isDarkMode ? '☀️' : '🌙';
+            }
+
+            sendMessage() {
+                const input = document.getElementById('chatInput');
+                const message = input.value.trim();
+                if (!message) return;
+
+                this.addMessage('user', message);
+                input.value = '';
+
+                // Simulate response
+                setTimeout(() => {
+                    this.simulateResponse(message);
+                }, 1000);
+            }
+
+            addMessage(sender, text) {
+                const messagesContainer = document.getElementById('chatMessages');
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}`;
+                messageDiv.textContent = text;
+                
+                messagesContainer.appendChild(messageDiv);
+                
+                // Keep only last 3 messages visible
+                const messages = messagesContainer.querySelectorAll('.message');
+                if (messages.length > 3) {
+                    messages[0].remove();
+                }
+            }
+
+            simulateResponse(userMessage) {
+                let response = "I understand. How can I help you further?";
+                
+                if (userMessage.toLowerCase().includes('discord')) {
+                    response = "Discord integration active! 🎮";
+                } else if (userMessage.toLowerCase().includes('email')) {
+                    response = "Email automation ready! 📧";
+                } else if (userMessage.toLowerCase().includes('shop')) {
+                    response = "E-commerce tools loaded! 🛒";
+                }
+                
+                this.addMessage('lillith', response);
+            }
+
+            startUptime() {
+                setInterval(() => {
+                    const uptime = Date.now() - this.startTime;
+                    const hours = Math.floor(uptime / 3600000);
+                    const minutes = Math.floor((uptime % 3600000) / 60000);
+                    const seconds = Math.floor((uptime % 60000) / 1000);
+                    
+                    document.getElementById('uptime').textContent = 
+                        `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                }, 1000);
+            }
+
+            initializeChat() {
+                // Set default active tab
+                document.querySelector('.nav-item').classList.add('active');
+                
+                // Add welcome message after a delay
+                setTimeout(() => {
+                    this.addMessage('lillith', 'Communication Toolbox Pod online! 🚀');
+                }, 2000);
+            }
+        }
+
+        // Navigation Functions
+        let activeTab = 'chat';
+        
+        function setActiveTab(tab) {
+            // Remove active class from all nav items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Add active class to clicked item
+            event.target.closest('.nav-item').classList.add('active');
+            
+            activeTab = tab;
+            
+            // Handle tab switching logic
+            switch(tab) {
+                case 'chat':
+                    console.log('Chat tab activated');
+                    break;
+                case 'voice':
+                    console.log('Voice tab activated');
+                    break;
+                case 'tools':
+                    openSite('modal');
+                    break;
+                case 'finance':
+                    loadWebPart('finance-interface');
+                    break;
+                case 'social':
+                    loadWebPart('social-intelligence');
+                    break;
+                case 'admin':
+                    openSite('gcp');
+                    break;
+            }
+        }
+        
+        function loadWebPart(webpartId) {
+            console.log(`Loading webpart: ${webpartId}`);
+            // This would dynamically load the webpart
+        }
+
+        function openSite(site) {
+            const urls = {
+                discord: 'https://discord.com/developers/applications',
+                gcp: 'https://console.cloud.google.com',
+                aws: 'https://console.aws.amazon.com',
+                modal: 'https://modal.com',
+                qdrant: 'https://aethereal-nexus-viren--viren-cloud-qdrant-server.modal.run',
+                consul: 'https://d2387b10-53d8-860f-2a31-7ddde4f7ca90.consul.run'
+            };
+            
+            if (urls[site]) {
+                window.open(urls[site], '_blank');
+            }
+        }
+
+        // Initialize the interface
+        document.addEventListener('DOMContentLoaded', () => {
+            new OrbChatInterface();
+        });
+    </script>
+</body>
+</html>

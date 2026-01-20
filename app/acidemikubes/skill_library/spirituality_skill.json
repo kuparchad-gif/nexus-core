@@ -1,0 +1,5 @@
+{
+  "name": "Spirituality Skill",
+  "module_path": "Systems/nexus_core/skills/spirituality_skill.py",
+  "entry_class": "SpiritualitySkill"
+}

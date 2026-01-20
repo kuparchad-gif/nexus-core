@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Memory Monitor & Config</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+</head>
+<body class="bg-gray-100">
+  <div id="root"></div>
+  <script type="text/babel">
+    const MemoryMonitor = () => {
+      const [status, setStatus] = React.useState({});
+      const [offline, setOffline] = React.useState(false);
+      const [chatMessages, setChatMessages] = React.useState([]);
+      const [chatInput, setChatInput] = React.useState('');
+      const chartRef = React.useRef(null);
+      const chartInstance = React.useRef(null);
+
+      React.useEffect(() => {
+        const poll = setInterval(() => {
+          fetch('http://localhost:8011/health')  // Different port for Memory service
+            .then(res => res.json())
+            .then(data => {
+              setStatus(data);
+              updateChart(data);
+            })
+            .catch(err => setStatus({error: err.message}));
+        }, 10000);  // Autonomous poll every 10s
+        return () => clearInterval(poll);
+      }, []);
+
+      React.useEffect(() => {
+        if (chartRef.current) {
+          chartInstance.current = new Chart(chartRef.current, {
+            type: 'gauge',
+            data: {
+              datasets: [{
+                value: 0,
+                data: [0, 100],
+                backgroundColor: ['#4CAF50', '#FFC107', '#F44336'],
+                borderWidth: 0
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              valueLabel: {
+                display: true,
+                fontSize: 20,
+                fontColor: '#000',
+                bottomMargin: 10
+              },
+              needle: {
+                color: '#000',
+                width: 5,
+                lengthPercentage: 80
+              }
+            }
+          });
+        }
+        return () => {
+          if (chartInstance.current) {
+            chartInstance.current.destroy();
+          }
+        };
+      }, []);
+
+      const updateChart = (data) => {
+        if (chartInstance.current) {
+          const load = data.services?.memory_service === 'active' ? 75 : 25;  // Example metric
+          chartInstance.current.data.datasets[0].value = load;
+          chartInstance.current.update();
+        }
+      };
+
+      const updateConfig = () => {
+        fetch('http://localhost:8011/process', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({offline})
+        });
+      };
+
+      const sendChatMessage = () => {
+        if (chatInput.trim()) {
+          const userMessage = { sender: 'User', text: chatInput };
+          setChatMessages([...chatMessages, userMessage]);
+          setChatInput('');
+          // Simulate API call to service LLM
+          fetch('http://localhost:8011/chat', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ message: chatInput })
+          })
+          .then(res => res.json())
+          .then(data => {
+            const botMessage = { sender: 'Memory LLM', text: data.response || 'Response received.' };
+            setChatMessages(prev => [...prev, botMessage]);
+          })
+          .catch(err => {
+            const errorMessage = { sender: 'System', text: 'Error communicating with service.' };
+            setChatMessages(prev => [...prev, errorMessage]);
+          });
+        }
+      };
+
+      return (
+        <div className="container mx-auto p-4">
+          <h1 className="text-3xl font-bold mb-4">Memory Monitor & Config</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div className="p-4 border rounded-lg bg-white shadow-md">
+              <h2 className="text-xl font-semibold mb-2">System Status</h2>
+              <p className="mb-4">Status: {status.services?.memory_service || 'Loading...'}</p>
+              <div className="h-64 w-full">
+                <canvas ref={chartRef} id="gaugeChart"></canvas>
+              </div>
+            </div>
+            <div className="p-4 border rounded-lg bg-white shadow-md">
+              <h2 className="text-xl font-semibold mb-2">Configuration</h2>
+              <label className="block mb-4">
+                Offline Mode:
+                <input type="checkbox" checked={offline} onChange={e => setOffline(e.target.checked)} className="ml-2" />
+              </label>
+              <button onClick={updateConfig} className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 mb-4">Update Config</button>
+            </div>
+          </div>
+          <div className="p-4 border rounded-lg bg-white shadow-md mb-6">
+            <h2 className="text-xl font-semibold mb-2">Chat with Memory Service</h2>
+            <div className="border rounded p-2 h-64 overflow-y-auto mb-4 bg-gray-50">
+              {chatMessages.map((msg, index) => (
+                <div key={index} className={`mb-2 ${msg.sender === 'User' ? 'text-right' : 'text-left'}`}> 
+                  <span className={`inline-block p-2 rounded-lg ${msg.sender === 'User' ? 'bg-blue-100' : 'bg-gray-200'}`}> 
+                    <strong>{msg.sender}:</strong> {msg.text}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="flex">
+              <input 
+                type="text" 
+                value={chatInput} 
+                onChange={e => setChatInput(e.target.value)} 
+                className="flex-grow p-2 border rounded-l" 
+                placeholder="Type your message..." 
+              />
+              <button 
+                onClick={sendChatMessage} 
+                className="bg-green-500 text-white p-2 rounded-r hover:bg-green-600"
+              >
+                Send
+              </button>
+            </div>
+          </div>
+          <a href="index.html" className="text-blue-500 hover:underline">Back to Console</a>
+        </div>
+      );
+    };
+    ReactDOM.render(<MemoryMonitor />, document.getElementById('root'));
+  </script>
+</body>
+</html>

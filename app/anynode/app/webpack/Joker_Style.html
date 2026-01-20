@@ -1,0 +1,101 @@
+<!--   "Variation 4: Organic Nature Fusion (Updated with Blue-to-Grey-to-Purple Gradient)
+# Theme: Green to purple gradient, grow animation.
+# Translucent Blur: Use linear-gradient(to top, rgba(50, 70, 120, 0.1), rgba(120, 120, 120, 0.1), rgba(70, 60, 90, 0.1)) with 15px blur.
+# Edges: Set border to a middle tone (rgba(100, 100, 120, 0.5)).
+# Buttons: Use rgba(100, 100, 120, 0.2) for background, rgba(100, 100, 120, 0.5) for borders, with hover effects.
+# Lettering: Keep as black (#000000)" -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aethereal</title>
+  <style>
+    body {
+      background: linear-gradient(to top, #2a4a3a, #6a4a8a);
+      color: #000000;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      max-width: 600px;
+      padding: 40px;
+      border-radius: 25px;
+      border: 1px solid rgba(100, 100, 120, 0.5);
+      background: linear-gradient(to top, rgba(50, 70, 120, 0.1), rgba(120, 120, 120, 0.1), rgba(70, 60, 90, 0.1));
+      backdrop-filter: blur(15px);
+      text-align: center;
+      animation: grow 3s infinite;
+    }
+    @keyframes grow {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .container {
+      max-width: 600px;
+      padding: 40px;
+      border-radius: 25px;
+      border: 1px solid rgba(100, 100, 120, 0.5);
+      background: linear-gradient(to top, rgba(50, 70, 120, 0.1), rgba(120, 120, 120, 0.1), rgba(70, 60, 90, 0.1));
+      backdrop-filter: blur(15px);
+      text-align: center;
+      animation: grow 3s infinite;
+    }
+    @keyframes grow {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .logo {
+      width: 180px;
+      height: 180px;
+      animation: grow 3s infinite;
+    }
+    .btn {
+      background: rgba(100, 100, 120, 0.2);
+      color: #000000;
+      border: 2px solid rgba(100, 100, 120, 0.5);
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 15px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: rgba(100, 100, 120, 0.5);
+      box-shadow: 0 0 10px rgba(120, 120, 120, 0.3);
+    }
+    .btn svg {
+      margin-right: 8px;
+      fill: rgba(100, 100, 120, 0.5);
+      transition: fill 0.3s;
+    }
+    .btn:hover svg {
+      fill: #000000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="[YOUR_IMAGE_URL_HERE]" alt="Aethereal Logo" class="logo">
+    <p>Aethereal: Where nature meets technology. Join us in this harmonious journey!</p>
+    <a href="#" class="btn">
+      <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-10 10v4l4-4h12a10 10 0 00-6-10zM4 18v2a2 2 0 002 2h12a2 2 0 002-2v-2H4z"/></svg>
+      Download
+    </a>
+    <a href="#" class="btn">
+      <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      Support Us
+    </a>
+  </div>
+</body>
+</html>

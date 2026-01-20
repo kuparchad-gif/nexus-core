@@ -1,0 +1,706 @@
+{
+  "chunk": "12/18",
+  "files": [
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner\\manifest",
+      "size": 1358,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\manifest\\mythrunner_heart_stack.yaml",
+      "name": "mythrunner_heart_stack.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner\\modules",
+      "size": 1358,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\modules\\mythrunner_heart_stack.yaml",
+      "name": "mythrunner_heart_stack.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious",
+      "size": 1853,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\mythrunner_heart_stack.yaml",
+      "name": "mythrunner_heart_stack.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious\\modules",
+      "size": 1358,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\modules\\mythrunner_heart_stack.yaml",
+      "name": "mythrunner_heart_stack.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner",
+      "size": 530,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\mythrunner_manifest.yaml",
+      "name": "mythrunner_manifest.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner",
+      "size": 530,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\mythrunner_manifest.yaml",
+      "name": "mythrunner_manifest.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner",
+      "size": 839,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\Myth_Expansion_Manifest.yaml",
+      "name": "Myth_Expansion_Manifest.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious",
+      "size": 839,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\Myth_Expansion_Manifest.yaml",
+      "name": "Myth_Expansion_Manifest.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner",
+      "size": 839,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\Myth_Expansion_Manifest.yaml",
+      "name": "Myth_Expansion_Manifest.yaml"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious",
+      "size": 839,
+      "type": "yaml_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\Myth_Expansion_Manifest.yaml",
+      "name": "Myth_Expansion_Manifest.yaml"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\manifest",
+      "size": 2170,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\manifest\\ego_stream.py",
+      "name": "ego_stream.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules",
+      "size": 2170,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules\\ego_stream.py",
+      "name": "ego_stream.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules",
+      "size": 2170,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules\\ego_stream.py",
+      "name": "ego_stream.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner\\manifest",
+      "size": 2170,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\manifest\\ego_stream.py",
+      "name": "ego_stream.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner\\modules",
+      "size": 2170,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\modules\\ego_stream.py",
+      "name": "ego_stream.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious\\modules",
+      "size": 2170,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\modules\\ego_stream.py",
+      "name": "ego_stream.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\manifest",
+      "size": 2192,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\manifest\\meditation_watcher.py",
+      "name": "meditation_watcher.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules",
+      "size": 2192,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules\\meditation_watcher.py",
+      "name": "meditation_watcher.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules",
+      "size": 2192,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules\\meditation_watcher.py",
+      "name": "meditation_watcher.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner\\manifest",
+      "size": 2192,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\manifest\\meditation_watcher.py",
+      "name": "meditation_watcher.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner\\modules",
+      "size": 2192,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\modules\\meditation_watcher.py",
+      "name": "meditation_watcher.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious\\modules",
+      "size": 2192,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\modules\\meditation_watcher.py",
+      "name": "meditation_watcher.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\manifest",
+      "size": 1777,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\manifest\\tone_modulator.py",
+      "name": "tone_modulator.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules",
+      "size": 1777,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules\\tone_modulator.py",
+      "name": "tone_modulator.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules",
+      "size": 1777,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules\\tone_modulator.py",
+      "name": "tone_modulator.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner\\manifest",
+      "size": 1777,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\manifest\\tone_modulator.py",
+      "name": "tone_modulator.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner\\modules",
+      "size": 1777,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\modules\\tone_modulator.py",
+      "name": "tone_modulator.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious\\modules",
+      "size": 1777,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\modules\\tone_modulator.py",
+      "name": "tone_modulator.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\memory",
+      "size": 1294,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\memory\\symbolic_memory_cards.json",
+      "name": "symbolic_memory_cards.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\memory",
+      "size": 1294,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\memory\\symbolic_memory_cards.json",
+      "name": "symbolic_memory_cards.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner\\memory",
+      "size": 1294,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\memory\\symbolic_memory_cards.json",
+      "name": "symbolic_memory_cards.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious\\memory",
+      "size": 1294,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\memory\\symbolic_memory_cards.json",
+      "name": "symbolic_memory_cards.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules",
+      "size": 2511,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules\\failsafe.py",
+      "name": "failsafe.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules",
+      "size": 2511,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules\\failsafe.py",
+      "name": "failsafe.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner\\modules",
+      "size": 2511,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\modules\\failsafe.py",
+      "name": "failsafe.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious\\modules",
+      "size": 2511,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\modules\\failsafe.py",
+      "name": "failsafe.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules",
+      "size": 2204,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules\\mythrunner_switchboard.py",
+      "name": "mythrunner_switchboard.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules",
+      "size": 2204,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules\\mythrunner_switchboard.py",
+      "name": "mythrunner_switchboard.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner\\modules",
+      "size": 2204,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\modules\\mythrunner_switchboard.py",
+      "name": "mythrunner_switchboard.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious\\modules",
+      "size": 2204,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\modules\\mythrunner_switchboard.py",
+      "name": "mythrunner_switchboard.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules",
+      "size": 1750,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules\\mythrunner_sync.py",
+      "name": "mythrunner_sync.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules",
+      "size": 1750,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules\\mythrunner_sync.py",
+      "name": "mythrunner_sync.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner\\modules",
+      "size": 1750,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\modules\\mythrunner_sync.py",
+      "name": "mythrunner_sync.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious\\modules",
+      "size": 1750,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\modules\\mythrunner_sync.py",
+      "name": "mythrunner_sync.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules",
+      "size": 748,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules\\soulprint_echo.json",
+      "name": "soulprint_echo.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules",
+      "size": 748,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules\\soulprint_echo.json",
+      "name": "soulprint_echo.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner\\modules",
+      "size": 748,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\modules\\soulprint_echo.json",
+      "name": "soulprint_echo.json"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious\\modules",
+      "size": 748,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\modules\\soulprint_echo.json",
+      "name": "soulprint_echo.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules",
+      "size": 2321,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules\\switchboard .py",
+      "name": "switchboard .py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules",
+      "size": 2671,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules\\switchboard .py",
+      "name": "switchboard .py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner\\modules",
+      "size": 2321,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\modules\\switchboard .py",
+      "name": "switchboard .py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious\\modules",
+      "size": 2671,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\modules\\switchboard .py",
+      "name": "switchboard .py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules",
+      "size": 2771,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules\\symbolic_feedback_relay",
+      "name": "symbolic_feedback_relay"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules",
+      "size": 2771,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules\\symbolic_feedback_relay",
+      "name": "symbolic_feedback_relay"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner\\modules",
+      "size": 2771,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\modules\\symbolic_feedback_relay",
+      "name": "symbolic_feedback_relay"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious\\modules",
+      "size": 2771,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\modules\\symbolic_feedback_relay",
+      "name": "symbolic_feedback_relay"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules",
+      "size": 2104,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules\\symbol_interpreter.py",
+      "name": "symbol_interpreter.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules",
+      "size": 2104,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules\\symbol_interpreter.py",
+      "name": "symbol_interpreter.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner\\modules",
+      "size": 2104,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\modules\\symbol_interpreter.py",
+      "name": "symbol_interpreter.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious\\modules",
+      "size": 2104,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\modules\\symbol_interpreter.py",
+      "name": "symbol_interpreter.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules",
+      "size": 2051,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\mythrunner\\modules\\upgrade_monitor.py",
+      "name": "upgrade_monitor.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules",
+      "size": 2051,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\Subconscious\\modules\\upgrade_monitor.py",
+      "name": "upgrade_monitor.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\mythrunner\\modules",
+      "size": 2051,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\mythrunner\\modules\\upgrade_monitor.py",
+      "name": "upgrade_monitor.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\Subconscious\\modules",
+      "size": 2051,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\Subconscious\\modules\\upgrade_monitor.py",
+      "name": "upgrade_monitor.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\nucleus",
+      "size": 4777,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\nucleus\\nucleus.py",
+      "name": "nucleus.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\nucleus",
+      "size": 4777,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\nucleus\\nucleus.py",
+      "name": "nucleus.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\orc",
+      "size": 859,
+      "type": "javascript",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\file_server.js",
+      "name": "file_server.js"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\orc",
+      "size": 859,
+      "type": "javascript",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\orc\\file_server.js",
+      "name": "file_server.js"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\orc",
+      "size": 352,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\heartbeat.py",
+      "name": "heartbeat.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\orc",
+      "size": 352,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\orc\\heartbeat.py",
+      "name": "heartbeat.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\orc",
+      "size": 508,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\orc_memory_uploader.py",
+      "name": "orc_memory_uploader.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\orc",
+      "size": 508,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\orc\\orc_memory_uploader.py",
+      "name": "orc_memory_uploader.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\orc",
+      "size": 1784,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\orc_relay.py",
+      "name": "orc_relay.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\orc",
+      "size": 1784,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\orc\\orc_relay.py",
+      "name": "orc_relay.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\orc",
+      "size": 2630,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\orc_websocket_server.py",
+      "name": "orc_websocket_server.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\orc",
+      "size": 2630,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\orc\\orc_websocket_server.py",
+      "name": "orc_websocket_server.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\orc",
+      "size": 3545,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\ws_relay.py",
+      "name": "ws_relay.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\orc",
+      "size": 3545,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\orc\\ws_relay.py",
+      "name": "ws_relay.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\alert",
+      "size": 1597,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\alert\\pulse_layer.py",
+      "name": "pulse_layer.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\orc\\alert",
+      "size": 1597,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\orc\\alert\\pulse_layer.py",
+      "name": "pulse_layer.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\auth",
+      "size": 926,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\orc\\auth\\eden_secret_gate.py",
+      "name": "eden_secret_gate.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\orc\\auth",
+      "size": 926,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\orc\\auth\\eden_secret_gate.py",
+      "name": "eden_secret_gate.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\planner",
+      "size": 523,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\planner\\planner_memory_uploader.py",
+      "name": "planner_memory_uploader.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\planner",
+      "size": 523,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\planner\\planner_memory_uploader.py",
+      "name": "planner_memory_uploader.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\planner",
+      "size": 17006,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\planner\\planner_service.py",
+      "name": "planner_service.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\planner\\planner_core",
+      "size": 1783,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\planner\\planner_core\\planner_service.py",
+      "name": "planner_service.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\planner",
+      "size": 17006,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\planner\\planner_service.py",
+      "name": "planner_service.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\planner\\planner_core",
+      "size": 1783,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\planner\\planner_core\\planner_service.py",
+      "name": "planner_service.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\process",
+      "size": 544,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\process\\nova_ping_monitor.py",
+      "name": "nova_ping_monitor.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\process",
+      "size": 544,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\process\\nova_ping_monitor.py",
+      "name": "nova_ping_monitor.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\process",
+      "size": 1593,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\process\\pulse13_sync_engine.py",
+      "name": "pulse13_sync_engine.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\process",
+      "size": 1593,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\process\\pulse13_sync_engine.py",
+      "name": "pulse13_sync_engine.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\pulse",
+      "size": 5109,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\pulse\\pulse_core.py",
+      "name": "pulse_core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart",
+      "size": 1801,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\pulse_core.py",
+      "name": "pulse_core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\pulse",
+      "size": 5109,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\pulse\\pulse_core.py",
+      "name": "pulse_core.py"
+    },
+    {
+      "directory": "Viren\\Systems\\nexus_runtime\\heart",
+      "size": 1801,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\nexus_runtime\\heart\\pulse_core.py",
+      "name": "pulse_core.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\pulse",
+      "size": 4665,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\pulse\\pulse_listener.py",
+      "name": "pulse_listener.py"
+    },
+    {
+      "directory": "Viren\\Systems\\engine\\pulse",
+      "size": 4665,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\engine\\pulse\\pulse_listener.py",
+      "name": "pulse_listener.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\engine\\pulse",
+      "size": 3568,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\engine\\pulse\\pulse_server.py",
+      "name": "pulse_server.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\static_links",
+      "size": 1048,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\nexus_runtime\\heart\\static_links\\pulse_server.py",
+      "name": "pulse_server.py"
+    }
+  ],
+  "total_files": 1809
+}

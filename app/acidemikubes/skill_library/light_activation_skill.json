@@ -1,0 +1,5 @@
+{
+  "name": "Light Activation Skill",
+  "module_path": "Systems/nexus_core/skills/light_activation_skill.py",
+  "entry_class": "LightActivationSkill"
+}

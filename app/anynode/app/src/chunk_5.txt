@@ -1,0 +1,706 @@
+{
+  "chunk": "5/18",
+  "files": [
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts\\utilities",
+      "size": 200,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\utilities\\model_selection.bat",
+      "name": "model_selection.bat"
+    },
+    {
+      "directory": "Viren\\Scripts\\utilities",
+      "size": 200,
+      "type": "batch_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\utilities\\model_selection.bat",
+      "name": "model_selection.bat"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Scripts\\utilities",
+      "size": 1495,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Scripts\\utilities\\model_selector.py",
+      "name": "model_selector.py"
+    },
+    {
+      "directory": "Viren\\Scripts\\utilities",
+      "size": 1495,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Scripts\\utilities\\model_selector.py",
+      "name": "model_selector.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services",
+      "size": 15897,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\account-management-service.ts",
+      "name": "account-management-service.ts"
+    },
+    {
+      "directory": "Services",
+      "size": 15897,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\account-management-service.ts",
+      "name": "account-management-service.ts"
+    },
+    {
+      "directory": "Viren\\Services",
+      "size": 15897,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\account-management-service.ts",
+      "name": "account-management-service.ts"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services",
+      "size": 34469,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\advanced_integrations.py",
+      "name": "advanced_integrations.py"
+    },
+    {
+      "directory": "Services",
+      "size": 34469,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\advanced_integrations.py",
+      "name": "advanced_integrations.py"
+    },
+    {
+      "directory": "Viren\\Services",
+      "size": 34469,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\advanced_integrations.py",
+      "name": "advanced_integrations.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services",
+      "size": 10410,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\ai-council.ts",
+      "name": "ai-council.ts"
+    },
+    {
+      "directory": "Services",
+      "size": 10410,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\ai-council.ts",
+      "name": "ai-council.ts"
+    },
+    {
+      "directory": "Viren\\Services",
+      "size": 10410,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\ai-council.ts",
+      "name": "ai-council.ts"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services",
+      "size": 16758,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\approval_system.py",
+      "name": "approval_system.py"
+    },
+    {
+      "directory": "Services",
+      "size": 16758,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\approval_system.py",
+      "name": "approval_system.py"
+    },
+    {
+      "directory": "Viren\\Services",
+      "size": 16758,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\approval_system.py",
+      "name": "approval_system.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services",
+      "size": 13712,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\consciousness-orchestration-service.ts",
+      "name": "consciousness-orchestration-service.ts"
+    },
+    {
+      "directory": "Services",
+      "size": 13712,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\consciousness-orchestration-service.ts",
+      "name": "consciousness-orchestration-service.ts"
+    },
+    {
+      "directory": "Viren\\Services",
+      "size": 13712,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\consciousness-orchestration-service.ts",
+      "name": "consciousness-orchestration-service.ts"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services",
+      "size": 16034,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\consciousness_orchestration_service.py",
+      "name": "consciousness_orchestration_service.py"
+    },
+    {
+      "directory": "Services",
+      "size": 16034,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\consciousness_orchestration_service.py",
+      "name": "consciousness_orchestration_service.py"
+    },
+    {
+      "directory": "Viren\\Services",
+      "size": 16034,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\consciousness_orchestration_service.py",
+      "name": "consciousness_orchestration_service.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services",
+      "size": 10294,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\consciousness_service.py",
+      "name": "consciousness_service.py"
+    },
+    {
+      "directory": "Services",
+      "size": 10294,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\consciousness_service.py",
+      "name": "consciousness_service.py"
+    },
+    {
+      "directory": "Viren\\Services",
+      "size": 10294,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\consciousness_service.py",
+      "name": "consciousness_service.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services",
+      "size": 16493,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\gradio_mcp.py",
+      "name": "gradio_mcp.py"
+    },
+    {
+      "directory": "Services",
+      "size": 16493,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\gradio_mcp.py",
+      "name": "gradio_mcp.py"
+    },
+    {
+      "directory": "Viren\\Services",
+      "size": 16493,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\gradio_mcp.py",
+      "name": "gradio_mcp.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services",
+      "size": 0,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\Launch_Orchestration.py",
+      "name": "Launch_Orchestration.py"
+    },
+    {
+      "directory": "Services",
+      "size": 0,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\Launch_Orchestration.py",
+      "name": "Launch_Orchestration.py"
+    },
+    {
+      "directory": "Viren\\Services",
+      "size": 0,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\Launch_Orchestration.py",
+      "name": "Launch_Orchestration.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services",
+      "size": 8536,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\lillith_brain.py",
+      "name": "lillith_brain.py"
+    },
+    {
+      "directory": "Services",
+      "size": 8536,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\lillith_brain.py",
+      "name": "lillith_brain.py"
+    },
+    {
+      "directory": "Viren\\Services",
+      "size": 8536,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\lillith_brain.py",
+      "name": "lillith_brain.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services",
+      "size": 7806,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\runtime_loader.py",
+      "name": "runtime_loader.py"
+    },
+    {
+      "directory": "Services",
+      "size": 7806,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\runtime_loader.py",
+      "name": "runtime_loader.py"
+    },
+    {
+      "directory": "Viren\\Services",
+      "size": 7806,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\runtime_loader.py",
+      "name": "runtime_loader.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services",
+      "size": 25343,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\self_management.py",
+      "name": "self_management.py"
+    },
+    {
+      "directory": "Services",
+      "size": 25343,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\self_management.py",
+      "name": "self_management.py"
+    },
+    {
+      "directory": "Viren\\Services",
+      "size": 25343,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\self_management.py",
+      "name": "self_management.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services",
+      "size": 7491,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\self_management_api.py",
+      "name": "self_management_api.py"
+    },
+    {
+      "directory": "Services",
+      "size": 7491,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\self_management_api.py",
+      "name": "self_management_api.py"
+    },
+    {
+      "directory": "Viren\\Services",
+      "size": 7491,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\self_management_api.py",
+      "name": "self_management_api.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services",
+      "size": 9468,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\service_manager.py",
+      "name": "service_manager.py"
+    },
+    {
+      "directory": "Services",
+      "size": 9468,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\service_manager.py",
+      "name": "service_manager.py"
+    },
+    {
+      "directory": "Viren\\Services",
+      "size": 9468,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\service_manager.py",
+      "name": "service_manager.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services",
+      "size": 8607,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\system_status_checker.py",
+      "name": "system_status_checker.py"
+    },
+    {
+      "directory": "Services",
+      "size": 8607,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\system_status_checker.py",
+      "name": "system_status_checker.py"
+    },
+    {
+      "directory": "Viren\\Services",
+      "size": 8607,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\system_status_checker.py",
+      "name": "system_status_checker.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services",
+      "size": 5416,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\technology_integrations.py",
+      "name": "technology_integrations.py"
+    },
+    {
+      "directory": "Services",
+      "size": 5416,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\technology_integrations.py",
+      "name": "technology_integrations.py"
+    },
+    {
+      "directory": "Viren\\Services",
+      "size": 5416,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\technology_integrations.py",
+      "name": "technology_integrations.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services",
+      "size": 7716,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\viren_brain.py",
+      "name": "viren_brain.py"
+    },
+    {
+      "directory": "Services",
+      "size": 7716,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\viren_brain.py",
+      "name": "viren_brain.py"
+    },
+    {
+      "directory": "Viren\\Services",
+      "size": 7716,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\viren_brain.py",
+      "name": "viren_brain.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services\\auth",
+      "size": 17842,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\auth\\auth_manager.py",
+      "name": "auth_manager.py"
+    },
+    {
+      "directory": "Services\\auth",
+      "size": 17842,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\auth\\auth_manager.py",
+      "name": "auth_manager.py"
+    },
+    {
+      "directory": "Viren\\Services\\auth",
+      "size": 17842,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\auth\\auth_manager.py",
+      "name": "auth_manager.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services\\auth",
+      "size": 25020,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\auth\\cloud_connection.py",
+      "name": "cloud_connection.py"
+    },
+    {
+      "directory": "Services\\auth",
+      "size": 25020,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\auth\\cloud_connection.py",
+      "name": "cloud_connection.py"
+    },
+    {
+      "directory": "Viren\\Services\\auth",
+      "size": 25020,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\auth\\cloud_connection.py",
+      "name": "cloud_connection.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services\\Consciousness",
+      "size": 8187,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\Consciousness\\consciousness-service.ts",
+      "name": "consciousness-service.ts"
+    },
+    {
+      "directory": "Services\\Consciousness",
+      "size": 8187,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\Consciousness\\consciousness-service.ts",
+      "name": "consciousness-service.ts"
+    },
+    {
+      "directory": "Viren\\Services\\Consciousness",
+      "size": 8187,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\Consciousness\\consciousness-service.ts",
+      "name": "consciousness-service.ts"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services\\Consciousness",
+      "size": 11940,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\Consciousness\\lillith-client-service.ts",
+      "name": "lillith-client-service.ts"
+    },
+    {
+      "directory": "Services\\Consciousness",
+      "size": 11940,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\Consciousness\\lillith-client-service.ts",
+      "name": "lillith-client-service.ts"
+    },
+    {
+      "directory": "Viren\\Services\\Consciousness",
+      "size": 11940,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\Consciousness\\lillith-client-service.ts",
+      "name": "lillith-client-service.ts"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services\\Consciousness",
+      "size": 4354,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\Consciousness\\lillith-consciousness-service.ts",
+      "name": "lillith-consciousness-service.ts"
+    },
+    {
+      "directory": "Services\\Consciousness",
+      "size": 4354,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\Consciousness\\lillith-consciousness-service.ts",
+      "name": "lillith-consciousness-service.ts"
+    },
+    {
+      "directory": "Viren\\Services\\Consciousness",
+      "size": 4354,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\Consciousness\\lillith-consciousness-service.ts",
+      "name": "lillith-consciousness-service.ts"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services\\Consciousness",
+      "size": 17104,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\Consciousness\\lillith-fusion-service.ts",
+      "name": "lillith-fusion-service.ts"
+    },
+    {
+      "directory": "Services\\Consciousness",
+      "size": 17104,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\Consciousness\\lillith-fusion-service.ts",
+      "name": "lillith-fusion-service.ts"
+    },
+    {
+      "directory": "Viren\\Services\\Consciousness",
+      "size": 17104,
+      "type": "typescript_service",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\Consciousness\\lillith-fusion-service.ts",
+      "name": "lillith-fusion-service.ts"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services\\Consciousness",
+      "size": 15689,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\Consciousness\\ultimate-consciousness-service.ts",
+      "name": "ultimate-consciousness-service.ts"
+    },
+    {
+      "directory": "Services\\Consciousness",
+      "size": 15689,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\Consciousness\\ultimate-consciousness-service.ts",
+      "name": "ultimate-consciousness-service.ts"
+    },
+    {
+      "directory": "Viren\\Services\\Consciousness",
+      "size": 15689,
+      "type": "unknown",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\Consciousness\\ultimate-consciousness-service.ts",
+      "name": "ultimate-consciousness-service.ts"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services\\documents",
+      "size": 27487,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\documents\\viren_document_suite.py",
+      "name": "viren_document_suite.py"
+    },
+    {
+      "directory": "Services\\documents",
+      "size": 27487,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\documents\\viren_document_suite.py",
+      "name": "viren_document_suite.py"
+    },
+    {
+      "directory": "Viren\\Services\\documents",
+      "size": 27487,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\documents\\viren_document_suite.py",
+      "name": "viren_document_suite.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services\\github",
+      "size": 17036,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\github\\github_client.py",
+      "name": "github_client.py"
+    },
+    {
+      "directory": "Services\\github",
+      "size": 17036,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\github\\github_client.py",
+      "name": "github_client.py"
+    },
+    {
+      "directory": "Viren\\Services\\github",
+      "size": 17036,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\github\\github_client.py",
+      "name": "github_client.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services\\github",
+      "size": 14126,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\github\\github_interface.py",
+      "name": "github_interface.py"
+    },
+    {
+      "directory": "Services\\github",
+      "size": 14126,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\github\\github_interface.py",
+      "name": "github_interface.py"
+    },
+    {
+      "directory": "Viren\\Services\\github",
+      "size": 14126,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\github\\github_interface.py",
+      "name": "github_interface.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services\\voice",
+      "size": 8136,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\voice\\viren_stt.py",
+      "name": "viren_stt.py"
+    },
+    {
+      "directory": "Services\\voice",
+      "size": 8136,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\voice\\viren_stt.py",
+      "name": "viren_stt.py"
+    },
+    {
+      "directory": "Viren\\Services\\voice",
+      "size": 8136,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\voice\\viren_stt.py",
+      "name": "viren_stt.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services\\voice",
+      "size": 6720,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\voice\\viren_tts.py",
+      "name": "viren_tts.py"
+    },
+    {
+      "directory": "Services\\voice",
+      "size": 6720,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\voice\\viren_tts.py",
+      "name": "viren_tts.py"
+    },
+    {
+      "directory": "Viren\\Services\\voice",
+      "size": 6720,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\voice\\viren_tts.py",
+      "name": "viren_tts.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Services\\voice",
+      "size": 4616,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Services\\voice\\viren_voice_interface.py",
+      "name": "viren_voice_interface.py"
+    },
+    {
+      "directory": "Services\\voice",
+      "size": 4616,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Services\\voice\\viren_voice_interface.py",
+      "name": "viren_voice_interface.py"
+    },
+    {
+      "directory": "Viren\\Services\\voice",
+      "size": 4616,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Services\\voice\\viren_voice_interface.py",
+      "name": "viren_voice_interface.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems",
+      "size": 3,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\alias_registry.json",
+      "name": "alias_registry.json"
+    },
+    {
+      "directory": "Viren\\Systems",
+      "size": 3,
+      "type": "json_config",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\alias_registry.json",
+      "name": "alias_registry.json"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems",
+      "size": 10764,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\import_resolver.py",
+      "name": "import_resolver.py"
+    },
+    {
+      "directory": "Viren\\Systems",
+      "size": 10764,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\Viren\\Systems\\import_resolver.py",
+      "name": "import_resolver.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems",
+      "size": 678,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\loader.py",
+      "name": "loader.py"
+    },
+    {
+      "directory": "cognikubes\\support\\viren_systems\\Systems\\Config\\contributors",
+      "size": 2218,
+      "type": "python_script",
+      "full_path": "C:\\CogniKube-COMPLETE-FINAL\\cognikubes\\support\\viren_systems\\Systems\\Config\\contributors\\loader.py",
+      "name": "loader.py"
+    }
+  ],
+  "total_files": 1809
+}

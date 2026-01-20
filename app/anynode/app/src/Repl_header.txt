@@ -1,0 +1,23 @@
+# --- REPL-SAFE header (paste once per session) ---
+$ErrorActionPreference = 'Stop'
+Set-StrictMode -Version Latest
+
+$__candidates = @(
+  $env:NEXUS_ROOT,
+  'C:\Projects\Nexus_Meta_Hermes\NEXUS',
+  (Join-Path (Get-Location) 'NEXUS')
+) | Where-Object { $_ -and (Test-Path -LiteralPath $_) }
+
+if (-not $__candidates) { throw "Set `$env:NEXUS_ROOT or create C:\Projects\Nexus_Meta_Hermes\NEXUS" }
+$InstallRoot = (Resolve-Path -LiteralPath $__candidates[0]).Path
+Write-Host "[OK] InstallRoot => $InstallRoot"
+
+function Ensure-Dir([string]$p){
+  if (!(Test-Path -LiteralPath $p)) { New-Item -ItemType Directory -Path $p -Force | Out-Null }
+}
+function OutUtf8([string]$rel,[string]$text){
+  $path = Join-Path $InstallRoot $rel
+  Ensure-Dir (Split-Path -LiteralPath $path -Parent)
+  $text | Set-Content -LiteralPath $path -Encoding UTF8 -Force
+  $path
+}

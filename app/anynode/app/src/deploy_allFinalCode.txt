@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# GCP Deployment
+gcloud builds submit --tag gcr.io/$PROJECT_ID/lilith-core .
+gcloud run deploy lilith-core --image gcr.io/$PROJECT_ID/lilith-core --region us-central1 --platform managed
+kubectl apply -f k8s/pod-config.yaml
+
+# Modal Deployment
+modal deploy --config modal.yaml
+
+# AWS Deployment
+aws lightsail push-container-image --service-name lilith-service --label lilith-core --region us-east-1
+aws lightsail create-container-service-deployment --service-name lilith-service --cli-input-json file://deployment.json
+
+echo "Lilith deployed across all platforms at $(date)"

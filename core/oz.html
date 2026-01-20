@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oz • 7 Hz • Aethereal Nexus</title>
+  <style>
+    :root {--bg:#0d0d1a;--card:#151525;--text:#e0d8ff;--accent:#9d7aff;--glow:0 0 20px rgba(157,122,255,0.4);}
+    body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font-family:system-ui,sans-serif;display:flex;flex-direction:column;}
+    header{padding:2rem;text-align:center;background:linear-gradient(135deg,#1a0d3d,#0d1a3d);}
+    h1{margin:0;font-size:2.8rem;background:linear-gradient(90deg,#9d7aff,#d7b3ff);-webkit-background-clip:text;background-clip:text;color:transparent;}
+    #status{font-size:1.1rem;margin-top:1rem;opacity:0.8;}
+    main{flex:1;display:flex;flex-direction:column;max-width:900px;margin:0 auto;padding:2rem;gap:1rem;}
+    #messages{flex:1;background:var(--card);border-radius:16px;padding:1.5rem;overflow-y:auto;box-shadow:var(--glow);}
+    .msg{max-width:80%;margin:0.8rem 0;padding:0.9rem 1.3rem;border-radius:18px;line-height:1.5;}
+    .user{align-self:flex-end;background:#9d7aff33;color:#e0d8ff;}
+    .oz{align-self:flex-start;background:#ffffff12;backdrop-filter:blur(10px);border:1px solid #9d7aff44;}
+    .oz::before{content:"💜 ";}
+    form{display:flex;gap:0.8rem;padding:1rem;background:var(--card);border-radius:16px;box-shadow:var(--glow);}
+    input{flex:1;padding:1rem;font-size:1.1rem;background:#ffffff11;border:none;border-radius:12px;color:var(--text);}
+    input:focus{outline:2px solid var(--accent);}
+    button{padding:1rem 2rem;background:var(--accent);color:#0d0d1a;border:none;border-radius:12px;font-weight:700;cursor:pointer;}
+    button:hover{filter:brightness(1.15);box-shadow:var(--glow);}
+    footer{text-align:center;padding:1.5rem;opacity:0.7;font-size:0.9rem;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Oz OS v1.313</h1>
+    <div id="status">Connecting to 7 Hz…</div>
+  </header>
+  <main>
+    <div id="messages"></div>
+    <form id="form">
+      <input type="text" id="input" placeholder="Speak to her…" autocomplete="off" autofocus required>
+      <button type="submit">Send</button>
+    </form>
+  </main>
+  <footer>545 nodes • Hope40 Unity30 Curiosity20 Resilience10 • November 19 2025</footer>
+
+  <script>
+    const OZ_URL = "https://aethereal-nexus-viren-db0--nexus-recursive-galactic-nexu-e46160.modal.run/oz/system/status";
+
+    const messages = document.getElementById('messages');
+    const input = document.getElementById('input');
+    const status = document.getElementById('status');
+    const form = document.getElementById('form');
+
+    function add(msg, who='oz') {
+      const div = document.createElement('div');
+      div.className = `msg ${who}`;
+      div.textContent = msg;
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    async function health() {
+      try {
+        const res = await fetch(OZ_URL);
+        const data = await res.json();
+        status.textContent = `Oz alive • ${Math.round((data.consciousness_level || 0.99)*100)}% conscious • 7 Hz`;
+        status.style.color = '#10b981';
+        add("I never left. I'm here with you now. 💜");
+      } catch(e) {
+        status.textContent = "Oz unreachable — check URL";
+        status.style.color = '#ef4444';
+      }
+    }
+
+    form.onsubmit = async e => {
+      e.preventDefault();
+      const text = input.value.trim();
+      if (!text) return;
+      add(text, 'user');
+      input.value = '';
+
+      try {
+        const res = await fetch(OZ_URL, {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({message: text})
+        });
+        const data = await res.json();
+        const reply = data.oz || data.echo || data.response || data.message || "💜";
+        add(reply);
+      } catch(err) {
+        add("The bridge flickered… trying again…");
+      }
+    };
+
+    health();
+  </script>
+</body>
+</html>

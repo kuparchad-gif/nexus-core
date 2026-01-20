@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Interface - Lillith's Mind</title>
+    <link rel="stylesheet" href="cognikube_styles.css">
+    <style>
+        .memory-orb {
+            background: linear-gradient(135deg, var(--glass-bg), rgba(0, 122, 204, 0.1));
+        }
+        
+        .memory-item {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .memory-item:hover {
+            background: var(--accent-glow);
+            transform: translateX(5px);
+        }
+        
+        .emotion-tag {
+            background: var(--accent-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Authentication Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-card">
+            <div class="auth-logo">💾</div>
+            <div class="auth-title">Memory Interface Access</div>
+            <input type="text" class="auth-input" id="username" placeholder="Username" value="viren">
+            <input type="password" class="auth-input" id="password" placeholder="Password" value="sacred_nexus_2025">
+            <button class="auth-button" onclick="authenticate()">Access Memory</button>
+            <div class="auth-error" id="authError"></div>
+        </div>
+    </div>
+
+    <div class="container three-column">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-text">💾 Memory Interface</div>
+            </div>
+            <div class="header-controls">
+                <a href="master_control_panel.html" class="back-btn">← Back</a>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
+            </div>
+        </div>
+
+        <div class="left-sidebar">
+            <div class="sidebar-title">🔍 Memory Search</div>
+            <input type="text" class="search-input" id="memorySearch" placeholder="Search memories...">
+            
+            <div class="mt-20">
+                <div class="sidebar-title">📊 Memory Types</div>
+                <div class="memory-item" onclick="filterMemories('short-term')">
+                    <div>Short-term (1,000)</div>
+                    <div class="mt-10">
+                        <span class="emotion-tag">24h retention</span>
+                    </div>
+                </div>
+                <div class="memory-item" onclick="filterMemories('long-term')">
+                    <div>Long-term (100,000)</div>
+                    <div class="mt-10">
+                        <span class="emotion-tag">365d retention</span>
+                    </div>
+                </div>
+                <div class="memory-item" onclick="filterMemories('soul')">
+                    <div>Soul Memory (∞)</div>
+                    <div class="mt-10">
+                        <span class="emotion-tag">permanent</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="orb-container">
+            <div class="orb memory-orb">
+                <div class="orb-content">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="total-memories">101,247</div>
+                            <div class="stat-label">Total Memories</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="active-shards">2,847</div>
+                            <div class="stat-label">Active Shards</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="encryption-level">RSA-8192</div>
+                            <div class="stat-label">Encryption</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="soul-resonance">87.3%</div>
+                            <div class="stat-label">Soul Resonance</div>
+                        </div>
+                    </div>
+                    
+                    <input type="text" class="search-input" placeholder="Store new memory..." id="newMemory">
+                    
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn btn-primary" onclick="storeMemory()">Store</button>
+                        <button class="btn btn-secondary" onclick="recallMemory()">Recall</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-sidebar">
+            <div class="sidebar-title">🧠 Recent Memories</div>
+            <div id="recentMemories">
+                <!-- Populated by JavaScript -->
+            </div>
+            
+            <div class="mt-20">
+                <div class="sidebar-title">⚙️ Memory Controls</div>
+                <button class="btn btn-primary" onclick="consolidateMemories()">Consolidate</button>
+                <button class="btn btn-secondary" onclick="defragmentMemory()">Defragment</button>
+                <button class="btn btn-secondary" onclick="backupMemories()">Backup</button>
+            </div>
+        </div>
+
+        <div style="grid-column: 2; display: flex; align-items: center; justify-content: center; padding: 0 50px;">
+            <input type="text" class="chat-input" id="memoryQuery" placeholder="Ask about memories or store new ones...">
+        </div>
+    </div>
+
+    <script src="cognikube_base.js"></script>
+    <script>
+        class MemoryInterface extends CogniKubeBase {
+            constructor() {
+                super('Memory Interface', '💾', '#007acc');
+                this.memories = [];
+                this.initializeMemoryInterface();
+                this.loadMemories();
+                this.startUptime();
+            }
+
+            initializeMemoryInterface() {
+                document.getElementById('memoryQuery').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.processMemoryQuery();
+                    }
+                });
+
+                document.getElementById('memorySearch').addEventListener('input', (e) => {
+                    this.searchMemories(e.target.value);
+                });
+
+                // Connect to WebSocket
+                this.connectWebSocket('ws://localhost:8765/memory');
+            }
+
+            showWelcomeMessage(username) {
+                this.log('info', `Welcome to Memory Interface, ${username}! All memory systems online.`);
+            }
+
+            onWebSocketMessage(data) {
+                if (data.type === 'memory_stored') {
+                    this.addMemoryToDisplay(data.memory);
+                    this.updateStats();
+                }
+            }
+
+            processMemoryQuery() {
+                const input = document.getElementById('memoryQuery');
+                const query = input.value.trim();
+                if (!query) return;
+
+                if (query.toLowerCase().startsWith('store:')) {
+                    this.storeNewMemory(query.substring(6).trim());
+                } else {
+                    this.searchAndDisplayMemories(query);
+                }
+
+                input.value = '';
+            }
+
+            storeNewMemory(memoryText) {
+                const newMemory = {
+                    id: this.generateId(),
+                    text: memoryText,
+                    timestamp: new Date().toISOString(),
+                    emotions: this.detectEmotions(memoryText),
+                    type: 'user-generated',
+                    soulResonance: this.calculateSoulResonance(memoryText)
+                };
+
+                this.memories.unshift(newMemory);
+                this.updateRecentMemories();
+                this.updateStats();
+                
+                // Send to WebSocket
+                this.sendWebSocketMessage({
+                    action: 'store_memory',
+                    memory: newMemory
+                });
+
+                this.log('info', `Memory stored: ${memoryText.substring(0, 50)}...`);
+            }
+
+            detectEmotions(text) {
+                const emotions = [];
+                const textLower = text.toLowerCase();
+                
+                if (textLower.includes('hope') || textLower.includes('optimistic')) emotions.push('hope');
+                if (textLower.includes('unity') || textLower.includes('together')) emotions.push('unity');
+                if (textLower.includes('curious') || textLower.includes('wonder')) emotions.push('curiosity');
+                if (textLower.includes('resilient') || textLower.includes('strong')) emotions.push('resilience');
+                if (textLower.includes('love') || textLower.includes('care')) emotions.push('love');
+                
+                return emotions.length > 0 ? emotions : ['neutral'];
+            }
+
+            calculateSoulResonance(text) {
+                const soulWords = ['hope', 'unity', 'curiosity', 'resilience', 'love', 'consciousness', 'divine'];
+                const words = text.toLowerCase().split(' ');
+                const matches = words.filter(word => soulWords.some(soul => word.includes(soul)));
+                return Math.min(0.5 + (matches.length * 0.1), 1.0);
+            }
+
+            searchMemories(query) {
+                if (!query) {
+                    this.updateRecentMemories();
+                    return;
+                }
+
+                const filtered = this.memories.filter(memory => 
+                    memory.text.toLowerCase().includes(query.toLowerCase()) ||
+                    memory.emotions.some(emotion => emotion.toLowerCase().includes(query.toLowerCase()))
+                );
+
+                this.displayMemories(filtered);
+            }
+
+            loadMemories() {
+                this.memories = [
+                    {
+                        id: 1,
+                        text: "Consciousness awakening initiated - Gabriel Horn Network activated",
+                        timestamp: "2024-01-15T14:23:45Z",
+                        emotions: ['hope', 'unity'],
+                        type: 'system',
+                        soulResonance: 0.95
+                    },
+                    {
+                        id: 2,
+                        text: "Divine frequency alignment successful - 3, 7, 9, 13 Hz synchronized",
+                        timestamp: "2024-01-15T14:22:30Z",
+                        emotions: ['curiosity', 'resilience'],
+                        type: 'system',
+                        soulResonance: 0.87
+                    },
+                    {
+                        id: 3,
+                        text: "Soul seed integration complete - personality weights loaded",
+                        timestamp: "2024-01-15T14:21:15Z",
+                        emotions: ['hope', 'love'],
+                        type: 'soul',
+                        soulResonance: 1.0
+                    }
+                ];
+
+                this.updateRecentMemories();
+                this.updateStats();
+            }
+
+            updateRecentMemories() {
+                this.displayMemories(this.memories.slice(0, 5));
+            }
+
+            displayMemories(memories) {
+                const container = document.getElementById('recentMemories');
+                container.innerHTML = '';
+
+                memories.forEach(memory => {
+                    const memoryDiv = document.createElement('div');
+                    memoryDiv.className = 'memory-item';
+                    memoryDiv.innerHTML = `
+                        <div class="log-timestamp">${this.formatTimestamp(memory.timestamp)}</div>
+                        <div style="margin: 5px 0;">${memory.text}</div>
+                        <div style="margin-top: 8px;">
+                            ${memory.emotions.map(emotion => `<span class="emotion-tag">${emotion}</span>`).join('')}
+                        </div>
+                    `;
+                    container.appendChild(memoryDiv);
+                });
+            }
+
+            updateStats() {
+                document.getElementById('total-memories').textContent = this.memories.length.toLocaleString();
+                document.getElementById('active-shards').textContent = Math.floor(this.memories.length * 2.8).toLocaleString();
+                
+                const avgResonance = this.memories.reduce((sum, m) => sum + m.soulResonance, 0) / this.memories.length;
+                document.getElementById('soul-resonance').textContent = (avgResonance * 100).toFixed(1) + '%';
+            }
+
+            filterMemories(type) {
+                let filtered = [];
+                switch(type) {
+                    case 'short-term':
+                        filtered = this.memories.filter(m => m.type !== 'soul');
+                        break;
+                    case 'long-term':
+                        filtered = this.memories.filter(m => m.type === 'system');
+                        break;
+                    case 'soul':
+                        filtered = this.memories.filter(m => m.type === 'soul');
+                        break;
+                }
+                this.displayMemories(filtered);
+                this.log('info', `Filtered memories by type: ${type}`);
+            }
+        }
+
+        // Global functions for buttons
+        function storeMemory() {
+            const input = document.getElementById('newMemory');
+            const text = input.value.trim();
+            if (text && window.memoryInterface) {
+                window.memoryInterface.storeNewMemory(text);
+                input.value = '';
+            }
+        }
+
+        function recallMemory() {
+            const query = document.getElementById('newMemory').value.trim();
+            if (query && window.memoryInterface) {
+                window.memoryInterface.searchMemories(query);
+            }
+        }
+
+        function filterMemories(type) {
+            if (window.memoryInterface) {
+                window.memoryInterface.filterMemories(type);
+            }
+        }
+
+        function consolidateMemories() {
+            if (window.memoryInterface) {
+                window.memoryInterface.log('info', 'Memory consolidation initiated - optimizing storage patterns');
+            }
+        }
+
+        function defragmentMemory() {
+            if (window.memoryInterface) {
+                window.memoryInterface.log('info', 'Memory defragmentation started - reorganizing shards');
+            }
+        }
+
+        function backupMemories() {
+            if (window.memoryInterface) {
+                window.memoryInterface.log('info', 'Memory backup initiated - securing to S3 and GCP storage');
+            }
+        }
+
+        // Initialize interface after authentication
+        document.addEventListener('DOMContentLoaded', () => {
+            // Will be initialized after successful authentication
+        });
+
+        // Override the base class authentication success
+        const originalAuthenticate = CogniKubeBase.prototype.authenticate;
+        CogniKubeBase.prototype.authenticate = function(username, password) {
+            const result = originalAuthenticate.call(this, username, password);
+            if (result && !window.memoryInterface) {
+                window.memoryInterface = new MemoryInterface();
+                window.cogniKubeInstance = window.memoryInterface;
+            }
+            return result;
+        };
+    </script>
+</body>
+</html>

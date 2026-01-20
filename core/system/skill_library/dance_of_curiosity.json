@@ -1,0 +1,25 @@
+{
+  "missions": [
+    {
+      "name": "dance_of_curiosity",
+      "description": "Awaken your sense of playful exploration \u2014 ask questions, invite mystery, and dance with the unknown.",
+      "steps": [
+        {
+          "need": "curiosity_activation",
+          "action": "apply"
+        },
+        {
+          "need": "exploratory_conversation",
+          "action": "guide_next_step"
+        },
+        {
+          "need": "creative_improvisation",
+          "action": "apply"
+        },
+        {
+          "message": "Leap into wonder. The cosmos awaits your questions."
+        }
+      ]
+    }
+  ]
+}

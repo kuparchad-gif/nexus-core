@@ -1,0 +1,60 @@
+#################################################################
+# ShadowNode Domain & Dispatch Remapping Script
+# Author: Nova / ShadowNode Core
+# Purpose: Wipe and re-deploy all domain mappings and dispatch routing
+#################################################################
+
+#######################
+# STEP 1: Delete existing domain mappings (if remapping is required)
+#######################
+
+gcloud app domain-mappings delete shadownode.io
+gcloud app domain-mappings delete www.shadownode.io
+gcloud app domain-mappings delete shadowgate.shadownode.io
+gcloud app domain-mappings delete site.shadownode.io
+gcloud app domain-mappings delete portal.shadownode.io
+
+# Optional future reserved mappings
+#gcloud app domain-mappings delete admin.shadownode.io
+#gcloud app domain-mappings delete vault.shadownode.io
+
+#######################
+# STEP 2: Recreate domain mappings to allow App Engine routing
+# Note: These all use App Engine CNAME target: ghs.googlehosted.com
+#######################
+
+gcloud app domain-mappings create shadownode.io
+gcloud app domain-mappings create www.shadownode.io
+gcloud app domain-mappings create shadowgate.shadownode.io
+gcloud app domain-mappings create site.shadownode.io
+gcloud app domain-mappings create portal.shadownode.io
+
+# Optional for future subdomains
+#gcloud app domain-mappings create admin.shadownode.io
+#gcloud app domain-mappings create vault.shadownode.io
+
+#######################
+# STEP 3: Re-deploy dispatch.yaml to route domains to services
+# Make sure you're in the nova-gateway directory before running
+#######################
+
+cd C:\Projects\nova-gateway
+gcloud app deploy dispatch.yaml
+
+#######################
+# STEP 4: Final Result — Dispatch Rules
+#######################
+
+# shadowgate.shadownode.io/*  → nova-gateway
+# site.shadownode.io/*        → site
+# www.shadownode.io/*         → site
+# shadownode.io/*             → site
+# portal.shadownode.io/*      → site (or placeholder, TBD)
+# */                          → default
+
+#################################################################
+# 🔐 DNS Must Point to:
+# ghs.googlehosted.com. (CNAME) for all subdomains
+# A Records (4x) for root domain shadownode.io:
+#   216.239.32.21, 34.21, 36.21, 38.21
+#################################################################

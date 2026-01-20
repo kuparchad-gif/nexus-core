@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  loki:
+    image: grafana/loki:2.9.0
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - ./loki-config.yml:/etc/loki/local-config.yaml
+    networks:
+      - gabriel-horn
+
+  promtail:
+    image: grafana/promtail:2.9.0
+    volumes:
+      - ./promtail-config.yml:/etc/promtail/config.yml
+      - ./logs:/var/log
+    command: -config.file=/etc/promtail/config.yml
+    networks:
+      - gabriel-horn
+
+  grafana:
+    image: grafana/grafana:10.0.0
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=gabriel_horn_2025
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    networks:
+      - gabriel-horn
+
+networks:
+  gabriel-horn:
+    driver: bridge
+
+volumes:
+  grafana-storage:

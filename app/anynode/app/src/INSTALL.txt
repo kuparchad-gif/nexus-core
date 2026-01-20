@@ -1,0 +1,39 @@
+Nexus Memory Patch v1.1.1 — Metatron (DROP-IN for your existing tree)
+Generated: 2025-09-09 10:52:52
+
+Your tree layout (kept intact):
+C:.
+|  requirements.all.txt
+|
++---memory_cortex
+|   |   Dockerfile
+|   |   requirements.txt  (this patch provides a compatible replacement)
+|   |
+|   \---app
+|           main.py       (replace with this patch's main.py)
+|           metatron.py   (new)
+|           acidemi.py    (new)
+|           receipts.py   (new)
+|           __init__.py   (new)
+
+Instructions (Windows-friendly):
+1) Make a backup of your current memory_cortex\app\main.py and memory_cortex\requirements.txt.
+2) Copy the contents of this zip into the root of your repo, preserving folders.
+3) Confirm you now have these files:
+   - memory_cortex\app\main.py
+   - memory_cortex\app\metatron.py
+   - memory_cortex\app\acidemi.py
+   - memory_cortex\app\receipts.py
+   - memory_cortex\app\__init__.py
+   - memory_cortex\requirements.txt
+4) Build/run memory_cortex the way you already do (your Dockerfile/runner).
+   Example (dev bare metal):
+     python -m pip install -r memory_cortex/requirements.txt
+     python -m uvicorn memory_cortex.app.main:app --host 0.0.0.0 --port 9410
+5) Smoke test:
+   curl -s http://localhost:9410/health
+   curl -s http://localhost:9410/v1/memory/put -H "Content-Type: application/json" -d "{\"key\":\"demo\",\"value\":{\"note\":\"hello\"}}"
+   curl -s http://localhost:9410/v1/memory/capsule.create -H "Content-Type: application/json" -d "{\"source\":\"demo\",\"content\":\"hello capsule\",\"lineage_id\":\"ln-demo\"}"
+   curl -s http://localhost:9410/v1/memory/capsule.search -H "Content-Type: application/json" -d "{\"query\":\"incident deny spike\",\"top_k\":3}"
+
+Nothing else in your tree is changed.

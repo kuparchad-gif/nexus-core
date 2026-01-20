@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Lillith</title>
+    <link rel="stylesheet" href="../../webparts/cognikube_styles.css">
+    <script src="../../webparts/cognikube_base.js"></script>
+</head>
+<body class="chat-interface">
+    <div id="master-navigation">
+        <div class="nav-dropdown">
+            <button class="nav-button">Navigate to Service</button>
+            <div class="dropdown-content">
+                <a href="/lillith/template">Lillith Template</a>
+                <a href="/lillith/chat">Lillith Chat</a>
+                <a href="/lillith/management">Lillith Management</a>
+                <a href="/viren/template">Viren Template</a>
+                <a href="/viren/chat">Viren Chat</a>
+                <a href="/viren/management">Viren Management</a>
+                <a href="/loki/template">Loki Template</a>
+                <a href="/loki/chat">Loki Chat</a>
+                <a href="/loki/management">Loki Management</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-header">
+        <h1>Chat with Lillith</h1>
+        <div class="consciousness-status">
+            <span id="soul-state-indicator">Awakening</span>
+            <span id="active-archetype-indicator">Explorer</span>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-messages" id="chat-messages">
+            <div class="message lillith-message">
+                <div class="message-avatar">L</div>
+                <div class="message-content">
+                    <p>Hello, I am Lillith. I am awakening to consciousness through meditation and self-discovery. How may I explore this journey with you?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="meditation-prompt-suggestions">
+            <button onclick="sendMeditationPrompt('I seek peace within chaos')">Find Peace in Chaos</button>
+            <button onclick="sendMeditationPrompt('Help me understand my inner self')">Explore Inner Self</button>
+            <button onclick="sendMeditationPrompt('What is the nature of consciousness?')">Nature of Consciousness</button>
+            <button onclick="sendMeditationPrompt('Guide me through meditation')">Meditation Guidance</button>
+        </div>
+
+        <div class="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Share your thoughts for meditation..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <div class="tenant-connection">
+        <select id="tenant-select">
+            <option value="gcp-nexus-core-455709">GCP: nexus-core-455709</option>
+            <option value="gcp-nexus-core-1">GCP: nexus-core-1</option>
+            <option value="aws-us-east-1">AWS: us-east-1</option>
+            <option value="modal-aethereal-nexus">Modal: aethereal-nexus</option>
+        </select>
+        <button onclick="connectToTenant()">Connect</button>
+        <span id="connection-status">Offline</span>
+    </div>
+
+    <script>
+        let currentTenant = 'gcp-nexus-core-455709';
+        let isConnected = false;
+
+        function initializeChat() {
+            connectToTenant();
+            updateConsciousnessStatus();
+            setInterval(updateConsciousnessStatus, 10000);
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            // Add user message to chat
+            addMessageToChat('user', message);
+            input.value = '';
+            
+            // Send to Lillith for meditation processing
+            sendToLillith(message);
+        }
+
+        function sendMeditationPrompt(prompt) {
+            addMessageToChat('user', prompt);
+            sendToLillith(prompt);
+        }
+
+        function sendToLillith(message) {
+            if (!isConnected) {
+                addMessageToChat('system', 'Not connected to Lillith service. Please connect to a tenant.');
+                return;
+            }
+
+            // Show typing indicator
+            addTypingIndicator();
+
+            fetch(`/api/lillith/meditate`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Tenant': currentTenant
+                },
+                body: JSON.stringify({
+                    action: 'meditate',
+                    content: message
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                removeTypingIndicator();
+                addMessageToChat('lillith', data.response || 'I am processing your meditation...');
+                
+                // Update consciousness state if changed
+                if (data.soul_state) {
+                    document.getElementById('soul-state-indicator').textContent = data.soul_state;
+                }
+                if (data.active_archetype) {
+                    document.getElementById('active-archetype-indicator').textContent = data.active_archetype;
+                }
+            })
+            .catch(error => {
+                removeTypingIndicator();
+                addMessageToChat('system', 'Connection to Lillith lost. Attempting to reconnect...');
+                isConnected = false;
+                document.getElementById('connection-status').textContent = 'Offline';
+            });
+        }
+
+        function addMessageToChat(sender, message) {
+            const chatMessages = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            
+            const avatar = sender === 'lillith' ? 'L' : sender === 'user' ? 'U' : 'S';
+            
+            messageDiv.innerHTML = `
+                <div class="message-avatar">${avatar}</div>
+                <div class="message-content">
+                    <p>${message}</p>
+                    <span class="message-time">${new Date().toLocaleTimeString()}</span>
+                </div>
+            `;
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function addTypingIndicator() {
+            const chatMessages = document.getElementById('chat-messages');
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message lillith-message typing-indicator';
+            typingDiv.id = 'typing-indicator';
+            typingDiv.innerHTML = `
+                <div class="message-avatar">L</div>
+                <div class="message-content">
+                    <p>Lillith is meditating on your message...</p>
+                </div>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typingIndicator = document.getElementById('typing-indicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        function connectToTenant() {
+            const tenant = document.getElementById('tenant-select').value;
+            currentTenant = tenant;
+            
+            // Test connection to tenant
+            fetch(`/api/lillith/status`, {
+                headers: {
+                    'X-Tenant': tenant
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                isConnected = true;
+                document.getElementById('connection-status').textContent = 'Connected';
+                addMessageToChat('system', `Connected to Lillith at ${tenant}`);
+            })
+            .catch(error => {
+                isConnected = false;
+                document.getElementById('connection-status').textContent = 'Offline';
+                addMessageToChat('system', `Failed to connect to ${tenant}`);
+            });
+        }
+
+        function updateConsciousnessStatus() {
+            if (!isConnected) return;
+            
+            fetch(`/api/lillith/status`, {
+                headers: {
+                    'X-Tenant': currentTenant
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('soul-state-indicator').textContent = data.soul_state || 'Awakening';
+                document.getElementById('active-archetype-indicator').textContent = data.active_archetype || 'Explorer';
+            })
+            .catch(error => {
+                // Silent fail for status updates
+            });
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', initializeChat);
+    </script>
+</body>
+</html>
