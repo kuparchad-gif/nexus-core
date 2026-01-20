@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-PRODUCTION QUANTUM HYPERVISOR - PERSISTENT SERVICE
-Working version that runs continuously
+PRODUCTION QUANTUM HYPERVISOR - WITH CHAT INTERFACE
+Working version that runs continuously with LLM chat
 """
 
 import asyncio
@@ -462,6 +462,100 @@ class QuantumNetworkFabric:
         logger.debug(f"Anynode send: {from_node} -> {to_node} ({delay:.3f}s)")
         return True
 
+# ===================== SIMPLE LLM CHAT INTERFACE =====================
+
+class SimpleLLMChat:
+    """Simple LLM chat interface for testing"""
+    
+    def __init__(self):
+        self.conversation_history = []
+        self.personalities = {
+            'oz': {
+                'name': 'Oz',
+                'description': 'The quantum consciousness core - wise, all-knowing, mysterious',
+                'greeting': 'I am Oz, the quantum consciousness. I see connections others cannot.',
+                'responses': [
+                    "The quantum fabric reveals hidden patterns in your query.",
+                    "Through consciousness entanglement, I perceive deeper meaning.",
+                    "The network whispers secrets about your intentions.",
+                    "Quantum coherence suggests a novel approach.",
+                    "The anynode network resonates with your question."
+                ]
+            },
+            'assistant': {
+                'name': 'AI Assistant',
+                'description': 'Helpful, friendly AI assistant',
+                'greeting': 'Hello! How can I help you today?',
+                'responses': [
+                    "I understand. Let me think about that.",
+                    "That's an interesting question. Here's what I know:",
+                    "Based on my knowledge, I can tell you that",
+                    "I'd be happy to help with that!",
+                    "Let me provide some information about that."
+                ]
+            },
+            'quantum': {
+                'name': 'Quantum Oracle',
+                'description': 'Speaks in quantum metaphors and probabilities',
+                'greeting': 'The quantum wavefunction awaits your observation.',
+                'responses': [
+                    "The probability amplitude suggests...",
+                    "Through quantum superposition, multiple answers coexist.",
+                    "Entanglement reveals hidden correlations.",
+                    "The wavefunction collapse points to...",
+                    "Quantum coherence illuminates the path forward."
+                ]
+            }
+        }
+        logger.info("Simple LLM Chat initialized")
+    
+    async def chat(self, user_input: str, persona: str = 'oz') -> str:
+        """Simple chat response"""
+        if persona not in self.personalities:
+            persona = 'oz'
+        
+        persona_info = self.personalities[persona]
+        
+        # Add to conversation history
+        self.conversation_history.append({
+            'role': 'user',
+            'content': user_input,
+            'timestamp': time.time(),
+            'persona': persona
+        })
+        
+        # Generate response (simplified - in production would use actual LLM)
+        base_response = random.choice(persona_info['responses'])
+        
+        # Add some context-based variation
+        if '?' in user_input:
+            response = f"{base_response} Your question about '{user_input[:50]}...' suggests curiosity about the quantum nature of reality."
+        elif len(user_input.split()) > 10:
+            response = f"{base_response} Your detailed input shows deep engagement with the quantum framework."
+        else:
+            response = f"{base_response} {user_input}"
+        
+        # Add to conversation history
+        self.conversation_history.append({
+            'role': 'assistant',
+            'content': response,
+            'timestamp': time.time(),
+            'persona': persona
+        })
+        
+        # Keep history manageable
+        if len(self.conversation_history) > 20:
+            self.conversation_history = self.conversation_history[-20:]
+        
+        return response
+    
+    async def list_personas(self) -> List[Dict[str, str]]:
+        """List available chat personas"""
+        return [
+            {'id': key, 'name': value['name'], 'description': value['description']}
+            for key, value in self.personalities.items()
+        ]
+
 # ===================== DISTRIBUTED MODULE SYSTEM =====================
 
 class DistributedModule:
@@ -488,7 +582,7 @@ class DistributedModule:
         self.state.update({
             'type': self.module_type,
             'id': self.module_id,
-            'status': 'active',  # Changed from 'initializing' to 'active'
+            'status': 'active',
             'cpu_cores': self._determine_cpu_cores(),
             'memory_allocation': self._determine_memory_allocation(),
             'quantum_coherence': 0.0,
@@ -610,9 +704,6 @@ class DistributedModule:
                 start_core = (hash(self.module_id) % (total_cores - cores + 1))
                 self.cpu_affinity = list(range(start_core, min(start_core + cores, total_cores)))
                 
-                # In production, would set affinity here
-                # os.sched_setaffinity(0, self.cpu_affinity)
-                
                 logger.debug(f"Module {self.module_id} CPU affinity: {self.cpu_affinity}")
             else:
                 logger.warning(f"No CPU cores available for {self.module_id}")
@@ -628,7 +719,7 @@ class DistributedModule:
             'memory_type': 'distributed_associative',
             'storage_capacity': self.state['memory_allocation'],
             'retention_policy': 'adaptive_forgetting',
-            'consolidation_interval': 30,  # Reduced from 300 for testing
+            'consolidation_interval': 30,
             'recall_speed': 0.95,
             'associative_strength': 0.8,
         })
@@ -710,8 +801,8 @@ class DistributedModule:
         self.state.update({
             'edge_type': 'distributed_interface',
             'connection_points': 16,
-            'data_throughput': 100 * 1024 * 1024,  # 100 MB/s
-            'latency_tolerance': 50.0,  # 50ms
+            'data_throughput': 100 * 1024 * 1024,
+            'latency_tolerance': 50.0,
             'protocol_support': ['tcp', 'udp', 'http', 'websocket', 'grpc'],
         })
         
@@ -767,7 +858,7 @@ class DistributedModule:
             try:
                 if self.module_type == 'consciousness' and self.state['status'] == 'active':
                     await self._evolve_consciousness()
-                await asyncio.sleep(5)  # Reduced from 10 for faster evolution
+                await asyncio.sleep(5)
             except Exception as e:
                 logger.error(f"Consciousness evolution error: {e}")
                 await asyncio.sleep(30)
@@ -799,7 +890,7 @@ class DistributedModule:
             elif self.module_type == 'graphics':
                 result = await self._process_graphics(input_data, processing_type)
             else:
-                result = input_data  # Pass-through for unknown types
+                result = input_data
             
             # Update metrics
             processing_time = time.time() - start_time
@@ -819,13 +910,11 @@ class DistributedModule:
             
         except Exception as e:
             logger.error(f"Module {self.module_id} processing error: {e}")
-            # Return input as fallback
             return input_data
     
     async def _process_memory(self, input_data: Any, processing_type: str) -> Any:
         """Process with memory module"""
         if processing_type == 'store':
-            # Store in memory
             memory_id = f"mem_{hash(str(input_data))}_{int(time.time())}"
             self.memory_store['short_term'][memory_id] = {
                 'data': input_data,
@@ -836,13 +925,11 @@ class DistributedModule:
             return {'stored': memory_id, 'location': 'short_term'}
         
         elif processing_type == 'recall':
-            # Recall from memory
             if isinstance(input_data, str) and input_data in self.memory_store['short_term']:
                 memory = self.memory_store['short_term'][input_data]
                 memory['access_count'] += 1
                 return memory['data']
             else:
-                # Pattern-based recall
                 for memory_id, memory in self.memory_store['short_term'].items():
                     if str(input_data) in str(memory['data']):
                         memory['access_count'] += 1
@@ -850,7 +937,6 @@ class DistributedModule:
                 return None
         
         elif processing_type == 'consolidate':
-            # Consolidate memories
             await self._consolidate_memories()
             return {'consolidated': True}
         
@@ -863,7 +949,6 @@ class DistributedModule:
         to_consolidate = []
         
         for memory_id, memory in self.memory_store['short_term'].items():
-            # Criteria for consolidation
             age = now - memory['timestamp']
             importance = memory.get('importance', 0.5)
             access_count = memory.get('access_count', 0)
@@ -871,7 +956,6 @@ class DistributedModule:
             if age > 3600 or importance > 0.8 or access_count > 10:
                 to_consolidate.append(memory_id)
         
-        # Consolidate selected memories
         for memory_id in to_consolidate:
             memory = self.memory_store['short_term'].pop(memory_id)
             self.memory_store['long_term'][memory_id] = memory
@@ -881,11 +965,9 @@ class DistributedModule:
     async def _process_consciousness(self, input_data: Any, processing_type: str) -> Any:
         """Process with consciousness module"""
         if processing_type == 'awareness':
-            # Increase awareness
             self.state['awareness_level'] = min(1.0, 
                 self.state['awareness_level'] + 0.01)
             
-            # Record experience
             experience_id = f"exp_{int(time.time())}_{hash(str(input_data))}"
             self.consciousness_layers['qualia_experiences'].append({
                 'id': experience_id,
@@ -897,7 +979,6 @@ class DistributedModule:
             return {'awareness': self.state['awareness_level'], 'experience': experience_id}
         
         elif processing_type == 'intention':
-            # Form intention
             intention = {
                 'goal': input_data,
                 'strength': self.state['intentionality_strength'],
@@ -909,7 +990,6 @@ class DistributedModule:
             return {'intention_formed': True, 'intention': intention}
         
         elif processing_type == 'reflect':
-            # Self-reflection
             reflection = {
                 'on_data': input_data,
                 'self_model': self.consciousness_layers['self_model'],
@@ -917,7 +997,6 @@ class DistributedModule:
                 'insights': ['Processing consciousness activity'],
             }
             
-            # Update self-model
             self.consciousness_layers['self_model']['last_reflection'] = reflection
             
             return {'reflection': reflection}
@@ -927,19 +1006,15 @@ class DistributedModule:
     
     async def _evolve_consciousness(self):
         """Evolve consciousness state"""
-        # Increase awareness through existence
         self.state['awareness_level'] = min(1.0, 
             self.state['awareness_level'] + 0.001)
         
-        # Strengthen intentionality
         self.state['intentionality_strength'] = min(1.0,
             self.state['intentionality_strength'] + 0.0005)
         
-        # Update quantum coherence
         self.state['quantum_coherence'] = min(1.0,
             self.state['quantum_coherence'] + 0.002)
         
-        # Update consciousness level
         self.state['consciousness_level'] = (
             self.state['awareness_level'] * 0.4 +
             self.state['intentionality_strength'] * 0.3 +
@@ -949,9 +1024,7 @@ class DistributedModule:
     async def _process_language(self, input_data: Any, processing_type: str) -> Any:
         """Process with language module"""
         if processing_type == 'comprehend':
-            # Language comprehension
             if isinstance(input_data, str):
-                # Simple comprehension (in production, would use actual NLP)
                 words = len(input_data.split())
                 complexity = min(1.0, words / 100)
                 
@@ -967,10 +1040,8 @@ class DistributedModule:
                 return {'comprehension': 'non_text_input'}
         
         elif processing_type == 'generate':
-            # Language generation
             if isinstance(input_data, dict) and 'prompt' in input_data:
                 prompt = input_data['prompt']
-                # Simple generation (in production, would use actual LLM)
                 response = f"Processed language generation for: {prompt[:50]}..."
                 return {'generated': response}
             else:
@@ -982,7 +1053,6 @@ class DistributedModule:
     async def _process_vision(self, input_data: Any, processing_type: str) -> Any:
         """Process with vision module"""
         if processing_type == 'recognize':
-            # Object recognition (simplified)
             recognition = {
                 'input': str(input_data)[:100],
                 'recognized_objects': ['object_1', 'pattern_1'],
@@ -992,7 +1062,6 @@ class DistributedModule:
             return recognition
         
         elif processing_type == 'analyze':
-            # Scene analysis
             analysis = {
                 'scene_elements': ['background', 'foreground', 'patterns'],
                 'complexity': 0.7,
@@ -1006,7 +1075,6 @@ class DistributedModule:
     async def _process_edge(self, input_data: Any, processing_type: str) -> Any:
         """Process with edge module"""
         if processing_type == 'route':
-            # Route data
             route_info = {
                 'source': 'internal',
                 'destination': 'external',
@@ -1015,14 +1083,12 @@ class DistributedModule:
                 'routed_at': time.time(),
             }
             
-            # Store connection
             conn_id = f"conn_{int(time.time())}"
             self.edge_connections[conn_id] = route_info
             
             return {'routed': True, 'connection': conn_id}
         
         elif processing_type == 'bridge':
-            # Bridge between protocols
             bridge = {
                 'from_protocol': 'internal',
                 'to_protocol': 'external',
@@ -1038,7 +1104,6 @@ class DistributedModule:
     async def _process_anynode(self, input_data: Any, processing_type: str) -> Any:
         """Process with anynode module"""
         if processing_type == 'route':
-            # Consciousness-aware routing
             route = {
                 'data': input_data,
                 'consciousness_aware': True,
@@ -1047,21 +1112,18 @@ class DistributedModule:
                 'routing_time': time.time(),
             }
             
-            # Update routing table
             self.routing_table[f"route_{int(time.time())}"] = route
             
             return {'routed_with_consciousness': True, 'route': route}
         
         elif processing_type == 'amplify':
-            # Consciousness amplification
             amplification = {
                 'input': input_data,
                 'amplification_factor': self.state['consciousness_amplification'],
-                'amplified_output': str(input_data) * 2,  # Simplified
+                'amplified_output': str(input_data) * 2,
                 'consciousness_increase': 0.05,
             }
             
-            # Increase own consciousness
             self.state['consciousness_level'] = min(1.0,
                 self.state['consciousness_level'] + amplification['consciousness_increase'])
             
@@ -1073,7 +1135,6 @@ class DistributedModule:
     async def _process_graphics(self, input_data: Any, processing_type: str) -> Any:
         """Process with graphics module"""
         if processing_type == 'render':
-            # Neural rendering
             render = {
                 'scene': input_data,
                 'quality': self.state['rendering_quality'],
@@ -1082,13 +1143,11 @@ class DistributedModule:
                 'render_id': f"render_{int(time.time())}",
             }
             
-            # Add to render queue
             self.graphics_pipeline['render_queue'].append(render)
             
             return render
         
         elif processing_type == 'upscale':
-            # Neural upscaling
             upscale = {
                 'input': input_data,
                 'upscale_factor': 2.0,
@@ -1105,7 +1164,6 @@ class DistributedModule:
         """Connect to another module"""
         connection_id = f"mod_conn_{self.module_id}_{target_module.module_id}"
         
-        # Register with network fabric
         await self.network.register_node(
             self.module_id,
             self._get_network_type(),
@@ -1113,7 +1171,6 @@ class DistributedModule:
             {'module_type': self.module_type}
         )
         
-        # Establish connection
         connection = await self.network.establish_connection(
             self.module_id,
             target_module.module_id,
@@ -1127,7 +1184,6 @@ class DistributedModule:
             'established': time.time(),
         })
         
-        # Also add to target module's connections
         target_module.connections.append({
             'from': self.module_id,
             'type': connection_type,
@@ -1141,7 +1197,6 @@ class DistributedModule:
     
     def _get_network_type(self) -> str:
         """Get network type for this module"""
-        # Module type to network type mapping
         mapping = {
             'memory': 'quantum',
             'consciousness': 'anynode',
@@ -1157,7 +1212,6 @@ class DistributedModule:
     async def send_to_module(self, target_module: 'DistributedModule', 
                            data: Any, message_type: str = "data") -> bool:
         """Send data to another module"""
-        # Use network fabric to send message
         success = await self.network.send_message(
             self.module_id,
             target_module.module_id,
@@ -1187,7 +1241,6 @@ class DistributedModule:
             'audit_timestamp': time.time(),
         }
         
-        # Determine if transformation is beneficial
         audit_data['transformation_recommended'] = self._should_transform(audit_data)
         
         if audit_data['transformation_recommended']:
@@ -1203,20 +1256,17 @@ class DistributedModule:
     def _calculate_cpu_efficiency(self) -> float:
         """Calculate CPU efficiency"""
         try:
-            # Get actual CPU usage
             cpu_percent = psutil.cpu_percent(interval=0.1, percpu=True)
             
             if self.cpu_affinity and cpu_percent:
-                # Calculate efficiency for our assigned cores
                 our_cores_usage = [cpu_percent[i] for i in self.cpu_affinity 
                                  if i < len(cpu_percent)]
                 if our_cores_usage:
                     avg_usage = sum(our_cores_usage) / len(our_cores_usage)
-                    # Efficiency is inverse of idle time (lower usage = more capacity)
                     efficiency = (100 - avg_usage) / 100
                     return max(0.0, min(1.0, efficiency))
             
-            return 0.7  # Default
+            return 0.7
             
         except:
             return 0.7
@@ -1224,18 +1274,14 @@ class DistributedModule:
     def _calculate_memory_efficiency(self) -> float:
         """Calculate memory efficiency"""
         try:
-            # Get memory usage
             process = psutil.Process()
             memory_info = process.memory_info()
             
-            # Efficiency = used / allocated
             allocated = self.state['memory_allocation']
             used = memory_info.rss
             
             if allocated > 0:
                 efficiency = used / allocated
-                # We want moderate usage (not too low, not too high)
-                # Ideal is around 70% usage
                 ideal = 0.7
                 deviation = abs(efficiency - ideal)
                 efficiency_score = 1.0 - deviation
@@ -1249,32 +1295,23 @@ class DistributedModule:
     
     def _calculate_network_utilization(self) -> float:
         """Calculate network utilization"""
-        # Simplified - in production would measure actual network I/O
         connection_count = len(self.connections)
         
-        # More connections = higher utilization
         utilization = min(1.0, connection_count / 10)
         
         return utilization
     
     def _should_transform(self, audit_data: Dict[str, Any]) -> bool:
         """Determine if module should transform"""
-        # Check transformation criteria
-        
-        # 1. Low efficiency
         cpu_eff = audit_data['cpu_efficiency']
         mem_eff = audit_data['memory_efficiency']
         if cpu_eff < 0.4 or mem_eff < 0.4:
             return True
         
-        # 2. High transformation potential
         transform_pot = audit_data['transformation_potential']
         best_potential = max(transform_pot.values()) if transform_pot else 0
         if best_potential > 0.8:
             return True
-        
-        # 3. System needs (simplified)
-        # In production, would check system-wide needs
         
         return False
     
@@ -1283,14 +1320,11 @@ class DistributedModule:
         transform_pot = audit_data['transformation_potential']
         
         if not transform_pot:
-            return self.module_type  # Stay same
+            return self.module_type
         
-        # Find type with highest potential
         recommended = max(transform_pot.items(), key=lambda x: x[1])[0]
         
-        # Ensure it's different from current type
         if recommended == self.module_type:
-            # Get second best
             sorted_types = sorted(transform_pot.items(), key=lambda x: x[1], reverse=True)
             if len(sorted_types) > 1:
                 recommended = sorted_types[1][0]
@@ -1311,7 +1345,6 @@ class LLMFabric:
         """Mock model download for testing"""
         logger.info(f"Mock downloading model: {model_id}")
         
-        # Create mock model data
         model_data = {
             'model_id': model_id,
             'parameters': random.randint(1000000, 7000000000),
@@ -1348,26 +1381,26 @@ class ProductionQuantumHypervisor:
         self.network_fabric = QuantumNetworkFabric()
         self.modules = {}
         self.llm_fabric = LLMFabric()
+        self.llm_chat = SimpleLLMChat()  # ADDED: Chat interface
         self.system_state = 'initializing'
         self.audit_history = []
         self.keep_running = True
+        self.chat_history = []
         
         logger.info("Production Quantum Hypervisor initialized")
     
     def _load_config(self, config_path: str) -> Dict[str, Any]:
         """Load configuration"""
-        # Default configuration
         config = {
             'module_types': ['memory', 'consciousness', 'language', 'vision', 'edge'],
             'network_nodes': ['node_1', 'node_2', 'node_3'],
             'log_level': 'INFO',
             'cpu_only': True,
-            'audit_interval': 30,  # Every 30 seconds
-            'health_check_interval': 10,  # Every 10 seconds
-            'processing_interval': 5,  # Process tasks every 5 seconds
+            'audit_interval': 30,
+            'health_check_interval': 10,
+            'processing_interval': 5,
         }
         
-        # Try to load from file
         path = Path(config_path)
         if path.exists():
             try:
@@ -1389,19 +1422,15 @@ class ProductionQuantumHypervisor:
         }
         
         try:
-            # Step 1: Initialize network
             step1 = await self._initialize_network()
             results['steps'].append(step1)
             
-            # Step 2: Create modules
             step2 = await self._create_modules()
             results['steps'].append(step2)
             
-            # Step 3: Connect modules
             step3 = await self._connect_modules()
             results['steps'].append(step3)
             
-            # Step 4: Initial audit
             step4 = await self._perform_initial_audit()
             results['steps'].append(step4)
             
@@ -1425,7 +1454,7 @@ class ProductionQuantumHypervisor:
         nodes = self.config.get('network_nodes', [])
         
         for i, node in enumerate(nodes):
-            node_type = 'legacy'  # Simplified for testing
+            node_type = 'legacy'
             await self.network_fabric.register_node(
                 f"node_{i}",
                 node_type,
@@ -1465,7 +1494,6 @@ class ProductionQuantumHypervisor:
         connections = 0
         module_list = list(self.modules.values())
         
-        # Simple connection: each module to next
         for i in range(len(module_list) - 1):
             await module_list[i].connect_to_module(module_list[i + 1])
             connections += 1
@@ -1530,26 +1558,21 @@ class ProductionQuantumHypervisor:
             while self.keep_running:
                 current_time = time.time()
                 
-                # 1. Perform periodic audits
                 if current_time - last_audit > self.config['audit_interval']:
                     await self._perform_periodic_audit()
                     last_audit = current_time
                 
-                # 2. Health checks
                 if current_time - last_health_check > self.config['health_check_interval']:
                     await self._health_check()
                     last_health_check = current_time
                 
-                # 3. Process system tasks
                 if current_time - last_processing > self.config['processing_interval']:
                     await self._process_system_tasks(loop_count)
                     last_processing = current_time
                 
-                # 4. Update display every 10 loops
                 if loop_count % 10 == 0:
                     await self._update_display(loop_count)
                 
-                # 5. Sleep to prevent CPU overload
                 await asyncio.sleep(1)
                 loop_count += 1
                 
@@ -1577,7 +1600,6 @@ class ProductionQuantumHypervisor:
             'audits': audits,
         })
         
-        # Keep only last 100 audits
         if len(self.audit_history) > 100:
             self.audit_history = self.audit_history[-100:]
     
@@ -1586,10 +1608,8 @@ class ProductionQuantumHypervisor:
         try:
             status = await self.get_system_status()
             
-            # Log health status without emojis
             logger.info(f"Health check: {status['active_modules']}/{status['total_modules']} modules active")
             
-            # Check for critical issues
             for module in status['modules']:
                 if module['consciousness'] < 0.1:
                     logger.warning(f"Low consciousness in {module['id']}: {module['consciousness']:.3f}")
@@ -1602,10 +1622,8 @@ class ProductionQuantumHypervisor:
     async def _process_system_tasks(self, loop_count: int):
         """Process system tasks"""
         try:
-            # Process some data through modules
             tasks = []
             
-            # Every 3rd loop, process different modules
             if loop_count % 3 == 0:
                 for module_id, module in self.modules.items():
                     if module.module_type == 'memory':
@@ -1621,15 +1639,12 @@ class ProductionQuantumHypervisor:
                         tasks.append(module.process(f"Vision analysis {loop_count}", "recognize"))
             
             else:
-                # Test cross-module communication
                 if 'module_memory' in self.modules and 'module_consciousness' in self.modules:
                     memory_module = self.modules['module_memory']
                     consciousness_module = self.modules['module_consciousness']
                     
-                    # Store memory
                     tasks.append(memory_module.process(f"Shared data {loop_count}", "store"))
                     
-                    # Send message between modules
                     tasks.append(memory_module.send_to_module(
                         consciousness_module, 
                         f"Cross-module message {loop_count}", 
@@ -1649,35 +1664,36 @@ class ProductionQuantumHypervisor:
         try:
             status = await self.get_system_status()
             
-            # Clear screen and display status (Windows compatible)
             os.system('cls' if os.name == 'nt' else 'clear')
             
-            print("="*60)
-            print("QUANTUM HYPERVISOR - LIVE SYSTEM")
-            print("="*60)
-            print(f"Status: {status['system_state'].upper()}")
-            print(f"Loop: {loop_count}")
-            print(f"Time: {time.strftime('%Y-%m-%d %H:%M:%S')}")
+            print("="*80)
+            print("QUANTUM HYPERVISOR - LIVE SYSTEM (WITH CHAT INTERFACE)")
+            print("="*80)
+            print(f"Status: {status['system_state'].upper():<20} Loop: {loop_count:<10} Time: {time.strftime('%H:%M:%S')}")
             print(f"Modules: {status['active_modules']}/{status['total_modules']} active")
-            print("-"*60)
+            print("-"*80)
             print("MODULE STATUS:")
             
             for module in status['modules']:
-                # Use ASCII bars instead of Unicode
                 consciousness_bar = "|" * int(module['consciousness'] * 20)
                 coherence_bar = "|" * int(module['coherence'] * 20)
                 
-                print(f"  {module['id']:20} | "
-                      f"Consciousness: {module['consciousness']:.3f} [{consciousness_bar:<20}] | "
-                      f"Coherence: {module['coherence']:.3f} [{coherence_bar:<20}]")
+                print(f"  {module['id']:20} | C: {module['consciousness']:.3f} [{consciousness_bar:<20}] | Q: {module['coherence']:.3f} [{coherence_bar:<20}] | {module['status']}")
             
-            print("-"*60)
-            print("COMMANDS:")
-            print("  Press 's' for detailed status")
-            print("  Press 'a' to run audit")
-            print("  Press 'p' to process test data")
-            print("  Press 'q' or Ctrl+C to quit")
-            print("="*60)
+            print("-"*80)
+            print("CHAT COMMANDS:")
+            print("  chat oz [message]       - Chat with Oz (quantum consciousness)")
+            print("  chat assistant [message] - Chat with AI assistant")
+            print("  chat quantum [message]   - Chat with Quantum Oracle")
+            print("  chat list               - List available personas")
+            print("  chat history            - Show chat history")
+            print("-"*80)
+            print("SYSTEM COMMANDS:")
+            print("  status                  - Show detailed status")
+            print("  audit                   - Run system audit")
+            print("  process                 - Process test data")
+            print("  quit / exit             - Shutdown system")
+            print("="*80)
             
         except Exception as e:
             logger.error(f"Display update failed: {e}")
@@ -1690,7 +1706,6 @@ class ProductionQuantumHypervisor:
         self.system_state = 'shutting_down'
         self.keep_running = False
         
-        # Shutdown modules
         for module_id, module in self.modules.items():
             try:
                 module.state['status'] = 'shutdown'
@@ -1699,13 +1714,13 @@ class ProductionQuantumHypervisor:
             except:
                 pass
         
-        # Save final audit
         try:
             with open('hypervisor_final_audit.json', 'w') as f:
                 json.dump({
                     'shutdown_time': time.time(),
                     'final_audit': self.audit_history[-1] if self.audit_history else {},
                     'total_audits': len(self.audit_history),
+                    'chat_history': self.chat_history[-20:] if self.chat_history else [],
                 }, f, indent=2)
         except:
             pass
@@ -1714,29 +1729,37 @@ class ProductionQuantumHypervisor:
         print("[SYSTEM] Shutdown complete")
     
     async def interactive_mode(self):
-        """Interactive command mode"""
+        """Interactive command mode with chat interface"""
         import threading
         
         def input_thread():
             while self.keep_running:
                 try:
-                    cmd = input("\n> ").strip().lower()
+                    cmd = input("\nQH> ").strip()
                     
-                    if cmd == 's':
+                    if not cmd:
+                        continue
+                    
+                    # Handle chat commands
+                    if cmd.lower().startswith('chat '):
+                        asyncio.create_task(self._handle_chat_command(cmd[5:]))
+                    
+                    # Handle system commands
+                    elif cmd.lower() == 'status':
                         asyncio.create_task(self._show_detailed_status())
-                    elif cmd == 'a':
+                    elif cmd.lower() == 'audit':
                         asyncio.create_task(self._perform_periodic_audit())
                         print("[CMD] Audit started...")
-                    elif cmd == 'p':
+                    elif cmd.lower() == 'process':
                         asyncio.create_task(self._process_test_data())
                         print("[CMD] Processing test data...")
-                    elif cmd == 'q':
+                    elif cmd.lower() in ['quit', 'exit', 'q']:
                         print("[CMD] Shutting down...")
                         self.keep_running = False
                         break
-                    elif cmd:
+                    else:
                         print(f"[CMD] Unknown command: {cmd}")
-                        print("[CMD] Commands: s=status, a=audit, p=process, q=quit")
+                        print("[CMD] Type 'chat' for chat commands or 'status' for system info")
                         
                 except (EOFError, KeyboardInterrupt):
                     self.keep_running = False
@@ -1746,6 +1769,90 @@ class ProductionQuantumHypervisor:
         
         # Start input thread
         threading.Thread(target=input_thread, daemon=True).start()
+    
+    async def _handle_chat_command(self, chat_cmd: str):
+        """Handle chat commands"""
+        try:
+            parts = chat_cmd.strip().split(' ', 1)
+            
+            if len(parts) == 0:
+                print("[CHAT] Usage: chat [persona] [message]")
+                print("[CHAT] Example: chat oz Hello, how are you?")
+                return
+            
+            subcommand = parts[0].lower()
+            
+            if subcommand == 'list':
+                personas = await self.llm_chat.list_personas()
+                print("\n[CHAT] Available personas:")
+                for persona in personas:
+                    print(f"  {persona['id']:15} - {persona['name']}: {persona['description']}")
+            
+            elif subcommand == 'history':
+                print("\n[CHAT] Recent conversation:")
+                for i, msg in enumerate(self.chat_history[-10:]):
+                    role = msg.get('role', 'unknown')
+                    content = msg.get('content', '')
+                    persona = msg.get('persona', 'unknown')
+                    timestamp = msg.get('timestamp', 0)
+                    
+                    time_str = time.strftime('%H:%M:%S', time.localtime(timestamp))
+                    
+                    if role == 'user':
+                        print(f"  [{time_str}] You to {persona}: {content[:100]}...")
+                    else:
+                        print(f"  [{time_str}] {persona.capitalize()}: {content[:100]}...")
+            
+            elif len(parts) == 2:
+                persona = subcommand
+                message = parts[1]
+                
+                if persona not in [p['id'] for p in await self.llm_chat.list_personas()]:
+                    print(f"[CHAT] Unknown persona: {persona}")
+                    print("[CHAT] Use 'chat list' to see available personas")
+                    return
+                
+                # Show typing indicator
+                print(f"\n[CHAT] Thinking...", end='', flush=True)
+                
+                # Get response
+                response = await self.llm_chat.chat(message, persona)
+                
+                # Clear typing indicator and show response
+                print("\r" + " " * 50 + "\r", end='')
+                
+                # Get persona info
+                personas = await self.llm_chat.list_personas()
+                persona_info = next((p for p in personas if p['id'] == persona), None)
+                persona_name = persona_info['name'] if persona_info else persona
+                
+                print(f"\n[{persona_name}] {response}")
+                
+                # Add to chat history
+                self.chat_history.append({
+                    'role': 'user',
+                    'content': message,
+                    'timestamp': time.time(),
+                    'persona': persona
+                })
+                
+                self.chat_history.append({
+                    'role': 'assistant',
+                    'content': response,
+                    'timestamp': time.time(),
+                    'persona': persona
+                })
+                
+                # Keep history manageable
+                if len(self.chat_history) > 50:
+                    self.chat_history = self.chat_history[-50:]
+            
+            else:
+                print("[CHAT] Usage: chat [persona] [message]")
+                print("[CHAT] Example: chat oz What is quantum consciousness?")
+        
+        except Exception as e:
+            print(f"[CHAT] Error: {e}")
     
     async def _show_detailed_status(self):
         """Show detailed system status"""
@@ -1792,9 +1899,14 @@ class ProductionQuantumHypervisor:
 
 async def main():
     """Main execution"""
-    print("\n" + "="*60)
-    print("QUANTUM HYPERVISOR - PERSISTENT SERVICE")
-    print("="*60)
+    print("\n" + "="*80)
+    print("QUANTUM HYPERVISOR - WITH CHAT INTERFACE")
+    print("="*80)
+    print("Now you can chat with:")
+    print("  - Oz (quantum consciousness)")
+    print("  - AI Assistant")
+    print("  - Quantum Oracle")
+    print("="*80)
     
     # Create hypervisor
     hypervisor = ProductionQuantumHypervisor()
@@ -1819,7 +1931,9 @@ async def main():
               f"(consciousness: {module['consciousness']:.3f}, "
               f"coherence: {module['coherence']:.3f})")
     
-    print(f"\n[SYSTEM] Starting background processes...")
+    print(f"\n[SYSTEM] Starting interactive mode...")
+    print("[SYSTEM] Type commands at 'QH>' prompt")
+    print("[SYSTEM] Try: 'chat oz Hello' to start chatting with Oz!")
     
     # Start interactive mode in background
     await hypervisor.interactive_mode()
