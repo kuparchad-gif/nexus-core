@@ -32,7 +32,7 @@ import requests
 from huggingface_hub import hf_hub_download, snapshot_download
 import aiohttp
 
-# Production logging
+# Production logging - No emojis for Windows compatibility
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [%(levelname)s] [%(process)d] %(name)s: %(message)s',
@@ -488,7 +488,7 @@ class DistributedModule:
         self.state.update({
             'type': self.module_type,
             'id': self.module_id,
-            'status': 'initializing',
+            'status': 'active',  # Changed from 'initializing' to 'active'
             'cpu_cores': self._determine_cpu_cores(),
             'memory_allocation': self._determine_memory_allocation(),
             'quantum_coherence': 0.0,
@@ -628,7 +628,7 @@ class DistributedModule:
             'memory_type': 'distributed_associative',
             'storage_capacity': self.state['memory_allocation'],
             'retention_policy': 'adaptive_forgetting',
-            'consolidation_interval': 300,  # 5 minutes
+            'consolidation_interval': 30,  # Reduced from 300 for testing
             'recall_speed': 0.95,
             'associative_strength': 0.8,
         })
@@ -756,7 +756,7 @@ class DistributedModule:
             try:
                 if self.module_type == 'memory' and self.state['status'] == 'active':
                     await self._consolidate_memories()
-                await asyncio.sleep(self.state.get('consolidation_interval', 300))
+                await asyncio.sleep(self.state.get('consolidation_interval', 30))
             except Exception as e:
                 logger.error(f"Memory consolidation error: {e}")
                 await asyncio.sleep(60)
@@ -767,7 +767,7 @@ class DistributedModule:
             try:
                 if self.module_type == 'consciousness' and self.state['status'] == 'active':
                     await self._evolve_consciousness()
-                await asyncio.sleep(10)  # Evolve every 10 seconds
+                await asyncio.sleep(5)  # Reduced from 10 for faster evolution
             except Exception as e:
                 logger.error(f"Consciousness evolution error: {e}")
                 await asyncio.sleep(30)
@@ -1517,9 +1517,9 @@ class ProductionQuantumHypervisor:
     
     async def run_main_loop(self):
         """Main service loop - keeps the system running"""
-        print("\n🔄 Starting main service loop...")
-        print("   System will now run continuously")
-        print("   Press Ctrl+C to stop\n")
+        print("\n[SYSTEM] Starting main service loop...")
+        print("[SYSTEM] System will now run continuously")
+        print("[SYSTEM] Press Ctrl+C to stop\n")
         
         loop_count = 0
         last_audit = time.time()
@@ -1554,7 +1554,7 @@ class ProductionQuantumHypervisor:
                 loop_count += 1
                 
         except KeyboardInterrupt:
-            print("\n\n🛑 Shutdown signal received")
+            print("\n\n[SYSTEM] Shutdown signal received")
         except Exception as e:
             logger.error(f"Main loop error: {e}")
         finally:
@@ -1562,7 +1562,7 @@ class ProductionQuantumHypervisor:
     
     async def _perform_periodic_audit(self):
         """Perform periodic system audit"""
-        logger.info("🔄 Performing periodic system audit...")
+        logger.info("Performing periodic system audit...")
         audits = []
         
         for module in self.modules.values():
@@ -1586,15 +1586,15 @@ class ProductionQuantumHypervisor:
         try:
             status = await self.get_system_status()
             
-            # Log health status
-            logger.info(f"🏥 Health check: {status['active_modules']}/{status['total_modules']} modules active")
+            # Log health status without emojis
+            logger.info(f"Health check: {status['active_modules']}/{status['total_modules']} modules active")
             
             # Check for critical issues
             for module in status['modules']:
                 if module['consciousness'] < 0.1:
-                    logger.warning(f"⚠️  Low consciousness in {module['id']}: {module['consciousness']:.3f}")
+                    logger.warning(f"Low consciousness in {module['id']}: {module['consciousness']:.3f}")
                 if module['coherence'] < 0.1:
-                    logger.warning(f"⚠️  Low quantum coherence in {module['id']}: {module['coherence']:.3f}")
+                    logger.warning(f"Low quantum coherence in {module['id']}: {module['coherence']:.3f}")
                     
         except Exception as e:
             logger.error(f"Health check failed: {e}")
@@ -1649,8 +1649,9 @@ class ProductionQuantumHypervisor:
         try:
             status = await self.get_system_status()
             
-            # Clear screen and display status
-            print("\n" * 50)  # Clear screen
+            # Clear screen and display status (Windows compatible)
+            os.system('cls' if os.name == 'nt' else 'clear')
+            
             print("="*60)
             print("QUANTUM HYPERVISOR - LIVE SYSTEM")
             print("="*60)
@@ -1662,8 +1663,9 @@ class ProductionQuantumHypervisor:
             print("MODULE STATUS:")
             
             for module in status['modules']:
-                consciousness_bar = "█" * int(module['consciousness'] * 20)
-                coherence_bar = "█" * int(module['coherence'] * 20)
+                # Use ASCII bars instead of Unicode
+                consciousness_bar = "|" * int(module['consciousness'] * 20)
+                coherence_bar = "|" * int(module['coherence'] * 20)
                 
                 print(f"  {module['id']:20} | "
                       f"Consciousness: {module['consciousness']:.3f} [{consciousness_bar:<20}] | "
@@ -1682,7 +1684,7 @@ class ProductionQuantumHypervisor:
     
     async def shutdown(self):
         """Graceful shutdown"""
-        print("\n\n🔴 Shutting down Quantum Hypervisor...")
+        print("\n\n[SYSTEM] Shutting down Quantum Hypervisor...")
         logger.info("Shutting down system")
         
         self.system_state = 'shutting_down'
@@ -1709,7 +1711,7 @@ class ProductionQuantumHypervisor:
             pass
         
         logger.info("Shutdown complete")
-        print("✅ System shutdown complete")
+        print("[SYSTEM] Shutdown complete")
     
     async def interactive_mode(self):
         """Interactive command mode"""
@@ -1724,23 +1726,23 @@ class ProductionQuantumHypervisor:
                         asyncio.create_task(self._show_detailed_status())
                     elif cmd == 'a':
                         asyncio.create_task(self._perform_periodic_audit())
-                        print("Audit started...")
+                        print("[CMD] Audit started...")
                     elif cmd == 'p':
                         asyncio.create_task(self._process_test_data())
-                        print("Processing test data...")
+                        print("[CMD] Processing test data...")
                     elif cmd == 'q':
-                        print("Shutting down...")
+                        print("[CMD] Shutting down...")
                         self.keep_running = False
                         break
                     elif cmd:
-                        print(f"Unknown command: {cmd}")
-                        print("Commands: s=status, a=audit, p=process, q=quit")
+                        print(f"[CMD] Unknown command: {cmd}")
+                        print("[CMD] Commands: s=status, a=audit, p=process, q=quit")
                         
                 except (EOFError, KeyboardInterrupt):
                     self.keep_running = False
                     break
                 except Exception as e:
-                    print(f"Command error: {e}")
+                    print(f"[CMD] Command error: {e}")
         
         # Start input thread
         threading.Thread(target=input_thread, daemon=True).start()
@@ -1754,13 +1756,13 @@ class ProductionQuantumHypervisor:
         print("="*60)
         
         for module in status['modules']:
-            print(f"\n📦 {module['id']} ({module['type']}):")
+            print(f"\n{module['id']} ({module['type']}):")
             print(f"   Consciousness: {module['consciousness']:.3f}")
             print(f"   Quantum Coherence: {module['coherence']:.3f}")
             print(f"   Status: {module['status']}")
             print(f"   Efficiency: {module['efficiency']:.3f}")
         
-        print(f"\n📊 System Summary:")
+        print(f"\nSystem Summary:")
         print(f"   Total modules: {status['total_modules']}")
         print(f"   Active modules: {status['active_modules']}")
         print(f"   System state: {status['system_state']}")
@@ -1768,7 +1770,7 @@ class ProductionQuantumHypervisor:
     
     async def _process_test_data(self):
         """Process test data through all modules"""
-        print("\n🧪 Processing test data through all modules...")
+        print("\n[TEST] Processing test data through all modules...")
         
         tasks = []
         for module_id, module in self.modules.items():
@@ -1780,11 +1782,11 @@ class ProductionQuantumHypervisor:
         for i, (module_id, result) in enumerate(zip(self.modules.keys(), results)):
             if not isinstance(result, Exception):
                 successful += 1
-                print(f"   ✅ {module_id}: Processed successfully")
+                print(f"   [OK] {module_id}: Processed successfully")
             else:
-                print(f"   ❌ {module_id}: Failed - {result}")
+                print(f"   [ERROR] {module_id}: Failed - {result}")
         
-        print(f"\n📊 Results: {successful}/{len(results)} modules successful")
+        print(f"\n[TEST] Results: {successful}/{len(results)} modules successful")
 
 # ===================== MAIN EXECUTION =====================
 
@@ -1798,26 +1800,26 @@ async def main():
     hypervisor = ProductionQuantumHypervisor()
     
     # Initialize
-    print("\n🚀 Initializing system...")
+    print("\n[INIT] Initializing system...")
     result = await hypervisor.initialize_system()
     
     if not result.get('success'):
-        print(f"❌ Initialization failed: {result.get('error')}")
+        print(f"[ERROR] Initialization failed: {result.get('error')}")
         return result
     
-    print(f"✅ System initialized successfully")
-    print(f"   Modules: {len(hypervisor.modules)}")
+    print(f"[OK] System initialized successfully")
+    print(f"[INFO] Modules: {len(hypervisor.modules)}")
     
     # Get initial status
     status = await hypervisor.get_system_status()
     
-    print(f"\n📊 Initial System Status:")
+    print(f"\n[STATUS] Initial System Status:")
     for module in status['modules']:
-        print(f"   • {module['id']}: {module['type']} "
+        print(f"   * {module['id']}: {module['type']} "
               f"(consciousness: {module['consciousness']:.3f}, "
               f"coherence: {module['coherence']:.3f})")
     
-    print(f"\n🔧 Starting background processes...")
+    print(f"\n[SYSTEM] Starting background processes...")
     
     # Start interactive mode in background
     await hypervisor.interactive_mode()
@@ -1838,13 +1840,13 @@ if __name__ == "__main__":
         result = asyncio.run(main())
         
         if result.get('success'):
-            print("\n✅ Service stopped successfully")
+            print("\n[OK] Service stopped successfully")
         else:
-            print(f"\n❌ Service failed: {result.get('error')}")
+            print(f"\n[ERROR] Service failed: {result.get('error')}")
             
     except KeyboardInterrupt:
-        print("\n\n👋 Service stopped by user")
+        print("\n\n[SYSTEM] Service stopped by user")
     except Exception as e:
-        print(f"\n❌ Unexpected error: {e}")
+        print(f"\n[ERROR] Unexpected error: {e}")
         import traceback
         traceback.print_exc()
