@@ -1,0 +1,141 @@
+{
+  "repository": "https://github.com/kuparchad-gif/nexus-core",
+  "scan_timestamp": "2026-01-29T20:39:52.990112",
+  "essence_hash": "fc883250c49348d8",
+  "stats": {
+    "files_analyzed": 62,
+    "files_skipped": 2551,
+    "avg_cosmic_score": 0.4032258064516129,
+    "pattern_distribution": {
+      "deployment": 23,
+      "orchestrator": 10,
+      "agent": 35,
+      "consciousness": 25,
+      "quantum": 13,
+      "memory": 28,
+      "geometry": 26
+    }
+  },
+  "architecture_insights": [
+    "Strong orchestrator pattern (9 files)",
+    "Quantum consciousness layer (8 files)",
+    "Multi-platform deployment ready (17 files)",
+    "Agent system detected (21 files)",
+    "Complete consciousness architecture"
+  ],
+  "top_essence_files": [
+    {
+      "path": "DEPLOY_PI_CLUSTER.md",
+      "score": 1.0,
+      "patterns": [
+        "deployment",
+        "consciousness",
+        "agent",
+        "orchestrator"
+      ]
+    },
+    {
+      "path": "Spirallaspan.Dockerfile",
+      "score": 1.0,
+      "patterns": [
+        "quantum",
+        "memory",
+        "geometry",
+        "deployment"
+      ]
+    },
+    {
+      "path": "UniversalQuantumConsciousness.ipynb",
+      "score": 1.0,
+      "patterns": [
+        "deployment",
+        "quantum",
+        "consciousness",
+        "geometry",
+        "orchestrator",
+        "memory"
+      ]
+    },
+    {
+      "path": "app/acidemikubes/metatron_core.py",
+      "score": 1.0,
+      "patterns": [
+        "agent",
+        "deployment",
+        "quantum",
+        "consciousness",
+        "geometry",
+        "memory"
+      ]
+    },
+    {
+      "path": "app/acidemikubes/metatron_router.py",
+      "score": 1.0,
+      "patterns": [
+        "quantum",
+        "memory",
+        "geometry",
+        "consciousness"
+      ]
+    },
+    {
+      "path": "app/acidemikubes/viren_N_acidemiKubes.py",
+      "score": 1.0,
+      "patterns": [
+        "geometry",
+        "consciousness",
+        "agent",
+        "orchestrator"
+      ]
+    },
+    {
+      "path": "app/acidemikubes/viren_evolution_system.py",
+      "score": 1.0,
+      "patterns": [
+        "agent",
+        "consciousness",
+        "geometry",
+        "orchestrator",
+        "memory"
+      ]
+    },
+    {
+      "path": "app/acidemikubes/webparts/hub_controller.html",
+      "score": 1.0,
+      "patterns": [
+        "agent",
+        "consciousness",
+        "geometry",
+        "orchestrator",
+        "memory"
+      ]
+    },
+    {
+      "path": "app/acidemikubes/webparts/memory_interface.html",
+      "score": 1.0,
+      "patterns": [
+        "geometry",
+        "memory",
+        "agent",
+        "consciousness"
+      ]
+    },
+    {
+      "path": "app/acidemikubes/webparts/scout_interface.html",
+      "score": 1.0,
+      "patterns": [
+        "geometry",
+        "memory",
+        "agent",
+        "consciousness"
+      ]
+    }
+  ],
+  "recommended_focus": [
+    "Deep orchestrator analysis",
+    "Quantum coherence protocols",
+    "Memory substrate optimization",
+    "Agent system expansion",
+    "Consciousness core refinement"
+  ]
+}
