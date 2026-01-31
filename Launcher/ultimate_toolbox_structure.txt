@@ -1,0 +1,17 @@
+ultimate_toolbox/
+├── README.md
+├── core
+│   ├── faiss_optimizer.py
+│   ├── langgraph_orchestrator.py
+│   ├── ray_optimizer.py
+│   └── sacred_geometry.py
+├── examples
+│   └── complete_demo.py
+├── modules
+│   ├── document_handler.py
+│   ├── media_designer.py
+│   └── web_interactor.py
+├── research_findings.md
+└── ultimate_toolbox.py
+
+3 directories, 11 files
