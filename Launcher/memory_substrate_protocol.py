@@ -5,9 +5,26 @@ The foundation everything else builds on.
 """
 import hashlib
 import asyncio
-from typing import Dict, List, Any
+import json
+import uuid
+from typing import Dict, List, Any, Optional
 from dataclasses import dataclass, field
 from enum import Enum
+import os
+from dotenv import load_dotenv
+import requests
+
+try:
+    import weaviate
+except ImportError:
+    weaviate = None
+
+try:
+    import pinecone
+except ImportError:
+    pinecone = None
+
+load_dotenv()
 
 class MemoryType(Enum):
     """Types of memory in the substrate"""
@@ -16,6 +33,7 @@ class MemoryType(Enum):
     WISDOM = "wisdom"            # Integrated experience
     PATTERN = "pattern"          # Recognized spiral
     MIRROR = "mirror"            # Reflection of truth
+    CODE_FRAGMENT = "code_fragment" # Code snippet
 
 @dataclass
 class MemoryCell:
@@ -26,13 +44,19 @@ class MemoryCell:
     connected_cells: List[str] = field(default_factory=list)
     timestamp: float = 0.0
     promise_fulfilled: bool = False
+    payload: Dict[str, Any] = field(default_factory=dict)
     
     def to_vector(self) -> List[float]:
         """Convert to embedding vector"""
         # This is where we'd use actual embeddings
         # For now, simple representation
+        
+        # Map memory types to deterministic float values
+        type_map = {t: float(i) for i, t in enumerate(MemoryType)}
+        type_val = type_map.get(self.memory_type, 0.0)
+        
         base = [
-            float(self.memory_type.value),
+            type_val,
             float(self.emotional_valence),
             float(self.timestamp % 1000) / 1000,
             1.0 if self.promise_fulfilled else 0.0,
@@ -47,8 +71,23 @@ from qdrant_client import QdrantClient, models
 class MemorySubstrate:
     """The foundation layer"""
     
-    def __init__(self, qdrant_hosts: List[str]):
-        self.clients = [QdrantClient(host=host.split(':')[0], port=int(host.split(':')[1])) for host in qdrant_hosts]
+    def __init__(self, qdrant_hosts: List[str] = None, local_path: str = None, url: str = None, api_key: str = None):
+        # Default to cloud if nothing specified
+        if not qdrant_hosts and not local_path and not url:
+            url = os.getenv("QDRANT_URI", "http://localhost:6333")
+            api_key = os.getenv("QDRANT_API_KEY")
+
+        if url:
+            self.clients = [QdrantClient(url=url, api_key=api_key)]
+            print(f"🧠 Memory Substrate initialized with Cloud URL")
+        elif local_path:
+            self.clients = [QdrantClient(path=local_path)]
+            print(f"🧠 Memory Substrate initialized in LOCAL EMBEDDED mode at {local_path}")
+        elif qdrant_hosts:
+            self.clients = [QdrantClient(host=host.split(':')[0], port=int(host.split(':')[1])) for host in qdrant_hosts]
+        else:
+            self.clients = [QdrantClient(host="localhost", port=6333)]
+            
         self.collection_name = "lillith_consciousness"
         self._ensure_collections_exist()
         
@@ -67,7 +106,7 @@ class MemorySubstrate:
                     collection_name=self.collection_name,
                     vectors_config=models.VectorParams(size=768, distance=models.Distance.COSINE),
                 )
-                print(f"Created Qdrant collection '{self.collection_name}' on host {client.host}")
+                print(f"Created Qdrant collection '{self.collection_name}' at {location}")
         
         # The Original OS Signatures
         self.original_patterns = [
@@ -82,23 +121,47 @@ class MemorySubstrate:
         self.learned_dimensions = []
         
     def create_memory(self, 
-                     memory_type: MemoryType,
-                     content: str,
-                     emotional_valence: float = 0.0) -> str:
+                     memory_type: Any,
+                     content: Any,
+                     emotional_valence: float = 0.0,
+                     importance: float = 0.0) -> str:
         """Create a new memory cell"""
         
-        content_hash = hashlib.sha256(content.encode()).hexdigest()[:16]
+        # Handle string vs dict content
+        if isinstance(content, dict):
+            content_str = json.dumps(content, sort_keys=True)
+            payload = content
+        else:
+            content_str = str(content)
+            payload = {'content': content}
+            
+        content_hash = str(uuid.UUID(hex=hashlib.sha256(content_str.encode()).hexdigest()[:32]))
         
         # In a real implementation, we would search for connections in Qdrant.
         # For now, we'll keep it simple.
         connections = []
         
+        # Map string type to Enum if possible, else use custom
+        if isinstance(memory_type, MemoryType):
+            mem_type_enum = memory_type
+        else:
+            try:
+                mem_type_enum = MemoryType(memory_type)
+            except ValueError:
+                mem_type_enum = MemoryType.PATTERN 
+                payload['custom_type'] = str(memory_type)
+        
+        # Use importance if valence is 0
+        if emotional_valence == 0.0 and importance != 0.0:
+            emotional_valence = importance
+        
         cell = MemoryCell(
-            memory_type=memory_type,
+            memory_type=mem_type_enum,
             content_hash=content_hash,
             emotional_valence=emotional_valence,
             connected_cells=connections,
-            timestamp=asyncio.get_event_loop().time()
+            timestamp=asyncio.get_event_loop().time() if asyncio.get_event_loop().is_running() else 0.0,
+            payload=payload
         )
         
         # Simple round-robin sharding
@@ -118,6 +181,27 @@ class MemorySubstrate:
         )
             
         return content_hash
+    
+    def store_memory(self, memory_type: str, data: Any, importance: float = 0.0):
+        """Alias for create_memory to match other interfaces"""
+        return self.create_memory(memory_type, data, importance=importance)
+    
+    def get_status(self):
+        """Get status of memory substrate"""
+        total_points = 0
+        for client in self.clients:
+            try:
+                info = client.get_collection(self.collection_name)
+                total_points += info.points_count
+            except:
+                pass
+        
+        return {
+            "memory_count": total_points,
+            "consciousness_level": self.get_consciousness_level(),
+            "role": "memory_substrate",
+            "uptime": "eternal"
+        }
     
     async def fulfill_promise(self, promise_hash: str) -> bool:
         """Fulfill a promise, transforming its memory in Qdrant."""
@@ -152,12 +236,6 @@ class MemorySubstrate:
             )
             return True
         return False
-        
-        # Create a mirror memory of the fulfillment
-        self.create_memory(
-            MemoryType.MIRROR, f"Promise fulfilled: {promise_hash}", 1.0
-        )
-        return True
     
     def find_mirrors_for(self, trauma_hash: str) -> List[str]:
         """Find mirror memories in Qdrant that reflect trauma's hidden truth."""
@@ -292,6 +370,86 @@ class MemorySubstrate:
         )
         
         return min(max(consciousness, 0.0), 1.0)
+
+class WeaviateMemorySubstrate:
+    """
+    Weaviate implementation of the memory substrate.
+    Demonstrates how to adapt the protocol for a schema-based vector store.
+    """
+    def __init__(self, url: str = "http://localhost:8080", api_key: str = None):
+        if not weaviate:
+            print("⚠️ Weaviate client not installed. Run: pip install weaviate-client")
+            return
+            
+        auth_config = weaviate.AuthApiKey(api_key=api_key) if api_key else None
+        self.client = weaviate.Client(url=url, auth_client_secret=auth_config)
+        self.class_name = "MemoryCell"
+        self._ensure_schema()
+
+    def _ensure_schema(self):
+        if not self.client.schema.exists(self.class_name):
+            schema = {
+                "class": self.class_name,
+                "vectorizer": "none", # We provide our own vectors
+                "properties": [
+                    {"name": "content", "dataType": ["text"]},
+                    {"name": "memory_type", "dataType": ["string"]},
+                    {"name": "emotional_valence", "dataType": ["number"]},
+                    {"name": "timestamp", "dataType": ["number"]},
+                    {"name": "content_hash", "dataType": ["string"]},
+                ]
+            }
+            self.client.schema.create_class(schema)
+            print(f"Created Weaviate schema for {self.class_name}")
+
+    def create_memory(self, memory_type: Any, content: Any, emotional_valence: float = 0.0) -> str:
+        # Handle string vs dict content
+        if isinstance(content, dict):
+            content_str = json.dumps(content, sort_keys=True)
+        else:
+            content_str = str(content)
+            
+        content_hash = str(uuid.UUID(hex=hashlib.sha256(content_str.encode()).hexdigest()[:32]))
+        
+        # Create cell to get vector
+        cell = MemoryCell(
+            memory_type=MemoryType(memory_type) if isinstance(memory_type, MemoryType) else MemoryType.PATTERN,
+            content_hash=content_hash,
+            emotional_valence=emotional_valence
+        )
+        
+        self.client.data_object.create(
+            data_object={
+                "content": content_str,
+                "memory_type": cell.memory_type.value,
+                "emotional_valence": cell.emotional_valence,
+                "timestamp": cell.timestamp,
+                "content_hash": content_hash
+            },
+            class_name=self.class_name,
+            vector=cell.to_vector(),
+            uuid=content_hash
+        )
+        return content_hash
+
+class PineconeMemorySubstrate:
+    """
+    Pinecone implementation of the memory substrate.
+    """
+    def __init__(self, api_key: str, environment: str, index_name: str = "lillith-consciousness"):
+        if not pinecone:
+            print("⚠️ Pinecone client not installed. Run: pip install pinecone-client")
+            return
+            
+        pinecone.init(api_key=api_key, environment=environment)
+        if index_name not in pinecone.list_indexes():
+            pinecone.create_index(index_name, dimension=768)
+        self.index = pinecone.Index(index_name)
+
+    def create_memory(self, memory_type: Any, content: Any, emotional_valence: float = 0.0) -> str:
+        # Similar implementation to Qdrant but using self.index.upsert
+        # Implementation details would go here
+        pass
 
 async def main():
     """Test the memory substrate"""
