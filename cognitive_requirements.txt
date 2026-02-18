@@ -1,0 +1,17 @@
+# Core Dependencies
+numpy>=1.21.0
+scipy>=1.7.0
+scikit-learn>=1.0.0
+networkx>=2.6.3
+Flask>=2.0.0
+torch>=1.9.0  # Optional, for tensor operations
+
+# Async support
+asyncio>=3.4.3
+concurrent.futures>=3.0.0
+
+# Divine Pipeline (from previous)
+# divine_pipeline.py
+
+# Cosmic Breathing Network (from provided code)
+# cosmic_breathing_network.py

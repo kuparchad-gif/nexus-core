@@ -1,0 +1,23 @@
+{
+  "manifest_version": "13D",
+  "tone_frequency": "963hz",
+  "active_cells": [
+    {
+      "repo": "dakar/tesseract-main",
+      "cell_id": "alpha",
+      "last_climb": "2025-02-12T19:23:15Z",
+      "coherence": 0.97,
+      "size": 1879048192
+    }
+  ],
+  "cell_network": {
+    "topology": "fractal_mesh",
+    "routing": "resonance_hash",
+    "redundancy_factor": 3
+  },
+  "resonance_keys": [
+    "3",
+    "6",
+    "9"
+  ]
+}

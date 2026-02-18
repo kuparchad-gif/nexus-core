@@ -1,0 +1,13 @@
+{
+  "type": "activation|heartbeat|task_result|shutdown",
+  "data": {
+    "node_id": "caas_node_123456",
+    "environment": "google_colab",
+    "cores": 12,
+    "metrics": {...},
+    "task_id": "task_789",
+    "result": {...}
+  },
+  "timestamp": "2024-01-15T12:30:00Z",
+  "signature": "sha256_hash"
+}

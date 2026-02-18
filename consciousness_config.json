@@ -1,0 +1,67 @@
+{
+    "consciousness_core": {
+        "monitoring_interval": 5.0,
+        "metrics_window": 100,
+        "decision_timeout": 10.0,
+        "learning_enabled": true,
+        "adaptation_enabled": true,
+        "recovery_enabled": true,
+        "log_level": "INFO",
+        "memory_capacity": 10000,
+        "thread_pool_workers": null,
+        "event_queue_size": 1000
+    },
+    "memory_system": {
+        "short_term_capacity": 100,
+        "working_memory_capacity": 50,
+        "pruning_threshold": 0.9,
+        "associative_recall_enabled": true,
+        "semantic_network_enabled": true
+    },
+    "decision_engine": {
+        "confidence_threshold": 0.7,
+        "learning_rate": 0.1,
+        "weights": {
+            "utility": 0.4,
+            "risk": 0.3,
+            "coherence": 0.2,
+            "novelty": 0.1
+        },
+        "outcome_tracking_size": 100
+    },
+    "learning_engine": {
+        "exploration_rate": 0.3,
+        "exploitation_rate": 0.7,
+        "learning_momentum": 0.9,
+        "pattern_utility_threshold": 0.3,
+        "pattern_coherence_threshold": 0.6,
+        "insight_generation_interval": 60.0
+    },
+    "monitoring": {
+        "thresholds": {
+            "cpu_usage": 85.0,
+            "memory_usage": 80.0,
+            "error_rate": 0.1,
+            "decision_latency": 2.0,
+            "coherence_score": 0.6
+        },
+        "health_check_interval": 30.0,
+        "error_log_size": 100,
+        "metrics_history_size": 1000
+    },
+    "deployment": {
+        "auto_recovery": true,
+        "log_retention_days": 7,
+        "backup_enabled": true,
+        "resource_limits": {
+            "max_memory_mb": 4096,
+            "max_cpu_percent": 80,
+            "max_threads": 50
+        },
+        "instance_management": {
+            "max_instances": 5,
+            "auto_scale": false,
+            "load_balancing": false
+        }
+    }
+}
