@@ -51,7 +51,7 @@ const defaultThemeSettings: Theme = {
 
 const defaultSettings: Settings = {
   api: {
-    baseUrl: 'https://aethereal-nexus-viren-db0--metatron-ulam-fastapi-app.modal.run',
+    baseUrl: 'https://ozos-deploy.onrender.com',
     endpoints: DEFAULT_ENDPOINTS,
   },
   ui: defaultThemeSettings,

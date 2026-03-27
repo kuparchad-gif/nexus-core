@@ -9,7 +9,7 @@
  */
 
 const getBaseUrl = () => {
-    return localStorage.getItem('oz_backend_url') || 'http://localhost:8000';
+    return localStorage.getItem('oz_backend_url') || 'https://ozos-deploy.onrender.com';
 };
 
 const getWsUrl = () => {
