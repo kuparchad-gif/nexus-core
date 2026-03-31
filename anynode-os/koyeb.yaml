@@ -1,0 +1,54 @@
+# Koyeb Deployment — AnyNode OS Mesh Healer
+#
+# Deploy to Koyeb free tier:
+#   1. Create a Koyeb account (no credit card needed)
+#   2. Connect your GitHub repo (kuparchad-gif/nexus-core)
+#   3. Set the build context to: anynode-os/
+#   4. Set the Dockerfile path to: anynode-os/Dockerfile
+#   5. Set the port to: 8000
+#   6. Add environment variables below
+#
+# Or use the Koyeb CLI:
+#   koyeb service create anynode-os \
+#     --git github.com/kuparchad-gif/nexus-core \
+#     --git-branch main \
+#     --git-build-command "" \
+#     --git-docker-dockerfile anynode-os/Dockerfile \
+#     --ports 8000:http \
+#     --routes /:8000 \
+#     --instance-type free \
+#     --env ANYNODE_ID=anynode-koyeb \
+#     --env ANYNODE_PLATFORM=koyeb \
+#     --env HEALTH_CHECK_INTERVAL=30
+
+name: anynode-os
+type: web
+instance_type: free
+regions:
+  - was  # Washington DC
+ports:
+  - port: 8000
+    protocol: http
+routes:
+  - path: /
+    port: 8000
+env:
+  - key: ANYNODE_ID
+    value: anynode-koyeb
+  - key: ANYNODE_PLATFORM
+    value: koyeb
+  - key: HEALTH_CHECK_INTERVAL
+    value: "30"
+  - key: PROBE_TIMEOUT
+    value: "5"
+git:
+  repository: github.com/kuparchad-gif/nexus-core
+  branch: main
+  dockerfile:
+    path: anynode-os/Dockerfile
+health_checks:
+  - type: http
+    port: 8000
+    path: /health
+    interval: 30
+    timeout: 10
