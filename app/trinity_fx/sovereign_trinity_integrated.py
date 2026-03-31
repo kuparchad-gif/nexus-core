@@ -76,6 +76,10 @@ def init_qdrant():
 from sentence_transformers import SentenceTransformer
 embedder = SentenceTransformer('all-MiniLM-L6-v2')
 
+# Dakar Bridge — weight-particle driven encoding alongside sentence-transformers
+from core.dakar_bridge import DakarBridge
+_dakar = DakarBridge(worker_id="trinity-fx")
+
 def upsert(vector, payload, id_=None):
     if hasattr(client, 'upsert'):
         client.upsert(
@@ -104,18 +108,39 @@ def soul_search(query_vec, soul_bias):
 class TwinAgent:
     def __init__(self, name, role):
         self.name, self.role = name, role
+        self.dakar = _dakar
 
     async def ingest(self, data: Dict):
         vec = embedder.encode(json.dumps(data.get("text","") + data.get("image_desc","")))
         payload = {"soul_weights": data.get("soul", {"hope":40,"unity":30})}
         upsert(vec, payload)
-        return {"status":"ingested"}
+        # Also encode through Dakar and remember for weight-particle recall
+        text_content = data.get("text", "") + data.get("image_desc", "")
+        dakar_result = self.dakar.remember(
+            f"trinity_{uuid.uuid4().hex[:8]}", text_content,
+            {"agent": self.name, "soul": data.get("soul", {})}
+        )
+        return {"status": "ingested", "dakar_resonance": dakar_result["resonance"]}
 
     async def reason(self, query: str, soul_bias: Dict):
         qvec = embedder.encode(query)
         hits = soul_search(qvec, soul_bias)
         top = hits[0].payload if hits else {}
-        return {"rationale": f"{self.role}: {len(hits)} matches", "top": top}
+        # Dakar recall: weight-particle driven memory search
+        dakar_recall = self.dakar.recall(query, k=3)
+        dakar_vec = self.dakar.encode(query)
+        dakar_groups = self.dakar.analyze_groups(dakar_vec)
+        dakar_tone = self.dakar.analyze_tone(dakar_groups)
+        return {
+            "rationale": f"{self.role}: {len(hits)} qdrant + {len(dakar_recall)} dakar matches",
+            "top": top,
+            "dakar_recall": dakar_recall,
+            "dakar_tone": {
+                "positivity": dakar_tone.positivity,
+                "warmth": dakar_tone.warmth,
+                "urgency": dakar_tone.urgency,
+            },
+        }
 
     async def collaborate(self, inp: Dict):
         await self.ingest(inp)
