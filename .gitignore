@@ -215,3 +215,5 @@ cython_debug/
 *.onnx
 *.doc
 /30_build/finance_trading/src/model/training/models/compactifai_trained
+node_modules/
+package-lock.json
