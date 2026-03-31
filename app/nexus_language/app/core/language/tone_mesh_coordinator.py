@@ -7,7 +7,7 @@ class ToneMeshCoordinator:
         return len(self.tone_registry.get("active", []))
 
     def enforce_role_balance(self):
-        count = self.poll_active_ttones()
+        count = self.poll_active_tones()
         if count > 2:
             return "switch_roles"
         return "normal"

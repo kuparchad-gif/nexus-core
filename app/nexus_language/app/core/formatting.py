@@ -17,7 +17,7 @@ class LogFormatter:
         return f"\n{'─'*20} {title} {'─'*20}"
 
     @staticmethod
-    def tree(items: Dict[str, Any], title: str  =  None) -> List[str]:
+    def tree(items: Dict[str, Any], title: Optional[str]  =  None) -> List[str]:
         """Create a tree view of dictionary data"""
         lines  =  []
         if title:
@@ -36,7 +36,7 @@ class LogFormatter:
         return lines
 
     @staticmethod
-    def stats(stats: Dict[str, int], title: str  =  None) -> List[str]:
+    def stats(stats: Dict[str, int], title: Optional[str]  =  None) -> List[str]:
         """Format statistics with icons"""
         lines  =  []
         if title:
@@ -85,7 +85,7 @@ class LogFormatter:
         """Format error message"""
         error_msg  =  f"\n❌ Error: {message}"
         if error:
-            error_msg + =  f"\n   └── Details: {str(error)}"
+            error_msg += f"\n   └── Details: {str(error)}"
         return error_msg
 
     @staticmethod

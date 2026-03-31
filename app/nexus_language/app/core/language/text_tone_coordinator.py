@@ -3,14 +3,14 @@
 
 import asyncio
 import logging
-from typing import Dict, Any, Optional, List, Union
+from typing import Dict, Any, Optional, List
 import json
 import time
 
-from Systems.engine.text import TextProcessor as TextProcessor
-from Systems.engine.text import ProcessingMode as TextProcessingMode
-from Systems.engine.tone import ToneProcessor as ToneProcessor
-from Systems.engine.tone import ProcessingMode as ToneProcessingMode
+from .text_processor import TextProcessor
+from .text_processor import ProcessingMode as TextProcessingMode
+from .tone_processor import ToneProcessor
+from .tone_processor import ProcessingMode as ToneProcessingMode
 
 # Configure logging
 logging.basicConfig(
@@ -25,11 +25,11 @@ class TextToneCoordinator:
     Provides a unified interface for processing text with both systems.
     """
     
-    def __init__(self):
+    def __init__(self) -> None:
         """Initialize the text-tone coordinator."""
         self.text_processor = TextProcessor()
         self.tone_processor = ToneProcessor()
-        self.processing_history = []
+        self.processing_history: List[Dict[str, Any]] = []
         
         logger.info("Text-Tone Coordinator initialized")
     
@@ -67,7 +67,7 @@ class TextToneCoordinator:
         text_result, tone_result = await asyncio.gather(text_task, tone_task)
         
         # Create combined result
-        combined_result = {
+        combined_result: Dict[str, Any] = {
             "text_analysis": text_result,
             "tone_analysis": tone_result,
             "processing_id": f"combined_{int(time.time())}",
@@ -95,15 +95,17 @@ class TextToneCoordinator:
             Memory packet with text analysis and emotional fingerprint
         """
         # Process text and tone
+        text_mode = TextProcessingMode.TEXTUAL_REASONING
+        tone_mode = ToneProcessingMode.EMOTIONAL_ANALYSIS
         result = await self.process_comprehensive(
             text=text,
-            text_mode=TextProcessingMode.TEXTUAL_REASONING,
-            tone_mode=ToneProcessingMode.EMOTIONAL_ANALYSIS,
+            text_mode=text_mode,
+            tone_mode=tone_mode,
             context=context
         )
         
         # Extract key information for memory packet
-        memory_packet = {
+        memory_packet: Dict[str, Any] = {
             "content": text,
             "context": context,
             "analysis": {
@@ -119,8 +121,8 @@ class TextToneCoordinator:
             "metadata": {
                 "processing_id": result["processing_id"],
                 "timestamp": result["timestamp"],
-                "text_mode": text_mode.value if text_mode else "textual_reasoning",
-                "tone_mode": tone_mode.value if tone_mode else "emotional_analysis"
+                "text_mode": text_mode.value,
+                "tone_mode": tone_mode.value
             }
         }
         
@@ -148,7 +150,7 @@ class TextToneCoordinator:
         )
         
         # Combine results into specialized analysis
-        symbolic_narrative = {
+        symbolic_narrative: Dict[str, Any] = {
             "narrative_elements": text_result.get("narrative_elements", []),
             "temporal_focus": text_result.get("temporal_focus", "present"),
             "symbolic_patterns": tone_result.get("identified_patterns", {}),
@@ -206,7 +208,7 @@ class TextToneCoordinator:
         return self.processing_history[-limit:]
 
 # Example usage
-async def example_usage():
+async def example_usage() -> None:
     coordinator = TextToneCoordinator()
     
     # Process text comprehensively

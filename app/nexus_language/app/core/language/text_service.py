@@ -8,7 +8,7 @@ from pydantic import BaseModel
 from typing import Dict, Any, Optional, List
 import uvicorn
 
-from text_processor import TextProcessor, ProcessingMode
+from .text_processor import TextProcessor, ProcessingMode
 
 # Configure logging
 logging.basicConfig(
