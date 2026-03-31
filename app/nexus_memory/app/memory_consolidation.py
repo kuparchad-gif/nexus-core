@@ -13,6 +13,10 @@ from typing import Dict, List, Any, Optional, Union, Tuple
 from enum import Enum
 from pathlib import Path
 from datetime import datetime, timedelta
+from core.dakar_bridge import DakarBridge
+
+# Shared Dakar instance for memory consolidation
+_dakar = DakarBridge(worker_id="memory-consolidation")
 
 class MemoryType(Enum):
     """Types of memory in the system"""
@@ -59,6 +63,24 @@ class MemoryItem:
         self.access_count  =  0
         self.consolidation_count  =  0
         self.emotional_context  =  {}
+
+        # Dakar 50D encoding: weight-particle driven vector representation
+        content_str = content if isinstance(content, str) else str(content)
+        self.dakar_vector = _dakar.encode(content_str)
+        self.dakar_resonance = _dakar._compute_resonance(self.dakar_vector)
+        dakar_groups = _dakar.analyze_groups(self.dakar_vector)
+        dakar_tone = _dakar.analyze_tone(dakar_groups)
+        self.dakar_tone = {
+            "positivity": dakar_tone.positivity,
+            "arousal": dakar_tone.arousal,
+            "warmth": dakar_tone.warmth,
+            "urgency": dakar_tone.urgency,
+        }
+        _dakar.remember(self.id, content_str, {
+            "memory_type": memory_type.value,
+            "priority": priority.value,
+            "tags": self.tags,
+        })
 
     def access(self):
         """Record memory access"""
