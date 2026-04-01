@@ -1,17 +1,25 @@
 {
-  "name": "@languine/supabase",
+  "name": "nexus-core",
   "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "@supabase/ssr": "^0.5.2",
-    "@supabase/supabase-js": "^2.48.1",
-    "drizzle-orm": "^0.38.4"
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "exports": {
-    "./session": "./src/auth/session.ts",
-    "./client": "./src/client/client.ts",
-    "./server": "./src/client/server.ts",
-    "./middleware": "./src/client/middleware.ts",
-    "./utils": "./src/client/utils.ts"
+  "dependencies": {
+    "@google/genai": "^1.20.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@types/uuid": "^10.0.0",
+    "@vercel/node": "^5.1.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "typescript": "^5.7.3",
+    "vite": "^6.3.0"
   }
 }
