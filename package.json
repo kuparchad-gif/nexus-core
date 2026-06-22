@@ -1,0 +1,49 @@
+{
+  "name": "nexus-universal",
+  "version": "6.0.0",
+  "description": "NEXUS Complete Unified Mesh — Network Intelligence + Service Bridges + Tunnels + Blockchain + IoT",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:staging": "wrangler deploy --env staging",
+    "deploy:production": "wrangler deploy --env production",
+    "tunnel:start": "node tunnel/agent.js start",
+    "tunnel:provision": "./tunnel/provision.sh",
+    "bridge:deploy": "node -e \"import('./integrations/service-bridge.js').then(m => m.deployAll())\"",
+    "discover": "node scripts/network-discover.js discover",
+    "register": "node scripts/network-discover.js register",
+    "health": "node scripts/network-discover.js health",
+    "iot:scan": "node scripts/iot-scan.js",
+    "blockchain:register": "node scripts/blockchain-register.js",
+    "kv:setup": "node scripts/kv-setup.js",
+    "d1:migrate": "wrangler d1 migrate nexus-db"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0",
+    "@cloudflare/workers-types": "^4.0.0"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.87.6",
+    "ethers": "^6.11.0",
+    "mqtt": "^5.3.5",
+    "mdns-js": "^0.5.3",
+    "@abandonware/noble": "^1.9.2",
+    "zigbee-herdsman": "^0.14.0",
+    "node-arp": "^1.0.8",
+    "ttn": "^2.7.2"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "mesh",
+    "hypercore",
+    "nexus",
+    "network",
+    "tunnel",
+    "iot",
+    "blockchain"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,141 @@
+name = "nexus-universal"
+main = "src/index.js"
+compatibility_date = "2026-06-22"
+compatibility_flags = ["nodejs_compat"]
+
+# ============================================================================
+# 🗄️ RESOURCES — Auto-provisioned by Wrangler
+# ============================================================================
+
+[[kv_namespaces]]
+binding = "NEXUS_KV"
+id = "${NEXUS_KV_ID}"
+
+[[r2_buckets]]
+binding = "NEXUS_R2"
+bucket_name = "nexus-r2"
+
+# ============================================================================
+# 💾 D1 DATABASE (optional)
+# ============================================================================
+
+[[d1_databases]]
+binding = "NEXUS_DB"
+database_name = "nexus-db"
+database_id = "${D1_DATABASE_ID}"
+
+# ============================================================================
+# 🔮 DURABLE OBJECTS
+# ============================================================================
+
+[[durable_objects.bindings]]
+name = "MESH_COORDINATOR"
+class_name = "MeshCoordinator"
+
+[[durable_objects.bindings]]
+name = "WORKER_REGISTRY"
+class_name = "WorkerRegistry"
+
+[[durable_objects.bindings]]
+name = "IOT_DISCOVERY"
+class_name = "IoTDiscoveryDO"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["MeshCoordinator", "WorkerRegistry", "IoTDiscoveryDO"]
+
+# ============================================================================
+# ⚙️ VARS
+# ============================================================================
+
+[vars]
+NODE_ID = "nexus-universal-001"
+NODE_ARCHETYPE = "observer"
+ENV = "production"
+LOG_LEVEL = "info"
+
+# Network Configuration
+DEFAULT_NETWORK = "pulse"
+NETWORK_TYPES = "pulse,pubhub,legacy,tcpip"
+DISCOVERY_KEYWORD = "universal"
+HEARTBEAT_INTERVAL_SEC = "30"
+STALE_WORKER_TIMEOUT_SEC = "120"
+
+# Service Integrations
+GITHUB_REPO = "${GITHUB_REPO}"
+GITHUB_API = "https://api.github.com"
+GITLAB_API = "https://gitlab.com/api/v4"
+RAILWAY_API = "https://api.railway.app"
+VERCEL_API = "https://api.vercel.com"
+NETLIFY_API = "https://api.netlify.com"
+RENDER_API = "https://api.render.com/v1"
+REPLICATE_API = "https://api.replicate.com/v1"
+HUGGINGFACE_API = "https://api-inference.huggingface.co/models"
+
+# Tunnel Configuration
+ENABLE_TUNNELS = "true"
+TUNNEL_ID = "nexus-edge-bridge"
+TUNNEL_DOMAIN = "bridge.nexus-universal.internal"
+
+# Blockchain
+SOLANA_RPC = "https://api.mainnet-beta.solana.com"
+ETH_RPC = "https://cloudflare-eth.com"
+CHAIN_ID = "1"
+
+# IoT
+BLE_ENABLED = "true"
+MQTT_ENABLED = "true"
+TTN_ENABLED = "false"
+ZIGBEE_ENABLED = "false"
+NETWORK_SCAN_ENABLED = "true"
+LOCAL_NETWORK = "192.168.1.0/24"
+SCAN_INTERVAL = "60"
+
+# Edge Intelligence
+FEDERATED_LEARNING_ENABLED = "true"
+FEDERATED_ROUND_INTERVAL = "3600"
+ANOMALY_DETECTION_ENABLED = "true"
+PREDICTIVE_MAINTENANCE_ENABLED = "true"
+SENSOR_FUSION_ENABLED = "true"
+
+# Feature Flags
+FEATURE_ANDROID_BUILD = "true"
+FEATURE_WEB3 = "true"
+FEATURE_AUTO_SCALING = "true"
+FEATURE_NETWORK_INTELLIGENCE = "true"
+FEATURE_SERVICE_BRIDGES = "true"
+FEATURE_IOT = "true"
+FEATURE_BLOCKCHAIN = "true"
+
+# ============================================================================
+# ⏰ CRON
+# ============================================================================
+
+[[triggers]]
+crons = [
+  "*/1 * * * *",     # Network heartbeat
+  "*/5 * * * *",     # IoT scan
+  "0 */6 * * *",     # Blockchain sync
+  "0 0 * * *",       # Federated learning round
+  "*/15 * * * *"     # Anomaly detection
+]
+
+# ============================================================================
+# 🌐 ENVIRONMENTS
+# ============================================================================
+
+[env.staging]
+vars = {
+  ENV = "staging",
+  LOG_LEVEL = "debug",
+  DEFAULT_NETWORK = "pubhub",
+  SCAN_INTERVAL = "30"
+}
+
+[env.production]
+vars = {
+  ENV = "production",
+  LOG_LEVEL = "info",
+  DEFAULT_NETWORK = "pulse",
+  SCAN_INTERVAL = "60"
+}

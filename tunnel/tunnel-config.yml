@@ -1,0 +1,42 @@
+# ============================================================================
+# CLOUDFLARE TUNNEL CONFIGURATION
+# ============================================================================
+# External node ingress via cloudflared
+# ============================================================================
+
+tunnel: nexus-edge-bridge
+credentials-file: /root/.cloudflared/nexus-edge-bridge.json
+
+ingress:
+  # Service API endpoints
+  - hostname: api.bridge.nexus-universal.internal
+    service: http://localhost:8080
+  
+  # Pulse WebSocket
+  - hostname: pulse.bridge.nexus-universal.internal
+    service: ws://localhost:8081
+  
+  # PubHub SSE
+  - hostname: pubhub.bridge.nexus-universal.internal
+    service: http://localhost:8082
+  
+  # Legacy REST
+  - hostname: legacy.bridge.nexus-universal.internal
+    service: http://localhost:8083
+  
+  # Health check
+  - hostname: health.bridge.nexus-universal.internal
+    service: http://localhost:8080/health
+  
+  # External node registration
+  - hostname: register.bridge.nexus-universal.internal
+    service: http://localhost:8080/registry/register
+  
+  # Fallback
+  - service: http_status:404
+
+# Origin configuration
+originRequest:
+  connectTimeout: 30s
+  tlsTimeout: 60s
+  noTLSVerify: false
